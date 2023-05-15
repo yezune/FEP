@@ -147,8 +147,8 @@ $$
 \begin{equation}
 \begin{aligned}
 f & = (\Gamma - Q)\nabla\ln p(x) \\
-  & \Rightarrow \cfrac{p(x)}{j(x)} =  -Q\nabla \ln p(x) \Rightarrow \.{p}(x) = 0 \\
-\Im(x) & =  - \ln \space p(x) \\
+ & \Rightarrow \cfrac{p(x)}{j(x)} = -Q\nabla \ln p(x) \Rightarrow \.{p}(x) = 0 \\
+\Im(x) & = - \ln \space p(x) \\
 f(x) & = (Q-\Gamma)\nabla\Im(x) \\
 \nabla \cdot f(x) & = - \Gamma \nabla^{2}\Im(x)
 \end{aligned}
@@ -164,7 +164,7 @@ $$
 \begin{aligned}
 \mathcal{A}(x[\tau]) & = \int_0^t \mathcal{L}(x,\.{x})d\tau \\
 \mathcal{L}(x,\.{x}) & = \cfrac{1}{2} [ \cfrac{1}{2\Gamma}( \.{x} - Q \nabla \Im ) \cdot ( \.{x} - Q \nabla \Im) + \.{x} \cdot \nabla \Im + \Gamma(\cfrac{1}{2}\nabla \Im \cdot \nabla \Im - \nabla^{2}\Im)] \\
-\mathcal{H}(x,\.{x}) & = \cfrac{1}{2} [ \cfrac{1}{2\Gamma}( \.{x} - Q \nabla \Im ) \cdot ( \.{x} - Q \nabla \Im) -  \Gamma(\cfrac{1}{2}\nabla \Im \cdot \nabla \Im - \nabla^{2}\Im)] \\
+\mathcal{H}(x,\.{x}) & = \cfrac{1}{2} [ \cfrac{1}{2\Gamma}( \.{x} - Q \nabla \Im ) \cdot ( \.{x} - Q \nabla \Im) - \Gamma(\cfrac{1}{2}\nabla \Im \cdot \nabla \Im - \nabla^{2}\Im)] \\
 \end{aligned}
 \end{equation}
 $$
@@ -198,8 +198,76 @@ $$
 \end{equation}
 $$
 
+이것은 가장 가능성이 높은 경로가 행동을 최소화하여 경로에 대한 그것의 변화를 0으로 만든다는 것을 의미합니다. 중요한 것은, 비균형 정상 상태에서, 행동에 대한 경로에 의존적이고 독립적인 기여는 놀람(surprisal)과 그 기울기의 형태로 표현될 수 있다는 것입니다. 우리는 이 비균형 정상 상태 동력학의 결과를 여러 다른 설정에서 활용할 것입니다. 시너제틱스와 패턴 형성의 처리에서, 이 최소 행동 원칙은 때때로 에너지 기울기의 파괴로 표현됩니다 (Tschacher와 Haken, 2007).
 
 #### Fluctuations and information length
+
+_“Time is designed in such a way that given the present, the future is independent of the past”_ (Caticha, 2015b) p6116
+
+우리는 확률 측정과 미분 기하학에서 상속된 측정 척도라는 측면에서 '것들의 측정'에 관심이 있을 것입니다. 이 섹션은 확률 이론에 미분 기하학을 적용할 때 발생하는 길이와 정보 기하학에 대한 간단한 배경을 제공합니다. 여기서의 주요 메시지는 이 모든 측정이 시간에 깊이 있게 의존한다는 것입니다. 이 서문의 일환으로, 무작위 변동의 본질을 고려하는 것이 유용합니다. 나중에 우리는 이러한 변동이 집합 당 상태에 대해 충분히 빠르게 변동하는 상태의 혼합물이라는 것을 알게 될 것입니다. 이런 의미에서 무작위 변동은 (정의상) 느린 상태와 상관없는 빠른 상태입니다. 빠른 상태와 느린 상태의 암시적인 통계적 독립성은 우리가 '무작위' 변동에 대해 이야기할 수 있게 합니다. 식(1)의 랑게빈 동력학의 형태는 이 시간 척도의 분리를 보여줍니다. 예를 들어, $\Gamma$의 단위(초당)는 그것이 비율 상수의 역할을 하는 것을 제안합니다. 실제로, 한 가지 시각에서는, 변동의 진폭은 변동에 의한 상태의 분산 또는 분산이 시간에 걸쳐 얼마나 빠르게 축적되는지에 대응합니다(Cox and Miller, 1965). 또한, 정상 상태에서, 진폭은 흐름을 놀람의 기울기에 결합하는 효과적인 비율 상수입니다 -식(7). 다시 말해, 주어진 NESS 밀도에 대해, 흐름은 변동의 진폭에 비례하여 증가합니다. 길이라는 개념을 도입하여 이를 공식화할 수 있습니다:
+
+$$
+\begin{equation}
+\begin{aligned}
+\ell = \int_0^T \sqrt{ \dot{x}(\tau)^{i} g_{ij} \.{x}(\tau)^j } dt
+\end{aligned}
+\end{equation}
+$$
+
+여기서 우리는 (아인슈타인) 합산 규칙을 사용했으며, 반복된 첨자와 아래 첨자에 대한 암시적인 합산이 있습니다. 식 (12)는 메트릭 텐서 $g_{ij}$가 제공하는 리만 메트릭을 사용하여 경로의 길이를 표현합니다. 지역적으로 최소 거리의 경로는 적위선(_geodesics_)이라고 불리며, 유클리드 공간에서의 직선의 아날로그입니다. 식 (10)에서, 낮은 진폭의 변동의 클래식한 한계에서 경로의 행동은 경로 길이의 상한선으로 해석될 수 있습니다 (코시-슈바르츠 부등식에 의해):
+
+$$
+\begin{equation}
+\begin{aligned}
+ \lim_{Q,\Gamma \rightarrow 0}\mathcal{A}(x[\tau]) &= \int_0^T \dot{x}(\tau)^{i} g_{ij} \.{x}(\tau)^j dt \geq \ell^2 \\
+g &= \cfrac{1}{4\Gamma}
+\end{aligned}
+\end{equation}
+$$
+
+간단히하기 위해, 우리는 회전형 흐름을 무시했습니다. 이것은 만약 길이가 무작위 플럭튜에이션의 정밀도(즉, 공분산의 역수)의 용어로 측정된다면, 가장 가능성이 높은 (클래식한) 경로는 가장 짧을 것이라는 것을 제안합니다. 동일하게, 정밀도는 상태 공간에 대한 기하학을 제공하는 리만 메트릭을 제공하며, 이는 플럭튜에이션이 큰 진폭을 가질 때 점들이 서로 가깝습니다. 무작위 플럭튜에이션의 진폭과 메트릭 텐서 간의 동등성은 우리의 단순화 가정인 무작위 플럭튜에이션의 진폭이 구형(즉, 모든 방향에서 똑같이 보이는)이라는 것을 근거로 합니다. 이는 좌표 선택에 불변인 리만 메트릭을 가진 대칭 상태 공간에서 작업하는 것과 동일합니다.
+
+이 메트릭 처리를 더 나아가서, 밀도의 충분한 통계량(즉, 매개변수)의 공간을 정보 기하학으로 갖추게 할 수 있습니다. 간단히 말해서, 정보 기하학은 통계적 다양체에서 거리를 측정하는 데 사용될 수 있는 리만 메트릭에 근거합니다(Amari, 1998; Ay, 2015). 통계적 다양체란 각 점이 확률 밀도를 나타내는 메트릭 공간입니다. 즉, 매개변수 공간의 점들은 확률 밀도의 충분한 통계량에 해당하며, 통계적 다양체의 가까운 점들은 유사한 밀도에 해당합니다. 예를 들어, 가우시안 밀도의 통계적 순간(즉, 평균과 정밀도)에 의해 생성된 이차원 공간은 일반적인 통계적 다양체를 구성합니다. 통계적 다양체의 특별한 점은 항상 메트릭 텐서를 갖추고 있으며, 이는 피셔 정보 메트릭의 형태로 제공됩니다.
+
+현재의 상황에서는 (Crooks, 2007)에 따라, 피셔 정보를 메트릭으로 사용하는 정보 길이를 통해 체계적인 밀도 동역학을 특성화할 수 있습니다. 밀도를 시간에 독립적인 집합 변수 또는 모드 $\zeta_i(x)$와 시간에 종속적인 충분한 통계적 역할을 하는 공액 변수 $\lambda(\tau)$로 분해하는 것을 고려해보세요 [^note-6] :
+
+[^note-6]: 우리는 Z를 분할 함수 또는 정규화 상수를 나타내는 데 사용할 것입니다. 
+
+$$
+\begin{equation}
+\begin{aligned}
+\mathfrak{I}(x,\tau) = \lambda^i (\tau)\zeta_i (x) + \ln Z
+\end{aligned}
+\end{equation}
+$$
+
+이 매개변수화 하에, 피셔 정보 메트릭 $\bold{I}(\lambda)$는 다음과 같습니다:
+
+$$
+\begin{equation}
+\begin{aligned}
+\ell & = \int_0^t \sqrt{g_{ij}\.{\lambda}^{i}\.{\lambda}^{j}} d\tau \\
+g &= \bold{I}(\lambda) \Leftrightarrow g_{ij} = cov(\zeta_i(x),\zeta_j(x)) = E\Bigg[\cfrac{\partial\Im}{\partial\lambda^{i}} \cfrac{\partial\Im}{\partial\lambda^{j}} \Bigg] = \cfrac{\partial D[p_{\lambda^{'}}(x)||p_{\lambda}(x)]}{\partial\lambda^{'i}\partial\lambda^{'j}}\Biggm\vert_{\lambda^{'} = \lambda}
+\end{aligned}
+\end{equation}
+$$
+
+
+주목할 점은 정보 기하학이 상태 공간 그 자체가 아니라 상태에 대한 밀도를 매개변수화하는 공액 변수 공간에 있다는 것입니다. 이 공간은 통계적 다양체이며, 그 기하학은 나중에 베이지안 역학의 중심적인 측면이 될 것입니다. 현재로서는 정보, 기하학, 통계 역학 간의 깊은 관계를 예고하고 있습니다 (Crooks, 2007; Kleeman, 2014).
+
+(15)의 마지막 등식은 두 확률 분포 사이의 발산의 두 번째 도함수를 단순하게 계산함으로써 확인할 수 있습니다. 이 확률 분포들은 무한히 가까이 있으며, 여기서 $\lambda^{'} = \lambda + d\lambda$입니다. 이는 통계적 다양체 위에서 정보 길이가 매개변수화된 밀도가 빨리 변할 때 더 빨리 축적된다는 것을 의미합니다. 이 해석은 또한 통계적 다양체에서 작은 이동 $d\lambda \rightarrow 0$에 대한 연속적인 밀도 간의 발산(제곱근)의 축적으로 정보 길이를 설명하는 것을 허용합니다.
+
+$$
+\begin{equation}
+\begin{aligned}
+\ell & = \int d \ell \\
+d\ell^2 & = g_{ij}d\lambda^j d\lambda^i \\
+\cfrac{1}{2}d\ell^2 &= D[p_{\lambda^{'}}(x)||p_{\lambda}(x)] = \cfrac{1}{2} \cfrac{\partial D[p_{\lambda^{'}}(x)||p_{\lambda}(x)]}{\partial\lambda^{'i} \partial\lambda^{'j}}\Biggm\vert_{\lambda^{'}=\lambda} d\lambda^j \lambda^i \\
+\end{aligned}
+\end{equation}
+$$
+
+
 #### Random dynamical systems and Markov blankets
 #### Markov blankets and marginal flows
 #### Summary
