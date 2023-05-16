@@ -450,7 +450,8 @@ We can express this active resistance to dissipation in terms of entropy product
 $$
 \begin{equation} \tag{2.4}
 \begin{aligned}
-\\
+\dot{H}^{\alpha} &= \int p(\pi) f_{\alpha}(\pi)\cdot\nabla_{\alpha}\Im(\pi)d\pi \\
+&= -\int p(\pi)\nabla_{\alpha} \Im(\pi)\cdot\Gamma_{\alpha\alpha}\nabla_{\alpha}\Im(\pi)d\pi \leq 0
 \end{aligned}
 \end{equation}
 $$
@@ -460,7 +461,7 @@ It follows that autonomous entropy production is always zero or less (because th
 $$
 \begin{equation} \tag{2.5}
 \begin{aligned}
-\\
+f_{\alpha}(\alpha) = (Q_{\alpha\alpha} - \Gamma_{\alpha\alpha})\nabla_{\alpha}\Im(\alpha) \Rightarrow p(\dot{\alpha}|\alpha) = \mathcal{N}(f_{\alpha}(\alpha), 2\Gamma_{\alpha}) \\
 \end{aligned}
 \end{equation}
 $$
