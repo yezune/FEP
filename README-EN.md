@@ -312,16 +312,16 @@ $$
 
 #### Random dynamical systems and Markov blankets
 
-마르코프 담요는 통계적 의미에서 두 다른 집합을 분리하는 상태 집합입니다. 마르코프 담요라는 용어는 베이지안 네트워크나 그래프의 맥락에서 도입되었고(Perl, 1988), 영향을 받는 집합의 자식(영향을 받는 상태의 집합), 그것의 부모(그것에 영향을 주는 상태의 집합), 그리고 그 자식들의 부모를 가리킵니다. 마르코프 담요의 존재는 상태를 내부와 외부 상태로 분할하게 합니다. 여기서 외부 상태는 마르코프 담요에 의해 내부(섬) 상태로부터 숨겨집니다(절연됩니다). 즉, 외부 상태는 내부 상태를 통해 간접적으로만 볼 수 있습니다. 또한, 마르코프 담요는 외부 상태의 자식인지 아닌지에 따라 두 집합으로 분할할 수 있습니다. 이를 각각 감각 상태와 활성 상태라고 부르겠습니다: $b = \lbrace s,a \rbrace \in B$ . 간단히 말하면, 마르코프 담요의 존재는 상태를 외부, 감각, 활성, 내부 상태로 분할하는 것을 의미합니다: $x = \lbrace \eta,s,a,\mu \rbrace \in X$. 외부 상태는 내부 상태에 영향을 주지 않는 감각 상태를 유발하며, 내부 상태는 외부 상태에 영향을 주지 않는 활성 상태를 유발합니다. 중요한 것은, 마르코프 담요에 의해 유발된 의존성들이 행동-인지 사이클을 떠올리게 하는 원형 인과성을 만들어낸다는 점입니다: 그림 1과 (Fuster, 2004)을 참고하십시오. 여기서 원형 인과성이란 외부 상태가 감각 상태를 통해 내부 상태에 변화를 유발하고, 내부 상태가 활성 상태를 통해 외부 상태에 다시 연결되어, 내부와 외부 상태가 간접적이고 상호적인 방식으로 서로에게 영향을 주는 것을 의미합니다.
+A Markov blanket is a set of states that separates two other sets in a statistical sense. The term Markov blanket was introduced in the context of Bayesian networks or graphs (Pearl, 1988) and refers to the children of a set (the set of states that are influenced), its parents (the set of states that influence it) and the parents of its children. The existence of a Markov blanket induces a partition of states into internal and external states, where external states are hidden (insulated) from the internal (insular) states by the Markov blanket. In other words, external states can only be seen vicariously by internal states, through blanket states. Furthermore, the Markov blanket can itself be partitioned into two sets that are, and are not, children of external states. We will refer to these as sensory states and active states respectively: $b = \lbrace s,a \rbrace \in B$ . Put simply, the existence of a Markov blanket implies a partition of states into external, sensory, active and internal states: $x = \lbrace \eta,s,a,\mu \rbrace \in X$. External states cause sensory states that influence – but are not influenced by – internal states, while internal states cause active states that influence – but are not influenced by – external states. Crucially, the dependencies induced by Markov blankets create a circular causality that is reminiscent of the action-perception cycle: see Figure 1 and (Fuster, 2004). Circular causality here means that external states cause changes in internal states, via sensory states, while the internal states couple back to the external states through active states, such that internal and external states influence each other in a vicarious and reciprocal fashion.
 
 #### Markov blankets and marginal flows
 
-다음 섹션에서는 정보 이론의 관점에서 자기 조직화에 대한 마르코프 담요의 영향을 논의하겠습니다. 이 접근법은 외부 상태가 활성 상태와 내부 상태에, 내부 상태가 감각 상태와 외부 상태에 영향을 미치는 것을 배제함으로써 상태의 분할 사이의 조건부 독립성에 기반을 두고 있습니다. 이 동적 아키텍처는 아래의 주변 흐름 레마와 그 부정리들을 통해 요약됩니다. 간단히 말하면, 이 결과들은 마르코프 담요에 의해 의미되는 조건부 독립성 하에서 균형이 없는 정상 상태에서의 흐름을 표현하고, 그 반대의 경우도 마찬가지입니다. 다시 말해, 그들은 랑제뱅 흐름에 의해 매개되는 희박한 영향력을 상태의 부분 집합 간의 조건부 독립성과 연결합니다. 실질적으로, 이것은
-(1.8)에서의 흐름에 대한 표준 형태를 마르코프 담요를 포함하는 상태의 분할로 일반화합니다. 부록 B에는 이에 대한 증명이 포함되어 있으며, 희박한 영향력이 조건부 독립성을 보증하고 그 반대의 경우에 대한 보완적인 관점을 고려합니다.
+In the next section, we will unpack the implications of Markov blankets for self-organisation in terms of information theory. This treatment rests upon the conditional independencies among the partition of states that result from precluding an influence of external states on active and internal states – and an influence of internal states on sensory and external states. This dynamical architecture is summarised in terms of a marginal flow lemma and its corollaries below. In brief, these results express the flow at nonequilibrium steady-state under the conditional independencies implied by a Markov blanket and vice versa. In other words, they connect the sparse influences mediated by Langevin flow to conditional independencies among subsets of states. Effectively, this
+generalises the standard form for flow in (1.8) to a partition of states that contains a Markov Blanket. Appendix B contains the accompanying proofs and considers the complementary perspectives on how sparse influences underwrite conditional independence and vice versa.
 
-NESS 밀도의 층화에 대한 마르코프 담요의 일반화는 주변 흐름 개념에 기반을 두고 있습니다. 즉, 다른 상태들을 평균내(즉, 주변화) 상태의 흐름입니다. 우리는 ~ 기호를 사용하여 상태의 부분집합의 보완을 나타낼 것입니다. 예를 들어, $x = (\mu, \dot{\mu})$.
+The generalisation of the NESS density laminar to Markov blankets rests on the notion of marginal flow; namely, the flow of certain states averaged (i.e., marginalised) over other states. We will use the ~ notation to denote the complement of a subset of states; for example, $x = (\mu, \dot{\mu})$.
 
-**레마** (주변 흐름): 균형이 없는 정상 상태에서의 약 혼합 랜덤 동적 시스템에 대해, 상태 집합 $\eta \in X$의 주변 흐름 $f_{\eta}(\mu)$은 다른 상태 집합 $\mu \in X$의 보완에 대해 평균된 값으로서, 해당 주변 밀도의 로그 기울기를 통해 표현될 수 있다:
+**Lemma** (marginal flow): for any weakly mixing random dynamical system at nonequilibrium steady-state, the marginal flow $f_{\eta}(\mu)$ of any subset of states $\eta \in X$, averaged under the complement of another $\mu \in X$ can be expressed in terms of the gradients of the logarithm of the corresponding marginal density:
 
 $$
 \begin{equation}
@@ -331,40 +331,40 @@ f_{\eta(\mu)} \triangleq E_{p(\tilde{\mu}|\mu)}[f_{\eta}(\mu,\tilde{\mu})] = (Q_
 \end{equation}
 $$
 
-부정리 (조건부 독립성): 만약 한 상태 집합의 흐름이 다른 상태에 의존하지 않는다면, 그것은 두 번째 부분집합에 대한 기대 흐름이 된다. 예를 들어, 마르코프 담요에 대해:
+**Corollary** (conditional independence): if the flow of one subset of states does not depend on another, then it becomes the flow expected under the second subset. For example, in terms of the Markov blanket:
 
 $$
 \begin{equation}
 \begin{aligned}
 
 \begin{bmatrix}
- f_{\eta}(x) \\
- f_{s}(x) \\
- f_{\mu}(x) \\
- f_{a}(x) \\
+  f_{\eta}(x) \\
+  f_{s}(x)  \\
+  f_{\mu}(x) \\
+  f_{a}(x)  \\
 \end{bmatrix}
 = 
 \begin{bmatrix}
- f_{\eta}(\eta,x) \\
- f_{s}(\eta,x) \\
- f_{\mu}(\mu,x) \\
- f_{a}(\mu,x) \\
+  f_{\eta}(\eta,x) \\
+  f_{s}(\eta,x)  \\
+  f_{\mu}(\mu,x) \\
+  f_{a}(\mu,x)  \\
 \end{bmatrix}
 =
 \begin{bmatrix}
- (Q_{\eta\eta}-\Gamma_{\eta\eta})\nabla_{\eta}\Im(\eta,b) \\
- (Q_{ss}-\Gamma_{ss})\nabla_{s}\Im(\eta,b) + Q_{sa}\nabla_{a}\Im(\eta,b) \\
- (Q_{\mu\mu}-\Gamma_{\mu\mu\eta})\nabla_{\mu}\Im(\mu,b) \\
- (Q_{aa}-\Gamma_{aa})\nabla_{a}\Im(\eta,b) + Q_{as}\nabla_{s}\Im(\mu,b) \\
+  (Q_{\eta\eta}-\Gamma_{\eta\eta})\nabla_{\eta}\Im(\eta,b) \\
+  (Q_{ss}-\Gamma_{ss})\nabla_{s}\Im(\eta,b) + Q_{sa}\nabla_{a}\Im(\eta,b) \\
+  (Q_{\mu\mu}-\Gamma_{\mu\mu\eta})\nabla_{\mu}\Im(\mu,b) \\
+  (Q_{aa}-\Gamma_{aa})\nabla_{a}\Im(\eta,b) + Q_{as}\nabla_{s}\Im(\mu,b) \\
 \end{bmatrix}
 
 \end{aligned}
 \end{equation}
 $$
 
-간단히 말해서, 마르코프 담요에 의해 유발된 조건부 독립성은 외부 상태의 흐름이 모든 내부 상태에 대해 동일하다는 것을 의미하며, 이는 내부 상태에 대한 평균과 같습니다(다른 분할에 대해서도 마찬가지입니다).
+In short, the conditional independencies induced by the Markov blanket mean that the flow of external states is the same for every internal state, which is just its average over the internal states (similarly for other partitions).
 
-부정리 (기대 흐름): 모든 다른 상태에 대해 평균화된 어떤 부분 집합 $\eta \subset x$의 주변 흐름은 그 주변 밀도의 기울기에만 의존하며, 그 보완과의 회전형 결합이 없다고 가정합니다:
+**Corollary** (expected flow): the marginal flow of any subset $\eta \subset \subset x$ averaged over all other states depends only on the gradients of its marginal density, provided there is no solenoidal coupling with its complement:
 
 $$
 \begin{equation}
@@ -374,15 +374,30 @@ f_{\eta}(\eta) = (\Gamma_{\eta\eta} - Q_{\eta\eta})\nabla_{\eta}\ln p(\eta) = (Q
 \end{equation}
 $$
 
-이것은 $\eta = \mu$이고 $Q_{\eta\eta}=0$인 경우 주변 흐름 레마의 특별한 경우입니다. 이것은 모든 상태 또는 상태의 부분집합의 기대 흐름이, 모든 다른 상태에 대해 평균을 낼 때, 모든 상태가 함께 고려될 때와 정확히 동일한 방식으로 행동할 것임을 의미합니다. 다시 말해, 그것은 그것의 (주변) 밀도의 경사를 오를 것입니다.
+This is a special case of the marginal flow lemma, when $\eta = \mu$ and $Q_{\eta\eta}=0$ . It implies that the expected flow of any state or subset of states, averaged over all other states, will behave in exactly the same way as all states considered together. In other words, it will ascend the gradients of its (marginal) density.
 
-주변 흐름 레마는 우리가 (21)의 흐름에 대한 용어로 그림 1의 구조적 또는 확률적 그래픽 모델에 내재된 조건부 독립성을 표현할 수 있게 해줍니다. 즉, 시스템이 균형이 없는 정상 상태에서 마르코프 담요를 유지하면, 그 시스템은 특정 상태에만 의존하는 흐름을 가져야 합니다. 이 구조화된 동력학은 그 후의 모든 것을 보증합니다.
+The marginal flow lemma allows us to express the conditional independencies implicit in the structural or probabilistic graphical model of Figure 1 in terms of the flows in (21). In other words, if a system maintains a Markov blanket at nonequilibrium steady-state, then it must possess flows that depend only upon certain states. This structured dynamics underwrites everything that follows.
 
 #### Summary
 
-이 섹션에서는 우리가 나중에 다양한 설정에서 동력학을 특성화하기 위해 참조할 기술적 기반을 소개하였습니다. 그것의 초점은 논스테디 상태로의 자기조직화였으며, 이것은 밀도 동력학의 Fokker Planck 형태의 해결책으로 특성화될 수 있습니다. 중요하게도, 이것은 논스테디 상태 밀도, 놀람 또는 잠재력에 대한 용어로 상태의 흐름을 표현할 수 있게 합니다. 우리는 간단히 정보 길이에 대한 밀도 동력학의 기하학을 살펴봤습니다. 마지막으로, 마르코프 담요에 의해 암시된 조건부 독립성은 특정 상태의 (주변) 흐름이 다른 상태에 어떻게 의존하는지에 대한 용어로 표현되었습니다. 마르코프 담요에 의해 유발된 주변 흐름은 나중에 정보 기하학에 대한 경사 흐름을 해석할 때 중요해질 것입니다 - 3부
+This section has introduced the technical foundations that we will call upon later to characterise dynamics in various settings. Its focus was on self-organisation to nonequilibrium steady-state, which can be characterised as the solution to the Fokker Planck formulation of density dynamics. Crucially, this enables one to express the flow of states in terms of a nonequilibrium steady-state density, surprisal or potential. We have looked briefly at the geometry of density dynamics in terms of information length. Finally, the conditional independencies implied by a Markov blanket have been expressed in terms of how the (marginal) flow of certain states depends on other states. The marginal flows induced by a Markov blanket will become important later, when we interpret gradient flows in relation to information geometry – in Part Three.
+
+![Figure 1](./img/01.png)
+<p style="text-align: center;">Figure 1</p>
+
+_Markov blankets_. This probabilistic graphical model illustrates the partition of states into internal states (blue) and hidden or external states (cyan) that are separated by a Markov blanket – comprising sensory (magenta) and active states (red). The upper panel shows this partition as it would be applied to action and perception in a brain. In this setting, self-organisation of internal states then corresponds to perception, while active states couple brain states back to external states. The lower panel shows the same dependencies but rearranged so that the internal states are associated with the intracellular states of a Bacillus, where the sensory states become the surface states or cell membrane overlying active states (e.g., the actin filaments of the cytoskeleton). Note that the only missing influences are between internal and external states – and directed influences from external (respectively internal) to active (respectively sensory) states. The surviving directed influences are highlighted with dotted connectors. Autonomous states are those states that are not influenced by external states, while particular states constitute a particle; namely, autonomous and sensory states – or blanket and internal states. The equations of motion in the upper panel follow from the marginal flow lemma.
 
 ### Symmetry breaking and self-organsation
+
+_"How can the events in space and time which take place within the spatial boundary of a living organism be accounted for by physics and chemistry?"_(Schrödinger, 1944)
+
+The introduction of Markov blankets – and the distinction between the external and internal states of a particle – changes the game somewhat, in terms of ensemble densities. In the absence of a partition, we can only talk about the entropy of a density and how it changes with time. However, in the setting of a partition, we can consider the entropy of particular states in relation to hidden states (or vice versa). This relative entropy is known as mutual information. So, are we interested in systems with a high or a low mutual information? It transpires that the answer is both, in the sense that we are interested in particles that explore their state-space but have a well-defined attracting manifold with low measure (i.e., low entropy). This speaks to a dialectic between opposing constraints. In brief, if the NESS entropy of particular states is small, then the average uncertainty about particular states, given external states must be small. In other words, knowing the external state resolves ambiguity about particular states. However, at the same time, the mutual information or coupling between external and particular states must also be small; otherwise, there will be a risk of being unable to disambiguate external from particular states; i.e., the particle will dissipate or dissolve. Heuristically, this allows for the fact that we can identify Markov blankets that are distinct from their external milieu (e.g., disambiguating a fish from the water in which it is swimming), while – at the same time – observing an intricate and self-organised coupling between particular dynamics and external states (e.g., a particular fish swimming in water). Even more simply, a fish remains a fish, despite the myriad of delicate, context-sensitive behaviours that preserve its integrity (Clarke et al., 2015). In what follows, we consider how this dialectic emerges from a straightforward statistical treatment using information theory.
+
+Having established a partition of systemic states, we are now in a position to define the sort of self-organising systems we want to characterise. In brief, these are systems with space-filling random dynamical attractors with low measure. In other words, their probability mass is concentrated in small volumes that are connected in a way that permits itinerant (i.e. wandering) percolation of trajectories through state-space, from one manifold of the attractor to another: c.f., the percolation produced by phase transitions in deterministic systems (Vespignani and Zapperi, 1998). The implicit symmetry breaking (i.e., divergence of nearby trajectories to different regimes of phase-space) is a hallmark of nonequilibrium dynamics (Evans and Searles, 2002) and is intimately related to phenomena like self-organised criticality in dynamical systems (Bak et al., 1988; Vespignani and Zapperi, 1998). Indeed, much of complexity science addresses the problem of how to formalise multiscale, itinerant and chaotic dynamics. This is a vast field, encompassing renormalisation group theory, scale-invariance, criticality and universality (Kwapien and Drozdz, 2012; Nicolis and Prigogine, 1977; Schwabl, 2002). In this monograph, we will elude many of the finer details (and phenomena such as bifurcations, frustration and phase transitions) and suppose that the interesting behaviour of self-organising systems can be captured by nonequilibrium steady-state densities with the right sort of shape.
+
+So, what is the right sort of shape? We start by considering the marginal (NESS) density over particular states. Given a partition into external and particular states, it is straightforward to characterise a simple form of self-organisation in terms of entropy production. This follows because there is a separation between autonomous $\alpha =\lbrace a,\mu\rbrace \in A$ and sensory states $s \in S$. Crucially, by definition, the flow of autonomous states does not depend on external states $\eta \in E$. This means that autonomous states will appear to suppress the self-information or surprisal of particular states $\pi\in P$ and its long-term average; namely, their entropy. From the marginal flow lemma (1.21), we have (ignoring solenoidal coupling between active and sensory states):
+
+
 #### Self-organisation and self-evidencing
 #### Self-organisation, frustration and supersymmetry
 #### Self-organisation and information length
