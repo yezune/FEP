@@ -2,4 +2,4 @@
 
 A Free Energy Principle for A Particular Physics
 
-[English](./README-EN.md) | [한국어](./README-KR.md)
+[English](./ref/A_Free_Energy_Principle_for_a_Particular_Physics.pdf) | [한국어](./README-KR.md)

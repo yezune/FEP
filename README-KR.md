@@ -55,7 +55,7 @@ and so, ad infinitum.*
 랑주벵 동역학: 이 형식은 시스템 상태 $x(\tau)$ (즉, 어떤 시스템의 상태)의 동역학을 상태 종속적인 흐름과 일부 무작위 플럭튜에이션 $\omega (\tau)$로 표현합니다 :
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.1}
 \begin{drcases}
 \begin{aligned}
 \dot{x} (\tau) & = f(x,\tau) + \omega \\
@@ -71,7 +71,7 @@ $$
 **경로 적분 공식:** 이 공식은 위의 랑제방 동역학에 의해 생성된 경로 또는 궤적 $x[\tau]$을, $x(0) \equiv x0$에서 다룹니다:
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.2}
 \begin{aligned}
 \mathfrak{I}(x[\tau]) & \triangleq - \ln \space p(x[\tau]) = \mathcal{A}(x[\tau]) \\
 \mathcal{A}(x[\tau]) & = \int_0^t \mathcal{L}(x,\dot{x}) d\tau \\
@@ -87,7 +87,7 @@ $$
 사물들이 어떻게 행동하는지의 특성화에 나타날 라그랑지안의 르장드르 변환인 _해밀토니안_ 을 소개하는 것이 유용할 것입니다:
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.3}
 \begin{aligned}
 \mathcal{H}(x,\.{x}) & =\.{x}\cfrac{\partial \mathcal{L}}{\partial \.{x}}-\mathcal{L}(x.\.{x})=\.{x}\cdot p - \mathcal{L}(x,\.{x}) \\
 &= \cfrac{1}{4\Gamma}\.{x}\cdot\.{x} + \cfrac{1}{h}V(x) \\
@@ -100,7 +100,7 @@ $$
 여기서 마지막 등식은 일반화된 _운동량_ 을 정의합니다. 무작위 변동이 가장 가능성이 높은 값인 0을 취할 때 가장 가능성이 높은 경로가 얻어진다는 점을 주목하십시오:
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.4}
 \.{x} = f(x) \Rightarrow \mathcal{H}(x,\.{x}) = \mathcal{L}(x,\.{x}) = - \cfrac{1}{2} \nabla \cdot f(x)
 \end{equation}
 $$
@@ -108,7 +108,7 @@ $$
 이는 가장 가능성이 높은 경로에 따른 해밀턴이 흐름의 발산으로 감소한다는 것을 의미합니다. 또한, 발산이 없는 흐름을 가진 보존 시스템(즉, 무시할 만큼 작은 무작위 플럭튜에이션)에서는 해밀턴이 어디에서나 0입니다. 이는 해밀토니언이 보존(즉, 고전) 역학을 특징짓는데 중요하다는 것을 보여줍니다. 마지막으로, 경로 종속적인 위상 측정치 $\Omega (x)$는 주어진 초기 밀도, $p_0(x_0)\equiv p(x,0)$에 대한 다음의 경로 적분에서 평균화될 수 있습니다:
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.5}
 E_{p(x[\tau],x_0)}[\Omega(x)] = \int dx_0 \int dx[\tau][\Omega(x[\tau])p(x[\tau]|x_0)p_0(x_0)]
 \end{equation}
 $$
@@ -118,7 +118,7 @@ $$
 **포커-플랑크 방정식:** 이 형식은 상태들에 대한 확률 밀도를 다루며, 이는 시간 $\tau$에 시스템이 상태 $x$에 있을 확률을 설명합니다. 랑제방 방정식 시스템이 주어지면, 다음과 같이 밀도 동력학을 설명할 수 있습니다:
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.6}
 \begin{aligned}
 \.{p}(x,\tau) &= Lp(x,\tau) = - \nabla \cdot j(x,\tau) \\
 L &= \nabla \cdot (\Gamma \nabla - f) \\
@@ -136,7 +136,7 @@ $$
 [^note-5]:간단하게 하기 위해, 우리는 $Q = -QT$가 $x$에 따라 변하지 않는다고 가정하겠습니다, 적어도 지역적으로는 말이죠. 더불어, 무작위 진동의 진폭은 구형이라고 가정되므로, 우리는 $\Gamma$를 스케일링된 항등 행렬 또는 스칼라 양으로 취급할 수 있습니다.
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.7}
 f =(Q-\Gamma)\nabla\Im
 \end{equation}
 $$
@@ -144,7 +144,7 @@ $$
 이 표준 형식을 사용하면(Yuan 등, 2010), $p(x) = exp(-\Im(x))$가 포커-플랑크 방정식의 해임을 간단하게 보여줄 수 있습니다(Friston and Ao, 2012). 정보 이론에서 스칼라 포텐셜 $\Im(x) = -\ln p(x)$는 자기 정보, _surprisal_ 또는 더 간단하게는 놀람(surprise)으로 알려져 있습니다(Jones, 1979; Tribus, 1961). 이는 우리가 NESS 밀도 또는 놀람에 따라 흐름을 표현할 수 있음을 의미하며, 이는 부록 B의 NESS 정리와 (Friston, 2013)에 따릅니다:
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.8}
 \begin{aligned}
 f & = (\Gamma - Q)\nabla\ln p(x) \\
  & \Rightarrow \cfrac{p(x)}{j(x)} = -Q\nabla \ln p(x) \Rightarrow \.{p}(x) = 0 \\
@@ -161,7 +161,7 @@ $$
 다음 단계는 포커-플랑크 방정식의 NESS 해를 경로 적분 형식에 대입하여, 놀람(surprisal)의 관점에서 표현된 작용을 통해 어떤 궤적의 확률을 표현하는 것입니다. 식 (2)와 식(8)에서 이것은 다음을 제공합니다:
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.9}
 \begin{aligned}
 \mathcal{A}(x[\tau]) & = \int_0^t \mathcal{L}(x,\.{x})d\tau \\
 \mathcal{L}(x,\.{x}) & = \cfrac{1}{2} [ \cfrac{1}{2\Gamma}( \.{x} - Q \nabla \Im ) \cdot ( \.{x} - Q \nabla \Im) + \.{x} \cdot \nabla \Im + \Gamma(\cfrac{1}{2}\nabla \Im \cdot \nabla \Im - \nabla^{2}\Im)] \\
@@ -174,7 +174,7 @@ $$
 중요한 점은, 식 (9)의 세 항이 무작위 변동의 진폭에 대해 다르게 의존한다는 것입니다. 이 의존성은 우리가 솔레노이달 흐름이 없는 1차원 시스템의 표현을 고려하면 더욱 명확하게 볼 수 있습니다:
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.10}
 \begin{aligned}
 \mathcal{A}(x[\tau]) & =\underbrace{\frac{1}{2} \int_0^t \frac{1}{2 \Gamma} \dot{x}^2 d \tau}_{\text {kinetic }}+\underbrace{\frac{1}{2} \int_0^t \dot{\mathfrak{I}} d \tau}_{\text {path-independent }}+\underbrace{\frac{1}{h} \int_0^t V(x) d \tau}_{\text {path-dependent }} \\
 \int_0^t \dot{\mathfrak{I}} d \tau & =\mathfrak{I}\left(x_t\right)-\mathfrak{I}\left(x_0\right) \\
@@ -190,7 +190,7 @@ $$
 이 한계에서, 고전적인 경로는 최소 행동의 변분 원칙으로 설명할 수 있는 가장 가능성이 높은 경로입니다:
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.11}
 \begin{aligned}
 \delta_x\mathcal{A}(Xx[\tau]) &= 0 \\ 
 &\Rightarrow \.{x}(\tau) = f(x(\tau)) \\
@@ -208,7 +208,7 @@ _“Time is designed in such a way that given the present, the future is indepen
 우리는 확률 측정과 미분 기하학에서 상속된 측정 척도라는 측면에서 '것들의 측정'에 관심이 있을 것입니다. 이 섹션은 확률 이론에 미분 기하학을 적용할 때 발생하는 길이와 정보 기하학에 대한 간단한 배경을 제공합니다. 여기서의 주요 메시지는 이 모든 측정이 시간에 깊이 있게 의존한다는 것입니다. 이 서문의 일환으로, 무작위 변동의 본질을 고려하는 것이 유용합니다. 나중에 우리는 이러한 변동이 집합 당 상태에 대해 충분히 빠르게 변동하는 상태의 혼합물이라는 것을 알게 될 것입니다. 이런 의미에서 무작위 변동은 (정의상) 느린 상태와 상관없는 빠른 상태입니다. 빠른 상태와 느린 상태의 암시적인 통계적 독립성은 우리가 '무작위' 변동에 대해 이야기할 수 있게 합니다. 식(1)의 랑게빈 동력학의 형태는 이 시간 척도의 분리를 보여줍니다. 예를 들어, $\Gamma$의 단위(초당)는 그것이 비율 상수의 역할을 하는 것을 제안합니다. 실제로, 한 가지 시각에서는, 변동의 진폭은 변동에 의한 상태의 분산 또는 분산이 시간에 걸쳐 얼마나 빠르게 축적되는지에 대응합니다(Cox and Miller, 1965). 또한, 정상 상태에서, 진폭은 흐름을 놀람의 기울기에 결합하는 효과적인 비율 상수입니다 -식(7). 다시 말해, 주어진 NESS 밀도에 대해, 흐름은 변동의 진폭에 비례하여 증가합니다. 길이라는 개념을 도입하여 이를 공식화할 수 있습니다:
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.12}
 \begin{aligned}
 \ell = \int_0^T \sqrt{ \dot{x}(\tau)^{i} g_{ij} \.{x}(\tau)^j } dt
 \end{aligned}
@@ -218,7 +218,7 @@ $$
 여기서 우리는 (아인슈타인) 합산 규칙을 사용했으며, 반복된 첨자와 아래 첨자에 대한 암시적인 합산이 있습니다. 식 (12)는 메트릭 텐서 $g_{ij}$가 제공하는 리만 메트릭을 사용하여 경로의 길이를 표현합니다. 지역적으로 최소 거리의 경로는 적위선(_geodesics_)이라고 불리며, 유클리드 공간에서의 직선의 아날로그입니다. 식 (10)에서, 낮은 진폭의 변동의 클래식한 한계에서 경로의 행동은 경로 길이의 상한선으로 해석될 수 있습니다 (코시-슈바르츠 부등식에 의해):
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.13}
 \begin{aligned}
  \lim_{Q,\Gamma \rightarrow 0}\mathcal{A}(x[\tau]) &= \int_0^T \dot{x}(\tau)^{i} g_{ij} \.{x}(\tau)^j dt \geq \ell^2 \\
 g &= \cfrac{1}{4\Gamma}
@@ -235,7 +235,7 @@ $$
 [^note-6]: 우리는 Z를 분할 함수 또는 정규화 상수를 나타내는 데 사용할 것입니다. 
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.14}
 \begin{aligned}
 \mathfrak{I}(x,\tau) = \lambda^i (\tau)\zeta_i (x) + \ln Z
 \end{aligned}
@@ -245,7 +245,7 @@ $$
 이 매개변수화 하에, 피셔 정보 메트릭 $I(\lambda)$는 다음과 같습니다:
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.15}
 \begin{aligned}
 \ell & = \int_0^t \sqrt{g_{ij}\.{\lambda}^{i}\.{\lambda}^{j}} d\tau \\
 g &= I(\lambda) \Leftrightarrow g_{ij} = cov(\zeta_i(x),\zeta_j(x)) = E\Bigg[\cfrac{\partial\Im}{\partial\lambda^{i}} \cfrac{\partial\Im}{\partial\lambda^{j}} \Bigg] = \cfrac{\partial D[p_{\lambda^{'}}(x)||p_{\lambda}(x)]}{\partial\lambda^{'i}\partial\lambda^{'j}}\Biggm\vert_{\lambda^{'} = \lambda}
@@ -259,7 +259,7 @@ $$
 (15)의 마지막 등식은 두 확률 분포 사이의 발산의 두 번째 도함수를 단순하게 계산함으로써 확인할 수 있습니다. 이 확률 분포들은 무한히 가까이 있으며, 여기서 $\lambda^{'} = \lambda + d\lambda$입니다. 이는 통계적 다양체 위에서 정보 길이가 매개변수화된 밀도가 빨리 변할 때 더 빨리 축적된다는 것을 의미합니다. 이 해석은 또한 통계적 다양체에서 작은 이동 $d\lambda \rightarrow 0$에 대한 연속적인 밀도 간의 발산(제곱근)의 축적으로 정보 길이를 설명하는 것을 허용합니다.
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.16}
 \begin{aligned}
 \ell & = \int d \ell \\
 d\ell^2 & = g_{ij}d\lambda^j d\lambda^i \\
@@ -274,19 +274,23 @@ $$
 중요한 정보 길이는 시간 자체가 진화하는 밀도를 매개변수화하고, $\lambda(\tau) = \tau \Rightarrow .{\lambda} = 1$ 그리고 따라서 시간은 정보 기하학을 가지고 있다. 어떤 초기 상태에서 준비된 시스템을 고려하십시오. 밀도 $p_0 \equiv p(x,0)$는 다음과 같습니다.
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.17}
 \begin{aligned}
-\ell & = \int d \ell \\
-d\ell^2 & = g_{ij}d\lambda^j d\lambda^i \\
-\cfrac{1}{2}d\ell^2 &= D[p_{\lambda^{'}}(x)||p_{\lambda}(x)] = \cfrac{1}{2} \cfrac{\partial D[p_{\lambda^{'}}(x)||p_{\lambda}(x)]}{\partial\lambda^{'i} \partial\lambda^{'j}}\Biggm\vert_{\lambda^{'}=\lambda} d\lambda^j \lambda^i \\
+p(x,\tau) &= p_{0} + \tau\dot{p}_{0} + ... \\
+&= p_{0} + \tau L p_{0} + ... \\
+\\
+\ell(t) &= \int_{0}^{t} \sqrt{g(\tau)}d\tau \\
+g(\tau) &= I(\tau) = E_{p_{0}}[(\partial_{\tau}\Im_{0})^{2}] = \int\cfrac{(L_0 P_0)^2}{p_0}dx \\
+L(\tau) &= \nabla\cdot\Gamma\nabla - \nabla\cdot f(\tau)
 \end{aligned}
 \end{equation}
 $$
 
+
 이 문맥에서, 피셔 정보 메트릭은 밀도가 진화하는 속도를 반영하는 시간적 스케일링을 제공합니다. (16)에서:
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.18}
 \begin{aligned}
 d\ell(\tau)^2 &= g(\tau)d\tau^2 \\
 \cfrac{1}{2}d\ell(\tau)^2 &= D[p(x,\tau + d\tau)||p(x,\tau)] \\
@@ -299,7 +303,7 @@ $$
 (18)의 정보 길이는 균형 상태 또는 비균형 정상 상태로의 수렴을 유용하게 특성화합니다 (Kim, 2018). 시간이 지나면서 모든 초기 상태에서의 미래 밀도는 NESS 밀도로 수렴하고 정보 길이는 점근적 한계로 수렴합니다. 이 한계는 초기 밀도에서 NESS 밀도까지의 거리를 측정합니다. 수렴 시, (18)의 발산은 사라지고 정보 길이의 추가 증가는 없습니다.
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.19}
 \begin{aligned}
 \lim_{\tau \to \infty}D[p(x,\tau)||p(x)] = 0 \Rightarrow d\ell(\tau) = 0 \\
 \end{aligned}
@@ -324,7 +328,7 @@ NESS 밀도의 층화에 대한 마르코프 담요의 일반화는 주변 흐�
 **레마** (주변 흐름): 균형이 없는 정상 상태에서의 약 혼합 랜덤 동적 시스템에 대해, 상태 집합 $\eta \in X$의 주변 흐름 $f_{\eta}(\mu)$은 다른 상태 집합 $\mu \in X$의 보완에 대해 평균된 값으로서, 해당 주변 밀도의 로그 기울기를 통해 표현될 수 있다:
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.20}
 \begin{aligned}
 f_{\eta(\mu)} \triangleq E_{p(\tilde{\mu}|\mu)}[f_{\eta}(\mu,\tilde{\mu})] = (Q_{\eta\eta}-\Gamma_{\eta\eta})\nabla_{\eta} \Im(\mu) + Q_{\eta\tilde{\eta}}\nabla_{\tilde{\eta}}\Im(\mu) \\
 \end{aligned}
@@ -334,30 +338,26 @@ $$
 부정리 (조건부 독립성): 만약 한 상태 집합의 흐름이 다른 상태에 의존하지 않는다면, 그것은 두 번째 부분집합에 대한 기대 흐름이 된다. 예를 들어, 마르코프 담요에 대해:
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.21}
 \begin{aligned}
-
 \begin{bmatrix}
  f_{\eta}(x) \\
  f_{s}(x) \\
  f_{\mu}(x) \\
  f_{a}(x) \\
-\end{bmatrix}
-= 
+\end{bmatrix} = 
 \begin{bmatrix}
  f_{\eta}(\eta,x) \\
  f_{s}(\eta,x) \\
  f_{\mu}(\mu,x) \\
  f_{a}(\mu,x) \\
-\end{bmatrix}
-=
+\end{bmatrix} = 
 \begin{bmatrix}
  (Q_{\eta\eta}-\Gamma_{\eta\eta})\nabla_{\eta}\Im(\eta,b) \\
  (Q_{ss}-\Gamma_{ss})\nabla_{s}\Im(\eta,b) + Q_{sa}\nabla_{a}\Im(\eta,b) \\
  (Q_{\mu\mu}-\Gamma_{\mu\mu\eta})\nabla_{\mu}\Im(\mu,b) \\
  (Q_{aa}-\Gamma_{aa})\nabla_{a}\Im(\eta,b) + Q_{as}\nabla_{s}\Im(\mu,b) \\
 \end{bmatrix}
-
 \end{aligned}
 \end{equation}
 $$
@@ -367,7 +367,7 @@ $$
 부정리 (기대 흐름): 모든 다른 상태에 대해 평균화된 어떤 부분 집합 $\eta \subset x$의 주변 흐름은 그 주변 밀도의 기울기에만 의존하며, 그 보완과의 회전형 결합이 없다고 가정합니다:
 
 $$
-\begin{equation}
+\begin{equation}\tag{1.22}
 \begin{aligned}
 f_{\eta}(\eta) = (\Gamma_{\eta\eta} - Q_{\eta\eta})\nabla_{\eta}\ln p(\eta) = (Q_{\eta\eta} - \Gamma_{\eta\eta})\nabla_{\eta}\Im(\eta) \\
 \end{aligned}
@@ -381,6 +381,11 @@ $$
 #### Summary
 
 이 섹션에서는 우리가 나중에 다양한 설정에서 동력학을 특성화하기 위해 참조할 기술적 기반을 소개하였습니다. 그것의 초점은 논스테디 상태로의 자기조직화였으며, 이것은 밀도 동력학의 Fokker Planck 형태의 해결책으로 특성화될 수 있습니다. 중요하게도, 이것은 논스테디 상태 밀도, 놀람 또는 잠재력에 대한 용어로 상태의 흐름을 표현할 수 있게 합니다. 우리는 간단히 정보 길이에 대한 밀도 동력학의 기하학을 살펴봤습니다. 마지막으로, 마르코프 담요에 의해 암시된 조건부 독립성은 특정 상태의 (주변) 흐름이 다른 상태에 어떻게 의존하는지에 대한 용어로 표현되었습니다. 마르코프 담요에 의해 유발된 주변 흐름은 나중에 정보 기하학에 대한 경사 흐름을 해석할 때 중요해질 것입니다 - 3부
+
+![Figure 1](./img/01.png)
+<p style="text-align: center;">Figure 1</p>
+
+마르코프 담요. 이 확률 그래픽 모델은 상태를 내부 상태(파란색)와 마르코프 담요 - 감각 상태(자홍색)와 활동 상태(빨간색)로 구성된 -에 의해 구분된 숨겨진 또는 외부 상태(청록색)로 분할하는 것을 보여줍니다. 상단 패널은 이 분할이 뇌에서의 행동과 인지에 적용될 때의 모습을 보여줍니다. 이 설정에서, 내부 상태의 자기 조직화는 인지에 해당하며, 활동 상태는 뇌 상태를 외부 상태에 다시 연결합니다. 하단 패널은 동일한 의존성을 보여주지만, 내부 상태가 박테리아의 세포 내 상태와 관련되도록 재배열되어, 감각 상태가 활동 상태(예: 세포골격의 액틴 필라멘트)를 덮는 표면 상태 또는 세포막이 됩니다. 유의할 점은 내부와 외부 상태 사이, 그리고 외부(내부에 대한)에서 활동(감각) 상태로의 지시된 영향력이 유일하게 누락된 것입니다. 생존하는 지시된 영향력은 점선 커넥터로 강조되어 있습니다. 자율적인 상태는 외부 상태에 의해 영향을 받지 않는 상태이며, 특정한 상태는 입자를 구성합니다. 즉, 자율적이고 감각적인 상태 - 또는 담요와 내부 상태입니다. 상단 패널의 운동 방정식은 주변 흐름 보조정리로부터 따릅니다.
 
 ### Symmetry breaking and self-organsation
 #### Self-organisation and self-evidencing
