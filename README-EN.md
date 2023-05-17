@@ -624,14 +624,141 @@ Here, changes in electrochemical states are coupled through the local average $s
 Similarly, the (Newtonian) motion of each macromolecule depends upon the electrochemical state of its
 neighbours
 
+$$
+\begin{equation}\tag{3.2}
+\begin{aligned}
+  \dot{a}_n^{(i)} &= (1+\tfrac{1}{64})\mu^{(i)}s_n^{(i)}+\omega_n \\
+  \dot{s}_n^{(i)} &=  2F^{(i)} - 8s_n^{(i)} - a_n^{(i)}+\omega_n \\
+  \\
+  F^{(i)} &= \textstyle\sum_{j=\{j:\Delta_{ij}<1\}}\Delta_{ij}\left( \cfrac{8exp(-|a_e^{(j)}-a_e^{(i)}|)-4}{\Delta_{ij}^2}-\frac{1}{\Delta_{ij}^3} \right) \\
+\end{aligned}
+\end{equation}
+$$
+
+This motion rests on forces $F^{(i)}$ exerted by other macromolecules that comprise a strong repulsive force (with an inverse square law) and a weaker attractive force that depends on electrochemical states. This force was chosen so that macromolecules with coherent electrochemical states are attracted to each other but repel otherwise. The remaining two terms in the second equality represent viscosity that depends upon velocity and an exogenous force that attracts all macromolecules to the origin – as if they were moving in a simple (quadratic) potential energy well. This ensures the synthetic soup falls to the bottom of the well. We now take a closer look at the self-organisation that emerges under these equations of motion.
+
+![FIGURE 5](./img/05.png)
+<p style="text-align: center;">FIGURE 5</p>
+
+Synthetic soups and active matter. This graphic describes the equations of motion used to simulate coupled (random) dynamical systems (i.e., particles) to illustrate self-organisation. The equations describe the dynamics (that have been separated into electrochemical and Newtonian components). The schematics illustrate the conditional dependencies among particles, where each particle comprises its Markov blanket and internal states. The states with orange outlines are electrochemical states and the remaining pair constitute the Newtonian states. Note that active states (red circles) play the role of position, while sensory states (magenta circles) become velocity that depends on active states. These roles of active and sensory states will figure later, when we consider classical mechanics.
+
 #### A random dynamical attractor and its Markov blankets
+
+In the simulations below an ensemble of 128 particles (i.e., macromolecules) were integrated using Euler’s (forward) method with step sizes of 1/512 seconds and initial conditions sampled from a normal distribution. By adjusting the parameters in the equations of motion (3.1) and (3.2), one can produce a repertoire of plausible and interesting behaviours (the code for these simulations and the figures in this monograph are available as part of the SPM academic software – see software note). These behaviours range from gas-like behaviour (where particles occasionally get close enough to interact) to a cauldron of activity, when particles are forced together at the bottom of the potential well. In this regime, macromolecules are sufficiently close for the inverse square law to blow them apart. In other regimes, a more crystalline structure emerges with muted interactions.
+
+However, for most values of the parameters, weakly mixing behaviour emerges, as the ensemble approaches its random global attractor (usually after about 1000 seconds). Generally, macromolecules repel each other initially and then fall back towards the centre, finding each other as they coalesce. Local interactions then mediate a self- organisation, in which particles are passed around (sometimes to the periphery) until neighbours jostle comfortably with each other. In brief, the motion and electrochemical dynamics look like an active, restless soup – but does it contain a Markov blanket?
+
 #### The Markov blanket
+
+Because the structural and functional dependencies share the same adjacency matrix – which depends upon position – one can use the adjacency matrix to identify the principal Markov blanket using spectral graph theory: the Markov blanket of any subset of states encoded by a binary vector with elements $\mathcal{X}_i \in \{0,1\}$ is given by $[B\cdot\mathcal{X}]\in\{0,1\}$, where the Markov blanket matrix $B=A+A^T+A^TA$ encodes the children, parents and parents of children. The principal eigenvector of the (symmetric) Markov blanket matrix will – by the Perron–Frobenius theorem – contain positive values. These values reflect the degree to which each state belongs to the cluster that is most densely coupled. In what follows, the internal particles (i.e., macromolecules) were the particles with the k = 8 largest values. Having identified internal particles, the Markov blanket can be recovered from the Markov blanket matrix using $[B\cdot\mathcal{X}]$ and divided into sensory and active particles – depending upon whether they are influenced by the external particles or not.
+
+![FIGURE 6](./img/06.png)
+<p style="text-align: center;">FIGURE 6</p>
+
+Ensemble dynamics and self-organisation. The upper panels show the position of (128) macromolecules comprising an ensemble, after 2048 seconds. The upper left panel shows the dynamical status (three blue dots per macromolecule) of each particle centred on its location (larger dots). The ensemble of macromolecules has been partitioned into external or hidden (cyan), sensory (magenta), active (red) and internal (blue) particles. The upper right panel is an image of an endospore stain of sporulating B. Subtilis. This graphic illustrates the spatiotemporal scale at which the simulations could be operating. The lower panels show the evolution of electrochemical (middle panel) and spatial (lower panel) states of each particle as a function of time. The (electrochemical) dynamics of the internal (blue) and external (cyan) states are shown for 512 seconds. The lower panel shows the position of internal (blue) and external (cyan) states over the entire simulation period. These simulations are solutions of the stochastic differential equations in the main text – using a forward Euler method with 1/512 second time steps and random Gaussian fluctuations with a standard deviation of an eighth.
+
 #### The emergence of order
+
+Given the internal particles and their Markov blanket, we can now follow the assembly of constituent macromolecules and visualise their trajectories. The upper panels of Figure 6 show the position of (128) macromolecules comprising the ensemble. The upper left panel shows the electrochemical status (three blue dots per macromolecule) of each macromolecule centred on its location (larger dots) at the end of the simulation. The ensemble has been partitioned into external or hidden (cyan), sensory (magenta), active (red) and internal (blue) particles. It can be seen that the resulting Markov blanket surrounds a rod-like structure (i.e., Bacillus) of internal particles. Interestingly, the active macromolecules support the sensory macromolecules that are exposed to external particles. This is reminiscent of a biological cell with a cytoskeleton of active molecules (e.g., actin filaments), which are surrounded by sensory molecules (e.g., a cell surface). The upper right panel is an image of an endospore stain of sporulating B. Subtilis. This graphic illustrates the spatiotemporal scale at which we can imagine the simulations are operating. The lower panels show the evolution of electrochemical (middle panel) and Newtonian (lower panel) particular states as a function of time. One can see initial (chaotic) transients that resolve fairly quickly, with itinerant behaviour as they approach their attracting set. The lower panel shows the position of internal (blue) and external (cyan) particles over the entire simulation period.
+
+Notice that something quite subtle is going on here. We started with an ensemble of particles (e.g., macromolecules), where each particle was characterised in terms of particular (i.e., sensory, active and internal) states. We then ended up with a single particle (e.g., a Bacillus or virus) characterised in terms of particular (i.e., external, sensory, active and internal) particles. In short, we have moved from a microscopic to a macroscopic scale, with blanket states at both. The next section looks more closely at this move. Here, we simply note that a macroscopic Markov blanket has emerged from simple self-organisation. So, what licenses us to describe the microscopic dynamics as self-organisation?
+
+Figure 7 demonstrates microscopic self-organisation in terms of the particular entropy of the ensemble's particles – and concomitant changes in terms of mutual information (i.e., complexity cost or risk) and conditional entropy (i.e., ambiguity). Here, the ensemble averages of these (relative) entropy measures were taken over all (128) macromolecules; where the Markov blanket of each particle comprises all but the third (electrochemical) hidden state. This information theoretic characterisation discloses, as expected, a monotonic decrease in particular entropy (and complexity cost) as the ensemble approaches its random dynamical attractor.
+
 #### Summary
 
+In summary, this section has described a somewhat arbitrary random dynamical system comprising an ensemble of particles, each with several dynamical states (three electrochemical and two describing position and velocity). Crucially, the flow or equations of motion were constructed to make electrochemical coupling among the simulated macromolecules depend upon position – and render their velocity dependent upon electrochemical states. This endows the ensemble with a dynamic and sparse coupling that readily enables the emergence of a Markov blanket; separating internal from external particles (and their constituent states). In this example, the internal particles (and Markov blanket) can be thought of as modelling a little virus-like particle or rod-like bacterium. We now have at hand an in-silico creature. Later, we will examine this synthetic creature to see whether the states of internal particles (e.g., intracellular electrochemical states) plausibly infer or represent the states of external particles (e.g., extracellular motion); much as real organisms do. However, first, we need to understand how a Markov blanket emerged from the coupling of particles that were themselves constituted by Markov blankets (and their internal states).
+
+![FIGURE 7](./img/07.png)
+<p style="text-align: center;">FIGURE 7</p>
+
+Self-organising soups. This demonstration uses an ensemble of particles with intrinsic (Lorentz attractor) dynamics and (Newtonian) short-range coupling to illustrate self-organisation in terms of particular (i.e., self) entropy and concomitant changes in terms of mutual information (i.e., complexity cost or risk). Here, the ensemble averages of these (relative) entropy measures were taken over all (128) particles; where the Markov blanket of each particle comprises all but the third (electrochemical) hidden state. The lower panels illustrate the decrease in blanket entropy (and complexity cost) as the system approaches its random dynamical attractor – shown as the thick and thin solid lines, respectively. The lowest broken line corresponds to conditional entropy (i.e., ambiguity). Illustrative trajectories of the particles are provided at three points during the (stochastic) chaotic transient in the upper three panels. These relative entropy changes can be compared with the equivalent results in Figure 2 for a single particle.
+
 ### States, particles and fluctuations
+
+Let us return to where we started; namely, the Langevin equation (1.1) and ask a simple question: what is the difference between a state and a fluctuation? The answer offered in this section is that fluctuations are just fast states that change so quickly we can ignore their temporal correlations – and adopt the usual Wiener assumptions. This distinction highlights a key tenet of what is to follow; namely, a separation of temporal scales that licenses an adiabatic assumption, allowing one to separate slowly changing states from fast fluctuations. Now, let us ask a more fundamental question: what is a state? This question can be dissolved by appealing to an infinite regress along the following lines:
+
+> What is a state? A state is an eigenstate of a particle’s Markov blanket.
+
+> What is a particle? A particle is a set of particular states comprising blanket and internal states.
+
+> What is a state? A state is … and so on.
+
+An eigenstate here refers to the expression of an eigenmode of blanket states; namely, the principal eigenvectors of their Jacobian (i.e., rate of change of flow with respect to state). These mixtures are formally identical to order parameters in synergetics that reflect the amplitude of slow, unstable eigenmodes (Haken, 1983). In terms of centre manifold theory, they correspond to solutions on the slow (unstable or centre) manifold (Carr, 1981; Davis,2006)
+
+In brief, the Markov blanket of a particle constitutes a set of vector states, whose eigenstate subtends blanket or internal states at the scale above. Note that the eigenstates are always mixtures of blanket states at the lower scale, while the eigenstates can be blanket or internal states at the higher scale. This follows from the fact that the only states ‘that matter’ are those that influence other (blanket) states. In other words, the only relevant coupling is between blanket states[^note-8]. Effectively, all we are doing here is applying the slaving principle, or centre manifold theorem (Haken, 1983), recursively to Markov blankets of Markov blankets. A complementary perspective is provided by renormalisation group approaches (Cardy, 2015; Schwabl, 2002), where the following could be seen as an attempt to establish the universality of states (and fluctuations), in the sense of constituting universality classes. The final section of Part One unpacks this construction analytically (and with numerical simulations).
+
+[^note-8]: Relevant in the sense of renormalisation group theory: Schwabl, F., 2002. Phase Transitions, Scale Invariance, Renormalization Group Theory, and Percolation, Statistical Mechanics. Springer Berlin Heidelberg, Berlin, Heidelberg, pp.327-404.
+
 #### Starting at the end
+
+At a given scale or level (i) of description, we can entertain the following ansatz: a random dynamical system can be characterised as coupled subsets of states, where the n-th subset $x_n^{(i)} \subset x^{(i)}$ constitutes the vector state of a particle or nonlinear oscillator:
+
+$$
+\begin{equation}\tag{4.1}
+\begin{aligned}
+\dot{x}_n^{(i)} &= f_n^{(i)} + \textstyle\sum_m \lambda_{nm}^{(i)}x_m^{(i)} + \omega_n^{(i)}\\
+x^{(i)} &= \{x_1^{(i)},...,x_N^{(i)}\} \\
+\\
+E[\omega_n^{(i)}(\tau)\cdot\omega_n^{(i)}(\tau^{'})] &= \begin{cases}
+2\Gamma_n^{(i)}\delta(\tau - \tau^{'}) & n=m \\
+0 & n \neq m
+\end{cases}
+\end{aligned}
+\end{equation}
+$$
+
+The equations of motion for the states of the n-th particle comprise some baseline flow (at the current point in phase-space) and intrinsic and extrinsic components determined by the states of the particle in question and other particles, respectively. In this form, the diagonal elements of the coupling matrix,$\lambda_{nn}^{(i)} \in \cnums$ , determines the frequency and decay of oscillatory responses to extrinsic perturbations and random fluctuations. In what follows, we will see that (4.1) leads to an isomorphic expression for states of particles at a higher (macroscopic) scale. See Figure 8 for a schematic summary of this recursive induction.
+
+![FIGURE 8](./img/08.png)
+<p style="text-align: center;">FIGURE 8</p>
+
+states comprise active (red) and sensory states (magenta). The behaviour of each particle can now be summarised in terms of (slow) eigenmodes or mixtures of its blanket states – to produce eigenstates at the next level or scale. These constitute an ensemble of vector states and the process starts again. Formally, one can understand this in terms of coarse graining the dynamics of a system via two operators. The first uses the particular partition to group subsets of states (**G**), while the second uses the eigenmodes of the resulting blanket states to reduce dimensionality (**R**). The upper panels illustrate the bipartition for a single particle (left panel) and an ensemble of particles; i.e., the particular partition per se (right panel). The insets on top illustrate the implicit self-similarity of particular dependencies pictorially, in moving from one scale to the next. Please see the main text for a definition of the variables used in this figure.
+
 #### The Markovian partition
+
+If the extrinsic coupling has a nontrivial sparsity, $\lambda_nm^{(i)}=0:\exists(n,m)$, we can partition $N^{(i)}$ states into $J^{(i)}$ particles (i.e., blankets and internal states). The flow of the states comprising the $j$-th particle must have the following form, by the marginal flow lemma:
+
+$$
+\begin{equation}\tag{4.2}
+\begin{aligned}
+\dot{\pi}_j^{(i)} &= 
+\begin{Bmatrix}
+   \dot{a}_j^{(i)} \\
+   \dot{s}_j^{(i)} \\
+   \dot{\mu}_j^{(i)} \\
+\end{Bmatrix} =
+\begin{Bmatrix}
+   f_{a_j}^{(i)}(b_j^{(i)},\mu_j^{(i)}) \\
+   f_{s_j}^{(i)}(b_1^{(i)},...,b_j^{(i)}) \\
+   f_{\mu_j}^{(i)}(b_j^{(i)},\mu_j^{(i)}) \\
+\end{Bmatrix} +
+\begin{Bmatrix}
+   \omega_{a_j}^{(i)} \\
+   \omega_{s_j}^{(i)} \\
+   \omega_{\mu_j}^{(i)} \\
+\end{Bmatrix} \\
+\\
+&= 
+\begin{Bmatrix}
+   \dot{b}_j^{(i)} \\
+   \dot{\mu}_j^{(i)} \\
+\end{Bmatrix} =
+\begin{Bmatrix}
+   f_{b_j}^{(i)}(\mu_j^{(i)},b_1^{(i)},...,b_j^{(i)}) \\
+   f_{\mu_j}^{(i)}(\pi_j^{(i)}) \\
+\end{Bmatrix} +
+\begin{Bmatrix}
+   \omega_{b_j}^{(i)} \\
+   \omega_{\mu_j}^{(i)} \\
+\end{Bmatrix} \\
+\\
+\pi^{(i)} &= \{\pi_1^{(i)},...,\pi_j^{(i)} \} \\
+&= \{x_1^{(i)},...,\underbrace{\underbrace{\underbrace{x_k^{(i)},...,x_\ell^{(i)}}_{a_j^{(i)}},\underbrace{x_m^{(i)},...,x_n^{(i)}}_{s_j^{(i)}}}_{b_j^{(i)}},\underbrace{x_o^{(i)},...,x_p^{(i)}}_{\mu_j^{(i)}}}_{\pi_j^{(i)}},...,x_N^{(i)} \} \\
+\end{aligned}
+\end{equation}
+$$
+
 #### The adiabatic reduction
 #### Elimination and renormalisation
 #### Summary
