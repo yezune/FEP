@@ -492,7 +492,7 @@ E_{p(\tilde{\alpha}|\alpha)}[\Im(\alpha)] &= H(A) = I(A,E) + H(A|E) \\
 \end{equation}
 $$
 
-Here,  ={,s} is the complement of autonomous states. This decomposition means that the marginal flow of
+Here, $\tilde{\alpha} =\{\eta,s\}$ is the complement of autonomous states. This decomposition means that the marginal flow of
 autonomous states minimises its surprisal, which can be decomposed into terms that reflect the dialectic between trying to couple to external states and yet resist their dispersive effects. In this decomposition, ambiguity reduction is expressed in terms of information gain:
 
 $$
