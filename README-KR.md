@@ -392,19 +392,361 @@ $$
 마르코프 담요. 이 확률 그래픽 모델은 상태를 내부 상태(파란색)와 마르코프 담요 - 감각 상태(자홍색)와 활동 상태(빨간색)로 구성된 -에 의해 구분된 숨겨진 또는 외부 상태(청록색)로 분할하는 것을 보여줍니다. 상단 패널은 이 분할이 뇌에서의 행동과 인지에 적용될 때의 모습을 보여줍니다. 이 설정에서, 내부 상태의 자기 조직화는 인지에 해당하며, 활동 상태는 뇌 상태를 외부 상태에 다시 연결합니다. 하단 패널은 동일한 의존성을 보여주지만, 내부 상태가 박테리아의 세포 내 상태와 관련되도록 재배열되어, 감각 상태가 활동 상태(예: 세포골격의 액틴 필라멘트)를 덮는 표면 상태 또는 세포막이 됩니다. 유의할 점은 내부와 외부 상태 사이, 그리고 외부(내부에 대한)에서 활동(감각) 상태로의 지시된 영향력이 유일하게 누락된 것입니다. 생존하는 지시된 영향력은 점선 커넥터로 강조되어 있습니다. 자율적인 상태는 외부 상태에 의해 영향을 받지 않는 상태이며, 특정한 상태는 입자를 구성합니다. 즉, 자율적이고 감각적인 상태 - 또는 담요와 내부 상태입니다. 상단 패널의 운동 등식은 주변 흐름 보조정리로부터 따릅니다.
 
 ### Symmetry breaking and self-organsation
+
+_"물리학과 화학이 어떻게 생명체의 공간 경계 내에서 일어나는 시공간의 사건들을 설명할 수 있을까?"_(Schrödinger, 1944)
+
+마코프 블랭킷의 도입과 입자의 외부 상태와 내부 상태 사이의 구분은 앙상블 밀도에 대한 게임을 다소 변화시킵니다. 파티션 없이는 우리는 밀도의 엔트로피와 그것이 시간에 따라 어떻게 변하는지에 대해서만 이야기할 수 있습니다. 그러나 파티션의 설정에서는, 우리는 특정 상태의 엔트로피를 숨겨진 상태(또는 그 반대)에 대해 고려할 수 있습니다. 이 상대적인 엔트로피는 상호 정보로 알려져 있습니다. 그렇다면, 우리는 높은 상호 정보를 가진 시스템에 관심이 있는 건가요, 아니면 낮은 상호 정보를 가진 시스템에 관심이 있는 건가요? 답은 우리가 상태 공간을 탐색하지만 잘 정의된 매력적인 다양체와 낮은 측정치(즉, 낮은 엔트로피)를 가진 입자에 관심이 있다는 점에서 둘 다인 것으로 밝혀졌습니다. 이것은 상반되는 제약 조건 사이의 방언에 대한 것입니다. 간단히 말하면, 특정 상태의 NESS 엔트로피가 작다면, 외부 상태가 주어졌을 때 특정 상태에 대한 평균 불확실성은 작아야 합니다. 다시 말해, 외부 상태를 알면 특정 상태에 대한 모호성이 해결됩니다. 그러나 동시에, 외부 상태와 특정 상태 사이의 상호 정보 또는 결합도도 작아야 합니다. 그렇지 않으면 외부 상태와 특정 상태를 구분할 수 없게 되어 입자가 분산되거나 해체될 위험이 있습니다. 직관적으로, 이것은 우리가 그들의 외부 환경과 구분되는 마코프 블랭킷을 식별할 수 있다는 사실을 가능하게 합니다(예를 들어, 그것이 수영하는 물에서 물고기를 구분함), 동시에 특정 동역학과 외부 상태 사이의 복잡하고 자기 조직화된 결합을 관찰합니다(예를 들어, 특정 물고기가 물에서 수영함). 더 단순하게 말하면, 물고기는 그것의 무결성을 보존하는 수많은 섬세한, 맥락에 민감한 행동에도 불구하고 물고기로 남아 있습니다 (Clarke 등, 2015). 이어서, 우리는 이 방언이 어떻게 정보 이론을 사용한 간단한 통계 처리에서 나타나는지 고려합니다.
+
+시스템 상태의 분할을 설정한 후, 이제 우리는 자기 조직화 시스템의 종류를 정의할 수 있는 위치에 있습니다. 간단히 말해, 이러한 시스템은 공간을 채우는 무작위 동적 유인자를 가지고 있고, 그 측정치는 낮습니다. 즉, 그들의 확률 질량은 작은 부피에 집중되어 있으며, 이 부피들은 상태 공간을 통한 궤적의 이동(즉, 떠돌이)을 허용하는 방식으로 연결되어 있습니다. 이는 한 유인자의 다양체에서 다른 다양체로 이동합니다: c.f., 결정론적 시스템에서의 위상 변환에 의해 생성된 침투(Vespignani and Zapperi, 1998). 암시적인 대칭성 파괴(즉, 근접한 궤적이 다른 상태-공간의 체제로 분산)는 평형이 아닌 동역학의 특징(Evans and Searles, 2002)이며, 동적 시스템에서의 자기 조직화 임계성과 같은 현상과 밀접하게 관련되어 있습니다(Bak et al., 1988; Vespignani and Zapperi, 1998). 실제로, 복잡성 과학의 많은 부분은 다중 척도, 떠돌이, 그리고 혼돈적인 동역학을 어떻게 형식화하는지에 대한 문제를 다룹니다. 이것은 광범위한 분야로서, 재정규화 군 이론, 척도 불변성, 임계성, 그리고 보편성을 포함합니다(Kwapien and Drozdz, 2012; Nicolis and Prigogine, 1977; Schwabl, 2002). 이 논문에서는, 우리는 많은 더욱 세부적인 부분들(그리고 분기점, 좌절, 그리고 위상 변환과 같은 현상들)을 회피하고, 자기 조직화 시스템의 흥미로운 행동이 적절한 형태의 평형이 아닌 상태 밀도에 의해 포착될 수 있다고 가정할 것입니다.
+
+그렇다면, 적절한 형태는 무엇일까요? 우리는 특정 상태들에 대한 주변 (NESS) 밀도를 고려함으로써 시작합니다. 외부 상태와 특정 상태로의 분할이 주어지면, 엔트로피 생성의 관점에서 자기 조직화의 간단한 형태를 특성화하는 것은 직관적입니다. 이것은 자율적인 상태 $\alpha =\lbrace a,\mu\rbrace \in A$와 감각 상태 $s \in S$ 사이에 분리가 있기 때문에 따라옵니다. 결정적으로, 정의에 의하면, 자율적 상태의 흐름은 외부 상태 $\eta \in E$에 의존하지 않습니다. 이것은 자율적 상태가 특정 상태들 $\pi\in P$의 자기-정보 또는 놀람과 그것의 장기 평균, 즉, 그들의 엔트로피를 억제하는 것처럼 보일 것이라는 것을 의미합니다. 주변 흐름의 보조 정리 (1.21)로부터, 우리는 다음과 같은 것을 얻습니다 (활동적 상태와 감각 상태 사이의 회전 형태의 결합을 무시하고):
+
+$$
+\begin{equation} \tag{2.1}
+\begin{aligned}
+f_{\alpha}(\pi) &= (Q_{\alpha\alpha} -\Gamma_{\alpha\alpha})\nabla_{\alpha}\Im(\pi) \\
+E_{p(\pi)}[\Im(\pi)] &= lim_{\tau\to\infty}\frac{1}{\tau}\int_{0}^{\tau}\Im(\pi(t))dt \\
+&= H(P)
+\end{aligned}
+\end{equation}
+$$
+
+우리는 특정 상태의 엔트로피를 특정 혹은 자기-엔트로피라고 부를 것입니다. (2.2)의 흐름은 자율적 상태가 평균적으로 특정 상태의 엔트로피를 최소화하려고 하는 것처럼 보일 것입니다. 기본적인 정보 이론에서, 자율적 상태는 외부 상태와 특정 상태 사이의 상호 정보를 최소화하려고 하는 것처럼 보일 것이며, 동시에 외부 상태가 주어진 특정 상태의 엔트로피를 최소화하려고 할 것입니다. 이것은 상호 정보가 특정 상태에 대한 불확실성을, 외부 상태가 주어진 상태에서의 불확실성을 뺀 것이기 때문입니다 (즉, 외부 상태를 알고 있음으로써 불확실성이 감소되지 않을 때, 상호 정보는 0입니다).
+
+(self) 엔트로피의 분해는 상호 정보와 조건부 엔트로피로 표현될 수 있으며, 통계적 관점에서는 이것을 놀람의 분해로서 부정확성과 복잡성으로 표현할 수도 있습니다:
+
+$$
+\begin{equation} \tag{2.3}
+\begin{aligned}
+\Im(\pi) &= E_{p(\eta|\pi)}[\Im(\pi)] \\
+&= E_{p(\eta|\pi)}[\ln p(\eta|\pi) - \ln p(\pi|\eta)] \\
+&= E_{p(\eta|\pi)}[\ln p(\eta|\pi) - \ln p(\eta) - \ln p(\pi|\eta)] \\
+&= \underbrace{E_{p(\eta|b)}[\Im(\pi|\eta)]}_{\text{inaccuracy}} + \underbrace{D[p(\eta|\pi)||p(\eta)]}_{\text{complexity}} \\
+\\
+E_{p(\pi)}[\Im(\pi)] &= \underbrace{H(P)}_{\text{entropy}} = \underbrace{H(P|E)}_{\text{ambiguity}} + \underbrace{I(E,P)}_{\text{risk}} \\
+\underbrace{H(P|E)}_{\text{ambiguity}} &= \underbrace{H(P)}_{\text{entropy}} - \underbrace{I(E,P)}_{\text{info gain}} \\
+\end{aligned}
+\end{equation}
+$$
+
+여기서 복잡성은 통계적인 의미로 사용되며, 이는 외부 (숨겨진) 상태에 대한 사후 분포와 사전 분포 간의 발산을 측정하는 것입니다. 반면, 정확성은 사후 분포 하에 특정 상태의 기대 로그 확률입니다. 이 관점에서, 조건부 엔트로피는 예상되는 부정확성 (즉, 모호성)이며, 상호 정보는 예상 복잡성 비용 (즉, 위험)이 됩니다. 마지막 등식은 상호 정보에 따르는 변증법을 보여줍니다: 한편으로, 엔트로피를 최소화하려면 위험의 역할을 하는 상호 정보를 최소화해야 하며, 다른 한편으로, 모호성을 최소화하려면 정보 획득의 역할을 하는 상호 정보를 최대화해야 합니다. 이러한 보완적인 역할은 모호성과 위험 (또는 부정확성과 복잡성)이 단순히 자기-엔트로피라는 같은 동전의 양면일 뿐이라는 점을 주목하면 쉽게 화해할 수 있습니다.
+
+복잡성은 최적 제어 이론과 베이지안 통계에서 흔히 사용되는 비용 함수입니다. 최적 제어에서 복잡성은 감각적이고 활동적인 (제어) 상태가 주어졌을 때 예측된 외부 상태와 목표 상태 간의 발산을 측정합니다 (Kappen, 2005; Kappen et al., 2012). 경제학에서 이는 위험 민감 제어로 불립니다 (Fleming and Sheu, 2002; van den Broek et al., 2010). 베이지안 통계에서 복잡성은 숨겨진 상태에 대한 사후 밀도가 사전에 얼마나 발산하는지 측정합니다. 즉, 숨겨진 상태에 대한 사후 믿음을 인코딩하는 데 필요한 자유도를 측정합니다 (Spiegelhalter et al., 2002). 복잡성 비용을 줄이는 것은 옥캄의 원리를 지지합니다. 즉, 최선의 설명은 사후 믿음이 사전 믿음에 비해 가장 작게 변화하는 정확한 계정을 제공합니다 (Penny et al., 2004). 공식적으로 이는 비균형 시스템에서 적응적 행동을 모델링하는 인과적 엔트로피 힘 개념과 밀접하게 관련되어 있습니다 (Wissner-Gross and Freer, 2013). 마지막으로, 인과적 엔트로피 힘 자체는 Jaynes의 최대 엔트로피 원칙과 관련될 수 있습니다 (Jaynes, 1957).
+
+불확실성 용어는 주관적인, 불확실성을 줄이는 해석을 가지며, 이때 자율 상태의 마진 흐름은 외부 상태가 주어진 센서 상태에 대한 불확실성을 최소화하는 것처럼 보일 것입니다. 다시 말해, 자기 조직화는 외부 상태가 모호하지 않은 센서 상태를 유발하는 상태 공간의 영역을 찾는 것처럼 보일 것입니다 - 마치 잃어버린 열쇠를 찾기 위해 가로등 아래를 찾는 것처럼 (Demirdjian et al., 2005). 이 동역학은 평균적으로) 자율 상태가 특정 상태의 엔트로피를 줄이는 것처럼 보이므로 자기 조직적입니다. 이 특정 엔트로피는 블랭킷과 외부 상태 간의 상호 정보량과 주어진 외부 상태에 조건화된 그들의 조건적 불확실성입니다. 즉, 자율 상태는 외부 상태와의 통계적 결합 (즉, 상호 정보량)을 최소화하는 것처럼 보이면서 동시에 주어진 숨겨진 상태 아래에서 그들의 분산을 저항할 것입니다.
+
+우리는 이런 적극적인 분산 저항을 엔트로피 생산의 용어로 표현할 수 있습니다 (엔트로피 생산에 대한 전체 처리는 아래의 열역학 섹션에서 찾을 수 있습니다). 자율 상태의 흐름으로 인한 엔트로피 생산은 다음과 같이 표현할 수 있습니다:
+
+$$
+\begin{equation} \tag{2.4}
+\begin{aligned}
+\dot{H}^{\alpha} &= \int p(\pi) f_{\alpha}(\pi)\cdot\nabla_{\alpha}\Im(\pi)d\pi \\
+&= -\int p(\pi)\nabla_{\alpha} \Im(\pi)\cdot\Gamma_{\alpha\alpha}\nabla_{\alpha}\Im(\pi)d\pi \leq 0
+\end{aligned}
+\end{equation}
+$$
+
+그 결과로, 자율적인 엔트로피 생산은 항상 제로 또는 그 이하입니다(왜냐하면 무작위 플럭투에이션의 공분산은 양의 정적이고, 회전류 흐름은 취소되기 때문입니다). 다시 말해, 평형 상태에서는 자율적인 흐름이 무작위 플럭투에이션과 외부 상태의 영향으로 인한 특정 상태의 분산을 저항합니다. 우리는 센서 상태 하에서 기대되는 자율 상태의 마진 흐름을 고려함으로써 이 엔트로피 감소 행동을 더 자세히 살펴볼 수 있습니다. 마진 흐름의 보조 정리 (1.22)에 따르면, 다음과 같습니다:
+
+$$
+\begin{equation} \tag{2.5}
+\begin{aligned}
+f_{\alpha}(\alpha) = (Q_{\alpha\alpha} - \Gamma_{\alpha\alpha})\nabla_{\alpha}\Im(\alpha) \Rightarrow p(\dot{\alpha}|\alpha) = \mathcal{N}(f_{\alpha}(\alpha), 2\Gamma_{\alpha}) \\
+\end{aligned}
+\end{equation}
+$$
+
+(1.11)을 따르면, 무작위 변동이 지배할 때, 자율 상태의 가장 가능성 있는 (마진) 경로는 그들의 행동을 최소화합니다:
+
+$$
+\begin{equation} \tag{2.6}
+\begin{aligned}
+\delta_{\alpha}\mathcal{A}(\alpha[\tau]) &= 0 \\
+&\Rightarrow \dot{\alpha} = f_{\alpha}(\alpha) = (Q_{\alpha\alpha}-\Gamma_{\alpha\alpha})\nabla_{\alpha}\Im (\alpha) \\
+&\Rightarrow \alpha[\tau] = argmin_{\alpha[\tau]}\mathcal{A}(\alpha[\tau]) \\
+\end{aligned}
+\end{equation}
+$$
+
+그렇다면 이것이 무엇을 의미하는가? 자율적인 동적성에 대한 직관을 구축하기 위해, (2.3)에서처럼 도트 제품을 사용하여 자율 상태의 놀람을 복잡성 비용과 감지 상태를 조건으로 하는 정보 획득의 관점에서 표현할 수 있습니다:
+
+$$
+\begin{equation} \tag{2.7}
+\begin{aligned}
+\Im(\alpha) &= E_{p(\tilde{\alpha}|\alpha)}[\Im(\alpha)] \\
+&= E_{p(\tilde{\alpha}|\alpha)}[\ln{p(\eta|\pi)} - \ln{p(\eta)} - \ln{p(\eta|\pi)} + \ln{p(\eta|\alpha)} - \ln{p(\alpha|\eta)}] \\
+&= E_{p(\eta|\alpha)}[\Im(\alpha|\eta)] + E_{p(\tilde{\alpha}|\alpha)}[\underbrace{D[p(\eta|\pi)||p(\eta)]}_{\text{complexity}} - \underbrace{D[p(\eta|\pi)||p(\eta|\alpha)]}_{\text{information gain}}] \\
+E_{p(\tilde{\alpha}|\alpha)}[\Im(\alpha)] &= H(A) = I(A,E) + H(A|E) \\
+&= H(A|E) + \underbrace{I(E,P)}_{\text{risk}} - \underbrace{I(E,S|A)}_{\text{active information}} \\
+\end{aligned}
+\end{equation}
+$$
+
+여기서, $\tilde{\alpha} ={\eta,s}$는 자율적인 상태의 보완입니다. 이 분해는 자율적인 상태의 마진 흐름이 그것의 놀람을 최소화하고, 이것은 외부 상태에 결합하려는 시도와 그들의 분산 효과에 저항하려는 시도 사이의 대립을 반영하는 항으로 분해될 수 있음을 의미합니다. 이 분해에서, 모호성 감소는 정보 획득의 관점에서 표현됩니다:
+
+$$
+\begin{equation} \tag{2.8}
+\begin{aligned}
+\underbrace{E_{p(\pi)}[D[p(\eta|\pi)||p(\eta|\alpha)]]}_{\text{expected information gain}} = I(E,S|A) = I(E,S) - I(E,S,A) \\
+\end{aligned}
+\end{equation}
+$$
+
+이 등식은 아래의 상위 순서의 상호 정보에 대한 자기 조직화의 특성화와 연결을 맺기 위해 도입되었습니다. 정보 획득은 때때로 인공지능과 로보틱스에서 지식 가치 또는 내재적 동기라고 불립니다 (Friston 등, 2015b; Oudeyer와 Kaplan, 2007; Schmidhuber, 2010). 이것은 자율적인 상태에 의한 감각 상태에 의해 제공되는 외부 상태의 확률 밀도의 변화에 해당합니다: 즉, 감각 상태가 없는 사후 밀도와의 Kullback-Leibler (KL) 발산, 자율적인 상태에 의한 조건부입니다. 이것은 또한 자율적인 활동에 의해 제공되는 감각 상태와 숨겨진 상태 사이의 상호 정보입니다. 생명 과학 (예: 인지 신경 과학)에서 이 측정은 종종 베이지안 놀람 또는 중요도로 참조됩니다 (Itti와 Baldi, 2009; Mirza 등, 2016; Sun 등, 2011). 이러한 해석에 대해서는 세 번째 부분에서 다시 다루겠습니다. (2.8)의 예상 정보 획득에 대한 표현은 외부 상태와 감각 상태 사이의 상호 정보를 포함하고, 세 번째 순서의 상호 정보 (외부, 감각, 자율적 상태 사이)를 뺀 것입니다.
+
+요약하면, 자기 조직화는 자기 엔트로피 (또는 놀람)의 자율적인 억제로 표현될 수 있습니다. 차례로, 자기 엔트로피는 위험 (또는 복잡성)과 모호성 (또는 부정확성) 해결 요소로 분해될 수 있으며, 이는 자율적 상태의 흐름에 의해 매개된 것처럼 보입니다. 분명히, 어떤 의미에서는 모든 흥미로운 시스템이 무작위 동적 유인자를 가지고 있다면 어느 정도의 자기 조직화를 보일 것입니다. 자기 조직화를 자기 엔트로피, 위험, 모호성의 관점에서 표현하는 것은 단지 자기 조직화를 지각적, 지식적 행동의 관점에서 이야기하고 정량화할 수 있다는 것을 의미합니다.
+
 #### Self-organisation and self-evidencing
+
+통계학에서 특정 상태의 놀람은 주변 가능도 또는 증거의 음의 로그로 알려져 있습니다. 이는 자기 조직화를 자체 증거 제공의 의미로 이해할 수 있음을 의미하며, 가장 가능성이 높은 자율 상태의 흐름이 놀람을 줄이고 따라서 증거를 증가시킵니다. 이 해석은 컴퓨테이셔널 및 인지 신경 과학에서 고려되는 행동을 이해하는 데 있어서 세 번째 부분에서 중요한 역할을 할 것입니다. 여기서 취하는 입장은 자기 조직화가 어떻게 생겨나는지를 묻는 것이 아니라, 자기 조직화 시스템이 어떤 속성을 보이는지를 묻는 것입니다. 이것은 마치 우리가 어려운 문제를 피하고 있는 것처럼 보일 수 있지만, 실제 세계에서 마주치는 거의 모든 시스템은 더 크거나 더 작은 정도로 자기 조직화되어 있습니다. 이는 자기 조직화가 자체적으로는 별로 놀랍지 않다는 것을 의미합니다. 다시 말해, 시스템이 자기 조직화하지 않았다면 우리가 그것들을 관찰할 기회가 있기 전에 그들은 이미 퍼져 있었을 것입니다. 이는 자기 조직화가 어떤 것처럼 보이는지, 그리고 그것이 어떤 종류의 기계학을 필요로 하는지에 대한 질문이 흥미롭다는 것을 의미합니다.
+
+다음에서는 자기 조직화가 어떻게 나타나는지 살펴보고, 세 번째 부분에서 베이지안 기계학에서 생겨나는 명백한 목적론에 대해 다룰 것입니다. 물리학자의 관점에서 이것은 우리가 무작위 동적 유인자를 가진 어떤 흥미로운 시스템이 그것의 유인 집합으로 안착하는 과정에서 그것의 엔트로피를 줄일 것이라는 가정에서 출발한다는 것을 의미합니다. 이것은 닫힌 시스템의 엔트로피 증가에 대해 일반적으로 호소하는 통계 열역학과는 대조적입니다. 그러나 시스템의 매우 폐쇄성 - 즉, 마르코프 담요에 의한 외부 상태로부터의 절연 - 은 더 흥미로운 문제일 수 있습니다. 다시 말해, 열 욕조 또는 용기가 어떻게 생겨났는지, 그리고 그것의 지속성을 무엇이 설명하는지에 대한 문제입니다. 이것은 고전적인 (그리고 평형) 통계 기계학이 사라진다는 것을 의미하는 것은 아닙니다: 우리는 후속 부분에서 그들이 마르코프 담요 내에 포함된 마르코프 담요의 앙상블을 고려할 때 특별한 경우로서 어떻게 나타나는지 볼 것입니다.
+
 #### Self-organisation, frustration and supersymmetry
+
+
+앞서 자기 조직화에 대한 설명은 휴리스틱하게 도입되었지만, 이는 복잡성에 대한 여러 가지 설명과 관련하여 어느 정도의 구성 유효성을 가지고 있습니다. 아마도 가장 직접적인 관계는 고차 상호 정보와 동적 시스템에서의 (기하학적) 고요함과 관련된 불규칙한 동력학 사이의 관계입니다(Kaluza and Meyer-Ortmanns, 2010). 특히, 세 번째 차 상호 정보가 음수인 앙상블 사이의 상관 관계는 "두 개체의 선호가 동시에 만족되지 않는다"는 의미에서 고요하게 간주될 수 있습니다(Matsuda, 2000) p3099. 이러한 상관 관계는 스핀 글라스와 같은 고요한 통계 시스템에서 특히 중요합니다. 이러한 시스템에서, 경쟁하는 상호작용이나 기하학적 제약 때문에 고요함이 복잡한 상 전이, 부분적 무질서, 비 지수적 이완을 유발할 수 있습니다(Fierro et al., 1999; Matsuda, 2000). 흥미롭게도, 고차 상호 정보는 (Tononi et al., 1994)에 의해 도입된 신경 복잡성 측정의 기초를 이룹니다: (Ay, 2015) 참조.
+
+현재의 공식화(랜덤 동적 시스템에 대한)는 아마도 확률론적 시스템의 초대칭 이론(Parisi and Sourlas, 1982)과 관련하여 가장 잘 고려될 수 있을 것입니다. 우리가 여기서 다루고 있는 연속 시간 동적 시스템에 대한 모든 확률적 미분 방정식은 위상 초대칭성(TS)을 가지고 있습니다(Ovchinnikov, 2016). 위상 초대칭성(TS)은 위상 공간의 연속성 보존을 의미합니다; 즉, 무한히 가까운 점들이 노이즈가 있는 상태에서도 연속적인 시간 진화 과정에서 가까이 있게 됩니다. 자발적인 TS 파괴는 혼돈, 난류, 자기 조직화 임계성 등과 같은 일반적인 동적 현상을 근간으로 합니다(Ovchinnikov, 2016). 이러한 종류의 대칭 파괴는 골드스톤 정리에 의해 장거리 동적 행동이 등장한다는 것을 의미합니다(Goldstone et al., 1962). 이는 1/f 노이즈와 Zipf의 법칙을 따르는 갑작스런 (즉각적인) 과정의 무척도 통계학적 표현으로 나타납니다. 예를 들어, 지진, 신경계 눈사태, 태양 폭발 등이 있습니다(Beggs and Plenz, 2003; Kauffman and Johnsen, 1991; Newman, 2005; Plenz and Thiagarajan, 2007; Shew et al., 2011).
+
+이러한 종류의 동적 행동을 설명하기 위해, 일부 랜덤 동적 시스템은 임계점에 수렴한다는 것이 제안되었습니다. 이것은 자기조직화 임계성 - SOC (Bak et al., 1987; Bak et al., 1988)의 현상학적 접근법을 구성합니다. 자발적인 TS 파괴는 임계현상을 피하고 SOC를 노이즈 유발 대칭 파괴로 보는 대안적인 관점을 제공합니다. 직관적으로 이것은 노이즈에 의해 유발된 다른 수렴 다양체들 사이의 터널링으로 생각할 수 있습니다. 그림 2는 대칭 파괴에 대한 직관을 구축하는 데 도움이 되는데, 이는 자기 엔트로피가 감소함에 따라 그것의 등장을 보여줍니다. 보완적인 시각화는 그림 3에서 제공되며, 이는 자기 엔트로피가 하락함에 따라 동적 불안정성 (즉, 임계성)의 등장을 보여줍니다.
+
+![Figure 2](./img/02.png)
+<p style="text-align: center;">FIGURE 2 </p>
+
+자기증거화, 자기조직화, 그리고 규모불변 동역학. 이 그림은 자기 엔트로피의 감소 - 그리고 외부 상태와 블랭킷 상태 사이의 상호 정보와 함께 발생하는 이동성, 규모 불변 동역학을 보여줍니다. 이 간단한 예시는 고정된 형태의 우도로 시작하며 (왼쪽 상단 패널) 이는 외부 또는 숨겨진 상태를 입자의 상태로 매핑합니다. 간단하게 하기 위해, 이 시뮬레이션에서는 내부 상태가 없으므로, 입자는 블랭킷 상태로 구성됩니다. 여기서, 하나의 숨겨진 상태는 상태 의존적인 분산 (숨겨진 상태의 이차 함수로 모델링된)과 함께 비선형 (이차) 함수를 통해 블랭킷 상태로 매핑됩니다. 자기 엔트로피는 숨겨진 상태에 대한 마진 밀도에 대해 최소화되었습니다 (기울기 하강을 사용하여). 그 결과 나타나는 결합 분포는 중간 행에 표시되며, 상호 정보가 기울기 하강의 반복에 걸쳐 감소합니다. 검은색과 빨간색 선은 각각 숨겨진 상태와 블랭킷 상태에 대한 마진 밀도에 해당합니다. 여기서 주요 관찰 사항은 결합 분포가 상호 정보를 줄이는 영역에서 확률 질량을 점진적으로 집중시키면서, 감각 상태에 대한 높은 조건부 불확실성이 있는 영역을 피한다는 것입니다. 이것은 오른쪽 상단 패널에 표시된 상호 정보 측정치에 반영됩니다. 이 예시에서, 자기 엔트로피의 감소는 상호 정보 (즉, 예상 복잡성 또는 위험)의 감소를 의미하며, 조건부 불확실성 (즉, 모호성)의 약간의 증가를 동반합니다. 결합 분포를 주어진 상태로, 특정 궤적을 해결하기 위해 흐름을 도출할 수 있습니다 (여기서는 220개의 시간 단계에 걸침). 왼쪽 하단 패널은 화살표 그림의 흐름과 궤적의 일부를 보여줍니다 (무작위 변동의 진폭이 1이고, 회전류의 흐름이 4분의 1이라고 가정하면, 210개의 시간 단계에 걸침). 이 세그먼트는 노이즈에 의해 유발된 터널링을 보여주기 위해 선택되었습니다; 즉, 수렴 집합의 두 영역을 연결하는 궤적입니다. 기술적으로 이것은 인스턴톤(Ginzburg, 1987)이라고 알려져 있습니다. 관련 동역학은 궤적이 수렴 집합 내에서 방황함에 따라 이동성을 보여줍니다. 이어지는 규모 불변 행동은 하단 오른쪽 패널에서의 멱법칙을 통해 보여집니다. 여기서, 로그 스펙트럼 밀도가 로그 주파수에 대해 그려졌으며, 대략적으로 선형 관계를 보여주며 멱법칙 지수는 -1.42입니다. 기술적으로, 이것은 노이즈에 의해 유발된 (N-상) 위상 수퍼 대칭 파괴에 해당하거나, 더욱 대중적으로는, 수렴 집합의 한 영역에서 다른 영역으로의 노이즈에 의한 터널링에 해당합니다. 이 규모 불변 동역학은 비정상적인 확산 - 보통 비균직 (또는 비 가우스) 동역학과 연관되어 있지만; 예를 들어, (Pavlos et al., 2012) - 이것은 결합 밀도가 자기 조직화 흐름을 유도하도록 최적화된 상황에서 광범위한 (가우스) 동역학에서 발생합니다. 청색과 마젠타색 점은 이전 반복에서의 동일한 시뮬레이션에 해당하며, 멱법칙 스케일링의 등장을 보여줍니다. 이 시뮬레이션은 두 상태 각각에 대해 128개의 빈을 가진 이산화 상태 공간을 사용했습니다. 궤적은 단순한 오일러 스킴을 사용하여 적분되었습니다.
+
+![Figure 3](./img/03.png)
+<p style="text-align: center;">FIGURE 3 </p>
+
+대칭 파괴와 이분법. 이 그림은 특정 (즉, 자기) 엔트로피와 대칭 파괴의 기반이 되는 궤적의 지수적인 발산 사이의 관계를 (확률론적) 로렌츠 시스템에서 보여줍니다 (Agarwal and Wettlaufer, 2016; Lorenz, 1963). 이 예제는 이분법과 그것들과 관련된 (랜덤) 수렴 집합에 따라 엔트로피가 어떻게 변하는지를 보여줍니다. 여기서, 우리는 로렌츠 시스템을 통합했습니다 (시간 단위 1/64의 $2^{18}$ 시간 단계에 대해) 레일리 (제어) 파라미터의 증가 값으로, 결정론적 시스템에서는 피치포크 이분법을 유발합니다 (at $\rho$ = 1) 그리고 그 후의 (부분적으로) 홉프 이분법 (at $\rho$ = 24.74). 우리가 흐름에 작은 (표준 편차 1/128) 무작위 변동을 추가했기 때문에, 노이즈에 의해 유발된 위상 대칭 파괴는 $\rho$ = 14 주변에서 나타납니다 (일반적으로, 카오스 전이의 영역에서). 궤적의 지수적 발산은 최대 리아프노프 지수로 측정되었습니다 (궤도에 대한 평균). 결과적인 리아프노프 지수의 변화 (오른쪽 패널)는 수렴 집합이 공간을 채우게 만들며, 이와 관련된 자기 엔트로피와 상호 정보의 변화를 가져옵니다 (왼쪽 패널). 여기서, 우리는 로렌츠 시스템의 흐름이 세 번째에서 첫 번째 상태로의 링크가 누락되어 있다는 사실을 활용했습니다. 이는 우리가 첫 번째 상태를 활성 상태, 두 번째를 감각 상태, 마지막을 외부 또는 숨겨진 상태로 연결할 수 있음을 의미합니다 (여기에는 내부 상태가 없으며 특정 상태는 블랭킷 상태로 축소됩니다). 이 시뮬레이션에서 놀라운 결과는 최대한의 자기 조직화 - (활성 및 감각) 블랭킷 상태의 엔트로피의 반영 - 이 확률적 카오스의 시작 직전에 깊은 하강을 보이며 - 결정론적 시스템에서의 임계 감속과 관련된 영역에서 이루어집니다. 삽입된 그림은 이분법과 수렴 집합을 궤적 (오른쪽) 및 관련 앙상블 밀도 (왼쪽)의 관점에서 보여주며, 궤적의 최소 및 최대 값으로 임의로 재조정됩니다. 주요 이분법은 수직선으로 표시되며, 수평선은 주요 리아프노프 지수가 처음으로 (확률적) 카오스의 시작에서 0을 교차하는 시점을 나타냅니다. 상호 정보 측정치(첫 번째와 나머지 상태 사이)는 상태 공간을 세 차원 각각에 32개의 빈으로 이산화하여 평가되었습니다. 이 예제는 단순한 자기 조직화의 정의 - 블랭킷 (즉, 특정) 상태의 엔트로피 측면에서 - 가 확률적 카오스에서의 자기 조직화 임계성과 어느 정도의 구성 유효성을 갖는지 보여주기 위한 수치 연구로 제공됩니다: 이것은 일반화 될 수도 있고, 그렇지 않을 수도 있습니다. 여기에서 보여지는 동역학은 각 상태가 무작위 변동으로 갖춰져 있기 때문에 결정론적이지 않습니다. 나중에 우리는 이것이 로렌츠 어트랙터의 각 상태가 내부 상태에서 빠른 변동을 상속하는 더 낮은 규모의 블랭킷 상태의 혼합으로 모델링된다는 것을 볼 것입니다.
+
 #### Self-organisation and information length
+
+지금까지, 우리는 특정 엔트로피 측면에서 자기 조직화를 고려했으며, 여기서 낮은 엔트로피는 대칭 파괴와 자기 조직화 임계성의 현상학과 함께 가는 것처럼 보입니다. 이는 질문을 불러일으킵니다: 이런 종류의 이동성을 어떻게 정량화할 수 있을까요? 한 가지 접근법은 정보 길이라는 개념을 빌려오는 것입니다. 즉, 시스템이 불균형한 정상 상태로 가는 도중 통과하는 식별 가능한 확률적 구성의 수입니다. 다시 말해, 이동하는 대칭 파괴 (생물학적 시스템에서 볼 수 있는 종류)를 특정 상태에서 불균형한 정상 상태까지의 긴 정보 길이와 연관시킬 수 있습니다. 정보 길이의 사용은 높은 자기 엔트로피와 낮은 자기 엔트로피의 의미에 대한 어려운 질문을 피하며, 이는 오직 더해지는 상수 내에서만 정의됩니다 (Jones, 1979). 반면에, 정보 길이는 우리가 정량화하려는 방황하는, 이동하는 동역학을 점수 매기기 위해 어떤 밀도 동역학에도 적용될 수 있는 척도입니다.
+
+정보 길이에 대한 직관을 구축하기 위해, 그림 4는 흐름과 무작위 변동이 이동하지만 구조화된 동역학을 생성하는 역할을 보여주는 세 가지 예시를 보여줍니다. 이 그림에서, 우리는 그림 3의 로렌츠 시스템을 사용하여 초기 밀도 - 주어진 특정 상태 - 가 불균형한 정상 상태 밀도로 어떻게 수렴하는지 다른 방법을 보여줍니다. 상단 패널은 낮은 진폭의 무작위 변동을 사용하는 로렌츠 어트랙터에 의해 유발된 익숙한 자기 조직화를 보여줍니다. 이 영역에서, 시스템은 레일리 파라미터 28을 사용하여 보장된 홉프 이분법을 겪었습니다. 초기 밀도의 진화는 다음을 통해 평가되었습니다: (i) NESS밀도 $D(\tau)$에 대한 KL 발산 - 그리고(ii)시간에 따른 밀도와 최종 (정상 상태) 밀도 사이의 정보 길이 차이 $\Delta(\tau)$.
+
+$$
+\begin{equation} \tag{2.9}
+\begin{aligned}
+D(\tau) &= D[p(x,\tau|\pi_0) \parallel p(x,\infty|\pi_0)] \\
+\delta(\tau)^2 &\leq \frac{1}{2}D(\tau) \\
+\\
+\Delta\ell(\tau) &= \ell(\tau) - \ell(\infty) \\
+\frac{1}{2}d\ell(\tau)^2 &= D[p(x,\tau+d\tau|\pi_0) \parallel p(x,\tau|\pi_0)] \\
+\\
+D(\tau) &= 0 \Leftrightarrow \Delta\ell(\tau) = 0 \Leftrightarrow \delta(\tau)=0 \Leftrightarrow d\ell(\tau)  = 0 \\
+\end{aligned}
+\end{equation}
+$$
+
+The inequality above is known as Pinsker's inequality, where, $\delta(\tau)$ is called total variation distance (Rényi, 2007) and is upper bounded by $D(\tau)$ , which we will refer to as divergence length. Recall from (1.18) that the  characterisations of statistical distances $D(\tau)$ and $\Delta(\tau)$
+are related but differ in their use of KL divergences. The path length is an accumulation of divergences over small increments over time – to ensure the information length is a (Riemannian) measure of distance. Conversely, the divergence length between initial and final densities is not. The final expression in (2.9) says that after a sufficient period of time the density ‘forgets’ about the particular state it started from; rendering increments in divergence and information length zero. Conversely, particles that ‘remember’ their initial state have a long information length with itinerant density dynamics.
+
+
+A long information length means, effectively, the initial density is a long way away from the final density and therefore convergence takes longer (indicated by the small blue arrows in Figure 4). In this example, it takes about eight seconds before convergence to steady state. This can be contrasted with the lower panels that illustrate examples of fast convergence; meaning that the initial densities have a short information length.
+
+As one might intuit from inspection of (1.1), there are two ways to reduce information length. First, one can increase the amplitude of random fluctuations while keeping the flow fixed. This enables trajectories to explore state-space quickly and find their attracting set from any initial density. Panel B illustrates this by increasing the amplitude of random fluctuations – by decreasing their log precision from 8 to 0. This markedly attenuates information length, such that convergence to nonequilibrium steady-state takes less than a second. Alternatively, one can change the flow, without changing the amplitude of random fluctuations. The example in panel C features the same reduction of information length – and accompanying KL divergence – when the Rayleigh parameter was reduced from 28 to 1. In this flow regime, the Lorentz attractor becomes a point attractor and the itinerancy due to stochastic chaos is lost (see Figure 3).
+
+Generally speaking, the information length preserves the linearity of the system’s dynamics. For example, with linear flow we have a familiar Ornstein–Uhlenbeck process, where information length decreases with the amplitude of random fluctuations. Following (Kim, 2018):
+
+$$
+\begin{equation} \tag{2.10}
+\begin{aligned}
+f(\pi) &= -\gamma\pi + \omega \\
+&\Rightarrow \ln{\ell(\infty)}=\ln{|\pi_0|} + \tfrac{1}{2}\ln{\gamma} - \tfrac{1}{2}\ln{\Gamma} \\
+&\Rightarrow \frac{\partial\ln\ell(\infty)}{\partial\ln{|\pi_0|}} = v = 1
+\end{aligned}
+\end{equation}
+$$
+
+In contrast, nonlinear flow changes the linear scaling of geometric structure to produce power-law scaling $v \ne 1$ characteristic of symmetry breaking, itinerancy and self-organised criticality[^note-7]. An interesting aspect of the numerical analyses of chaotic systems in (Kim, 2018) is the dependency of information length on the initial state, where unstable or critical points have the shortest information length. From the numerical analysis in Figure 3, one might picture noise-induced tunnelling from unstable points as mediating ‘shortcuts’ to nonequilibrium steady-state. The linear case suggests that as random fluctuations attain large amplitudes, all initial conditions are drawn close to steady-state and, by implication, self-organisation to nonequilibrium steady-state is (almost) instantaneous (c.f., Panel B of Figure 4). Later, we will associate this sort of behaviour with small (quantum) particles.
+
+[^note-7]: See Kim, E.-j., 2018. Investigating Information Geometry in Classical and Quantum Systems through Information Length. Entropy 20, 574. for further discussion and an (entertaining) application of information length to music.
+
+In Part Three, we will look more closely at self-organisation in systems that have a long information length – and contrast these particles with short information length systems, such as quantum and other small particles (e.g., viruses). On this view, information length distinguishes between the simple, fast, ‘hot’ self-organisation of small (quantum) particles and the itinerant, slow, ‘cold’ behaviour of large (classical) particles.
+
+![Figure 4](./img/04.png)
+<p style="text-align: center;">FIGURE 4 </p>
+
+Convergence to nonequilibrium steady-state. A: this is a simple demonstration of (nearly) deterministic convergence to nonequilibrium steady-state, using the Lorenz system of Figure 3. Deterministic solutions (with a Rayleigh parameter of 28) were obtained for 8192 initial states, integrating over eight seconds (with a time step of 1/64 seconds and low amplitude random fluctuations with a log precision of eight). The initial particular states were the same for each solution and yet their final density converges to non-equilibrium steady-state over time. This manifests as a collapse in the divergence between the sample densities and final (NESS) density – as evaluated using a Gaussian approximation to the ensemble densities at each point in time. The upper insets show the propagated sample densities at four points in time. As time progresses, this density comes to assume the familiar butterfly form of the Lorenz attractor. However, these solutions are not trajectories through state- space, they are the endpoints of paths from an ensemble of starting locations (shown in the right plot). For comparison, convergence is also shown in terms of relative information length. One can see that information length effectively stops increasing when the divergence is zero. The lower panels show the same simulations but using random fluctuations with a log precision of zero (i.e., a variance of one) – panel B – and a Rayleigh parameter of one – panel C. In these illustrations, we treated the first state of the Lorenz system as the active state, the second state constituted the sensory state and the third state played the role of an external or hidden state. This designation is based upon the fact that the first state is not influenced by the third. This numerical example shows how uncertainty about external states is propagated over time to induce uncertainty about a particle’s state; even when the initial (particular) state is known.
+
 #### Summary
+
+The treatment in this section suggests that self-organising systems reduce their self-entropy, to the extent allowed by coupling to external states (or other Markov blankets) and random fluctuations. Using information theory, it is possible to interpret this kind of behaviour in terms of statistical imperatives; namely, the avoidance of complexity cost (i.e., risk) and inaccuracy (i.e., ambiguity). The Nirvana of simple self-organisation is a complete resolution of particular or self-entropy: a trivial solution here would be when a particular density collapses to a point mass (i.e., a delta function). Although we are not interested in these simple solutions, it is interesting to reflect that small particles may be trying to get back to how the universe started. A more interesting example of itinerant self- organisation is provided in Figure 4. In Part Three, we will return to the emergence of self-organisation and symmetry breaking. In brief, we will see that systems with these characteristics can always be construed as engaging in something called active inference (a.k.a. self-evidencing) via a minimisation of a variational free energy.
+
+Table 1 provides a summary of the information measures introduced in the section, which we will refer to later. However, before dealing with the sentient foundations of self-organisation, we will spend some time unpacking the NESS lemma (Appendix B) in terms of Markov blankets (in the remainder of Part One) and its relationship to quantum, statistical and classical mechanics (in Part Two) – to contextualise later treatments of active inference (in Part Three)
+
+![Table 1](./img/t1.png)
+
 ### Synthetic soups and active matter
+
+In this section, we describe an exemplar system that will be used to illustrate crosscutting themes in subsequent sections. Here, it is used to simulate a primordial soup – to illustrate the emergence of self-organisation in terms of Markov blankets and internal states. This soup or active matter (Ramaswamy, 2010), comprises an ensemble of particles that are coupled through short range interactions. Each particle corresponds to the Lorentz system of the previous section that has been ‘dressed’ with blanket states to create an internal state – and enable interactions among particles. The resulting simulations are similar to those used to characterise pattern formation in dissipative systems; for example, Turing instabilities (Turing, 1952) and other dissipative structures in nonequilibrium systems, such as turbulence and convention in fluid dynamics (e.g., Bénard cells) or percolation in reaction-diffusion systems such as the Belousov-Zhabotinsky reaction (Belousov, 1959). In our case, we can treat our system is an ensemble of macromolecules; however, the details of the simulation are not important, similar results would be obtained with any coupled random dynamical system. The description below summarises the material in (Friston, 2013), where interested readers can find more details.
+
 #### An active soup
+
+To simulate the emergence of a Markov blanket, each constituent of the ensemble or i-th macromolecule was
+equipped with notional Newtonian and electrochemical states, $\{b_n^{(i)} , b_e^{(i)}\}$. Here, $b_n^{(i)}=\{a_n^{(i)} , s_n^{(i)}\}$ can be considered coordinates of motion; e.g., position and velocity, while $b_e^{(i)} = \{a_e^{(i)} , s_e^{(i)},\mu^{(i)} \}$ could correspond to electrochemical states; e.g., oncentrations or electromagnetic states. The electrochemical dynamics of each macromolecule was chosen to have a Lorenz attractor, which provides a ubiquitous model of itinerant systems; e.g. in electrodynamics, lasers and chemical reactions (Poland, 1993). Figure 5 provides the summary of the dynamics. Specifically, the Langevin equation for the $i$-th macromolecule is:
+
+$$
+\begin{equation}\tag{3.1}
+\begin{aligned}
+\begin{bmatrix}
+  \dot{s}_e^{(i)} \\
+  \dot{a}_e^{(i)}  \\
+  \dot{\mu}^{(i)} \\
+\end{bmatrix} &= 
+\begin{bmatrix}
+  10(a_e^{(i)}-s_e^{(i)})+s_e^{(i)}) \\
+  32\cdot s_e^{(i)} -a_e^{(i)} -\mu^{(i)} s_e^{(i)} \\
+  s_e^{(i)}a_e^{(i)} - \tfrac{8}{3}\mu^{(i)} \\
+\end{bmatrix} \cdot K^{(i)} + \omega_e \\
+\\
+s_e^{(i)} &= \textstyle\sum_{j=\{j:\Delta_{ij}<1\}}s_e^{(i)} \\
+\Delta_{ij} &= |a_n^{(j)} - a_n^{(i)}|
+\end{aligned}
+\end{equation}
+$$
+
+Here, changes in electrochemical states are coupled through the local average $s_e^{(i)}$ of the states of other macromolecules that lie within a distance of one unit. This means $\Delta$ can be regarded as an adjacency matrix that encodes the dependencies among the electrochemical states of the ensemble. Crucially, this means electrochemical coupling depends upon the spatial relationships among the macromolecules. The corresponding rate parameters $K^{(i)} = \tfrac{1}{32}(1−exp(−4\cdot u))$; where $u \in (0,1)$ was selected from a uniform distribution to ensure topological symmetry breaking.
+
+Similarly, the (Newtonian) motion of each macromolecule depends upon the electrochemical state of its neighbours
+
+$$
+\begin{equation}\tag{3.2}
+\begin{aligned}
+  \dot{a}_n^{(i)} &= (1+\tfrac{1}{64})\mu^{(i)}s_n^{(i)}+\omega_n \\
+  \dot{s}_n^{(i)} &=  2F^{(i)} - 8s_n^{(i)} - a_n^{(i)}+\omega_n \\
+  \\
+  F^{(i)} &= \textstyle\sum_{j=\{j:\Delta_{ij}<1\}}\Delta_{ij}\left( \cfrac{8exp(-|a_e^{(j)}-a_e^{(i)}|)-4}{\Delta_{ij}^2}-\frac{1}{\Delta_{ij}^3} \right) \\
+\end{aligned}
+\end{equation}
+$$
+
+This motion rests on forces $F^{(i)}$ exerted by other macromolecules that comprise a strong repulsive force (with an inverse square law) and a weaker attractive force that depends on electrochemical states. This force was chosen so that macromolecules with coherent electrochemical states are attracted to each other but repel otherwise. The remaining two terms in the second equality represent viscosity that depends upon velocity and an exogenous force that attracts all macromolecules to the origin – as if they were moving in a simple (quadratic) potential energy well. This ensures the synthetic soup falls to the bottom of the well. We now take a closer look at the self-organisation that emerges under these equations of motion.
+
+![FIGURE 5](./img/05.png)
+<p style="text-align: center;">FIGURE 5</p>
+
+Synthetic soups and active matter. This graphic describes the equations of motion used to simulate coupled (random) dynamical systems (i.e., particles) to illustrate self-organisation. The equations describe the dynamics (that have been separated into electrochemical and Newtonian components). The schematics illustrate the conditional dependencies among particles, where each particle comprises its Markov blanket and internal states. The states with orange outlines are electrochemical states and the remaining pair constitute the Newtonian states. Note that active states (red circles) play the role of position, while sensory states (magenta circles) become velocity that depends on active states. These roles of active and sensory states will figure later, when we consider classical mechanics.
+
 #### A random dynamical attractor and its Markov blankets
+
+In the simulations below an ensemble of 128 particles (i.e., macromolecules) were integrated using Euler’s (forward) method with step sizes of 1/512 seconds and initial conditions sampled from a normal distribution. By adjusting the parameters in the equations of motion (3.1) and (3.2), one can produce a repertoire of plausible and interesting behaviours (the code for these simulations and the figures in this monograph are available as part of the SPM academic software – see software note). These behaviours range from gas-like behaviour (where particles occasionally get close enough to interact) to a cauldron of activity, when particles are forced together at the bottom of the potential well. In this regime, macromolecules are sufficiently close for the inverse square law to blow them apart. In other regimes, a more crystalline structure emerges with muted interactions.
+
+However, for most values of the parameters, weakly mixing behaviour emerges, as the ensemble approaches its random global attractor (usually after about 1000 seconds). Generally, macromolecules repel each other initially and then fall back towards the centre, finding each other as they coalesce. Local interactions then mediate a self- organisation, in which particles are passed around (sometimes to the periphery) until neighbours jostle comfortably with each other. In brief, the motion and electrochemical dynamics look like an active, restless soup – but does it contain a Markov blanket?
+
 #### The Markov blanket
+
+Because the structural and functional dependencies share the same adjacency matrix – which depends upon position – one can use the adjacency matrix to identify the principal Markov blanket using spectral graph theory: the Markov blanket of any subset of states encoded by a binary vector with elements $\mathcal{X}_i \in \{0,1\}$ is given by $[B\cdot\mathcal{X}]\in\{0,1\}$, where the Markov blanket matrix $B=A+A^T+A^TA$ encodes the children, parents and parents of children. The principal eigenvector of the (symmetric) Markov blanket matrix will – by the Perron–Frobenius theorem – contain positive values. These values reflect the degree to which each state belongs to the cluster that is most densely coupled. In what follows, the internal particles (i.e., macromolecules) were the particles with the k = 8 largest values. Having identified internal particles, the Markov blanket can be recovered from the Markov blanket matrix using $[B\cdot\mathcal{X}]$ and divided into sensory and active particles – depending upon whether they are influenced by the external particles or not.
+
+![FIGURE 6](./img/06.png)
+<p style="text-align: center;">FIGURE 6</p>
+
+Ensemble dynamics and self-organisation. The upper panels show the position of (128) macromolecules comprising an ensemble, after 2048 seconds. The upper left panel shows the dynamical status (three blue dots per macromolecule) of each particle centred on its location (larger dots). The ensemble of macromolecules has been partitioned into external or hidden (cyan), sensory (magenta), active (red) and internal (blue) particles. The upper right panel is an image of an endospore stain of sporulating B. Subtilis. This graphic illustrates the spatiotemporal scale at which the simulations could be operating. The lower panels show the evolution of electrochemical (middle panel) and spatial (lower panel) states of each particle as a function of time. The (electrochemical) dynamics of the internal (blue) and external (cyan) states are shown for 512 seconds. The lower panel shows the position of internal (blue) and external (cyan) states over the entire simulation period. These simulations are solutions of the stochastic differential equations in the main text – using a forward Euler method with 1/512 second time steps and random Gaussian fluctuations with a standard deviation of an eighth.
+
 #### The emergence of order
+
+Given the internal particles and their Markov blanket, we can now follow the assembly of constituent macromolecules and visualise their trajectories. The upper panels of Figure 6 show the position of (128) macromolecules comprising the ensemble. The upper left panel shows the electrochemical status (three blue dots per macromolecule) of each macromolecule centred on its location (larger dots) at the end of the simulation. The ensemble has been partitioned into external or hidden (cyan), sensory (magenta), active (red) and internal (blue) particles. It can be seen that the resulting Markov blanket surrounds a rod-like structure (i.e., Bacillus) of internal particles. Interestingly, the active macromolecules support the sensory macromolecules that are exposed to external particles. This is reminiscent of a biological cell with a cytoskeleton of active molecules (e.g., actin filaments), which are surrounded by sensory molecules (e.g., a cell surface). The upper right panel is an image of an endospore stain of sporulating B. Subtilis. This graphic illustrates the spatiotemporal scale at which we can imagine the simulations are operating. The lower panels show the evolution of electrochemical (middle panel) and Newtonian (lower panel) particular states as a function of time. One can see initial (chaotic) transients that resolve fairly quickly, with itinerant behaviour as they approach their attracting set. The lower panel shows the position of internal (blue) and external (cyan) particles over the entire simulation period.
+
+Notice that something quite subtle is going on here. We started with an ensemble of particles (e.g., macromolecules), where each particle was characterised in terms of particular (i.e., sensory, active and internal) states. We then ended up with a single particle (e.g., a Bacillus or virus) characterised in terms of particular (i.e., external, sensory, active and internal) particles. In short, we have moved from a microscopic to a macroscopic scale, with blanket states at both. The next section looks more closely at this move. Here, we simply note that a macroscopic Markov blanket has emerged from simple self-organisation. So, what licenses us to describe the microscopic dynamics as self-organisation?
+
+Figure 7 demonstrates microscopic self-organisation in terms of the particular entropy of the ensemble's particles – and concomitant changes in terms of mutual information (i.e., complexity cost or risk) and conditional entropy (i.e., ambiguity). Here, the ensemble averages of these (relative) entropy measures were taken over all (128) macromolecules; where the Markov blanket of each particle comprises all but the third (electrochemical) hidden state. This information theoretic characterisation discloses, as expected, a monotonic decrease in particular entropy (and complexity cost) as the ensemble approaches its random dynamical attractor.
+
 #### Summary
+
+In summary, this section has described a somewhat arbitrary random dynamical system comprising an ensemble of particles, each with several dynamical states (three electrochemical and two describing position and velocity). Crucially, the flow or equations of motion were constructed to make electrochemical coupling among the simulated macromolecules depend upon position – and render their velocity dependent upon electrochemical states. This endows the ensemble with a dynamic and sparse coupling that readily enables the emergence of a Markov blanket; separating internal from external particles (and their constituent states). In this example, the internal particles (and Markov blanket) can be thought of as modelling a little virus-like particle or rod-like bacterium. We now have at hand an in-silico creature. Later, we will examine this synthetic creature to see whether the states of internal particles (e.g., intracellular electrochemical states) plausibly infer or represent the states of external particles (e.g., extracellular motion); much as real organisms do. However, first, we need to understand how a Markov blanket emerged from the coupling of particles that were themselves constituted by Markov blankets (and their internal states).
+
+![FIGURE 7](./img/07.png)
+<p style="text-align: center;">FIGURE 7</p>
+
+Self-organising soups. This demonstration uses an ensemble of particles with intrinsic (Lorentz attractor) dynamics and (Newtonian) short-range coupling to illustrate self-organisation in terms of particular (i.e., self) entropy and concomitant changes in terms of mutual information (i.e., complexity cost or risk). Here, the ensemble averages of these (relative) entropy measures were taken over all (128) particles; where the Markov blanket of each particle comprises all but the third (electrochemical) hidden state. The lower panels illustrate the decrease in blanket entropy (and complexity cost) as the system approaches its random dynamical attractor – shown as the thick and thin solid lines, respectively. The lowest broken line corresponds to conditional entropy (i.e., ambiguity). Illustrative trajectories of the particles are provided at three points during the (stochastic) chaotic transient in the upper three panels. These relative entropy changes can be compared with the equivalent results in Figure 2 for a single particle.
+
 ### States, particles and fluctuations
+
+Let us return to where we started; namely, the Langevin equation (1.1) and ask a simple question: what is the difference between a state and a fluctuation? The answer offered in this section is that fluctuations are just fast states that change so quickly we can ignore their temporal correlations – and adopt the usual Wiener assumptions. This distinction highlights a key tenet of what is to follow; namely, a separation of temporal scales that licenses an adiabatic assumption, allowing one to separate slowly changing states from fast fluctuations. Now, let us ask a more fundamental question: what is a state? This question can be dissolved by appealing to an infinite regress along the following lines:
+
+> What is a state? A state is an eigenstate of a particle’s Markov blanket.
+
+> What is a particle? A particle is a set of particular states comprising blanket and internal states.
+
+> What is a state? A state is … and so on.
+
+An eigenstate here refers to the expression of an eigenmode of blanket states; namely, the principal eigenvectors of their Jacobian (i.e., rate of change of flow with respect to state). These mixtures are formally identical to order parameters in synergetics that reflect the amplitude of slow, unstable eigenmodes (Haken, 1983). In terms of centre manifold theory, they correspond to solutions on the slow (unstable or centre) manifold (Carr, 1981; Davis,2006)
+
+In brief, the Markov blanket of a particle constitutes a set of vector states, whose eigenstate subtends blanket or internal states at the scale above. Note that the eigenstates are always mixtures of blanket states at the lower scale, while the eigenstates can be blanket or internal states at the higher scale. This follows from the fact that the only states ‘that matter’ are those that influence other (blanket) states. In other words, the only relevant coupling is between blanket states[^note-8]. Effectively, all we are doing here is applying the slaving principle, or centre manifold theorem (Haken, 1983), recursively to Markov blankets of Markov blankets. A complementary perspective is provided by renormalisation group approaches (Cardy, 2015; Schwabl, 2002), where the following could be seen as an attempt to establish the universality of states (and fluctuations), in the sense of constituting universality classes. The final section of Part One unpacks this construction analytically (and with numerical simulations).
+
+[^note-8]: Relevant in the sense of renormalisation group theory: Schwabl, F., 2002. Phase Transitions, Scale Invariance, Renormalization Group Theory, and Percolation, Statistical Mechanics. Springer Berlin Heidelberg, Berlin, Heidelberg, pp.327-404.
+
 #### Starting at the end
+
+At a given scale or level (i) of description, we can entertain the following ansatz: a random dynamical system can be characterised as coupled subsets of states, where the n-th subset $x_n^{(i)} \subset x^{(i)}$ constitutes the vector state of a particle or nonlinear oscillator:
+
+$$
+\begin{equation}\tag{4.1}
+\begin{aligned}
+\dot{x}_n^{(i)} &= f_n^{(i)} + \textstyle\sum_m \lambda_{nm}^{(i)}x_m^{(i)} + \omega_n^{(i)}\\
+x^{(i)} &= \{x_1^{(i)},...,x_N^{(i)}\} \\
+\\
+E[\omega_n^{(i)}(\tau)\cdot\omega_n^{(i)}(\tau^{'})] &= \begin{cases}
+2\Gamma_n^{(i)}\delta(\tau - \tau^{'}) & n=m \\
+0 & n \neq m
+\end{cases}
+\end{aligned}
+\end{equation}
+$$
+
+The equations of motion for the states of the n-th particle comprise some baseline flow (at the current point in phase-space) and intrinsic and extrinsic components determined by the states of the particle in question and other particles, respectively. In this form, the diagonal elements of the coupling matrix,$\lambda_{nn}^{(i)} \in \cnums$ , determines the frequency and decay of oscillatory responses to extrinsic perturbations and random fluctuations. In what follows, we will see that (4.1) leads to an isomorphic expression for states of particles at a higher (macroscopic) scale. See Figure 8 for a schematic summary of this recursive induction.
+
+![FIGURE 8](./img/08.png)
+<p style="text-align: center;">FIGURE 8</p>
+
+states comprise active (red) and sensory states (magenta). The behaviour of each particle can now be summarised in terms of (slow) eigenmodes or mixtures of its blanket states – to produce eigenstates at the next level or scale. These constitute an ensemble of vector states and the process starts again. Formally, one can understand this in terms of coarse graining the dynamics of a system via two operators. The first uses the particular partition to group subsets of states (**G**), while the second uses the eigenmodes of the resulting blanket states to reduce dimensionality (**R**). The upper panels illustrate the bipartition for a single particle (left panel) and an ensemble of particles; i.e., the particular partition per se (right panel). The insets on top illustrate the implicit self-similarity of particular dependencies pictorially, in moving from one scale to the next. Please see the main text for a definition of the variables used in this figure.
+
 #### The Markovian partition
+
+If the extrinsic coupling has a nontrivial sparsity, $\lambda_nm^{(i)}=0:\exists(n,m)$, we can partition $N^{(i)}$ states into $J^{(i)}$ particles (i.e., blankets and internal states). The flow of the states comprising the $j$-th particle must have the following form, by the marginal flow lemma:
+
+$$
+\begin{equation}\tag{4.2}
+\begin{aligned}
+\dot{\pi}_j^{(i)} &= 
+\begin{Bmatrix}
+   \dot{a}_j^{(i)} \\
+   \dot{s}_j^{(i)} \\
+   \dot{\mu}_j^{(i)} \\
+\end{Bmatrix} =
+\begin{Bmatrix}
+   f_{a_j}^{(i)}(b_j^{(i)},\mu_j^{(i)}) \\
+   f_{s_j}^{(i)}(b_1^{(i)},...,b_j^{(i)}) \\
+   f_{\mu_j}^{(i)}(b_j^{(i)},\mu_j^{(i)}) \\
+\end{Bmatrix} +
+\begin{Bmatrix}
+   \omega_{a_j}^{(i)} \\
+   \omega_{s_j}^{(i)} \\
+   \omega_{\mu_j}^{(i)} \\
+\end{Bmatrix} \\
+\\
+&= 
+\begin{Bmatrix}
+   \dot{b}_j^{(i)} \\
+   \dot{\mu}_j^{(i)} \\
+\end{Bmatrix} =
+\begin{Bmatrix}
+   f_{b_j}^{(i)}(\mu_j^{(i)},b_1^{(i)},...,b_j^{(i)}) \\
+   f_{\mu_j}^{(i)}(\pi_j^{(i)}) \\
+\end{Bmatrix} +
+\begin{Bmatrix}
+   \omega_{b_j}^{(i)} \\
+   \omega_{\mu_j}^{(i)} \\
+\end{Bmatrix} \\
+\\
+\pi^{(i)} &= \{\pi_1^{(i)},...,\pi_j^{(i)} \} \\
+&= \{x_1^{(i)},...,\underbrace{\underbrace{\underbrace{x_k^{(i)},...,x_\ell^{(i)}}_{a_j^{(i)}},\underbrace{x_m^{(i)},...,x_n^{(i)}}_{s_j^{(i)}}}_{b_j^{(i)}},\underbrace{x_o^{(i)},...,x_p^{(i)}}_{\mu_j^{(i)}}}_{\pi_j^{(i)}},...,x_N^{(i)} \} \\
+\end{aligned}
+\end{equation}
+$$
 #### The adiabatic reduction
 #### Elimination and renormalisation
 #### Summary
