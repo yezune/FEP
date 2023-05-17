@@ -36,9 +36,9 @@ Part Three: Having cast quantum, statistical and classical mechanics as limiting
 ### Something or nothing
 
 The *“Siphonaptera”* is a nursery rhyme, sometimes referred to as Fleas:
-*Big fleas have little fleas, 
-Upon their backs to bite 'em, 
-And little fleas have lesser fleas, 
+*Big fleas have little fleas,
+Upon their backs to bite 'em,
+And little fleas have lesser fleas,
 and so, ad infinitum.*
 
 This nicely frames one approach to the question of ‘what is a thing?’ by appealing to an infinite regress in which the question goes away. This deflationary account[^note-3] says that the states of things are constituted by their Markov blanket, while the Markov blanket comprises the states of smaller things with Markov blankets within them – and so on ad infinitum. This appeal to blankets ‘all the way’ down offers a recursive definition of everything – at separable spatial and temporal scales – that are unpacked in Section 4, using notions from the renormalisation group. The idea of blankets all the way down (and up) suggest that there is no privileged scale, other than the scale that ‘matters’ for a thing in question. In the final sections, we will see that to ‘matter’ means there is an information geometry in play at certain scales, which afford autonomous and itinerant dynamics but are sufficiently large to suppress random fluctuations.
@@ -471,7 +471,9 @@ Following (1.11), when random fluctuations dominate, the most likely (marginal) 
 $$
 \begin{equation} \tag{2.6}
 \begin{aligned}
-\\
+\delta_{\alpha}\mathcal{A}(\alpha[\tau]) &= 0 \\
+&\Rightarrow \dot{\alpha} = f_{\alpha}(\alpha) = (Q_{\alpha\alpha}-\Gamma_{\alpha\alpha})\nabla_{\alpha}\Im (\alpha) \\
+&\Rightarrow \alpha[\tau] = argmin_{\alpha[\tau]}\mathcal{A}(\alpha[\tau]) \\
 \end{aligned}
 \end{equation}
 $$
@@ -481,7 +483,12 @@ So, what does this entail? To build an intuition about autonomous dynamics, we c
 $$
 \begin{equation} \tag{2.7}
 \begin{aligned}
+\Im(\alpha) &= E_{p(\tilde{\alpha}|\alpha)}[\Im(\alpha)] \\
+&= E_{p(\tilde{\alpha}|\alpha)}[\ln{p(\eta|\pi)} - \ln{p(\eta)} - \ln{p(\eta|\pi)} + \ln{p(\eta|\alpha)} - \ln{p(\alpha|\eta)}] \\
+&= E_{p(\eta|\alpha)}[\Im(\alpha|\eta)] + E_{p(\tilde{\alpha}|\alpha)}[\underbrace{D[p(\eta|\pi)||p(\eta)]}_{\text{complexity}} - \underbrace{D[p(\eta|\pi)||p(\eta|\alpha)]}_{\text{information gain}}] \\
 \\
+E_{p(\tilde{\alpha}|\alpha)}[\Im(\alpha)] &= H(A) = I(A,E) + H(A|E) \\
+&= H(A|E) + \underbrace{I(E,P)}_{\text{risk}} - \underbrace{I(E,S|A)}_{\text{active information}} \\
 \end{aligned}
 \end{equation}
 $$
@@ -492,7 +499,7 @@ autonomous states minimises its surprisal, which can be decomposed into terms th
 $$
 \begin{equation} \tag{2.8}
 \begin{aligned}
-\\
+\underbrace{E_{p(\pi)}[D[p(\eta|\pi)||p(\eta|\alpha)]]}_{\text{expected information gain}} = I(E,S|A) = I(E,S) - I(E,S,A) \\
 \end{aligned}
 \end{equation}
 $$
