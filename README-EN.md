@@ -529,27 +529,30 @@ Self-evidencing, self-organisation and scale-free dynamics. This figure illustra
 ![Figure 3](./img/03.png)
 <p style="text-align: center;">FIGURE 3 </p>
 
-Symmetry breaking and bifurcations. This figure illustrates the relationship between particular (i.e., self) entropy and the exponential divergence of trajectories that underlies symmetry breaking in the (stochastic) Lorentz system (Agarwal and Wettlaufer, 2016; Lorenz, 1963). This example illustrates how entropy changes with bifurcations and their associated (random) attracting sets. Here, we integrated a Lorenz system (for 218 time steps of 1/64 units of time) with increasing values of the Rayleigh (control) parameter that, in deterministic systems, induces a pitchfork bifurcation (at  = 1) and a subsequent (subcritical) Hopf bifurcation (at  = 24.74). Because we added small (standard deviation of 1/128) random fluctuations to the flow, noise induced topological symmetry breaking emerges around  = 14 (typically, in a regime of chaotic transients). The exponential divergence of trajectories was measured with the maximal Lyapunov exponent (averaged over the orbits). The resulting changes in the Lyapunov exponent (right panel) cause the attracting set to become space-filling (see insets beneath), with associated changes in self-entropy and mutual information (left panel). Here, we exploited the fact that the flow of the Lorenz system has one missing link (from the third to the first state). This means we can associate the first state with an active state, the second with a sensory state and the last with an external or hidden state (note there are no internal states here and the particular states reduce to blanket states). The remarkable result in this simulation is that the highest degree of self-organisation – as reflected in the entropy of the (active and sensory) blanket states shows a profound dip just before the onset of stochastic chaos – in a regime associated with critical slowing in deterministic systems. The insets illustrate the bifurcations and attracting sets, in terms of illustrative trajectories (right) and associated ensemble densities (left), arbitrarily rescaled to the minimum and maximum values of the trajectory. Cardinal bifurcations are illustrated with vertical lines, while the horizontal line indicates when the principal Lyapunov exponent first crosses zero at the onset of (stochastic) chaos. The mutual information measures (between the first and remaining states) were evaluated using a discretisation of state-space into 32 bins in each of the three dimensions. This example is offered as a numerical study to illustrate that a simple definition of self-organisation – in terms of the entropy of blanket (i.e., particular) states – has some construct validity in relation to self-organised criticality in stochastic chaos: a validation that may or may not generalise. Note that the dynamics illustrated here are not deterministic because each state is equipped with random fluctuations. We will see later that this means each state of the Lorenz attractor is modelled as a mixture of blanket states at lower scale – that inherit fast fluctuations from their internal states.
+Symmetry breaking and bifurcations. This figure illustrates the relationship between particular (i.e., self) entropy and the exponential divergence of trajectories that underlies symmetry breaking in the (stochastic) Lorentz system (Agarwal and Wettlaufer, 2016; Lorenz, 1963). This example illustrates how entropy changes with bifurcations and their associated (random) attracting sets. Here, we integrated a Lorenz system (for $2^{18}$ time steps of 1/64 units of time) with increasing values of the Rayleigh (control) parameter that, in deterministic systems, induces a pitchfork bifurcation (at $\rho$ = 1) and a subsequent (subcritical) Hopf bifurcation (at $\rho$ = 24.74). Because we added small (standard deviation of 1/128) random fluctuations to the flow, noise induced topological symmetry breaking emerges around $\rho$ = 14 (typically, in a regime of chaotic transients). The exponential divergence of trajectories was measured with the maximal Lyapunov exponent (averaged over the orbits). The resulting changes in the Lyapunov exponent (right panel) cause the attracting set to become space-filling (see insets beneath), with associated changes in self-entropy and mutual information (left panel). Here, we exploited the fact that the flow of the Lorenz system has one missing link (from the third to the first state). This means we can associate the first state with an active state, the second with a sensory state and the last with an external or hidden state (note there are no internal states here and the particular states reduce to blanket states). The remarkable result in this simulation is that the highest degree of self-organisation – as reflected in the entropy of the (active and sensory) blanket states shows a profound dip just before the onset of stochastic chaos – in a regime associated with critical slowing in deterministic systems. The insets illustrate the bifurcations and attracting sets, in terms of illustrative trajectories (right) and associated ensemble densities (left), arbitrarily rescaled to the minimum and maximum values of the trajectory. Cardinal bifurcations are illustrated with vertical lines, while the horizontal line indicates when the principal Lyapunov exponent first crosses zero at the onset of (stochastic) chaos. The mutual information measures (between the first and remaining states) were evaluated using a discretisation of state-space into 32 bins in each of the three dimensions. This example is offered as a numerical study to illustrate that a simple definition of self-organisation – in terms of the entropy of blanket (i.e., particular) states – has some construct validity in relation to self-organised criticality in stochastic chaos: a validation that may or may not generalise. Note that the dynamics illustrated here are not deterministic because each state is equipped with random fluctuations. We will see later that this means each state of the Lorenz attractor is modelled as a mixture of blanket states at lower scale – that inherit fast fluctuations from their internal states.
 
 #### Self-organisation and information length
 
 So far, we have considered self-organisation in terms of particular entropy, where a low entropy appears to go hand-in-hand with the phenomenology of symmetry breaking and self-organised criticality. This begs the question: how can one quantify itinerancy of this sort? One approach borrows the notion of information length; namely, the number of discernible probabilistic configurations a system passes through en route to nonequilibrium steady-state. In other words, one can associate itinerant symmetry breaking (of the sort seen in biological systems) with long information lengths from a particular state to nonequilibrium steady-state. The use of information length eludes difficult questions about the meaning of high versus low self-entropy, which is only defined to within an additive constant (Jones, 1979). Conversely, the information length is a metric that can be applied to any density dynamics to score the wandering, itinerant dynamics we are trying to quantify.
 
-To build an intuition about information length, Figure 4 shows three examples that illustrate the role of flows and random fluctuations in generating itinerant but structured dynamics. In this illustration, we use the Lorentz system of Figure 3 to show the different ways in which an initial density – given a particular state – converges to the nonequilibrium steady-state density. The upper panel shows the familiar self-organisation induced by the Lorentz attractor, using low amplitude random fluctuations. In this regime, the system has undergone a Hopf bifurcation, guaranteed by using a Rayleigh parameter of 28. The evolution of the initial density was evaluated in terms of: (i) itsKLdivergencefromtheNESSdensity D() –and(ii)thedifferenceininformationlengthbetweenthedensity
-over time and the final (steady-state) density ( ) .
+To build an intuition about information length, Figure 4 shows three examples that illustrate the role of flows and random fluctuations in generating itinerant but structured dynamics. In this illustration, we use the Lorentz system of Figure 3 to show the different ways in which an initial density – given a particular state – converges to the nonequilibrium steady-state density. The upper panel shows the familiar self-organisation induced by the Lorentz attractor, using low amplitude random fluctuations. In this regime, the system has undergone a Hopf bifurcation, guaranteed by using a Rayleigh parameter of 28. The evolution of the initial density was evaluated in terms of: (i) its KL divergence from the NESSdensity $D(\tau)$ –and(ii)the difference in information length between the density over time and the final (steady-state) density $\Delta(\tau)$.
 
 $$
 \begin{equation} \tag{2.9}
 \begin{aligned}
+D(\tau) &= D[p(x,\tau|\pi_0) \parallel p(x,\infty|\pi_0)] \\
+\delta(\tau)^2 &\leq \frac{1}{2}D(\tau) \\
 \\
+\Delta\ell(\tau) &= \ell(\tau) - \ell(\infty) \\
+\frac{1}{2}d\ell(\tau)^2 &= D[p(x,\tau+d\tau|\pi_0) \parallel p(x,\tau|\pi_0)] \\
+\\
+D(\tau) &= 0 \Leftrightarrow \Delta\ell(\tau) = 0 \Leftrightarrow \delta(\tau)=0 \Leftrightarrow d\ell(\tau)  = 0 \\
 \end{aligned}
 \end{equation}
 $$
 
-The inequality above is known as Pinsker's inequality, where, () is called total variation distance (Rényi, 2007) and is upper bounded by D( ) , which we will refer to as divergence length. Recall from (1.18) that the
- characterisations of statistical distances D() and  ()
-are related but differ in their use of KL divergences.
-The path length is an accumulation of divergences over small increments over time – to ensure the information length is a (Riemannian) measure of distance. Conversely, the divergence length between initial and final densities is not. The final expression in (2.9) says that after a sufficient period of time the density ‘forgets’ about the particular state it started from; rendering increments in divergence and information length zero. Conversely, particles that ‘remember’ their initial state have a long information length with itinerant density dynamics.
+The inequality above is known as Pinsker's inequality, where, $\delta(\tau)$ is called total variation distance (Rényi, 2007) and is upper bounded by $D(\tau)$ , which we will refer to as divergence length. Recall from (1.18) that the  characterisations of statistical distances $D(\tau)$ and $\Delta(\tau)$
+are related but differ in their use of KL divergences. The path length is an accumulation of divergences over small increments over time – to ensure the information length is a (Riemannian) measure of distance. Conversely, the divergence length between initial and final densities is not. The final expression in (2.9) says that after a sufficient period of time the density ‘forgets’ about the particular state it started from; rendering increments in divergence and information length zero. Conversely, particles that ‘remember’ their initial state have a long information length with itinerant density dynamics.
 
 
 A long information length means, effectively, the initial density is a long way away from the final density and therefore convergence takes longer (indicated by the small blue arrows in Figure 4). In this example, it takes about eight seconds before convergence to steady state. This can be contrasted with the lower panels that illustrate examples of fast convergence; meaning that the initial densities have a short information length.
@@ -561,12 +564,14 @@ Generally speaking, the information length preserves the linearity of the system
 $$
 \begin{equation} \tag{2.10}
 \begin{aligned}
-\\
+f(\pi) &= -\gamma\pi + \omega \\
+&\Rightarrow \ln{\ell(\infty)}=\ln{|\pi_0|} + \tfrac{1}{2}\ln{\gamma} - \tfrac{1}{2}\ln{\Gamma} \\
+&\Rightarrow \frac{\partial\ln\ell(\infty)}{\partial\ln{|\pi_0|}} = v = 1
 \end{aligned}
 \end{equation}
 $$
 
-In contrast, nonlinear flow changes the linear scaling of geometric structure to produce power-law scaling   1 characteristic of symmetry breaking, itinerancy and self-organised criticality[^note-7]. An interesting aspect of the numerical analyses of chaotic systems in (Kim, 2018) is the dependency of information length on the initial state, where unstable or critical points have the shortest information length. From the numerical analysis in Figure 3, one might picture noise-induced tunnelling from unstable points as mediating ‘shortcuts’ to nonequilibrium steady-state. The linear case suggests that as random fluctuations attain large amplitudes, all initial conditions are drawn close to steady-state and, by implication, self-organisation to nonequilibrium steady-state is (almost) instantaneous (c.f., Panel B of Figure 4). Later, we will associate this sort of behaviour with small (quantum) particles.
+In contrast, nonlinear flow changes the linear scaling of geometric structure to produce power-law scaling $v \ne 1$ characteristic of symmetry breaking, itinerancy and self-organised criticality[^note-7]. An interesting aspect of the numerical analyses of chaotic systems in (Kim, 2018) is the dependency of information length on the initial state, where unstable or critical points have the shortest information length. From the numerical analysis in Figure 3, one might picture noise-induced tunnelling from unstable points as mediating ‘shortcuts’ to nonequilibrium steady-state. The linear case suggests that as random fluctuations attain large amplitudes, all initial conditions are drawn close to steady-state and, by implication, self-organisation to nonequilibrium steady-state is (almost) instantaneous (c.f., Panel B of Figure 4). Later, we will associate this sort of behaviour with small (quantum) particles.
 
 [^note-7]: See Kim, E.-j., 2018. Investigating Information Geometry in Classical and Quantum Systems through Information Length. Entropy 20, 574. for further discussion and an (entertaining) application of information length to music.
 
@@ -586,11 +591,44 @@ Table 1 provides a summary of the information measures introduced in the section
 ![Table 1](./img/t1.png)
 
 ### Synthetic soups and active matter
+
+In this section, we describe an exemplar system that will be used to illustrate crosscutting themes in subsequent sections. Here, it is used to simulate a primordial soup – to illustrate the emergence of self-organisation in terms of Markov blankets and internal states. This soup or active matter (Ramaswamy, 2010), comprises an ensemble of particles that are coupled through short range interactions. Each particle corresponds to the Lorentz system of the previous section that has been ‘dressed’ with blanket states to create an internal state – and enable interactions among particles. The resulting simulations are similar to those used to characterise pattern formation in dissipative systems; for example, Turing instabilities (Turing, 1952) and other dissipative structures in nonequilibrium systems, such as turbulence and convention in fluid dynamics (e.g., Bénard cells) or percolation in reaction-diffusion systems such as the Belousov-Zhabotinsky reaction (Belousov, 1959). In our case, we can treat our system is an ensemble of macromolecules; however, the details of the simulation are not important, similar results would be obtained with any coupled random dynamical system. The description below summarises the material in (Friston, 2013), where interested readers can find more details.
+
 #### An active soup
+
+To simulate the emergence of a Markov blanket, each constituent of the ensemble or i-th macromolecule was
+equipped with notional Newtonian and electrochemical states, $\{b_n^{(i)} , b_e^{(i)}\}$. Here, $b_n^{(i)}=\{a_n^{(i)} , s_n^{(i)}\}$ can be considered coordinates of motion; e.g., position and velocity, while $b_e^{(i)} = \{a_e^{(i)} , s_e^{(i)},\mu^{(i)} \}$ could correspond to electrochemical states; e.g., oncentrations or electromagnetic states. The electrochemical dynamics of each macromolecule was chosen to have a Lorenz attractor, which provides a ubiquitous model of itinerant systems; e.g. in electrodynamics, lasers and chemical reactions (Poland, 1993). Figure 5 provides the summary of the dynamics. Specifically, the Langevin equation for the $i$-th macromolecule is:
+
+$$
+\begin{equation}\tag{3.1}
+\begin{aligned}
+\begin{bmatrix}
+  \dot{s}_e^{(i)} \\
+  \dot{a}_e^{(i)}  \\
+  \dot{\mu}^{(i)} \\
+\end{bmatrix} &= 
+\begin{bmatrix}
+  10(a_e^{(i)}-s_e^{(i)})+s_e^{(i)}) \\
+  32\cdot s_e^{(i)} -a_e^{(i)} -\mu^{(i)} s_e^{(i)} \\
+  s_e^{(i)}a_e^{(i)} - \tfrac{8}{3}\mu^{(i)} \\
+\end{bmatrix} \cdot K^{(i)} + \omega_e \\
+\\
+s_e^{(i)} &= \textstyle\sum_{j=\{j:\Delta_{ij}<1\}}s_e^{(i)} \\
+\Delta_{ij} &= |a_n^{(j)} - a_n^{(i)}|
+\end{aligned}
+\end{equation}
+$$
+
+Here, changes in electrochemical states are coupled through the local average $s_e^{(i)}$ of the states of other macromolecules that lie within a distance of one unit. This means $\Delta$ can be regarded as an adjacency matrix that encodes the dependencies among the electrochemical states of the ensemble. Crucially, this means electrochemical coupling depends upon the spatial relationships among the macromolecules. The corresponding rate parameters $K^{(i)} = \tfrac{1}{32}(1−exp(−4\cdot u))$; where $u \in (0,1)$ was selected from a uniform distribution to ensure topological symmetry breaking.
+
+Similarly, the (Newtonian) motion of each macromolecule depends upon the electrochemical state of its
+neighbours
+
 #### A random dynamical attractor and its Markov blankets
 #### The Markov blanket
 #### The emergence of order
 #### Summary
+
 ### States, particles and fluctuations
 #### Starting at the end
 #### The Markovian partition
@@ -610,4 +648,5 @@ Table 1 provides a summary of the information measures introduced in the section
 ## Appendix D: the Fokker-Planck operator
 ## Appendix E: generalised motion
 ## Appendix F: discrete state-space models
+
 ## References
