@@ -486,7 +486,6 @@ $$
 \Im(\alpha) &= E_{p(\tilde{\alpha}|\alpha)}[\Im(\alpha)] \\
 &= E_{p(\tilde{\alpha}|\alpha)}[\ln{p(\eta|\pi)} - \ln{p(\eta)} - \ln{p(\eta|\pi)} + \ln{p(\eta|\alpha)} - \ln{p(\alpha|\eta)}] \\
 &= E_{p(\eta|\alpha)}[\Im(\alpha|\eta)] + E_{p(\tilde{\alpha}|\alpha)}[\underbrace{D[p(\eta|\pi)||p(\eta)]}_{\text{complexity}} - \underbrace{D[p(\eta|\pi)||p(\eta|\alpha)]}_{\text{information gain}}] \\
-\\
 E_{p(\tilde{\alpha}|\alpha)}[\Im(\alpha)] &= H(A) = I(A,E) + H(A|E) \\
 &= H(A|E) + \underbrace{I(E,P)}_{\text{risk}} - \underbrace{I(E,S|A)}_{\text{active information}} \\
 \end{aligned}
@@ -612,28 +611,3 @@ Table 1 provides a summary of the information measures introduced in the section
 ## Appendix E: generalised motion
 ## Appendix F: discrete state-space models
 ## References
-
-[Figure 1](./img/01.png)
-[Figure 2](./img/02.png)
-[Figure 3](./img/03.png)
-[Figure 4](./img/04.png)
-[Figure 5](./img/05.png)
-[Figure 6](./img/06.png)
-[Figure 7](./img/07.png)
-[Figure 8](./img/08.png)
-[Figure 9](./img/09.png)
-[Figure 10](./img/10.png)
-[Figure 11](./img/11.png)
-[Figure 12](./img/12.png)
-[Figure 13](./img/13.png)
-[Figure 14](./img/14.png)
-[Figure 15](./img/15.png)
-[Figure 16](./img/16.png)
-[Figure 17](./img/17.png)
-[Figure 18](./img/18.png)
-[Figure 19](./img/19.png)
-[Figure 20](./img/20.png)
-[Figure 21](./img/21.png)
-[Figure 22](./img/22.png)
-[Figure 23](./img/23.png)
-
