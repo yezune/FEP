@@ -861,17 +861,42 @@ $$
 $$
 \begin{equation}\tag{4.8}
 \begin{aligned}
-\\
+[\xi_{j}^{(i)},\zeta_{j}^{(i)}]^{-}\dot{b}_{j}^{(i)} &=
+\begin{Bmatrix}
+  \xi_j^{(i)-} \dot{b}_j^{(i)} \\
+  \zeta_j^{(i)-} \dot{b}_j^{(i)}
+\end{Bmatrix} =
+\begin{Bmatrix}
+   \dot{b}_{j,slow}^{(i)} \\
+   \dot{b}_{j,fast}^{(i)}
+\end{Bmatrix}\\
+&= \begin{Bmatrix} 
+  \xi_j^{(i)-}   f_{b_j}^{(i)}(b_{0}^{(j)}) + \sum_k \lambda_{jk}^{\xi\xi}     b_{k,slow}^{(i)} \\
+  \zeta_j^{(i)-} f_{b_j}^{(i)}(b_{0}^{(j)}) + \sum_k \lambda_{kj}^{\zeta\zeta} b_{k,fast}^{(i)}
+\end{Bmatrix} +
+\begin{Bmatrix}
+  \xi_j^{(i)-}  (\omega_{b_j}^{(i)}+K_j\varepsilon_{j}^{(i)})+\sum_{k\neq j}\lambda_{jk}^{\xi\zeta} b_{k,fast}^{(i)} +\dots \\
+  \zeta_j^{(i)-}(\omega_{b_j}^{(i)}+K_j\varepsilon_{j}^{(i)})+\sum_{k\neq j}\lambda_{jk}^{\zeta\xi} b_{k,slow}^{(i)} +\dots
+\end{Bmatrix}\\
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{4.9}
 \begin{aligned}
+\dot{x}_{n}^{(i)} &= f_{n}^{(i)} + \textstyle\sum_m\lambda_{nm}^{(i)}x_{m}^{(i)}+\omega_{n}^{(i)} \\
+\dot{x}_{n}^{(i+1)} &= f_{n}^{(i+1)} + \textstyle\sum_m\lambda_{nm}^{(i+1)}x_{m}^{(i+1)}+\omega_{n}^{(i+1)} \\
+\dot{x}_{n}^{(i+2)} &= \dots \\
 \\
+x_{n}^{i+1}        &\triangleq \xi_{n}^{(i)-}b_{n}^{(i)}=b_{n,slow}^{(i)} \\
+f_{n}^{i+1}        &\triangleq \xi_{n}^{(i)-}f_{b_n}^{(i)}(b_{0}^{(i)}) \\
+\lambda_{nm}^{i+1} &\triangleq \xi_{n}^{(i)-}j_{nm}\xi_{m}^{(i)}=\lambda_{\xi_n,\xi_m}^{(i)} \\
+\omega_{n}^{i+1}   &\triangleq \xi_{n}^{(i)-}(\omega_{b_n}^{(i)}+K_n\varepsilon_{n}^{(i)})+\textstyle\sum_{k\neq n}\lambda_{nm}^{\xi\zeta} b_{m,fast}^{(i)} +\dots \\
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{4.10}
 \begin{aligned}
@@ -879,6 +904,7 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{4.11}
 \begin{aligned}
