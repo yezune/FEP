@@ -999,24 +999,44 @@ $$
 $$
 \begin{equation}\tag{5.4}
 \begin{aligned}
-\\
+\dot{p} &= \tfrac{\hbar}{2m}\nabla^2 p - p\nabla\cdot f - f \cdot \nabla p \\
+        &= \tfrac{\hbar}{2m}\nabla^2\Psi^{\dagger}\Psi 
+           - \tfrac{1}{2}\Psi\nabla\cdot f\Psi^{\dagger} 
+           - \tfrac{1}{2}\Psi^{\dagger}\nabla\cdot f\Psi
+           - \Psi f\cdot\nabla\Psi^{\dagger} 
+           - \Psi^{\dagger} f \cdot\nabla\Psi \\
+        &= (\tfrac{\hbar}{2m}\nabla^2)+(\tfrac{\hbar}{2m}\nabla^2) \\
+        \\
+V(x)    &= \tfrac{m}{2}f\cdot f+\tfrac{\hbar}{2}\cdot f \\
+        &= \tfrac{\hbar^{2}}{4m}(\tfrac{1}{2}\nabla\Im\cdot\nabla\Im-\nabla^2\Im)
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{5.5}
 \begin{aligned}
-\\
+i\hbar\dot{p} &= \Psi^{\dagger}i\hbar\Psi + \Psi i\hbar\Psi = \Psi^{\dagger}E\Psi - \Psi E\Psi^{\dagger} = 0 \\
+-\hbar\dot{p} &= \Psi^{\dagger}\pmb{H}\Psi + \Psi\pmb{H}\Psi^{\dagger} = 0 \\
+\pmb{H}       &= V(x) - \tfrac{\hbar^2}{2m}\nabla^2 \\
+              &\Leftarrow \\
+\pmb{H}\Psi   &= i\hbar\dot{\Psi} = E\Psi \\
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{5.6}
 \begin{aligned}
+\dot{p} &= \pmb{L}p(x) \\
+\pmb{L} &= \tfrac{\hbar}{2m}\nabla^2 - \nabla\cdot f \\
 \\
+i\hbar\dot{\Psi}(x) &= \pmb{H}\Psi(x) \\
+-\tfrac{1}{\hbar}\pmb{H} &= \tfrac{\hbar}{2m}\nabla^2 - \tfrac{1}{\hbar}V(x) \\
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{5.7}
 \begin{aligned}
@@ -1024,6 +1044,7 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{5.8}
 \begin{aligned}
@@ -1031,6 +1052,7 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{5.9}
 \begin{aligned}
@@ -1038,6 +1060,7 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{5.10}
 \begin{aligned}
