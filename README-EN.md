@@ -1040,7 +1040,9 @@ $$
 $$
 \begin{equation}\tag{5.7}
 \begin{aligned}
-\\
+\Psi(x,t) &= \Psi(x)e^{-i\omega t} = \Psi(x)^{-iEt/\hbar} \\
+\Psi(x)   &= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\Phi(k)\cdot e^{ik\cdot x}dk \\
+\Phi(k)   &= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\Psi(x)\cdot e^{-ik\cdot x}dk \\
 \end{aligned}
 \end{equation}
 $$
@@ -1048,7 +1050,10 @@ $$
 $$
 \begin{equation}\tag{5.8}
 \begin{aligned}
-\\
+\braket{\Psi^{\dagger}(x)|-i\hbar\nabla|\Psi(x)} 
+  &= -i\hbar\int_{-\infty}^{\infty} \Psi(x)^{\dagger}\nabla\Psi(x)dx \\
+  &= -i\hbar\int_{-\infty}^{\infty} \Psi^{\dagger}\frac{m}{\hbar}f\Psi(x)dx = -imf\\
+  &= \braket{\Phi(k)^{\dagger}|\hbar k|\Phi(k)} = \hbar k \Rightarrow mf = i\hbar k \\
 \end{aligned}
 \end{equation}
 $$
@@ -1056,7 +1061,11 @@ $$
 $$
 \begin{equation}\tag{5.9}
 \begin{aligned}
+H\Psi &= i\hbar\Psi = h\omega\Psi = E\Psi \\
+p\Psi &= -i\hbar\nabla\Psi = \hbar k\Psi \\
 \\
+E &\triangleq \hbar\omega \\
+p &\triangleq \hbar k = mf \\
 \end{aligned}
 \end{equation}
 $$
