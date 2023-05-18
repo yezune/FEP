@@ -280,8 +280,8 @@ $$
 $$
 \begin{equation}\tag{1.17}
 \begin{aligned}
-p(x,\tau) &= p_{0} + \tau\dot{p}_{0} + ... \\
-&= p_{0} + \tau L p_{0} + ... \\
+p(x,\tau) &= p_{0} + \tau\dot{p}_{0} +\dots \\
+&= p_{0} + \tau L p_{0} + \dots \\
 \\
 \ell(t) &= \int_{0}^{t} \sqrt{g(\tau)}d\tau \\
 g(\tau) &= I(\tau) = E_{p_{0}}[(\partial_{\tau}\Im_{0})^{2}] = \int\cfrac{(L_0 P_0)^2}{p_0}dx \\
@@ -678,13 +678,13 @@ _자기조직화 스프_. 이 시연은 본질적인 (로런츠 어트랙터) �
 
 #### Starting at the end
 
-At a given scale or level (i) of description, we can entertain the following ansatz: a random dynamical system can be characterised as coupled subsets of states, where the n-th subset $x_n^{(i)} \subset x^{(i)}$ constitutes the vector state of a particle or nonlinear oscillator:
+주어진 척도 또는 레벨 (i)의 설명에서, 우리는 다음과 같은 답안을 생각해 볼 수 있습니다: 무작위 동역학 시스템은 상태의 연결된 부분 집합으로 특징 지어질 수 있으며, 이 중 n-번째 부분 집합 $x_n^{(i)} \subset x^{(i)}$는 입자의 벡터 상태 또는 비선형 진동자를 구성합니다:
 
 $$
 \begin{equation}\tag{4.1}
 \begin{aligned}
 \dot{x}_n^{(i)} &= f_n^{(i)} + \textstyle\sum_m \lambda_{nm}^{(i)}x_m^{(i)} + \omega_n^{(i)}\\
-x^{(i)} &= \{x_1^{(i)},...,x_N^{(i)}\} \\
+x^{(i)} &= \{x_1^{(i)},\dots,x_N^{(i)}\} \\
 \\
 E[\omega_n^{(i)}(\tau)\cdot\omega_n^{(i)}(\tau^{'})] &= \begin{cases}
 2\Gamma_n^{(i)}\delta(\tau - \tau^{'}) & n=m \\
@@ -694,12 +694,13 @@ E[\omega_n^{(i)}(\tau)\cdot\omega_n^{(i)}(\tau^{'})] &= \begin{cases}
 \end{equation}
 $$
 
-The equations of motion for the states of the n-th particle comprise some baseline flow (at the current point in phase-space) and intrinsic and extrinsic components determined by the states of the particle in question and other particles, respectively. In this form, the diagonal elements of the coupling matrix,$\lambda_{nn}^{(i)} \in \cnums$ , determines the frequency and decay of oscillatory responses to extrinsic perturbations and random fluctuations. In what follows, we will see that (4.1) leads to an isomorphic expression for states of particles at a higher (macroscopic) scale. See Figure 8 for a schematic summary of this recursive induction.
+n-번째 입자의 상태에 대한 운동 등식은 몇 가지 기본적인 흐름(현재 위상 공간에서의 포인트)과 해당 입자의 상태와 다른 입자의 상태에 의해 결정되는 내적 및 외적 구성 요소를 포함합니다. 이 형식에서, 결합 행렬의 대각 요소, $\lambda_{nn}^{(i)} \in \cnums$는 외적 변동과 무작위 변동에 대한 진동 반응의 주파수와 감쇠를 결정합니다. 다음에서는 (4.1)이 상위 (거시적) 척도에서 입자의 상태에 대한 등위 표현을 생성하는 것을 볼 수 있습니다. 이 재귀적 유도의 개략적 요약을 위해 그림 8을 참조하십시오.
 
 ![FIGURE 8](./img/08.png)
 <p style="text-align: center;">FIGURE 8</p>
 
-states comprise active (red) and sensory states (magenta). The behaviour of each particle can now be summarised in terms of (slow) eigenmodes or mixtures of its blanket states – to produce eigenstates at the next level or scale. These constitute an ensemble of vector states and the process starts again. Formally, one can understand this in terms of coarse graining the dynamics of a system via two operators. The first uses the particular partition to group subsets of states (**G**), while the second uses the eigenmodes of the resulting blanket states to reduce dimensionality (**R**). The upper panels illustrate the bipartition for a single particle (left panel) and an ensemble of particles; i.e., the particular partition per se (right panel). The insets on top illustrate the implicit self-similarity of particular dependencies pictorially, in moving from one scale to the next. Please see the main text for a definition of the variables used in this figure.
+_담요의 담요_. 이 도식은 하급 수준에서 차례대로 더 크고 (더 느린) 척도의 동역학이 어떻게 발생하는지를 보여주는 재귀적 절차를 보여줍니다. 그림의 하단 (하단 패널)에서 우리는 벡터 상태의 앙상블 (여기서는 아홉 개)에서 시작합니다. 이 벡터 상태들 사이의 조건부 의존성 (즉, 고유 상태)이 입자로의 특정 분할을 정의합니다 (상단 패널). 중요하게도, 이 분할은 각 입자에게 담요와 내부 상태로의 이분법을 갖추게 하며, 담요 상태는 활성 (빨간색)과 감각 상태 (자홍색)를 포함합니다. 각 입자의 행동은 이제 그 담요 상태의 (느린) 고유 모드 또는 혼합물의 측면에서 요약될 수 있습니다 - 다음 레벨 혹은 척도에서 고유 상태를 생성합니다. 이들은 벡터 상태의 앙상블을 구성하며 프로세스는 다시 시작됩니다. 형식적으로, 이것을 시스템의 동역학을 두 가지 연산자를 통해 대략적으로 분류하는 것으로 이해할 수 있습니다. 첫 번째는 특정 파티션을 사용하여 상태의 부분 집합을 그룹화하는 것(**G**), 두 번째는 결과적인 담요 상태의 고유 모드를 사용하여 차원을 줄이는 것(**R**)입니다. 상단 패널은 단일 입자에 대한 양분 (왼쪽 패널)과 입자 앙상블을 보여줍니다. 즉, 자체적으로 특정 파티션 (오른쪽 패널). 상단에 있는 삽입물은 한 척도에서 다음 척도로 이동할 때 그림적으로 묵시적인 자기 유사성을 보여줍니다. 이 그림에서 사용된 변수의 정의는 본문을 참조하십시오.
+
 
 #### The Markovian partition
 
@@ -716,7 +717,7 @@ $$
 \end{Bmatrix} =
 \begin{Bmatrix}
    f_{a_j}^{(i)}(b_j^{(i)},\mu_j^{(i)}) \\
-   f_{s_j}^{(i)}(b_1^{(i)},...,b_j^{(i)}) \\
+   f_{s_j}^{(i)}(b_1^{(i)},\dots,b_j^{(i)}) \\
    f_{\mu_j}^{(i)}(b_j^{(i)},\mu_j^{(i)}) \\
 \end{Bmatrix} +
 \begin{Bmatrix}
@@ -731,7 +732,7 @@ $$
    \dot{\mu}_j^{(i)} \\
 \end{Bmatrix} =
 \begin{Bmatrix}
-   f_{b_j}^{(i)}(\mu_j^{(i)},b_1^{(i)},...,b_j^{(i)}) \\
+   f_{b_j}^{(i)}(\mu_j^{(i)},b_1^{(i)},\dots,b_j^{(i)}) \\
    f_{\mu_j}^{(i)}(\pi_j^{(i)}) \\
 \end{Bmatrix} +
 \begin{Bmatrix}
@@ -739,8 +740,8 @@ $$
    \omega_{\mu_j}^{(i)} \\
 \end{Bmatrix} \\
 \\
-\pi^{(i)} &= \{\pi_1^{(i)},...,\pi_j^{(i)} \} \\
-&= \{x_1^{(i)},...,\underbrace{\underbrace{\underbrace{x_k^{(i)},...,x_\ell^{(i)}}_{a_j^{(i)}},\underbrace{x_m^{(i)},...,x_n^{(i)}}_{s_j^{(i)}}}_{b_j^{(i)}},\underbrace{x_o^{(i)},...,x_p^{(i)}}_{\mu_j^{(i)}}}_{\pi_j^{(i)}},...,x_N^{(i)} \} \\
+\pi^{(i)} &= \{\pi_1^{(i)},\dots,\pi_j^{(i)} \} \\
+&= \{x_1^{(i)},\dots,\underbrace{\underbrace{\underbrace{x_k^{(i)},\dots,x_\ell^{(i)}}_{a_j^{(i)}},\underbrace{x_m^{(i)},\dots,x_n^{(i)}}_{s_j^{(i)}}}_{b_j^{(i)}},\underbrace{x_o^{(i)},\dots,x_p^{(i)}}_{\mu_j^{(i)}}}_{\pi_j^{(i)}},\dots,x_N^{(i)} \} \\
 \end{aligned}
 \end{equation}
 $$

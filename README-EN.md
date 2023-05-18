@@ -291,8 +291,8 @@ An important information length follows from the fact that time itself parameter
 $$
 \begin{equation}\tag{1.17}
 \begin{aligned}
-p(x,\tau) &= p_{0} + \tau\dot{p}_{0} + ... \\
-&= p_{0} + \tau L p_{0} + ... \\
+p(x,\tau) &= p_{0} + \tau\dot{p}_{0} + \dots \\
+&= p_{0} + \tau L p_{0} + \dots \\
 \\
 \ell(t) &= \int_{0}^{t} \sqrt{g(\tau)}d\tau \\
 g(\tau) &= I(\tau) = E_{p_{0}}[(\partial_{\tau}\Im_{0})^{2}] = \int\cfrac{(L_0 P_0)^2}{p_0}dx \\
@@ -698,7 +698,7 @@ $$
 \begin{equation}\tag{4.1}
 \begin{aligned}
 \dot{x}_n^{(i)} &= f_n^{(i)} + \textstyle\sum_m \lambda_{nm}^{(i)}x_m^{(i)} + \omega_n^{(i)}\\
-x^{(i)} &= \{x_1^{(i)},...,x_N^{(i)}\} \\
+x^{(i)} &= \{x_1^{(i)},\dots,x_N^{(i)}\} \\
 \\
 E[\omega_n^{(i)}(\tau)\cdot\omega_n^{(i)}(\tau^{'})] &= \begin{cases}
 2\Gamma_n^{(i)}\delta(\tau - \tau^{'}) & n=m \\
@@ -713,7 +713,7 @@ The equations of motion for the states of the n-th particle comprise some baseli
 ![FIGURE 8](./img/08.png)
 <p style="text-align: center;">FIGURE 8</p>
 
-states comprise active (red) and sensory states (magenta). The behaviour of each particle can now be summarised in terms of (slow) eigenmodes or mixtures of its blanket states – to produce eigenstates at the next level or scale. These constitute an ensemble of vector states and the process starts again. Formally, one can understand this in terms of coarse graining the dynamics of a system via two operators. The first uses the particular partition to group subsets of states (**G**), while the second uses the eigenmodes of the resulting blanket states to reduce dimensionality (**R**). The upper panels illustrate the bipartition for a single particle (left panel) and an ensemble of particles; i.e., the particular partition per se (right panel). The insets on top illustrate the implicit self-similarity of particular dependencies pictorially, in moving from one scale to the next. Please see the main text for a definition of the variables used in this figure.
+_Blankets of blankets_. This schematic illustrates the recursive procedure by which successively larger (and slower) scale dynamics arise from subordinate levels. At the bottom of the figure (lower panel), we start with an ensemble of vector states (here nine). The conditional dependencies among these vector states (i.e., eigenstates) define a particular partition into particles (upper panels). Crucially, this partition equips each particle with a bipartition into blanket and internal states, where blanket states comprise active (red) and sensory states (magenta). The behaviour of each particle can now be summarised in terms of (slow) eigenmodes or mixtures of its blanket states – to produce eigenstates at the next level or scale. These constitute an ensemble of vector states and the process starts again. Formally, one can understand this in terms of coarse graining the dynamics of a system via two operators. The first uses the particular partition to group subsets of states (**G**), while the second uses the eigenmodes of the resulting blanket states to reduce dimensionality (**R**). The upper panels illustrate the bipartition for a single particle (left panel) and an ensemble of particles; i.e., the particular partition per se (right panel). The insets on top illustrate the implicit self-similarity of particular dependencies pictorially, in moving from one scale to the next. Please see the main text for a definition of the variables used in this figure.
 
 #### The Markovian partition
 
@@ -730,7 +730,7 @@ $$
 \end{Bmatrix} =
 \begin{Bmatrix}
    f_{a_j}^{(i)}(b_j^{(i)},\mu_j^{(i)}) \\
-   f_{s_j}^{(i)}(b_1^{(i)},...,b_j^{(i)}) \\
+   f_{s_j}^{(i)}(b_1^{(i)},\dots,b_j^{(i)}) \\
    f_{\mu_j}^{(i)}(b_j^{(i)},\mu_j^{(i)}) \\
 \end{Bmatrix} +
 \begin{Bmatrix}
@@ -745,7 +745,7 @@ $$
    \dot{\mu}_j^{(i)} \\
 \end{Bmatrix} =
 \begin{Bmatrix}
-   f_{b_j}^{(i)}(\mu_j^{(i)},b_1^{(i)},...,b_j^{(i)}) \\
+   f_{b_j}^{(i)}(\mu_j^{(i)},b_1^{(i)},\dots,b_j^{(i)}) \\
    f_{\mu_j}^{(i)}(\pi_j^{(i)}) \\
 \end{Bmatrix} +
 \begin{Bmatrix}
@@ -753,8 +753,396 @@ $$
    \omega_{\mu_j}^{(i)} \\
 \end{Bmatrix} \\
 \\
-\pi^{(i)} &= \{\pi_1^{(i)},...,\pi_j^{(i)} \} \\
-&= \{x_1^{(i)},...,\underbrace{\underbrace{\underbrace{x_k^{(i)},...,x_\ell^{(i)}}_{a_j^{(i)}},\underbrace{x_m^{(i)},...,x_n^{(i)}}_{s_j^{(i)}}}_{b_j^{(i)}},\underbrace{x_o^{(i)},...,x_p^{(i)}}_{\mu_j^{(i)}}}_{\pi_j^{(i)}},...,x_N^{(i)} \} \\
+\pi^{(i)} &= \{\pi_1^{(i)},\dots,\pi_j^{(i)} \} \\
+&= \{x_1^{(i)},\dots,\underbrace{\underbrace{\underbrace{x_k^{(i)},\dots,x_\ell^{(i)}}_{a_j^{(i)}},\underbrace{x_m^{(i)},\dots,x_n^{(i)}}_{s_j^{(i)}}}_{b_j^{(i)}},\underbrace{x_o^{(i)},\dots,x_p^{(i)}}_{\mu_j^{(i)}}}_{\pi_j^{(i)}},\dots,x_N^{(i)} \} \\
+\end{aligned}
+\end{equation}
+$$
+
+Here, active states depend only on the Markov blanket in which they participate and the internal states they
+surround. Similarly, the internal states depend only upon themselves and their Markov blanket. Conversely, the
+flow of sensory states depends upon all other states (apart from internal states that are sequestered behind Markov
+blankets). The partition implicit in the last equality emphasises the point that a (particular) Markovian partition
+is a partition into particles, where each particle is itself a partition of blanket and internal states.
+Consider now the Taylor expansion of the flow of the j-th Markov blanket, where the intrinsic dynamics are
+absorbed into the random fluctuations. For notational simplicity, we will assume the current state constitutes the
+origin of the generalised coordinates: x 0  x (0) = 0 . So that we can express everything in terms of local
+deviations:
+
+$$
+\begin{equation}\tag{4.3}
+\begin{aligned}
+\dot{b}_j^{(i)} &= f_{b_j}^{(i)}(b_0^{(i)})+\textstyle\sum_k J_{jk} b_k^{(i)}+\dots+K_j\varepsilon_j^{(i)}+\omega_{b_j}^{(i)} \\
+\varepsilon_j^{(i)} &= \mu_j^{(i)} - \pmb{\mu}_j^{(i)}(b_j^{(i)}) \\
+\\
+J_{jk} &\triangleq\partial_{b_k}f_{b_j}^{(i)}(b_k^{(i)}) \\
+J_{jj} &\triangleq\partial_{b_j}f_{b_j}^{(i)}(b_j^{(i)},\pmb{\mu}_j^{(i)}(b_j^{(i)})) \\
+K_{j} &\triangleq\partial_{\mu_j}f_{b_j}^{(i)}(\pi_k^{(i)}) \\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{4.4}
+\begin{aligned}
+E[\varepsilon_j^{(i)}(\tau)\cdot \varepsilon_k^{(i)}(\tau)]=
+\begin{cases}
+\sum_j^{(i)} & :j=k \\
+0 & :j \neq k \\
+\end{cases}\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{4.5}
+\begin{aligned}
+J_{jk} & \triangleq \partial_{b_k} f_{b_j} =
+\begin{bmatrix}
+0 \\
+\partial_{b_k} f_{s_j} \\
+\end{bmatrix} & : j \neq k \\
+K_j & \triangleq \partial_{\mu_j} f_{b_j} =
+\begin{bmatrix}
+\partial_{\mu_j} f_{a_j} \\
+0 \\
+\end{bmatrix} & : \forall j \\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{4.6}
+\begin{aligned}
+\pmb{\mu}_j^{(i)}(b_j^{(i)}) \triangleq E_p[\mu_j^{(i)},\dots,b_J^{(i)}] = E_p[\mu_j^{(i)}|b_j^{(i)}] \\
+\end{aligned}
+\end{equation}
+$$
+![FIGURE 9](./img/09.png)
+<p style="text-align: center;">FIGURE 9</p>
+
+$$
+\begin{equation}\tag{4.7}
+\begin{aligned}
+\begin{bmatrix}
+\lambda_{11}^{(i)} & \dots & \lambda_{1J}^{(i)} \\
+\vdots & \ddots & \vdots \\
+\lambda_{J1}^{(i)} & \dots & \lambda_{JJ}^{(i)} \\
+\end{bmatrix} &=
+\begin{bmatrix}
+\xi_1^{(i)} &  \zeta_1^{(i)} \\
+\vdots & \vdots \\
+\xi_J^{(i)} &  \zeta_J^{(i)} \\
+\end{bmatrix}^{-}
+\begin{bmatrix}
+J_{11} & \dots & J_{1J} \\
+\vdots & \ddots & \vdots \\
+J_{J1} & \dots & J_{JJ} \\
+\end{bmatrix}
+\begin{bmatrix}
+\xi_1^{(i)} &  \zeta_1^{(i)} \\
+\vdots & \vdots \\
+\xi_J^{(i)} &  \zeta_J^{(i)} \\
+\end{bmatrix} \\
+\\
+\lambda &= [\xi_j^{(i)},\zeta_j^{(i)}]^{-} J_{jj} [\xi_j^{(i)},\zeta_j^{(i)}] =
+\begin{bmatrix}
+\lambda_{jj}^{\xi\xi} &  0 \\
+0 &  \lambda_{jj}^{\zeta\zeta} \\
+\end{bmatrix} \\
+\lambda &= [\xi_j^{(i)},\zeta_j^{(i)}]^{-} J_{jk} [\xi_k^{(i)},\zeta_k^{(i)}] =
+\begin{bmatrix}
+\lambda_{jk}^{\xi\xi} &  \lambda_{jk}^{\xi\zeta} \\
+\lambda_{jk}^{\zeta\xi} &  \lambda_{jk}^{\zeta\zeta} \\
+\end{bmatrix} \\
+\\
+[\xi_j^{(i)},\zeta_j^{(i)}]^{-}[\xi_j^{(i)},\zeta_j^{(i)}]&=I,\space\space 0 \geq Re\lambda_{jj}^{\xi\xi} \gt \epsilon \geq Re\lambda_{jj}^{\zeta\zeta}
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{4.8}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{4.9}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{4.10}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{4.11}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{4.12}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{4.13}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{4.14}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{5.1}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{5.2}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{5.3}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{5.4}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{5.5}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{5.6}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{5.7}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{5.8}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{5.9}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{5.10}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{5.11}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{5.12}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{5.13}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{5.14}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{5.15}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{6.1}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{6.20}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{7.1}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{7.15}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{8.1}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{8.33}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{9.1}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{10.1}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{10.12}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{11.1}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{11.3}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{12.1}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{12.16}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{13.1}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{13.3}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{14.1}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{14.10}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{15.1}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{15.5}
+\begin{aligned}
+\\
 \end{aligned}
 \end{equation}
 $$
