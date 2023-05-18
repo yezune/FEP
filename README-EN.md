@@ -815,6 +815,7 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
 [FIGURE 9](./img/09.png)
 <p style="text-align: center;">FIGURE 9</p>
 
@@ -952,15 +953,22 @@ $$
 $$
 \begin{equation}\tag{4.14}
 \begin{aligned}
-\\
+E[Re(\lambda_{nn}^{(i)})] \leq E[Re(\lambda_{nn}^{(i+1)})]\dots\leq 0 \\
 \end{aligned}
 \end{equation}
 $$
 
+[FIGURE 11](./img/11.png)
+<p style="text-align: center;">FIGURE 11</p>
+
+[FIGURE 12](./img/12.png)
+<p style="text-align: center;">FIGURE 12</p>
+
 $$
 \begin{equation}\tag{5.1}
 \begin{aligned}
-\\
+p    &= \Psi \cdot \Psi \\
+\Psi &= \Psi(x)e^{-iEt/\hbar}
 \end{aligned}
 \end{equation}
 $$
@@ -968,7 +976,9 @@ $$
 $$
 \begin{equation}\tag{5.2}
 \begin{aligned}
-\\
+\pmb{H}\Psi &= E\Psi \\
+\pmb{H}     &= V(x)-\tfrac{\hbar^2}{2m}\cdot\nabla^2 \\
+V(x)        &= \tfrac{m}{2}f\cdot f + \tfrac{\hbar}{2}\nabla\cdot f \\
 \end{aligned}
 \end{equation}
 $$
@@ -976,7 +986,12 @@ $$
 $$
 \begin{equation}\tag{5.3}
 \begin{aligned}
-\\
+\Gamma     &= \tfrac{\hbar}{2m} \\
+p          &= \Psi^{\dagger}\Psi \\
+f          &= \tfrac{\hbar}{2m}\nabla\ln{p}=-\Gamma\nabla\Im \Rightarrow \\
+pf         &= \tfrac{\hbar}{2m}\nabla p = \tfrac{\hbar}{2m}\nabla(\Psi\cdot\Psi^{\dagger}) \Rightarrow \\
+\Psi^{\dagger}f\Psi &= \tfrac{\hbar}{2m}(\Psi^{\dagger}\nabla\Psi+\Psi\nabla\Psi^{\dagger}) \Rightarrow \\
+\nabla\Psi &= \tfrac{m}{\hbar}f\Psi \\
 \end{aligned}
 \end{equation}
 $$
