@@ -903,7 +903,14 @@ $$
 $$
 \begin{equation}\tag{4.10}
 \begin{aligned}
-\\
+x^{(i)} &=\{ x_1^{(i)},\dots,
+  \underbrace{
+    \underbrace{x_k^{(i)},\dots,x_\ell^{(i)}}_{a_{j}^{(i)}},
+    \underbrace{x_m^{(i)},\dots,x_n^{(i)}}_{s_{j}^{(i)}}
+  }_{b_{j}^{(i)}},
+    \underbrace{x_o^{(i)},\dots,x_p^{(i)}}_{\mu_{j}^{(i)}},
+    \dots,x_N^{(i)},\} \\
+x_{n}^{(i+1)} &= \xi_{n}^{(i)-} b_{n}^{(i)}
 \end{aligned}
 \end{equation}
 $$
@@ -911,7 +918,9 @@ $$
 $$
 \begin{equation}\tag{4.11}
 \begin{aligned}
-\\
+\omega_{n}^{(i+1)} &= \xi_{n}^{(i)-}(K_{n}^{(i)}\varepsilon_{n}^{(i)} + \omega_{b_n}^{(i)}) \\
+\omega_{b_{n_j}}^{(i)} &= \xi_{b_{n_j}}^{(i-1)-}(K_{b_{n_j}}^{(i-1)}\varepsilon_{b_{n_j}}^{(i-1)}+\omega_{b_{n_j}}^{(i-1)}) \\
+&\vdots
 \end{aligned}
 \end{equation}
 $$
