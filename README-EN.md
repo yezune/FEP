@@ -920,24 +920,35 @@ $$
 \begin{aligned}
 \omega_{n}^{(i+1)} &= \xi_{n}^{(i)-}(K_{n}^{(i)}\varepsilon_{n}^{(i)} + \omega_{b_n}^{(i)}) \\
 \omega_{b_{n_j}}^{(i)} &= \xi_{b_{n_j}}^{(i-1)-}(K_{b_{n_j}}^{(i-1)}\varepsilon_{b_{n_j}}^{(i-1)}+\omega_{b_{n_j}}^{(i-1)}) \\
-&\vdots
+&\space\space\vdots
 \end{aligned}
 \end{equation}
 $$
 $$
 \begin{equation}\tag{4.12}
 \begin{aligned}
+\mathcal{L}(x_{n}^{(i)},\dot{x}_{n}^{(i)}) & = \tfrac{1}{2}[(\dot{x}_{n}^{(i)}-\phi_{n}^{(i)})\cdot(2\Gamma_{n}^{(i)})^{-1}(\dot{x}_{n}^{(i)}-\phi_{n}^{(i)})+\nabla\cdot\phi_{n}^{(i)}] \\
+\phi_{n}^{(i)} &= f_{n}^{(i)}+\textstyle\sum_m\lambda_{nm}^{(i)} x_{m}^{(i)} \\
 \\
+\{x_{n}^{(i)}\} &= \pmb{R}\circ\pmb{G}\circ\{x_{n}^{(i-1)}\} \\
+\{f_{n}^{(i)},\lambda_{nm}^{(i)},\Gamma_{n}^{(i)}\} &= \beta(\{f_{n}^{(i-1)},\lambda_{nm}^{(i-1)},\Gamma_{n}^{(i-1)}\})
 \end{aligned}
 \end{equation}
 $$
 $$
 \begin{equation}\tag{4.13}
 \begin{aligned}
+\xi_{n}^{(i)}         &\rightarrow \xi_{n}^{(i)} \Rightarrow \xi_{n}^{(i)-}(K_{n}^{(i)}\Sigma_{n}^{(i)} K_{n}^{(i)T} + 2\Gamma_{b_n}^{(i)})\xi_{n}^{(i)} = 2\Gamma_{n}^{(i+1)} \\
+\{x_{n}^{(i)}\}       &\xrightarrow{G}      \{b_{j}^{(i)}\} \subset\{b_{j}^{(i)},\mu_{j}^{(i)}\} \\
 \\
+\{b_{n}^{(i)}\}       &\xrightarrow{R}      \{x_{n}^{(i+1)}\} = \{\xi_{n}^{(i)-} b_{n}^{(i)}\} \\
+\{f_{n}^{(i)}\}       &\xrightarrow{\beta}  \{f_{n}^{(i+1)}\} = \{\xi_{n}^{(i)} - f\} \\
+\{\lambda_{nm}^{(i)}\}&\xrightarrow{\beta}  \{\lambda_{nm}^{(i+1)}\} = \{\xi_{n}^{(i)-}\partial_{b_m} f_{b_n}^{(i)} \xi_{m}^{(i)} \} \\
+\{\Gamma_{n}^{(i)}\}  &\xrightarrow{\beta}  \{\Gamma_{n}^{(i+1)}\} = \{\xi_{n}^{(i)-}(\Gamma_{n}^{(i)}+\tfrac{1}{2}\partial_{\mu_n} f_{b_n}^{(i)} \Sigma_{b_n}^{(i)} \partial_{\mu_n} f_{b_n}^{(i)T})\xi_{n}^{(i)} \} \\
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{4.14}
 \begin{aligned}
@@ -945,6 +956,7 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{5.1}
 \begin{aligned}
@@ -952,6 +964,7 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{5.2}
 \begin{aligned}
@@ -959,6 +972,7 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{5.3}
 \begin{aligned}
@@ -966,6 +980,7 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{5.4}
 \begin{aligned}
