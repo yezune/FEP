@@ -1245,7 +1245,14 @@ $$
 $$
 \begin{equation}\tag{6.8}
 \begin{aligned}
-\\
+\Im(\pi,\tau) 
+  &= -\ln p_\tau : p_\tau \equiv p(\pi,\tau) \\
+  \\
+\dot{\Im}(\pi,\tau)
+  &= -\frac{\dot{p}_\tau}{p_\tau} = -\frac{\partial_\tau p_\tau}{p_\tau} - \frac{\nabla p_\tau}{p_\tau}\cdot\dot{\pi}(\tau) \\
+  &= \underbrace{\frac{\partial_\tau p_\tau}{p_\tau}-\frac{j\cdot\dot{\pi}(\tau)}{\Gamma p_\tau}}_{\dot{\Im}^p\space\text{conservative}} 
+      - \underbrace{\frac{f\cdot\dot{\pi}(\tau)}{\Gamma}}_{\dot{\Im}^p\space\text{dissipative}} 
+      = \dot{\Im}^p - \dot{\Im}^q \\
 \end{aligned}
 \end{equation}
 $$
@@ -1253,7 +1260,12 @@ $$
 $$
 \begin{equation}\tag{6.9}
 \begin{aligned}
-\\
+\pmb{\dot{p}}(\pi,\tau)
+  &= f_m\cdot\dot{\pi} \\
+\dot{\Im}^q(\pi,\tau)
+  &= \tfrac{1}{\Gamma}f\cdot\dot{\pi}
+   = \tfrac{1}{k_B T} f_m \cdot \dot{\pi}
+   = \tfrac{1}{k_bT}\bm{\dot{q}} \\
 \end{aligned}
 \end{equation}
 $$
@@ -1261,7 +1273,10 @@ $$
 $$
 \begin{equation}\tag{6.10}
 \begin{aligned}
-\\
+\mathcal{L}(\pi,\dot{\pi}
+  &= \underbrace{\tfrac{1}{4\Gamma}(\dot{\pi}\cdot\dot{\pi}+\tfrac{1}{4\Gamma}f\cdot f)+\tfrac{}{}\nabla\cdot F}_{\text{path-dependent}}
+     -\underbrace{\tfrac{1}{2\Gamma}\dot\pi\cdot f}_{independent}\\
+  &= \underbrace{\tfrac{1}{4\Gamma}(\dot\pi \cdot \dot\pi+\tfrac{1}{4\Gamma}f\cdot f)+\tfrac{1}{2}\nabla\cdot f}_{non-dissipative} - \underbrace{\tfrac{1}{2k_B T}\bm{\dot p}}_{dissipative} \\
 \end{aligned}
 \end{equation}
 $$
@@ -1269,7 +1284,9 @@ $$
 $$
 \begin{equation}\tag{6.11}
 \begin{aligned}
-\\
+\cal{A}(\pi^\dagger[\tau])-\cal{A}(\pi[\tau]) 
+  &= \int_0^t \cal{L}(\pi(t-\tau),\dot\pi(t-\tau))-\cal(\pi(\tau),\dot\pi(\tau))d\tau \\
+  &= \ln\frac{p(\pi[\tau]|\pi_0)}{p^\dagger(\pi^\dagger[\tau]|\pi_0^\dagger)} = \Delta\Im^q = \tfrac{1}{k_BT}\bm q \\
 \end{aligned}
 \end{equation}
 $$
@@ -1277,15 +1294,46 @@ $$
 $$
 \begin{equation}\tag{6.12}
 \begin{aligned}
-\\
+H(\tau)
+  &= E[\Im(\pi,\tau)]=\int p_\tau \Im_\tau dx \\
+\dot H(\tau)
+  &= \int \dot p_\tau \Im_\tau + p_\tau \dot\Im_\tau dx 
+   = \int \dot p_\tau \Im_\tau - \dot p_\tau dx
+   = \int \dot p_\tau \Im_\tau dx \\
+  &= -\int\nabla\cdot j_\tau \Im_\tau dx
+   = \int j_\tau \cdot \nabla \Im_\tau dx 
+   = -\int \frac{j_\tau}{p_\tau}\cdot \nabla p_\tau dx \\
+  &= \dot H^\omega(\tau) - \dot H^f (\tau) \\
+  &= \dot H^p(\tau) - \dot H^q(\tau) \\
+  \\
+  &= \underbrace{
+     \int\frac{\nabla p_\tau \cdot \Gamma \cdot \nabla p_\tau}{p_\tau} 
+     }_{\dot H^\omega \geq 0\space fluctuations}
+     - \underbrace{
+     \int f(x,\tau)\cdot\nabla p_\tau dx 
+     }_{\dot H^f\space flow} \\
+  &= \underbrace{
+     \int\frac{j(x,\tau)\cdot j(x,\tau)}{\Gamma p_\tau}dt
+     }_{\dot H^p \geq 0 non-dissipative}
+     - \underbrace{
+     \int\frac{j(x,\tau)\cdot f_m(x,\tau)}{k_B T}dx
+     }_{\dot H^q\space dissipative}
 \end{aligned}
 \end{equation}
 $$
 
+[FIGURE 15](./img/15.png)
+<p style="text-align: center;">FIGURE 15</p>
+
+[TABLE 3](./img/t3.png)
+
 $$
 \begin{equation}\tag{6.13}
 \begin{aligned}
-\\
+R(\pi[\tau])
+  &\triangleq \ln\frac{p(\pi[\tau])}{p^\dagger(\pi^\dagger[\tau])} 
+   = \ln\frac{p_0(\pi_0)}{p_0^\dagger(\pi_0^\dagger)} 
+   = \ln\frac{p(\pi[\tau]|\pi_0}{p^\dagger(\pi^\dagger[\tau]|\pi_0^\dagger)} \\
 \end{aligned}
 \end{equation}
 $$
@@ -1293,7 +1341,8 @@ $$
 $$
 \begin{equation}\tag{6.14}
 \begin{aligned}
-\\
+E[g(\varepsilon S^\dagger (\pi^\dagger[\tau]))]^\dagger
+  &= E[g(S(\pi[\tau]))exp(-R(\pi[\tau]))] \\
 \end{aligned}
 \end{equation}
 $$
