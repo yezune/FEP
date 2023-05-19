@@ -1350,7 +1350,8 @@ $$
 $$
 \begin{equation}\tag{6.15}
 \begin{aligned}
-\\
+E[exp(-R(\pi[\tau]))] 
+  &= 1\\
 \end{aligned}
 \end{equation}
 $$
@@ -1358,7 +1359,9 @@ $$
 $$
 \begin{equation}\tag{6.16}
 \begin{aligned}
-\\
+E \left[ \frac{p_0^\dagger(\pi_0^\dagger)}{p_0(\pi_0)}exp(-\Delta\Im^q) \right]1
+  \Rightarrow 
+E \left[ \ln\frac{p_0^\dagger(\pi_0^\dagger)}{p_0(\pi_0)}-\Delta\Im^q \right] \geq 0 \\
 \end{aligned}
 \end{equation}
 $$
@@ -1366,7 +1369,15 @@ $$
 $$
 \begin{equation}\tag{6.17}
 \begin{aligned}
-\\
+\dot\Im^q(x,\tau)
+  &= \frac{f}{\Gamma}\cdot \dot\pi(\tau)
+   = -\nabla\Im\cdot\dot\pi(\tau)
+   = -\dot\Im(\tau) \\
+  &\Rightarrow \Delta\Im^q
+   = -\int_0^t \dot\Im dt 
+   = \Im(\pi_0) - \Im(\pi_t) \\
+  &\Rightarrow exp(\Delta\Im^q)
+   = \frac{p(\pi_t)}{p_0(\pi_0)} \\
 \end{aligned}
 \end{equation}
 $$
@@ -1374,7 +1385,10 @@ $$
 $$
 \begin{equation}\tag{6.18}
 \begin{aligned}
-\\
+E[exp(-\Delta\Im^p)]
+  = 1
+  \Rightarrow E[\Delta\Im^p)] \geq 0
+  \Rightarrow \Delta S^p \geq 0 \\
 \end{aligned}
 \end{equation}
 $$
