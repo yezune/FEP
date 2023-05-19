@@ -1413,19 +1413,216 @@ $$
 $$
 \begin{equation}\tag{6.20}
 \begin{aligned}
-E[exp(-\tfrac{1}{k_B T}
+E[exp(-\tfrac{1}{k_B T})]
   = exp(-\tfrac{1}{k_B T}\Delta F) \Rightarrow E[w] \geq \Delta F_m 
   = E[\Delta U]-T\cdot \Delta S \\
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{7.1}
+\begin{aligned}
+\cal A (x[\tau]) 
+  &= \int_0^t \cal L(x,\dot x)d\tau \\
+\lim_{\Gamma \to 0}\cal L(x,\dot x)
+  &= \tfrac{1}{2}[\tfrac{1}{2\Gamma}(\dot x - Q\Gamma\Im)\cdot(\dot x - Q\nabla\Im)] \\
+  &\Rightarrow p(x[\tau])
+  = \delta (\dot x - Q\nabla\Im)
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{7.2}
+\begin{aligned}
+\dot a_n 
+  &= f_a(s_a)
+   = \tfrac{h}{m}\cdot S_n \\
+\dot s_n
+  &= f_s(a_1,\dots,a_N) \\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{7.3}
+\begin{aligned}
+\dot x
+  &= \begin{Bmatrix} 
+       \dot a \\
+       \dot s \\
+       \dot \mu \\
+     \end{Bmatrix}
+   = \begin{Bmatrix}
+       f_a(s,\mu) \\
+       f_s(a,\eta) \\
+       f_\mu(b,\mu) \\
+     \end{Bmatrix} + \omega \\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{7.4}
+\begin{aligned}
+\begin{Bmatrix}
+  \xi^-\dot a \\
+  \xi^-\dot s \\
+  \dot\mu \\
+\end{Bmatrix}
+  &=
+\begin{Bmatrix}
+  \xi^-\nabla_s f_a \xi\xi^- s + \xi^-\nabla_\mu f_a \xi\xi^-\mu+\dots \\
+  \xi^-\nabla_a f_s \xi\xi^- a + \xi^-\nabla_\eta f_s \eta +\dots \\
+  f_\mu(b,\mu) \\
+\end{Bmatrix}
+   +
+\begin{Bmatrix}
+  \xi^-\omega_a \\
+  \xi^-\omega_s \\
+  \omega_\mu \\
+\end{Bmatrix}
+\end{aligned}
+\end{equation}
+$$
+
+
+$$
+\begin{equation}\tag{7.5}
+\begin{aligned}
+\pmb{\dot b}
+  &= 
+\begin{Bmatrix}
+  \pmb{\dot a} \\
+  \pmb{\dot s} \\
+\end{Bmatrix}
+  \triangleq 
+\begin{Bmatrix}
+  \xi^-\pmb{\dot a}_j \\
+  \xi^-\pmb{\dot s}_j \\
+\end{Bmatrix}
+  \approx
+\begin{Bmatrix}
+  \tfrac{h}{m}\pmb{s} \\
+  \xi^-\nabla_af_s\xi\pmb{a}+\xi^-\nabla_\eta f_s\eta+,\dots \\
+\end{Bmatrix}
+\end{aligned}
+\end{equation}
+$$
+
+
+$$
+\begin{equation}\tag{7.6}
+\begin{aligned}
+\pmb{\dot b} 
+  &= (Q_{bb}-\tfrac{1}{n}\Gamma_{bb})\nabla_b\Im(\pmb{b}|\eta) \\
+\end{aligned}
+\end{equation}
+$$
+
+
+$$
+\begin{equation}\tag{7.7}
+\begin{aligned}
+Q_{bb}
+  &= \begin{bmatrix}
+  0 & -I \\
+  I & 0  \\
+  \end{bmatrix}, \lim_{n \to \infty}\tfrac{1}{n}\Gamma_{bb} = 0 \\
+  \\
+  &\Rightarrow 
+      \begin{Bmatrix}
+        \pmb{\dot a} \\
+        \pmb{\dot s} \\
+      \end{Bmatrix} 
+    = 
+      \begin{Bmatrix}
+        +\nabla_s\Im(\pmb b | \eta) \\
+        -\nabla_a\Im(\pmb b | \eta) \\
+      \end{Bmatrix} 
+    \approx 
+      \begin{Bmatrix}
+        v \\
+        -\nabla_a\Im(\pmb b | \eta) \\
+      \end{Bmatrix} \\
+  \\
+  &\Rightarrow \Im(\pmb b | \eta) 
+   = \Im(\pmb a | \eta) + \tfrac{\hbar}{2m}\pmb s \cdot \pmb s
+   = \Im(\pmb a | \eta) + \tfrac{m}{2\hbar}\pmb v \cdot \pmb v \\
+\end{aligned}
+\end{equation}
+$$
+
+
+$$
+\begin{equation}\tag{7.8}
+\begin{aligned}
+\cal L_\Im(\pmb a, \pmb{\dot a})
+  &= \tfrac{m}{2h}\pmb{\dot a} \cdot \pmb{\dot a} - \Im(\pmb a | \eta) \\
+\cal H_\Im(\pmb a, \pmb{s})
+  &= \tfrac{m}{2h}\pmb{s} \cdot \pmb{s} _ \Im(\pmb a | \eta) \\
+  &= \pmb{\dot a}\cdot\pmb p - \cal L_\Im
+   = \Im(\pmb b | \eta) \\
+   \\
+\pmb p 
+   &= \tfrac{\partial\cal L_\Im}{\partial\pmb{\dot a}}
+   = \tfrac{m}{h}\pmb{\dot a}
+   = s \\
+\end{aligned}
+\end{equation}
+$$
+
+
+$$
+\begin{equation}\tag{7.9}
 \begin{aligned}
 \\
 \end{aligned}
 \end{equation}
 $$
+
+$$
+\begin{equation}\tag{7.10}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{7.11}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{7.12}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{7.13}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{7.14}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+
 $$
 \begin{equation}\tag{7.15}
 \begin{aligned}
