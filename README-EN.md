@@ -2,14 +2,14 @@
 
 __Karl Friston__
 
-*The Wellcome Centre for Human Neuroimaging, UCL Queen Square Institute of Neurology, London, UK WC1N 3AR. Email: k.friston@ucl.ac.uk
+*The Wellcome Centre for Human Neuroimaging, UCL Queen Square Institute of Neurology, London, UK WC1N 3AR. Email: <k.friston@ucl.ac.uk>
 (This work is under consideration for publication by The MIT Press)*
 
 ## Abstract
 
 This monograph attempts a theory of every ‘thing’ that can be distinguished from other ‘things’ in a statistical sense. The ensuing statistical independencies, mediated by Markov blankets, speak to a recursive composition of ensembles (of things) at increasingly higher spatiotemporal scales. This decomposition provides a description of small things; e.g., quantum mechanics – via the Schrödinger equation, ensembles of small things – via statistical mechanics and related fluctuation theorems, through to big things – via classical mechanics. These descriptions are complemented with a Bayesian mechanics for autonomous or active things. Although this work provides a formulation of every ‘thing’, its main contribution is to examine the implications of Markov blankets for self organisation to nonequilibrium steady-state. In brief, we recover an information geometry and accompanying free energy principle that allows one to interpret the internal states of something as representing or making inferences about its external states. The ensuing Bayesian mechanics is compatible with quantum, statistical and classical mechanics and may offer a formal description of lifelike particles.
 
-**Key words**: *self-organisation; nonequilibrium steady-state; active inference; active particles; free energy; entropy; random dynamical attractor; autopoiesis; Markov blanket; Bayesian; variational.*
+__Key words__: *self-organisation; nonequilibrium steady-state; active inference; active particles; free energy; entropy; random dynamical attractor; autopoiesis; Markov blanket; Bayesian; variational.*
 
 ## Introduction
 
@@ -31,8 +31,8 @@ Part Two: Section 5 considers the very small in terms of quantum mechanics. This
 
 Part Three: Having cast quantum, statistical and classical mechanics as limiting cases of the density dynamics of inert particles, we turn to the ontology of big things – whose internal states cannot be ignored – that show autonomous behaviour (e.g., large active particles like ourselves). Section 8 asks why one might attribute representational or inferential capacities to biological self-organisation. In other words, how notions like the good regulator theorem (Conant and Ashby, 1970) and the Bayesian brain hypothesis (Helmholtz, 1878 (1971); Knill and Pouget, 2004) could be substantiated in terms of a sentient physics. The argument here is fairly straightforward: namely, that the internal states of a system encode probabilistic beliefs about external states that cause sensory impressions on the Markov blanket – and are caused by the influence of active states on external states. This section provides a formal basis for an information geometry and attending free energy principle that describes autonomous things (e.g., cells or brains) as inferring the causes of actively sampled sensations. Here, we pursue a variational theme by showing how variational Bayes (Beal, 2003) is an emergent property of certain kinds of particles, leading to a form of Bayesian mechanics. Section 9 illustrates a particular inference using numerical analyses of the synthetic soup from Part One (and a virus like denizen). Section 10 then considers active states and agency in terms of corollaries of the free energy principle based upon an integral fluctuation theorem and expected free energy. The penultimate section considers the ensuing active inference in light of previous (thermodynamic) treatments. We conclude with a brief discussion of the relationships between quantum, stochastic, classical and Bayesian mechanics.
 
-
 ## Part 1: the setup
+
 ### Something or nothing
 
 The *“Siphonaptera”* is a nursery rhyme, sometimes referred to as Fleas:
@@ -56,7 +56,7 @@ This section can be read as a foundational (introductory) treatment of physics. 
 
 The mathematical notation is largely standard: the section on quantum mechanics will occasionally use the Dirac notation and the section on statistical mechanics follows (Seifert, 2012). Occasionally, we will use the (Einstein) summation convention when dealing with tensors. An exception to standard notation is the use of boldface variables; where $x \in X$ denotes a (generalised) coordinate in phase or state-space, while $x \in X$ denotes the expected or most likely value. $x(a)$ will denote an expectation, conditioned on a variable $a$. Boldface capital letters $X$ will denote operators. For clarity, functional derivatives and integrals involving time are expressed in terms of orbits, trajectories or paths $x[\tau]={x(\tau):\tau\in[0,t]}$ , where a value at time $\tau$ is denoted by $x(\tau)\equiv x_\tau$. We will also be dealing with time-dependent probability densities $p(x,\tau) \equiv p_{\tau}(x{\tau})$ that have stationary or steadystate solutions $p(x,\infty) \equiv p(x)$ in the limit $\tau \to \infty$; similarly, for their negative log density or surprisal $\Im (x,\tau) \equiv \Im _{\tau} (x_{\tau}) = −\ln \space p(x,\tau)$. For ease of reference, a glossary of terms and expressions is provided at the end of the monograph. Most of what follows rests on three equivalent and complementary descriptions of stochastic dynamics; the Langevin equation, path integral formulation and Fokker Planck equation.
 
-**Langevin dynamics**: this formulation expresses the dynamics of systemic states $x(\tau)$  (i.e., states of some system) in terms of a state-dependent flow and some random fluctuations  $\omega (\tau)$:
+__Langevin dynamics__: this formulation expresses the dynamics of systemic states $x(\tau)$  (i.e., states of some system) in terms of a state-dependent flow and some random fluctuations  $\omega (\tau)$:
 
 $$
 \begin{equation}\tag{1.1}
@@ -72,7 +72,7 @@ $$
 
 Here, the random fluctuations are normally distributed with a covariance of $2\Gamma$ , under the assumption that they fluctuate sufficiently quickly, in relation to states per se, that we can ignore temporal correlations. This formulation underwrites everything that follows. In section 4, we will look more closely at where the Langevin formulation comes from – and why random fluctuations are Gaussian and uncorrelated.
 
-**The path integral formulation**: this formulation deals with paths or trajectories $x[\tau]$, from $x(0) \equiv x0$ that are generated by the Langevin dynamics above:
+__The path integral formulation__: this formulation deals with paths or trajectories $x[\tau]$, from $x(0) \equiv x0$ that are generated by the Langevin dynamics above:
 
 $$
 \begin{equation}\tag{1.2}
@@ -101,7 +101,6 @@ p & \triangleq \cfrac{\partial \mathcal{L}}{\partial \.{x}} = \cfrac{1}{2 \Gamma
 \end{equation}
 $$
 
-
 Here, the last equality defines the generalised momentum. Note that the most likely path obtains when the random fluctuations take their most likely value of zero, giving:
 
 $$
@@ -119,10 +118,9 @@ E_{p(x[\tau],x_0)}[\Omega(x)] = \int dx_0 \int dx[\tau][\Omega(x[\tau])p(x[\tau]
 \end{equation}
 $$
 
-
 This concludes the key results from the path integral formulation.
 
-**The Fokker Planck equation**: this formulation deals with the probability density over the states, which describes the probability of finding a system in state $x$ at time $\tau$. Given a Langevin system, one can describe the density dynamics as follows:
+__The Fokker Planck equation__: this formulation deals with the probability density over the states, which describes the probability of finding a system in state $x$ at time $\tau$. Given a Langevin system, one can describe the density dynamics as follows:
 
 $$
 \begin{equation}\tag{1.6}
@@ -138,7 +136,6 @@ Here, $L$ is the Fokker Planck operator and $j(x,\tau)$ is the probability curre
 of the flow of probability mass. This comprises a flow-dependent term and (a usually opposite) part, generated by random fluctuations over probability gradients.
 
 #### Nonequilibrium steady states
-
 
 Equipped with the Fokker Planck formulation of density dynamics, we can now consider the nonequilibrium long- term behaviour of any random dynamical system. Because the system is weakly mixing it will, after a sufficient amount of time, converge to an invariant set of states called a pullback or random global attractor. The attractor is random because it is itself a random set (Crauel, 1999; Crauel and Flandoli, 1994). The associated NESS density p(x) is the solution to the Fokker-Planck equation (Frank, 2004). Equation (1.6) shows that the NESS density depends upon flow, which can always be expressed in terms of curl and divergence-free components. This is the Helmholtz decomposition (a.k.a., the fundamental theorem of vector calculus) and can be formulated in terms of an anti-symmetric matrix $Q = −QT$ and a scalar potential $\Im(x)$ (Ao, 2004)[^note-5],
 
@@ -193,7 +190,6 @@ V(x) & =\frac{h}{2} \Gamma\left(\frac{1}{2} \nabla \mathfrak{I} \cdot \nabla \ma
 \end{equation}
 $$
 
-
 This implies that the action of any path can be expressed in terms of a motion-dependent (kinetic) term, a (path- independent) term – that depends upon the change in surprisal – and a (path-dependent) term that scales with the amplitude of random fluctuations. Appendix C provides a brief treatment of the expected Lagrangian and associated Hamiltonian.
 
 The key thing to note here is that the first term in (1.10) has the form of a kinetic energy, in which the amplitude of random fluctuations plays the role of an inverse mass. The second term is simply a (NESS) potential difference, while the third (Schrödinger potential) term increases with the amplitude of random fluctuations. This means that when random fluctuations are large, the state behaves as if it has negligible mass and the Schrödinger potential dominates. Conversely, when the amplitude of random fluctuations is negligible, the first two terms predominate enabling a decomposition of action into kinetic and potential terms. This dialectic will appear later as the distinction between quantum and classical mechanics. Equation (1.10) suggests $\hbar = 0$ in the classical limit, when the contribution of the Schrödinger potential disappears (Feynman, 1948). However, in this monograph, Planck's constant is treated as a constant of proportionality (that endows the amplitude of random fluctuations with certain units), such that the classical limit is attained when their amplitude tends to 0; i.e., $\Gamma = 0$.
@@ -203,7 +199,7 @@ In this limit, the classical path is the most likely path that can be described 
 $$
 \begin{equation}\tag{1.11}
 \begin{aligned}
-\delta_x\mathcal{A}(Xx[\tau]) &= 0 \\ 
+\delta_x\mathcal{A}(Xx[\tau]) &= 0 \\
 &\Rightarrow \.{x}(\tau) = f(x(\tau)) \\
 &\Rightarrow x[\tau] = argmin_{x[\tau]} \mathcal{A}(x[\tau])
 \end{aligned}
@@ -214,14 +210,13 @@ This means the most likely path minimises action, rendering its variation with r
 
 #### Fluctuations and information length
 
-_“Time is designed in such a way that given the present, the future is independent of the past”_ (Caticha, 2015b) p6116
+*“Time is designed in such a way that given the present, the future is independent of the past”* (Caticha, 2015b) p6116
 
 We will be concerned with the ‘measure’ of things; both in terms of probability measures and metrics that inherit from differential geometry. This section provides a brief background to the notion of length and information geometry – that arises when applying differential geometry to probability theory. The main message here is that all these measures depend, in a deep way, on time.
 
 As part of this preamble, it is useful to consider the nature of random fluctuations. We will see later that these fluctuations are mixtures of states that fluctuate very quickly, in relation to states per se that play the role of slow variables. In this sense, random fluctuations are just fast states that are (by definition) not correlated with slow states. The implicit statistical independence of fast and slow states licences us to talk about ‘random’ fluctuations.
 
 The form of the Langevin dynamics in (1.1) speaks to this separation of temporal scales. For example, the units of $\Gamma$ (per second) suggest it plays the role of a rate constant. Indeed, on one view, the amplitude of fluctuations corresponds to the rate at which the variance or dispersion of states – due to fluctuations – accumulates over time (Cox and Miller, 1965). Furthermore, at steady state, the amplitude is effectively a rate constant that couples the flow of (slow) states to the gradients of surprisal (1.7). In other words, for a given NESS density, the flow increases in proportion to the amplitude of fluctuations. One can formalise this by introducing the notion of length:
-
 
 $$
 \begin{equation}\tag{1.12}
@@ -268,7 +263,6 @@ g &= I(\lambda) \Leftrightarrow g_{ij} = cov(\zeta_i(x),\zeta_j(x)) = E\Bigg[\cf
 \end{aligned}
 \end{equation}
 $$
-
 
 Notice that the information geometry is in the space of the conjugate variables that parameterise the density over states, as opposed to state-space per se. This space is a statistical manifold and its geometry will become a central aspect of Bayesian mechanics later. At the moment it serves to foreshadow the intimate relationship between information, geometry and statistical mechanics (Crooks, 2007; Kleeman, 2014).
 
@@ -339,7 +333,7 @@ generalises the standard form for flow in (1.8) to a partition of states that co
 
 The generalisation of the NESS density laminar to Markov blankets rests on the notion of marginal flow; namely, the flow of certain states averaged (i.e., marginalised) over other states. We will use the ~ notation to denote the complement of a subset of states; for example, $x = (\mu, \dot{\mu})$.
 
-**Lemma** (marginal flow): for any weakly mixing random dynamical system at nonequilibrium steady-state, the marginal flow $f_{\eta}(\mu)$ of any subset of states $\eta \in X$, averaged under the complement of another $\mu \in X$ can be expressed in terms of the gradients of the logarithm of the corresponding marginal density:
+__Lemma__ (marginal flow): for any weakly mixing random dynamical system at nonequilibrium steady-state, the marginal flow $f_{\eta}(\mu)$ of any subset of states $\eta \in X$, averaged under the complement of another $\mu \in X$ can be expressed in terms of the gradients of the logarithm of the corresponding marginal density:
 
 $$
 \begin{equation}\tag{1.20}
@@ -349,7 +343,7 @@ f_{\eta(\mu)} \triangleq E_{p(\tilde{\mu}|\mu)}[f_{\eta}(\mu,\tilde{\mu})] = (Q_
 \end{equation}
 $$
 
-**Corollary** (conditional independence): if the flow of one subset of states does not depend on another, then it becomes the flow expected under the second subset. For example, in terms of the Markov blanket:
+__Corollary__ (conditional independence): if the flow of one subset of states does not depend on another, then it becomes the flow expected under the second subset. For example, in terms of the Markov blanket:
 
 $$
 \begin{equation}\tag{1.21}
@@ -359,7 +353,7 @@ $$
   f_{s}(x)  \\
   f_{\mu}(x) \\
   f_{a}(x)  \\
-\end{bmatrix} = 
+\end{bmatrix} =
 \begin{bmatrix}
   f_{\eta}(\eta,x) \\
   f_{s}(\eta,x)  \\
@@ -378,7 +372,7 @@ $$
 
 In short, the conditional independencies induced by the Markov blanket mean that the flow of external states is the same for every internal state, which is just its average over the internal states (similarly for other partitions).
 
-**Corollary** (expected flow): the marginal flow of any subset $\eta \subset \subset x$ averaged over all other states depends only on the gradients of its marginal density, provided there is no solenoidal coupling with its complement:
+__Corollary__ (expected flow): the marginal flow of any subset $\eta \subset \subset x$ averaged over all other states depends only on the gradients of its marginal density, provided there is no solenoidal coupling with its complement:
 
 $$
 \begin{equation}\tag{1.22}
@@ -399,11 +393,11 @@ This section has introduced the technical foundations that we will call upon lat
 [Figure 1](./img/01.png)
 <p style="text-align: center;">FIGURE 1</p>
 
-_Markov blankets_. This probabilistic graphical model illustrates the partition of states into internal states (blue) and hidden or external states (cyan) that are separated by a Markov blanket – comprising sensory (magenta) and active states (red). The upper panel shows this partition as it would be applied to action and perception in a brain. In this setting, self-organisation of internal states then corresponds to perception, while active states couple brain states back to external states. The lower panel shows the same dependencies but rearranged so that the internal states are associated with the intracellular states of a Bacillus, where the sensory states become the surface states or cell membrane overlying active states (e.g., the actin filaments of the cytoskeleton). Note that the only missing influences are between internal and external states – and directed influences from external (respectively internal) to active (respectively sensory) states. The surviving directed influences are highlighted with dotted connectors. Autonomous states are those states that are not influenced by external states, while particular states constitute a particle; namely, autonomous and sensory states – or blanket and internal states. The equations of motion in the upper panel follow from the marginal flow lemma.
+*Markov blankets*. This probabilistic graphical model illustrates the partition of states into internal states (blue) and hidden or external states (cyan) that are separated by a Markov blanket – comprising sensory (magenta) and active states (red). The upper panel shows this partition as it would be applied to action and perception in a brain. In this setting, self-organisation of internal states then corresponds to perception, while active states couple brain states back to external states. The lower panel shows the same dependencies but rearranged so that the internal states are associated with the intracellular states of a Bacillus, where the sensory states become the surface states or cell membrane overlying active states (e.g., the actin filaments of the cytoskeleton). Note that the only missing influences are between internal and external states – and directed influences from external (respectively internal) to active (respectively sensory) states. The surviving directed influences are highlighted with dotted connectors. Autonomous states are those states that are not influenced by external states, while particular states constitute a particle; namely, autonomous and sensory states – or blanket and internal states. The equations of motion in the upper panel follow from the marginal flow lemma.
 
 ### Symmetry breaking and self-organsation
 
-_"How can the events in space and time which take place within the spatial boundary of a living organism be accounted for by physics and chemistry?"_(Schrödinger, 1944)
+*"How can the events in space and time which take place within the spatial boundary of a living organism be accounted for by physics and chemistry?"*(Schrödinger, 1944)
 
 The introduction of Markov blankets – and the distinction between the external and internal states of a particle – changes the game somewhat, in terms of ensemble densities. In the absence of a partition, we can only talk about the entropy of a density and how it changes with time. However, in the setting of a partition, we can consider the entropy of particular states in relation to hidden states (or vice versa). This relative entropy is known as mutual information. So, are we interested in systems with a high or a low mutual information? It transpires that the answer is both, in the sense that we are interested in particles that explore their state-space but have a well-defined attracting manifold with low measure (i.e., low entropy). This speaks to a dialectic between opposing constraints. In brief, if the NESS entropy of particular states is small, then the average uncertainty about particular states, given external states must be small. In other words, knowing the external state resolves ambiguity about particular states. However, at the same time, the mutual information or coupling between external and particular states must also be small; otherwise, there will be a risk of being unable to disambiguate external from particular states; i.e., the particle will dissipate or dissolve. Heuristically, this allows for the fact that we can identify Markov blankets that are distinct from their external milieu (e.g., disambiguating a fish from the water in which it is swimming), while – at the same time – observing an intricate and self-organised coupling between particular dynamics and external states (e.g., a particular fish swimming in water). Even more simply, a fish remains a fish, despite the myriad of delicate, context-sensitive behaviours that preserve its integrity (Clarke et al., 2015). In what follows, we consider how this dialectic emerges from a straightforward statistical treatment using information theory.
 
@@ -441,7 +435,7 @@ $$
 
 Complexity here is used in a statistical sense, where it scores the divergence between a posterior and prior distribution over external (hidden) states, while accuracy is the expected log probability of particular states, under the posterior. On this view, the conditional entropy is expected inaccuracy (i.e., ambiguity), while mutual information becomes the expected complexity cost (i.e., risk). The last equality evinces the dialectic that attends mutual information: on the one hand, minimising entropy requires the minimisation of mutual information, where it plays the role of risk, while minimising ambiguity requires a maximisation of mutual information, where it plays the role of information gain. These complementary roles are easily reconciled by noting that ambiguity and risk (or inaccuracy and complexity) are just two sides of the same coin; namely, self-entropy.
 
-Complexity is a ubiquitous cost function in optimal control theory and Bayesian statistics. In optimal control, it scores the divergence between predicted external states, given the sensory and active (control) states and some desired states (Kappen, 2005; Kappen et al., 2012). In economics, this is called risk-sensitive control (Fleming and Sheu, 2002; van den Broek et al., 2010). In Bayesian statistics, the complexity scores the degree to which a posterior density over hidden states diverges from its prior; in other words, the degrees of freedom required to encode posterior beliefs about hidden states (Spiegelhalter et al., 2002). Reducing complexity cost underwrites Occam's principle; i.e., the best explanation provides an accurate account with the smallest change in posterior beliefs relative to prior beliefs (Penny et al., 2004). Formally, this is closely related to the notion of causal entropic forces in the modelling of adaptive behaviour in nonequilibrium systems (Wissner-Gross and Freer, 2013). Finally, the causal entropic forces can, themselves, be related to the maximum entropy principle of Jaynes (Jaynes, 1957). 
+Complexity is a ubiquitous cost function in optimal control theory and Bayesian statistics. In optimal control, it scores the divergence between predicted external states, given the sensory and active (control) states and some desired states (Kappen, 2005; Kappen et al., 2012). In economics, this is called risk-sensitive control (Fleming and Sheu, 2002; van den Broek et al., 2010). In Bayesian statistics, the complexity scores the degree to which a posterior density over hidden states diverges from its prior; in other words, the degrees of freedom required to encode posterior beliefs about hidden states (Spiegelhalter et al., 2002). Reducing complexity cost underwrites Occam's principle; i.e., the best explanation provides an accurate account with the smallest change in posterior beliefs relative to prior beliefs (Penny et al., 2004). Formally, this is closely related to the notion of causal entropic forces in the modelling of adaptive behaviour in nonequilibrium systems (Wissner-Gross and Freer, 2013). Finally, the causal entropic forces can, themselves, be related to the maximum entropy principle of Jaynes (Jaynes, 1957).
 
 The ambiguity term has epistemic, uncertainty reducing, interpretations; in which the marginal flow of autonomous states will appear to minimise the uncertainty about sensory states, given external states. In other words, self-organisation will appear to seek out regimes of phase-space in which external states cause unambiguous sensory states – much like searching under a lamp post for lost keys (Demirdjian et al., 2005). This dynamics is self-organising in the sense that (on average) autonomous states will appear to reduce the entropy of particular states. This particular entropy is the mutual information between blanket and external states plus their conditional uncertainty, conditioned on the external states. In other words, autonomous states will appear to minimise the statistical coupling (i.e., mutual information) with external states while, at the same time, resisting their dispersion, under any given hidden states.
 
@@ -554,7 +548,6 @@ $$
 The inequality above is known as Pinsker's inequality, where, $\delta(\tau)$ is called total variation distance (Rényi, 2007) and is upper bounded by $D(\tau)$ , which we will refer to as divergence length. Recall from (1.18) that the  characterisations of statistical distances $D(\tau)$ and $\Delta(\tau)$
 are related but differ in their use of KL divergences. The path length is an accumulation of divergences over small increments over time – to ensure the information length is a (Riemannian) measure of distance. Conversely, the divergence length between initial and final densities is not. The final expression in (2.9) says that after a sufficient period of time the density ‘forgets’ about the particular state it started from; rendering increments in divergence and information length zero. Conversely, particles that ‘remember’ their initial state have a long information length with itinerant density dynamics.
 
-
 A long information length means, effectively, the initial density is a long way away from the final density and therefore convergence takes longer (indicated by the small blue arrows in Figure 4). In this example, it takes about eight seconds before convergence to steady state. This can be contrasted with the lower panels that illustrate examples of fast convergence; meaning that the initial densities have a short information length.
 
 As one might intuit from inspection of (1.1), there are two ways to reduce information length. First, one can increase the amplitude of random fluctuations while keeping the flow fixed. This enables trajectories to explore state-space quickly and find their attracting set from any initial density. Panel B illustrates this by increasing the amplitude of random fluctuations – by decreasing their log precision from 8 to 0. This markedly attenuates information length, such that convergence to nonequilibrium steady-state takes less than a second. Alternatively, one can change the flow, without changing the amplitude of random fluctuations. The example in panel C features the same reduction of information length – and accompanying KL divergence – when the Rayleigh parameter was reduced from 28 to 1. In this flow regime, the Lorentz attractor becomes a point attractor and the itinerancy due to stochastic chaos is lost (see Figure 3).
@@ -606,7 +599,7 @@ $$
   \dot{s}_e^{(i)} \\
   \dot{a}_e^{(i)}  \\
   \dot{\mu}^{(i)} \\
-\end{bmatrix} &= 
+\end{bmatrix} &=
 \begin{bmatrix}
   10(a_e^{(i)}-s_e^{(i)})+s_e^{(i)}) \\
   32\cdot s_e^{(i)} -a_e^{(i)} -\mu^{(i)} s_e^{(i)} \\
@@ -672,7 +665,7 @@ In summary, this section has described a somewhat arbitrary random dynamical sys
 [FIGURE 7](./img/07.png)
 <p style="text-align: center;">FIGURE 7</p>
 
-_Self-organising soups_. This demonstration uses an ensemble of particles with intrinsic (Lorentz attractor) dynamics and (Newtonian) short-range coupling to illustrate self-organisation in terms of particular (i.e., self) entropy and concomitant changes in terms of mutual information (i.e., complexity cost or risk). Here, the ensemble averages of these (relative) entropy measures were taken over all (128) particles; where the Markov blanket of each particle comprises all but the third (electrochemical) hidden state. The lower panels illustrate the decrease in blanket entropy (and complexity cost) as the system approaches its random dynamical attractor – shown as the thick and thin solid lines, respectively. The lowest broken line corresponds to conditional entropy (i.e., ambiguity). Illustrative trajectories of the particles are provided at three points during the (stochastic) chaotic transient in the upper three panels. These relative entropy changes can be compared with the equivalent results in Figure 2 for a single particle.
+*Self-organising soups*. This demonstration uses an ensemble of particles with intrinsic (Lorentz attractor) dynamics and (Newtonian) short-range coupling to illustrate self-organisation in terms of particular (i.e., self) entropy and concomitant changes in terms of mutual information (i.e., complexity cost or risk). Here, the ensemble averages of these (relative) entropy measures were taken over all (128) particles; where the Markov blanket of each particle comprises all but the third (electrochemical) hidden state. The lower panels illustrate the decrease in blanket entropy (and complexity cost) as the system approaches its random dynamical attractor – shown as the thick and thin solid lines, respectively. The lowest broken line corresponds to conditional entropy (i.e., ambiguity). Illustrative trajectories of the particles are provided at three points during the (stochastic) chaotic transient in the upper three panels. These relative entropy changes can be compared with the equivalent results in Figure 2 for a single particle.
 
 ### States, particles and fluctuations
 
@@ -713,7 +706,7 @@ The equations of motion for the states of the n-th particle comprise some baseli
 [FIGURE 8](./img/08.png)
 <p style="text-align: center;">FIGURE 8</p>
 
-_Blankets of blankets_. This schematic illustrates the recursive procedure by which successively larger (and slower) scale dynamics arise from subordinate levels. At the bottom of the figure (lower panel), we start with an ensemble of vector states (here nine). The conditional dependencies among these vector states (i.e., eigenstates) define a particular partition into particles (upper panels). Crucially, this partition equips each particle with a bipartition into blanket and internal states, where blanket states comprise active (red) and sensory states (magenta). The behaviour of each particle can now be summarised in terms of (slow) eigenmodes or mixtures of its blanket states – to produce eigenstates at the next level or scale. These constitute an ensemble of vector states and the process starts again. Formally, one can understand this in terms of coarse graining the dynamics of a system via two operators. The first uses the particular partition to group subsets of states (**G**), while the second uses the eigenmodes of the resulting blanket states to reduce dimensionality (**R**). The upper panels illustrate the bipartition for a single particle (left panel) and an ensemble of particles; i.e., the particular partition per se (right panel). The insets on top illustrate the implicit self-similarity of particular dependencies pictorially, in moving from one scale to the next. Please see the main text for a definition of the variables used in this figure.
+*Blankets of blankets*. This schematic illustrates the recursive procedure by which successively larger (and slower) scale dynamics arise from subordinate levels. At the bottom of the figure (lower panel), we start with an ensemble of vector states (here nine). The conditional dependencies among these vector states (i.e., eigenstates) define a particular partition into particles (upper panels). Crucially, this partition equips each particle with a bipartition into blanket and internal states, where blanket states comprise active (red) and sensory states (magenta). The behaviour of each particle can now be summarised in terms of (slow) eigenmodes or mixtures of its blanket states – to produce eigenstates at the next level or scale. These constitute an ensemble of vector states and the process starts again. Formally, one can understand this in terms of coarse graining the dynamics of a system via two operators. The first uses the particular partition to group subsets of states (__G__), while the second uses the eigenmodes of the resulting blanket states to reduce dimensionality (__R__). The upper panels illustrate the bipartition for a single particle (left panel) and an ensemble of particles; i.e., the particular partition per se (right panel). The insets on top illustrate the implicit self-similarity of particular dependencies pictorially, in moving from one scale to the next. Please see the main text for a definition of the variables used in this figure.
 
 #### The Markovian partition
 
@@ -722,7 +715,7 @@ If the extrinsic coupling has a nontrivial sparsity, $\lambda_nm^{(i)}=0:\exists
 $$
 \begin{equation}\tag{4.2}
 \begin{aligned}
-\dot{\pi}_j^{(i)} &= 
+\dot{\pi}_j^{(i)} &=
 \begin{Bmatrix}
    \dot{a}_j^{(i)} \\
    \dot{s}_j^{(i)} \\
@@ -739,7 +732,7 @@ $$
    \omega_{\mu_j}^{(i)} \\
 \end{Bmatrix} \\
 \\
-&= 
+&=
 \begin{Bmatrix}
    \dot{b}_j^{(i)} \\
    \dot{\mu}_j^{(i)} \\
@@ -871,7 +864,7 @@ $$
    \dot{b}_{j,slow}^{(i)} \\
    \dot{b}_{j,fast}^{(i)}
 \end{Bmatrix}\\
-&= \begin{Bmatrix} 
+&= \begin{Bmatrix}
   \xi_j^{(i)-}   f_{b_j}^{(i)}(b_{0}^{(j)}) + \sum_k \lambda_{jk}^{\xi\xi}     b_{k,slow}^{(i)} \\
   \zeta_j^{(i)-} f_{b_j}^{(i)}(b_{0}^{(j)}) + \sum_k \lambda_{kj}^{\zeta\zeta} b_{k,fast}^{(i)}
 \end{Bmatrix} +
@@ -1000,10 +993,10 @@ $$
 \begin{equation}\tag{5.4}
 \begin{aligned}
 \dot{p} &= \tfrac{\hbar}{2m}\nabla^2 p - p\nabla\cdot f - f \cdot \nabla p \\
-        &= \tfrac{\hbar}{2m}\nabla^2\Psi^{\dagger}\Psi 
-           - \tfrac{1}{2}\Psi\nabla\cdot f\Psi^{\dagger} 
+        &= \tfrac{\hbar}{2m}\nabla^2\Psi^{\dagger}\Psi
+           - \tfrac{1}{2}\Psi\nabla\cdot f\Psi^{\dagger}
            - \tfrac{1}{2}\Psi^{\dagger}\nabla\cdot f\Psi
-           - \Psi f\cdot\nabla\Psi^{\dagger} 
+           - \Psi f\cdot\nabla\Psi^{\dagger}
            - \Psi^{\dagger} f \cdot\nabla\Psi \\
         &= (\tfrac{\hbar}{2m}\nabla^2)+(\tfrac{\hbar}{2m}\nabla^2) \\
         \\
@@ -1050,7 +1043,7 @@ $$
 $$
 \begin{equation}\tag{5.8}
 \begin{aligned}
-\braket{\Psi^{\dagger}(x)|-i\hbar\nabla|\Psi(x)} 
+\braket{\Psi^{\dagger}(x)|-i\hbar\nabla|\Psi(x)}
   &= -i\hbar\int_{-\infty}^{\infty} \Psi(x)^{\dagger}\nabla\Psi(x)dx \\
   &= -i\hbar\int_{-\infty}^{\infty} \Psi^{\dagger}\frac{m}{\hbar}f\Psi(x)dx = -imf\\
   &= \braket{\Phi(k)^{\dagger}|\hbar k|\Phi(k)} = \hbar k \Rightarrow mf = i\hbar k \\
@@ -1113,7 +1106,7 @@ $$
 $$
 \begin{equation}\tag{5.14}
 \begin{aligned}
-\Sigma_x\Sigma_p 
+\Sigma_x\Sigma_p
   &= E[x\cdot x]E[mf\cdot mf] \\
   &= (\tfrac{\hbar}{2})^2 \Sigma_x^{-2}E[x\cdot x]E[x\cdot x] = (\tfrac{\hbar}{2})^2 \\
   \\
@@ -1159,13 +1152,13 @@ $$
 $$
 \begin{equation}\tag{6.2}
 \begin{aligned}
-f(\pi,\tau) 
+f(\pi,\tau)
   &= (\mu_m - Q_m)f_m(\pi,\tau) \\
   &= (Q_m - \mu_m)\nabla U(\pi, \tau) \\
   \\
-f_m(\pi,\tau) 
+f_m(\pi,\tau)
   &\triangleq -\nabla U(\pi,\tau) \\
-Q 
+Q
   &\triangleq Q_m k_b T \\
 \Gamma
   &\triangleq \mu_m k_b T \\
@@ -1231,12 +1224,12 @@ $$
 $$
 \begin{equation}\tag{6.7}
 \begin{aligned}
-w(\pi[\tau]) 
+w(\pi[\tau])
   &= \pmb{q}(\pi[\tau]) + \Delta U\\
 \Delta U
   &= U(\pi_\tau)-U(\pi_0) \\
   \\
-\pmb{q}(\pi[\tau]) 
+\pmb{q}(\pi[\tau])
   &= \int_0^t \pmb{\dot{q}}d\tau = \int_0^t f_m (\pi,\tau)\cdot\dot{\pi}d\tau \\
 \end{aligned}
 \end{equation}
@@ -1245,13 +1238,13 @@ $$
 $$
 \begin{equation}\tag{6.8}
 \begin{aligned}
-\Im(\pi,\tau) 
+\Im(\pi,\tau)
   &= -\ln p_\tau : p_\tau \equiv p(\pi,\tau) \\
   \\
 \dot{\Im}(\pi,\tau)
   &= -\frac{\dot{p}_\tau}{p_\tau} = -\frac{\partial_\tau p_\tau}{p_\tau} - \frac{\nabla p_\tau}{p_\tau}\cdot\dot{\pi}(\tau) \\
-  &= \underbrace{\frac{\partial_\tau p_\tau}{p_\tau}-\frac{j\cdot\dot{\pi}(\tau)}{\Gamma p_\tau}}_{\dot{\Im}^p\space\text{conservative}} 
-      - \underbrace{\frac{f\cdot\dot{\pi}(\tau)}{\Gamma}}_{\dot{\Im}^p\space\text{dissipative}} 
+  &= \underbrace{\frac{\partial_\tau p_\tau}{p_\tau}-\frac{j\cdot\dot{\pi}(\tau)}{\Gamma p_\tau}}_{\dot{\Im}^p\space\text{conservative}}
+      - \underbrace{\frac{f\cdot\dot{\pi}(\tau)}{\Gamma}}_{\dot{\Im}^p\space\text{dissipative}}
       = \dot{\Im}^p - \dot{\Im}^q \\
 \end{aligned}
 \end{equation}
@@ -1284,7 +1277,7 @@ $$
 $$
 \begin{equation}\tag{6.11}
 \begin{aligned}
-\cal{A}(\pi^\dagger[\tau])-\cal{A}(\pi[\tau]) 
+\cal{A}(\pi^\dagger[\tau])-\cal{A}(\pi[\tau])
   &= \int_0^t \cal{L}(\pi(t-\tau),\dot\pi(t-\tau))-\cal(\pi(\tau),\dot\pi(\tau))d\tau \\
   &= \ln\frac{p(\pi[\tau]|\pi_0)}{p^\dagger(\pi^\dagger[\tau]|\pi_0^\dagger)} = \Delta\Im^q = \tfrac{1}{k_BT}\bm q \\
 \end{aligned}
@@ -1297,20 +1290,20 @@ $$
 H(\tau)
   &= E[\Im(\pi,\tau)]=\int p_\tau \Im_\tau dx \\
 \dot H(\tau)
-  &= \int \dot p_\tau \Im_\tau + p_\tau \dot\Im_\tau dx 
+  &= \int \dot p_\tau \Im_\tau + p_\tau \dot\Im_\tau dx
    = \int \dot p_\tau \Im_\tau - \dot p_\tau dx
    = \int \dot p_\tau \Im_\tau dx \\
   &= -\int\nabla\cdot j_\tau \Im_\tau dx
-   = \int j_\tau \cdot \nabla \Im_\tau dx 
+   = \int j_\tau \cdot \nabla \Im_\tau dx
    = -\int \frac{j_\tau}{p_\tau}\cdot \nabla p_\tau dx \\
   &= \dot H^\omega(\tau) - \dot H^f (\tau) \\
   &= \dot H^p(\tau) - \dot H^q(\tau) \\
   \\
   &= \underbrace{
-     \int\frac{\nabla p_\tau \cdot \Gamma \cdot \nabla p_\tau}{p_\tau} 
+     \int\frac{\nabla p_\tau \cdot \Gamma \cdot \nabla p_\tau}{p_\tau}
      }_{\dot H^\omega \geq 0\space fluctuations}
      - \underbrace{
-     \int f(x,\tau)\cdot\nabla p_\tau dx 
+     \int f(x,\tau)\cdot\nabla p_\tau dx
      }_{\dot H^f\space flow} \\
   &= \underbrace{
      \int\frac{j(x,\tau)\cdot j(x,\tau)}{\Gamma p_\tau}dt
@@ -1331,8 +1324,8 @@ $$
 \begin{equation}\tag{6.13}
 \begin{aligned}
 R(\pi[\tau])
-  &\triangleq \ln\frac{p(\pi[\tau])}{p^\dagger(\pi^\dagger[\tau])} 
-   = \ln\frac{p_0(\pi_0)}{p_0^\dagger(\pi_0^\dagger)} 
+  &\triangleq \ln\frac{p(\pi[\tau])}{p^\dagger(\pi^\dagger[\tau])}
+   = \ln\frac{p_0(\pi_0)}{p_0^\dagger(\pi_0^\dagger)}
    = \ln\frac{p(\pi[\tau]|\pi_0}{p^\dagger(\pi^\dagger[\tau]|\pi_0^\dagger)} \\
 \end{aligned}
 \end{equation}
@@ -1350,7 +1343,7 @@ $$
 $$
 \begin{equation}\tag{6.15}
 \begin{aligned}
-E[exp(-R(\pi[\tau]))] 
+E[exp(-R(\pi[\tau]))]
   &= 1\\
 \end{aligned}
 \end{equation}
@@ -1360,7 +1353,7 @@ $$
 \begin{equation}\tag{6.16}
 \begin{aligned}
 E \left[ \frac{p_0^\dagger(\pi_0^\dagger)}{p_0(\pi_0)}exp(-\Delta\Im^q) \right]1
-  \Rightarrow 
+  \Rightarrow
 E \left[ \ln\frac{p_0^\dagger(\pi_0^\dagger)}{p_0(\pi_0)}-\Delta\Im^q \right] \geq 0 \\
 \end{aligned}
 \end{equation}
@@ -1374,7 +1367,7 @@ $$
    = -\nabla\Im\cdot\dot\pi(\tau)
    = -\dot\Im(\tau) \\
   &\Rightarrow \Delta\Im^q
-   = -\int_0^t \dot\Im dt 
+   = -\int_0^t \dot\Im dt
    = \Im(\pi_0) - \Im(\pi_t) \\
   &\Rightarrow exp(\Delta\Im^q)
    = \frac{p(\pi_t)}{p_0(\pi_0)} \\
@@ -1396,7 +1389,23 @@ $$
 $$
 \begin{equation}\tag{6.19}
 \begin{aligned}
-\\
+E \left[
+  \frac{p_0^\dagger(\pi_t,b_\tau)}{p_0(\pi_0,b_0)}exp(-\Delta\Im^q)
+  \right]
+  &= E[exp(-\Delta\Im-\tfrac{1}{k_B T}\pmb{q}]
+   = 1 \Rightarrow \\
+E[exp(-\tfrac{1}{k_B T}W)]
+  &= exp(-1\tfrac{1}{k_B t})\Delta F_m \\
+  \\
+\Delta\Im^q
+  &= \tfrac{1}{k_B T}\pmb{q}:\pmb{q}
+   = w - \Delta U \\
+\Delta U
+  &= k_B T\cdot\Delta\Im+\Delta F_m \\
+\Delta\Im
+  &= \ln p_0(\pi_0,b_0)- \ln p_0^\dagger(\pi_\tau,b_\tau) \\
+\Delta F_m
+  &= F_m(b_\tau) - F_m(b_0)\\
 \end{aligned}
 \end{equation}
 $$
@@ -1404,7 +1413,9 @@ $$
 $$
 \begin{equation}\tag{6.20}
 \begin{aligned}
-\\
+E[exp(-\tfrac{1}{k_B T}
+  = exp(-\tfrac{1}{k_B T}\Delta F) \Rightarrow E[w] \geq \Delta F_m 
+  = E[\Delta U]-T\cdot \Delta S \\
 \end{aligned}
 \end{equation}
 $$
@@ -1529,20 +1540,29 @@ $$
 $$
 
 #### The adiabatic reduction
+
 #### Elimination and renormalisation
+
 #### Summary
 
 ## Part 2: some special cases
+
 ## Part 3: a particular case
 
 ## Discussion
+
 ### Conclusions
 
 ## Appendix A: Stratonovich path integrals
+
 ## Appendix B: lemmas and proofs
+
 ## Appendix C: nonequilibrium steady-static energy functions
+
 ## Appendix D: the Fokker-Planck operator
+
 ## Appendix E: generalised motion
+
 ## Appendix F: discrete state-space models
 
 ## References
