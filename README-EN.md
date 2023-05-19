@@ -1149,7 +1149,9 @@ $$
 $$
 \begin{equation}\tag{6.1}
 \begin{aligned}
-\\
+\dot{\pi}_k^{(i)}
+  &= f(\pi_k^{(i)},b^{(i)}(\tau))+\omega_k^{(i)} \\
+  &= f(\pi_k^{(i)},\tau )+\omega_k^{(i)} \\
 \end{aligned}
 \end{equation}
 $$
@@ -1157,7 +1159,16 @@ $$
 $$
 \begin{equation}\tag{6.2}
 \begin{aligned}
-\\
+f(\pi,\tau) 
+  &= (\mu_m - Q_m)f_m(\pi,\tau) \\
+  &= (Q_m - \mu_m)\nabla U(\pi, \tau) \\
+  \\
+f_m(\pi,\tau) 
+  &\triangleq -\nabla U(\pi,\tau) \\
+Q 
+  &\triangleq Q_m k_b T \\
+\Gamma
+  &\triangleq \mu_m k_b T \\
 \end{aligned}
 \end{equation}
 $$
@@ -1165,7 +1176,10 @@ $$
 $$
 \begin{equation}\tag{6.3}
 \begin{aligned}
-\\
+S(\tau)
+  &\triangleq k_B H(\tau)\\
+H(\tau)
+  &\triangleq E[\Im(\pi,\tau) \\
 \end{aligned}
 \end{equation}
 $$
@@ -1173,7 +1187,12 @@ $$
 $$
 \begin{equation}\tag{6.4}
 \begin{aligned}
-\\
+p(\pi,\tau)
+  &\triangleq exp[-\Im(\pi,\tau)]=\tfrac{1}{k_b T(\tau)}U(\pi,\tau)]\\
+k_bT\cdot\Im(\pi,\tau)
+  &= U(\pi,\tau) - F_m(\tau) \\
+F_m(\tau)
+  &= -k_b T(\tau)\ln Z(\tau) \\
 \end{aligned}
 \end{equation}
 $$
@@ -1181,15 +1200,44 @@ $$
 $$
 \begin{equation}\tag{6.5}
 \begin{aligned}
-\\
+\Im(\pi)
+  &= \lim_{\tau \to \infty}\Im(\pi,\tau) \\
+  &\Rightarrow U(\pi) = k_B T\cdot \Im(\pi) + F_m \\
+  &\Rightarrow f(\pi) = (Q_m - \mu_m)\nabla U(\pi) = (Q-\Gamma)\nabla\Im(\pi) \\
+  &\Rightarrow \dot{p}(\pi) = 0
 \end{aligned}
 \end{equation}
 $$
 
 $$
+\begin{equation}\tag{6.6}
+\begin{aligned}
+F_\Im(\tau)
+  &\triangleq E[U(\pi,\tau)] - E[(k_B T\cdot\Im(\pi)] \\
+  &= E[U(\pi,\tau)] - k_B T \cdot H \\
+  &= E[U(\pi,\tau)] - T \cdot S  \\
+  \\
+  &= k_b T\cdot E[\Im(\pi,\tau) - \Im(\pi)] + F_m(\tau) \\
+  &= k_b T\cdot D[p(\pi) || p(\pi,\tau)]+F_m(\tau) \Rightarrow \\
+\Delta F_m
+  &= k_b T\cdot D[p(\pi) || p(\pi,\tau)]=F_\Im(\tau) - F_m(\tau) \\
+\end{aligned}
+\end{equation}
+$$
+
+[FIGURE 14](./img/14.png)
+<p style="text-align: center;">FIGURE 14</p>
+
+$$
 \begin{equation}\tag{6.7}
 \begin{aligned}
-\\
+w(\pi[\tau]) 
+  &= \pmb{q}(\pi[\tau]) + \Delta U\\
+\Delta U
+  &= U(\pi_\tau)-U(\pi_0) \\
+  \\
+\pmb{q}(\pi[\tau]) 
+  &= \int_0^t \pmb{\dot{q}}d\tau = \int_0^t f_m (\pi,\tau)\cdot\dot{\pi}d\tau \\
 \end{aligned}
 \end{equation}
 $$
