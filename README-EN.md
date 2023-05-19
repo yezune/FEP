@@ -1061,11 +1061,11 @@ $$
 $$
 \begin{equation}\tag{5.9}
 \begin{aligned}
-H\Psi &= i\hbar\Psi = h\omega\Psi = E\Psi \\
-p\Psi &= -i\hbar\nabla\Psi = \hbar k\Psi \\
+\pmb{H}\Psi &= i\hbar\Psi = h\omega\Psi = E\Psi \\
+\pmb{p}\Psi &= -i\hbar\nabla\Psi = \hbar k\Psi \\
 \\
 E &\triangleq \hbar\omega \\
-p &\triangleq \hbar k = mf \\
+p &\triangleq \hbar \pmb{k} = m\pmb{f} \\
 \end{aligned}
 \end{equation}
 $$
@@ -1073,45 +1073,78 @@ $$
 $$
 \begin{equation}\tag{5.10}
 \begin{aligned}
-\\
+\pmb{H} &= \pmb{T}+V(x) \\
+\pmb{T} &= \tfrac{1}{2m}\pmb{p}\cdot \pmb{p} = -\tfrac{\hbar^2}{2m}\cdot\nabla^2 \\
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{5.11}
 \begin{aligned}
+\braket{\Psi^{\dagger}|\pmb{H}|\Psi}
+  &= \underbrace{\braket{\Psi^{\dagger}|\pmb{T}|\Psi}}_{\text{kinetic energy}}
+  +  \underbrace{\braket{\Psi^{\dagger}|V(x)|\Psi}}_{\text{potential energy}} \\
+  &= \underbrace{\tfrac{m}{2}\braket{f\cdot f}}_{\text{kinetic energy}}
+  +  \underbrace{\braket{\tfrac{m}{2} f\cdot f + \tfrac{\hbar}{2}\nabla\cdot f}}_{\text{potential energy}} = E \\
 \\
+\braket{\nabla\cdot f}
+  &= -\Gamma\braket{\nabla^2\Im} = -\Gamma\braket{\nabla\Im\cdot\nabla\Im} = -\tfrac{2m}{\hbar}\braket{f\cdot f}
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{5.12}
 \begin{aligned}
-\\
+f(x)=c \Rightarrow E = mc^2 \\
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{5.13}
 \begin{aligned}
-\\
+\sigma_x\sigma_p \geq \tfrac{\hbar}{2} \\
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{5.14}
 \begin{aligned}
-\\
+\Sigma_x\Sigma_p 
+  &= E[x\cdot x]E[mf\cdot mf] \\
+  &= (\tfrac{\hbar}{2})^2 \Sigma_x^{-2}E[x\cdot x]E[x\cdot x] = (\tfrac{\hbar}{2})^2 \\
+  \\
+\Im(x)
+  &= \tfrac{1}{2}x\cdot \Sigma_x^{-1}\cdot x \\
+f(x)
+  &= -\tfrac{\hbar}{2m}\nabla\Im = \tfrac{\hbar}{2m}\nabla^2\Im\cdot x \\
+\Sigma_x^{-1}
+  &= -\nabla^2\Im \\
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{5.15}
 \begin{aligned}
-\\
+\Gamma
+  &= \tfrac{\hbar}{2m},\space\space\space V(x) = -\tfrac{\hbar^2}{a_0 m_e r} \\
+  \\
+\Psi_{n\ell m}(x)
+  &= \sqrt{Z}e^{\rho/2} \rho^\ell L_{n-\ell-1}^{\ell+\ell+1}(\rho)Y_\ell^m (\theta,\phi) \\
+\rho
+  &= \tfrac{2r}{na_0},\space\space\space Z = (\tfrac{2}{na_0})^3\tfrac{n-\ell-1}{2n(n+\ell)!}
 \end{aligned}
 \end{equation}
 $$
+
+[FIGURE 13](./img/13.png)
+<p style="text-align: center;">FIGURE 13</p>
+
+[TABLE 2](./img/t2.png)
 
 $$
 \begin{equation}\tag{6.1}
