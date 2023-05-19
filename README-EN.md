@@ -258,7 +258,7 @@ $$
 \end{equation}
 $$
 
-이 매개변수화 하에, 피셔 정보 메트릭 $I(\lambda)$는 다음과 같습니다:
+Under this parameterisation, the Fisher information metric $\pmb{I}(\lambda)$ is:
 
 $$
 \begin{equation}\tag{1.15}
