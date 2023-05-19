@@ -1258,7 +1258,7 @@ $$
 \dot{\Im}^q(\pi,\tau)
   &= \tfrac{1}{\Gamma}f\cdot\dot{\pi}
    = \tfrac{1}{k_B T} f_m \cdot \dot{\pi}
-   = \tfrac{1}{k_bT}\bm{\dot{q}} \\
+   = \tfrac{1}{k_bT}\pbm{\dot{q}} \\
 \end{aligned}
 \end{equation}
 $$
@@ -1279,7 +1279,7 @@ $$
 \begin{aligned}
 \cal{A}(\pi^\dagger[\tau])-\cal{A}(\pi[\tau])
   &= \int_0^t \cal{L}(\pi(t-\tau),\dot\pi(t-\tau))-\cal(\pi(\tau),\dot\pi(\tau))d\tau \\
-  &= \ln\frac{p(\pi[\tau]|\pi_0)}{p^\dagger(\pi^\dagger[\tau]|\pi_0^\dagger)} = \Delta\Im^q = \tfrac{1}{k_BT}\bm q \\
+  &= \ln\frac{p(\pi[\tau]|\pi_0)}{p^\dagger(\pi^\dagger[\tau]|\pi_0^\dagger)} = \Delta\Im^q = \tfrac{1}{k_BT}\pbm q \\
 \end{aligned}
 \end{equation}
 $$
@@ -1567,7 +1567,7 @@ $$
    \\
 \pmb p 
    &= \tfrac{\partial\cal L_\Im}{\partial\pmb{\dot a}}
-   = \tfrac{m}{h}\pmb{\dot a}
+   = \tfrac{m}{\hbar}\pmb{\dot a}
    = s \\
 \end{aligned}
 \end{equation}
@@ -1577,7 +1577,11 @@ $$
 $$
 \begin{equation}\tag{7.9}
 \begin{aligned}
-\\
+\cal{\dot H}_\Im(\pmb a, \pmb s) 
+  &= \dot\Im(\pmb b |\eta) 
+   = \pmb{\dot b} \cdot \nabla_b \Im
+   = \nabla_b \Im \cdot Q_{bb} \cdot \nabla_b\Im
+   = 0 \\
 \end{aligned}
 \end{equation}
 $$
@@ -1585,7 +1589,14 @@ $$
 $$
 \begin{equation}\tag{7.10}
 \begin{aligned}
-\\
+\Im(\pmb a, \pmb s) 
+  &= \Im(\pmb a) + \tfrac{\hbar}{2m}\pmb s \cdot \pmb s \\
+  &= \Im(\pmb a) + \Im(\pmb s)_0 + \nabla\Im_0 \cdot \pmb s + \tfrac{1}{2}\nabla^2\Im_0\pmb s^2 + \dots \\
+  &\Leftrightarrow \\
+\nabla\Im_0
+  &= 0 \\
+\nabla^2\Im_0
+  &= \tfrac{h}{m}
 \end{aligned}
 \end{equation}
 $$
@@ -1593,7 +1604,17 @@ $$
 $$
 \begin{equation}\tag{7.11}
 \begin{aligned}
-\\
+\begin{Bmatrix}
+  \pmb{\dot a} \\
+  \pmb{\dot s} \\
+\end{Bmatrix} 
+  &= 
+\begin{Bmatrix}
+  v \\
+  -\nabla_a\Im(\pmb{a}) \\
+\end{Bmatrix} 
+  &\Rightarrow -\hbar\nabla_a\Im(\pmb a)
+  = m\pmb{\ddot a}\\
 \end{aligned}
 \end{equation}
 $$
@@ -1601,7 +1622,24 @@ $$
 $$
 \begin{equation}\tag{7.12}
 \begin{aligned}
-\\
+\begin{Bmatrix}
+  \pmb{\dot a} \\
+  \pmb{\dot s} \\
+\end{Bmatrix}
+  &=
+\begin{Bmatrix}
+  +\nabla_s \Im(\pmb b) \\
+  -\nabla_a \Im(\pmb b) \\
+\end{Bmatrix}
+  \approx
+\begin{Bmatrix}
+  \tfrac{\hbar}{m}(\pmb s - z \pmb A) \\
+  -\nabla_a \Im(\pmb b) \\
+\end{Bmatrix} \\
+  \\
+\Im(\pmb b)
+  &= z\varphi(\pmb a) + \tfrac{\hbar}{2m}(\pmb s - z\pmb A)\cdot(\pmb s - z\pmb A)
+
 \end{aligned}
 \end{equation}
 $$
@@ -1609,7 +1647,22 @@ $$
 $$
 \begin{equation}\tag{7.13}
 \begin{aligned}
-\\
+\begin{Bmatrix}
+  \pmb{\dot a} \\
+  \pmb{\dot s} \\
+\end{Bmatrix}
+  &= 
+\begin{Bmatrix}
+  +\nabla_s \Im(\pmb b) \\
+  -\nabla_a \Im(\pmb b) \\
+\end{Bmatrix}
+   \Rightarrow
+\begin{Bmatrix}
+  \tfrac{m}{\hbar}\pmb{\ddot a} = \pmb{\dot s} - z(\pmb{\dot a} \cdot \nabla_a)A \\
+  \pmb{\dot s} = z(\pmb E + \pmb{\dot a} \times B + (\pmb{\dot a} \cdot \nabla_a)A) \\
+\end{Bmatrix}
+   \Rightarrow m\pmb{\ddot a}
+   = \hbar z(\pmb E + \pmb{\dot a} \times \pmb B)\\
 \end{aligned}
 \end{equation}
 $$
@@ -1617,7 +1670,8 @@ $$
 $$
 \begin{equation}\tag{7.14}
 \begin{aligned}
-\\
+\Im(\pmb b) 
+  &= V(\pmb a) + \sqrt{m^2c^4+\pmb s^2 c^2} \\
 \end{aligned}
 \end{equation}
 $$
