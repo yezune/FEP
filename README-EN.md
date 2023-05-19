@@ -1680,17 +1680,313 @@ $$
 $$
 \begin{equation}\tag{7.15}
 \begin{aligned}
-\\
+Q_{bb}
+ &= 
+  \begin{bmatrix}
+    0 & -I \\
+    I & 0 
+  \end{bmatrix},
+\Gamma_{bb}
+  =
+   \begin{bmatrix}
+     0 & 0 \\
+     0 & \Gamma_{ss}
+   \end{bmatrix}
+  \Rightarrow
+   \begin{Bmatrix}
+     \pmb{\dot a} \\
+     \pmb{\dot s}
+   \end{Bmatrix}
+  \approx
+   \begin{Bmatrix}
+   v \\
+   -\nabla_a\Im(\pmb a | \eta) - \Gamma_{ss} \pmb v
+   \end{Bmatrix} \\
 \end{aligned}
 \end{equation}
 $$
+
+[FIGURE 16](./img/16.png)
+<p style="text-align: center;">FIGURE 16</p>
+
+
 $$
 \begin{equation}\tag{8.1}
+\begin{aligned}
+q_\mu(\eta)
+  &= p(\eta | b)
+   = p(\eta | \pi) \\
+\pmb \mu(b)
+  &\triangleq argmax_\mu \space p(\mu | b)
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.2}
+\begin{aligned}
+f_\alpha(\pi)
+  &= (Q_{\alpha\alpha} - \Gamma_{\alpha\alpha})\nabla_\alpha\Im(\pi) \\
+\alpha
+  &= \{a,\mu\} \\
+\pi
+  &= \{s,\alpha \} \\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.3}
+\begin{aligned}
+\pmb a[\tau]
+  &= argmin_{\alpha[\tau]} \cal A(\alpha[\tau\ | s[\tau]) \\
+  &\Rightarrow \delta _{\alpha[\tau]}\cal A(\pmb a[\tau] | s[\tau])
+   = 0 \\
+  &\Rightarrow \pmb{\dot a} = (Q_{\alpha\alpha} - \Gamma_{\alpha\alpha})\nabla_a F(\pmb a, s)
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.4}
 \begin{aligned}
 \\
 \end{aligned}
 \end{equation}
 $$
+
+$$
+\begin{equation}\tag{8.5}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.6}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.7}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.8}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.9}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.9}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.10}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.11}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.12}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.13}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.14}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.15}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.16}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.17}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.18}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.19}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.20}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.21}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.22}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.23}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.24}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.25}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.26}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.27}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.28}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.29}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.30}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.31}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{8.32}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
 $$
 \begin{equation}\tag{8.33}
 \begin{aligned}
@@ -1698,6 +1994,7 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{9.1}
 \begin{aligned}
