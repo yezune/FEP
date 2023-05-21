@@ -1750,7 +1750,29 @@ $$
 $$
 \begin{equation}\tag{8.4}
 \begin{aligned}
-\\
+F(\pi) 
+  & \underbrace{
+      \triangleq E_q[\Im(\eta,\pi)]
+    }_{energy} 
+    - 
+    \underbrace{
+      H[q_\mu(\eta)]
+    }_{entropy} \\
+  &=\underbrace{ 
+      \Im(\pi)
+    }_{suprisal} + 
+    \underbrace{   
+      D[q_\mu(\eta) \parallel p(\eta, b)] 
+    }_{bound} \\
+  &=\underbrace{
+      E_q[\Im(\pi|\eta)]
+    }_{inaccracy}+
+    \underbrace{
+      D[q_\mu(\eta)\parallel p(\eta)]
+    }_{complexity} \geq \Im(\pi)
+    \\
+q_\mu(\eta)
+  &= p(\eta|b):\pmb \mu = argmax_\mu \space p(\mu|b)
 \end{aligned}
 \end{equation}
 $$
@@ -1758,7 +1780,11 @@ $$
 $$
 \begin{equation}\tag{8.5}
 \begin{aligned}
-\\
+\pmb a[\tau]
+    &= argmin_{\alpha[\tau]} \cal A(\alpha[\tau] | s[\tau])] \Rightarrow \\
+\pmb{\dot \alpha}
+    &= (Q_{\alpha\alpha} - \Gamma_{\alpha\alpha}) \nabla_\alpha \Im(\pmb \alpha, s) \\
+    &= (Q_{\alpha\alpha} - \Gamma_{\alpha\alpha}) \nabla_\alpha F(\pmb \alpha, s) \\
 \end{aligned}
 \end{equation}
 $$
@@ -1766,7 +1792,12 @@ $$
 $$
 \begin{equation}\tag{8.6}
 \begin{aligned}
-\\
+F(\pmb \alpha, s) 
+  &= \Im(\pmb \alpha, s) + 
+    \underbrace{
+      D[q_\mu(\eta) \parallel p(\eta | \pmb \alpha, s)
+    }_{bound}
+   = \Im(\pmb \alpha, s)\\
 \end{aligned}
 \end{equation}
 $$
@@ -1774,7 +1805,8 @@ $$
 $$
 \begin{equation}\tag{8.7}
 \begin{aligned}
-\\
+G(\alpha_\tau)
+  &\geq \lim_{d\ell(\tau) \to 0} \Im_\tau(\alpha_\tau | \pi_0)\\
 \end{aligned}
 \end{equation}
 $$
