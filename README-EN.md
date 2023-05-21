@@ -1814,7 +1814,34 @@ $$
 $$
 \begin{equation}\tag{8.8}
 \begin{aligned}
-\\
+G(\alpha_\tau)
+  &\triangleq 
+    \underbrace{
+      E_{q_\tau}[\Im(\eta_\tau,\pi_\tau)]
+    }_{energy} -
+    \underbrace{
+      H[q_\tau(\eta_\tau|\pi_\tau)]
+    }_{entropy}  \\
+    &=
+    E_{q_\tau}[
+    \underbrace{
+      \Im(\pi_\tau)
+    }_{suprisal} +
+    \underbrace{
+      D[q_\tau(\eta_\tau|\pi_\tau) || p(\eta_\tau)]
+    }_{bound} ]\\
+    &= 
+    E_{q_\tau} [
+    \underbrace{
+      \Im(\eta_\tau,\pi_\tau)
+    }_{ambiquity} +
+    \underbrace{
+      D[q_\tau(\eta_\tau|\pi_\tau)||p(\eta_\tau)]
+    }_{risk}] \geq E+{q_\tau}[\Im(\pi_\tau)] \\
+    \\
+q_\tau(\eta_\tau,s_\tau|\alpha_\tau)
+  &\triangleq p_\tau(\eta_\tau,s_\tau | \alpha_\tau, \pi_0)
+  = E_{q_\mu}[p_\tau(\eta_\tau,s_\tau | \alpha_\tau, \pi_0, \eta_0)] \\
 \end{aligned}
 \end{equation}
 $$
@@ -1822,15 +1849,26 @@ $$
 $$
 \begin{equation}\tag{8.9}
 \begin{aligned}
-\\
-\end{aligned}
-\end{equation}
-$$
-
-$$
-\begin{equation}\tag{8.9}
-\begin{aligned}
-\\
+d\ell(\tau)
+  &= 0 \\
+  &\Rightarrow 
+    D[q_\tau(\eta_\tau, \pi_\tau) || p(\eta_\tau,\pi_\tau)]
+    = 0
+  \\
+  &\Rightarrow 
+    E_{q_\tau}[G(\pi_\tau) - \Im_\tau(\pi_\tau | \pi_0)]
+    = 0
+  \\
+  &\Rightarrow 
+    G(\pi_\tau) 
+    = \Im_\tau((\pi_\tau | \pi_0)
+  \\
+  \\
+G[\pi_\tau)
+  &= E_{q_\tau}[\Im(\eta_\tau, \pi_\tau)] - H[q_\tau(\eta_\tau | \pi_tau)]
+  \\
+q_\tau(\eta_\tau, \pi_\tau)
+  &= p_\tau(\eta_\tau,\pi_\tau | \pi_0)
 \end{aligned}
 \end{equation}
 $$
@@ -1838,7 +1876,13 @@ $$
 $$
 \begin{equation}\tag{8.10}
 \begin{aligned}
-\\
+E_q
+  \left[
+    ln\frac{q_\tau(\eta_\tau | \pi_\tau)}{p(\eta_\tau|\pi_\tau)} - \Delta\Im_\tau
+  \right]
+  \geq 0, \space\space
+\Delta\Im_\tau 
+  = \Im_\tau(\pi_\tau | \pi_0) - \Im(\pi_\tau) \\
 \end{aligned}
 \end{equation}
 $$
@@ -1846,7 +1890,15 @@ $$
 $$
 \begin{equation}\tag{8.11}
 \begin{aligned}
-\\
+G(\alpha_\tau)
+  &= E_{q_\tau(s_\tau|\alpha_\tau)}[G(\pi_\tau)]
+   = E_{q_\tau(s_\tau|\alpha_\tau)}[\Im_\tau(\pi_\tau | \pi_0)]
+   \geq \Im_\tau(\alpha_\tau | \pi_0) \\
+  \\
+G(\alpha_\tau)
+  &= E_{q_\tau}[\Im(\eta_\tau,s_\tau, \alpha_\tau)] - H[q_\tau(\eta_\tau| s_\tau, \alpha_\tau)] \\
+q_\tau(\eta_\tau,s_\tau | \alpha_\tau)
+  &= p_\tau(\eta_\tau,s_\tau | \alpha_\tau, \pi_0) \\
 \end{aligned}
 \end{equation}
 $$
