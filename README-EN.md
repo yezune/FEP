@@ -715,12 +715,14 @@ If the extrinsic coupling has a nontrivial sparsity, $\lambda_nm^{(i)}=0:\exists
 $$
 \begin{equation}\tag{4.2}
 \begin{aligned}
-\dot{\pi}_j^{(i)} &=
+\dot{\pi}_j^{(i)}
+  &=
 \begin{Bmatrix}
    \dot{a}_j^{(i)} \\
    \dot{s}_j^{(i)} \\
    \dot{\mu}_j^{(i)} \\
-\end{Bmatrix} =
+\end{Bmatrix} 
+   =
 \begin{Bmatrix}
    f_{a_j}^{(i)}(b_j^{(i)},\mu_j^{(i)}) \\
    f_{s_j}^{(i)}(b_1^{(i)},\dots,b_j^{(i)}) \\
@@ -732,11 +734,12 @@ $$
    \omega_{\mu_j}^{(i)} \\
 \end{Bmatrix} \\
 \\
-&=
+  &=
 \begin{Bmatrix}
    \dot{b}_j^{(i)} \\
    \dot{\mu}_j^{(i)} \\
-\end{Bmatrix} =
+\end{Bmatrix}
+   =
 \begin{Bmatrix}
    f_{b_j}^{(i)}(\mu_j^{(i)},b_1^{(i)},\dots,b_j^{(i)}) \\
    f_{\mu_j}^{(i)}(\pi_j^{(i)}) \\
@@ -747,60 +750,89 @@ $$
 \end{Bmatrix} \\
 \\
 \pi^{(i)} &= \{\pi_1^{(i)},\dots,\pi_j^{(i)} \} \\
-&= \{x_1^{(i)},\dots,\underbrace{\underbrace{\underbrace{x_k^{(i)},\dots,x_\ell^{(i)}}_{a_j^{(i)}},\underbrace{x_m^{(i)},\dots,x_n^{(i)}}_{s_j^{(i)}}}_{b_j^{(i)}},\underbrace{x_o^{(i)},\dots,x_p^{(i)}}_{\mu_j^{(i)}}}_{\pi_j^{(i)}},\dots,x_N^{(i)} \} \\
+  &= 
+  \{x_1^{(i)},\dots,
+  \underbrace{
+    \underbrace{
+      \underbrace{
+        x_k^{(i)},\dots,x_\ell^{(i)}
+      }_{a_j^{(i)}},
+      \underbrace{
+        x_m^{(i)},\dots,x_n^{(i)}
+      }_{s_j^{(i)}}
+    }_{b_j^{(i)}},
+    \underbrace{
+      x_o^{(i)},\dots,x_p^{(i)}
+    }_{\mu_j^{(i)}}
+  }_{\pi_j^{(i)}},\dots,x_N^{(i)} \} \\
 \end{aligned}
 \end{equation}
 $$
 
-Here, active states depend only on the Markov blanket in which they participate and the internal states they
-surround. Similarly, the internal states depend only upon themselves and their Markov blanket. Conversely, the
-flow of sensory states depends upon all other states (apart from internal states that are sequestered behind Markov
-blankets). The partition implicit in the last equality emphasises the point that a (particular) Markovian partition
-is a partition into particles, where each particle is itself a partition of blanket and internal states.
-Consider now the Taylor expansion of the flow of the j-th Markov blanket, where the intrinsic dynamics are
-absorbed into the random fluctuations. For notational simplicity, we will assume the current state constitutes the
-origin of the generalised coordinates: x 0  x (0) = 0 . So that we can express everything in terms of local
-deviations:
+Here, active states depend only on the Markov blanket in which they participate and the internal states they surround. Similarly, the internal states depend only upon themselves and their Markov blanket. Conversely, the flow of sensory states depends upon all other states (apart from internal states that are sequestered behind Markov blankets). The partition implicit in the last equality emphasises the point that a (_particular_) Markovian partition is a partition into particles, where each particle is itself a partition of blanket and internal states.
+
+Consider now the Taylor expansion of the flow of the $j$-th Markov blanket, where the intrinsic dynamics are absorbed into the random fluctuations. For notational simplicity, we will assume the current state constitutes the origin of the generalised coordinates: $x_0 \equiv x(0) = 0$. So that we can express everything in terms of local deviations:
 
 $$
 \begin{equation}\tag{4.3}
 \begin{aligned}
-\dot{b}_j^{(i)} &= f_{b_j}^{(i)}(b_0^{(i)})+\textstyle\sum_k J_{jk} b_k^{(i)}+\dots+K_j\varepsilon_j^{(i)}+\omega_{b_j}^{(i)} \\
-\varepsilon_j^{(i)} &= \mu_j^{(i)} - \pmb{\mu}_j^{(i)}(b_j^{(i)}) \\
+\dot{b}_j^{(i)} 
+  &= f_{b_j}^{(i)}(b_0^{(i)})+\textstyle\sum_k J_{jk} b_k^{(i)}+\dots+K_j\varepsilon_j^{(i)}+\omega_{b_j}^{(i)} \\
+\varepsilon_j^{(i)}
+  &= \mu_j^{(i)} - \pmb{\mu}_j^{(i)}(b_j^{(i)}) \\
 \\
-J_{jk} &\triangleq\partial_{b_k}f_{b_j}^{(i)}(b_k^{(i)}) \\
-J_{jj} &\triangleq\partial_{b_j}f_{b_j}^{(i)}(b_j^{(i)},\pmb{\mu}_j^{(i)}(b_j^{(i)})) \\
-K_{j} &\triangleq\partial_{\mu_j}f_{b_j}^{(i)}(\pi_k^{(i)}) \\
+J_{jk}
+  &\triangleq\partial_{b_k}f_{b_j}^{(i)}(b_k^{(i)}) \\
+J_{jj}
+  &\triangleq\partial_{b_j}f_{b_j}^{(i)}(b_j^{(i)},\pmb{\mu}_j^{(i)}(b_j^{(i)})) \\
+K_{j}
+  &\triangleq\partial_{\mu_j}f_{b_j}^{(i)}(\pi_k^{(i)}) \\
 \end{aligned}
 \end{equation}
 $$
+
+In this expansion, the effect of the Markov blanket on its own flow is mediated directly – through interactions among active and sensory states – and vicariously through internal states. In other words, for every state of the Markov blanket, there is an expected internal state $\pmb{\mu}_j^{(i)}(b_j^{(i)}$ that contributes to the flow of the blanket – more jj specifically, the active states: see (4.6) . This means that the contribution of internal states rests on fluctuations about their expectation. These _intrinsic fluctuations_ $\varepsilon_j^{(i)}$ only affect the Markov blanket in question, because they are conditionally independent of external states (i.e., intrinsic fluctuations under other Markov blankets). This conditional independence means that the intrinsic fluctuations are unique to each blanket.
+
 $$
 \begin{equation}\tag{4.4}
 \begin{aligned}
-E[\varepsilon_j^{(i)}(\tau)\cdot \varepsilon_k^{(i)}(\tau)]=
+E[\varepsilon_j^{(i)}(\tau)\cdot \varepsilon_k^{(i)}(\tau)]
+  =
 \begin{cases}
-\sum_j^{(i)} & :j=k \\
-0 & :j \neq k \\
+  \sum_j^{(i)} & :j=k \\
+  0 & :j \neq k \\
 \end{cases}\\
 \end{aligned}
 \end{equation}
 $$
+
+By associating intrinsic fluctuations with random fluctuations, we require that they are independent from blanket to blanket and fluctuate quickly. The latter requirement is guaranteed to the extent that the expected internal state, conditioned on the blanket state, furnishes an unstable or centre manifold that attracts internal state trajectories at a rate that is substantially faster than flow on the manifold[^note-9].
+
+[^note-9]:A more refined construction of an implicit centre manifold could, by appeal to Takens' (delay embedding) theorem, condition the expected internal states on the generalised motion of blanket states; however, for simplicity, we will just deal with generalised states per se. For a discussion of generalised coordinates of motion, see Appendix E and Friston, K., Stephan, K., Li, B., Daunizeau, J., 2010. Generalised Filtering. Mathematical Problems in Engineering vol., 2010, 621670, Kerr, W.C., Graham, A.J., 2000. Generalized phase space version of Langevin equations and associated Fokker-Planck equations. European Physical Journal B 15, 305-311.
+
+The Jacobians (i.e., rate of change of flow with respect to states) mediating the dynamics above respect the conditional independences implied by the Markov blanket; namely, active states cannot be influenced directly by external states (i.e., other Markov blankets) – and sensory states cannot be influenced directly by internal states. From (1.21):
+
 $$
 \begin{equation}\tag{4.5}
 \begin{aligned}
-J_{jk} & \triangleq \partial_{b_k} f_{b_j} =
+J_{jk}
+  & \triangleq \partial_{b_k} f_{b_j} 
+    =
 \begin{bmatrix}
-0 \\
-\partial_{b_k} f_{s_j} \\
+  0 \\
+  \partial_{b_k} f_{s_j} \\
 \end{bmatrix} & : j \neq k \\
 K_j & \triangleq \partial_{\mu_j} f_{b_j} =
 \begin{bmatrix}
-\partial_{\mu_j} f_{a_j} \\
-0 \\
+  \partial_{\mu_j} f_{a_j} \\
+  0 \\
 \end{bmatrix} & : \forall j \\
 \end{aligned}
 \end{equation}
 $$
+
+Finally, the expected internal state conditioned upon its own blanket is not influenced by (i.e., is conditionally independent of) other blankets.
+
 $$
 \begin{equation}\tag{4.6}
 \begin{aligned}
@@ -809,8 +841,16 @@ $$
 \end{equation}
 $$
 
+Figure 9 describes how a particular partition (into particles) could proceed. It should be noted that the procedure in Figure 9 is one of the many ways in which to form a particular partition – and there are clearly a large number of particular partitions for any given system. This is reflected in the term particular partition, which denotes a partition into particles but is also particular in the sense it is one of many possible partitions. This procedure effectively identifies a small set of internal states and their Markov blanket based upon a graph Laplacian. The remaining (external states) are then recursively assigned to particles until all states have been accounted for. We will apply this procedure to our synthetic soup later. However, first, we need to address the dynamics of blanket states given a particular partition.
+
 [FIGURE 9](./img/09.png)
 <p style="text-align: center;">FIGURE 9</p>
+
+_The particular partition_. This schematic illustrates a partition of vectors states (small coloured balls) into particles (comprising nine vectors), where each particle has six blanket states (red and magenta for active and sensory states respectively) and three internal states (cyan). The upper panel summarises the operators used to create a particular partition. We start by forming an adjacency matrix that characterises the coupling between different vectors states. This is based upon the Jacobian and implicitly the flow of vector states. The resulting adjacency matrix defines a Markov blanket forming matrix (**B**), which identifies the children, parents and parents of the children. The same adjacency matrix is used to form a graph Laplacian (**G**) that is used to define neighbouring (i.e., coupled) internal states. One first identifies a set of internal states using the graph Laplacian. Here, the j-th subset of internal states at level i are chosen, based upon dense coupling with the vector state with the largest graph Laplacian. Coupled internal states are then selected from the columns of the graph Laplacian that exceed some threshold. In practice, the examples used later specify the number of internal states desired for each level of the hierarchical decomposition. Having identified a new set of internal states (that are not members of any particle that has been identified so far) its Markov blanket is recovered using the Markov blanket forming matrix. The internal and blanket states then constitute a new particle, which is added to the list of particles identified. This procedure is repeated until all vector states have been accounted for. Usually, towards the end of this procedure, candidate internal states are exhausted because all remaining unassigned vector states belong to the Markov blanket of the particles identified previously. In this instance, the next particle can be an active or sensory state, depending upon whether there is a subset (of active states) that is not influenced by another. In the example here, we have already identified four particles and the procedure adds a fifth (top) particle to the list of particles; thereby accounting for nine of the remaining vector states.
+
+#### The adiabatic reduction
+
+Having effectively eliminated internal states to form autonomous equations of motion for the Markov blanket, we now apply an adiabatic approximation to separate fast and slow dynamics. This separation rests on the eigenvectors of the Jacobian for each Markov blanket, where we can separate the eigenvectors with small (slow) and large negative (fast) eigenvalues (using – to denote a left eigenvector or generalised inverse of a right eigenvector):
 
 $$
 \begin{equation}\tag{4.7}
@@ -852,6 +892,9 @@ J_{J1} & \dots & J_{JJ} \\
 \end{equation}
 $$
 
+This [eigen] decomposition is expressed in terms of block matrices, where the leading diagonal blocks comprise leading diagonal matrices of eigenvalues. Effectively, the eigenvectors represent mixtures of states that dissipate, following perturbations by extrinsic, intrinsic or random fluctuations. Here, 
+$\epsilon < 0$ is some small nagative number that places a lower bound on the rate that fast eigenmodes dissipate. Projecting the system of equations above onto the eigenvectors gives us two sets of equations for slow and fast dynamics respectively:
+
 $$
 \begin{equation}\tag{4.8}
 \begin{aligned}
@@ -876,6 +919,8 @@ $$
 \end{equation}
 $$
 
+The upper equations describe flow with a slow dynamics (of the $j$-th Markov blanket) that is driven by slow extrinsic dynamics in other Markov blankets. In this formulation, intrinsic and random fluctuations are supplemented by the effects of fast fluctuations in other Markov blankets on the slow modes of the blanket in question. The separation of temporal scales implicit in this adiabatic expansion means that one can assume the intrinsic (and extrinsic) fluctuations are fast in relation to the dynamics of the slow modes. This assumption allows us to express the dynamics of the slow modes in the same form as the initial ansatz (4.1):
+
 $$
 \begin{equation}\tag{4.9}
 \begin{aligned}
@@ -891,8 +936,19 @@ f_{n}^{i+1}        &\triangleq \xi_{n}^{(i)-}f_{b_n}^{(i)}(b_{0}^{(i)}) \\
 \end{equation}
 $$
 
+This is the endpoint of our analysis; in which the ansatz for the form of dynamics at one level emerges as a consequence of conditional independencies at the level below. This means that the flow can be decomposed in a recursive fashion to describe the dynamics at progressively higher spatial and temporal scales (c.f., the recursive Gaussian elimination implicit in things like the Cholesky decomposition). Note that the last equality in (4.9) ensures that fluctuations are Gaussian, via the central limit theorem, because they are mixtures of fluctuations at the lower level.
+
+In this construction, particles (i.e., things) are only defined in relation to the mapping between adjacent levels of description. In other words, the (macroscopic) states of a particle $x_n^{(i+1)}$ are a nonlinear mixture[^note-10] of a particle’s (microscopic) states: $b_n^{(i)} \subset \pi_n^{(i)}$ , where the blankets of $J^{(i)} = N^{(i+1)}$ particles subtend the [eigen]states at the nn higher level. In other words, a particle – or a particular partition – underwrites the mapping between the _macroscopic states_ of a particle and a particle of microscopic states. Figure 10 illustrates the adiabatic reduction afforded by a particular partition.
+
+[^note-10]:The mixtures are nonlinear because the eigenvectors are functions of the current state. This follows because the Jacobians are state-dependent.
+
 [FIGURE 10](./img/10.png)
 <p style="text-align: center;">FIGURE 10</p>
+
+_Adiabatic reduction_. This figure illustrates the adiabatic dimension reduction that constitutes the second part of the hierarchical decomposition; namely, the elimination of internal states and retention of slow blanket modes. This schematic is presented in three columns. The first two columns represent the partitions of states (left row) and associated random fluctuations (middle row). The right row uses the same schematic format as in the previous figures. Here, we start off with a partition of states at level i. Following a particular decomposition into the blanket and internal states of particles (see previous figure), an adiabatic reduction decomposes each particle’s blanket states into fast and slow modes. The slow modes now constitute the vector states (i.e., eigenstates) of the subsequent level. Conversely, the fast, fluctuating modes are added to the intrinsic fluctuations to produce random fluctuations for the next level. After this process is complete, we end up where we started; namely, with a partition of states into vectors (i.e., the slow modes of blanket states of particles at the level below) and random fluctuations. This is illustrated on the right by converting lots of vector states at the level i into a smaller number of vector states at the next level via, the particular partition and (adiabatic) reduction. The reason that this is referred to as an adiabatic reduction is that the eigenvalues – used to assign modes or mixtures of blanket states to vector states at the next level – correspond to the Lyapunov exponents of the underlying Jacobians. The real parts of these eigenvalues reflect the rate at which the modes decay over time. Please refer to the main text for a description of the variables used in this figure.
+#### Elimination and renormalisation
+
+To recap, the recursive link between hierarchical scales rests on two steps. First, a particular partition enables the elimination of internal states by conditioning on the Markov blanket, by absorbing intrinsic fluctuations into random fluctuations at the next level (denoted by the transformation **G** in Figure 8). Second, the eigenvectors of the remaining (Markov blanket) states enable an adiabatic decomposition into slow and fast dynamics. In turn, this enables the elimination of fast dynamics, by absorbing the fast dynamics into random fluctuations at the next level (denoted by the transformation **R** in Figure 8). This can be summarised as follows:
 
 $$
 \begin{equation}\tag{4.10}
@@ -909,6 +965,10 @@ x_{n}^{(i+1)} &= \xi_{n}^{(i)-} b_{n}^{(i)}
 \end{equation}
 $$
 
+On this view, the (macroscopic) state of a particle corresponds to a mixture of its (microscopic) blanket states at the lower level. Successive decompositions eliminate internal states and mixtures of blanket states, whose fluctuations are sufficiently fast to be treated as random fluctuations.
+
+The existence of this decomposition provides an interesting perspective on the genesis of random fluctuations. For example, if we assume that the particles at a given level are sufficiently similar to render $J_{nm} \approx J_{nn}  \Rightarrow \lambda_{nm}^{\xi\zeta} \approx 0: \forall n \neq m$ ,then their slow and fast modes are uncoupled, and the random fluctuations reduce to:
+
 $$
 \begin{equation}\tag{4.11}
 \begin{aligned}
@@ -918,6 +978,13 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+We will refer to this as the ensemble assumption, which entails a weak coupling between fast and slow modes. The recursive substitution implicit in (4.11) illustrates how random fluctuations inherit their dynamics from intrinsic fluctuations; namely, through a successive accumulation and mixing of intrinsic fluctuations[^note-11] (see Figure 10). In other words, blanket fluctuations are mixtures of intrinsic fluctuations from subordinate scales. The ensuing picture is consistent with formulations that distinguish between fast microscopic states and slow macroscopic states: for example, the distinction between slow (unstable) order parameters and fast (stable) modes in synergetics (Frank, 2004; Haken, 1983); the distinction between a micro-states and macro-states of canonical ensembles in statistical mechanics (Seifert, 2012) and the distinction between unstable and stable manifolds in bifurcation and centre manifold theorems (Carr, 1981). The crucial aspect of this treatment is that the fast, stable, dissipative, microscopic dynamics emerge via the elimination of internal states, when formulating the dynamics in terms of the Markov blanket that surrounds and sequesters them. These fluctuations are then separated from the slow modes that supervene at successively higher levels.
+
+[^note-11]: For simplicity, we have ignored correlations among the random fluctuations at the higher-level that are induced by correlations among the intrinsic fluctuations. In principle, these are dealt with by an affine transformation of the fast eigenvectors, such that $\xi_{n}^{(i)} \rightarrow \xi_{n}^{(i)} \Rightarrow \xi_{n}^{(i)-}(K_{n}^{(i)}\Sigma_{n}^{(i)} K_{n}^{(i)T} + 2\Gamma_{b_n}^{(i)})\xi_{n}^{(i)} = 2\Gamma_{n}^{(i+1)}$ has the desired form
+
+An alternative perspective on this adiabatic reduction is provided by the notion of renormalisation. In theoretical physics, the renormalization group (RG) refers to a transformation that characterises a system when measured at different scales (Cardy, 2015; Schwabl, 2002). A working definition of renormalization involves three elements (Lin et al., 2017): vectors of random variables, a course-graining operation and a requirement that the operation does not change the functional form of the Lagrangian (or equivalent description of the dynamics). In our case, the random variables are states; the course graining operation corresponds to the grouping (**G**) into a particular partition and adiabatic reduction (**R**) – that leaves the functional form of the dynamics (and associated Lagrangian) unchanged. For example, from (1.2) and (4.9) we could write the Lagrangian of a particle at any scale in the style of the renormalisation group:
+
 $$
 \begin{equation}\tag{4.12}
 \begin{aligned}
@@ -929,10 +996,12 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+Here, the Lagrangian of a particle at one scale has been expressed in terms of states at a lower scale, after a course graining or blocking transformation $\pmb{R}\circ\pmb{G}$ transformation necessarily reduces the number of states, by eliminating internal states at the lower level and retaining the relevant eigenmodes of blanket states, where (under the ensemble assumption):
+
 $$
 \begin{equation}\tag{4.13}
 \begin{aligned}
-\xi_{n}^{(i)}         &\rightarrow \xi_{n}^{(i)} \Rightarrow \xi_{n}^{(i)-}(K_{n}^{(i)}\Sigma_{n}^{(i)} K_{n}^{(i)T} + 2\Gamma_{b_n}^{(i)})\xi_{n}^{(i)} = 2\Gamma_{n}^{(i+1)} \\
 \{x_{n}^{(i)}\}       &\xrightarrow{G}      \{b_{j}^{(i)}\} \subset\{b_{j}^{(i)},\mu_{j}^{(i)}\} \\
 \\
 \{b_{n}^{(i)}\}       &\xrightarrow{R}      \{x_{n}^{(i+1)}\} = \{\xi_{n}^{(i)-} b_{n}^{(i)}\} \\
@@ -943,19 +1012,62 @@ $$
 \end{equation}
 $$
 
+Here, the parameters of the Lagrangian are taken to be the flow, coupling parameters and the amplitude of fluctuations, whose changes are implemented by a beta function that is said to induce a renormalization group flow (or RG flow) on parameter space. The key aspect of this flow rests upon the adiabatic reduction, which renders the dynamics progressively slower at successive macroscopic scales, because – by construction – only slow modes are retained by course graining; e.g.,
+
 $$
 \begin{equation}\tag{4.14}
 \begin{aligned}
-E[Re(\lambda_{nn}^{(i)})] \leq E[Re(\lambda_{nn}^{(i+1)})]\dots\leq 0 \\
+E[Re(\lambda_{nn}^{(i)})] \leq E[Re(\lambda_{nn}^{(i+1)})]\ldots\leq 0 \\
 \end{aligned}
 \end{equation}
 $$
 
+The corresponding RG flow on the amplitude of fluctuations $\Gamma_n^{(i)} \geq \Gamma_n^{(i+1)} \ldots \geq 0$ ,speaks to a progressive move from dynamics with high amplitude, fast fluctuations (e.g., quantum mechanics) through to deterministic systems that are dominated by slow dynamics (e.g., classical mechanics). In deterministic systems, $E[Re(\lambda_{nn}^{(i)}(x_n^{(i)}))] $ play the role of _Lyapunov exponents_ (c.f., critical exponents), which quantify the rate of separation of infinitesimally close trajectories (Lyapunov and Fuller, 1992; Pyragas, 1997). This suggests that as we move from one scale to the next, there is a concomitant reduction in the amplitude of random fluctuations and a tendency to dynamic itinerancy (Cessac et al., 2001; Pavlos et al., 2012).
+
+In this (RG) setting, a relevant variable is said to describe the macroscopic behaviour of the system, while an irrelevant variable is not. From our perspective, the relevant variables in question correspond to the slow modes retained in (4.13), while the irrelevant variables can be associated with fast modes and intrinsic fluctuations (see Figure 10). Figure 11 and Figure 12 provide a worked example, applying the adiabatic reduction to a hierarchical series of (particular) partitions of the synthetic soup of the previous section.
+
+#### Markov blankets as dissipative structures
+
+We have made a few deflationary assumptions that require comment. First, nonequilibrium steady-state has been cast as self-organisation to a random (dynamical) attracting set (Arnold, 2003; Crauel et al., 1997; Crauel and Flandoli, 1994). This raises two questions. First, is this an appropriate mathematical image of dissipative structures that characterise systems far from equilibrium? Second, what distinguishes _nonequilibrium_ from _equilibrium_ steady-state? The second question has a straightforward answer: systems at equilibrium possess an attracting set, surrounding a dynamically stable _fixed point_. In other words, the gradient flows are, locally, directed to a single point in phase space, thereby precluding itinerancy – and the space-filling attractors that characterise nonequilibrium steady-state.
+
+The first question is more delicate[^note-12]. Dissipative structures – in the sense of Prigogine (Nicolis and Prigogine, 1977; Prigogine, 1978) – are dynamical structures characterised by the spontaneous emergence of topological [super] symmetry breaking and itinerancy; e.g., turbulence, cyclones and living systems (England, 2015). In particular, a dissipative structure has a reproducible (steady-state) regime to which it evolves. From our perspective, the ‘system’ only exists in virtue of its Markov blanket. As such, the blanket states of a random dynamical system constitute a dissipative structure. Associating Markov blankets with dissipative structures is appealing, in the sense that blanket states are defined by conditional independencies induced by dynamical flow. In short, _Markov blankets are dissipative structures that arise from structured flow_.
+
+[^note-12]: My thanks Klaus Harisch for correspondence on this issue.
+
+Having said this, the assumption of a random dynamical attractor precludes a formulation of dissipative structures (of this sort) in terms of wandering sets (Birkhoff, 1927). In other words, it does not easily accommodate the fact that the particles that constitute a Markov blanket can, over time, wander away or, indeed, be exchanged or renewed. The canonical example here would be the blanket states of a candle flame, whose constituent particles (i.e., molecules of gas) are in constant flux. This speaks to the interesting challenge of generalising the treatment above to handle wandering sets[^note-13]. However, we will make the simplifying assumption that over a suitable time scale, blanket states are well defined – as a subset of attracting states.
+
+[^note-13]: For example, by the use of (periodic) boundary conditions and flow operators that transport blanket states from one location
+on a state space boundary to another, with the same NESS potential and action (i.e., flow).
+
+#### Summary
+
+In summary, we have seen how structured dynamics can be derived hierarchically from one level (e.g., biophysical states) to produce intermediate things (e.g., macromolecules) that assemble into higher-order dissipative structures (e.g., cells) that form identifiable communities (e.g., organelles). At each level of (self) organisation, the integrity of constituent particles is underwritten by the preservation of a Markov blanket that enables us to talk about ‘things’ (Ramstead et al., 2017) or, indeed, how things affect things (Constant et al., 2018). In the second part of this monograph, we will look at the kinds of physics one might expect to see at different scales of self-organisation.
+
 [FIGURE 11](./img/11.png)
 <p style="text-align: center;">FIGURE 11</p>
 
+_Hierarchical renormalisation of active matter_. This figure illustrates the application of hierarchical renormalisation (i.e., recursive particular partition and adiabatic reduction) to the synthetic soup of Figure 5.This figure illustrates two successive renormalisations to construct dynamics at successively slower and larger scales. The lower row of images shows the Jacobians (i.e., rate of change of flow with respect to states) of [eigen]states at three levels. The Jacobians are presented as pairs: the left Jacobian is sorted by the particle to which the state belongs, while the right Jacobian is sorted by the type of state – active (red) sensory (magenta) and internal (blue). This designation is encoded by the colours of dots along the lower margin of each Jacobian. Starting with the lowest level (on the left) we have 896 vector or eigenstates that, following a particular partition can be assigned to 128 particles. The dependency or coupling among particles can be used to create a spectral or embedding space, corresponding to the eigenmodes of the graph Laplacian in Figure 9. Heuristically, this provides a coordinate system in which each particle can be located. The resulting scaling space means that the coupling among neighbouring particles scales with their proximity. This spectral embedding is illustrated twice, first colour-coded according to the particle (left image of each pair) and according to whether it is an active (red) sensory (magenta) or internal (blue) eigenstate (right image of each pair). One can see that the dependency structure implied by the Jacobian induces a complicated geometry in scaling space. In moving to the next level, internal states (blue) are eliminated and eigenstates of the remaining blanket states constitute vector states at the next level. In this example, we start with a particular partition of 896 microscopic states into 128 vector or eigenstates of particles. These correspond to the macromolecules that constitute our soup. Following a particular decomposition, this soup decomposes into 18 particles, five of which have internal states. This could be regarded as a collection of 18 cells. After a further decomposition, we end up with two particles, where only one (the green particle) has an internal state. This level of organisation can be regarded as a collection of cells (e.g., organelle) or a colony of bacteria, or a community. The images in the upper row illustrate the triaging of internal states by plotting the locations of eigenstates in the embedding or scaling space of the lower level – but colour coding them in terms of the particles to which they belong at the subsequent level. The spectral embedding evinces a much simpler topology that is reminiscent of the spatial locations of the macromolecules in Figure 6. This follows from the fact that the Euclidean positions in the simulation determine the conditional dependencies among the particles or macromolecules. The Jacobians show some important characteristic features that are detailed further in the next figure. In this example, the Jacobians were based upon the average rate of change of flow over 64 time steps after 512 iterations of the differential equations illustrated in Figure 5. A more detailed analysis of these Jacobians is available in the next figure. Here, we specified one, four and one internal state per particle, for each of the three levels shown.
+
 [FIGURE 12](./img/12.png)
 <p style="text-align: center;">FIGURE 12</p>
+
+_Dynamics and dependencies_. This figure reproduces the results of the previous figure for the intermediate level of self- organisation that we have associated with the emergence of cell-like (dissipative) structures from macromolecules. As noted in the previous figure, the spectral embedding and spatial dependencies that underwrite the Markov blanket rest upon the flow of its constituent states. This is encoded by the Jacobians in the lower row. The lower left panel shows the Jacobian when sorting the states according to particle membership; here colour-coded with 18 colours (shown at the top of the image). The lower right panel shows exactly the same dependencies but after sorting the order of states according to whether they were active (red) sensory (magenta) or internal (blue) states of each of the 18 particles. This reordering reveals the particular sparsity of dependencies (seen on the left) that is implied by the existence of Markov blankets; specifically, the absence of any influence of internal states on sensory states (depicted in light green). The remaining conditional independencies are manifest as block diagonal forms (depicted as lighter shade rectangles). This block diagonal form ensures that the off-diagonal blocks (i.e., between-particle coupling) is zero, when considering internal states and active states. In other words, the common feature of autonomous (i.e., active and internal) states is that they cannot be influenced directly by other particles – they can only be influenced by the states that belong to the particle in question. At this level of organisation, there are 18 particles that represent a partition of 128 eigenstates (e.g., macromolecular states), where each vector or eigenstate comprises between two and six states. These summarise the two-dimensional velocity, position and electrodynamics of each particle at the lower level; namely, each macromolecule.
+
+## Part Two: some special cases
+### A theory of small things – quantum mechanics
+
+This section considers quantum formulations of density dynamics that, effectively, rests upon dealing with the square root of the NESS density. This complex root plays the role of a wave function. In brief, we will consider the NESS density of particular states as a sufficient description of a particle. This description is sufficient in the sense that small particles have short information lengths – endowed by random fluctuations – and therefore obtain nonequilibrium steady-state very quickly. This lends quantum particles certain properties that elude classical mechanics. For example, one can think about random fluctuations as enabling a particle to explore paths (through state-space) around the path of least action – to which classical particles are confined. This exploration is determined by the amplitude of random fluctuations that, as we will see below, determines a particle’s effective ‘mass’[^note-14]. The resulting behaviour leads to characteristic quantum phenomena. For example, in the absence of random fluctuations, a particular state at a local extremum of surprisal will have zero flow and remain there forever. However, the NESS density of a quantum particle can explore the local landscape of surprisal; enabling it to ‘leak’ away from minima; e.g., quantum tunnelling (Brookes, 2017) and evince behaviours that are wavelike in nature. From our perspective, this could be considered in the light of noise-induced tunnelling[^note-15], of the sort illustrated in Figure 2.
+
+[^note-14]: Excursions around the classical path become non-negligible when the (reduced) mass approaches Planck's mass of about 0.02 mg.
+[^note-15]: The notion of ‘tunnelling’ in this context may be a slight misdirection, because fluctuations cannot ‘see’ potential energy barriers – the (thermodynamic or Schrödinger) potential pertains to flow. This means that fluctuations transcend potential gradients, as if they were not there.
+
+A key insight afforded by this move – to a wave function description of ensemble dynamics – is that the Fourier transform of the density over states becomes a density over flow (in virtue of the NESS lemma)[^note-16]. This means one can compute the dispersion or variance of flow to produce a measure of energy by analogy with classical mechanics. This analogy can be underwritten by associating the amplitude of random fluctuations with inverse mass, where the constant of proportionality is Planck's constant. A simple dimensionality analysis motivates the notion of mass (in kilograms), given the units of flow (in nats per second) and gradients of the NESS potential(per metre). Once we have mass in the picture, we can associate flow with momentum and its dispersion with kinetic energy, thereby equipping quantum formulations with an interpretation in terms of classical analogues.
+
+[^note-16]: Intuitively, if the probability mass of a particular state is concentrated around one point in phase-space, then the flow must be countering random fluctuations. This means that the flow is as dispersed as the fluctuations. Conversely, if flow is limited to a small range, random fluctuations would disperse particular states over state-space. In short, the dispersion of states and their flow must complement each other at nonequilibrium steady-state.
+
+The formulation of density dynamics in terms of a wave function introduces some interesting differences between treatments in terms of the density per se. In particular, it enables one to summarise density dynamics in terms of a Schrödinger potential, where the wave function is a solution to the Schrödinger equation (after the Schrödinger potential has been supplied). In what follows, we will see how the Schrödinger potential can be derived from the NESS potential and, implicitly, how the wave function relates to the NESS density. We will focus on the wave particle duality disclosed by the use of Fourier transforms and the implicit relationship between flow and momentum. The deflationary message of this section is that the NESS lemma (Appendix B) effectively dissolves wave-particle duality, on the view that every probability density (i.e. wave) function has particular (i.e., particle- like) characteristics. See (Koide, 2017) and (Wang, 2009) for a more rigorous treatment.
+
+At a microscopic (quantum) scale, we will suppose that random fluctuations predominate over solenoidal flow, which is consequently ignored in this section. At this scale, one is primarily interested in the nonequilibrium steady-state densities over microscopic states. In what follows, we derive (an introductory level) quantum physics from the NESS formalism. In brief, this involves, expressing the NESS density as the product of a complex function and its conjugate. The resulting _wave function_ is generally considered the most complete description of a physical system. For a single particle:
 
 $$
 \begin{equation}\tag{5.1}
@@ -966,6 +1078,10 @@ p    &= \Psi \cdot \Psi \\
 \end{equation}
 $$
 
+One might ask why it is useful to factorise the probability density in this fashion (see Appendix D for discussion). A key motivation follows from the Plancherel theorem, which ensures the integral of a function’s squared modulus is conserved following a Fourier transform (e.g., the power is the same in space and frequency). In terms of the Dirac notation, this means: $<\Phi^\dagger|\Phi>=<\Psi^\dagger|\Psi>=1$, where $\Phi(k)$ is the Fourier transform of $\Psi(x)$ . This can be exploited by treating both as _probability amplitudes_, whose squared modulus is a probability density. Below, we will see the frequency modes have an interesting interpretation that underlies things like wave-particle duality and Heisenberg's uncertainty principle. Put simply, working with the complex roots of the NESS density allows one to use Fourier transforms and talk about wavelengths in state-space. In turn, boundary conditions (e.g., the continuity of density functions) place formal constraints on density functions (e.g., a circle can only be divided into a finite number of wavelengths), leading to quantal behaviour.
+
+First, we will establish that the NESS density can be recovered from the solutions to the (time-independent) Schrödinger equation, which offers an accurate account of nearly all empirical molecular, atomic and subatomic measurements:
+
 $$
 \begin{equation}\tag{5.2}
 \begin{aligned}
@@ -975,6 +1091,14 @@ V(x)        &= \tfrac{m}{2}f\cdot f + \tfrac{\hbar}{2}\nabla\cdot f \\
 \end{aligned}
 \end{equation}
 $$
+
+Here, **H** corresponds to a Hamiltonian operator that returns the energy $E$ of the particle and $V(x)$ is the Schrödinger potential of a particle's states. For consistency with other texts, this section will denote the states of a particle by $x\equiv \pi_k$. Schrödinger's equation is central to nearly all applications of quantum mechanics; including quantum field theory, which combines special relativity with quantum mechanics. Furthermore, formulations of quantum gravity, such as string theory do not modify Schrödinger's equation. The above time-independent (single particle) Schrödinger equation can be derived as follows.
+
+#### The Schrödinger equation from first principles
+
+Our starting point is to express the flow in terms of the NESS density and the amplitude of random fluctuations, where the amplitude is expressed in terms of a (reduced) mass and Planck's constant. This enables us to express the gradients of the wave function in terms of flow[^note-17]:
+
+[^note-17]: The final equality uses the fact that $\Psi^\dagger\Psi \in \reals \Rightarrow \Psi^\dagger\nabla\Psi = \Psi\nabla\Psi^\dagger$.
 
 $$
 \begin{equation}\tag{5.3}
@@ -988,6 +1112,8 @@ pf         &= \tfrac{\hbar}{2m}\nabla p = \tfrac{\hbar}{2m}\nabla(\Psi\cdot\Psi^
 \end{aligned}
 \end{equation}
 $$
+
+These equalities can now be substituted into the density dynamics (i.e., Fokker Planck equation)
 
 $$
 \begin{equation}\tag{5.4}
@@ -1006,6 +1132,8 @@ V(x)    &= \tfrac{m}{2}f\cdot f+\tfrac{\hbar}{2}\cdot f \\
 \end{equation}
 $$
 
+This enables us to express the ensemble dynamics in terms of the (Hamiltonian) operator that plays the same role as the Fokker Planck operator but now operating on the wave function:
+
 $$
 \begin{equation}\tag{5.5}
 \begin{aligned}
@@ -1017,6 +1145,8 @@ i\hbar\dot{p} &= \Psi^{\dagger}i\hbar\Psi + \Psi i\hbar\Psi = \Psi^{\dagger}E\Ps
 \end{aligned}
 \end{equation}
 $$
+
+This is the time independent Schrödinger wave equation (for a single particle). Effectively, it is just another way of expressing density dynamics, where the eigenvalue of the operator acquires an interpretation in terms of energy. One can see the formal similarity between the Fokker Planck and Hamiltonian operator's by expressing the Fokker Planck and (time-independent) Schrödinger wave equation in terms of their respective operators:
 
 $$
 \begin{equation}\tag{5.6}
@@ -1030,6 +1160,12 @@ i\hbar\dot{\Psi}(x) &= \pmb{H}\Psi(x) \\
 \end{equation}
 $$
 
+These equalities foreshadow a key conclusion of this section; namely, the Fokker Planck formulation and its NESS solution rests upon the flow, while the solution to the Schrödinger wave equation requires a Schrödinger potential. As noted in the introduction, things get interesting when we consider a parameterisation of the NESS density in terms of its Fourier transform, as follows.
+
+#### Wave particle duality and the de Broglie hypothesis
+
+Without loss of generality, one can express the wave function in terms of its Fourier transform, giving the following Fourier transform pair, where k denotes wave number:
+
 $$
 \begin{equation}\tag{5.7}
 \begin{aligned}
@@ -1039,6 +1175,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+Using the Dirac notation, we have, using $\nabla\Psi = \tfrac{m}{\hbar}f\Psi$ and $\braket{\Phi^\dagger|\Phi}=\braket{\Psi^\dagger|\Psi} $ (by the Plancherel theorem)
 
 $$
 \begin{equation}\tag{5.8}
@@ -1050,6 +1188,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+The third equality is obtained by substituting (5.7) into the first. The interesting thing here is that we can associate the (reduced) _mass_ times the expected _flow_ with the expected spatial wave number. This lends itself naturally to an interpretation in terms of momentum, in accord with the de Broglie hypothesis, leading to the usual energy and momentum operators associated with quantum treatments.
 
 $$
 \begin{equation}\tag{5.9}
@@ -1063,6 +1203,8 @@ p &\triangleq \hbar \pmb{k} = m\pmb{f} \\
 \end{equation}
 $$
 
+By analogy with classical mechanics – see Equation (7.8) below – one can interpret the Hamiltonian as comprising kinetic and potential energy operators, where the kinetic energy operator is the dual application of the momentum operator:
+
 $$
 \begin{equation}\tag{5.10}
 \begin{aligned}
@@ -1071,6 +1213,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+This allows one to associate the expected values returned by the Hamiltonian operator in terms of kinetic and potential energy, which can be expressed in terms of flow and its divergence:
 
 $$
 \begin{equation}\tag{5.11}
@@ -1087,6 +1231,8 @@ $$
 \end{equation}
 $$
 
+In this treatment the (ground state) energy is zero because the expected potential energy is balanced by kinetic energy at nonequilibrium steady-state – and both reflect the curvature of surprisal: see (13.1) in Appendix C for details. Compare (5.10) with its classical homologue (7.8) in the absence of random fluctuations. Interestingly, if we consider a free particle moving at the speed of light we recover Einstein's celebrated equality (Einstein, 2013),
+
 $$
 \begin{equation}\tag{5.12}
 \begin{aligned}
@@ -1095,6 +1241,11 @@ f(x)=c \Rightarrow E = mc^2 \\
 \end{equation}
 $$
 
+Although perhaps not quite in the spirit originally intended. For a complete treatment of the Lagrangian formulation of the Schrödinger equation – and associated Hamiltonian in its coordinate representation – please see (Arsenović et al., 2014).
+#### Heisenberg uncertainty principle
+
+An insight from the above is an equivalence between momentum and flow that is afforded by the Fourier transform of the wave function. In this setting, $p(x) = \Psi^\dagger\Psi$ and $p(k) = \Phi^\dagger\Phi$ provide probability densities over position and wave number, momentum or flow. The Fourier transform leads naturally to Heisenberg's uncertainty principle, which places a lower bound on the uncertainty (i.e. standard deviation) of these respective distributions:
+
 $$
 \begin{equation}\tag{5.13}
 \begin{aligned}
@@ -1102,6 +1253,10 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+This is famously interpreted as being unable to measure precisely both the position and momentum of a particle at the same time. The uncertainty principle can be demonstrated in terms of flow directly from the NESS conditions by assuming (for simplicity) a Gaussian density over any state[^note-18]. In terms of the dispersion or variance of position and flow:
+
+[^note-18]:  Note that the inequality in (5.13) becomes an equality under Gaussian assumptions.
 
 $$
 \begin{equation}\tag{5.14}
@@ -1120,6 +1275,14 @@ f(x)
 \end{equation}
 $$
 
+n short, the Heisenberg uncertainty principle means that – at nonequilibrium steady state – if the state of a particle is known precisely, then there is uncertainty about its flow and vice versa. Heuristically, this means that if the state has most of its probability mass around a particular point in state-space, the flow must be vigorously rebuilding gradients – in all directions – to counter the dispersive effects of random fluctuations. This means the probability distribution over the flow is dispersed. It is interesting to reflect upon the fact that (5.13) follows directly from the NESS lemma, without reference to the postulates of quantum theory.
+#### Inference, measurement and wave function collapse?
+
+Deriving the Schrödinger equation from the Fokker Planck equation, or from the path integral formulation, is in itself unremarkable. The interesting aspects of the above derivations follow from substituting the NESS flow into the Schrödinger equation. This substitution suggests that momentum in quantum treatments corresponds to mass times flow; thereby admitting a perspective on wave particle duality in which the density over flow becomes a density over momentum. Furthermore, the second-order statistics of the flow can be associated with kinetic energy by analogy with classical mechanics (see below). Note that both the kinetic energy and Schrödinger potential reflect the curvature of the wave function. Heuristically, this means that a high energy density has a high negative curvature, with pronounced peaks that can be decomposed into potential and kinetic parts – and quantified via application of the appropriate operator to the wave function.
+
+One might ask, where does quantal behaviour come from? One can intuit the discrete energies associated with wave functions by imagining a one-dimensional state-space with periodic boundary conditions. The implicit continuity constraints mean that the spatial wavelengths (inverse wave number) are restricted, so that a finite number of wavelengths ‘fit into’ the periodic support of state-space. Intuitively, the dispersive effects of random fluctuations mandate a smooth solution to the probability density dynamics that, if equipped with a radial symmetry, can only adopt a finite number of solutions. As a practical example, the (analytic) solutions for a hydrogen atom in spherical polar coordinates $x = (r,\theta,\phi)$ obtain from the amplitude of random fluctuations and
+Schrödinger potential as follows:
+
 $$
 \begin{equation}\tag{5.15}
 \begin{aligned}
@@ -1134,10 +1297,46 @@ $$
 \end{equation}
 $$
 
+Where $m_e$ is electron mass, $a_0$ is the Bohr radius and $L_{n-\ell-1}^{\ell-\ell+1}$ and $Y_\ell^m$ are generalized Laguerre polynomials (of degree $n - \ell - 1$) and spherical harmonics (of degree $\ell$ and order m) respectively. Here, $n,\ell,m$ azimuthal, and magnetic quantum numbers that characterize the discrete (orthonormal) solutions and endow the hydrogen atom with quantal behaviour.
+
+The application of quantum operators is usually interpreted in terms of a measurement – and discussed in terms of an implicit collapse of the wave function. In this monograph, we elude the interpretational issues of wave function collapse, because measurement is an inherent part of the nonequilibrium steady-state. In other words, measurement corresponds to a probabilistic mapping between states external to the measuring system and the internal states of the observer. Happily, apparent wave function collapse is predicted when a superposition forms between a particle’s states and its external states (i.e., the blanket states of a measuring system or observer). Crucially, the combined wave function of the system and observer continue to obey the Schrödinger equation (Zurek, 2009). We will consider measurement and inference in Part Three – in terms of a generalised synchrony between internal and external states. This means that wave function collapse is essentially redundant on the current view, which is therefore more consistent with the Bohm, ensemble or ‘many worlds’ interpretations (Ballentine, 1970; Bohm, 1952; Garriga and Vilenkin, 2001).
+
+The correspondence between the different interpretations of wave collapse or quantum decoherence and the perspective offered by the NESS lemma rests upon how close these interpretations fall under the perspective above. The underlying (nonequilibrium steady-state) solution is a probability distribution or wave function over the states of a system that is evolving extremely quickly. To the extent that the system is at nonequilibrium steady- state, the state-space averages of measurable quantities (i.e., eigenstates) will correspond to the time average. This can be variously interpreted as an ensemble of states or many worlds that are statistically indistinguishable from the fast evolution of a single trajectory on its random dynamical attractor. Interestingly, this fast aspect is guaranteed by the postulates underlying the quantum formulation. This follows from the fact that mass must be
+ smaller than the Planck constant $\Gamma > 1 \Rightarrow m < \tfrac{\hbar}{2}$
+will be almost instantaneous. In short, one can construe quantum mechanical behaviour in terms of immensely fast flows on attracting manifolds that can only be quantified (measured) in a probabilistic sense, where the Fourier transform of the ensuing ensemble density (or wave function) endows the states of a particle with wavelike properties.
+
+The notions of momentum and kinetic energy above inherit from classical mechanics, where momentum has been associated with mass times the expected flow – and mass stands in for the precision of random fluctuations. Momentum is not, at this stage, an attribute of velocity. In other words, the flow or _motion of states_ is not the _state of motion_. In a later section (on classical mechanics), we will introduce coordinates of motion, where some (i.e., sensory) states become the higher-order motion of other (i.e., active) states (through the equations of motion). This is a subtle point that explains why we can talk about momentum in the setting of a single quantum state – in contrast to classical mechanics that typically invoke generalised states to include position and momentum. Reassuringly, we will see later that the motion of a state becomes the state of motion, in the classical limit of small random fluctuations.
+
+#### Summary
+
+Readers familiar with quantum mechanics will appreciate that the above treatment is somewhat light touch. There are many issues in quantum mechanics that are beyond the reach of the current analysis, which aims at understanding self-organisation at the macroscopic scale of living systems. As such, it is less concerned with microscopic scales, where random fluctuations predominate – or large (astronomic) scales. This section just serves to bridge between the small and larger scales considered later. There are many prescient connections between entanglement, quantum information theory and thermodynamics that speak to this bridge (D'Alessio et al., 2016; Esposito et al., 2009; Parrondo et al., 2015); in particular, quantum fluctuation theorems (Alhambra et al., 2016a; Alhambra et al., 2016b; Holmes et al., 2019)[^note-19]. The next section introduces fluctuation theorems, via the stochastic thermodynamics of ensembles of particles. Part Three then introduces an integral fluctuation theorem for ‘measurement’, in terms of the information geometries induced by Markov blankets; c.f., (Sengupta and Friston, 2017). At that point, we will briefly revisit the measurement problem and the notion of wave function collapse.
+
+[^note-19]: My thanks to Peter Morgan and Biswa Sengupta for correspondence on this issue.
+
+It is interesting to stand back from the nonequilibrium steady-state and quantum formulations and ask what they offer each other. The NESS lemma tells us that if we know the amplitude of random fluctuations and the flow of a system, then there is an eigensolution for the NESS density. Alternatively, given the density and amplitude of random fluctuations, we can compute the expected flow – and associated Schrödinger potential. The quantum formulation, on the other hand, specifies the solution for a NESS density (via the wave function) that rests upon knowing the amplitude of random fluctuations (or equivalently reduced mass) and the Schrödinger potential. Crucially, the Schrödinger potential can be derived from the ensemble density in terms of its gradient and curvatures: see Equation (5.4). However, the NESS density can only be recovered from the Schrödinger potential via solution of the wave equation, which is intractable in many instances. Figure 13 tries to make this point using numerical analyses of a particle from our synthetic soup. The key point made in this figure is that one can derive the Schrödinger potential (and associated wave functions) from the flow (and associated NESS density).
+ 
+In conclusion, one has a complete description of (quantum) behaviour provided one can specify the amplitude of random fluctuations (or reduced mass) and the NESS density (or Schrödinger potential). Table 2 provides some common examples that speak to the breadth of systems that can be described in this way. However, we will now turn to the behaviour of ensembles of particles, under the (ensemble) assumption that they are sufficiently similar to share the same constraints on their flow.
+
 [FIGURE 13](./img/13.png)
 <p style="text-align: center;">FIGURE 13</p>
 
+_A particular quantum mechanics_. This figure illustrates the quantum treatment of a single state – a microstate from an external particle of our synthetic soup. The aim of this example is to show how one can characterise the dynamics of the state in terms of the Schrödinger potential and ensuing kinetic energy. Furthermore, this example illustrates how one can eschew the solution of the Schrödinger equation using the NESS lemma. Here, we will consider a single (micro) state in isolation by assuming its flow is a (linear) mixture of the marginal or expected flow under all other states and some fast, random fluctuations. Although we know a lot about how these fluctuations are generated, we will treat them as stochastic and sufficiently fast that the only interesting behaviour is captured by the Schrödinger potential. The timeseries is shown in the upper panel in terms of the state (solid line – arbitrarily assigned units of metres) and flow (dotted line). The sample distribution of states over time was evaluated in terms of the NESS potential using a sixth order polynomial fit to the negative logarithm of the sample density over 64 bins. The resulting estimate and its derivatives are shown in the left middle panel. From these, Equation (5.4) specifies the Schrödinger potential (left lower panel). One can then solve the Schrödinger equation to evaluate the wave function over position in state-space (middle panel) and its Fourier transform, over momentum (lower middle panel). The corresponding densities over position and momentum are shown in the right panels, superimposed upon the corresponding sample densities. Finally, the density over momentum specifies the kinetic energy via Equation (5.11). Here, the kinetic (and potential) energy was 2.29  10-33. To quantify this energy (and the Schrödinger potential) one needs the amplitude of the random fluctuations – or, equivalently, the reduced mass. This can be simply computed from the residuals of the flow having removed its expectation or marginal flow. The reduced mass of this quantum system was 5.52  10-38. This concludes a description of how the Schrödinger equation can be applied to characterise nonequilibrium steady-state dynamics. However, this is not how the results in this figure were generated: they were derived directly from the NESS potential without solving the Schrödinger
+equation. In other words, the ensemble density is specified directly by the NESS potential, which means that the wave function (and its Fourier transform) can be specified directly from the ensemble density. Here, we somewhat arbitrarily split the ensemble density into a symmetric Gaussian component and an asymmetric (positive) residual. We then assigned the (square root of the) two components to the real and imaginary parts of the wave function. This complementary derivation of the wave function illustrates the point made in the main text; namely, one can either generate the wave function directly from ensemble density or one can start from the Schrödinger potential and solve the Schrödinger equation.
+
 [TABLE 2](./img/t2.png)
+
+### A theory of lots of little things – statistical mechanics
+
+_“If physical theories were people, thermodynamics would be the village witch. Over the course of three centuries, she smiled quietly as other theories rose and withered, surviving major revolutions in physics, like the advent of general relativity and quantum mechanics. The other theories find her somewhat odd, somehow different in nature from the rest, yet everyone comes to her for advice, and no-one dares to contradict her.”_ (Goold et al., 2016); p1.
+
+In this section, we move from the behaviour of one small particle to an ensemble of small particles; for example, a large number of internal particles surrounded by their Markov blanket. In doing so, we appeal to the ensemble assumption above. In other words, the states of the ensemble are partitioned such that the states of each constituent particle can be identified with the homologous states of another. This enables one to associate the NESS density with an ensemble density. In other words, instead of describing the probability of sampling a single particle in a particular state over time, the NESS density also describes the number of particles occupying the same (or neighbourhood) states. Crucially, at nonequilibrium steady-state all particles share the same ensemble density and their flow can be described by the same ensemble potential (i.e., the NESS potential) However, prior to nonequilibrium steady-state the (thermodynamic) potential describing the flow cannot be the ensemble potential; otherwise the NESS lemma would be satisfied. We will see that the implicit divergence between the two corresponds to thermodynamic free energy. Note that the ensemble assumption entails a weak coupling assumption, which will be important in the second half of this section, when we connect the NESS formulation to important results in statistical mechanics, such as the _Jarzynski relation._
+
+In brief, we will see that being able to relate the flow of particles to an ensemble density means that we can describe trajectories in terms of potentials and forces. In turn, this equips trajectories with properties such as work and stochastic entropy, leading to balance equations that constitute the first and second laws of thermodynamics. These balance equations can be expressed at the level of a single trajectory (of a single particle) or the ensemble average; leading to (fluctuation) theorems that place constraints on the expected evolution of measurable quantities. Effectively, these fluctuation theorems generalise and extend the second law. This section follows the treatment in (Seifert, 2012) who provides an encyclopaedic overview of stochastic thermodynamics – and how it underpins statistical mechanics (through the notion of ensemble averages over individual trajectories). Because it deals with time varying densities, we will focus on the emergence of nonequilibrium steady-state and what this entails for quantities like thermodynamic free energy and entropy production.
+
+
+#### Stochastic thermodynamics
+
+Consider an ensemble of particles: $\{\pi_1^{(i)},\pi_2^{(i)},\ldots,\}$ , that are internal to a Markov blanket at a higher level, playing the role of a container, heat bath or reservoir. From (4.2) the flow of the k-th particular state can be expressed in Langevin form.
 
 $$
 \begin{equation}\tag{6.1}
@@ -1148,6 +1347,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+This expresses the dependency on the blanket states of other particles as a time-dependent flow. For notational simplicity, we will drop subscripts and superscripts and use $\pi \triangleq \pi_k^{(i)}$ to denote particular states that constitute a (thermodynamic) ensemble. To develop a (statistical) physics of ensembles, we start by expressing stochastic(Langevin) dynamics in terms of a thermodynamic potential $U(\pi,\tau)$ and associated forces $f_m(\pi,\tau)$, using the Helmholtz decomposition:
 
 $$
 \begin{equation}\tag{6.2}
@@ -1166,6 +1367,8 @@ Q
 \end{equation}
 $$
 
+The last equality is known as the Einstein–Smoluchowski relation, where $\mu_m$ is a mobility coefficient. This means, we have factorised the amplitude of random fluctuations $\Gamma = \mu_mk_BT$ , into mobility and temperature. The Boltzmann constant kB has a dimension of energy divided by temperature, and units of joule per Kelvin (J/K) in the International System of Units. To ensure a consistent dimensional analysis, we will use a scaled version of (Shannon) entropy or expected surprisal; namely, thermodynamic entropy:
+
 $$
 \begin{equation}\tag{6.3}
 \begin{aligned}
@@ -1176,6 +1379,9 @@ H(\tau)
 \end{aligned}
 \end{equation}
 $$
+
+Notice that flow $f = (\mu_m − Q_m)f_m$ is expressed in terms of a force $f_m = −\nabla U$ , which brings a new semantics to
+the table. Furthermore, the thermodynamic potential is only defined to within an additive constant, because its gradients predict stochastic flow in a least squares sense, by (6.1). We can therefore associate the thermodynamic potential with an ensemble density $p(\pi,\tau)$ and corresponding (time-dependent) surprisal $\Im(\pi,\tau)$. This defines a partition function (i.e., normalisation constant) $Z$ that enables the thermodynamic potential to be expressed as a probability density:
 
 $$
 \begin{equation}\tag{6.4}
@@ -1190,6 +1396,8 @@ F_m(\tau)
 \end{equation}
 $$
 
+So far, we have just formalised the dynamics of an ensemble in terms of a thermodynamic potential and some constants. As the ensemble approaches nonequilibrium steady state, the thermodynamic potential becomes proportional to surprisal (i.e., the NESS potential), where temperature is the constant of proportionality:
+
 $$
 \begin{equation}\tag{6.5}
 \begin{aligned}
@@ -1201,6 +1409,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+Otherwise, the NESS and thermodynamic potentials data differ, as the ensemble density evolves over time. We can express this in terms of a potential energy difference, whose expectation under the NESS density is a thermodynamic free energy:
 
 $$
 \begin{equation}\tag{6.6}
@@ -1218,8 +1428,19 @@ F_\Im(\tau)
 \end{equation}
 $$
 
+This generalises the well-known thermodynamic relationship between thermodynamic entropy, internal energy and free energy to non-steady-state dynamics, where entropy is expected surprisal and internal energy is the expected thermodynamic potential. This formulation defines entropy in relation to the nonequilibrium steady-state solution, where thermodynamic free energy is the relative entropy (i.e., the KL divergence) between the NESS and ensemble densities. In other words, it describes the evolution of an ensemble in terms of thermodynamic free energy minimisation to nonequilibrium steady-state (contrast this with the notion of increasing entropy, characterised by the second law). Effectively, this formulation says that any interesting ensemble (that has measurable characteristics) must have a random dynamical attractor to which it converges. On this view, the thermodynamic free energy decreases as the ensemble approaches nonequilibrium steady-state (i.e., its random dynamical attractor). At nonequilibrium steady-state, the divergence disappears, free energy is minimised and
+$\Delta F_m=0 \Leftrightarrow F_\Im = F_m$. See Figure 14 for a numerical example using our synthetic soup. Note that the thermodynamic free energy plays the same role as the divergence characterising symmetry breaking in (2.9). However, here, we are dealing with a time-dependent ensemble density over particular states, not the propagation of uncertainty from an initial particular state. Furthermore, in this thermodynamic setting, the expectations are under the NESS density. This means that the entropy $H = E_{p(\pi)}[\Im(\pi)]$ in (6.6) does not change with time – all the heavy lifting is done by thermodynamic free energy, in terms of characterising convergence to nonequilibrium steady-state.However,onecanstillconsidertheentropyoftheensembledensity $H(\tau)=E_{p(\pi,\tau)}[\Im(\pi,\tau)]$,as we will see below.
+
+Heuristically, (6.6) is consistent with the notion of free energy as the thermodynamic energy available to do work when an ensemble is far from equilibrium. However, to talk about heat and work, we need to connect stochastic dynamics to first law quantities. We can do this via the stochastic energetics of state trajectories.
+
 [FIGURE 14](./img/14.png)
 <p style="text-align: center;">FIGURE 14</p>
+
+_Ensemble densities and thermodynamic potentials_. These illustrative potentials and density functions are taken from the analysis in the subsequent figure. In brief, they characterise the stochastic thermodynamics of an ensemble of particles; here, the external states of our synthetic soup (towards the end of the simulation). This characterisation involves estimating two functions of phase or state-space. The first (shown in red) is the surprisal or self-information that characterises the NESS density $\Im(\pi)$. The second (shown in blue) is a homologous potential energy function $\Im(\pi, \tau)$, whose gradients predict the flow at each point in phase-space. At nonequilibrium steady-state, these two functions are the same. In other words, the thermodynamic potential becomes self-information (multiplied by temperature). This means that the distance or, more strictly speaking, divergence from steady-state can be quantified in terms of the KL divergence between the associated probability density functions (shown on the left). When these densities converge, the ensemble density stops changing and becomes the NESS density; i.e., $\Im(\pi, \tau) = \Im(\pi)$. The **middle panel** shows estimates of the ensemble and thermodynamic potentials (i.e., surprisals). The ensemble potential was estimated using a polynomial approximation to the (log) sample distribution over the ensemble of states. The corresponding density functions are shown in the **left panel**, where the sample distribution is shown as a dotted line. The **right panel** shows the gradients of the thermodynamic potential (blue line) that predicts the flow sampled by the simulation (dots). Please see main text for a description of the variables in this figure.
+#### Stochastic energetics
+Following (Sekimoto, 1998), one can endow Langevin dynamics with a thermodynamic interpretation, using constructs from the first law, by considering an individual fluctuating trajectory. For example, one can express the first law in terms of work and dissipated heat for a single trajectory[^note-20]:
+
+[^note-20]: Strictly speaking, we are only considering the ‘housekeeping’ heat – that is dissipated in maintaining nonequilibrium steady- state – because we are ignoring changes in the thermodynamic potential. For a complete treatment, see Seifert, U., 2012. Stochastic thermodynamics, fluctuation theorems and molecular machines. Reports on progress in physics. Physical Society (Great Britain) 75, 126001. https://doi.org/10.1088/0034-4885/75/12/126001
 
 $$
 \begin{equation}\tag{6.7}
@@ -1258,7 +1479,7 @@ $$
 \dot{\Im}^q(\pi,\tau)
   &= \tfrac{1}{\Gamma}f\cdot\dot{\pi}
    = \tfrac{1}{k_B T} f_m \cdot \dot{\pi}
-   = \tfrac{1}{k_bT}\pbm{\dot{q}} \\
+   = \tfrac{1}{k_bT}\pmb{\dot{q}} \\
 \end{aligned}
 \end{equation}
 $$
@@ -1279,7 +1500,7 @@ $$
 \begin{aligned}
 \cal{A}(\pi^\dagger[\tau])-\cal{A}(\pi[\tau])
   &= \int_0^t \cal{L}(\pi(t-\tau),\dot\pi(t-\tau))-\cal(\pi(\tau),\dot\pi(\tau))d\tau \\
-  &= \ln\frac{p(\pi[\tau]|\pi_0)}{p^\dagger(\pi^\dagger[\tau]|\pi_0^\dagger)} = \Delta\Im^q = \tfrac{1}{k_BT}\pbm q \\
+  &= \ln\frac{p(\pi[\tau]|\pi_0)}{p^\dagger(\pi^\dagger[\tau]|\pi_0^\dagger)} = \Delta\Im^q = \tfrac{1}{k_BT}\pmb q \\
 \end{aligned}
 \end{equation}
 $$
@@ -1317,6 +1538,8 @@ $$
 
 [FIGURE 15](./img/15.png)
 <p style="text-align: center;">FIGURE 15</p>
+
+#### Fluctuation theorems
 
 [TABLE 3](./img/t3.png)
 
@@ -1419,6 +1642,8 @@ E[exp(-\tfrac{1}{k_B T})]
 \end{aligned}
 \end{equation}
 $$
+#### Summary
+### A theory of big things – classical mechanics
 
 $$
 \begin{equation}\tag{7.1}
@@ -1444,6 +1669,7 @@ $$
 \end{aligned}
 \end{equation}
 $$
+#### Conservative systems
 
 $$
 \begin{equation}\tag{7.3}
@@ -1676,6 +1902,7 @@ $$
 \end{equation}
 $$
 
+#### Random fluctuations and generalised motion
 
 $$
 \begin{equation}\tag{7.15}
@@ -1706,8 +1933,15 @@ Q_{bb}
 \end{equation}
 $$
 
+#### Summary
+
+
 [FIGURE 16](./img/16.png)
 <p style="text-align: center;">FIGURE 16</p>
+
+## Part Three: a particular case
+
+### A theory of autonomous things – Bayesian mechanics
 
 
 $$
@@ -1902,6 +2136,7 @@ q_\tau(\eta_\tau,s_\tau | \alpha_\tau)
 \end{aligned}
 \end{equation}
 $$
+#### Risk and ambiguity
 
 $$
 \begin{equation}\tag{8.12}
@@ -1934,14 +2169,10 @@ $$
 \end{aligned}
 \end{equation}
 $$
-
-$$
-\begin{equation}\tag{8.16}
-\begin{aligned}
-\\
-\end{aligned}
-\end{equation}
-$$
+[TABLE 4](./img/t4.png)
+[FIGURE 17](./img/17.png)
+<p style="text-align: center;">FIGURE 17</p>
+#### Inference and measurement
 
 $$
 \begin{equation}\tag{8.17}
@@ -1950,6 +2181,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+#### Information geometry
 
 $$
 \begin{equation}\tag{8.18}
@@ -1974,6 +2207,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+#### Variational Bayes
 
 $$
 \begin{equation}\tag{8.21}
@@ -2062,6 +2297,10 @@ $$
 \end{aligned}
 \end{equation}
 $$
+[FIGURE 18](./img/18.png)
+<p style="text-align: center;">FIGURE 18</p>
+
+#### Summary
 
 $$
 \begin{equation}\tag{8.32}
@@ -2078,7 +2317,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
-
+### Simulating sentience
+#### The representation of order
 $$
 \begin{equation}\tag{9.1}
 \begin{aligned}
@@ -2086,6 +2326,13 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+[FIGURE 19](./img/19.png)
+<p style="text-align: center;">FIGURE 19</p>
+#### Summary
+
+### Active inference and self-evidencing
+
 $$
 \begin{equation}\tag{10.1}
 \begin{aligned}
@@ -2094,12 +2341,125 @@ $$
 \end{equation}
 $$
 $$
+\begin{equation}\tag{10.2}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+#### Active inference with continuous states
+$$
+\begin{equation}\tag{10.3}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+#### Active inference with discrete states
+$$
+\begin{equation}\tag{10.4}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{10.5}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+[FIGURE 20](./img/20.png)
+<p style="text-align: center;">FIGURE 20</p>
+
+#### Deep inference: gradient flows or least action?
+
+$$
+\begin{equation}\tag{10.6}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{10.7}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{10.8}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+$$
+\begin{equation}\tag{10.9}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+[FIGURE 21](./img/21.png)
+<p style="text-align: center;">FIGURE 21</p>
+
+[FIGURE 22](./img/22.png)
+<p style="text-align: center;">FIGURE 22</p>
+#### Summary
+### The thermodynamics of inference
+#### Potentials and surprisal
+
+$$
+\begin{equation}\tag{10.10}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{10.11}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+#### Ensemble free energies
+
+$$
 \begin{equation}\tag{10.12}
 \begin{aligned}
 \\
 \end{aligned}
 \end{equation}
 $$
+#### Summary
+
+[TABLE 5](./img/t5.png)
+## Discussion
+
+The foregoing technical treatment leads us to a remarkable conclusion; namely, that any self-organising system that preserves its form, in virtue of possessing an attracting (random dynamical) set can be construed as inferring the causes of its sensations. In this sense, sentient behaviour and the implicit representationalism may be a universal property of all self-organising systems. We have seen, using numerical analyses, how the elementary behaviour entailed by this take on dynamics looks remarkably similar to the characterisation of itinerant dynamics in neurophysiology. There are some interesting implications of this Bayesian gloss on self-organising (Ashby, 1947) and self-evidencing (Hohwy, 2016) dynamics that speak to the observational foundations of physics (Cook, 1994). See also (Bridgman, 1954). In other words, without a sentient capacity – or the ability to measure and infer, one could argue there would be no physics. In one (epistemological) sense, Bayesian mechanics trumps quantum, classical and statistical mechanics, because they all depend upon observations (Cook, 1994; Seifert, 2012; Theise and Kafatos, 2013). This metrological perspective starts to make a lot of sense, when one looks at the fundamental postulates of things like quantum physics, right through to the observational or measurement-bound nature of gauge theories (Capozziello and De Laurentis, 2011). They all rely upon measurement and inference. The special nature of Bayesian mechanics is unremarkable because it rests on an explicit account of dynamics under Markov blankets, as opposed to the implicit treatment of boundary conditions in terms of heat baths and [Schrödinger] potentials.
+
+### Conclusion
+
+In conclusion, we have seen how much of physics follows from straightforward constraints on measurable systems. Specifically, some familiar results from quantum, statistical and classical mechanics have been sketched out as a natural consequence of non-equilibrium steady state dynamics. Furthermore, the nature of ‘states’ has been considered in terms of a hierarchical decomposition that reduces detailed, microscopic descriptions of ensemble dynamics to progressively macroscopic descriptions – through recursive application of a Markovian partition and adiabatic reduction. In brief, this suggests that random fluctuations – at any level of description within an ensemble of coupled systems – are inherited from the intrinsic or internal fluctuations that are sequestered behind Markov blankets.
+
+On one view, this speaks to a somewhat deflationary account of physics; in the sense that things like Hamilton’s principle of least action, fluctuation theorems and Schrödinger equation are essentially restatements of the conditions that are necessarily true of things that attain non-equilibrium steady state; i.e., have a pullback attractor. Tracing the pedigree of this physics back even further, nonequilibrium steady-state is itself inherited from the assumption that systems possess an invariant measure. This invariance underwrites the existence of a random dynamical attractor. In short, all the phenomena that we have considered follow from assuming that things only exist if they have measurable characteristics: i.e., return to the (neighbourhood of) states within their attracting set. This deflationary account does, however, offer closure and internal consistency. If things exist in virtue of their measurability, then existence presupposes something that enacts or makes the measurement. Given that measurement is, at the end of the day, an inference conditioned on the blankets states of an instrument (an Observer), the process of measurement or inference must itself be a property of things that exist. Happily, this is precisely what follows from the free energy principle. In short, existence entails measurement and measurement (inference) is a necessary consequence of existence. This speaks to the fundamentally metrological aspect of physics and, perhaps, the existential nature of inference (Cook, 1994).
+
+The way in which this monograph has portrayed different sorts of mechanics bears upon key notions in the philosophy of science, namely, reduction and emergence31. Reductionism is the view that the causal properties and dynamics of higher-order phenomena can be reduced to the operation and organisation of their constituent parts (Bechtel and Richardson, 2010; Bedau and Humphreys, 2008; Nagel, 1961). This view entails the position that higher-order phenomena are mere epiphenomena – in the sense that the causal powers of (allegedly) emergent phenomena reduce to those of the more basal system from which they are said to emerge (Kim, 1999); and in the sense that system-level dynamics do not have ‘downward’ causal effects on the components of the system (Campbell, 1974; Craver and Bechtel, 2007). On this view, those Markov blanketed systems that are ‘carved out’ from the dynamics of their constituent particles do not exist independently – the whole ‘just is’, or is ‘nothing over and above’, the organisation of its component parts. Proponents of emergence, contrariwise, argue that novel systemic dynamics do indeed (appear to) emerge from new configurations of underlying systems; e.g., (Thompson, 2010). Emergence can be construed as an ontological claim; i.e., as the claim that new kinds of things emerge, which are not mere re-descriptions of the more basal dynamics; or as epistemological, i.e., as the claim that we could not have predicted (a priori) the higher-order dynamics from our theories about lower-order dynamics (Ayala and Dobzhansky, 1974; Batterman, 2001; Bedau, 2002). The (strong) ontological flavour of this position endorses the view that quantum level phenomena support – i.e., enable the emergence of – molecular mechanics (e.g., statistical mechanics and thermodynamics), from which biological and cosmological (e.g., classical and possibly Bayesian) mechanics emerge in turn. The epistemological flavour speaks instead to limitations of our theories, and to our surprise at observing unpredicted patterns.
+
+We have seen that quantum, statistical, classical and Bayesian mechanics can be applied at the same level of analysis; namely, our synthetic virus. This undercuts the notion of ontological emergence – in that all these mechanics are complementary characterisations of the way that things behave. This implies that the higher-level descriptions capture causally inert dynamics, and simply cast the same system under a different light. This would commit one to reductionism (in the sense that nothing novel need emerge) or to an epistemological view on emergence. On another reading, the dependency of these mechanics on the amplitude of random fluctuations – and inherently on the scale and implicit degree of averaging in play – introduces a hierarchical aspect, which speaks in favour of ontological readings of the emergence of classical (and Bayesian) mechanics from quantum and stochastic mechanics. Here, one would place the Bayesian mechanics of self-organisation at the same level as Newtonian or Lagrangian mechanics; in the sense that they are apt for describing macroscopic scales at which pullback attractors are shaped by exponentially divergent (and convergent) flows, as opposed to random fluctuations.
+
+Committing to one of these options may be important, because they have different implications for quantum level descriptions of sentient systems – and their implicit unconscious inference (Helmholtz, 1866/1962). It remains an outstanding question to which position (if any) one must commit under the free-energy principle. Metaphysical agnosticism may even be the best option available. It may be that the hierarchical structure of Markov blankets of blankets – which provides a formal grip on the notion of emergent systems – obviates the need to commit to one or another perspective. Indeed, in providing an account of how hierarchically structured organisms adapt, and adapt to, their embedding niche, the multiscale Markovian dynamics described in this monograph seem to account for the causal powers of emergent systemic dynamics; both in terms of their effects on their constituent parts – thus obviating the need for a metaphysics of downward causation – and in terms of their system-level effects on their external milieu.
+
+## Appendix A: Stratonovich path integrals
+
 $$
 \begin{equation}\tag{11.1}
 \begin{aligned}
@@ -2107,6 +2467,7 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{11.3}
 \begin{aligned}
@@ -2114,6 +2475,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+## Appendix B: lemmas and proofs
+
 $$
 \begin{equation}\tag{12.1}
 \begin{aligned}
@@ -2128,6 +2491,9 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+## Appendix C: nonequilibrium steady-static energy functions
+`
 $$
 \begin{equation}\tag{13.1}
 \begin{aligned}
@@ -2142,6 +2508,9 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+## Appendix D: the Fokker-Planck operator
+
 $$
 \begin{equation}\tag{14.1}
 \begin{aligned}
@@ -2150,12 +2519,32 @@ $$
 \end{equation}
 $$
 $$
+\begin{equation}\tag{14.2}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+## Appendix E: generalised motion
+
+$$
+\begin{equation}\tag{14.3}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
 \begin{equation}\tag{14.10}
 \begin{aligned}
 \\
 \end{aligned}
 \end{equation}
 $$
+
+## Appendix F: discrete state-space models
+
 $$
 \begin{equation}\tag{15.1}
 \begin{aligned}
@@ -2171,30 +2560,206 @@ $$
 \end{equation}
 $$
 
-#### The adiabatic reduction
-
-#### Elimination and renormalisation
-
-#### Summary
-
-## Part 2: some special cases
-
-## Part 3: a particular case
-
-## Discussion
-
-### Conclusions
-
-## Appendix A: Stratonovich path integrals
-
-## Appendix B: lemmas and proofs
-
-## Appendix C: nonequilibrium steady-static energy functions
-
-## Appendix D: the Fokker-Planck operator
-
-## Appendix E: generalised motion
-
-## Appendix F: discrete state-space models
-
 ## References
+
+Adams, R.A., Shipp, S., Friston, K.J., 2013. Predictions not commands: active inference in the motor system. Brain Struct Funct. 218, 611-643.
+Agarwal, S., Wettlaufer, J.S., 2016. Maximal stochastic transport in the Lorenz equations. Physics Letters A 380, 142-146.
+Alhambra, A.M., Masanes, L., Oppenheim, J., Perry, C., 2016a. Fluctuating Work: From Quantum Thermodynamical Identities to a Second Law Equality. Physical Review X 6.
+Alhambra, A.M., Oppenheim, J., Perry, C., 2016b. Fluctuating States: What is the Probability of a Thermodynamical Transition? Physical Review X 6.
+Amari, S., 1998. Natural gradient works efficiently in learning. Neural Computation 10, 251-276.
+Ao, P., 2004. Potential in stochastic differential equations: novel construction. J Phys. A: Math Gen. 37, L25–30.
+Ao, P., 2008. Emerging of Stochastic Dynamical Equalities and Steady State Thermodynamics. Commun. Theor. Phys. (Beijing, China) 49, 1073-1090.
+Arnold, L., 2003. Random Dynamical Systems (Springer Monographs in Mathematics). Springer- Verlag, Berlin.
+Arsenović, D., Burić, N., Davidović, D.M., Prvanović, S., 2014. Lagrangian form of Schrödinger equation. Foundations of Physics 44, 725-735.
+Ashby, W.R., 1947. Principles of the self-organizing dynamic system. J Gen Psychology. 37, 125-128. Attias, H., 2003. Planning by Probabilistic Inference, Proc. of the 9th Int. Workshop on Artificial Intelligence and Statistics.
+Ay, N., 2015. Information Geometry on Complexity and Stochastic Interaction. Entropy 17, 2432. Ayala, F., Dobzhansky, T., 1974. Studies in the philosophy of biology: reduction and related problems. University of California Press, Berkeley and Los Angeles.
+Bak, P., Tang, C., Wiesenfeld, K., 1987. Self-organized criticality: an explanation of 1/f noise. Phys Rev Lett. 59, 381–384.
+Bak, P., Tang, C., Wiesenfeld, K., 1988. Self-organized criticality. Physical review. A, General physics 38, 364-374.
+Balleine, B.W., Dickinson, A., 1998. Goal-directed instrumental action: contingency and incentive learning and their cortical substrates. Neuropharmacology 37, 407-419.
+Ballentine, L.E., 1970. The Statistical Interpretation of Quantum Mechanics. Reviews of Modern Physics 42, 358-381.
+Baranes, A., Oudeyer, P.Y., 2009. R-IAC: Robust Intrinsically Motivated Exploration and Active Learning. Ieee Transactions on Autonomous Mental Development 1, 155-169.
+Barlow, H., 1961. Possible principles underlying the transformations of sensory messages, in: Rosenblith, W. (Ed.), Sensory Communication. MIT Press, Cambridge, MA, pp. 217-234.
+Barlow, H.B., 1974. Inductive inference, coding, perception, and language. Perception 3, 123-134. Barreto, E., Josic, K., Morales, C.J., Sander, E., So, P., 2003. The geometry of chaos synchronization. Chaos 13, 151-164.
+Barrow, J.D., Tipler, F.J., Wheeler, J.A., 2015. The anthropic cosmological principle. Oxford University Press, Oxford; New York.
+Bastos, A.M., Usrey, W.M., Adams, R.A., Mangun, G.R., Fries, P., Friston, K.J., 2012. Canonical microcircuits for predictive coding. Neuron 76, 695-711.
+Batterman, R.W., 2001. The devil in the details: Asymptotic reasoning in explanation, reduction, and emergence. Oxford University Press.
+Beal, M.J., 2003. Variational Algorithms for Approximate Bayesian Inference. PhD. Thesis, University College London.
+Bechtel, W., Richardson, R.C., 2010. Discovering complexity: Decomposition and localization as strategies in scientific research. MIT press.
+Bedau, M., 2002. Downward causation and the autonomy of weak emergence. Principia: an international journal of epistemology 6, 5-50.
+Bedau, M.A., Humphreys, P.E., 2008. Emergence: Contemporary readings in philosophy and science. MIT press.
+Beggs, J.M., Plenz, D., 2003. Neuronal avalanches in neocortical circuits. J Neurosci. 23, 11167-11177. Belousov, B.P., 1959. "Периодически действующая реакция и ее механизм [Periodically acting reaction and its mechanism]. Сборнрефератов по радиационной медицине [Collection of Abstracts on Radiation Medicine], 145-147.
+Bennett, C.H., 2003. Notes on Landauer's principle, reversible computation, and Maxwell's Demon. Studies in History and Philosophy of Science Part B: Studies in History and Philosophy of Modern Physics 34, 501-510.
+Berlyne, D.E., 1950. Novelty and curiosity as determinants of explanatory behaviour. British Journal of Psychology-General Section 41, 68-80.
+Bernard, C., 1974. Lectures on the phenomena common to animals and plants. Charles C Thomas, Springfield, IL.
+Bialek, W., Nemenman, I., Tishby, N., 2001. Predictability, complexity, and learning. Neural Computat. 13, 2409-2463.
+Birkhoff, G.D., 1927. Dynamical systems. American Mathematical Society, New York.
+Boccaletti, S., Kurths, J., Osipov, G., Valladares, D.L., Zhou, C.S., 2002. The synchronization of chaotic systems. Physics Reports-Review Section of Physics Letters 366, 1-101.
+Bohm, D., 1952. A Suggested Interpretation of the Quantum Theory in Terms of "Hidden" Variables. I. Physical Review 85, 166-179.
+Botvinick, M., Toussaint, M., 2012. Planning as inference. Trends Cogn Sci. 16, 485-488.
+Breakspear, M., Heitmann, S., Daffertshofer, A., 2010. Generative Models of Cortical Oscillations: Neurobiological Implications of the Kuramoto Model. Frontiers in Human Neuroscience 4. Breakspear, M., Stam, C.J., 2005. Dynamics of a neural system with a multiscale architecture. Philos Trans R Soc Lond B Biol Sci. 360, 1051-1074.
+Bressloff, P.C., Newby, J.M., 2013. Stochastic models of intracellular transport. Reviews of Modern Physics 85, 135-196.
+Bridgman, P.W., 1954. Remarks on the Present State of Operationalism. Scientific Monthly 79, 224- 226.
+Brookes, J.C., 2017. Quantum effects in biology: golden rule in enzymes, olfaction, photosynthesis and magnetodetection. Proceedings. Mathematical, physical, and engineering sciences 473, 20160822. Bruineberg, J., Rietveld, E., 2014. Self-organization, free energy minimization, and optimal grip on a field of affordances. Frontiers in Human Neuroscience 8, 599.
+Burgess, N., Barry, C., O'Keefe, J., 2007. An oscillatory interference model of grid cell firing. Hippocampus 17, 801-812.
+Buzsaki, G., 1998. Memory consolidation during sleep: a neurophysiological perspective. Journal of sleep research 7 Suppl 1, 17-23.
+Buzsaki, G., Moser, E.I., 2013. Memory, navigation and theta rhythm in the hippocampal-entorhinal system. Nature Neuroscience 16, 130-138.
+Calvo, P., Friston, K., 2017. Predicting green: really radical (plant) predictive processing. Journal of The Royal Society Interface 14.
+Campbell, D.T., 1974. ‘Downward causation’in hierarchically organised biological systems, Studies in the Philosophy of Biology. Springer, pp. 179-186.
+Capozziello, S., De Laurentis, M., 2011. Extended Theories of Gravity. Physics Reports-Review Section of Physics Letters 509, 167-320.
+Cardy, J.L., 2015. Scaling and renormalization in statistical physics.
+Carr, J., 1981. Applications of Centre Manifold Theory. Springer-Verlag, Berlin.
+Caticha, A., 2015a. The basics of information geometry. AIP Conference Proceedings 1641, 15-26. Caticha, A., 2015b. Entropic Dynamics. Entropy 17, 6110.
+Cessac, B., Blanchard, P., Krüger, T., 2001. Lyapunov exponents and transport in the Zhang model of Self-Organized Criticality. Phys Rev E Stat Nonlin Soft Matter Phys. 64, 016133.
+Clark, A., 2017. How to Knit Your Own Markov Blanket, in: Metzinger, T.K., Wiese, W. (Eds.), Philosophy and Predictive Processing. MIND Group, Frankfurt am Main.
+Clarke, S.E., Longtin, A., Maler, L., 2015. Contrast coding in the electrosensory system: parallels with visual computation. Nat Rev Neurosci 16, 733-744.
+Conant, R.C., Ashby, W.R., 1970. Every Good Regulator of a system must be a model of that system. Int. J. Systems Sci. 1, 89-97.
+Constant, A., Ramstead, M.J.D., Veissiere, S.P.L., Campbell, J.O., Friston, K.J., 2018. A variational approach to niche construction. J R Soc Interface 15.
+Cook, A., 1994. The observational foundations of physics. Cambridge University Press, Cambridge. Cox, D.R., Miller, H.D., 1965. The theory of stochastic processes. Methuen, London.
+Crauel, H., 1999. Global random attractors are uniquely determined by attracting deterministic compact sets. Ann. Mat. Pura Appl. 4, 57-72.
+Crauel, H., Debussche, A., Flandoli, F., 1997. Random attractors. Journal of Dynamics and Differential Equations 9, 307-341.
+Crauel, H., Flandoli, F., 1994. Attractors for random dynamical systems. Probab Theory Relat Fields 100, 365-393.
+Craver, C.F., Bechtel, W., 2007. Top-down causation without top-down causes. Biology & Philosophy 22, 547-563.
+Crooks, G.E., 2007. Measuring thermodynamic length. Phys Rev Lett 99, 100602.
+Cugliandolo, L.F., Lecomte, V., 2017. Rules of calculus in the path integral representation of white noise Langevin equations: the Onsager–Machlup approach. Journal of Physics A: Mathematical and Theoretical 50, 345001.
+D'Alessio, L., Kafri, Y., Polkovnikov, A., Rigol, M., 2016. From quantum chaos and eigenstate thermalization to statistical mechanics and thermodynamics. Advances in Physics 65, 239-362. Dauwels, J., 2007. On Variational Message Passing on Factor Graphs, 2007 IEEE International Symposium on Information Theory, pp. 2546-2550.
+Davis, M.J., 2006. Low-dimensional manifolds in reaction-diffusion equations. 1. Fundamental aspects. J Phys Chem A. 110, 5235-5256.
+Demirdjian, D., Taycher, L., Shakhnarovich, G., Grauman, K., Darrell, T., Ieee Computer, S.O.C., 2005. Avoiding the "streetlight effect": Tracking by exploring likelihood modes, Tenth Ieee International Conference on Computer Vision, Vols 1 and 2, Proceedings, pp. 357-364.
+Deyle, E.R., Sugihara, G., 2011. Generalized Theorems for Nonlinear State Space Reconstruction. PLOS ONE 6, e18295.
+Dezfouli, A., Balleine, B.W., 2013. Actions, action sequences and habits: evidence that goal-directed and habitual action control are hierarchically organized. PLoS Comput Biol 9, e1003364.
+Dolan, R.J., Dayan, P., 2013. Goals and habits in the brain. Neuron 80, 312-325.
+Einstein, A., 2013. Principle of Relativity. Dover Publications.
+England, J.L., 2015. Dissipative adaptation in driven self-assembly. Nature nanotechnology 10, 919- 923.
+Esposito, M., Harbola, U., Mukamel, S., 2009. Nonequilibrium fluctuations, fluctuation theorems, and counting statistics in quantum systems. Reviews of Modern Physics 81, 1665-1702.
+Evans, D.J., Searles, D.J., 2002. The fluctuation theorem. Advances in Physics 51, 1529-1585. Feynman, R.P., 1948. Space-Time Approach to Non-Relativistic Quantum Mechanics. Reviews of Modern Physics 20, 367-387.
+Feynman, R.P., 1972. Statistical mechanics. Benjamin, Reading MA.
+Fierro, A., Franzese, G., de Candia, A., Coniglio, A., 1999. Percolation transition and the onset of nonexponential relaxation in fully frustrated models. Physical Review E 59, 60-66.
+FitzGerald, T.H., Schwartenbeck, P., Moutoussis, M., Dolan, R.J., Friston, K., 2015. Active inference, evidence accumulation, and the urn task. Neural Comput 27, 306-328.
+Fleming, W.H., Sheu, S.J., 2002. Risk-sensitive control and an optimal investment model II. Ann. Appl. Probab. 12, 730-767.
+Fox, C., Roberts, S., 2011. A tutorial on variational Bayes. Artificial Intelligence Review 38, 1-11. Frank, T.D., 2004. Nonlinear Fokker-Planck Equations: Fundamentals and Applications. Springer Series in Synergetics. Springer, Berlin.
+Freeman, W.J., 1994. Characterization of state transitions in spatially distributed, chaotic, nonlinear, dynamical systems in cerebral cortex. Integr Physiol Behav Sci. 29, 294-306.
+Freeman, W.J., 1995. The kiss of chaos and the sleeping beauty of psychology, in: Abraham, F.D., Gilgen, A.R. (Eds.), Chaos theory in psychology. Praeger Publishers/Greenwood Publishing Group, Westport, CT, pp. 19-29.
+Friston, K., 2013. Life as we know it. J R Soc Interface 10, 20130475.
+Friston, K., Adams, R.A., Perrinet, L., Breakspear, M., 2012. Perceptions as hypotheses: saccades as experiments. Front Psychol. 3, 151.
+Friston, K., Ao, P., 2012. Free energy, value, and attractors. Comput Math Methods Med 2012, 937860. Friston, K., FitzGerald, T., Rigoli, F., Schwartenbeck, P., Pezzulo, G., 2017a. Active Inference: A Process Theory. Neural Comput 29, 1-49.
+Friston, K., Frith, C., 2015. A Duet for one. Conscious Cogn 36, 390-405.
+Friston, K., Kilner, J., Harrison, L., 2006. A free energy principle for the brain. Journal of physiology, Paris 100, 70-87.
+Friston, K., Levin, M., Sengupta, B., Pezzulo, G., 2015a. Knowing one's place: a free-energy approach to pattern regulation. J R Soc Interface 12.
+Friston, K., Mattout, J., Kilner, J., 2011. Action understanding and active inference. Biol Cybern. 104, 137–160.
+Friston, K., Mattout, J., Trujillo-Barreto, N., Ashburner, J., Penny, W., 2007. Variational free energy and the Laplace approximation. NeuroImage 34, 220-234.
+Friston, K., Rigoli, F., Ognibene, D., Mathys, C., Fitzgerald, T., Pezzulo, G., 2015b. Active inference and epistemic value. Cogn Neurosci 6, 187-214.
+Friston, K., Sengupta, B., Auletta, G., 2014. Cognitive Dynamics: From Attractors to Active Inference. Proceedings of the IEEE 102, 427-445.
+Friston, K., Stephan, K., Li, B., Daunizeau, J., 2010. Generalised Filtering. Mathematical Problems in Engineering vol., 2010, 621670.
+Friston, K.J., Lin, M., Frith, C.D., Pezzulo, G., Hobson, J.A., Ondobaka, S., 2017b. Active Inference, Curiosity and Insight. Neural Comput 29, 2633-2683.
+Friston, K.J., Parr, T., de Vries, B., 2017c. The graphical brain: Belief propagation and active inference. Network Neuroscience 0, 1-34.
+Friston, K.J., Rosch, R., Parr, T., Price, C., Bowman, H., 2017d. Deep temporal models and active inference. Neuroscience and biobehavioral reviews 77, 388-402.
+Fuster, J.M., 2004. Upper processing stages of the perception-action cycle. Trends Cogn Sci. 8, 143- 145.
+Gallese, V., Goldman, A., 1998. Mirror neurons and the simulation theory of mind-reading. Trends in Cognitive Sciences 2, 493-501.
+Garriga, J., Vilenkin, A., 2001. Many worlds in one. Physical Review D 64.
+Gershman, S.J., Daw, N.D., 2017. Reinforcement Learning and Episodic Memory in Humans and Animals: An Integrative Framework. Annual review of psychology 68, 101-128.
+Ginzburg, V.L., 1987. Solitons and instantons, operator quantization. Nova Science Publishers, Commack, N.Y.
+Giraud, A.L., Poeppel, D., 2012. Cortical oscillations and speech processing: emerging computational principles and operations. Nat Neurosci 15, 511-517.
+Goldstone, J., Salam, A., Weinberg, S., 1962. Broken Symmetries. Physical Review 127, 965-970. Goold, J., Huber, M., Riera, A., Rio, L.d., Skrzypczyk, P., 2016. The role of quantum information in thermodynamics—a topical review. Journal of Physics A: Mathematical and Theoretical 49, 143001. Haken, H., 1983. Synergetics: an introduction. Non-equilibrium phase transition and self- selforganisation in physics, chemistry and biology. Springer-Verlag, Berlin.
+Harlim, J., Yang, H., 2017. Diffusion Forecasting Model with Basis Functions from QR- Decomposition. Journal of Nonlinear Science.
+Helgaker, T., Jorgensen, P., Olsen, J., 2014. Molecular electronic-structure theory. John Wiley & Sons. Helmholtz, H., 1866/1962. Concerning the perceptions in general, Treatise on physiological optics, vol. III. Dover, New York.
+Helmholtz, H., 1878 (1971). The Facts of Perception, in: Middletown, R.K. (Ed.), The Selected Writings of Hermann von Helmholtz. Wesleyan University Press, Connecticut, p. 384.
+Hinton, G.E., Zemel, R.S., 1993. Autoencoders, minimum description length and Helmholtz free energy, Proceedings of the 6th International Conference on Neural Information Processing Systems. Morgan Kaufmann Publishers Inc., Denver, Colorado, pp. 3-10.
+Hohwy, J., 2016. The Self-Evidencing Brain. Noûs 50, 259-285.
+Holmes, Z., Weidt, S., Jennings, D., Anders, J., Mintert, F., 2019. Coherent fluctuation relations: from the abstract to the concrete. Quantum-Austria 3.
+Hu, A., Xu, Z., Guo, L., 2010. The existence of generalized synchronization of chaotic systems in complex networks. Chaos 20, 013112.
+Hunt, B., Ott, E., Yorke, J., 1997. Differentiable synchronisation of chaos. Phys Rev E 55, 4029-4034. Hutter, M., 2006. Universal Artificial Intellegence : Sequential Decisions Based on Algorithmic Probability. Springer-Verlag Berlin and Heidelberg & Co. KG, Dordrecht.
+Itti, L., Baldi, P., 2009. Bayesian Surprise Attracts Human Attention. Vision Res. 49, 1295-1306. Jarzynski, C., 1997. Nonequilibrium Equality for Free Energy Differences. Physical Review Letters 78, 2690-2693.
+Jaynes, E.T., 1957. Information Theory and Statistical Mechanics. Physical Review Series II 106, 620– 630.
+Jensen, O., Gips, B., Bergmann, T.O., Bonnefond, M., 2014. Temporal coding organized by coupled alpha and gamma oscillations prioritize visual processing. Trends Neurosci 37, 357-369.
+Jones, D.S., 1979. Elementary information theory. Clarendon Press, Oxford.
+Kaluza, P., Meyer-Ortmanns, H., 2010. On the role of frustration in excitable systems. Chaos 20, 043111.
+Kappen, H.J., 2005. Path integrals and symmetry breaking for optimal control theory. Journal of Statistical Mechanics: Theory and Experiment 11, P11011.
+Kappen, H.J., Gomez, Y., Opper, M., 2012. Optimal control as a graphical model inference problem. Machine learning 87, 159-182.
+Kauffman, S.A., Johnsen, S., 1991. Coevolution to the edge of chaos: coupled fitness landscapes, poised states, and coevolutionary avalanches. Journal of theoretical biology 149, 467-505.
+Kayser, C., Ermentrout, B., 2010. Complex times for earthquakes, stocks, and the brain's activity. Neuron 66, 329-331.
+Keber, F.C., Loiseau, E., Sanchez, T., DeCamp, S.J., Giomi, L., Bowick, M.J., Marchetti, M.C., Dogic, Z., Bausch, A.R., 2014. Topology and dynamics of active nematic vesicles. Science 345, 1135-1139. Kerr, W.C., Graham, A.J., 2000. Generalized phase space version of Langevin equations and associated Fokker-Planck equations. European Physical Journal B 15, 305-311.
+Khadka, U., Holubec, V., Yang, H., Cichos, F., 2018. Active particles bound by information flows. Nature Communications 9, 3864.
+Kilner, J.M., Friston, K.J., Frith, C.D., 2007. Predictive coding: an account of the mirror neuron system. Cognitive processing 8, 159-166.
+Kim, E.-j., 2018. Investigating Information Geometry in Classical and Quantum Systems through Information Length. Entropy 20, 574.
+Kim, J., 1999. Making sense of emergence. Philosophical studies 95, 3-36.
+Kleeman, R., 2014. A Path Integral Formalism for Non-equilibrium Hamiltonian Statistical Systems. Journal of Statistical Physics 158, 1271-1297.
+Knill, D.C., Pouget, A., 2004. The Bayesian brain: the role of uncertainty in neural coding and computation. Trends Neurosci. 27, 712-719.
+Koide, T., 2017. Perturbative expansion of irreversible work in Fokker–Planck equation à la quantum mechanics. Journal of Physics A: Mathematical and Theoretical 50, 325001.
+Kwapien, J., Drozdz, S., 2012. Physical approach to complex systems. Physics Reports-Review Section of Physics Letters 515, 115-226.
+Landauer, R., 1961. Irreversibility and Heat Generation in the Computing Process. IBM Journal of Research and Development 5, 183-191.
+LeCun, Y., Bengio, Y., Hinton, G., 2015. Deep learning. Nature 521, 436-444.
+Lin, H.W., Tegmark, M., Rolnick, D., 2017. Why Does Deep and Cheap Learning Work So Well? Journal of Statistical Physics 168, 1223-1247.
+Linsker, R., 1990. Perceptual neural organization: some approaches based on network models and information theory. Annu Rev Neurosci. 13, 257-281.
+Lisman, J., 2012. Excitation, inhibition, local oscillations, or large-scale loops: what causes the symptoms of schizophrenia? Curr Opin Neurobiol. 22, 537-544.
+Littlejohn, R.G., Reinsch, M., 1997. Gauge fields in the separation of rotations and internal motions in the n-body problem. Reviews of Modern Physics 69, 213-275.
+Lopes da Silva, F., 1991. Neural mechanisms underlying brain waves: from neural membranes to networks. Electroencephalography and Clinical Neurophysiology 79, 81-93.
+Lorenz, E.N., 1963. Deterministic nonperiodic flow. J Atmos Sci. 20, 130-141.
+Lyapunov, A.M., Fuller, A.T., 1992. The general problem of the stability of motion. Taylor & Francis, London.
+MacKay, D.J., 1995. Free-energy minimisation algorithm for decoding and cryptoanalysis. Electronics Letters 31, 445-447.
+Marreiros, A.C., Kiebel, S.J., Daunizeau, J., Harrison, L.M., Friston, K.J., 2009. Population dynamics under the Laplace assumption. Neuroimage 44, 701-714.
+Matsuda, H., 2000. Physical nature of higher-order mutual information: intrinsic correlations and frustration. Physical review. E, Statistical physics, plasmas, fluids, and related interdisciplinary topics 62, 3096-3102.
+Matta, C.F., Massa, L., 2017. Notes on The Energy Equivalence of Information. The journal of physical chemistry. A 121, 9131-9135.
+Maturana, H.R., Varela, F., 1980. Autopoiesis: the organization of the living, in: Maturana HR, V.F. (Ed.), Autopoiesis and Cognition. Reidel, Dordrecht, Netherlands.
+Mirza, M.B., Adams, R.A., Mathys, C.D., Friston, K.J., 2016. Scene Construction, Visual Foraging, and Active Inference. Frontiers in computational neuroscience 10, 56.
+Modi, M.E., Sahin, M., 2017. Translational use of event-related potentials to assess circuit integrity in ASD. Nat Rev Neurol 13, 160-170.
+Nagel, E., 1961. The Structure of Science. Harcourt, Brace and World., New York.
+Namikawa, J., 2005. Chaotic itinerancy and power-law residence time distribution in stochastic dynamical systems. Phys. Rev. E 72, 026204.
+Nara, S., 2003. Can potentially useful dynamics to solve complex problems emerge from constrained chaos and/or chaotic itinerancy? Chaos 13, 1110-1121.
+Newman, M.E.J., 2005. Power laws, Pareto distributions and Zipf's law. Contemporary Physics 46, 323-351.
+Nicolis, G., Prigogine, I., 1977. Self-organization in non-equilibrium systems. John Wiley, New York. Oudeyer, P.-Y., Kaplan, F., 2007. What is intrinsic motivation? a typology of computational approaches. Frontiers in Neurorobotics 1, 6.
+Ovchinnikov, I., 2016. Introduction to Supersymmetric Theory of Stochastics. Entropy 18, 108. Palacios, E.R., Razi, A., Parr, T., Kirchhoff, M., Friston, K., 2017. Biological Self-organisation and Markov blankets. bioRxiv.
+Palmer, T.N., Laure, Z., 2013. Singular vectors, predictability and ensemble forecasting for weather and climate. Journal of Physics A: Mathematical and Theoretical 46, 254018.
+Parisi, G., Sourlas, N., 1982. Supersymmetric field theories and stochastic differential equations. Nuclear Physics B 206, 321-332.
+Parrondo, J.M.R., Horowitz, J.M., Sagawa, T., 2015. Thermodynamics of information. Nature Physics 11, 131-139.
+Pavlos, G.P., Karakatsanis, L.P., Xenakis, M.N., 2012. Tsallis non-extensive statistics, intermittent turbulence, SOC and chaos in the solar plasma, Part one: Sunspot dynamics. Physica A: Statistical Mechanics and its Applications 391, 6287-6319.
+Pearl, J., 1988. Probabilistic Reasoning In Intelligent Systems: Networks of Plausible Inference. Morgan Kaufmann, San Fransisco, CA, USA.
+Penny, W.D., Stephan, K.E., Mechelli, A., Friston, K.J., 2004. Comparing dynamic causal models. Neuroimage 22, 1157-1172.
+Plenz, D., Thiagarajan, T.C., 2007. The organizing principles of neuronal avalanches: cell assemblies in the cortex? Trends Neurosci. 30, 101-110.
+Poland, D., 1993. Cooperative catalysis and chemical chaos: a chemical model for the Lorenz equations. Physica D 65 86–99.
+Prigogine, I., 1978. Time, Structure, and Fluctuations. Science 201, 777-785.
+Proust, J., 2015. The philosophy of metacognition mental agency and self-awareness. Oxford University Press, Oxford.
+Pyragas, K., 1997. Conditional Lyapunov exponents from time series. Physical Review E 56, 5183- 5187.
+Ramaswamy, S., 2010. The Mechanics and Statistics of Active Matter, in: Langer, J.S. (Ed.), Annual Review of Condensed Matter Physics, Vol 1, vol. 1, pp. 323-345.
+Ramsay, D.S., Woods, S.C., 2014. Clarifying the Roles of Homeostasis and Allostasis in Physiological Regulation. Psychological review 121, 225-247.
+Ramstead, M.J.D., Badcock, P.B., Friston, K.J., 2017. Answering Schrodinger's question: A free-energy formulation. Phys Life Rev.
+Rao, R.P., Ballard, D.H., 1999. Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effects. Nat Neurosci. 2, 79-87.
+Rényi, A., 2007. Probability theory. Dover Publications, Mineola, N.Y.
+Rizzolatti, G., Craighero, L., 2004. The mirror-neuron system. Annu Rev Neurosci. 27, 169-192. Roweis, S., Ghahramani, Z., 1999. A unifying review of linear gaussian models. Neural Computation 11, 305-345.
+Rulkov, N.F., Sushchik, M.M., Tsimring, L.S., Abarbanel, H.D., 1995. Generalized synchronization of chaos in directionally coupled chaotic systems. Physical review. E, Statistical physics, plasmas, fluids, and related interdisciplinary topics 51, 980-994.
+Schilpp, P.A., 2000. Albert Einstein : philosopher-scientist. MFJ Books, New York.
+Schlosshauer, M., 2004. Decoherence, the measurement problem, and interpretations of quantum mechanics. Reviews of Modern Physics 76, 1267-1305.
+Schmidhuber, J., 2006. Developmental robotics, optimal artificial curiosity, creativity, music, and the fine arts. Connection Science 18, 173-187.
+Schmidhuber, J., 2010. Formal Theory of Creativity, Fun, and Intrinsic Motivation (1990-2010). Ieee Transactions on Autonomous Mental Development 2, 230-247.
+Schrödinger, E., 1944. What Is Life? : The Physical Aspect of the Living Cell. Trinity College, Dublin, Dublin, pp. 1-32.
+Schumacher, J., Haslinger, R., Pipa, G., 2012. Statistical modeling approach for detecting generalized synchronization. Physical review. E, Statistical, nonlinear, and soft matter physics 85, 056215. Schwabl, F., 2002. Phase Transitions, Scale Invariance, Renormalization Group Theory , and Percolation, Statistical Mechanics. Springer Berlin Heidelberg, Berlin, Heidelberg, pp. 327-404. Schwartenbeck, P., FitzGerald, T.H., Mathys, C., Dolan, R., Kronbichler, M., Friston, K., 2015. Evidence for surprise minimization over value maximization in choice behavior. Scientific reports 5, 16575.
+Seifert, U., 2012. Stochastic thermodynamics, fluctuation theorems and molecular machines. Reports on progress in physics. Physical Society (Great Britain) 75, 126001.
+Sejnowski, T., Paulsen, O., 2006. Network oscillations: emerging computational principles. J. Neurosci. 26, 1673-1676.
+Sekimoto, K., 1998. Langevin Equation and Thermodynamics. Progress of Theoretical Physics Supplement 130, 17-27.
+Sengupta, B., Friston, K., 2017. Sentient Self-Organization: Minimal dynamics and circular causality, arXiv:1705.08265, pp. 1-9.
+Seth, A., 2014. The cybernetic brain: from interoceptive inference to sensorimotor contingencies, MINDS project. MINDS, Metzinger, T; Windt, JM.
+Seth, A.K., 2015. Inference to the Best Prediction, in: Metzinger, T.K., Windt, J.M. (Eds.), Open MIND. MIND Group, Frankfurt am Main.
+Shew, W.L., Yang, H., Yu, S., Roy, R., Plenz, D., 2011. Information capacity and transmission are maximized in balanced cortical networks with neuronal avalanches. J Neurosci 31, 55-63. Spiegelhalter, D.J., Best, N.G., Carlin, B.P., van der Linde, A., 2002. Bayesian measures of model complexity and fit. J. Royal Statist. Society Series B 64, 583-639.
+Stephan, K.E., Manjaly, Z.M., Mathys, C.D., Weber, L.A.E., Paliwal, S., Gard, T., Tittgemeyer, M., Fleming, S.M., Haker, H., Seth, A.K., Petzschner, F.H., 2016. Allostatic Self-efficacy: A Metacognitive Theory of Dyshomeostasis-Induced Fatigue and Depression. Frontiers in Human Neuroscience 10, 550. Sterling, P., Eyer, J., 1988. Allostasis: A new paradigm to explain arousal pathology, Handbook of Life Stress, Cognition and Health. John Wiley & Sons, New York, pp. 629-649.
+Still, S., Precup, D., 2012. An information-theoretic approach to curiosity-driven reinforcement learning. Theory in biosciences = Theorie in den Biowissenschaften 131, 139-148.
+Stratonovich, R.L., 1967. Topics in the theory of random noise. Gordon and Breach, New York.
+Sun, Y., Gomez, F., Schmidhuber, J., 2011. Planning to Be Surprised: Optimal Bayesian Exploration in Dynamic Environments, in: Schmidhuber, J., Thórisson, K.R., Looks, M. (Eds.), Artificial General Intelligence: 4th International Conference, AGI 2011, Mountain View, CA, USA, August 3-6, 2011. Proceedings. Springer Berlin Heidelberg, Berlin, Heidelberg, pp. 41-51.
+Sutton, R.S., Precup, D., Singh, S., 1999. Between MDPs and semi-MDPs: A framework for temporal abstraction in reinforcement learning. Artificial Intelligence 112, 181-211.
+Takens, F., 1980. Detecting strange attractors in turbulence. Rijksuniversiteit Groningen. Mathematisch Instituut, Groningen.
+Theise, N.D., Kafatos, M.C., 2013. Complementarity in biological systems: A complexity view. Complexity 18, 11-20.
+Thompson, E., 2010. Mind in life: Biology, phenomenology, and the sciences of mind. Harvard University Press.
+Thompson, E., Varela, F., 2001. Radical embodiment: neural dynamics and consciousness. Trends Cogn Sci. 5, 418-425.
+Tishby, N., Polani, D., 2010. Information Theory of Decisions and Actions, in: Cutsuridis, V., Hussain, A., and Taylor, J. (Eds.), Perception-reason-action cycle: Models, algorithms and systems. Springer, Berlin.
+Tononi, G., Sporns, O., Edelman, G.M., 1994. A measure for brain complexity: relating functional segregation and integration in the nervous system. Proc Natl Acad Sci U S A 91, 5033-5037. Toussaint, M., Storkey, A., 2006. Probabilistic inference for solving discrete and continuous state Markov Decision Processes, Proc. of the 23nd Int. Conf. on Machine Learning, pp. 945–952.
+Tribus, M., 1961. Thermodynamics and Thermostatics: An Introduction to Energy, Information and States of Matter, with Engineering Applications. D. Van Nostrand Company Inc, New York, USA. Tschacher, W., Haken, H., 2007. Intentionality in non-equilibrium systems? The functional aspects of self-organised pattern formation. New Ideas in Psychology 25, 1-15.
+Tsuda, I., 2001. Toward an interpretation of dynamic neural activity in terms of chaotic dynamical systems. Behav Brain Sci. 24, 793-810.
+Tsuda, I., Fujii, H., 2004. A Complex Systems Approach to an Interpretation of Dynamic Brain Activity I: Chaotic Itinerancy Can Provide a Mathematical Basis for Information Processing in Cortical Transitory and Nonstationary Dynamics. Lecture notes in computer science ISSU 3146, 109-128. Turing, A.M., 1952. The Chemical Basis of Morphogenesis. Phil Trans Royal Society of London, series B 237 37–72.
+Uhlhaas, P.J., Singer, W., 2010. Abnormal neural oscillations and synchrony in schizophrenia. Nature Reviews Neuroscience 11, 100-113.
+van den Broek, J.L., Wiegerinck, W.A.J.J., Kappen, H.J., 2010. Risk-sensitive path integral control. UAI 6, 1–8.
+Vespignani, A., Zapperi, S., 1998. How self-organized criticality works: A unified mean-field picture. Physical Review E 57, 6345-6362.
+Wallace, C.S., Dowe, D.L., 1999. Minimum Message Length and Kolmogorov Complexity. The Computer Journal 42, 270-283.
+Wang, X.M., 2009. From Dirac Notation to Probability Bracket Notation: Time Evolution and Path Integral under Wick Rotations. ArXiv e-prints.
+Wheeler, J.A., 1989. Information, Physics, Quantum: The Search for Links, Proceedings III International Symposium on Foundations of Quantum Mechanics, pp. 354-358.
+Wissner-Gross, A.D., Freer, C.E., 2013. Causal Entropic Forces. Physical Review Letters 110, 168702. Yan, H., Zhao, L., Hu, L., Wang, X., Wang, E., Wang, J., 2013. Nonequilibrium landscape theory of neural networks. Proceedings of the National Academy of Sciences 110, E4185-E4194.
+Yuan, R., Ma, Y., Yuan, B., Ao, P., 2011. Potential function in dynamical systems and the relation with Lyapunov function, Proceedings of the 30th Chinese Control Conference, pp. 6573-6580.
+Yuan, R., Ma, Y., Yuan, B., Ping, A., 2010. Bridging Engineering and Physics: Lyapunov Function as Potential Function. arXiv:1012.2721v1 [nlin.CD].
+Zurek, W.H., 2003. Decoherence, einselection, and the quantum origins of the classical. Reviews of Modern Physics 75, 715-775.
+Zurek, W.H., 2009. Quantum Darwinism. Nat Phys 5, 181-188.
