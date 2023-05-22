@@ -2679,7 +2679,9 @@ $$
 $$
 \begin{equation}\tag{8.32}
 \begin{aligned}
-\\
+q_\mu(\eta)
+  &= \cal N(\sigma(\pmb \mu(b)), \Sigma(\pmb \mu(b)))
+   \approx p(\eta | b) = p(\eta|\pi) \\
 \end{aligned}
 \end{equation}
 $$
@@ -2687,7 +2689,10 @@ $$
 $$
 \begin{equation}\tag{8.33}
 \begin{aligned}
-\\
+\pmb \mu(b(\tau))
+  &\approx \xi(\mu(\tau)) 
+   \Rightarrow q_\mu(\eta) = \cal N(\sigma(\xi(\mu)), \Sigma(\xi(\mu))) 
+   \approx p(\eta | b) \\
 \end{aligned}
 \end{equation}
 $$
@@ -2696,7 +2701,15 @@ $$
 $$
 \begin{equation}\tag{9.1}
 \begin{aligned}
-\\
+\pmb \mu(b(\tau))
+  &\stackrel \land = \textstyle\sum_t \pmb \sigma(\Delta_\tau)\cdot \mu(t) \\
+\pmb \eta(b(\tau))
+  &\stackrel \land = \textstyle\sum_t \pmb \sigma(\Delta_\tau)\cdot \eta(t) \\
+  \\
+\sigma(\Delta_\tau)
+  &= \frac{exp(-\Delta_\tau)}{\textstyle\sum_t exp(-\Delta_\tau)} \\
+\Delta_\tau
+  &= \tfrac {1} {128} || b(t) - b(\tau) ||^2
 \end{aligned}
 \end{equation}
 $$
@@ -2710,14 +2723,33 @@ $$
 $$
 \begin{equation}\tag{10.1}
 \begin{aligned}
-\\
+q_\mu(\eta)
+  &\approx p(\eta|b) 
+    = p(\eta | \pi) \\
 \end{aligned}
 \end{equation}
 $$
+
 $$
 \begin{equation}\tag{10.2}
 \begin{aligned}
-\\
+\pmb {\dot \mu}(b)
+  &= -\Gamma_{\mu\mu}\nabla_\mu \Im(\pmb \mu| b)
+   = -\Gamma_{\sigma\sigma}\nabla_\mu F(\pmb \mu, b)\\
+\pmb {\dot a}(\pmb \mu)
+  &= -\Gamma_{aa}\nabla_a \Im(b |\pmb \mu)
+   = -\Gamma_{aa}\nabla_a F(\pmb \mu, b)\\
+   \\
+\nabla_\mu F(\pmb \mu, b)
+  &= \nabla_\mu
+    \underbrace{
+      D[q_\mu(\eta) || p(\eta | b)]
+    }_{\text{evidence bound}} \\
+\nabla_a F(\pmb \mu, b)
+  &= \nabla_a
+    \underbrace{
+      E_q[\Im(b | \eta)]
+    }_{\text{inaccuracy}}
 \end{aligned}
 \end{equation}
 $$
@@ -2725,7 +2757,25 @@ $$
 $$
 \begin{equation}\tag{10.3}
 \begin{aligned}
-\\
+D[q_\tau(x_\tau) || p(x_\tau)]
+  &= 0
+   \Rightarrow G(\alpha_\tau) \geq \Im_\tau(\alpha_\tau|\pi_0) \\
+  \\
+
+G(\alpha_\tau)
+  &= E_{q_r}[
+     \underbrace{
+       \Im(s_\tau| \alpha_\tau, \eta_\tau) 
+     }_{\text{sensory ambiguity}}
+     +
+     \underbrace{
+       \Im(\alpha_\tau |\eta_\tau)
+     }_{\text{active ambiguity}}
+     +
+     \underbrace{
+       D[q_\tau(\eta | s_\tau, \alpha_\tau) || p(\eta_\tau)]
+     }_{\text{risk}}
+   ]
 \end{aligned}
 \end{equation}
 $$
