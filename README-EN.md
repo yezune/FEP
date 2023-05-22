@@ -2337,7 +2337,17 @@ The difference between risk and ambiguity – defined in terms of expectations u
 $$
 \begin{equation}\tag{8.12}
 \begin{aligned}
-\\
+E_{p(\pi)}[F(\pi)]
+  &\geq E_{p(\pi)}[\Im(\pi)] 
+  = H(P)
+  = 
+    \underbrace{
+      H(P|E)
+    }_{ambiguity}
+  + 
+    \underbrace{
+      I(E,P)\\
+    }_{risk}
 \end{aligned}
 \end{equation}
 $$
@@ -2345,7 +2355,22 @@ $$
 $$
 \begin{equation}\tag{8.13}
 \begin{aligned}
-\\
+d\ell(\tau) 
+  &= 0 
+  \Leftrightarrow q_\tau(\eta_\tau,\pi_\tau)
+  = p(\eta_\tau, \pi_\tau)
+  \Rightarrow E_{p(\alpha_\tau)}[G(\alpha_\tau)]
+  =
+    \underbrace{
+      H(P|E)
+    }_{ambiguity}
+  + 
+    \underbrace{
+       I(E,P)\\
+    }_{risk}
+  = 
+    H(P)
+  \\
 \end{aligned}
 \end{equation}
 $$
@@ -2353,7 +2378,15 @@ $$
 $$
 \begin{equation}\tag{8.14}
 \begin{aligned}
-\\
+q_\tau(\eta_\tau|\pi_\tau) 
+  &= p(\eta_\tau | \alpha_\tau)
+  \Rightarrow G(\alpha_\tau) 
+  = E_{q_\tau}[ 
+      \Im(\pi_\tau) - 
+      \underbrace{
+        D[p(\eta_\tau|s_\tau,\alpha_\tau) \parallel p(\eta_\tau | \alpha_\tau)]
+      }_{\text{information gain}} 
+    ]\\
 \end{aligned}
 \end{equation}
 $$
