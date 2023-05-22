@@ -2546,7 +2546,21 @@ $$
 $$
 \begin{equation}\tag{8.25}
 \begin{aligned}
-\\
+F(\pmb \mu, b)
+  &= \Im(\sigma(\pmb \mu),b)+\tfrac 1 2 tr[\Sigma(\pmb\mu)\nabla_{\sigma\sigma}\Im(\sigma(\pmb \mu), b)]-\tfrac 1 2 \ln|\Sigma(\pmb \mu)|\\
+  &= \Im(\sigma(\pmb \mu),b)-\tfrac 1 2 \ln|\Sigma(\pmb \mu)|
+  \\
+\nabla_a F
+  &= \nabla_a\Im(b|\sigma(\pmb \mu))
+   = \nabla_a\Im(b|\pmb \mu) \\
+\nabla_\mu F
+  &= \nabla_\mu \Im(\sigma(\pmb \mu|b) \\
+\nabla_\Sigma F
+  &= \tfrac 1 2 \nabla_{\sigma\sigma}\Im(\sigma(\pmb \mu),b) - \tfrac 1 2 \Sigma(\pmb \mu)^{-1} 
+   = 0 \\
+  &\Rightarrow \nabla_{\sigma\sigma}\Im(\sigma(\pmb \mu),b)
+   = \Sigma(\pmb \mu)^{-1} 
+   = \pmb I(\pmb \mu) \\
 \end{aligned}
 \end{equation}
 $$
@@ -2554,7 +2568,13 @@ $$
 $$
 \begin{equation}\tag{8.26}
 \begin{aligned}
-\\
+\pmb{\dot \mu}(b)
+  &= -\Gamma_{\sigma\sigma}\nabla_\mu F(\pmb \mu, b)\\
+\pmb{\dot a}(\pmb \mu)
+  &= -\Gamma_{aa}\nabla_a F(\pmb \mu, b) \\
+  \\
+\Gamma_{\sigma\sigma}
+  &= (\nabla_\mu \sigma)^{-} \Gamma_{\eta\eta} \cdot(\nabla_\mu \sigma)^{-}
 \end{aligned}
 \end{equation}
 $$
@@ -2562,7 +2582,22 @@ $$
 $$
 \begin{equation}\tag{8.27}
 \begin{aligned}
-\\
+G(a_\tau)
+  &\geq \Im_\tau(a_\tau|\pi_0) \\
+G(a_\tau)
+  &\triangleq E_{q_\tau}[
+    \underbrace{
+      \Im(b_\tau | \eta_\tau)
+    }_{ambiguity}
+    +
+    \underbrace{
+      D[q_\tau(\eta_\tau|b_\tau) \parallel p(\eta_\tau)]
+    }_{risk}
+   ]
+  \geq E_{q_\tau}[\Im(b_\tau)] \\
+
+q_\tau(\eta_\tau, s_\tau|a_\tau)
+  &\approx p_\tau(\eta_\tau,s_\tau|a_\tau, \pi_0)
 \end{aligned}
 \end{equation}
 $$
@@ -2570,7 +2605,19 @@ $$
 $$
 \begin{equation}\tag{8.28}
 \begin{aligned}
-\\
+E_{p(b)}[F(\pmb \mu,b)]
+  &\approx E_{p(b)}[\Im(b)]
+   = H(B) \\
+E_{p(a_\tau)}[G(a_\tau)]
+  &\approx H(B)
+   = 
+     \underbrace{
+       H(B|E)
+     }_{ambiguty}
+    +
+     \underbrace{
+       I(E,B)
+     }_{risk} \\
 \end{aligned}
 \end{equation}
 $$
@@ -2578,7 +2625,10 @@ $$
 $$
 \begin{equation}\tag{8.29}
 \begin{aligned}
-\\
+\pmb I(\pmb \mu)
+  &= \Sigma(\pmb \mu)^{-1}
+   = -\nabla_{\sigma\sigma} \ln q_\mu(\eta)\\
+  &= E_q[\nabla_\sigma \ln q_\mu(\eta) \times \nabla_\sigma \ln q_\mu(\eta)]
 \end{aligned}
 \end{equation}
 $$
@@ -2586,7 +2636,20 @@ $$
 $$
 \begin{equation}\tag{8.30}
 \begin{aligned}
-\\
+\begin{Bmatrix}
+ \pmb{\dot \mu}(b) &= 0 \\
+ \nabla_\Sigma F &= 0 \\
+\end{Bmatrix} 
+  &\Rightarrow
+\begin{Bmatrix}
+  \nabla_\mu \Im(\sigma(\pmb \mu),b) &= 0 \\
+  \nabla_{\sigma\sigma} \Im(\sigma(\pmb \mu), b) &= \Sigma(\pmb \mu)^{-1} \\
+\end{Bmatrix}
+  \Rightarrow \delta_qF = 0 
+  \Leftrightarrow \partial_\mu F = 0
+  \\
+q_\mu(\eta)
+  &= \cal N(\sigma(\pmb \mu),\Sigma(\pmb \mu))
 \end{aligned}
 \end{equation}
 $$
@@ -2594,10 +2657,20 @@ $$
 $$
 \begin{equation}\tag{8.31}
 \begin{aligned}
-\\
+g[\pmb \eta]_{k\ell} 
+  &= g[\pmb \mu]_{ij} D_i^k D_j^\ell
+  \Leftrightarrow \Gamma_{\eta\eta} = (\nabla_\mu \sigma)\Gamma_{\sigma\sigma}\cdot(\nabla_\mu \sigma)\\
+\Gamma_{\eta\eta} 
+  &= (g[\pmb \eta]_{k\ell}) \\
+\Gamma_{\sigma\sigma} 
+  &= (g[\pmb \mu]_{ij}) \\
+(\nabla_\mu \sigma)_{ki}
+  &= D_i^k
+   = \partial\pmb \eta^k / \partial\pmb\mu^i \\
 \end{aligned}
 \end{equation}
 $$
+
 [FIGURE 18](./img/18.png)
 <p style="text-align: center;">FIGURE 18</p>
 
