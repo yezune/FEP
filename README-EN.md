@@ -2394,7 +2394,10 @@ $$
 $$
 \begin{equation}\tag{8.15}
 \begin{aligned}
-\\
+G(\pi_\tau)
+  &= \Im_\tau(\pi|\pi_0):\forall\tau \geq \pmb \tau\\ 
+  &\Rightarrow D[q_\tau(\eta_\tau,\pi_\tau)||p(\eta_\tau, \pi_\tau)] \approx 0 \Leftrightarrow d\ell(\pmb \tau) \approx 0\\
+  &\Rightarrow G(\alpha_\tau) \geq \Im_\tau(\alpha_\tau|\pi_0) = \Im(\alpha_\tau) \\
 \end{aligned}
 \end{equation}
 $$
@@ -2406,7 +2409,13 @@ $$
 $$
 \begin{equation}\tag{8.17}
 \begin{aligned}
-\\
+\pmb \mu
+  &= \braket{\Psi^\dagger(\mu)|\mu|\Psi(\mu)}  \\
+  \\
+p(\eta|b)
+  &= \Psi^\dagger(\eta)\Psi(\eta) = q_\mu(\eta) \\
+p(\mu|b)
+  &= \Psi^\dagger(\mu)\Psi(\mu) \\
 \end{aligned}
 \end{equation}
 $$
@@ -2416,7 +2425,8 @@ $$
 $$
 \begin{equation}\tag{8.18}
 \begin{aligned}
-\\
+d\ell^2
+  &= g_{ij}d\mu^i d \mu^j\\
 \end{aligned}
 \end{equation}
 $$
@@ -2424,7 +2434,9 @@ $$
 $$
 \begin{equation}\tag{8.19}
 \begin{aligned}
-\\
+g &= \pmb I(\mu) 
+   = \nabla_{\mu^{'}\mu^{'}} D[q_{\mu^{'}}(\eta) \parallel q_\mu(\eta)]\space |_{\mu^{'} = \mu}
+   = E_q[\nabla_\mu\ln q_\mu(\eta) \times \nabla_\mu \ln q_\mu(\eta)] \\
 \end{aligned}
 \end{equation}
 $$
@@ -2432,7 +2444,12 @@ $$
 $$
 \begin{equation}\tag{8.20}
 \begin{aligned}
-\\
+g_\lambda
+  &= \pmb I(\lambda)
+   = \nabla_{\lambda^{'}\lambda^{'}} D[p_{\lambda^{'}}(\mu) \parallel p_\lambda(\mu)] |_{\lambda^{'} = \lambda} \\
+g_\mu
+  &= \pmb I(\mu)
+   = \nabla_{\mu^{'}\mu^{'}} D[p_{\mu^{'}}(\eta) \parallel p_\mu(\eta)] |_{\mu^{'} = \mu} \\
 \end{aligned}
 \end{equation}
 $$
@@ -2442,15 +2459,57 @@ $$
 $$
 \begin{equation}\tag{8.21}
 \begin{aligned}
-\\
-\end{aligned}
+\pmb{\dot\mu}(b)
+  &= -\Gamma_{\sigma\sigma}\nabla_\mu F(\pmb \mu, b)\\
+\pmb{\dot a}(\pmb \mu)
+  &= -\Gamma_{aa}\nabla_a  F(\pmb \mu, b)\\
+  \\
+F(\pmb \mu,b)
+  &\geq \Im(b) \\
+F(\pmb \mu,b)
+  &\triangleq
+    \underbrace{
+      E_q[\Im(\eta,b)]
+    }_{\text{energy}}
+    -
+    \underbrace{
+      H[q_\mu(\eta)]
+    }_{\text{entroy}} \\
+  &= 
+    \underbrace{
+      D[q_\mu(\mu) \parallel p(\eta |b)]
+    }_{\text{evidence bound}}
+    -
+    \underbrace{
+      \ln p(b)
+    }_{\text{log evidence}} \\
+  &= 
+    \underbrace{
+      E_q[\Im(b|\eta)]
+    }_{\text{inaccuracy}}
+    +
+    \underbrace{
+      D[q_\mu(\eta)\parallel p(\eta)]
+    }_{\text{complexity}} \geq \Im(b) \\
+  \\
+q_\mu(\eta)
+  &= \cal N(\sigma(\pmb \mu), \Sigma(\pmb \mu)) \\
+ \end{aligned}
 \end{equation}
 $$
 
 $$
 \begin{equation}\tag{8.22}
 \begin{aligned}
-\\
+\pmb \eta(b)
+  &= argmax_\eta p(\eta|b)\\
+\pmb \mu(b)
+  &= argmax_\mu p(\mu|b)\\
+  \\
+\pmb \eta(b)
+  &= \sigma(\pmb \mu(b)) 
+   \Rightarrow \pmb{\dot \eta}(b)
+   = \nabla_\mu \sigma \cdot \pmb{\dot \mu}(b)
 \end{aligned}
 \end{equation}
 $$
@@ -2458,7 +2517,17 @@ $$
 $$
 \begin{equation}\tag{8.23}
 \begin{aligned}
-\\
+\pmb{\dot a}(\pmb \mu)
+  &= -\Gamma_{aa}\nabla_a\Im(b|\pmb \mu)\\
+\pmb{\dot \eta}(b)
+  &= -\Gamma_{\eta\eta}\nabla_\eta\Im(\pmb \eta|b)\\
+\pmb{\dot \mu}(b)
+  &= (\nabla_\mu \sigma)^{-}\pmb{\dot\eta}(b) \\
+  &= (\nabla_\mu \sigma)^{-}(Q_{\eta\eta}-\Gamma_{\eta\eta})\cdot(\nabla_\mu \sigma)^{-}(\nabla_\mu \sigma)\cdot \nabla_\eta \Im(\pmb \eta | b)\\
+  &= -\Gamma_{\sigma\sigma}\nabla_\mu \Im(\sigma(\pmb \mu)|b) \\
+  \\
+\Gamma_{\sigma\sigma}
+  &= (\nabla_\mu \sigma)^{-}(\Gamma_{\eta\eta} - Q_{\eta\eta})\cdot (\nabla_\mu \sigma)^{-}\\
 \end{aligned}
 \end{equation}
 $$
@@ -2466,7 +2535,10 @@ $$
 $$
 \begin{equation}\tag{8.24}
 \begin{aligned}
-\\
+q_\mu(\eta)
+  &= \cal N(\sigma(\pmb \mu), \Sigma(\pmb \mu))\\
+\Sigma(\pmb \mu)
+  &= \nabla_{\sigma\sigma}^{-1}\Im(\sigma(\pmb \mu),b)
 \end{aligned}
 \end{equation}
 $$
