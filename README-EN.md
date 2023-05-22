@@ -1438,6 +1438,7 @@ Heuristically, (6.6) is consistent with the notion of free energy as the thermod
 
 _Ensemble densities and thermodynamic potentials_. These illustrative potentials and density functions are taken from the analysis in the subsequent figure. In brief, they characterise the stochastic thermodynamics of an ensemble of particles; here, the external states of our synthetic soup (towards the end of the simulation). This characterisation involves estimating two functions of phase or state-space. The first (shown in red) is the surprisal or self-information that characterises the NESS density $\Im(\pi)$. The second (shown in blue) is a homologous potential energy function $\Im(\pi, \tau)$, whose gradients predict the flow at each point in phase-space. At nonequilibrium steady-state, these two functions are the same. In other words, the thermodynamic potential becomes self-information (multiplied by temperature). This means that the distance or, more strictly speaking, divergence from steady-state can be quantified in terms of the KL divergence between the associated probability density functions (shown on the left). When these densities converge, the ensemble density stops changing and becomes the NESS density; i.e., $\Im(\pi, \tau) = \Im(\pi)$. The **middle panel** shows estimates of the ensemble and thermodynamic potentials (i.e., surprisals). The ensemble potential was estimated using a polynomial approximation to the (log) sample distribution over the ensemble of states. The corresponding density functions are shown in the **left panel**, where the sample distribution is shown as a dotted line. The **right panel** shows the gradients of the thermodynamic potential (blue line) that predicts the flow sampled by the simulation (dots). Please see main text for a description of the variables in this figure.
 #### Stochastic energetics
+
 Following (Sekimoto, 1998), one can endow Langevin dynamics with a thermodynamic interpretation, using constructs from the first law, by considering an individual fluctuating trajectory. For example, one can express the first law in terms of work and dissipated heat for a single trajectory[^note-20]:
 
 [^note-20]: Strictly speaking, we are only considering the ‘housekeeping’ heat – that is dissipated in maintaining nonequilibrium steady- state – because we are ignoring changes in the thermodynamic potential. For a complete treatment, see Seifert, U., 2012. Stochastic thermodynamics, fluctuation theorems and molecular machines. Reports on progress in physics. Physical Society (Great Britain) 75, 126001. https://doi.org/10.1088/0034-4885/75/12/126001
@@ -1456,6 +1457,8 @@ w(\pi[\tau])
 \end{equation}
 $$
 
+The second equality here is an integrated first law, relating work to force times distance. Similarly, stochastic entropy production can be defined in terms of dissipated heat and non-dissipative or conservative entropy production. This rests on associating the stochastic entropy of a single trajectory with its surprisal or self-information, using $\Gamma\nabla p = f(\pi,\tau)p(\pi,\tau)$ from (1.6):
+
 $$
 \begin{equation}\tag{6.8}
 \begin{aligned}
@@ -1471,6 +1474,8 @@ $$
 \end{equation}
 $$
 
+This means that the rate of change of stochastic entropy (i.e., self-information) can be decomposed into dissipative and conservative (i.e., sometimes referred to as total) parts: where the dissipative part corresponds to stochastic entropy lost via the dissipation of heat:
+
 $$
 \begin{equation}\tag{6.9}
 \begin{aligned}
@@ -1484,6 +1489,8 @@ $$
 \end{equation}
 $$
 
+It is interesting to note that this dissipative part corresponds to the path-independent term of the Lagrangian, which underwrites the action of a trajectory. Ignoring solenoidal flow, from (1.2) we have:
+
 $$
 \begin{equation}\tag{6.10}
 \begin{aligned}
@@ -1494,7 +1501,7 @@ $$
 \end{aligned}
 \end{equation}
 $$
-
+This is the part of the action that is odd under time reversal: $\pi^\dagger (\tau) \equiv \pi(t-\tau)$ where,
 $$
 \begin{equation}\tag{6.11}
 \begin{aligned}
@@ -1504,6 +1511,10 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+In other words, the only part of the Lagrangian that does not cancel – in the path integral under time reversal – is the dissipative or path-independent term. Intuitively, if one walks uphill and then retraces the path downhill, the heat dissipated depends only on how high one climbed. Equation (6.11) affords a deep physical interpretation: the log-ratio of the probability of a forward and time-reversed trajectory between any two points is the heat dissipated along the forward trajectory. This ratio underwrites the fluctuation theorems considered in the final part of this section. We will see later (6.18) that the expected conservative stochastic entropy production along any path is greater than zero, which can be considered as a refinement of the second law for a single trajectory (Seifert, 2012).
+
+The entropy per se corresponds to the ensemble average of surprisal, with the corresponding entropy production (Ao, 2008; Friston and Ao, 2012; Seifert, 2012). In brief, using $\dot p_\tau = - \nabla\cdot j_\tau$ and $j_\tau = f_\tau p_\tau - \Gamma\nabla p_\tau$ from (1.6), the entropy production can be expressed as:
 
 $$
 \begin{equation}\tag{6.12}
@@ -1536,13 +1547,24 @@ H(\tau)
 \end{equation}
 $$
 
+The final two equalities express entropy production in terms of probability gradients and currents respectively, where the last expression eliminates the gradients using $j_\tau = f_\tau p_\tau - \Gamma\nabla p_\tau$. The penultimate equality highlights the relative contributions of random fluctuations $\dot S^\omega = k_b \dot H^\omega \geq 0$ and flow $\dot S^f = k_B \dot H^f$. Intuitively speaking, random fluctuations always increase the entropy through dispersing the ensemble density, while flow decreases entropy by ‘rebuilding’ probability gradients (i.e., where probability currents flow towards regimes of greater density). In other words, random fluctuations disperse states into regimes of high surprisal (and implicitly thermodynamic potential), while gradient flows – due to forces – counter the implicit dispersion. On this view, the random fluctuations are ‘blind’ to potential energy gradients (e.g., barriers) that induce flows or forces – and therefore underwrite [thermo] dynamics.
+
+At nonequilibrium steady-state, these opposing effects are in balance and entropy production is zero. The second expression, in terms of probability currents, connects with statistical mechanics, because the second term $\dot S^q = k_B \dot H^q$ is the ensemble average of the thermodynamic entropy generated via the work induced by forces. At NESS, both components of thermodynamic entropy disappear as probability currents fall to zero; i.e., the conservative flow and dissipative fluctuations are balanced. These balance equations for ensemble entropy constitute the second law of thermodynamics. Figure 15 provides an illustrative example, using our simulated soup, in which the above relations are used to track the evolution of the temperature, free energy, and entropy of particles that constitute the principal Markov blanket and its internal states. In this example, we used the standard value for the Boltzmann constant (see Glossary) to provide quantitative characterisations.
+
+In summary, through an ensemble assumption about particular states, a series of balance equations emerge that have a straightforward interpretation in terms of work and entropy; effectively reconstituting the laws of thermodynamics. These balance equations can be applied at the level of single trajectories or ensemble averages. We now conclude this section with a closer look at generalisations of the second law in terms of fluctuation theorems.
+
 [FIGURE 15](./img/15.png)
 <p style="text-align: center;">FIGURE 15</p>
 
+_Stochastic thermodynamics_. This figure illustrates the characterisation of our synthetic soup (or active matter) in terms of classical (stochastic) thermodynamics. The analysis is fairly straightforward and proceeds as follows: first, any set of particular states (e.g., the internal macromolecules of our synthetic virus) can be treated as an ensemble. In other words, the behaviour of any one particle can be treated as if it was responding to the same thermodynamic potential as all remaining particles. One can then evaluate the thermodynamic potential that best explains the flow of particular states (see Figure 14). Given this expected or predicted flow, one can then evaluate the variance or amplitude of random fluctuations and – equipped with a mobility coefficient – the corresponding temperature at any point in time (we used a mobility of 0.2 and assumed position has units of nanometres). Note that this is possible because we are associating the distribution over the states of the ensemble with the equivalent statistics that would have been observed over time. Given the temperature and thermodynamic potential, one can then evaluate the free energy using the KL divergence between the associated ensemble and NESS densities. As the ensemble states approach their random dynamical attractor (i.e., pullback attractor or nonequilibrium steady-state), these density functions converge, and the ensemble density ceases to change. At this point, it becomes the NESS density. The implicit changes in the ensemble density over time can be characterised in terms of entropy production, which can be partitioned in a number of ways (see main text). In the example here, we have focused on the entropy dissipated by probability currents that, when multiplied by temperature, corresponds to heat dissipation. In this somewhat heuristic illustration, we have (for simplicity) focused on the position in one dimension of the internal states surrounded by the principal Markov blanket considering a single dimension means we can ignore solenoidal flow). This blanket is the small virus like particle in Figure 6. To estimate the ensemble and NESS potentials, we used a fourth order polynomial expansion of position (and appropriate least squares estimators). The thermodynamic potential is that which best predicts the stochastic flow of particular states; where the ensemble density best predicts the sample density. To obtain more efficient estimators, we also averaged over 256 time bins at 28 consecutive intervals during the evolution of the system. We started at the 32nd time bin to illustrate the thermodynamic correlates of self-organisation, during which the principal Markov blanket was formed. For interest, we repeated the analysis for the blanket and external particles. The **upper row** shows the evolution of temperature shown using a (hot) colour scale with a dot at the position of the particles (in two dimensions). The **second panel** shows the corresponding evolution of temperature in the three ensembles as a function of time. The interesting thing here is that the internal (blue) and blanket (red) particles start off at about the same temperature. However, during the course of self-organisation, the internal particles slowly increase their temperature to become hotter than the external particles (cyan). In this example, the temperature of the internal particles ended up being about twice the temperature of the blanket particles. The **third panel** shows the corresponding free energy for each ensemble. The most notable thing here is that free energy decreases with time as the ensemble and NESS potentials converge. This is most marked for the external and blanket particles – that could be thought of as spending their free energy to organise the internal particles. After about five seconds, there is relatively little free energy left within the system. This is reflected in the **bottom panel** that shows the corresponding heat dissipation, which is most marked for the external particles, as might be guessed from the changes in thermodynamic free energy. Although heat dissipation can fall to low levels – as nonequilibrium steady-state is approached – the temperature of our synthetic virus remains relatively high (here, the temperature reached about 300° Kelvin, which is roughly body temperature). This follows from the fact that random fluctuations are still in play – arising from intrinsic fluctuations of the internal states of each internal particle (at the underlying hierarchical scale). These fluctuations disperse particular states over the thermodynamic potential, while gradient flows down potential energy gradients reconstitute the ensemble density. Effectively, this flow (times distance) produces heat that is generated by intrinsic fluctuations. At nonequilibrium steady-state, these two processes are in balance and heat dissipation is eliminated; because probability currents are zero at all points in state-space. The lower panel shows the corresponding entropy as a function of time. The entropy of external particles increases initially and then falls as the system finds its random dynamical attractor. Note that the entropy of particular states (that are destined to become densely coupled internal particles) falls progressively; thereby, violating the second law. This is what we would expect in this far-from-equilibrium scenario. Clearly, this is an idealised description of stochastic dynamics under the ensemble assumption. In reality, the dynamics is more complicated, and our treatment here can be construed as a mean field approximation, where all the interactions within and between the three ensembles are summarised with a common thermodynamic potential and ensemble density. Despite this approximation, this sort of analysis provides an intuitive characterisation of stochastic dynamics, in terms of constructs that underpin the first and second laws of thermodynamics.
+
 #### Fluctuation theorems
+
+Fluctuation theorems express universal properties of any density $p(\Omega)$ over phase measures \Omega(\pi) (i.e., work, heat or entropy) evaluated along fluctuating trajectories taken from ensembles with well-defined initial distributions. Following (Seifert, 2012), we will briefly consider a phenomenological classification into three classes; namely, _integral fluctuation theorems, detailed fluctuation theorems_ and (Generalized) _Crooks fluctuation theorems_ – with a special focus on integral fluctuation theorems and, in particular, the Jarzynski equality (Jarzynski, 1997). Please see Table 3 for a summary of this classification.
 
 [TABLE 3](./img/t3.png)
 
+Originally, fluctuation theorems (FT) were derived on a case by case basis; however, stochastic thermodynamics furnishes a unifying treatment of fluctuation theorems by considering trajectories under time reversal (Seifert, 2012). Fluctuation theorems for processes with trajectories $\pi[\tau]$ , are most generally derived by invoking a ‘conjugate’ dynamics for trajectories, $\pi^\dagger[\tau]$. The crucial quantity – leading to the fluctuation theorems – is a master functional that corresponds to the log likelihood ratio of conjugate paths:
 $$
 \begin{equation}\tag{6.13}
 \begin{aligned}
@@ -1554,6 +1576,8 @@ R(\pi[\tau])
 \end{equation}
 $$
 
+This ratio leads to a master fluctuation theorem: for any functional $S^\dagger(\pi^\dagger [\tau])= \varepsilon S(\pi[\tau])$ that maps with a definite parity $\varepsilon = \pm 1$ to the conjugate dynamics – thereby representing the same physical quantity – the master fluctuation theorem says that for any function $g$ :
+
 $$
 \begin{equation}\tag{6.14}
 \begin{aligned}
@@ -1562,6 +1586,8 @@ E[g(\varepsilon S^\dagger (\pi^\dagger[\tau]))]^\dagger
 \end{aligned}
 \end{equation}
 $$
+
+See (Seifert, 2012) p13. With suitable choices of $g$ , one can formulate the fluctuation theorems in Table 1 as special cases of this general theorem. With the simplest choice of $g \equiv 1$ , we obtain the most general from which all known IFT relations follow.
 
 $$
 \begin{equation}\tag{6.15}
@@ -1572,6 +1598,8 @@ E[exp(-R(\pi[\tau]))]
 \end{equation}
 $$
 
+For example, by choosing the reversed dynamics $\pi^\dagger(\tau) = \pi(t-\tau)$ as the conjugate dynamics, from the definition in (6.13) and (6.11) we have:
+
 $$
 \begin{equation}\tag{6.16}
 \begin{aligned}
@@ -1581,6 +1609,8 @@ E \left[ \ln\frac{p_0^\dagger(\pi_0^\dagger)}{p_0(\pi_0)}-\Delta\Im^q \right] \g
 \end{aligned}
 \end{equation}
 $$
+
+Here, $p_0(\pi) \equiv p(\pi,0)$ is the initial distribution and $\Im^q$ q corresponds to the dissipative part of stochastic entropy in (6.8). This equality holds for any initial condition and trajectories of any length. At nonequilibrium steady-state, from (6.9) we have:
 
 $$
 \begin{equation}\tag{6.17}
@@ -1598,6 +1628,8 @@ $$
 \end{equation}
 $$
 
+Substitution into (6.16) shows that the NESS density over the final state $p_0(\pi) = p_0^\dagger(\pi_0^\dagger)$ can be construed as the initial density under a time-reversed protocol. Similarly, the solution of the Fokker-Planck equation gives the IFT for conservative entropy production $\Im^p$ (Seifert, 2012).
+
 $$
 \begin{equation}\tag{6.18}
 \begin{aligned}
@@ -1608,6 +1640,8 @@ E[exp(-\Delta\Im^p)]
 \end{aligned}
 \end{equation}
 $$
+
+This IFT can be considered as a refinement of the second law; namely, that conservative entropy production is expected to be greater than zero (Seifert, 2012). With a time-dependent potential $U(x,b(\tau))$ and control parameter $b(\tau)$ – here, associated with blanket states – one obtains the following IFT as a special case of (6.16), where, following (6.9), (6.7) and (6.4):
 
 $$
 \begin{equation}\tag{6.19}
@@ -1633,6 +1667,8 @@ E[exp(-\tfrac{1}{k_B T}W)]
 \end{equation}
 $$
 
+This is the _Jarzynski relation_ (Jarzynski, 1997), relating the work spent – in driving a system from an initial equilibrium with a time-dependent potential – to the thermodynamic free energy difference between the initial and final states. This is the IFT for the (scaled) dissipated work$w − \Delta F_m$ (Seifert, 2012). The importance of this relation is that it allows one to determine the free energy difference, which is a genuine equilibrium property, from non-equilibrium measurements. In short, it represents a strengthening of the familiar second law that follows as the corresponding (Jensen's) inequality,
+
 $$
 \begin{equation}\tag{6.20}
 \begin{aligned}
@@ -1642,8 +1678,23 @@ E[exp(-\tfrac{1}{k_B T})]
 \end{aligned}
 \end{equation}
 $$
+
+which can be compared with (6.6).
+
 #### Summary
+
+Interestingly, the original derivation of the _Jarzynski_ relation "relies on the usual assumption of weak coupling between system and reservoir" (Jarzynski, 1997) p 2693; which, in the present context, translates into a weak coupling between internal particles and their Markov blanket. This weak coupling is where we started; namely, the ensemble assumption. More generally, the separation of temporal scales between the slowly fluctuating potentials assumed in this section and the fast, intrinsic fluctuations that constitute the particular (internal) states of interest is nicely summarised in Seifert’s comprehensive treatment:
+
+_"The identification of states, of work and of internal energy, i.e. of the ingredients entering the first law on the
+level of trajectories, is logically independent of the assumption of a Markovian dynamics connecting these states.
+The crucial step is the splitting of all degrees of freedom into slow and fast ones, the latter always being in a
+constrained equilibrium imposed by the instantaneous values of the slow ones."_ (Seifert, 2012) p44.
+
 ### A theory of big things – classical mechanics
+
+In the final section of Part Two, we turn to the behaviour of large particles to see how solenoidal flow engenders a classical mechanics, when intrinsic fluctuations are averaged away. In brief, we will consider the simplest of Markov blankets, where active states correspond to position and their momentum is associated with sensory states. We then ask whether there are any lawful dynamics of the average position (and momentum) of blanket states that emerges at nonequilibrium steady-state. We will see that a simple consequence of averaging is Newtonian behaviour or, more generally, classical Hamiltonian or Lagrangian mechanics. Note that the ensuing (average) states of the Markov blanket now constitute the states of a particle at the next hierarchical level. However, we will drop the superscripts and subscripts for clarity.
+
+In terms of the path integral formulation, in the limit of very small random fluctuations, the kinetic part of the Lagrangian dominates, where from (1.9):
 
 $$
 \begin{equation}\tag{7.1}
@@ -1658,6 +1709,11 @@ $$
 \end{equation}
 $$
 
+This means the only allowable paths $\dot x = \pmb{\dot x} = f = Q\nabla\Im$ are determined by surprisal and solenoidal flow. We will
+see below that this renders the surprisal a Hamiltonian – that is conserved over every path, in virtue of the fact the flow is divergence free.
+
+Imagine a simple universe composed of particles whose active and sensory states are low dimensional (e.g., each dominated by three orthogonal eigenmodes). By the nature of the Markovian partition, every particle’s active state can only be influenced by its sensory state. In contrast, its sensory state can be influenced by the active states of other particles. With a suitable transformation of variables, we can express this as follows (suppressing intrinsic and random fluctuations):
+
 $$
 \begin{equation}\tag{7.2}
 \begin{aligned}
@@ -1669,7 +1725,12 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+This construction licences us to talk about active states as position and sensory states as momentum in the following (classical) sense: the rate of change of position (i.e., active states) is velocity and the rate of change of momentum (i.e., rate of change of sensory states) depends on the position of other particles. In short, this simple sort of universe would look as if it was governed by gravitational rules, articulated in terms of particles exerting forces on each other. In this section, we illustrate the implicit association of blanket states with the generalised coordinates (i.e., position and momentum) of classical mechanics.
+
 #### Conservative systems
+
+Consider a large particle where the flows of active and sensory states do not depend on themselves. From (1.21), we have:
 
 $$
 \begin{equation}\tag{7.3}
@@ -1688,7 +1749,7 @@ $$
 \end{aligned}
 \end{equation}
 $$
-
+Consider now the behaviour of the average over n states, formed by the row vector $\xi^- = \tfrac{1}{n}\pmb 1_n$, in terms of the Taylor expansion (for simplicity, we will consider position in one dimension):
 $$
 \begin{equation}\tag{7.4}
 \begin{aligned}
@@ -1713,6 +1774,7 @@ $$
 \end{equation}
 $$
 
+Assuming the particle is sufficiently large, the intrinsic and random fluctuations on the flow of blanket states can plausibly be assumed to be averaged away, so that the flow of their average becomes:
 
 $$
 \begin{equation}\tag{7.5}
@@ -1737,6 +1799,7 @@ $$
 \end{equation}
 $$
 
+Here, we have defined the average coupling between the motion of active states and sensory states in terms of Planck's constant $\xi^-\nabla_s f_a \xi \triangleq \tfrac{\hbar}{m}$. Now, the flow of blanket states also conforms to the marginal flow lemma:
 
 $$
 \begin{equation}\tag{7.6}
@@ -1747,6 +1810,7 @@ $$
 \end{equation}
 $$
 
+Because the amplitude of random fluctuations is inherited from the averaging, it vanishes with a sufficiently large number of blanket states, leaving only solenoidal flow. Combining (7.5) and (7.6) – and defining velocity in terms of momentum, $m \pmb v = \hbar \pmb s$ – gives:
 
 $$
 \begin{equation}\tag{7.7}
@@ -1780,6 +1844,7 @@ Q_{bb}
 \end{equation}
 $$
 
+The key result here is that the motion of (active) states is proportional to momentum (sensory states), which means the surprisal associated with momentum must have a quadratic form (c.f., kinetic energy). This follows as a necessary consequence of Markov blankets; namely, that the only influences on (active) states are the (sensory) states of the same particle (and not other particles). The resulting dynamics are Hamilton’s equations of motion that underwrite classical mechanics, where the active and sensory states play the role of generalised coordinates of position and momentum. In other words, _surprisal becomes the Hamiltonian_ or, with a Legendre transform, the Lagrangian of classical mechanics.
 
 $$
 \begin{equation}\tag{7.8}
@@ -1799,6 +1864,7 @@ $$
 \end{equation}
 $$
 
+As we might expect, the Hamiltonian is conserved over state trajectories, because the flow is purely solenoidal:
 
 $$
 \begin{equation}\tag{7.9}
@@ -1811,6 +1877,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+The emergence of classical mechanics rests upon using a first order (Taylor) approximation to the flow in (7.5). This corresponds to a second order approximation to surprisal for, and only for, sensory states (i.e., momentum). Using this (semi) Laplace approximation, Hamiltonian mechanics follow from assumptions about the constant curvature of surprisal (dropping the conditioning on external states for clarity):
 
 $$
 \begin{equation}\tag{7.10}
@@ -1826,6 +1894,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+A notable result under this approximation is the motion of the (active) state (i.e., position) is proportional to the (sensory) state of motion (i.e., momentum): $m \pmb{\dot a} = \hbar \pmb s$ from (7.8). Accordingly, the NESS density over momentum must be Gaussian (with a precision of m ). We will use this later to estimate the mass of our synthetic organism (see Figure 16). We can also rearrange (7.7) to recover Newton’s second law; namely, force is equal to mass times acceleration
 
 $$
 \begin{equation}\tag{7.11}
@@ -1844,6 +1914,10 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+This expression discloses the intimate relationship between surprisal and potential, where – in this classical case – Newtonian potential is the surprisal of active states.
+
+In this example, we assumed that the flow of active and sensory states of a particle depended on each other but not themselves. However, there is no special reason why this should be so. In fact, had we considered flows of (average) blanket states with the following form,
 
 $$
 \begin{equation}\tag{7.12}
@@ -1864,11 +1938,12 @@ $$
 \end{Bmatrix} \\
   \\
 \Im(\pmb b)
-  &= z\varphi(\pmb a) + \tfrac{\hbar}{2m}(\pmb s - z\pmb A)\cdot(\pmb s - z\pmb A)
-
+  &= z\varphi(\pmb a) + \tfrac{\hbar}{2m}(\pmb s - z\pmb A)\cdot(\pmb s - z\pmb A) \\
 \end{aligned}
 \end{equation}
 $$
+
+we would have recovered classical electromagnetics and Maxwell’s equations. Equation (7.12) has augmented the motion of active (position) states with a vector function of position $\pmb A(\pmb a)$ and the motion of sensory (momentum) states with a scalar function $\varphi(\pmb a)$ . These equations provide a Hamiltonian description of a particle with charge z, subject to a Lorentz force by an electrical field $\pmb E = -\nabla\varphi \Rightarrow \nabla\cdot \pmb E = -\Delta\varphi$ (c.f., Coulomb’s law) and magnetic induction $\pmb B = \nabla \times A \Rightarrow \nabla\cdot\pmb B = 0$ (Helgaker et al., 2014). The ensuing Lorentz force follows by substitution and direct calculation:
 
 $$
 \begin{equation}\tag{7.13}
@@ -1893,6 +1968,8 @@ $$
 \end{equation}
 $$
 
+In terms of a Taylor approximation, this corresponds to a coupling between sensory and active states (i.e., momentum and position) according to the (semi) Laplace approximation to surprisal in (7.12). One can pursue this perspective and consider higher-order approximations; for example, the Hamiltonian for a relativistic particle in a conservative force field $-\nabla V (\pmb a)$ can be expressed as:
+
 $$
 \begin{equation}\tag{7.14}
 \begin{aligned}
@@ -1904,45 +1981,106 @@ $$
 
 #### Random fluctuations and generalised motion
 
+An interesting difference – between conservative and dissipative dynamics – is the constitution of mass: in the quantum formulation, mass was associated with the amplitude of random fluctuations via the introduction of Planck's constant. In contrast, in conservative (Lagrangian) mechanics, mass is associated with the coupling between the motion of states and states of motion. Notice a further distinction between the treatment in this section and quantum mechanics. In the quantum formulation, flow was associated with momentum. In the classical formulation there is a subtle but fundamental distinction between the motion of the state (i.e., flow) and the state of motion (i.e., momentum). In classical mechanics, momentum and related constructs are an attribute of the state
+of motion that reduces to the motion of states when, and only when, classical (conservative) assumptions hold.
+
+From our perspective, this simply means random (and intrinsic) fluctuations can be ignored. However, the distinction between the motion of states (e.g., position) and states of motion (e.g., momentum) becomes important when random fluctuations are put back in play, as follows.
+
+Hitherto, we have discounted random fluctuations to reveal classical mechanics. However, it is interesting to consider what would happen if they were reintroduced. Random fluctuations on (classical) momentum emerges as friction (Friston and Ao, 2012), where, following (7.7):
+
 $$
 \begin{equation}\tag{7.15}
 \begin{aligned}
 Q_{bb}
- &= 
+ &=
   \begin{bmatrix}
     0 & -I \\
-    I & 0 
-  \end{bmatrix},
-\Gamma_{bb}
-  =
-   \begin{bmatrix}
-     0 & 0 \\
-     0 & \Gamma_{ss}
-   \end{bmatrix}
+    I & 0 \\
+  \end{bmatrix},\space\space
+\Gamma_{bb} =
+  \begin{bmatrix}
+    0 & 0 \\
+    0 & \Gamma_{ss} \\
+  \end{bmatrix}
   \Rightarrow
-   \begin{Bmatrix}
-     \pmb{\dot a} \\
-     \pmb{\dot s}
-   \end{Bmatrix}
+  \begin{Bmatrix}
+    \pmb{\dot a} \\
+    \pmb{\dot s} \\
+  \end{Bmatrix}
   \approx
-   \begin{Bmatrix}
+  \begin{Bmatrix}
    v \\
-   -\nabla_a\Im(\pmb a | \eta) - \Gamma_{ss} \pmb v
-   \end{Bmatrix} \\
+   -\nabla_a\Im(\pmb a | \eta) - \Gamma_{ss} \pmb v \\
+  \end{Bmatrix} \\
 \end{aligned}
 \end{equation}
 $$
 
+This introduces a velocity-dependent reduction in acceleration, suggesting that friction is an emergent property of random fluctuations in momentum. A more thorough treatment of the relationship between diffusion, random fluctuations and friction can be found in (Yuan et al., 2011), using the generalised Einstein relation. This return to dissipative dynamics does not usually consider random fluctuations on position (i.e., active states). For example, Langevin equations for mechanical systems with canonical position and momentum usually restrict fluctuations to the flow of momentum, as in (7.15); however, there is no reason why this should be the case: see (Kerr and Graham, 2000) for a derivation of the Langevin equations – and associated Fokker-Planck equations – for mechanical systems that include noise and damping terms in the equations of motion for all canonical variables.
+
+Part Three will occasionally refer to generalised coordinates _of motion_. It is natural to ask whether generalised motion arises from the same sort of arguments used to account for classical mechanics. Our classical account rests upon the fact that active states cannot be influenced by external states (i.e., the blanket states of other particles). This means that the response of active states has to be mediated by sensory states. This leads to the natural interpretation of active states in terms of position that can only be changed via sensory states, which manifest as momentum or velocity (i.e., the rate of change of position with respect to time). However, generalised coordinates of motion arise from a quite different mechanism; namely, analytic or _smooth random fluctuations_. In brief, generalised coordinates of motion inherit from a relaxation of Wiener assumptions about random fluctuations and are therefore not restricted to classical mechanics: please see Appendix E for a treatment of generalised motion in terms of the Helmholtz decomposition – and its implications for generalised inference (filtering) schemes.
 #### Summary
 
+In summary, if averaging over active states (e.g., position) and sensory states (e.g., momentum) suppresses random and intrinsic fluctuations (via the central limit theorem), we necessarily have a classical mechanics. In this nonequilibrium steady-state, the NESS potential over blanket states becomes a Hamiltonian, describing the behaviour of large particles (e.g., balls and planets). Note that the Hamiltonian includes the NESS potential (i.e., surprisal) of position, which depends upon the external states. This suggests that classical mechanics can be formulated as generalised motion on a state-dependent and therefore time-dependent potential. In other words, external influences mediate their effects by changing the potential energy of blanket states. This is illustrated in Figure 16, using the average position and motion of the principal Markov blanket in Figure 6. In this example, we
+can estimate the mass of the virus in our synthetic soup by examining its motion under the forces exerted by external states. Anecdotally, this would be like estimating the mass of a small object by shaking it gently in the palm of your hand. See Figure 16 for details.
+
+We have assumed that averaging over the (large number) of intrinsic fluctuations is sufficient to eliminate them; thereby eluding the (Taylor expansion) terms due to generalised synchrony. This means classical mechanics applies to inert systems, whose internal states do not exhibit any synchrony. This leads to the sensible notion that classical mechanics is a limiting case when the internal dynamics of particles are insufficiently coherent to induce generalised synchrony, rendering them inert and lifeless. At macroscopic scales the (average) behaviour of (inert) particles will necessarily possess a Hamiltonian or Lagrangian mechanics. Furthermore, they will conform to Hamilton's principle of stationary action, in virtue of the fact that their flow is divergence free. This (classical) instance of Hamilton's principle is inherited from a more general principle of least action, which defines nonequilibrium steady-state.
 
 [FIGURE 16](./img/16.png)
 <p style="text-align: center;">FIGURE 16</p>
+
+_Classical Mechanics_. This figure illustrates a treatment of our primordial soup from a classical (Hamiltonian or Lagrangian)
+perspective. By taking ensemble averages over various quantities, one can suppress the influence of intrinsic (random)
+fluctuations, thereby revealing conservative, Hamiltonian dynamics mediated by solenoidal flow. Here, we focus on the
+average position of the particles of the Markov blanket in Figure 6 and ask whether the associated motion conforms to classical
+predictions. The picture here is of a ball rolling around in a potential well where, crucially, the potential well changes with
+external particles. In particular, we considered a second order polynomial approximation to the NESS potential of the blanket’s
+position (averaged over its constituent particles), conditioned on the position of all external particles. By formulating this
+dependency as a linear mixture of external positions, the gradients that produce the average motion of the Markov blanket can
+be expressed as a polynomial expansion that is quadratic in the blanket positions and linear in the external positions. The
+polynomial coefficients can then be estimated, using least squares, to best predict the average motion of the blanket; thereby
+specifying the (conditional) NESS potential and Hamiltonian dynamics. Heuristically, this corresponds to characterising the
+average behaviour of the Markov blanket as the motion of a marble (or ball) in a quadratic well (or bowl) that moves with –
+or is gently rocked by – external particles. The resulting behaviour can then be characterised in terms of the ball’s mass that
+corresponds to the precision (i.e., inverse variance) of motion. **Upper left panel**: this phase portrait summarises the behaviour
+we are trying to explain by plotting the position (state) against velocity (motion). In the absence of external perturbations, the
+trajectory should be a perfect circle. However, it appears that the external particles are moving the potential energy well to
+produce more erratic, although entirely conservative, behaviour. **Middle panel**: this illustrates the potential well in terms of
+the corresponding (conditional) density shown as a time varying function of (a linear mixture of) the states (position) of
+external particles. The shaded area depicts regions of high probability density and the white line shows the trajectory of the
+position of the Markov blanket. The black line is the corresponding motion of the Markov blanket. This is a nontrivial solution,
+in the sense that the external particles are not simply moving the Markov blanket particles – they are inducing Hamiltonian
+motion by moving a potential energy well. **Upper right panel**: the resulting predictions of the blanket motion account almost
+exactly for its (generalised) motion (blue dots). The red line is the corresponding prediction for a single particle within the
+Markov blanket – and illustrates that the states of motion only becomes the motion of states when intrinsic fluctuations are
+suppressed. In other words, each member of the blanket ensemble is moving somewhat erratically and actively; however, their
+collective motion can be expressed as a nearly deterministic and instantaneous function of their collective positions. This is
+nontrivial, in the sense that the motion being predicted is orthogonal to the positions (of blanket and external particles) upon
+which the predictions are based. Using the estimates of the NESS potential afforded by the emergence of conservative
+dynamics, one can now quantify the ensemble density for any given external state, over both the motion of state (left) and the
+state of motion (right). **Lower left panel**: this shows the marginal distribution over position, averaged over the trajectory
+shown. The marginal density (solid line) is based on the polynomial coefficients that best predicted motion, while the dotted
+line corresponds to the sample density. **Lower right panel**: this is the equivalent ensemble density over average motion. The
+precision of this density determines the effective mass of the Markov blanket. In this example, if we assume that motion is
+expressed in nanometres per millisecond (i.e., slow motion at a macromolecular scale). Then the effective mass, given Planck's
+constant, is 136 femtograms. This corresponds to an extremely heavy virus – or a rather lightweight bacterium. For example,
+a typical E. coli would have a mass of 630 fg. Had we assumed that the velocity has units of metres per millisecond, the mass
+would have been in excess of 2 tonnes – the mass of a large car (assuming a classical Planck's constant of unity).
+
+Some readers might be wondering where, in this treatment of deterministic systems, things like topological symmetry breaking and deterministic chaos arise. The foregoing has focused on the behaviour of single particles, where the influence of internal particles and other particles has been suppressed to recover classical laws of motion[^note-21]. This is apt for describing the behaviour of inert particles, like heavenly bodies and pendula; however, things get more complicated when dealing with an ensemble of large particles; for example, n-body problems (Littlejohn and Reinsch, 1997). In terms of information length, one could associate the behaviour of inert particles with the short information lengths that characterise fixed point and periodic attracting manifolds (e.g., the point attractor of the Lorenz system in Figure 4). In these systems, the initial state is always close to steady-state
+behaviour and the particle can be said to show a simple form of self-organisation – appropriate for, say, a rock on the dark side of the moon. Conversely, in deterministic itinerancy, the attracting manifolds becomes more structured, engendering topological symmetry breaking (Evans and Searles, 2002; Kappen, 2005; Parisi and Sourlas, 1982; Schwabl, 2002), chaotic itinerancy (Namikawa, 2005; Nara, 2003; Tsuda and Fujii, 2004), generalised synchronisation (Barreto et al., 2003; Boccaletti et al., 2002; Hu et al., 2010; Rulkov et al., 1995) and so on.
+
+[^note-21]: Furthermore, we have not considered the more delicate issue of solenoidal flows that are function of states.
+
+On the current account, itinerancy can only emerge when two conditions are met: first, the amplitude of random fluctuations has to be low – as in noise induced tunnelling – or negligible – as in classical mechanics. Second, the information length induced by the flow must be sufficiently large – as in many-body problems. There is a vast literature on the n-body problem in a classical setting. This literature ranges from mean field approximations through to loosely coupled dynamical systems; e.g., (Boccaletti et al., 2002; Breakspear and Stam, 2005; Kayser and Ermentrout, 2010; Rulkov et al., 1995; Schumacher et al., 2012; Tsuda, 2001) and the behaviours they exhibit (e.g., generalised synchronisation).
+
+There are many directions we could pursue here. However, we will return to a more fundamental aspect of classical mechanics: namely, the assumption that particles are inert, in the sense that the influence of internal states can be discounted. In the final part of this monograph, we turn to a mechanics that deals with autonomous particles, in which there is a structured contribution of internal states to a particle’s dynamics – a structure that enriches their repertoire of behaviours, necessary for the treatment of large particles, like you and me.
 
 ## Part Three: a particular case
 
 ### A theory of autonomous things – Bayesian mechanics
 
+In this section, we turn to a Bayesian mechanics for active particles (Bressloff and Newby, 2013; Keber et al., 2014; Khadka et al., 2018) that rests on the existence of a Markov blanket. In brief, the Markov blanket allows us to talk about internal states as representing external states in a probabilistic sense. Heuristically, this means that one can ascribe probabilistic beliefs to internal states, in the sense that they are about something – namely, external states. This interpretation rests upon a variational density over external states, which is parameterised by internal states:
 
 $$
 \begin{equation}\tag{8.1}
@@ -1955,6 +2093,15 @@ q_\mu(\eta)
 \end{aligned}
 \end{equation}
 $$
+
+This variational density arises in virtue of the blanket as follows: if we condition internal and external states on the blanket state, there must be a most likely internal state for every blanket state – and a conditional density over external states, conditioned on that blanket state. This implies a mapping between an internal (statistical) manifold and a conditional density over external states[^note-22]. In turn, this means the internal manifold μ ( b ) acquires an information geometry, defined by the variational density above.
+
+[^note-22]: On the assumption that the number or dimensionality of internal states is greater than the number of blanket states, the
+dimensionality of the internal (statistical) manifold corresponds to the dimensionality of blanket states.
+
+Another key symmetry implied by the Markov blanket is that the flow of internal and active states can be expressed as a (solenoidal) gradient flow[^note-23] on the same quantity; namely, the surprisal of particular states. We will refer to internal and active states as autonomous because they are not influenced by external states. From the marginal flow lemma (1.21):
+
+[^note-23]: When referring to gradient flows, we allow for solenoidal components that are orthogonal to the gradients. We will refer to these as (solenoidal) gradient flows.
 
 $$
 \begin{equation}\tag{8.2}
@@ -1969,6 +2116,18 @@ f_\alpha(\pi)
 \end{equation}
 $$
 
+These two aspects of a Markov blanket underwrite a Bayesian mechanics, in which we can talk about internal states holding _Bayesian beliefs_[^note-24] about external states – and autonomous states acting on external states, under those beliefs. This follows because one can express gradient flows on surprisal as minimising free energy functionals of the variational density above – functionals that underwrite Bayesian inference.
+
+[^note-24]: Bayesian belief here refers to a posterior or conditional probability density. This is not a propositional belief but is used in the sense of Bayesian ‘belief’ updating and ‘belief’ propagation.
+
+We will consider two forms of free energy – a _particular_ free energy of particular states and a _variational_ free energy that just considers blanket states. These lead to an interpretation of nonequilibrium steady-state dynamics as _exact_ and _approximate_ Bayesian inference, respectively. Particular free energy could be read as a mathematical ‘sleight of hand’; in the sense that it stipulatively defines free energy as surprisal, rendering gradient flows on surprisal and free energy synonymous. However, this formulation allows one to treat autonomous (i.e., active and internal) states symmetrically – and establish a description of self-organisation in terms of Bayesian inference. Having set up the basic formalism with particular free energy, we will turn to variational free energy and approximate Bayesian inference that deals with internal and active states separately. Practically speaking, the variational free energy is more interesting, because it can be used to quantify and simulate self-evidencing, in the
+form of active inference. Furthermore, it leads to the interesting question: is self-organisation approximate Bayesian inference – or does Bayesian inference approximate self-organisation?
+
+We look first at the underlying formalism in terms of a free energy lemma – and an integral fluctuation theorem that speaks to the most likely autonomous states in the future. This section establishes the basic form of the argument. In the next section, we address the nature of the variational density by appealing to approximate Bayesian inference, under something known as the Laplace assumption.
+
+**Lemma** (particular free energy): given a variational density: $q_\mu(\eta) = p(\eta|b)$ , the most likely path of autonomous states, given sensory states, can be expressed as a (solenoidal) gradient flow on a free energy functional of a
+particle’s states: $\pi = {b, \mu} = {s,\alpha}$ :
+
 $$
 \begin{equation}\tag{8.3}
 \begin{aligned}
@@ -1980,6 +2139,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+This means the most likely path conforms to a variational principle of least action, where particular free energy $F(\pi)\triangleq F[\pi, q_\mu,(\eta)]$ is an upper bound on surprisal:
 
 $$
 \begin{equation}\tag{8.4}
@@ -2011,6 +2172,10 @@ q_\mu(\eta)
 \end{equation}
 $$
 
+This functional can be expressed in several forms; namely, an expected energy minus the entropy of the variational density, which is equivalent to the self-information associated with particular states (i.e., surprisal) plus the KL divergence between the variational and posterior density (i.e., bound). In turn, this can be decomposed into the negative log likelihood of particular states (i.e., accuracy) and the KL divergence between posterior and prior densities (i.e., complexity). In short, particular free energy constitutes a Lyapunov function for the expected flow of autonomous states.
+
+**Proof**: the most likely trajectory – that minimises action – obtains when the random fluctuations on the autonomous flow take their most likely value of zero. By the marginal flow lemma, this means the flow of the most likely autonomous states can be expressed as a (solenoidal) gradient flow on surprisal or, by definition, particular free energy:
+
 $$
 \begin{equation}\tag{8.5}
 \begin{aligned}
@@ -2022,6 +2187,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+Where, for the most likely internal state, $\pmb \mu \subset \pmb \alpha$ :
 
 $$
 \begin{equation}\tag{8.6}
@@ -2036,6 +2203,12 @@ F(\pmb \alpha, s)
 \end{equation}
 $$
 
+The equivalence between particular free energy and the surprisal of particular states follows from the definition of the variational density that renders the bound zero.
+
+Note that particular free energy can be expressed as a functional of the variational density or as a function of its sufficient statistics. The results above hold for any system at nonequilibrium state and can be considered as a principle of least action for particular free energy. Given this stipulative reformulation of gradient flows under a Markov blanket, one can now consider the most likely path of autonomous states from an initial particular state. The very existence of a nonequilibrium steady-state has some interesting implications for autonomous states in the future – that we will leverage later to formalise ‘planning ahead’. This long-term behaviour can be summarised with following corollary, based upon an integral fluctuation theorem for Markov blankets:
+
+**Corollary** (expected free energy). The surprisal of a future autonomous state is upper bounded by expected free energy:
+
 $$
 \begin{equation}\tag{8.7}
 \begin{aligned}
@@ -2044,6 +2217,8 @@ G(\alpha_\tau)
 \end{aligned}
 \end{equation}
 $$
+
+Expected free energy is a functional of the final state:
 
 $$
 \begin{equation}\tag{8.8}
@@ -2080,6 +2255,14 @@ q_\tau(\eta_\tau,s_\tau|\alpha_\tau)
 \end{equation}
 $$
 
+The expectation here is under the predictive density over hidden and sensory states, conditioned upon the initial
+state of the particle and final autonomous state. Here, this predictive density is expressed in terms of the variational
+density $q_\mu(\eta_0) = p(\eta_0|\pi_0)$.
+
+The expected free energy in (8.8) has been formulated to emphasise the formal correspondence with particular free energy in (8.4), where the complexity and accuracy terms become _risk_ (i.e., expected complexity) and _ambiguity_ (i.e., expected inaccuracy). One can also compare the expression for expected free energy in (8.8) with the surprisal of autonomous states in (2.7). The corollary above is important because it affords a lower bound on the probability of autonomous states in the future, which is a function of particular states in the present. This bound holds under convergence to nonequilibrium steady-state. Conversely, if the activity of a particle (i.e., its autonomous path) leads to an autonomous state that minimises expected free energy, convergence to nonequilibrium steady-state is assured.
+
+**Proof**: consider the path from an initial $\pi_0 \equiv \pi(0)$ particular state to a final state $\pi_\tau \equiv \pi(\tau)$. If the information length has converged, the divergence between the predictive density over systemic states and the NESS density disappears. From (2.9), we can express the time-dependent surprisal of the final state $\Im_\tau(\pi_\tau|\pi_0) \equiv -\ln p_\tau(\pi_\tau |\pi_0) \equiv -\ln q_\tau(\pi_\tau)$ in terms of its expected free energy:
+
 $$
 \begin{equation}\tag{8.9}
 \begin{aligned}
@@ -2107,6 +2290,8 @@ q_\tau(\eta_\tau, \pi_\tau)
 \end{equation}
 $$
 
+Note that the divergence in (8.9) plays the same role as thermodynamic free energy in (6.6); namely, the divergence between an evolving density and the density at nonequilibrium steady-state. However, here, we are not dealing with an ensemble density but with a predictive density over future states. Equation (8.9) can also be written in the form of an integral fluctuation theorem; c.f., (6.16),
+
 $$
 \begin{equation}\tag{8.10}
 \begin{aligned}
@@ -2120,6 +2305,8 @@ E_q
 \end{aligned}
 \end{equation}
 $$
+
+with equality when $d\ell(\tau) \rightarrow 0$ . In short, at some point in the future, the expected free energy of a particular state becomes its surprisal, at which point there is no further increase in information length. We can now average the expected free energy of a particular state over the predicted sensory states to create an upper bound on the surprisal of autonomous states. By Jensen’s inequality:
 
 $$
 \begin{equation}\tag{8.11}
@@ -2136,7 +2323,16 @@ q_\tau(\eta_\tau,s_\tau | \alpha_\tau)
 \end{aligned}
 \end{equation}
 $$
+
+Substituting (8.11) into (8.8) gives (8.7)
 #### Risk and ambiguity
+
+In summary, particular free energy is an upper bound on the surprisal of (current) particular states – and expected free energy is an upper bound on the surprisal of (future) autonomous states. Crucially, both particular and expected free energy are functions of particular states, which means that they can be ‘evaluated’ by a particle. In other words, the minimisation of particular and expected free energy furnish a self-consistent description of a particle’s behaviour in both the short and long term.
+
+The expected free energy corollary qualifies our use of risk and ambiguity when decomposing self-entropy in (8.12). Recall from Section 2 that risk is the complexity cost expected under the NESS density, while ambiguity is the expected likelihood of particular states, given external states. These expectations correspond to the mutual information between particular and external states – and conditional uncertainty about particular states, given external states (2.3). However, the corresponding quantities in the decomposition of expected free energy are expectations under the predictive density conditioned upon some autonomous behaviour (i.e., trajectory of autonomous states). In this setting, risk is an attribute of autonomous behaviour, which corresponds to the
+divergence between predicted (external) states of affairs and those at nonequilibrium steady-state. Similarly, ambiguity becomes the expected likelihood of particular states, given external states and autonomous behaviour. In short, autonomous particles will look as if they are selecting behaviours that actively minimise risk in relation to some a priori (nonequilibrium steady-state) beliefs about future outcomes, while acting upon external states to resolve ambiguity.
+
+The difference between risk and ambiguity – defined in terms of expectations under the NESS and predictive densities – disappears when the two densities converge. This is reflected in the expectations of particular and expected free energy. Because particular free energy is an upper bound on surprisal, the free energy expected at nonequilibrium steady-state is an upper bound on self-entropy:
 
 $$
 \begin{equation}\tag{8.12}
