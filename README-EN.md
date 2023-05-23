@@ -2940,7 +2940,7 @@ f_m(\pi,\tau)
    = \int_0^t f_m \cdot \dot \pi d \tau
    = -\int_0^t \dot U d \tau \\
   &= U(\pi_0) - U(\pi_\tau)
-   = -\Delta U
+   = -\Delta U \\
   &= -k_B T \cdot \Delta F(\pmb \alpha,s)
 \end{aligned}
 \end{equation}
@@ -2951,7 +2951,9 @@ $$
 $$
 \begin{equation}\tag{10.12}
 \begin{aligned}
-\\
+F_\Im(\tau)
+  &= E[U(\pi,\tau)]-T\cdot S \\
+S &= k_B E[F(\pmb \alpha, s)] \\
 \end{aligned}
 \end{equation}
 $$
@@ -2979,7 +2981,27 @@ Committing to one of these options may be important, because they have different
 $$
 \begin{equation}\tag{11.1}
 \begin{aligned}
-\\
+\dot x_{\tau+\tfrac{\Delta\tau}{2}}
+  &= f(x_{\tau+\tfrac{\Delta\tau}{2}})+ \Delta(\omega_\tau)\\
+p(\Delta(\omega_\tau))
+  &= |\partial_\omega \Delta|^{-1} p(\omega_\tau)\\
+p(\omega_\tau)
+  &= \cal N(0,\tfrac{2\Gamma}{\Delta\tau}) \\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{11.2}
+\begin{aligned}
+\Delta(\omega_\tau)
+  &= \dot x_{\tau+\tfrac{\Delta\tau}{2}}-f(x_{\tau+\tfrac{\Delta\tau}{2}})\\
+\dot x_{\tau+\tfrac{\Delta\tau}{2}}
+  &= e^{\tfrac{\Delta\tau}{2}\partial_xf} \dot x_\tau
+   = e^{\tfrac{\Delta\tau}{2}\partial_xf}(f(x_\tau)+\omega_\tau) \Rightarrow \\
+|\partial_\omega\Delta|
+  &= e^{\tfrac{\Delta\tau}{2}\nabla\cdot f}
+
 \end{aligned}
 \end{equation}
 $$
@@ -2987,19 +3009,200 @@ $$
 $$
 \begin{equation}\tag{11.3}
 \begin{aligned}
-\\
+\Im(x[\tau]
+  &= \lim_{\Delta\tau \to 0}\sum_\tau\Im(\Delta(\omega_\tau))\\
+  &= \lim_{\Delta\tau \to 0}\sum_\tau\tfrac 1 2 (\dot x-f)\cdot \tfrac{\Delta\tau}{2\Gamma}(\dot x-f) + \tfrac{\Delta\tau}{2}\nabla\cdot f \\
+  &= \tfrac 1 2 \int[(\dot x-f)\cdot\tfrac{1}{2\Gamma}(\dot x-f)+\nabla\cdot f]dt\\
 \end{aligned}
 \end{equation}
 $$
+
 ## Appendix B: lemmas and proofs
 
 $$
 \begin{equation}\tag{12.1}
 \begin{aligned}
+p(x)
+  &= exp(-\Im(x)) \\
+  &\Rightarrow \nabla p = -p(x)\nabla\Im(x) \\
+  &\Rightarrow \dot p(x) = \pmb L p(x) = 0 \\
+  &\Rightarrow f(x) = (\Gamma - Q)\nabla\ln p(x) \\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{12.2}
+\begin{aligned}
+\pmb L p
+  &= \nabla\cdot\Gamma\nabla p-\nabla\cdot(fp) \\
+  &= -\nabla\cdot(p\Gamma\nabla\Im)-\nabla\cdot(pQ\nabla\Im)+\nabla\cdot(p\Gamma\nabla\Im) \\
+  &= -p\nabla\cdot(Q\nabla\Im)-(Q\nabla\Im)\cdot\nabla p \\
+  &= -p(\nabla\cdot(Q\nabla\Im)-\nabla\Im\cdot(Q\nabla\Im)) \\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{12.3}
+\begin{aligned}
+Q &= -Q^t 
+  \Rightarrow 
+\begin{cases}
+  \nabla\cdot(Q\nabla\Im) &= tr(Q\nabla_{xx}\Im) = 0 \\
+  \nabla\Im\cdot(Q\nabla\Im) &= tr(Q\nabla\Im\nabla\Im^T) = 0 \\
+\end{cases}
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{12.4}
+\begin{aligned}
+\begin{rcases}
+p(x|m)
+  &= p(\eta|b)p(\mu|b)p(b) \\
+Q_{\eta\mu} 
+  &= 0 \\
+Q_{\eta b} 
+  &= 0 \\
+Q_{\mu b} 
+  &= 0 \\
+\end{rcases} 
+  &\Rightarrow 
+\begin{cases}
+\nabla_\mu f_\eta(x)
+  &= 0 \\
+\nabla_\eta f_\mu(x)
+  &= 0 \\
+\end{cases} 
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{12.5}
+\begin{aligned}
+\begin{bmatrix}
+  f_\eta(x) \\
+  f_b(x) \\
+  f_\mu(x) \\
+\end{bmatrix}
+  &=
+\begin{bmatrix}
+  \Gamma_{\eta\eta}-Q_{\eta\eta}& -Q_{\eta b}        & -Q_{\eta\mu} \\
+  Q_{\eta b}^T                  & \Gamma_{bb}-Q_{bb} & -Q_{b\mu} \\
+  Q_{\eta\mu}^T                 & Q_{b\mu}^T         & \Gamma_{\mu\mu}-Q_{\mu\mu} \\
+\end{bmatrix}
+\begin{bmatrix}
+  \nabla_\eta \ln p \\
+  \nabla_b \ln p \\
+  \nabla_\mu \ln p \\
+\end{bmatrix}
+  =
+\begin{bmatrix}
+  (\Gamma_{\eta\eta} - Q_{\eta\eta})\nabla_\eta \ln p \\
+  (\Gamma_{bb}       - Q_{bb})      \nabla_b \ln p \\
+  (\Gamma_{\mu\mu}   - Q_{\mu\mu})  \nabla_\mu \ln p \\
+\end{bmatrix} \\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{12.6}
+\begin{aligned}
+\nabla_{\mu\eta}\ln p(x)
+  &= \nabla_{\mu\eta}(\ln p(\eta|b)+\ln p(\mu|b)+\ln p(b)) 
+   = 0 \\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{12.7}
+\begin{aligned}
+\nabla_\mu f_\eta(x)
+  &= (\Gamma_{\eta\eta}-Q_{\eta\eta})\nabla_{\mu\eta}\ln p(x) = 0 \\
+\nabla_\eta f_\mu(x)
+  &= (\Gamma_{\mu\mu}-Q_{\mu\mu})\nabla_{\eta\mu}\ln p(x) = 0 \\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{12.8}
+\begin{aligned}
+\begin{rcases}
+  \nabla_\mu f_\eta(x) \\
+  \nabla_\eta f_\mu(x) \\
+\end{rcases}
+  &=
+\begin{Bmatrix}
+  (Q_{\eta\eta}-\Gamma_{\eta\eta})\nabla_{\mu\eta}\Im+Q_{\eta b}\nabla_{\mu b}\Im+Q_{\eta\mu}\nabla_{\mu\mu}\Im \\
+  (Q_{\mu\mu}-\Gamma_{\mu\mu})\nabla_{\eta\mu}\Im+Q_{b \mu}^T\nabla_{\eta b}\Im+Q_{\eta\mu}^T\nabla_{\eta\eta}\Im \\
+\end{Bmatrix}
+   = 0 \\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{12.9}
+\begin{aligned}
 \\
 \end{aligned}
 \end{equation}
 $$
+
+$$
+\begin{equation}\tag{12.10}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{12.11}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{12.12}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{12.13}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{12.14}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{12.15}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
 $$
 \begin{equation}\tag{12.16}
 \begin{aligned}
@@ -3009,7 +3212,7 @@ $$
 $$
 
 ## Appendix C: nonequilibrium steady-static energy functions
-`
+
 $$
 \begin{equation}\tag{13.1}
 \begin{aligned}
@@ -3017,6 +3220,15 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+$$
+\begin{equation}\tag{13.2}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
 $$
 \begin{equation}\tag{13.3}
 \begin{aligned}
@@ -3052,6 +3264,54 @@ $$
 $$
 
 $$
+\begin{equation}\tag{14.4}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{14.5}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{14.6}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{14.7}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{14.8}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{14.9}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
 \begin{equation}\tag{14.10}
 \begin{aligned}
 \\
@@ -3068,6 +3328,31 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+$$
+\begin{equation}\tag{15.2}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{15.3}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
+$$
+\begin{equation}\tag{15.4}
+\begin{aligned}
+\\
+\end{aligned}
+\end{equation}
+$$
+
 $$
 \begin{equation}\tag{15.5}
 \begin{aligned}
