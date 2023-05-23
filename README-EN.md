@@ -70,7 +70,7 @@ E[\omega(\tau) \cdot \omega(\tau-t)]
   & = 2\Gamma \rho(\tau)
 \end{drcases} 
   \Rightarrow p(\dot{x}|x,\tau) 
-  = \mathcal{N}(f,2\Gamma)
+  = \cal{N}(f,2\Gamma)
 \end{aligned}
 \end{equation}
 $$
@@ -82,12 +82,12 @@ __The path integral formulation__: this formulation deals with paths or trajecto
 $$
 \begin{equation}\tag{1.2}
 \begin{aligned}
-\mathfrak{I}(x[\tau]) 
+\Im(x[\tau]) 
   &\triangleq - \ln \space p(x[\tau]) 
-   = \mathcal{A}(x[\tau]) \\
-\mathcal{A}(x[\tau]) 
-  &= \int_0^t \mathcal{L}(x,\dot{x}) d\tau \\
-\mathcal{L}(x,\dot{x}) 
+   = \cal{A}(x[\tau]) \\
+\cal{A}(x[\tau]) 
+  &= \int_0^t \cal{L}(x,\dot{x}) d\tau \\
+\cal{L}(x,\dot{x}) 
   &= \cfrac{1}{2}[(\dot{x}-f) \cdot \cfrac{1}{2\Gamma}() + \nabla \cdot f] \\
   &= \cfrac{1}{4\Gamma}\dot{x}\cdot\dot{x} - \cfrac{1}{2\Gamma}f\cdot\dot{x} + \cfrac{1}{h}V(x) \\
 V(x) 
@@ -103,12 +103,12 @@ It will be useful to introduce the Legendre transform of the Lagrangian called a
 $$
 \begin{equation}\tag{1.3}
 \begin{aligned}
-\mathcal{H}(x,\dot{x}) 
-  &=\dot{x}\cfrac{\partial \mathcal{L}}{\partial \dot{x}}-\mathcal{L}(x.\dot{x})=\dot{x}\cdot p - \mathcal{L}(x,\dot{x}) \\
+\cal{H}(x,\dot{x}) 
+  &=\dot{x}\cfrac{\partial \cal{L}}{\partial \dot{x}}-\cal{L}(x.\dot{x})=\dot{x}\cdot p - \cal{L}(x,\dot{x}) \\
   &= \cfrac{1}{4\Gamma}\dot{x}\cdot\dot{x} + \cfrac{1}{h}V(x) \\
   \\
 p 
-  &\triangleq \cfrac{\partial \mathcal{L}}{\partial \dot{x}} 
+  &\triangleq \cfrac{\partial \cal{L}}{\partial \dot{x}} 
   = \cfrac{1}{2 \Gamma}(\dot{x}-f)
 \end{aligned}
 \end{equation}
@@ -118,7 +118,7 @@ Here, the last equality defines the generalised momentum. Note that the most lik
 
 $$
 \begin{equation}\tag{1.4}
-\dot{x} = f(x) \Rightarrow \mathcal{H}(x,\dot{x}) = \mathcal{L}(x,\dot{x}) = - \cfrac{1}{2} \nabla \cdot f(x)
+\dot{x} = f(x) \Rightarrow \cal{H}(x,\dot{x}) = \cal{L}(x,\dot{x}) = - \cfrac{1}{2} \nabla \cdot f(x)
 \end{equation}
 $$
 
@@ -193,7 +193,7 @@ $$
 \begin{equation}\tag{1.9}
 \begin{aligned}
 \cal{A}(x[\tau]) 
-  &= \int_0^t \mathcal{L}(x,\dot{x})d\tau \\
+  &= \int_0^t \cal{L}(x,\dot{x})d\tau \\
 \cal{L}(x,\dot{x}) 
   &= \tfrac{1}{2} [ \tfrac{1}{2\Gamma}( \dot{x} - Q \nabla \Im ) \cdot ( \dot{x} - Q \nabla \Im) + \dot{x} \cdot \nabla \Im + \Gamma(\tfrac{1}{2}\nabla \Im \cdot \nabla \Im - \nabla^{2}\Im)] \\
 \cal{H}(x,\dot{x}) 
@@ -209,21 +209,23 @@ Crucially, the three terms in (1.9) depend in different ways on the amplitude of
 $$
 \begin{equation}\tag{1.10}
 \begin{aligned}
-\mathcal{A}(x[\tau]) 
+\cal{A}(x[\tau]) 
   &=
     \underbrace{
       \tfrac{1}{2} \int_0^t \tfrac{1}{2 \Gamma} \dot{x}^2 d \tau
-    }_{\text {kinetic }} +
+    }_{\text {kinetic }}
+   +
     \underbrace{
-      \tfrac{1}{2} \int_0^t \dot{\mathfrak{I}} d \tau
-    }_{\text {path-independent }}+
+      \tfrac{1}{2} \int_0^t \dot\Im d \tau
+    }_{\text {path-independent}}
+   +
     \underbrace{
       \tfrac{1}{h} \int_0^t V(x) d \tau
     }_{\text {path-dependent }} \\
-\int_0^t \dot{\mathfrak{I}} d \tau 
-  & =\mathfrak{I}\left(x_t\right)-\mathfrak{I}\left(x_0\right) \\
+\int_0^t \dot{\Im} d \tau 
+  & =\Im\left(x_t\right)-\Im\left(x_0\right) \\
 V(x) 
-  & =\tfrac{h}{2} \Gamma\left(\tfrac{1}{2} \nabla \mathfrak{I} \cdot \nabla \mathfrak{I}-\nabla^2 \mathfrak{I}\right)
+  & =\tfrac{h}{2} \Gamma\left(\tfrac{1}{2} \nabla \Im \cdot \nabla \Im-\nabla^2 \Im\right)
 \end{aligned}
 \end{equation}
 $$
@@ -237,10 +239,10 @@ In this limit, the classical path is the most likely path that can be described 
 $$
 \begin{equation}\tag{1.11}
 \begin{aligned}
-\delta_x\mathcal{A}(\pmb x[\tau]) 
+\delta_x\cal{A}(\pmb x[\tau]) 
   &= 0 \\
   &\Rightarrow \pmb{\dot x}(\tau) = f(\pmb x(\tau)) \\
-  &\Rightarrow \pmb x[\tau] = argmin_{x[\tau]} \mathcal{A}(x[\tau])
+  &\Rightarrow \pmb x[\tau] = argmin_{x[\tau]} \cal{A}(x[\tau])
 \end{aligned}
 \end{equation}
 $$
@@ -271,7 +273,7 @@ We have used the (Einstein) summation convention here, with an implicit summatio
 $$
 \begin{equation}\tag{1.13}
 \begin{aligned}
- \lim_{Q,\Gamma \rightarrow 0}\mathcal{A}(x[\tau]) 
+ \lim_{Q,\Gamma \rightarrow 0}\cal{A}(x[\tau]) 
    &= \int_0^T \dot{x}(\tau)^{i} g_{ij} \dot{x}(\tau)^j dt \geq \ell^2 \\
 g &= \cfrac{1}{4\Gamma}
 \end{aligned}
@@ -289,7 +291,7 @@ In the present setting, following (Crooks, 2007), one can characterise systemic 
 $$
 \begin{equation}\tag{1.14}
 \begin{aligned}
-\mathfrak{I}(x,\tau) = \lambda^i (\tau)\zeta_i (x) + \ln Z
+\Im(x,\tau) = \lambda^i (\tau)\zeta_i (x) + \ln Z
 \end{aligned}
 \end{equation}
 $$
@@ -496,7 +498,7 @@ It follows that autonomous entropy production is always zero or less (because th
 $$
 \begin{equation} \tag{2.5}
 \begin{aligned}
-f_{\alpha}(\alpha) = (Q_{\alpha\alpha} - \Gamma_{\alpha\alpha})\nabla_{\alpha}\Im(\alpha) \Rightarrow p(\dot{\alpha}|\alpha) = \mathcal{N}(f_{\alpha}(\alpha), 2\Gamma_{\alpha}) \\
+f_{\alpha}(\alpha) = (Q_{\alpha\alpha} - \Gamma_{\alpha\alpha})\nabla_{\alpha}\Im(\alpha) \Rightarrow p(\dot{\alpha}|\alpha) = \cal{N}(f_{\alpha}(\alpha), 2\Gamma_{\alpha}) \\
 \end{aligned}
 \end{equation}
 $$
@@ -506,9 +508,9 @@ Following (1.11), when random fluctuations dominate, the most likely (marginal) 
 $$
 \begin{equation} \tag{2.6}
 \begin{aligned}
-\delta_{\alpha}\mathcal{A}(\alpha[\tau]) &= 0 \\
+\delta_{\alpha}\cal{A}(\alpha[\tau]) &= 0 \\
 &\Rightarrow \dot{\alpha} = f_{\alpha}(\alpha) = (Q_{\alpha\alpha}-\Gamma_{\alpha\alpha})\nabla_{\alpha}\Im (\alpha) \\
-&\Rightarrow \alpha[\tau] = argmin_{\alpha[\tau]}\mathcal{A}(\alpha[\tau]) \\
+&\Rightarrow \alpha[\tau] = argmin_{\alpha[\tau]}\cal{A}(\alpha[\tau]) \\
 \end{aligned}
 \end{equation}
 $$
@@ -684,7 +686,7 @@ However, for most values of the parameters, weakly mixing behaviour emerges, as 
 
 #### The Markov blanket
 
-Because the structural and functional dependencies share the same adjacency matrix – which depends upon position – one can use the adjacency matrix to identify the principal Markov blanket using spectral graph theory: the Markov blanket of any subset of states encoded by a binary vector with elements $\mathcal{X}_i \in \{0,1\}$ is given by $[B\cdot\mathcal{X}]\in\{0,1\}$, where the Markov blanket matrix $B=A+A^T+A^TA$ encodes the children, parents and parents of children. The principal eigenvector of the (symmetric) Markov blanket matrix will – by the Perron–Frobenius theorem – contain positive values. These values reflect the degree to which each state belongs to the cluster that is most densely coupled. In what follows, the internal particles (i.e., macromolecules) were the particles with the k = 8 largest values. Having identified internal particles, the Markov blanket can be recovered from the Markov blanket matrix using $[B\cdot\mathcal{X}]$ and divided into sensory and active particles – depending upon whether they are influenced by the external particles or not.
+Because the structural and functional dependencies share the same adjacency matrix – which depends upon position – one can use the adjacency matrix to identify the principal Markov blanket using spectral graph theory: the Markov blanket of any subset of states encoded by a binary vector with elements $\cal{X}_i \in \{0,1\}$ is given by $[B\cdot\cal{X}]\in\{0,1\}$, where the Markov blanket matrix $B=A+A^T+A^TA$ encodes the children, parents and parents of children. The principal eigenvector of the (symmetric) Markov blanket matrix will – by the Perron–Frobenius theorem – contain positive values. These values reflect the degree to which each state belongs to the cluster that is most densely coupled. In what follows, the internal particles (i.e., macromolecules) were the particles with the k = 8 largest values. Having identified internal particles, the Markov blanket can be recovered from the Markov blanket matrix using $[B\cdot\cal{X}]$ and divided into sensory and active particles – depending upon whether they are influenced by the external particles or not.
 
 [FIGURE 6](./img/06.png)
 <p style="text-align: center;">FIGURE 6</p>
@@ -1029,7 +1031,7 @@ An alternative perspective on this adiabatic reduction is provided by the notion
 $$
 \begin{equation}\tag{4.12}
 \begin{aligned}
-\mathcal{L}(x_{n}^{(i)},\dot{x}_{n}^{(i)}) & = \tfrac{1}{2}[(\dot{x}_{n}^{(i)}-\phi_{n}^{(i)})\cdot(2\Gamma_{n}^{(i)})^{-1}(\dot{x}_{n}^{(i)}-\phi_{n}^{(i)})+\nabla\cdot\phi_{n}^{(i)}] \\
+\cal{L}(x_{n}^{(i)},\dot{x}_{n}^{(i)}) & = \tfrac{1}{2}[(\dot{x}_{n}^{(i)}-\phi_{n}^{(i)})\cdot(2\Gamma_{n}^{(i)})^{-1}(\dot{x}_{n}^{(i)}-\phi_{n}^{(i)})+\nabla\cdot\phi_{n}^{(i)}] \\
 \phi_{n}^{(i)} &= f_{n}^{(i)}+\textstyle\sum_m\lambda_{nm}^{(i)} x_{m}^{(i)} \\
 \\
 \{x_{n}^{(i)}\} &= \pmb{R}\circ\pmb{G}\circ\{x_{n}^{(i-1)}\} \\
@@ -1535,7 +1537,7 @@ It is interesting to note that this dissipative part corresponds to the path-ind
 $$
 \begin{equation}\tag{6.10}
 \begin{aligned}
-\mathcal{L}(\pi,\dot{\pi}
+\cal{L}(\pi,\dot{\pi}
   &= \underbrace{\tfrac{1}{4\Gamma}(\dot{\pi}\cdot\dot{\pi}+\tfrac{1}{4\Gamma}f\cdot f)+\tfrac{}{}\nabla\cdot F}_{\text{path-dependent}}
      -\underbrace{\tfrac{1}{2\Gamma}\dot\pi\cdot f}_{independent}\\
   &= \underbrace{\tfrac{1}{4\Gamma}(\dot\pi \cdot \dot\pi+\tfrac{1}{4\Gamma}f\cdot f)+\tfrac{1}{2}\nabla\cdot f}_{non-dissipative} - \underbrace{\tfrac{1}{2k_B T}\bm{\dot p}}_{dissipative} \\
