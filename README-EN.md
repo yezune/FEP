@@ -840,7 +840,7 @@ $$
 \begin{equation}\tag{4.4}
 \begin{aligned}
 E[\varepsilon_j^{(i)}(\tau)\cdot \varepsilon_k^{(i)}(\tau)]
-  =
+  &=
 \begin{cases}
   \sum_j^{(i)} & :j=k \\
   0 & :j \neq k \\
@@ -3152,6 +3152,22 @@ $$
 $$
 \begin{equation}\tag{12.9}
 \begin{aligned}
+\begin{rcases}
+  \nabla_{\mu\eta} \\
+  \nabla_{\eta\mu} \\
+\end{rcases}
+  &= 0 \Rightarrow
+\begin{Bmatrix}
+  \Im(\eta|b,\mu) \\
+  \Im(\mu|b,\eta) \\
+\end{Bmatrix}
+   =
+\begin{Bmatrix}
+  \Im(\eta|b) \\
+  \Im(\mu|b) \\
+\end{Bmatrix}
+    \Rightarrow p(x)
+   = p(\eta|b)p(\mu|b)p(b) \\
 \\
 \end{aligned}
 \end{equation}
@@ -3160,6 +3176,16 @@ $$
 $$
 \begin{equation}\tag{12.10}
 \begin{aligned}
+\begin{rcases}
+  Q_{\eta b}\nabla_{\mu b}\Im \\
+  Q_{b \mu}^T\nabla\Im \\
+\end{rcases}
+  &= 0 \Leftarrow 
+\begin{Bmatrix}
+  Q_{\eta b} \\
+  Q_{\mu b} \\
+\end{Bmatrix}
+   = 0 \\
 \\
 \end{aligned}
 \end{equation}
@@ -3168,7 +3194,59 @@ $$
 $$
 \begin{equation}\tag{12.11}
 \begin{aligned}
-\\
+f(x)
+   = 
+\begin{bmatrix}
+  f_\eta(\eta,b) \\
+  f_s(\eta,b) \\
+  f_\mu(\mu,b) \\
+  f_a(\mu,b) \\
+\end{bmatrix}
+  &\Leftrightarrow 
+\begin{Bmatrix}
+  \nabla_\mu f_\eta \\
+  \nabla_\mu f_s \\
+  \nabla_\eta f_\mu \\
+  \nabla_\eta f_a \\
+\end{Bmatrix}
+   =
+\begin{Bmatrix}
+  (Q_{\eta\eta} -\Gamma_{\eta\eta})\nabla_{\mu\eta}\Im 
+    + Q_{\eta a}\nabla_{\mu a}\Im 
+    + Q_{\eta s}\nabla_{\mu s}\Im 
+    + Q_{\eta\mu}\nabla_{\mu\mu}\Im \\
+  (Q_{ss} -\Gamma_{ss})\nabla_{\mu s}\Im 
+    + Q_{sa}\nabla_{\mu a}\Im 
+    - Q_{\eta s}^T\nabla_{\mu\eta}\Im 
+    + Q_{s\mu}\nabla_{\mu\mu}\Im \\
+  (Q_{\mu\mu} -\Gamma_{\mu\mu})\nabla_{\eta\mu}\Im 
+    - Q_{a\mu}^T\nabla_{\eta a}\Im 
+    - Q_{s\mu}^T\nabla_{\eta s}\Im 
+    - Q_{\eta\mu}^T\nabla_{\eta\eta}\Im \\
+  (Q_{aa} -\Gamma_{aa})\nabla_{\eta a}\Im 
+    + Q_{a \mu}\nabla_{\eta\mu}\Im 
+    - Q_{sa}^T\nabla_{\eta s}\Im 
+    - Q_{\eta a}^T\nabla_{\eta\eta}\Im \\
+\end{Bmatrix}
+   = 0 \\
+  &\Rightarrow
+\begin{Bmatrix}
+  \nabla_{\mu\eta}\Im \\
+  \nabla_{\mu s}\Im \\
+  \nabla_{\eta\mu}\Im \\
+  \nabla_{\eta a}\Im \\
+\end{Bmatrix}
+   = 0 \Rightarrow
+\begin{bmatrix}
+  Q_{\eta a} & Q_{\eta\mu} \\
+  Q_{sa} & Q_{s\mu} \\
+\end{bmatrix}
+   =
+\begin{bmatrix}
+ Q_{\eta\alpha} \\
+ Q_{s\alpha} \\
+\end{bmatrix}
+   = 0 \\
 \end{aligned}
 \end{equation}
 $$
