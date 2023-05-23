@@ -3251,10 +3251,15 @@ f(x)
 \end{equation}
 $$
 
+[FIGURE 23](./img/23.png)
+<p style="text-align: center;">FIGURE 23</p>
+
 $$
 \begin{equation}\tag{12.12}
 \begin{aligned}
-\\
+f_\eta(\mu)
+  &\triangleq E_{p(\tilde \mu|\mu)}[f_\eta(\mu,\tilde \mu)]
+   = (\Gamma_{\eta\eta} - Q_{\eta\eta})\nabla_\eta\ln p(\mu) - Q_{\eta \tilde \eta} \nabla_{\tilde \eta} \ln p(\mu) \\
 \end{aligned}
 \end{equation}
 $$
@@ -3262,7 +3267,19 @@ $$
 $$
 \begin{equation}\tag{12.13}
 \begin{aligned}
-\\
+\begin{bmatrix}
+  f_\eta(x) \\
+  f_{\tilde \eta}(x) \\
+\end{bmatrix}
+  &=
+\begin{bmatrix}
+  \Gamma_{\eta\eta}-Q_{\eta\eta} & -Q_{\eta\tilde\eta} \\
+  Q^T_{\eta\tilde\eta}           & \Gamma_{\tilde\eta\tilde\eta} - Q_{\tilde\eta\tilde\eta} \\
+\end{bmatrix}
+\begin{bmatrix}
+  \nabla_\eta\ln p(x) \\
+  \nabla_{\tilde\eta}\ln p(x) \\
+\end{bmatrix}
 \end{aligned}
 \end{equation}
 $$
@@ -3270,7 +3287,15 @@ $$
 $$
 \begin{equation}\tag{12.14}
 \begin{aligned}
-\\
+f_\eta(\mu)
+  &\triangleq E_{p(\tilde\mu|\mu)}[f_\eta(\mu,\tilde\mu)] 
+   = \int f_\eta(x)p(\tilde\mu|\mu)d\tilde\mu \\
+  &= \int(\Gamma_{\eta\eta} -Q_{\eta\eta})\nabla_\eta \ln p(x) -Q_{\eta\tilde\eta}\nabla_{\tilde\eta}\ln p(x))p(\tilde\mu|\mu)d\tilde\mu \\
+  &= \int\Big((\Gamma_{\eta\eta} -Q_{\eta\eta})\nabla_\eta p(\tilde\mu|\mu)p(\mu) -Q_{\eta\tilde\eta}\nabla_{\tilde\eta}p(\tilde\mu|\mu)\Big)p(\mu)\frac{p(\tilde\mu|\mu)}{p(\tilde\mu,\mu)}d\tilde\mu \\
+  &= (\Gamma_{\eta\eta} - Q_{\eta\eta})\left(\frac{\nabla_\eta p(\mu)}{p(\mu)} + \int\nabla_\eta p(\tilde\mu|\mu)d\tilde\mu \right) 
+     - Q_{\eta\tilde\eta}\left( \frac{\nabla_{\tilde\eta}p(\mu)}{p(\mu)} + \int\nabla_{\tilde\eta} p(\tilde\mu|\mu)d\tilde\mu \right)\\
+  \\
+  &= (\Gamma_{\eta\eta} - Q_{\eta\eta})\nabla_\eta \ln p(\mu) - Q_{\eta\tilde\eta}\nabla_{\tilde\eta}\ln p(\mu) \\
 \end{aligned}
 \end{equation}
 $$
