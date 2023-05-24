@@ -2554,6 +2554,10 @@ q_\mu(\eta)
 \end{equation}
 $$
 
+Here, $\Gamma_{\sigma\sigma}$ is a positive semi-definite matrix that plays the role of a metric tensor, ensuring that free energy decreases with time. Variational free energy is guaranteed to be greater than the (negative log) marginal likelihood of blanket states (a.k.a., model evidence), because the KL divergence (a.k.a., evidence bound) in (8.21) – between the approximate and true posterior densities – cannot be less than zero (Beal, 2003). Note that variational free energy is an upper bound on the surprisal of blanket states, as opposed to particular states; as in (8.4). This means that internal states can only minimise variational free energy by reducing the evidence bound.
+
+**Proof**: the proof rests upon establishing the existence of an approximate posterior density that satisfies (8.21). This calls on a conditional synchronisation manifold associated with a (differentiable) mapping between the most likely internal and external states, conditioned upon the Markov blanket. We will refer to these as maximum _a posteriori_ or conditional modes:
+
 $$
 \begin{equation}\tag{8.22}
 \begin{aligned}
@@ -2569,6 +2573,12 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+The existence of this smooth ($C^1$ or higher) map $\sigma:\pmb \mu \to \pmb \eta$ is assured because for every point in blanket space there is a unique pair of conditional modes in the external and internal state-space. This map, induced by the Markov blanket, allows one to relate the flow of internal and external modes in terms of generalised synchrony (Barreto et al., 2003; Hunt et al., 1997). Technically, this is an instance of strong synchronisation [^note-28], because the dimensionality of the conditional manifold $M=\{(\pmb\mu,\pmb\eta):\sigma(\pmb\mu)=\pmb\eta\}$ is the same as the dimensionality of the blanket states: $(μ,η)\in \R^{|B|}$. The last equality in (8.22) follows because the flow of conditional modes must lie on the synchronisation manifold.
+
+[^note-28]: Weak synchronisation characterises coupling when the manifold has a greater dimensionality than the internal (or external) spaces.
+
+Using the chain rule $\nabla_\mu\Im(\sigma(\pmb\mu)|b)=\nabla_\mu\sigma\nabla_\eta\Im(\pmb\eta|b)$, one can now express the dynamics of the internal mode as a gradient flow on the surprisal of the external mode:
 
 $$
 \begin{equation}\tag{8.23}
@@ -2588,6 +2598,8 @@ $$
 \end{equation}
 $$
 
+Here, $(\nabla_\mu\sigma)^-$is the generalised inverse of the mapping from internal and external modes. Equation (8.23) says that the flow of the internal mode is effectively performing a gradient descent on the surprisal of the external mode. Now, let the internal mode parameterise a Gaussian density:
+
 $$
 \begin{equation}\tag{8.24}
 \begin{aligned}
@@ -2598,6 +2610,8 @@ q_\mu(\eta)
 \end{aligned}
 \end{equation}
 $$
+
+Under the Laplace assumption that the surprisal is quadratic (i.e., ignoring higher-order terms and derivatives), substitution into the expression for variational free energy (8.21) gives (dropping constants):
 
 $$
 \begin{equation}\tag{8.25}
@@ -2621,6 +2635,8 @@ F(\pmb \mu, b)
 \end{equation}
 $$
 
+This equation shows that the conditional precision minimises variational free energy, while the variational free energy gradients are the gradients of the surprisal of the external mode, which determines the flow of the internal mode. More specifically, by substituting (8.25) into (8.23) we obtain (8.21), where internal and active states can be expressed as a gradient flow on variational free energy:
+
 $$
 \begin{equation}\tag{8.26}
 \begin{aligned}
@@ -2634,6 +2650,14 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+The solenoidal flow disappears because $Q_{\eta\eta}$is antisymmetric. This ensures that $\Gamma_{\sigma\sigma}$ is positive semi-definite
+(because the covariance of random fluctuations is positive definite).
+
+**Corollary** (expected free energy). The corresponding corollary for expected free energy under the Laplace
+assumption obtains by removing the internal states from the energy term in (8.8); i.e., replacing $\alpha_\tau=(a_\tau,\mu_\tau)$
+with $a_\tau$ and $\alpha_\tau=(b_\tau,\mu_\tau)$ with $b_\tau$. Following the derivations for exact Bayesian inference we have, after a
+critical time:
 
 $$
 \begin{equation}\tag{8.27}
@@ -2658,6 +2682,8 @@ q_\tau(\eta_\tau, s_\tau|a_\tau)
 \end{equation}
 $$
 
+Similarly, under the Laplace assumption, (8.12) and (8.13) become:
+
 $$
 \begin{equation}\tag{8.28}
 \begin{aligned}
@@ -2678,6 +2704,10 @@ E_{p(a_\tau)}[G(a_\tau)]
 \end{equation}
 $$
 
+In other words, the average variational free energy of blanket states – and expected free energy of active states – approximates the entropy of blanket states. This means that any particle will appear to actively resist the dispersion of its Markov blanket by engaging in approximate Bayesian inference. We will return to this interpretation later. First, we consider a couple of different perspectives on this emergent property of the Markov blanket.
+
+Note that the conditional precision is the curvature of surprisal, evaluated at the conditional mode. Crucially, under the Laplace assumption, this curvature is also the Fisher information metric in (8.19):
+
 $$
 \begin{equation}\tag{8.29}
 \begin{aligned}
@@ -2688,6 +2718,10 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+In other words, the uncertainty about external states manifests as a Fisher information metric that equips the internal statistical manifold with a representational (i.e., information) geometry – a geometry where distances are measured in terms of the curvature of surprisal. See Figure 18 for an illustration of these relationships.
+
+Equation (8.25) uses the Laplace assumption to associate variational free energy gradients with gradients of surprisal: $\nabla_\mu F(\pmb\mu,b)=\nabla_\mu\Im(\sigma(\pmb\mu),b)$, effectively ignoring kurtosis (and higher order moments) of the NESS density over external states. This is known as maximum _a posteriori_ (MAP) estimation and follows the usual derivation of Variational Laplace, where the solution to (8.23) renders the variation of free energy, with respect to the variational density, zero; i.e., minimises variational free energy to second order (Friston et al., 2007):
 
 $$
 \begin{equation}\tag{8.30}
@@ -2710,6 +2744,10 @@ q_\mu(\eta)
 \end{equation}
 $$
 
+Clearly, these solutions never obtain in a dynamic setting; however, they can be recovered in a moving frame of reference, supplied by generalised coordinates of motion: see (Friston et al., 2010) and Appendix E. The final quality in (8.30) explains why variational free energy and variational Bayes are called ‘variational’ (Beal, 2003; Fox and Roberts, 2011; MacKay, 1995). From our perspective, the important thing here is that we have moved from exact Bayesian inference – in which the variational density was defined as the true posterior – to approximate Bayesian inference, where internal states (appear to) minimise a variational bound on surprisal. This distinction arises because we have committed to a particular form for the variational density; namely, a Gaussian form under the Laplace assumption that surprisal is locally quadratic.
+
+Finally, the last equality in (8.26) shows that the positive semidefinite matrices play the role of metric tensors where:
+
 $$
 \begin{equation}\tag{8.31}
 \begin{aligned}
@@ -2727,10 +2765,16 @@ g[\pmb \eta]_{k\ell}
 \end{equation}
 $$
 
+This suggests that the implicit representation of external states, by internal states, depends upon the amplitude of random fluctuations. The use of the word ‘representation’ here is qualified by the fact that internal states can be associated with a _Bayesian belief_ about external states. This endows the internal manifold with a representational (i.e., relational) meaning that inherits from its information geometry. In other words, the beliefs (approximate posterior densities) parameterised or encoded by internal states are _about something_; namely, the external states.
+
 [FIGURE 18](./img/18.png)
 <p style="text-align: center;">FIGURE 18</p>
 
+_Flow on the conditional synchronisation manifold_. This schematic illustrates the dynamics that underlies approximate Bayesian inference. Here, we are concerned with flows on a synchronisation manifold conditioned upon blanket states. For simplicity, we will consider just one external and one internal state. The manifold is depicted as a puce coloured line that maps from the most likely internal state to the corresponding external mode, given a blanket state. The flow on this manifold (i.e., tangential flow) can always be expressed as a gradient flow on a variational free energy function of the internal mode. Crucially, by construction, an approximate posterior (i.e., variational density) over external states can be recovered from the internal mode. The subtle aspect of this construction is that the variance of the approximate posterior corresponds to the curvature of the surprisal of external states with respect to (a function of) internal states. Note that the external and internal states are conditionally independent, given any blanket state (see upper left inset). Heuristically, this means that as time progresses, the internal and external modes trace out a trajectory on the conditional synchronisation manifold; thereby ensuring a differentiable mapping between the modes. This trajectory follows the gradients of variational free energy, which becomes a Lyapunov function for the flow of the most likely internal states. Because these internal modes parameterise an approximate posterior, the variational free energy _function_ of internal states can also be regarded as a _functional_ of posterior beliefs. In short, internal states can be said to ‘represent’ external states, in the sense of Bayesian inference.
+
 #### Summary
+
+To summarise, the flow of expected internal states in (8.21) ensures that the variational density approximates the conditional or posterior density over external states, under the Laplace assumption:
 
 $$
 \begin{equation}\tag{8.32}
@@ -2742,6 +2786,8 @@ q_\mu(\eta)
 \end{equation}
 $$
 
+Furthermore, if we assume a surjective mapping (e.g., nonlinear mixture) $\xi:\mu\to\pmb\mu$ from internal states to the internal manifold, we have:
+
 $$
 \begin{equation}\tag{8.33}
 \begin{aligned}
@@ -2752,8 +2798,27 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+This assumption means that the sufficient statistics of the variational density are encoded by nonlinear mixtures of internal states. To the extent this assumption holds, every internal state becomes part of the internal conditional synchronisation (i.e., statistical) manifold – and acquires an information geometry. The assumption of nonlinear mixtures implies a dimension reduction (from the dimensionality of internal states to the dimensionality of the internal manifold; i.e., blanket states). In turn, this means there will be degenerate internal states that are infinitesimally close, in terms of their information length.
+
+So how does this inferential interpretation relate to inference in the conventional statistical sense? Does the approximate Bayesian inference lemma mean that all random dynamical systems with a Markov blanket are little statisticians? The answer lies in noting that the surprisal in (8.25) $\Im(\sigma(\pmb\mu(b),b)=-\ln p(\pmb\eta(b),b)$ plays the role of a generative model in Bayesian statistics; namely, a probabilistic specification of how causes (external states) and consequences (blanket states) depend upon each other. This means the NESS density underwrites the generative model. In contrast, a statistician faced with some data would select a particular generative model, specify the approximate form of her posterior beliefs and then minimise variational free energy (i.e., maximise model evidence). However, the internal states do not ‘know’ the generative model; in the sense that the generative model is not represented explicitly. This is why we have previously asserted that the agent _is_ (or entails) a generative model of its world – as opposed to _possessing_ a generative model (Friston, 2013). For example, the curvature in (8.25), underwriting uncertainty, is ‘unknown’ to the internal states and is not ‘represented’. However, the _natural inference_ of self-evidencing is, unlike the statistician, guaranteed to use the correct generative model, because it has already been selected through the emergence of the Markov blanket and implicit generative model. In short, the natural statistician implied by a Markov blanket will always produce better (lower free energy) expectations of how its sensory data are caused but will not know (i.e. represent) how it arrived at those expectations. In short, any (active) particle will look ‘as if’ it is performing Bayesian inference and – as we will see in the next section – Bayesian beliefs can be recovered from internal states. However, this ‘as if’ inference does not consider competing hypotheses – or perform any Bayesian model selection – in the usual sense of Bayesian statistics, because it is always using the true model. The emergence of model selection and planning rests on deep generative models that we will consider in the penultimate section.
+
+Although the approximate Bayesian inference lemma may appear rather involved, there is a deflationary account at hand: all we are doing here is to note that at nonequilibrium steady-state there must be a pair of internal and external modes for every blanket state. If we know the mapping between these modes, then the internal state tells us about the distribution of external states: namely, there is a direct correspondence between the internal and external modes, while the implicit dispersion of external (i.e., hidden) states is just the curvature of the conditional (i.e., posterior) surprisal, given the blanket state. In turn, this is the curvature of the marginal (i.e., prior) surprisal plus the curvature of the conditional (i.e., likelihood) surprisal associated with blanket state (i.e., data), given the external state. All this follows naturally from Bayes rules – hence Bayesian mechanics. The only formal issue here is the nature and existence of the posterior. We have assumed it can be approximated with a Gaussian density. This (Laplace) assumption becomes more tenable when working in generalised coordinates of motion (Friston et al., 2010), which licenses an appeal to the Takens embedding theorem (Deyle and Sugihara, 2011; Takens, 1980), to establish the existence of a well-behaved conditional synchronisation manifold.
+
+In summary, this section suggests that the existence of a Markov blanket in any (weakly mixing) random dynamical system means that internal states can be treated as parameterising a Bayesian belief or (approximate) posterior probability density over external states. More specifically, the most likely internal states – induced by external impressions on the Markov blanket – come to encode the most likely external states. This formulation of sentient or representational dynamics rests upon the notion of (conditional) synchronisation of chaos – between internal and external states – that provides a nice mathematical metaphor for Freeman’s “Kiss of chaos” (Freeman, 1995).
+
+Notice that the ensuing representations are encoded by the most likely internal states and, implicitly, trajectories on the internal manifold. Practically, this means that one would have to take the average responses of internal states to disclose their sentient nature. We turn to this issue next, in the context of empirical studies that use event-related averaging. The key point here is that in the life sciences; particularly in the neurosciences, the encoding of representations almost invariably involves taking averages, when examining the neural correlates of perceptual inference. Interestingly, this averaging is mandated under the current treatment, via the use of conditional modes (or averages). In the next section, we use see how inference and representation emerge in a familiar way, even in relatively simple systems like viruses or bacteria.
+
 ### Simulating sentience
+
+This section uses the microscopic denizen of our synthetic soup to illustrate the nature of Bayesian inference afforded by conditional synchronisation. In brief, we first consider how to identify the mapping between internal and external modes, conditioned upon blanket states; which underwrites the conditional synchronisation manifold $\sigma:\pmb\mu\to\pmb\mu$ and ensuing inference. Numerically, this entails scrolling through the time-series, identifying when particular configurations of Markov blanket states recur and taking the mode or average of concurrent internal and external states. The conditional synchronisation manifold can then be estimated by regressing the average external states on (some nonlinear function of) the average internal states. Having identified the synchronisation manifold, it is straightforward to evaluate the posterior belief associated with any (expected) internal state – about the external state – and any uncertainty, in terms of the curvature in (8.24). To illustrate this representational behaviour, we will take a subset of (electrochemical) states of internal particles and see to what extent they encode or represent fluctuations in the (motion) states of external particles.
+
+We then revisit this behaviour from the point of view of an electrophysiologist, who assembles ensemble averages of internal states – in the form of event-related potentials – and tries to identify whether any trajectories are time locked to fluctuations of external states; for example, the presentation of a visual motion stimulus. We will see that the ensuing ensemble averages bear a remarkable similarity to the kind of results seen in empirical event-related potential (ERP) studies.
+
 #### The representation of order
+
+To keep things simple, we will focus on the representation of a single attribute of the external world; namely, the collective motion of external macromolecules, as encoded by internal electrochemical states (very much like the neuronal firing encodes visual motion). To first identify the conditional expectations, the internal and external states were averaged, according to their proximity to blanket states, over the penultimate 512 seconds of the simulation:
+
 $$
 \begin{equation}\tag{9.1}
 \begin{aligned}
@@ -2770,11 +2835,35 @@ $$
 \end{equation}
 $$
 
+Here, $\pmb\sigma(\cdot)$ is a softmax (i.e., normalised exponential) function of the (squared) Mahalanobis distance between the
+blanket state of at every point in time $b(t)$ and the time upon which $b(\tau)$ was conditioned. This averaging procedure creates two sets of time-series, corresponding to estimates of the expected internal and external states, conditioned upon the realised values of the Markov blanket. To identify the synchronisation manifold, canonical covariates analysis was used to identify the principal canonical vectors that showed the greatest (canonical) correlation between the internal and external states examined. Finally, the synchronisation manifold _per se_ was identified using a fifth order polynomial regression of the expected external canonical variate on the expected internal variate. Intuitively, this characterisation of representational coupling (between internal and external states) is in terms of linear mixtures that correspond to canonical vectors, whose expressions over time correspond to canonical variates. In this instance, the external vector is a distributed pattern of motion; like a convection swirl around the little organism. The internal vector can be regarded as a distributed representation in terms of electrochemical (e.g., neuronal) patterns of activity. In short, we were effectively looking for evidence that our synthetic creature could detect and represent motion in its external milieu, using its internal electrochemistry.
+
+The upper left panel of Figure 19 shows the first canonical vector of motion over the external states (green arrows), which is represented by the internal states (blue dots). The blue and cyan dots are placed at the location of internal and external states, respectively. The colour level reflects the norm (sum of squares) of the first canonical vector showing the greatest covariation between external and internal states. The upper right panel illustrates a synchronisation manifold (conditioned upon the Markov blanket) that maps from the electrochemical states of internal macromolecules to the velocity of external macromolecules. The blue dots identify the manifold _per se_, while the cyan dots are the expectations in (9.1) used to estimate the manifold (using a fifth order polynomial regression). The middle panel shows the same information but plotted as a function of time during the last 512 seconds of the simulation. In this format, the posterior or conditional expectations are based upon the electrochemical states of internal macromolecules, while the real motion is shown as a cyan line. The blue shaded areas correspond to 90% confidence intervals. The key thing to note here is that the real motion lies, almost universally, within the 90% confidence intervals that are based on the variational density: see (8.24).
+
+The lower left panel illustrates simulated event-related potentials of the sort shown in the insert on the lower right. This illustrative example was taken from a study of autistic spectrum disorder reported in (Modi and Sahin, 2017). These are responses to alternating chequerboard visual stimuli in humans. The simulated ERP shows a remarkable similarity – and was obtained by time-locking the internal electrochemical states to the six time points that showed the greatest expression of the first canonical variate; i.e., motion of external states. The dotted lines correspond to the simulated (internal) responses around the six time points (indicated by the vertical lines in the middle panel), while the solid lines correspond to the average – as in an event-related potential ERP. The blue lines are the responses of internal states, while the cyan lines correspond to the real motion associated with the first canonical vector.
+
+
 [FIGURE 19](./img/19.png)
 <p style="text-align: center;">FIGURE 19</p>
+
+_Sentient dynamics and the representation of order_. This figure illustrates approximate Bayesian inference that follows when associating the internal states of a system with a variational (i.e., approximate posterior) density over external states. The upper left panel shows the first canonical vector of motion over the external states (green arrows) that are represented by the internal states (blue dots). The blue and cyan dots are placed at the location of internal and external states, respectively. The colour level reflects the norm (sum of squares) of the first canonical vectors showing the greatest covariation between external and internal states. The upper right panel illustrates a synchronisation manifold (conditioned upon the Markov blanket) that maps from the electrochemical states of internal macromolecules to the velocity of external macromolecules. The blue dots identify the manifold _per se_, while the cyan dots are the estimated expectations used to estimate the manifold (using a fifth order polynomial regression). The middle panel shows the same information but plotted as a function of time during the last 512 seconds of the simulation. In this format, the conditional expectation is based upon the electrochemical states of internal macromolecules, while the real motion is shown as a cyan line. The blue shaded areas correspond to 90% confidence intervals. The lower left panel illustrates simulated event-related potentials of the sort illustrated by the insert (lower right panel). The simulated ERP (lower left panel) was obtained by  time locking the internal electrochemical states to the six time points that showed the greatest expression of the first canonical variate (indicated by the vertical lines in the middle panel). The dotted lines are six trajectories around these points in time, while the solid lines correspond to the average. The blue lines are the responses of internal states, while the cyan lines correspond to the real motion associated with the first canonical vector. The timing in the lower panels has been arbitrarily rescaled to match empirical peristimulus times.
 #### Summary
 
+n summary, numerical analyses suggest that (average) internal states can represent, in a Bayesian sense, (average) external states with a remarkable degree of fidelity. Furthermore, this form of representation endorses the standard practice in electrophysiology of trying to match average internal neuronal states with repeated stimuli – a practice that is seen almost universally in physiology. Note that we have focused on the first pair of canonical vectors. There were, in fact, 24 pairs, many of which showed an extremely high canonical correlation. This means that although we have illustrated the encoding of a single pattern of external motion, the actual representation was high dimensional – and could be used to reconstruct the movement of macromolecules in the external milieu. Having said this, the above demonstration is sufficient for our purpose, which was to illustrate the dynamical and distributed nature of neuronal representation; e.g., (Freeman, 1994).
+
+In the foregoing, we have focused on gradient flows as the vehicle for Bayesian mechanics. However, this flow is a solenoidal gradient flow with divergence free flow or flux. It is interesting to speculate on how this flow manifests in dissipative structures and, in particular, in biotic systems [^note-29] . One important observation is that the existence of a Markov blanket necessarily introduces an asymmetry in dynamical coupling among particular states and their external milieu. Almost universally, this elementary form of symmetry breaking induces solenoidal flow at nonequilibrium steady-state (Yan et al., 2013), which – to an empirical eye – will manifest as oscillations. This is interesting because much of empirical neuroscience (and beyond) is occupied with oscillations and their ontology (Breakspear et al., 2010; Burgess et al., 2007; Buzsaki, 1998; Buzsaki and Moser, 2013; Giraud and Poeppel, 2012; Jensen et al., 2014; Lisman, 2012; Lopes da Silva, 1991; Sejnowski and Paulsen, 2006; Uhlhaas and Singer, 2010).
+
+[^note-29]: My thanks to Jin D. Wang for correspondence on this notion.
+
+From the perspective of Bayesian mechanics, solenoidal flow is an inherent component of generalised Bayesian filtering: see Appendix E. In other words, if neuronal dynamics constitute a solenoidal gradient flow on variational free energy, then the solenoidal part can be associated with a prediction of how external states are changing, while the solenoidal, curl-free part is driven to minimise a variational bound on surprisal. From the perspective of an engineer, this is exactly the form of a Kalman-Bucy filter (a.k.a. predictive coding in neuroscience) (Dauwels, 2007; Roweis and Ghahramani, 1999). In short, the divergence free flows – that attend dissipative structures with Markov blankets – may play a key role in self-evidencing; especially, if we consider that one particle is trying to predict another particle that is, itself is oscillating. In turn, this brings us to another view on generalised synchronisation of dissipative structures that may undergird things like communication among ensembles – of particles (e.g., conspecifics) – that are trying to infer themselves (Friston and Frith, 2015; Hunt et al., 1997).
+
+So far, we have looked at the sentient aspect of Bayesian mechanics, in terms of inferring external states. In the remaining sections, we turn to the role of active states in the (active) inference that accompanies self-organisation;i.e., self-evidencing (Hohwy, 2016; Palacios et al., 2017).
+
 ### Active inference and self-evidencing
+
+_"Each movement we make by which we alter the appearance of objects should be thought of as an experiment designed to test whether we have understood correctly the invariant relations of the phenomena before us, that is, their existence in definite spatial relations."_ (Helmholtz, 1878 (1971)) p.384
+
+In the preceding sections, we saw that the expected flow of internal states is consistent with a minimisation of variational free energy that reduces the KL divergence between an approximate and true (posterior) probability over hidden states, conditioned on blanket states:
 
 $$
 \begin{equation}\tag{10.1}
@@ -2785,6 +2874,10 @@ q_\mu(\eta)
 \end{aligned}
 \end{equation}
 $$
+
+This furnishes an account of internal states in which they (appear to) play the role of sufficient statistics of posterior beliefs about external states. But what about the active states – is there an equivalent account? Note that internal states are behind the Markov blanket and cannot directly influence external states and, by implication, the Markov blankets of other particles. This means their influence is mediated vicariously by active states. So, what do we know about the active states?
+
+From (8.21), the flow of the most likely autonomous states can be expressed as a gradient descent on variational free energy, under the Laplace assumption.
 
 $$
 \begin{equation}\tag{10.2}
@@ -2809,7 +2902,15 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+This is consistent with the constraint that autonomous states are driven by, and only by, particular states. Equation (10.2) also emphasises the fact that both internal and active modes are effectively trying to minimise the same quantity; namely, free energy functionals of implicit beliefs over hidden states. This provides an elementary description of sentient behaviour (Friston et al., 2017a) – a description that rests on the same free energy functional used in approximate Bayesian inference and machine learning (Beal, 2003). The final equalities above retain the terms from (8.21) that determine the gradients and subsequent flow of internal and active states; namely, the evidence bound and accuracy, respectively. On an anthropic view, internal states therefore strive to form veridical beliefs about external states (c.f., perception), while active states try to fulfil the ensuing beliefs to make them as accurate as possible (c.f., action). This is often cast in terms of a perception-action cycle (Friston et al., 2006; Fuster, 2004). This interpretation could be read as a purely epistemological exercise, in the sense that one can also cast self-evidencing as a gradient flow on particular surprisal or log-evidence: see (10.2). So, does variational free energy bring anything else to the table?
+
+Things get more interesting when we consider autonomous behaviour in terms of _expected free energy_. In what follows, we will compare and contrast accounts of self-organisation – based upon gradient flows – with descriptions based upon the selection of trajectories that minimise expected free energy in the future. However, to evaluate expected free energy, one needs a posterior predictive density. This is available via posterior beliefs about external states that underwrite the variational free energy formulation (i.e., approximate Bayesian inference). In brief, if the evidence bound is minimised by internal states, the variational density becomes a good approximation to the true posterior required to evaluate expected free energy. In turn, the minimisation of expected free energy endows self-organisation with a prospective and intentional aspect, which we will now consider in greater depth.
+
 #### Active inference with continuous states
+
+So far, we have a formulation in which internal states encode an approximate posterior over hidden states, which is used to predict the sensory states that active states will (appear to) realise (8.21). This realisation can be characterised as the most likely trajectory of autonomous states from any particular state. Recall from the expected free energy lemma (8.7) that the surprisal of future autonomous states can be expressed in terms of expected free energy:
+
 $$
 \begin{equation}\tag{10.3}
 \begin{aligned}
@@ -2835,7 +2936,25 @@ G(\alpha_\tau)
 \end{aligned}
 \end{equation}
 $$
+
+This suggests that the trajectory of active (and internal) states from $\pi_0$ will (appear to) minimise expected surprisal (i.e., uncertainty about outcomes in the future). This is equivalent to minimising risk and ambiguity, where risk (i.e., complexity cost) is the expected KL divergence between the (posterior) predictive and prior density – describing the sorts of states the system typically occupies. In other words, active states will appear to fulfil prior beliefs about states of affairs beyond the Markov blanket.
+
+In (10.3), we have separated ambiguity into the ambiguity of sensory states (i.e., _sensory ambiguity_) and the expected surprisal of autonomous states, given hidden states (i.e., _active ambiguity_). The latter corresponds to the (negative log) likelihood of autonomous states and reflects the most likely responses of a particle under the (posterior) predictive density. This likelihood is sometimes characterised as a _state-action_ policy in psychology and machine learning; e.g., (Dolan and Dayan, 2013; Gershman and Daw, 2017; LeCun et al., 2015). The distinction between the final two terms above (_active ambiguity_ and _risk_) maps nicely to the distinction between habitual and goal-directed behaviour in psychology (Balleine and Dickinson, 1998; Dezfouli and Balleine, 2013; Dolan and Dayan, 2013). This distinction rests upon the context-sensitivity of goal-directed behaviour implicit in minimising the divergence between predicted and preferred states; while habits are elicited as the most likely response to an inferred state of affairs. These two components are, however, not sufficient to describe active inference, because they are contextualised by the epistemic imperative to minimise conditional uncertainty about sensory states. In cognitive neuroscience, this ultimately leads to ambiguity reducing, curious behaviour that underwrites the exploratory (i.e., epistemic) foraging that characterises self-evidencing (Baranes and Oudeyer, 2009; Berlyne, 1950; Friston et al., 2017b; Schmidhuber, 2006; Still and Precup, 2012).
+
+In short, if a particle actively minimises expected free energy, it will self-organise. Equivalently, self-organising particles will appear to minimise expected free energy. The important thing here is that expected free energy is a function of, and only of, particular states. This means that if we observed a particle at nonequilibrium steady-state, it would look as if the internal states were guiding active states. The ensuing behaviour would, on average, appear to minimise uncertainty (expected surprisal) via the minimisation risk and ambiguity.
+
+One might ask what the formulation of expected free energy – in terms of risk and ambiguity – offers beyond an epistemological account. We will see below that it is possible to define expected free energy in terms of beliefs about hidden states (that constitute risk), to specify the dynamics of sentient systems. This can be useful when simulating self-organisation to an attracting set, defined in terms of prior beliefs $p(\eta_\tau)$ or _preferences_ (Friston et al., 2015b). This is an important move, beyond simply characterising self-organisation, towards creating systems that engage in active inference. In short, one can prescribe self-organisation in terms of preferred states by solving for autonomous trajectories that satisfy (10.3).
+
+Interestingly, expected free energy shares a mathematical heritage with (incomputable) formulations of artificial general intelligence based upon Universal Computation; i.e., a combination of Solomonoff induction with sequential decision theory (Hutter, 2006). This heritage rests on the relationship between the complexity term in variational free energy and algorithmic complexity (Hinton and Zemel, 1993; Wallace and Dowe, 1999), which can be articulated in terms of information length and total variation distance. However, unlike Solomonoff induction, variational free energy is computable because it uses bound approximations (Feynman, 1972). We now take a closer look at expected free energy and the sorts of behaviours its minimisation would manifest.
+
 #### Active inference with discrete states
+
+The final move – in theoretical biology – is to assume a particular form for the generative model and ask whether expected free energy is sufficient to explain the behaviour of sentient creatures like ourselves. We have seen nonequilibrium steady-state dynamics can be cast as approximate Bayesian inference. Now, we can ask: what would happen if this model included the dependencies of external (hidden) states on active states? This would lead to a curious situation in which internal states parameterise beliefs about active states, leading to a fundamental distinction between active states _per se_ – that conform to the particular free energy lemma – and the particle’s approximate posterior _beliefs about its active states_. These posterior beliefs rest upon a generative model equipped with a prior, over the trajectories of active states (i.e., policies), that conforms to the expected free energy lemma. This leads to a more prospective form of active inference that entails a generative model of trajectories and a form of self-organisation that starts to look like autopoiesis; i.e., self-creation of a definitive biological sort (Maturana and Varela, 1980; Thompson and Varela, 2001). This kind of particle would look as if it was inferring its own behaviour and indeed selecting actions from the risk sensitive, ambiguity reducing, policies it inferred were the most likely.
+
+The pragmatic move here shifts from deriving the nonequilibrium steady-state density from any given dynamics – using the Fokker Planck formulation – to deriving the dynamics from any given density – using the expected free energy. In the context of active inference, the NESS density corresponds to the prior preferences, over external states, which specify a prior over future autonomous states; i.e., beliefs about autonomous behaviour.
+
+The models usually entertained in this setting consider continuous state-spaces – leading to schemes like predictive coding (Bastos et al., 2012; Rao and Ballard, 1999) – or discrete state-space models that are more apt for modelling discrete choices and decisions in an experimental setting (Friston et al., 2017a). In what follows, we briefly consider the minimisation of expected free energy under discrete models. Under discrete states, the expected free energy can be expressed as follows (see Appendix F for details):
+
 $$
 \begin{equation}\tag{10.4}
 \begin{aligned}
@@ -2857,6 +2976,10 @@ Q_i
 \end{equation}
 $$
 
+In this context, prior preferences $P(\eta_\tau|\alpha^i)$ specify (a bound on) the prior probability of a sequence of active states; usually denoted by a policy, $\alpha^i=(\alpha_1^i,\ldots,\alpha_\tau^i)$. This construction is slightly simpler than the continuous state-space formulations we have been dealing with so far. Here, the variational density is specified in terms of a sensory likelihood that does not depend upon active states (because sensory states depend only on hidden states in the generative models in question; e.g., hidden Markov models and Markov decision processes).
+
+Equation (10.4) describes how policies are sampled when a particle self-organises to nonequilibrium steady-state – that becomes the 'preferred' state. The converse suggests that any particle that samples its policies according to (10.4) should show  elf-organising, self-evidencing behaviour:
+
 $$
 \begin{equation}\tag{10.5}
 \begin{aligned}
@@ -2868,10 +2991,23 @@ p(a^i|\pi_0)
 \end{equation}
 $$
 
+To incorporate the prior belief that policies should be selected to minimise expected free energy, it is usual to assume a generative model of trajectories, under each allowable or plausible policy. The minimisation of variational free energy then proceeds using belief propagation or variational message passing, under a generative model specified by a likelihood matrix and policy-dependent state transition matrices (Friston et al., 2017c). Figure 20 illustrates the computational architecture implied by (10.4) and the figure legend lists a few examples of its application in neuroscience. The key point here is that all of these applications are predicated on the minimisation of expected free energy, following the treatment of self-organisation above.
+
+The computational efficiency afforded by discrete formulations of free energy minimisation reveals a qualitative distinction between two sorts of self-evidencing behaviour; namely, (i) reflexive, short term self-organisation – akin to homoeostasis (Ashby, 1947; Bernard, 1974) and (ii) deep, long-term, active inference – that speaks to planning and allostasis (Attias, 2003; Botvinick and Toussaint, 2012; Ramsay and Woods, 2014; Stephan et al., 2016; Sterling and Eyer, 1988; Sutton et al., 1999; Toussaint and Storkey, 2006). In terms of information lengths, this distinction can be associated with particles that have short and long critical times, respectively (8.15). We conclude this section by revisiting this shallow (short-term) vs. deep (long-term) distinction in terms of gradient flows vs. the selection of paths of least action.
+
 [FIGURE 20](./img/20.png)
 <p style="text-align: center;">FIGURE 20</p>
 
+_Bayesian mechanics and active inference_. This graphic summarises the belief updating implicit in the minimisation of variational and expected free energy. It provides a generic (active) inference scheme that has been used in a wide variety of applications and simulations; ranging from games in behavioural economics (FitzGerald et al., 2015) and reinforcement learning (Schwartenbeck et al., 2015) through to language (Friston et al., 2017d) and scene construction (Mirza et al., 2016). In this setup, discrete actions solicit a sensory outcome that informs approximate posterior beliefs about hidden or external states of the world – via minimisation of variational free energy under a set of plausible policies (i.e., _perceptual inference_). The approximate posterior beliefs are then used to evaluate expected free energy and subsequent beliefs about action (i.e., _policy selection_). Note a subtle but important move in this construction: the expected free energy furnishes prior _beliefs_ about policies. This is interesting from several perspectives. For example, it means that agents infer policies and, implicitly, active states. In other words, beliefs about policies – encoded by internal states – are distinct from the active states of the agent’s Markov blanket. In more sophisticated schemes, agents infer hidden states under plausible policies with a generative model based on a Markov decision process. This means the agent predicts how it will behave and then verifies those predictions based on sensory samples. In other words, agents garner evidence for their own behaviour and actively self-evidence. In this setting, variational free energy reflects the surprisal or evidence that a particular policy is being pursued. In sum, this means the agent (will appear to) have elemental beliefs about its enactive self – beliefs that endow it with a sense of purpose, in virtue of the prior preferences that constitute risk. A key insight from simulations is that the form of the generative model can be quite different from the process by which external states generate sensory states. In effect, this enables agents (i.e., particles) to author their own sensorium in a fashion that has close connections with econiche construction (Bruineberg and Rietveld, 2014). Please see (Friston et al., 2017c) for technical details and (Friston et al., 2017a) for a discussion of how the implicit belief
+updating might be implemented in the brain.
+
 #### Deep inference: gradient flows or least action?
+
+The expected free energy corollary says that the probability of a particular policy corresponds, in part, to its epistemic value in resolving uncertainty about hidden states of the world. Heuristically, this renders epistemic actions more probable, in virtue of maximising the information gain afforded by sensory samples in the future; i.e., the reduction of uncertainty anticipated under a particular course of action. This is sometimes called _epistemic affordance_ (Calvo and Friston, 2017; Proust, 2015).
+
+This follows, almost tautologically, from the definition of the sorts of particles we are trying to explain. In other words, self-evidencing particles will self-organise to minimise the conditional uncertainty about their blanket states, given hidden or external states; i.e., ambiguity (2.3). This underlies many influential formulations of perception in neuroscience; including the principle of minimum redundancy (Barlow, 1961; Barlow, 1974), the Infomax principle (Linsker, 1990) and formulations of epistemic foraging in terms of information theory and artificial curiosity (Bialek et al., 2001; Itti and Baldi, 2009; Schmidhuber, 2010; Still and Precup, 2012; Sun et al., 2011; Tishby and Polani, 2010). In the present formulation, internal states come to parameterise beliefs about external states – that enable an active sampling of unambiguous sensory states. Crucially, this enables the internal states to infer the external states, speaking to a circular causality that attends most treatments of self-organisation (Haken, 1983).
+
+From the particular free energy lemma (8.3), we can summarise self-organisation as a principle of least action cast in terms of variational free energy:
 
 $$
 \begin{equation}\tag{10.6}
@@ -2886,6 +3022,8 @@ $$
 \end{equation}
 $$
 
+This variational principle has been used extensively in simulations of emergent behaviour in the setting of morphogenesis and autopoiesis (self-assembly) in relatively simple systems (Friston et al., 2015a). A deeper self-organisation emerges when we equip the generative model $\Im(\eta,s,\alpha)$ – that defines variational free energy – with a temporal depth that encompasses trajectories or paths $\Im(\eta[\pmb\tau],s[\pmb\tau],\alpha[\pmb\tau])$. This deep generative model mandates a prior over active states in the future, which by (8.7), is available in terms of an upper bound on the surprisal of the endpoint of autonomous paths. If we retain the path-independent term of action in (1.10), then from (8.15) the most likely course of autonomous behaviour minimises expected free energy:
+
 $$
 \begin{equation}\tag{10.7}
 \begin{aligned}
@@ -2898,6 +3036,10 @@ G(\alpha_\tau)
 \end{equation}
 $$
 
+This formulation has been used extensively in simulations of visual foraging and decision-making in cognitive neuroscience; e.g., (Mirza et al., 2016). In these applications, the objective of trying to characterise interesting, self-organising attracting sets is turned on its head and (10.7) is used to select policies (i.e., trajectories of actions) under specified generative models. This deep active inference appears to be sufficient to account for many aspects of behaviour; ranging from the way that we sample our visual world with saccadic eye movements (Mirza et al., 2016), through to how we accumulate evidence for generative models and subsequently make decisions (Friston et al., 2015b). In short, the variational principles that underlie active inference are already implicit in many parts of the biological and social sciences.
+
+The above equalities suggest that there are two ways in which we could solve for autonomous behaviour, either by performing a gradient descent on variational free energy (10.6) or by selecting the path that minimises expected free energy (10.7). Both lead to plausible behaviours with sentient and biological aspects. Figure 21 shows an example of autonomous behaviour based upon the first (gradient flow) solution that reproduces a simple form of handwriting (and its observation). This example used the chain rule to emulate active responses to the predictions of a generative model – in a way that looks very much like classical reflex arcs in neurobiology (Adams et al., 2013):
+
 $$
 \begin{equation}\tag{10.8}
 \begin{aligned}
@@ -2906,6 +3048,11 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+Note that this use of the chain rule requires a formulation of dynamics in generalised coordinates of motion
+$\vec\pi\triangleq(\pi,\pi^{'},\pi^{''},\ldots)$: see Appendix E and (Friston et al., 2010).
+
+Equation (10.8) means that a change in active states produces a change in the higher order motion of sensory states that, in this example, is mediated by the generalised motion of external states. This example illustrates two points. First, all the interesting behaviour is generated by the beliefs encoded in internal states (here, a simple brain). In other words, the pullback attractor and associated nonequilibrium steady-state density are prescribed completely in terms of a particle’s (i.e., agent’s) beliefs. Heuristically, this means that the particle is the author or agent of its external dynamics and consequent sensorium. The second, more technical, point is that by using generalised coordinates of motion we have effectively specified dynamics in terms of local paths or trajectories. This follows from the Taylor expansion:
 
 $$
 \begin{equation}\tag{10.9}
@@ -2916,14 +3063,39 @@ $$
 \end{equation}
 $$
 
+The reason these paths are local is that random fluctuations mean that the trajectories not specified to any meaningful precision in the past or future. This begs the question: can we use expected free energy to specify active inference over longer paths?
+
+Figure 22 shows an example of using expected free energy to specify successive active states. In this example, saccadic eye movements were simulated to reproduce epistemic foraging of a visual scene (here, a face). Epistemic foraging means selecting behaviours that elicit the right sort of sensations, which resolve uncertainty about external states. This example is used to make two further key points. The first speaks to the epistemic, uncertainty or ambiguity resolving behaviour that emerges when using expected free energy to simulate active inference. This behaviour arises because the generative model had, in this instance, no prior preferences over external or hidden states; leaving just the information gain (a.k.a. salience) in (8.14). Put simply, active sampling of the visual scene was driven purely by informational imperatives to resolve uncertainty about the causes of sensations. The second point rests on the following question: could we have reproduced this behaviour using the gradient flow formulation?
+
+The answer is no. This is because assigning a high probability to autonomous activity that minimises expected free energy is, effectively, minimising the self-entropy of future states, leading to apparently purposeful activity. One can imagine that this produces remarkable kinetics that appears to contravene the laws that apply to inert particles; namely, a particle that moves as if it were insensitive to thermodynamic costs or gravitational forces. This autonomous, purposeful, information seeking, preference fulfilling activity may be a characteristic of biological self-organisation – that inherits from the same Langevin dynamics that underwrite classical laws.
+
 [FIGURE 21](./img/21.png)
 <p style="text-align: center;">FIGURE 21</p>
 
+_Autonomous movement_. This figure shows the results of simulating active inference (here, writing), in terms of conditional expectations about hidden states of the world, consequent predictions about sensory input and the ensuing behaviour. The autonomous dynamics that underwrite this behaviour rest upon prior expectations about states that follow Lotka-Volterra dynamics: these are the six (arbitrarily) coloured lines in the upper left panel. In this generative model, each state is associated with a location in Euclidean space that attracts the agent’s finger. In effect, the internal states then supply predictions of what sensory states should register if the agent’s beliefs were true. Active states try to suppress the ensuing prediction error (i.e., maximising accuracy) by reflexively fulfilling expected changes in angular velocity, through exerting forces on the agent’s joints (not shown);. The subsequent movement of the arm is traced out in the lower left panel. This trajectory has been plotted in a moving frame of reference so that it looks like synthetic handwriting (e.g., a succession of ‘j’ and ‘a’ letters). The lower left panels show the activity of one (the fourth) hidden state under ‘action’, and ‘action-observation’. During action, sensory states register both the visual and proprioceptive consequences of movement, while under action observation, only visual sensations are available – as if the agent was watching another agent. The red dots correspond to the time bins during which this state exceeded an amplitude threshold of two arbitrary units. They key thing to note here is that this unit responds preferentially when, and only when, the motor trajectory produces a down-stroke, but not an up-stroke. Please see (Friston et al., 2011) for further details. Furthermore, with a slight delay, this internal state responds during action and action observation. From a biological perspective, this is interesting because it speaks to an empirical phenomena known as mirror neuron activity (Gallese and Goldman, 1998; Kilner et al., 2007; Rizzolatti and Craighero, 2004).
+
 [FIGURE 22](./img/22.png)
 <p style="text-align: center;">FIGURE 22</p>
+
+_Epistemic foraging_. This figure shows the results of a simulation in which a face was presented to an agent, whose responses were simulated by selecting active states that minimised expected free energy following an eye movement. The agent had three internal images or hypotheses about the stimuli she might sample (an upright face, an inverted face and a rotated face). The agent was presented with an upright face and her posterior expectations were evaluated over 16 (12 ms.) time bins, until the next saccade was emitted. This was repeated for eight saccades. The ensuing eye movements are shown as red dots at the end of each saccade in the upper row. The corresponding sequence of eye movements is shown in the inset on the upper left, where the red circles correspond roughly to the proportion of the visual image sampled. These saccades are driven by prior beliefs about the direction of gaze based upon the salience maps in the second row. These salience maps are the expected free energy as a function of policies; namely, where to look next. Note that these maps change with successive saccades as posterior beliefs about the hidden states, including the stimulus, become progressively more confident. Note also that salience is depleted in locations that were foveated in the previous saccade, because these locations no longer have epistemic affordance (i.e., the ability to reduce uncertainty or expected free energy). Empirically, this is known as inhibition of return. Oculomotor responses are shown in the third row in terms of the two hidden oculomotor states corresponding to vertical and horizontal eye movements. The associated portions of the image sampled (at the end of each saccade) are shown in the fourth row. The final two rows show the accompanying posterior beliefs in terms of their sufficient statistics and stimulus categories, respectively. The posterior beliefs are plotted here in terms of posterior expectations and 90% confidence intervals. The key thing to note is that the expectation about the true stimulus supervenes over alternative expectations and, as a result, conditional confidence about the stimulus category increases (and the confidence intervals shrink to the expectation). This illustrates the nature of evidence accumulation when selecting a hypothesis or percept that best explains sensory states. Within-saccade accumulation is evident even during the initial fixation with further stepwise decreases in uncertainty as salient information is sampled at successive saccades. Please see (Friston et al., 2012) for further details.
+
 #### Summary
+
+In summary, this section has reviewed a physics of sentient dynamics that can be read at two levels. From a deflationary perspective, it is just a description of (weakly mixing) random dynamical systems that have certain kinds of attracting sets; namely, those that are coincidentally space occupying but with a low (self) entropy measure. In other words, if such random dynamical systems exist (i.e., possess a Markov blanket), they will look as if they conform to a variational principle of least action (10.6); where action is a functional of probabilistic beliefs encoded by internal states. Alternatively, one can regard the free energy lemmas as a description of self-organisation or, more specifically, self-evidencing.
+
+In brief, this more teleological account goes as follows: self-organisation emerges under active inference, in virtue of a conditional synchrony between external and internal states (induced by the Markov blanket). This synchrony affords a probabilistic representation of the ‘world outside’ (i.e., external states) by internal states. In turn, this enables the selection of policies (trajectories of autonomous states) that ensure a conditional synchrony through actively minimising uncertainty about hidden states. This description highlights the circular causality that underwrites a form of autopoiesis (Clark, 2017; Maturana and Varela, 1980; Seth, 2014) that, at the end of the day, minimises the variational free energy functional that upper bounds (negative log) evidence; hence, self-evidencing (Hohwy, 2016).
+
+The preponderance of autonomous states reflects the probability that they will lead to nonequilibrium steady-state. In this sense, the active states will look ‘as if’ that they have been selected to minimise expected free energy (i.e., self-entropy). This is simply a description of systems that self-organise to a random dynamical attractor. However, if a system’s generative model acquires a temporal depth – and the prior belief that its actions minimise expected free energy – the descriptive ‘as if’ aspect of Bayesian mechanics gives way to a deeper form of self-organisation; in which active states are effectively caused by the ‘beliefs’ held by a particle. Formally, this kind of deeply structured, self-evidencing requires an explicit generative model of future trajectories, where, crucially, the (path integral of) expected free energy furnishes a prior over policies.
+
+One might ask whether self-evidencing dynamics are themselves an emergent property (not dissimilar to self-organised criticality). This is probably a question too far for the current treatment; however, beyond the (strong) anthropic principle (Barrow et al., 2015) – that we exist as an inferential systems in a world of measurable Markov blankets – one can easily elude the emergence question. A more interesting possibility lies in the repertoire of random dynamical systems that show self-evidencing to a greater or lesser degree. Their persistence (and therefore probability of being found in the universe) may be intimately related to the depth of planning implicit in (10.7). In other words, particles with generative models that are sufficiently deep – to select from long sequences of autonomous behaviour – may be those sorts of systems we associate with biotic systems of increasing sophistication, sometimes referred to as counterfactual depth (Seth, 2015). This speaks to interesting issues about the nature of the generative model and representations of the future (and past), which are taken up elsewhere (Friston et al., 2015b). This also brings us back to the characterisation of self-organisation in terms of itinerancy, information lengths and associated thermodynamics.
+
 ### The thermodynamics of inference
+
+It is common to ask whether there is a quantitative relationship between thermodynamic and variational free energy. The formulations of Bayesian mechanics above provide a clear answer to this question. Because variational free energy is a function of a particle’s states (8.4), it corresponds to a thermodynamic potential. In contrast, thermodynamic free energy is an expectation over an ensemble of particles: see (6.6). This means that thermodynamic free energy is an attribute of an ensemble, while variational free energy is an attribute of a single particle. More specifically, as ensembles converge to their random dynamical attractors, thermodynamic free energy decreases. When the ensemble has attained nonequilibrium steady-state, the variational free energy of each particle constitutes (an upper bound on) surprisal or the NESS potential and, by implication, thermodynamic potential energy.
+
 #### Potentials and surprisal
+
+At nonequilibrium steady-state, there is a straightforward relationship between variational free energy and a particle’s thermodynamic potential: from (6.5) and (8.6):
 
 $$
 \begin{equation}\tag{10.10}
@@ -2945,6 +3117,14 @@ U(\pi)
 \end{equation}
 $$
 
+These expressions show that the thermodynamic potential of a particular state is proportional to the particular free
+energy, where F m is the normalisation constant based on the partition function. The interesting aspect of this
+relationship is the constant of proportionality that depends on the particle’s temperature or the amplitude of
+random fluctuations:  
+ m k B T . This relationship can be used to evaluate the heat generated by a trajectory
+of particular states where, from (6.2) and (6.7) we have (ignoring time-dependent thermodynamic potentials and
+forces):
+
 $$
 \begin{equation}\tag{10.11}
 \begin{aligned}
@@ -2961,8 +3141,29 @@ f_m(\pi,\tau)
 \end{equation}
 $$
 
+This is the limiting case of the Jarzynski relation (6.19), in the absence of a time-dependent potential. Just for fun,
+one can now work out the heat dissipated by doing something of note; namely, a ‘quantum of inference’ or change
+in variational free energy of three natural units (corresponding to an odds ratio of 20:1  exp(3):1) [^note-30]. This would
+generate 1.24 10 −20 J at a body temperature of 300 o K. For comparison, the Landauer limit (for the equivalent 4.32
+bits of information) at room temperature is 1.19 10 −20 J (Bennett, 2003; Landauer, 1961): see also (Matta and
+Massa, 2017). We have, somewhat arbitrarily, associated a quantum of belief updating – and implicit movement
+on a statistical manifold – with a (path-independent) divergence length of three nats. A related treatment of
+thermodynamics and belief updating, in terms of (path-dependent) information length, can be found in (Crooks,
+2007). These relationships suggest that Bayesian and stochastic mechanics are equivalent formulations of the
+same thing. One can either regard Bayesian inference is a necessary consequence of thermodynamics (i.e., gradient
+flows on a thermodynamic potential). Alternatively, Bayesian mechanics is a corollary of thermodynamics.
+“I suggest that we may never understand this strange thing, the quantum, until we understand how information
+may underlie reality. Information may not be just what we ‘learn’ about the world. It may be what ‘makes’ the
+world.” (Wheeler, 1989)
+
+[^note-30]: Typically regarded as strong evidence for one probabilistic belief over another – as articulated in terms of Bayes factors. The corresponding classical statistical inference requires $p < 0.05$.
+
 #### Ensemble free energies
 
+If thermodynamic free energy is an attribute of an ensemble, can we establish a relationship between
+thermodynamic free energy and the variational free energies of an ensemble of (exchangeable) particles; such as
+a collection of biological or chemical cells? From (6.6) it is evident that the average variational free energy over
+the ensemble becomes, as one might anticipate, thermodynamic entropy:
 $$
 \begin{equation}\tag{10.12}
 \begin{aligned}
@@ -2972,7 +3173,30 @@ S &= k_B E[F(\pmb \alpha, s)] \\
 \end{aligned}
 \end{equation}
 $$
+
+The expectation here is over the ensemble of particles or agents at nonequilibrium steady-state. This has the
+interesting implication that if every member of the ensemble is trying to minimise their variational free energy,
+then the thermodynamic entropy of the ensemble will also be minimised. See (Friston et al., 2015a) for an example
+of how this ensemble perspective can be used to simulate pattern formation and morphogenesis in ensembles of
+(simulated) cells.
+
 #### Summary
+
+The thermodynamic take on the complexity cost of Bayesian inference is potentially important from a practical
+point of view. It suggests that statistical and thermodynamic efficiency go hand-in-hand. This raises interesting
+questions: for example, if a machine learning or inference scheme dissipates large amounts of heat, is it statistically
+inefficient? Could thermodynamic potential be used as a proxy for surprisal and Bayesian model evidence? And
+so on.
+
+Table 5 summarises the various potentials we have considered in previous sections in terms of surprisal – and
+implicitly the variational free energy that underwrites inference. The basic message here is that to characterise
+any mechanics, it is sufficient to specify the surprisal and amplitude of random fluctuations. The ensuing dynamics
+can then be cast in terms of a (solenoidal) gradient flow on a potential, which is a function of surprisal or vice
+versa. Depending upon the definition of the potential, the amplitude of random fluctuations acquires various
+interpretations; such as inverse mass in quantum mechanics or a scaled temperature in stochastic mechanics. In
+conservative mechanics, where the random fluctuations can be discounted, quantities like mass and charge become
+constants of proportionality in the relationship between surprisal and potential.
+
 
 [TABLE 5](./img/t5.png)
 
@@ -3001,6 +3225,8 @@ Committing to one of these options may be important, because they have different
 
 ## Appendix A: Stratonovich path integrals
 
+The following provides an intuition about the origins of the divergence term under a Stratonovich interpretation of stochastic differential equations. For a full treatment see (Cugliandolo and Lecomte, 2017). Imagine a discretised path, where the probability of each interval is based on the difference between the first derivative and expected flow at its midpoint:
+
 $$
 \begin{equation}\tag{11.1}
 \begin{aligned}
@@ -3013,6 +3239,8 @@ p(\omega_\tau)
 \end{aligned}
 \end{equation}
 $$
+
+This difference is a function of random fluctuations in the flow at the beginning of each interval, whose variance decreases with interval length $\Delta\tau$. The second equality follows from the change in variables; i.e., the contribution to the first derivative at the midpoint from the random fluctuation at the beginning of the interval. Using the solution of Langevin equation, we can express the determinant of the Jacobian in (11.1) in terms of the divergence of the flow as follows:
 
 $$
 \begin{equation}\tag{11.2}
@@ -3029,6 +3257,8 @@ $$
 \end{equation}
 $$
 
+This enables us to express the action (i.e., surprisal) of a continuous path as the limit of short intervals
+
 $$
 \begin{equation}\tag{11.3}
 \begin{aligned}
@@ -3040,7 +3270,11 @@ $$
 \end{equation}
 $$
 
+This is the action or path integral of the Lagrangian. Heuristically, the divergence determines how quickly random fluctuations in the flow are exponentially ‘remembered’ or ‘forgotten’ over time. In other words, when divergence is low, perturbations to the flow decay quickly and a larger range of random fluctuations produce similar differences in subsequent flow, rendering them more likely or less surprising.
+
 ## Appendix B: lemmas and proofs
+
+**Lemma** (NESS density): The nonequilibrium steady-state density of a random dynamical system with flow $f=(Q−\Gamma)\nabla\Im$ and associated Fokker Planck operator $\pmb L\triangleq\nabla\cdot(\Gamma\nabla-f)$ is given by
 
 $$
 \begin{equation}\tag{12.1}
@@ -3054,6 +3288,8 @@ p(x)
 \end{equation}
 $$
 
+**Proof**: By substituting $\nabla p=-p\nabla\Im$ and $f=Q\nabla\Im-\Gamma\nabla\Im$ into the Fokker Planck operator we have:
+
 $$
 \begin{equation}\tag{12.2}
 \begin{aligned}
@@ -3065,6 +3301,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+One can see that (12.1) is satisfied when the solenoidal component of flow $Q\nabla\Im$ is divergence free and orthogonal to $\nabla\Im$. It is easy to see both these conditions are met when,
 
 $$
 \begin{equation}\tag{12.3}
@@ -3078,6 +3316,10 @@ Q &= -Q^t
 \end{aligned}
 \end{equation}
 $$
+
+This means that $p=exp(-\Im)$ is the equilibrium density or eigensolution $\pmb L p=0$ of the Fokker-Planck operator describing density dynamics.
+
+**Corollary** _(Markov blanket): if one (external) subset of states $\eta\subset x$ is conditionally independent of another (internal) subset $\eta\subset x$, when conditioned on their Markov blanket $b\subset x$ – and the subsets are not coupled via solenoidal flow – then the flow of internal states does not depend on external states and vice versa_:
 
 $$
 \begin{equation}\tag{12.4}
@@ -3102,6 +3344,8 @@ Q_{\mu b}
 \end{aligned}
 \end{equation}
 $$
+
+**Proof**: expressing the flow in terms of the above partition, we have:
 
 $$
 \begin{equation}\tag{12.5}
@@ -3132,6 +3376,8 @@ $$
 \end{equation}
 $$
 
+We assume here (and throughout) that random fluctuations are independently and identically distributed (i.e. their covariance has a leading diagonal form). By the conditional independence above
+
 $$
 \begin{equation}\tag{12.6}
 \begin{aligned}
@@ -3141,6 +3387,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+And
 
 $$
 \begin{equation}\tag{12.7}
@@ -3152,6 +3400,10 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+This means the flow of internal states does not depend on external states and vice versa.
+
+**Remarks**: the Markov blanket corollary expresses the uncoupling of external and internal states as a consequence of the conditional independencies implicit in a (generalised) Markovian blanket partition. An alternative formulation starts with flow constraints that lead to a Markov Blanket (and suppression of solenoidal coupling). For example, we can express uncoupled flow in terms of Jacobians as follows: from (12.5)
 
 $$
 \begin{equation}\tag{12.8}
@@ -3169,6 +3421,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+Because $\Gamma_{\eta\eta},\Gamma_{\mu\mu}$ are positive definite, the associated derivatives of surprisal must be zero and we recover the Markov blanket factorisation:
 
 $$
 \begin{equation}\tag{12.9}
@@ -3194,6 +3448,8 @@ $$
 \end{equation}
 $$
 
+Furthermore, because $\nabla_{\mu\mu}\Im,\nabla_{\eta\eta}\Im$ are positive semidefinite, we can eliminate solenoidal coupling between external and internal states: $Q_{\eta\mu}=0$. The solenoidal coupling with blanket states must then satisfy:
+
 $$
 \begin{equation}\tag{12.10}
 \begin{aligned}
@@ -3211,6 +3467,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+Notice that an absence of solenoidal coupling to blanket states is sufficient but not necessary to satisfy the flow constraints. For example, if we repeat the above analysis but dividing blanket states into active and sensory states, with the following (complete) flow constraints, we have:
 
 $$
 \begin{equation}\tag{12.11}
@@ -3272,8 +3530,14 @@ f(x)
 \end{equation}
 $$
 
+The particular uncoupling of flow implied by these constraints, precludes solenoidal coupling between internal and external states – and between autonomous and non-autonomous states. This induces a Markov blanket over generalised states as depicted in Figure 23.
+
 [FIGURE 23](./img/23.png)
 <p style="text-align: center;">FIGURE 23</p>
+
+_Generalised Markov blankets_. This dependency graph or Bayesian network is a nuanced version of Figure 1 that includes generalised states; namely, the states and their motion. The Markov blanket of internal states comprises those generalised states highlighted in blue, while the generalised states that constitute the Markov blanket of the corresponding motion are circled in pink. The key point to take from this figure is that the Markov blanket of generalised internal states comprise the generalised blanket states (with the exception of sensory motion). This generalised blanket requires an absence of solenoidal coupling between internal and external states – and between autonomous and non-autonomous states.
+
+**Lemma** (marginal flow): _for any weakly mixing random dynamical system, the marginal flow $f_\eta(\mu)$ of any subset of states $\eta\in X$ , averaged under the complement of another $\mu\in X$ can be expressed in terms of the gradients of the corresponding marginal surprisal $\Im(\mu)=−\ln p(\mu)$_:
 
 $$
 \begin{equation}\tag{12.12}
@@ -3284,6 +3548,8 @@ f_\eta(\mu)
 \end{aligned}
 \end{equation}
 $$
+
+**Proof**: Consider a partition of the states into a subset and its complement: $x=(\mu,\tilde\mu)$. The corresponding partition of (NESS) flow can be expressed as:
 
 $$
 \begin{equation}\tag{12.13}
@@ -3305,6 +3571,8 @@ $$
 \end{equation}
 $$
 
+From this, we can define a marginal flow as the flow expected under $\tilde\mu$ , where $x=(\mu,\tilde\mu)$ :
+
 $$
 \begin{equation}\tag{12.14}
 \begin{aligned}
@@ -3320,6 +3588,10 @@ f_\eta(\mu)
 \end{aligned}
 \end{equation}
 $$
+
+The integrals of probability gradients disappear because the average change of a probability density is zero
+
+**Corollary** (conditional independence): _if the flow of one subset of states does not depend on another, then it becomes the marginal flow (expected) under the second subset. For example, in terms of the Markov blanket partition, it follows that_:
 
 $$
 \begin{equation}\tag{12.15}
@@ -3355,6 +3627,11 @@ $$
 \end{equation}
 $$
 
+Note that many solenoidal terms are eliminated by the Markov blanket corollary (12.11). In short, the conditional independencies induced by the Markov blanket mean that the flow of external states is the same for every value of the internal states, which is just its average over the internal states (similarly for other partitions).
+
+**Corollary** (expected flow): _the marginal flow of any subset $\eta\subset x$ averaged over all other states depends only
+on the gradients of its marginal density, provided there is no solenoidal coupling with its complement:_
+
 $$
 \begin{equation}\tag{12.16}
 \begin{aligned}
@@ -3365,7 +3642,11 @@ f_\eta(\eta)
 \end{equation}
 $$
 
+This is a special case of the marginal flow lemma, when $\eta=\mu$ and $Q_{\eta\tilde\eta}=0$ . It implies that the expected flow of any state or subset of states, averaged over all other states, will behave in exactly the same way as all states considered together. In other words, it will descend the gradients of its (marginal) surprisal.
+
 ## Appendix C: nonequilibrium steady-static energy functions
+
+At nonequilibrium steady-state, the expected curvature of surprisal is the expected sum of squared gradients:
 
 $$
 \begin{equation}\tag{13.1}
@@ -3378,6 +3659,8 @@ E_{p(x)}[\nabla^2\Im]
 \end{aligned}
 \end{equation}
 $$
+
+Note that the integral of the curvature of the NESS density disappears because it is a proper density. This equality furnishes some intuitive expressions for the expected Schrödinger potential, Lagrangian and Hamiltonian: consider the dissipative stochastic entropy production along a single path (i.e., the change in self-information associated with the dissipation of heat), defined using the notation of (6.9). The corresponding expectation is dissipative entropy production, which – by (13.1) – is the average curvature of surprisal:
 
 $$
 \begin{equation}\tag{13.2}
@@ -3396,6 +3679,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+In other words, dissipative entropy production increases with the amplitude of random fluctuations and the average curvature (or sum of squared gradients) of the surprisal or NESS potential. In turn, this leads to the following expectations, for a system with n degrees of freedom (i.e., $x\in\R^n$):
 
 $$
 \begin{equation}\tag{13.3}
@@ -3420,7 +3705,11 @@ V(x)
 \end{equation}
 $$
 
+These expressions disclose the role of the expected curvature as a key (global) characterisation of nonequilibrium steady-state dynamics.
+
 ## Appendix D: the Fokker-Planck operator
+
+The Fokker Planck operator operates on an infinite dimensional (Hilbert) space; namely, the support of the density dynamics. Clearly, this is not useful for numerical solutions in practical applications. However, one can easily convert density dynamics into a manageable form using a discrete basis; for example, an orthonormal basis $\ket{v_i(x)}$ , where (using the Dirac notation):
 
 $$
 \begin{equation}\tag{14.1}
@@ -3432,6 +3721,9 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+This enables one to express density dynamics in terms of the associated coefficients $\varphi_i\in \Complex$
+
 $$
 \begin{equation}\tag{14.2}
 \begin{aligned}
@@ -3444,7 +3736,16 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+The coefficients are the amplitude of probability modes associated with the basis. A natural choice of the basis would be eigenfunctions of the Fokker Planck operator, that allows one to decompose density dynamics into a series of uncoupled modes and, crucially, discard fast modes that dissipate almost instantaneously (i.e., the coefficients of eigenmodes with eigenvalues $\lambda_{ii}\ll 0$).
+
+The practical challenge here – say in weather forecasting – is to find the eigenmodes e.g., (Harlim and Yang, 2017; Palmer and Laure, 2013). An alternative would be to use a polynomial basis, rendering the coefficients the moments of the probability density. This leads to the low order approximations to density dynamics (c.f., the method of moments). For example, retaining the first two moments corresponds to the Laplace approximation. An example of this can be found in our own work on the dynamic causal modelling of population dynamics (Marreiros et al., 2009). Finally, one could use a Fourier basis set, which brings us to the quantum mechanical formulation with an important twist: by decomposing the wave function (as opposed to the probability density) the Plancherel theorem ensures that the (Fourier) coefficients can be interpreted as probability amplitudes.
+
 ## Appendix E: generalised motion
+
+_"[T]he results obtained by applying the techniques of Markov process theory are valuable only to the extent to which they characterise just these 'large-scale' fluctuations"_ (Stratonovich, 1967); p123.
+
+Generally, we have been assuming that random fluctuations are sufficiently fast that their serial or temporal correlations can be ignored. This means that the precision of their temporal derivatives is zero (or does not exist). The implication is that there is no statistical coupling between the generalised motion of states and the generalised states per se. However, the situation changes if we allow for random fluctuations that have a degree of temporal smoothness (i.e., that are analytic). In this instance, dependencies between generalised motion and states give rise to a generalised version of Langevin dynamics in (1.1): by applying a succession of temporal derivatives, we have (to first-order):
 
 $$
 \begin{equation}\tag{14.3}
@@ -3470,6 +3771,8 @@ $$
 \end{equation}
 $$
 
+Here, **D** is a block matrix operator that returns generalised motion from generalised states (see below for an example). The mixture of Lagrange and Newton notations for temporal derivatives reminds us that we are working in generalised coordinates of motion. The associated Lagrangian and surprisal have straightforward forms (to first order):
+
 $$
 \begin{equation}\tag{14.4}
 \begin{aligned}
@@ -3484,6 +3787,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+Note that the (generalised) Lagrangian can be absorbed into (generalised) surprisal in this setting. Because generalised motion effectively describes a trajectory, this means that surprisal becomes a local action; i.e., the surprisal of a local path over the correlation length of random fluctuations. The Lagrangian in (14.4) has been expressed in terms of an _effective mass matrix_ **M** that incorporates flow gradients and the amplitude of generalised fluctuations. The amplitude of these fluctuations is a function of their autocorrelation function, evaluated at zero lag:
 
 $$
 \begin{equation}\tag{14.5}
@@ -3501,6 +3806,10 @@ $$
 \end{equation}
 $$
 
+Equation (14.5) follows from standard results in the theory of stochastic processes (Cox and Miller, 1965) and allows one to quantify temporal autocorrelations in terms of the amplitude of random fluctuations in generalised coordinates of motion. Heuristically, if we assume random fluctuations are extremely fast, then the curvature of the autocorrelation function (resp. correlation length) tends to infinity (resp. zero). In the limit of fast fluctuations, we can therefore ignore higher orders of generalised motion, such that (14.3) reduces to the usual Langevin form, under Wiener assumptions (1.1). However, should we want to accommodate autocorrelation functions that cannot be approximated by a Delta function – as in (1.1) – generalised coordinates of motion provide a useful augmentation of state-space that allows one to solve for dynamics in a computational and analytically straightforward fashion (Friston et al., 2010). The use of generalised coordinates of motion becomes especially useful in the context of Bayesian filtering, as illustrated by the following lemma:
+
+**Lemma** (generalized gradient flows): _when the variation of free energy $F(\vec\mu,b)$ with respect to the variational density over the generalised motion of external states $q_{\vec\mu}(\vec\mu)=\mathcal N(\sigma(\vec\mu),\Sigma(\vec\mu))$ is minimised, the motion of generalized internal states becomes their generalised motion:_
+
 $$
 \begin{equation}\tag{14.6}
 \begin{aligned}
@@ -3511,6 +3820,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+**Proof**: in generalised coordinates of motion, (8.21) can be expressed in terms of the Helmholtz decomposition:
 
 $$
 \begin{equation}\tag{14.7}
@@ -3528,6 +3839,8 @@ $$
 \end{equation}
 $$
 
+In generalised coordinates of motion, solenoidal flow can be formulated in terms of a divergence-free operator **D** that plays the role of a generalised time derivative operator. In this setting, the most likely path of internal states minimises variational free energy and renders the motion of generalised internal states (divergence-free) generalised motion,
+
 $$
 \begin{equation}\tag{14.8}
 \begin{aligned}
@@ -3539,6 +3852,10 @@ $$
 \end{equation}
 $$
 
+giving (14.6).
+
+**Remarks**: In short, generalized motion $D_{\vec\mu}$corresponds to conservative, divergence-free flow in generalised coordinates of motion. Intuitively, this casts motion as a gradient flow a frame of reference that moves with the generalized motion:
+
 $$
 \begin{equation}\tag{14.9}
 \begin{aligned}
@@ -3547,6 +3864,8 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+This is probably the most general and compact form of (generalised or variational) Bayesian filters. With an appropriate choice of (Gauge) transformation, one can recover standard filtering schemes such as the extended Kalman-Bucy filter (Friston et al., 2014), where:
 
 $$
 \begin{equation}\tag{14.10}
@@ -3563,7 +3882,13 @@ $$
 \end{equation}
 $$
 
+These classical schemes generally limit generalised motion to first order.
+
 ## Appendix F: discrete state-space models
+
+In continuous state-space formulations, the expected free energy is a functional of the predictive density over final states, associated with autonomous states in the future. In discrete state-space formulations, the corresponding expected free energy becomes a vector with an element for each sequence of autonomous states (i.e., policy). Its derivation follows the same basic arguments; however, the expected free energy bound is derived directly from the non-negativity of an entropy of a probability distribution (as opposed to a density), instead of using Jensen’s inequality.
+
+**Lemma** (expected free energy – discrete): _the prior surprisal $\Im(\alpha^i|\pi_0)$ of the i-th policy $\alpha^i=(\alpha_1^i,\ldots,\alpha_\tau^i)$ , given an initial state $\pi_0$, is upper bounded by an expected free energy comprising risk and ambiguity:_
 
 $$
 \begin{equation}\tag{15.1}
@@ -3583,6 +3908,8 @@ G(\alpha^i)
 \end{equation}
 $$
 
+_The predictive density, given the current (particular) state \pi_0 is defined in terms of the variational density:_
+
 $$
 \begin{equation}\tag{15.2}
 \begin{aligned}
@@ -3593,13 +3920,13 @@ Q_i(\eta_\tau|alpha^i)
    = \textstyle\sum_{\eta_0} Q_\mu(\eta_0)P(\eta_\tau|\alpha^i,\pi_0,\eta_0)\\
 Q_\mu(\eta_0)
   &= P(\eta_0 | \pi_0) \\
-  \\
-where\space Q_i(s_\tau|\eta_\tau)
-  &= P(s_\tau|\eta_\tau)
-   = P(s_\tau|\eta_\tau,\alpha).
 \end{aligned}
 \end{equation}
 $$
+
+_where_ $\space Q_i(s_\tau|\eta_\tau)=P(s_\tau|\eta_\tau)=P(s_\tau|\eta_\tau,\alpha)$.
+
+**Proof**: the divergence between the predictive distribution (over outcomes, states and policies) and the prior distribution corresponding to the generative model (i.e., nonequilibrium steady-state distribution) must be greater than zero.
 
 $$
 \begin{equation}\tag{15.3}
@@ -3619,6 +3946,8 @@ P_i
 \end{equation}
 $$
 
+When the predictive distribution converges to nonequilibrium steady-state (i.e., the prior distribution), the expected free energy of a particular policy must upper bound its surprisal:
+
 $$
 \begin{equation}\tag{15.4}
 \begin{aligned}
@@ -3630,6 +3959,10 @@ D[Q||P]
 \end{aligned}
 \end{equation}
 $$
+
+The final inequality follows because the conditional entropy of the distribution over discrete states cannot be less than zero. Therefore, at convergence, expected free energy provides an upper bound on the surprisal of a trajectory (15.1), with equality when there is no ambiguity
+
+**Remark**: Note that when risk is minimised – and the predictive distribution converges to the prior distribution $Q_i\approx P(\eta_\tau,s_\tau|\alpha^i)$ – expected free energy becomes a mixture of epistemic and instrumental value; i.e., information gain and expected log-evidence, respectively. From (15.1), in the absence of risk:
 
 $$
 \begin{equation}\tag{15.5}
@@ -3652,6 +3985,11 @@ G(\alpha^i)
 \end{equation}
 $$
 
+This can be regarded as an alternative formulation of ambiguity in terms of information gain or salience.
+
+Software note: The simulations described in this monograph can be reproduced using the academic software available from http://www.fil.ion.ucl.ac.uk/spm/software/. Typing DEM at the Matlab prompt will invoke a graphical user interface. The simulations above can be reproduced by selecting the **A physics of life** button. This allows users to examine the code and subroutines – and customise them at their discretion.
+
+Acknowledgments: at the time of writing, KF is a Wellcome Principal Research Fellow (Ref: 088130/Z/09/Z). There are dozens of friends and colleagues who deserve acknowledgement for the ideas described in this monograph. I will pick out Thomas Parr for an explicit mention: Thomas was my Ph.D. student during its writing and contributed substantively to the active inference formulation. Furthermore, he prepared an invaluable series of weekly seminars, deconstructing the monograph’s formal arguments – and oversights – for our colleagues in London: see https://www.fil.ion.ucl.ac.uk/~tparr/Physics/Slides%20Stochastic%20dynamics.htm
 ## References
 
 Adams, R.A., Shipp, S., Friston, K.J., 2013. Predictions not commands: active inference in the motor system. Brain Struct Funct. 218, 611-643.
