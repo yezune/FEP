@@ -2962,6 +2962,14 @@ $$
 #### Summary
 
 [TABLE 5](./img/t5.png)
+
+<span style="background:#D3DFEE"> <p style="text-align:center;">TABLE 5</p> </span>
+<span style="background:#D3DFEE"> test color</span><br/>
+<span style="background:#FFFFFF"> 
+  **test color**
+</span><br/>
+<span style="background:#D3DFEE"> test color</span><br/>
+
 ## Discussion
 
 The foregoing technical treatment leads us to a remarkable conclusion; namely, that any self-organising system that preserves its form, in virtue of possessing an attracting (random dynamical) set can be construed as inferring the causes of its sensations. In this sense, sentient behaviour and the implicit representationalism may be a universal property of all self-organising systems. We have seen, using numerical analyses, how the elementary behaviour entailed by this take on dynamics looks remarkably similar to the characterisation of itinerant dynamics in neurophysiology. There are some interesting implications of this Bayesian gloss on self-organising (Ashby, 1947) and self-evidencing (Hohwy, 2016) dynamics that speak to the observational foundations of physics (Cook, 1994). See also (Bridgman, 1954). In other words, without a sentient capacity – or the ability to measure and infer, one could argue there would be no physics. In one (epistemological) sense, Bayesian mechanics trumps quantum, classical and statistical mechanics, because they all depend upon observations (Cook, 1994; Seifert, 2012; Theise and Kafatos, 2013). This metrological perspective starts to make a lot of sense, when one looks at the fundamental postulates of things like quantum physics, right through to the observational or measurement-bound nature of gauge theories (Capozziello and De Laurentis, 2011). They all rely upon measurement and inference. The special nature of Bayesian mechanics is unremarkable because it rests on an explicit account of dynamics under Markov blankets, as opposed to the implicit treatment of boundary conditions in terms of heat baths and [Schrödinger] potentials.
@@ -3303,7 +3311,33 @@ $$
 $$
 \begin{equation}\tag{12.15}
 \begin{aligned}
-\\
+\begin{bmatrix}
+  f_\eta(x) \\
+  f_s(x) \\
+  f_\mu(x) \\
+  f_a(x) \\
+\end{bmatrix}
+  &= 
+\begin{bmatrix}
+  f_\eta(\eta,b) \\
+  f_s(\eta,b) \\
+  f_\mu(\mu,b) \\
+  f_a(\mu,b) \\
+\end{bmatrix}
+  = 
+\begin{bmatrix}
+  (Q-_{\eta\eta}-\Gamma_{\eta})\nabla_\eta\Im \\
+  (Q-_{ss}-\Gamma_{ss})\nabla_s\Im \\
+  (Q-_{\mu\mu}-\Gamma_{\mu\mu})\nabla_\mu\Im \\
+  (Q-_{aa}-\Gamma_{aa})\nabla_a\Im \\
+\end{bmatrix}
+  + 
+\begin{bmatrix}
+  +Q_{\eta s}\nabla_s\Im \\
+  +Q_{\eta s}^T\nabla_\eta\Im \\
+  +Q_{\mu a}\nabla_a\Im \\
+  +Q_{\mu a}^T\nabla_\mu\Im \\
+\end{bmatrix} \\ 
 \end{aligned}
 \end{equation}
 $$
@@ -3311,7 +3345,9 @@ $$
 $$
 \begin{equation}\tag{12.16}
 \begin{aligned}
-\\
+f_\eta(\eta)
+  &= (\Gamma_{\eta\eta}-Q_{\eta\eta})\nabla_\eta\ln p(\eta)
+   = (Q_{\eta\eta}-\Gamma_{\eta\eta})\nabla_\eta\Im(\eta) \\
 \end{aligned}
 \end{equation}
 $$
@@ -3321,7 +3357,11 @@ $$
 $$
 \begin{equation}\tag{13.1}
 \begin{aligned}
-\\
+E_{p(x)}[\nabla^2\Im]
+  &= \int p\nabla^2\Im dx \\
+  &= \int p\Bigg(\frac{\nabla p\cdot\nabla p}{p^2}-\frac{\nabla^2 p}{p} \Bigg)dx  \\
+  &= \int p\nabla\Im\cdot\nabla\Im dx \\
+  &= E_{p(x)}[\nabla\Im\cdot\nabla\Im]\\
 \end{aligned}
 \end{equation}
 $$
@@ -3329,7 +3369,17 @@ $$
 $$
 \begin{equation}\tag{13.2}
 \begin{aligned}
-\\
+\dot\Im(x,\omega)
+  &\triangleq \tfrac 1 \Gamma f\cdot\dot\pi 
+   = \tfrac 1 {k_b T} \pmb{\dot q}\\
+\dot\Im(x)
+  &\triangleq E_{p(\omega}[\dot\Im^q(x,\omega)] 
+   = \Gamma\nabla\Im(x) \cdot \nabla\Im(x) \\
+\dot H^q
+  &\triangleq 
+     E_{p(x)}[\dot\Im^q(x)]
+   = E_{p(x)}[\Gamma\nabla\Im\cdot\nabla\Im]
+   = E_{p(x)}[\Gamma\nabla^2\Im]
 \end{aligned}
 \end{equation}
 $$
@@ -3337,7 +3387,22 @@ $$
 $$
 \begin{equation}\tag{13.3}
 \begin{aligned}
-\\
+V(x)
+  &= \tfrac{\hbar}{2}[\tfrac 1 2 \Gamma\nabla\Im \cdot \Gamma\Im - \Gamma\nabla^2\Im] \\
+\cal L(x,\dot x)
+  &= \tfrac{1}{4\Gamma}(\omega\cdot\omega)-\tfrac 1 2 \Gamma\nabla^2\Im \\
+\cal H(x,\dot x)
+  &= \tfrac{1}{4\Gamma}(f+\omega)\cdot(f+\omega) - \tfrac 1 \hbar V(x) \\
+  \\
+\pmb V
+  &\triangleq E_{p(x)}[V(x)]
+   = -\tfrac \hbar 4 \dot H^q] \\
+\pmb{\cal L}
+  &\triangleq E_{p(x,\omega)}[\mathcal L (x,\dot x)] 
+   = -\tfrac 1 2 [n - \dot H^q] \\
+\pmb{\cal H}
+  &\triangleq E_{p(x,\omega)}[\mathcal H (x,\dot x)]
+   = -\tfrac 1 2 [n + \dot H^q] \\
 \end{aligned}
 \end{equation}
 $$
@@ -3347,14 +3412,22 @@ $$
 $$
 \begin{equation}\tag{14.1}
 \begin{aligned}
-\\
+\ket{p(x)} 
+  &= \textstyle\sum_i\ket{v_i(x)} \varphi_i \\
+\braket{v_i|v_k}
+  &= \delta_{ik}
 \end{aligned}
 \end{equation}
 $$
 $$
 \begin{equation}\tag{14.2}
 \begin{aligned}
-\\
+\dot p(x)
+  &= \pmb L\ket{p(x)} 
+   \Rightarrow \dot\varphi 
+   = \lambda \varphi \\
+\lambda_{ik}
+  &= \braket{v_i|\pmb L|v_k}
 \end{aligned}
 \end{equation}
 $$
@@ -3363,7 +3436,23 @@ $$
 $$
 \begin{equation}\tag{14.3}
 \begin{aligned}
-\\
+\begin{rcases}
+\dot x
+  &= f(x,v)+\omega\\
+\dot x^{'}
+  &= f\cdot x^{'}+\omega^{'}\\
+\dot x^{''}
+  &= f\cdot x^{''}+\omega^{''}\\
+  &\vdots \\
+\end{rcases}
+  &\Rightarrow \dot{\vec x}
+  = \pmb D\vec x
+  = \nabla \pmb f\cdot\vec x + \vec\omega \\
+  \\
+\vec x
+  &\triangleq (x,x^{'},x^{''},\ldots) \\
+\nabla f
+  &= I \otimes \nabla f
 \end{aligned}
 \end{equation}
 $$
@@ -3371,7 +3460,14 @@ $$
 $$
 \begin{equation}\tag{14.4}
 \begin{aligned}
-\\
+\mathcal L(\vec x)
+  &= \tfrac 1 2(\tfrac 1 2 \vec x \cdot \pmb M\vec x + \nabla \cdot \pmb f(\vec x))\\
+\pmb M
+  &= (\pmb D - \nabla \pmb f)\cdot \pmb \Gamma^{-1}(\pmb D-\nabla\pmb f) \\
+  \\
+\Im(\vec x)
+  &= \Im(x) + \Im(\pmb D\vec x|x ) \\
+  &= \Im(x) + \mathcal L(\vec x) \\
 \end{aligned}
 \end{equation}
 $$
@@ -3379,7 +3475,15 @@ $$
 $$
 \begin{equation}\tag{14.5}
 \begin{aligned}
-\\
+\Gamma 
+  &= 
+\begin{bmatrix}
+  1                      & 0                  & \partial^2_\tau\rho(0) & \cdots \\
+  0                      & -\partial^2\rho(0) & 0                      & \space \\
+  \partial_\tau^2\rho(0) & 0                  & \partial_\tau^4\rho(0) & \space \\
+  \vdots                 & \space             & \space                 & \ddots \\
+\end{bmatrix}
+   \otimes \Gamma \\
 \end{aligned}
 \end{equation}
 $$
@@ -3387,7 +3491,10 @@ $$
 $$
 \begin{equation}\tag{14.6}
 \begin{aligned}
-\\
+\delta_q F
+  &= 0
+   \Leftrightarrow \dot{\vec \mu}
+   = \pmb D\vec\mu \\
 \end{aligned}
 \end{equation}
 $$
@@ -3395,7 +3502,15 @@ $$
 $$
 \begin{equation}\tag{14.7}
 \begin{aligned}
-\\
+\dot{\vec\mu}
+  &= (Q_{\sigma\sigma} - \Gamma_{\sigma\sigma})\cdot\nabla_{\vec\mu}F(\vec\mu,b) \\
+  &= \pmb D\vec\mu - \Gamma_{\sigma\sigma}\cdot \nabla_{\vec\mu}F(\vec\mu,b) \\
+  \\
+\pmb D\vec\mu
+  &= Q_{\sigma\sigma}\cdot\nabla_{\vec\mu}F(\vec\mu,b)
+   \Rightarrow \nabla_{\vec\mu}\cdot\pmb D\vec\mu = 0 \\
+\vec\mu
+  &= (\pmb \mu(b), \pmb \mu^{'}(b),\pmb \mu^{''}(b),\ldots)\\
 \end{aligned}
 \end{equation}
 $$
@@ -3403,7 +3518,10 @@ $$
 $$
 \begin{equation}\tag{14.8}
 \begin{aligned}
-\\
+\dot{\vec\mu}
+  &= \pmb D\vec\mu
+   \Leftrightarrow \nabla_{\vec\mu}F(\vec\mu,b) = 0
+   \Leftrightarrow \delta_q F = 0\\
 \end{aligned}
 \end{equation}
 $$
@@ -3411,7 +3529,8 @@ $$
 $$
 \begin{equation}\tag{14.9}
 \begin{aligned}
-\\
+\pmb D\vec\mu - \dot{\vec\mu}
+  &= \Gamma_{\sigma\sigma}\nabla_{\vec\mu}F(\vec\mu,b)\\
 \end{aligned}
 \end{equation}
 $$
@@ -3419,7 +3538,14 @@ $$
 $$
 \begin{equation}\tag{14.10}
 \begin{aligned}
-\\
+\pmb D
+  &=
+\begin{bmatrix}
+  0 & I \\
+  0 & 0 \\
+\end{bmatrix},\space\space 
+\vec \mu
+   = (\pmb \mu(b), \mu^{'}(b))\\
 \end{aligned}
 \end{equation}
 $$
@@ -3429,7 +3555,17 @@ $$
 $$
 \begin{equation}\tag{15.1}
 \begin{aligned}
-\\
+G(\alpha^i)
+  &=
+    \underbrace{
+      D[Q_i(\eta_\tau|\alpha^i)||P(\eta_\tau|\alpha^i)]
+    }_{Risk}
+   +
+    \underbrace{
+      E_{Q_i}[\Im(s_\tau|\eta_\tau)]
+    }_{Ambiguit}
+   + \Im(\alpha^i)
+   \geq \Im(\alpha^i|\pi_0)
 \end{aligned}
 \end{equation}
 $$
@@ -3437,7 +3573,17 @@ $$
 $$
 \begin{equation}\tag{15.2}
 \begin{aligned}
-\\
+Q_i(s_\tau,\eta_\tau,\alpha^i)
+  &\triangleq Q_i(s_\tau|\eta_\tau)Q_i(\eta_\tau|\alpha^i)P(\alpha^i|\pi_0)\\
+Q_i(\eta_\tau|alpha^i)
+  &\triangleq P(\eta_\tau|\alpha^i,\pi_0)
+   = \textstyle\sum_{\eta_0} Q_\mu(\eta_0)P(\eta_\tau|\alpha^i,\pi_0,\eta_0)\\
+Q_\mu(\eta_0)
+  &= P(\eta_0 | \pi_0) \\
+  \\
+where\space Q_i(s_\tau|\eta_\tau)
+  &= P(s_\tau|\eta_\tau)
+   = P(s_\tau|\eta_\tau,\alpha).
 \end{aligned}
 \end{equation}
 $$
@@ -3445,7 +3591,17 @@ $$
 $$
 \begin{equation}\tag{15.3}
 \begin{aligned}
-\\
+D[Q||P]
+  &= E_Q[\pmb G(\alpha)-\Im(\alpha|\pi_0] \geq 0\\
+\pmb G(\alpha^i)
+  &= G(\alpha^i) - H[Q_i(s_\tau|\eta_\tau)] \\
+G(\alpha^i)
+  &=  E_{Q_i}[\Im(\eta_\tau,s_\tau,\alpha^i)]-H[Q_i(\eta_\tau|\alpha^i)]\\
+  \\
+Q_i
+  &\triangleq Q_i(\eta_\tau,s_\tau,\alpha^i) \\
+P_i
+  &\triangleq P_i(\eta_\tau,s_\tau,\alpha^i) \\
 \end{aligned}
 \end{equation}
 $$
@@ -3453,7 +3609,11 @@ $$
 $$
 \begin{equation}\tag{15.4}
 \begin{aligned}
-\\
+D[Q||P]
+  &= 0
+   \Rightarrow \pmb G(\alpha) = \Im(\alpha|\pi_0) \\
+  &\Rightarrow G(\alpha^i) = \Im(\alpha^i|\pi_0) + H[Q_i(s_\tau|\eta_\tau)]\\
+  &\Rightarrow G(\alpha^i) = \Im(\alpha^i|\pi_0)\\
 \end{aligned}
 \end{equation}
 $$
@@ -3461,7 +3621,20 @@ $$
 $$
 \begin{equation}\tag{15.5}
 \begin{aligned}
-\\
+G(\alpha^i)
+  &= E_{Q_i}[\Im(s_\tau|\eta_\tau)] + \Im(\alpha^i)\\
+  &= E_{Q_i}[\Im(s_\tau|\eta_\tau,\alpha^i) + \Im(\alpha^i)] \\
+  &= E_{Q_i}[\ln P(\eta_\tau|\alpha^i) - \ln P(\eta_\tau|s_\tau,\alpha^i) - \ln P(s_\tau,\alpha^i)] \\
+  &= E_{Q_i}
+    [-
+     \underbrace{
+       D[P(\eta_\tau|s_\tau,\alpha^i)|P(\eta_\tau|\alpha^i)]
+     }_{\text{epistemic value}}
+     -
+     \underbrace{
+       ln P(s_\tau,\alpha^i)
+     }_{\text{instrumental value}}
+   ] \\
 \end{aligned}
 \end{equation}
 $$
