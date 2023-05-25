@@ -1480,7 +1480,7 @@ _Ensemble densities and thermodynamic potentials_. These illustrative potentials
 
 Following (Sekimoto, 1998), one can endow Langevin dynamics with a thermodynamic interpretation, using constructs from the first law, by considering an individual fluctuating trajectory. For example, one can express the first law in terms of work and dissipated heat for a single trajectory[^note-20]:
 
-[^note-20]: Strictly speaking, we are only considering the ‘housekeeping’ heat – that is dissipated in maintaining nonequilibrium steady- state – because we are ignoring changes in the thermodynamic potential. For a complete treatment, see Seifert, U., 2012. Stochastic thermodynamics, fluctuation theorems and molecular machines. Reports on progress in physics. Physical Society (Great Britain) 75, 126001. https://doi.org/10.1088/0034-4885/75/12/126001
+[^note-20]: Strictly speaking, we are only considering the ‘housekeeping’ heat – that is dissipated in maintaining nonequilibrium steady- state – because we are ignoring changes in the thermodynamic potential. For a complete treatment, see Seifert, U., 2012. Stochastic thermodynamics, fluctuation theorems and molecular machines. Reports on progress in physics. Physical Society (Great Britain) 75, 126001.
 
 $$
 \begin{equation}\tag{6.7}
