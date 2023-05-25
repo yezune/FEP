@@ -1120,7 +1120,7 @@ p    &= \Psi \cdot \Psi \\
 \end{equation}
 $$
 
-One might ask why it is useful to factorise the probability density in this fashion (see Appendix D for discussion). A key motivation follows from the Plancherel theorem, which ensures the integral of a function’s squared modulus is conserved following a Fourier transform (e.g., the power is the same in space and frequency). In terms of the Dirac notation, this means: $<\Phi^\dagger|\Phi>=<\Psi^\dagger|\Psi>=1$, where $\Phi(k)$ is the Fourier transform of $\Psi(x)$ . This can be exploited by treating both as _probability amplitudes_, whose squared modulus is a probability density. Below, we will see the frequency modes have an interesting interpretation that underlies things like wave-particle duality and Heisenberg's uncertainty principle. Put simply, working with the complex roots of the NESS density allows one to use Fourier transforms and talk about wavelengths in state-space. In turn, boundary conditions (e.g., the continuity of density functions) place formal constraints on density functions (e.g., a circle can only be divided into a finite number of wavelengths), leading to quantal behaviour.
+One might ask why it is useful to factorise the probability density in this fashion (see Appendix D for discussion). A key motivation follows from the Plancherel theorem, which ensures the integral of a function’s squared modulus is conserved following a Fourier transform (e.g., the power is the same in space and frequency). In terms of the Dirac notation, this means: $\braket{\Phi^\dagger|\Phi}=\braket{\Psi^\dagger|\Psi}=1$, where $\Phi(k)$ is the Fourier transform of $\Psi(x)$ . This can be exploited by treating both as _probability amplitudes_, whose squared modulus is a probability density. Below, we will see the frequency modes have an interesting interpretation that underlies things like wave-particle duality and Heisenberg's uncertainty principle. Put simply, working with the complex roots of the NESS density allows one to use Fourier transforms and talk about wavelengths in state-space. In turn, boundary conditions (e.g., the continuity of density functions) place formal constraints on density functions (e.g., a circle can only be divided into a finite number of wavelengths), leading to quantal behaviour.
 
 First, we will establish that the NESS density can be recovered from the solutions to the (time-independent) Schrödinger equation, which offers an accurate account of nearly all empirical molecular, atomic and subatomic measurements:
 
@@ -1134,8 +1134,7 @@ V(x)        &= \tfrac{m}{2}f\cdot f + \tfrac{\hbar}{2}\nabla\cdot f \\
 \end{equation}
 $$
 
-Here, **H** corresponds to a Hamiltonian operator that returns the energy $E$ of the particle and $V(x)$ is the Schrödinger potential of a particle's states. For consistency with other texts, this section will denote the states of a particle by $x\equiv \pi_k$. Schrödinger's equation is central to nearly all applications of quantum mechanics; including quantum field theory, which combines special relativity with quantum mechanics. Furthermore, formulations of quantum gravity, such as string theory do not modify Schrödinger's equation. The above time-independent (single particle) Schrödinger equation can be derived as follows.
-
+Here, $\pmb{H}$ corresponds to a Hamiltonian operator that returns the energy $E$ of the particle and $V(x)$ is the Schrödinger potential of a particle's states. For consistency with other texts, this section will denote the states of a particle by $x\equiv \pi_k$. Schrödinger's equation is central to nearly all applications of quantum mechanics; including quantum field theory, which combines special relativity with quantum mechanics. Furthermore, formulations of quantum gravity, such as string theory do not modify Schrödinger's equation. The above time-independent (single particle) Schrödinger equation can be derived as follows.
 #### The Schrödinger equation from first principles
 
 Our starting point is to express the flow in terms of the NESS density and the amplitude of random fluctuations, where the amplitude is expressed in terms of a (reduced) mass and Planck's constant. This enables us to express the gradients of the wave function in terms of flow[^note-17]:
@@ -1206,7 +1205,7 @@ These equalities foreshadow a key conclusion of this section; namely, the Fokker
 
 #### Wave particle duality and the de Broglie hypothesis
 
-Without loss of generality, one can express the wave function in terms of its Fourier transform, giving the following Fourier transform pair, where k denotes wave number:
+Without loss of generality, one can express the wave function in terms of its Fourier transform, giving the following Fourier transform pair, where $k$ denotes wave number:
 
 $$
 \begin{equation}\tag{5.7}
