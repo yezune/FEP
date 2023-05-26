@@ -1599,7 +1599,7 @@ _Stochastic thermodynamics_. This figure illustrates the characterisation of our
 
 #### Fluctuation theorems
 
-Fluctuation theorems express universal properties of any density $p(\Omega)$ over phase measures \Omega(\pi) (i.e., work, heat or entropy) evaluated along fluctuating trajectories taken from ensembles with well-defined initial distributions. Following (Seifert, 2012), we will briefly consider a phenomenological classification into three classes; namely, _integral fluctuation theorems, detailed fluctuation theorems_ and (Generalized) _Crooks fluctuation theorems_ – with a special focus on integral fluctuation theorems and, in particular, the Jarzynski equality (Jarzynski, 1997). Please see Table 3 for a summary of this classification.
+Fluctuation theorems express universal properties of any density $p(\Omega)$ over phase measures $\Omega(\pi)$ (i.e., work, heat or entropy) evaluated along fluctuating trajectories taken from ensembles with well-defined initial distributions. Following (Seifert, 2012), we will briefly consider a phenomenological classification into three classes; namely, _integral fluctuation theorems, detailed fluctuation theorems_ and (Generalized) _Crooks fluctuation theorems_ – with a special focus on integral fluctuation theorems and, in particular, the Jarzynski equality (Jarzynski, 1997). Please see Table 3 for a summary of this classification.
 
 ![TABLE 3](./img/t3.png)
 
