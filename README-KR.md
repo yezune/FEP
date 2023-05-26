@@ -1,6 +1,6 @@
-# 어떤 물리학을 위한 자유 에너지 원리: A Free Energy Principle for A Particular Physics
+# A Free Energy Principle for A Particular Physics: 어떤 물리학을 위한 자유 에너지 원리
 
-__Karl Friston__
+__칼 프리스턴 - Karl Friston__
 
 *The Wellcome Centre for Human Neuroimaging, UCL Queen Square Institute of Neurology, London, UK WC1N 3AR. Email: k.friston@ucl.ac.uk
 (This work is under consideration for publication by The MIT Press)*
@@ -34,7 +34,7 @@ __Karl Friston__
 제3부: 무생성 입자의 밀도 동역학을 양자, 통계, 고전 역학의 극한 케이스로 설명한 후, 내부 상태를 무시할 수 없는 자율적 행동을 보이는 큰 것들(예: 우리와 같은 큰 활성 입자)의 존재론에 대해 살펴봅니다. 섹션 8은 생물학적 자기조직에 대표적이거나 추론적 능력을 부여할 수 있는 이유를 논합니다. 다시 말해, 좋은 조절자 이론(Conant and Ashby, 1970)과 베이지안 뇌 가설(Helmholtz, 1878 (1971); Knill and Pouget, 2004)과 같은 개념이 감각 물리학 측면에서 어떻게 실체화될 수 있는지에 대해 설명합니다. 여기서 주장은 상당히 간단한데, 바로 시스템의 내부 상태가 마르코프블랭킷에 감각적 인상을 남기는 외부 상태에 대한 확률적 신념을 인코딩하며, 활성 상태의 외부 상태에 대한 영향에 의해 발생한다는 것입니다. 이 섹션에서는 자율적인 것들(예: 세포 또는 뇌)이 활동적으로 샘플링된 감각의 원인을 추론하는 것을 설명하는 정보 기하학과 참석하는 자유 에너지 원리에 대한 형식적 기초를 제공합니다. 여기서 우리는 변분 베이즈(Beal, 2003)가 특정 종류의 입자의 출현적 성질임을 보여주어 베이지안 역학의 형태를 구현하는 변분 주제를 추구합니다. 섹션 9는 제1부의 합성 수프(그리고 바이러스와 같은 거주자)에서 수치 분석을 사용하여 특정 추론을 설명합니다. 섹션 10에서는 적분 변동 정리와 예상 자유 에너지를 기반으로한 자유 에너지 원리의 따르는 것들을 통해 활성 상태와 대리를 고려합니다. 끝에서 두 번째 섹션에서는 이전(열역학적) 처리를 고려한 활동적 추론을 검토합니다. 양자, 확률, 고전 및 베이지안 역학 간의 관계에 대한 간단한 논의로 마무리합니다.
 
 ## Part One: the setup - 파트1: 설정
-### Something or nothing - 무엇 또는 아무것
+### Something or nothing - 무엇 또는 아닌것
 
 The *“Siphonaptera”* is a nursery rhyme, sometimes referred to as Fleas:
 *Big fleas have little fleas, 
