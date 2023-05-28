@@ -579,7 +579,22 @@ $$
 
 표 1은 이 섹션에서 소개된 정보 측정의 요약을 제공하며, 나중에 참조할 것입니다. 그러나 자기조직화의 의식적 기반을 다루기 전에, 우리는 마르코프블랭킷에 관한 NESS 보조정리 (부록 B)를 언패킹하는 데 시간을 보낼 것이며 (1부의 나머지 부분), 그리고 이것의 양자, 통계, 고전 역학과의 관계 (2부에서) - 나중에 능동적 추론의 처리를 문맥화하기 위해서입니다 (3부에서).
 
-![TABLE 1](./img/t1.png)
+<p style="text-align:center">TABLE 1 <br/>
+**Information measures of particular states that characterise self-organisation**
+</p>
+
+ Measure                          | Definition                                               | Comments
+|---------------------------------|----------------------------------------------------------|-------------------------------------------|
+| Self-information                | $\Im(\pi) = -\ln p(x)$                                   | A.k.a. suprise,surprisal or nagative log-evidence, where evidence is also known as the marginal likelihood |
+| Self-entropy                    | $H[P]=E_{p(\pi)}[\Im(pi)]$                               | The antropy of particular states |
+| Complexity                      | $D[p(\eta\vert\pi)\parallel p(\eta)]$                    | The divergence between the posterior and  prior over external(i.e.,hidden) states|
+| Risk (expected complexity)      | $I(E,P)=E_{p(\pi)}[D[p(\eta\vert\pi)\parallel p(\eta)]]$ | The expected complexity or mutual information between external and particular states|
+| Accuracy                        | $E_{p(\eta\vert\pi)}[\ln p(\pi\vert\eta)]$               | The expected log likelihood for particular states|
+| Ambiguity (expected inaccuracy) | $H(P\vert E)=E_{p(\eta,\pi)}[\Im(\pi\vert\eta)]$         | Negative expected accuracy or log likelihood. This is the conditional entropy of particular states given external states |
+| Information                     | $D[p(\eta\vert\pi)\parallel p(\eta\vert\alpha)]$         | A relative entropy, a.k.a. intrinsic value, salience and epistemic value|
+| Expected information gain       | $I(E,S\vert A)=E_{p(\pi)}[D[p(\eta\vert\pi)\parallel p(\eta\vert\alpha)]]$| Expected information gain or mutual information between sensory and external states, conditioned on active states |
+
+[TABLE 1](./img/t1.png)
 
 ### Synthetic soups and active matter - 합성 수프와 능동 물질
 
@@ -1303,7 +1318,19 @@ $$
 
 _특정 양자역학_. 이 그림은 우리 합성 수프의 외부 입자의 하나의 마이크로상태를 양자역학적으로 처리하는 방법을 보여줍니다. 이 예시의 목표는 상태의 역학을 슈뢰딩거 포텐셜과 이에 따른 운동 에너지로 특성화하는 방법을 보여주는 것입니다. 또한, NESS 보조원리를 사용하여 슈뢰딩거 방정식의 해결을 피할 수 있는 방법도 이 예시에서 보여줍니다. 여기서 우리는 해당 상태의 흐름이 다른 모든 상태에 대한 주변 또는 기대 흐름의 (선형) 혼합물과 일부 빠른, 무작위 흔들림으로 가정하여 이 하나의 (마이크로) 상태를 고립하여 고려합니다. 이러한 흔들림이 어떻게 생성되는지에 대해 많은 지식이 있지만, 우리는 이것을 확률적이고 충분히 빠른 것으로 취급하고 흥미로운 동작이 슈뢰딩거 포텐셜에 의해 포착되는 것으로만 가정합니다. 시간 간격은 상태 (실선 - 임의로 할당된 미터 단위)과 흐름 (점선)으로 상단 패널에 표시됩니다. 상태의 시간에 따른 표본 분포는 64개 구간에 대한 샘플 밀도의 음의 로그에 대한 6차 다항식 적합을 사용하여 NESS 포텐셜을 기반으로 평가되었습니다. 그 결과 추정치와 해당 도함수는 왼쪽 중간 패널에 표시되었습니다. 이를 통해 등식 (5.4)는 슈뢰딩거 포텐셜 (왼쪽 하단 패널)을 지정합니다. 그런 다음 슈뢰딩거 방정식을 해결하여 상태 공간에서 위치에 대한 파동 함수 (중간 패널)와 운동량에 대한 푸리에 변환 (하단 중간 패널)을 평가할 수 있습니다. 위치 및 운동량에 대한 해당 밀도는 오른쪽 패널에 표시되며, 해당 표본 밀도 위에 겹쳐져 있습니다. 마지막으로, 운동량에 대한 밀도는 등식 (5.11)을 통해 운동 에너지를 지정합니다. 여기서 운동 (및 포텐셜) 에너지는 $2.29 \times 10^{-33}$였습니다. 이 에너지 (및 슈뢰딩거 포텐셜)를 계량화하기 위해 무작위 흔들림의 크기 - 혹은 동등하게 줄어든 질량 -을 알아야 합니다. 이는 흐름의 기대치 또는 주변 흐름을 제거한 후 흔들림의 잔차로부터 간단하게 계산할 수 있습니다. 이 양자 시스템의 줄어든 질량은 $5.52 \times 10^{-38}$이었습니다. 이로써 NESS 포텐셜을 사용하여 어떻게 운동의 특성을 표현하는지를 설명하는 것으로, 이 그림의 결과는 슈뢰딩거 방정식을 풀지 않고 NESS 포텐셜에서 직접 유도되었습니다. 다시 말해, 앙상블 밀도는 NESS 포텐셜에서 직접 지정되므로 파동 함수 (및 그 푸리에 변환)는 앙상블 밀도로부터 직접 지정될 수 있습니다. 여기서는 앙상블 밀도를 대칭 가우시안 성분과 비대칭 (양수) 잔차로 임의로 분리했습니다. 그런 다음 (제곱근을 취한) 두 성분을 파동 함수의 실수부와 허수부로 할당했습니다. 파동 함수의 이 보완적인 유도는 본문에서 언급한 점을 설명합니다. 즉, 앙상블 밀도에서 직접 파동 함수를 생성하거나 슈뢰딩거 포텐셜에서 시작하여 슈뢰딩거 방정식을 풀 수 있습니다.
 
-![TABLE 2](./img/t2.png)
+<p style="text-align:center">TABLE 2<br/>
+Some common (analytic) solutions ot Schrödinger wave equation
+</p>
+
+| System                      | Schrödinger potential                                                  | Fluctuations                          | Remarks |
+|-----------------------------|:-----------------------------------------------------------------------|--------------------------------------|---------|
+| Free particle               | $V(x)=0$                                                               | $\Gamma=\tfrac{\hbar}{2m}$           | In the absence of a potential the particle is free, and the wave function has an exponential solution  |
+| Quantum harmonic oscillator | $V(x)=\tfrac 1 2 m\omega^2x^2$                                         | $\Gamma=\tfrac{\hbar}{2m}$           | The quadratic potential well gives Gaussian solutions modulated by Hermite polynomials |
+| Electrostatic potential     | $V(r)=-\frac{e_1e_2}{4\pi\varepsilon_0 r}$                             | $\Gamma=\tfrac{\hbar}{2m}$           | This potential corresponds to Coulomb potential energy for two point charges $e_1$ and $e_2$|
+| Hydrogen atom               | $\begin{aligned}V(r)&=-\frac{\hbar^2}{a_0 m_e r}\\&=-\frac{e^2}{4\pi\varepsilon_0 r}\end{aligned}$ |$\begin{aligned}\Gamma&=\tfrac{\hbar}{2m}\\m&=\frac{m_p m_e}{m_p+m_e}\end{aligned}$ | Here, $m_p$ and $m_e$ correspond to the mass of a positron and electron respectively and $e$ is electron charge |
+| Pöschl-Teller               | $V(x) = - \frac{\lambda(\lambda+1)}{2}sech^2(x)$                       | $\Gamma=\tfrac{\hbar}{2m}$           | These solutions are Legendre functions of tanh(x) |
+
+[TABLE 2](./img/t2.png)
 
 ### A theory of lots of little things: statistical mechanics - 대규모의 작은 것들의 이론: 통계역학
 
@@ -1547,7 +1574,17 @@ _확률적 열역학_. 이 그림은 우리의 합성 수프(또는 활성 물�
 
 변동 정리는 초기 분포가 명확하게 정의된 앙상블에서 추출된 변동 경로를 통해 평가된 (작업, 열 또는 엔트로피와 같은) 상태 측정량 $\Omega(\pi)$에 대한 어떤 밀도 $p(\Omega)$의 보편적인 특성을 나타냅니다. (Seifert, 2012)에 따라, 우리는 간단히 세 가지로 현상학적으로 분류 할 수 있습니다. 즉, 적분 변동 정리, 상세 변동 정리 및 (일반화된) 변동 정리 - 특히, 적분 변동 정리와 Jarzynski 등식 (Jarzynski, 1997)에 중점을 둡니다. 이 분류의 요약은 Table 3을 참조하십시오.
 
-![TABLE 3](./img/t3.png)
+<p style="text-align:center">TABLE 3 <br/>
+Phenomenological classification of fluctuation theorems
+</p>
+
+| Theorem and relation                                                                                | Remarks                                                                                              |
+|-----------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| *Integral fluctuation theorems (IFT)* A functional $\Omega(\pi[\tau])$ obeys an integral fluctuation theorem if $\\ \\ \begin{aligned}E[exp(-\Omega)]&=1\Rightarrow\\ E[\Omega]&\geq 0\end{aligned}$| The convexity of the exponential function implies $E[\Omega]\geq0$ recapitulating the well-known thermodynamic inequality related to the second law. The IFT implies the existence of trajectories for which $\Omega(\pi)$ is negative, which have been characterized as ‘violating’ the second law. However, the probability of such events is exponentially small (for sufficiently large systems). This reconciles the validity of macroscopic thermodynamics with the occurrence of such violations.|
+| *Detailed fluctuation theorems (DFT)* A detailed fluctuation theorem corresponds to the stronger relation:$\\ \begin{aligned}p(-\Omega)/p(\Omega) &= exp(-\Omega)\Rightarrow\\ E[\Omega]&\geq 0\end{aligned}$ | This relation constrains ‘one half’ of the density function. In other words, the even moments of  $\Omega(\pi)$ can be expressed by the odd moments and vice versa. A DFT implies the corresponding IFT.|
+| *(Generalized) Crooks fluctuation theorems* The general form of these theorems can be expressed as $\\ \begin{aligned}p^\dagger(-\Omega) &= p(\Omega)exp(-\Omega)\Rightarrow \\E[\Omega] &\geq 0 \end{aligned}$ | These relations compare the process of interest with the density of the same physical quantity for a ‘conjugate’ (mostly the time-reversed) process.$p^\dagger(-\Omega)$ , which implies the IFT (but not the DFT).|
+
+[TABLE 3](./img/t3.png)
 
 변동 정리(FT)은 원래 경우별로 유도되었습니다. 그러나 확률적 열역학은 시간 반전 아래의 경로를 고려함으로써 FT에 대한 통합적인 처리를 제공합니다 (Seifert, 2012). 변동 정리는 경로 $\pi[\tau]$를 가진 과정에 대해 가장 일반적으로 '쌍대' 경로 $\pi^\dagger[\tau]$에 대한 '쌍대' 동역학을 가정하여 유도됩니다. 변동 정리를 이끄는 중요한 양은 쌍대 경로의 로그 우도 비율에 해당하는 마스터 함수입니다.
 
@@ -2360,7 +2397,20 @@ $$
 
 이것은 '이동성(순회)'의 개념을 운영화하며, 정보 길이를 명시적으로 언급하지 않고도 미래의 중요 시간 이후의 상태의 예상 자유 에너지를 표현할 수 있게 해줍니다: (8.16)의 부등식 및 그림 17 참조. 이 시간 이후에, 자율적 상태의 예상 자유 에너지는 그들의 NESS 놀라움의 상한을 형성합니다 – 그리고 초기 상태는 '잊혀집니다'. 중요 시간이 짧은 입자들은, 효과적으로, 비평형 안정 상태로 빠르게 수렴하며 간단한 종류의 자기 조직화를 보일 것입니다. 반대로, 중요 시간이 긴 입자들은 시간적 깊이를 가진 이동성 밀도 동력학을 보일 것이며, 훨씬 더 많은 확률적 구성을 경험할 것입니다. 우리는 이후에 일반화된 저차 항상성(homeostasis)과  고차 항상성(allostasis)를 나타내는 입자들 사이의 차이라는 측면에서 이 구분으로 돌아올 것입니다. 그림 17은 마르코프블랭킷이 작용할 때, 어떻게 베이지안 메카닉스가 랑주뱅 동력학에서 유래하는지에 대한 개요를 제공합니다. (변분) 추론 측면에서의 자기 증거를 풀어내기 전에, 우리는 잠시 마르코프블랭킷이 (양자) 측정 및 내부 상태의 정보 기하학에 대한 함의에 대해 고려할 것입니다.
 
-![TABLE 4](./img/t4.png)
+<p style="text-align:center">TABLE 4 <br/>
+Information measures and particular free energy
+</p>
+
+| Measure                         | Definition                                               | Variational homologue                                                |
+|---------------------------------|----------------------------------------------------------|----------------------------------------------------------------------|
+| Surprisal                       | $\Im(\pi)-\ln p(\pi)$                                    | $\Im(\pi_0)\geq F(\pi_0)$                                            |
+| Self-entropy                    | $H[P]=E_{p(\pi)}[\Im(\pi)]$                              | $H[P]\geq E_{p(\pi_0)}[F(\pi_0)]=E_{p(\alpha_\tau)}[G(\alpha_\tau)]$ |
+| Complexity                      | $D[p(\eta\vert\pi)\parallel p(\eta)$                     | $D[q_\mu(\eta_0)\parallel p(\eta_0)]$                                |
+| Risk                            | $I(E,P)=E_{p(\pi)}[D[p(\eta\vert\pi)\parallel p(\eta)]]$ | $D[q_\tau(\eta_\tau\vert\pi_\tau)\parallel p(\eta_\tau)]$            |
+| Accuracy                        | $E_{p(\eta\vert\pi)}[ln\space p(\pi\vert\eta)]$          | $E_{q_\mu(\eta)}[\ln\space p(\pi_0\vert\eta_0)]$                     |
+| Ambiguity                       | $H(P\vert E)=E_p(\Im(\pi\vert\eta)]$                     | $E_{q_\tau}[\Im(\pi_\tau\vert\eta_\tau)]$                            |
+
+[TABLE 4](./img/t4.png)
 
 ![FIGURE 17](./img/17.png)
 <p style="text-align: center;">FIGURE 17</p>
@@ -3097,14 +3147,21 @@ The thermodynamic take on the complexity cost of Bayesian inference is potential
 Table 5 summarises the various potentials we have considered in previous sections in terms of 놀라움 – and implicitly the variational free energy that underwrites inference. The basic message here is that to characterise any mechanics, it is sufficient to specify the 놀라움 and amplitude of 무작위 변동. The ensuing dynamics can then be cast in terms of a (solenoidal) gradient flow on a potential, which is a function of 놀라움 or vice versa. Depending upon the definition of the potential, the amplitude of 무작위 변동 acquires various interpretations; such as inverse mass in quantum mechanics or a scaled temperature in stochastic mechanics. In conservative mechanics, where the 무작위 변동 can be discounted, quantities like mass and charge become constants of proportionality in the relationship between 놀라움 and potential.
 
 
-![TABLE 5](./img/t5.png)
+<p style="text-align:center">TABLE 5 <br/>
+Potentials and surprisal (conditional dependencies on external states are omitted for clarity)
+</p>
 
-<span style="background:#D3DFEE"> <p style="text-align:center;">TABLE 5</p> </span>
-<span style="background:#D3DFEE"> test color</span><br/>
-<span style="background:#FFFFFF"> 
-  **test color**
-</span><br/>
-<span style="background:#D3DFEE"> test color</span><br/>
+|$\begin{aligned}&\text{Mechanics(1.8)}\\ & f(x)=(Q-\Gamma)\cdot\nabla\Im(x)\end{aligned}$  | $\begin{aligned}&\text{NESS Potential or suprisal}\\ &\Im(x) \end{aligned}$ | $\begin{aligned}&\text{Amplitude of fluctuation}\\ &\Gamma \end{aligned}$ |
+|:-------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------:|:-------------------------------------------:|
+| $\begin{aligned}&\text{Quantum mechanics(5.4)}\\        & i\hbar\dot\Psi=\pmb H\Psi\end{aligned}$       | $\begin{aligned}&\text{Schrödinger potential}\\ &V(x)=\tfrac{\hbar^2}{4m}(\tfrac 1 2\nabla\Im\cdot\nabla\Im-\nabla^2\Im)\end{aligned}$| $\Gamma=\tfrac \hbar {2m}$ |
+| $\begin{aligned}&\text{Stochastic mechanics (6.2)}\\    & f(\pi)=(Q_m-\mu_m)\nabla U(\pi)\end{aligned}$ | $\begin{aligned}&\text{Thermodynamic potential} U(s,\alpha)\\ &\Im(s,\alpha)=\tfrac{1}{k_B T}U(s,\alpha)+\ln Z\end{aligned}$ | $\Gamma=\mu_m K_B T$|
+| $\begin{aligned}&\text{Newtonian mechanics (7.11)}\\    &\begin{Bmatrix}\pmb{\dot a}\\\pmb{\dot s}\end{Bmatrix}=\begin{Bmatrix}+\nabla_{\pmb s}\Im(\pmb b)\\-\nabla_{\pmb a}\Im(\pmb b)\end{Bmatrix} \end{aligned}$ | $\begin{aligned}&\text{Newtonian potential}\space\Im(\pmb a)\\ &\Im(\pmb s, \pmb a)=\Im(\pmb a)+\tfrac{\hbar}{2m}\pmb s\cdot\pmb s\end{aligned}$ |$\Gamma=0$|
+| $\begin{aligned}&\text{Classical mechanics (7.12)}\\    &\begin{Bmatrix}\pmb{\dot a}\\\pmb{\dot s}\end{Bmatrix}=\begin{Bmatrix}+\nabla_{\pmb s}\Im(\pmb b)\\-\nabla_{\pmb a}\Im(\pmb b)\end{Bmatrix} \end{aligned}$ | $\begin{aligned}&\text{Electrical potential}\space \varphi(\pmb a)\\ & \Im(\pmb s,\pmb a)=z\varphi(\pmb a)+\tfrac{\hbar}{2m}(\pmb s-zA(\pmb a))\cdot(\pmb s-zA(\pmb a))\end{aligned}$ |$\Gamma=0$|
+| $\begin{aligned}&\text{Relativistic mechanics (7.14)}\\ &\begin{Bmatrix}\pmb{\dot a}\\\pmb{\dot s}\end{Bmatrix}=\begin{Bmatrix}+\nabla_{\pmb s}\Im(\pmb b)\\-\nabla_{\pmb a}\Im(\pmb b)\end{Bmatrix} \end{aligned}$| $\begin{aligned}&\text{Gravitational potential}\space V(\pmb a)\\ &\Im(\pmb s, \pmb a)=V(\pmb a)+\sqrt{m^2c^4+\pmb s^2 c^2} \end{aligned}$ |$\Gamma=0$|
+| $\begin{aligned}&\text{Bayesian mechanics (8.5)}\\      & \pmb{\dot\alpha}=(Q_{\alpha\alpha}-\Gamma_{\alpha\alpha})-\nabla_\alpha F(\pmb \alpha, s) \end{aligned}$ | $\begin{aligned}&\text{Variational free energy}\\ &\Im(s,\pmb \alpha)=F(\pmb \alpha, s) \end{aligned}$ |$\Gamma_{\alpha\alpha}$|
+
+
+[TABLE 5](./img/t5.png)
 
 ## Discussion - 논의
 
