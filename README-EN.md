@@ -624,7 +624,23 @@ The treatment in this section suggests that self-organising systems reduce their
 
 Table 1 provides a summary of the information measures introduced in the section, which we will refer to later. However, before dealing with the sentient foundations of self-organisation, we will spend some time unpacking the NESS lemma (Appendix B) in terms of Markov blankets (in the remainder of Part One) and its relationship to quantum, statistical and classical mechanics (in Part Two) – to contextualise later treatments of active inference (in Part Three)
 
-![TABLE 1](./img/t1.png)
+[TABLE 1](./img/t1.png)
+
+<p style="text-align:center">TABLE 1 <br/>
+**Information measures of particular states that characterise self-organisation**
+</p>
+
+ Measure                          | Definition                                               | Comments
+|---------------------------------|----------------------------------------------------------|-------------------------------------------|
+| Self-information                | $\Im(\pi) = -\ln p(x)$                                   | A.k.a. suprise,surprisal or nagative log-evidence, where evidence is also known as the marginal likelihood |
+| Self-entropy                    | $H[P]=E_{p(\pi)}[\Im(pi)]$                               | The antropy of particular states |
+| Complexity                      | $D[p(\eta\vert\pi)\parallel p(\eta)]$                    | The divergence between the posterior and  prior over external(i.e.,hidden) states|
+| Risk (expected complexity)      | $I(E,P)=E_{p(\pi)}[D[p(\eta\vert\pi)\parallel p(\eta)]]$ | The expected complexity or mutual information between external and particular states|
+| Accuracy                        | $E_{p(\eta\vert\pi)}[\ln p(\pi\vert\eta)]$               | The expected log likelihood for particular states|
+| Ambiguity (expected inaccuracy) | $H(P\vert E)=E_{p(\eta,\pi)}[\Im(\pi\vert\eta)]$         | Negative expected accuracy or log likelihood. This is the conditional entropy of particular states given external states |
+| Information                     | $D[p(\eta\vert\pi)\parallel p(\eta\vert\alpha)]$         | A relative entropy, a.k.a. intrinsic value, salience and epistemic value|
+| Expected information gain       | $I(E,S\vert A)=E_{p(\pi)}[D[p(\eta\vert\pi)\parallel p(\eta\vert\alpha)]]$| Expected information gain or mutual information between sensory and external states, conditioned on active states |
+
 
 ### Synthetic soups and active matter
 
@@ -1365,6 +1381,18 @@ _A particular quantum mechanics_. This figure illustrates the quantum treatment 
 
 ![TABLE 2](./img/t2.png)
 
+<p style="text-align:center">TABLE 2<br/>
+Some common (analytic) solutions ot Schrödinger wave equation
+</p>
+
+| System                      | Schrödinger potential                                                  | Fluctuations                          | Remarks |
+|-----------------------------|:-----------------------------------------------------------------------|--------------------------------------|---------|
+| Free particle               | $V(x)=0$                                                               | $\Gamma=\tfrac{\hbar}{2m}$           | In the absence of a potential the particle is free, and the wave function has an exponential solution  |
+| Quantum harmonic oscillator | $V(x)=\tfrac 1 2 m\omega^2x^2$                                         | $\Gamma=\tfrac{\hbar}{2m}$           | The quadratic potential well gives Gaussian solutions modulated by Hermite polynomials |
+| Electrostatic potential     | $V(r)=-\frac{e_1e_2}{4\pi\varepsilon_0 r}$                             | $\Gamma=\tfrac{\hbar}{2m}$           | This potential corresponds to Coulomb potential energy for two point charges $e_1$ and $e_2$|
+| Hydrogen atom               | $\begin{aligned}V(r)&=-\frac{\hbar^2}{a_0 m_e r}\\&=-\frac{e^2}{4\pi\varepsilon_0 r}\end{aligned}$ |$\begin{aligned}\Gamma&=\tfrac{\hbar}{2m}\\m&=\frac{m_p m_e}{m_p+m_e}\end{aligned}$ | Here, $m_p$ and $m_e$ correspond to the mass of a positron and electron respectively and $e$ is electron charge |
+| Pöschl-Teller               | $V(x) = - \frac{\lambda(\lambda+1)}{2}sech^2(x)$                       | $\Gamma=\tfrac{\hbar}{2m}$           | These solutions are Legendre functions of tanh(x) |
+
 ### A theory of lots of little things – statistical mechanics
 
 _"If physical theories were people, thermodynamics would be the village witch. Over the course of three centuries, she smiled quietly as other theories rose and withered, surviving major revolutions in physics, like the advent of general relativity and quantum mechanics. The other theories find her somewhat odd, somehow different in nature from the rest, yet everyone comes to her for advice, and no-one dares to contradict her."_ (Goold et al., 2016); p1.
@@ -1602,6 +1630,13 @@ _Stochastic thermodynamics_. This figure illustrates the characterisation of our
 Fluctuation theorems express universal properties of any density $p(\Omega)$ over phase measures $\Omega(\pi)$ (i.e., work, heat or entropy) evaluated along fluctuating trajectories taken from ensembles with well-defined initial distributions. Following (Seifert, 2012), we will briefly consider a phenomenological classification into three classes; namely, _integral fluctuation theorems, detailed fluctuation theorems_ and (Generalized) _Crooks fluctuation theorems_ – with a special focus on integral fluctuation theorems and, in particular, the Jarzynski equality (Jarzynski, 1997). Please see Table 3 for a summary of this classification.
 
 ![TABLE 3](./img/t3.png)
+
+<p style="text-align:center">TABLE 3 <br/>
+Phenomenological classification of fluctuation theorems
+</p>
+
+ Measure                          | Definition                                               | Comments
+|---------------------------------|----------------------------------------------------------|-------------------------------------------|
 
 Originally, fluctuation theorems (FT) were derived on a case by case basis; however, stochastic thermodynamics furnishes a unifying treatment of fluctuation theorems by considering trajectories under time reversal (Seifert, 2012). Fluctuation theorems for processes with trajectories $\pi[\tau]$ , are most generally derived by invoking a ‘conjugate’ dynamics for trajectories, $\pi^\dagger[\tau]$. The crucial quantity – leading to the fluctuation theorems – is a master functional that corresponds to the log likelihood ratio of conjugate paths:
 $$
@@ -2406,6 +2441,19 @@ $$
 
 This operationalises the notion of ‘itinerancy’, enabling one to express the expected free energy of states after a critical time in the future, without referring explicitly to information length: c.f., the inequality in (8.16) and Figure 17. After this time, the expected free energy of autonomous states upper bounds their NESS surprisal – and the initial states are ‘forgotten’. Particles with a short critical time will, effectively, converge to nonequilibrium steady-state quickly and show a simple kind of self-organisation. Conversely, particles with a long critical time will exhibit itinerant density dynamics with temporal depth, experiencing many more probabilistic configurations. We will return to this distinction later, in terms of the difference between particles evincing a generalised homoeostasis and allostasis. Figure 17 provides an overview of how Bayesian mechanics inherits from Langevin dynamics, when a Markov blanket is in play. Before unpacking self-evidencing in terms of (variational) inference, we will briefly consider the implications of a Markov blanket for (quantum) measurement and the information geometry of internal states.
 
+<p style="text-align:center">TABLE 4 <br/>
+Information measures and particular free energy
+</p>
+
+| Measure                         | Definition                                               | Variational homologue
+|---------------------------------|----------------------------------------------------------|-------------------------------------------|
+| Surprisal                       |||
+| Self-entropy                    |||
+| Complexity                      |||
+| Risk                            |||
+| Accuracy                        |||
+| Ambiguity                       |||
+
 ![TABLE 4](./img/t4.png)
 ![FIGURE 17](./img/17.png)
 <p style="text-align: center;">FIGURE 17</p>
@@ -3140,15 +3188,21 @@ The thermodynamic take on the complexity cost of Bayesian inference is potential
 
 Table 5 summarises the various potentials we have considered in previous sections in terms of surprisal – and implicitly the variational free energy that underwrites inference. The basic message here is that to characterise any mechanics, it is sufficient to specify the surprisal and amplitude of random fluctuations. The ensuing dynamics can then be cast in terms of a (solenoidal) gradient flow on a potential, which is a function of surprisal or vice versa. Depending upon the definition of the potential, the amplitude of random fluctuations acquires various interpretations; such as inverse mass in quantum mechanics or a scaled temperature in stochastic mechanics. In conservative mechanics, where the random fluctuations can be discounted, quantities like mass and charge become constants of proportionality in the relationship between surprisal and potential.
 
+<p style="text-align:center">TABLE 5 <br/>
+Potentials and surprisal (conditional dependencies on external states are omitted for clarity)
+</p>
+
+| Measure                           | Definition                                                 | Variational homologue                       |
+|:---------------------------------:|:----------------------------------------------------------:|:-------------------------------------------:|
+||||
+||||
+||||
+||||
+||||
+||||
+||||
 
 ![TABLE 5](./img/t5.png)
-
-<span style="background:#D3DFEE"> <p style="text-align:center;">TABLE 5</p> </span>
-<span style="background:#D3DFEE"> test color</span><br/>
-<span style="background:#FFFFFF"> 
-  **test color**
-</span><br/>
-<span style="background:#D3DFEE"> test color</span><br/>
 
 ## Discussion
 
