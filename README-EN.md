@@ -3933,6 +3933,75 @@ This can be regarded as an alternative formulation of ambiguity in terms of info
 Software note: The simulations described in this monograph can be reproduced using the academic software available from http://www.fil.ion.ucl.ac.uk/spm/software/. Typing DEM at the Matlab prompt will invoke a graphical user interface. The simulations above can be reproduced by selecting the **A physics of life** button. This allows users to examine the code and subroutines – and customise them at their discretion.
 
 Acknowledgments: at the time of writing, KF is a Wellcome Principal Research Fellow (Ref: 088130/Z/09/Z). There are dozens of friends and colleagues who deserve acknowledgement for the ideas described in this monograph. I will pick out Thomas Parr for an explicit mention: Thomas was my Ph.D. student during its writing and contributed substantively to the active inference formulation. Furthermore, he prepared an invaluable series of weekly seminars, deconstructing the monograph’s formal arguments – and oversights – for our colleagues in London: see https://www.fil.ion.ucl.ac.uk/~tparr/Physics/Slides%20Stochastic%20dynamics.htm
+
+## Appendix G: Glossary of terms and expressions
+
+*(a.u.: arbitrary units; e.g., metres (m), radians (rad), etc)*
+
+| Expression                                              | Description                                                           | Units                   |
+|---------------------------------------------------------|:----------------------------------------------------------------------|-------------------------|
+|                                                         | **Variables**                                                         |                         |
+| $\tau$                                                  | Time                                                                  | s(seconds)              |
+| $x[\tau]=\{x(t):t\in(0,\tau)\}$                         | Trajectory or path through state-space                                | a.u. (m)                |
+| $\omega(\tau)$                                          | Random fluctuations                                                   | a.u. (m)                |
+| $\begin{aligned}x^{(i)}&=\{x_1^{(i)},x_2^{(i)},\ldots,x_N^{(i)}\} \\x_n^{(i)}&=\{x_{n_1}^{(i)},x_{n_2}^{(i)},\ldots,x_{n_M}^{(i)}\} \end{aligned}$| Vector states at the $j$-th level of description| a.u. (m) |
+| $x=\{\eta,s,a,\mu\}\in X$                               | Markovian partition into external, sensory, active and internal states| a.u. (m)                |
+| $\tilde\eta\in X\backslash E:x=\{\eta,\tilde\eta\}\in X$| Complement of a subset of states                                      | a.u. (m)                |
+| $\dot x=\frac{dx}{dt}$                                  | Time derivative(Newton notation)                                      | m/s                     |
+| $\vec x=(x,x^{'},x^{''},\ldots)$                        | Generalised motion(Lagrange notation)                                 | (m,m/s,...)             |
+| $\alpha=\{a,\mu\}\in A$                                 | Autonomous states                                                     | a.u. (m)                |
+| $b=\{s,a\}\in B$                                        | Blanket states                                                        | a.u. (m)                |
+| $\pi=\{b,\mu\}\in P$                                    | Particular states                                                     | a.u. (m)                |
+| $\eta\in E$                                             | External states                                                       | a.u. (m)                |
+| $\Gamma=\tfrac h{2m}=\mu_m k_B T$                       | Amplitude(i.e., half the variance) of random fluctuations             | $m^2$/s or J$\cdot$s/kg |
+| $\mathcal Q$                                            | Rate of solenodal flow                                                | $m^2$/s or J$\cdot$s/kg |
+| $m=\tfrac{\hbar}{2\mu_m k_b T}=\tfrac{\hbar}{2\Gamma}$  | (Reduced) mass                                                        | kg(kilogram)            |
+| $\mu_m=\tfrac{\hbar}{2mk_B T}=\tfrac{1}{k_B T}\Gamma$   | Mobility coefficient                                                  | s/kg                    |
+| $T$                                                     | Temperature                                                           | K(Kelvin)               |
+| $\ell=\int d\ell :d\ell^2=g_{ij}d\lambda^j d\lambda^i$  | Informational length                                                  | nats                    |
+| $D(\tau)=D[p(x,\tau\vert\pi_0)\parallel p(x,\infty\vert pi_0)]$ | Divergence length                                             | nats                    |
+| $\pmb\tau=d\ell(\tau\geq\pmb\tau)\approx 0$             | Critical time                                                         | s                       |
+| $g_{ij}=E\lbrack\frac{\partial\Im}{\partial\lambda^i}\frac{\partial\Im}{\partial\lambda^i}\rbrack$| Fisher(information metric)tensor | a.u.               |
+|                                                         | **Functions, functionals and potentials**                             |                         |
+| $E[x]=[E_p[x]=\int xp_\lambda(x)dx$                     | Expectation or average                                                |                         |
+| $p_\lambda(x):Pr[X\in A]=\int_A p_\lambda(x)dx$         | Probability density function paramaterised by sufficient statics $\lambda$                      |
+| $p_\tau(x)\equiv p(x,\tau)$                             | Time-dependent probability density function parameterised by time     |                         |
+| $\begin{aligned}p(x)&\triangleq p_\infty(x)=\lim_{\tau\to\infty}(p(x,\tau)\\ &\Leftrightarrow \pmb L p(x)= 0\end{aligned}$ | Nonequilibrium steady-state(NESS) density - the eigensolution of the Fokker Plank operator |
+| $q_mu(\eta)$                                            | Variational density - an (approximate posterior) density over external states parameterised by internal states |
+| $f(x)=E[\dot x]$                                        | Flow - the expected motion through state-space                        |                         |
+| $j(x)=f(x)p(x)-\Gamma\nabla p(x)$                       | Probability current                                                   |                         |
+| $\begin{aligned}\Psi(x,t)&=\Psi(x)e^{-i\omega t}\\p(x)&=\Psi(x)\cdot\Psi(x)^\dagger\end{aligned}$ | Wave function - the complex root of the NESS density ||
+| $\mathcal L(x,\dot x)=\tfrac 1 2[(\dot x-f)\cdot\tfrac 1 {2\Gamma}(\dot x-f)+\nabla\cdot f]$ | Lagrangian (Legendre transform of the Hamiltonian)        ||
+| $\mathcal H(x,\dot x)=\dot x\cdot \tfrac{\partial\mathcal L}{\partial\dot x}-\mathcal L(x,\dot x)$ | Hamiltonian (Legendre transform of the Lagrangian)  ||
+| $\mathcal A(x[\tau])=\Im(x[\tau])=\int_0^t\mathcal(x,\dot x)d\tau$ | Action: the surprisal of a path;i.e., path integral of the Lagrangian               ||
+| $V(x)=\tfrac m 2 f\cdot f+\tfrac \hbar 2 \nabla\cdot f$ | Schrödinger potential                                                 | J(Joules)               |
+| $U(\pi)=k_B T\cdot\Im(\pi)+F_m$                         | Thermodynamic potential                                               | J or kg $m^2$/$s^2$     |
+| $F_\Im(\tau)\triangleq E[U(\pi,\tau)]-E[k_B T\cdot\Im(\pi)]$ | Thermodynamic free energy                                        | J or kg $m^2$/$s^2$     |
+| $F(\pi)\geq\Im(\pi)$ | Variational free energy - an upper bound on the suprisal of the paticular states                         | nats                    |
+| $G(\alpha_\tau)\geq\Im_\tau(\alpha_\tau\vert\pi_0))$| Expected free energy - an upper bound on the surprisal of an autonomous state ini the future | nats |
+| $\Omega(x[\tau])$                                       | Path-dependent measurement                                            | a.u.                    |
+| $\pmb\sigma(u_i)=\frac{exp(-u_i)}{\sum_i exp(-u_i)}$    | Normalised exponential (softmax) function of a vector                 | a.u.                    |
+|                                                         |**Operators**                                                          |                         |
+| $u\cdot v= u^T v = \braket{u\vert v}=u_i v^i$           | Inner product using do, Dirac and summation notation                  |                         |
+| $u\times v=uv^T = \ket{u}\bra{v}$                       | Outer product using cross and Dirac notation                          |                         |
+| $\nabla_x\Im(x)=\frac{\partial\Im}{\partial x}=\big( \frac{\partial\Im}{\partial x_1}, \frac{\partial\Im}{\partial x_2},\cdots\big)$ | Differential or gradient operator (on a scalar field)||
+| $\nabla_{xx}\Im(x)=\frac{\partial^2\Im}{\partial x^2}$  | Curvature operator (on a scalar field)                                |                         |
+| $\nabla\cdot f(x) = \sum_i\frac{\partial f_i}{\partial x_i}$ | Divergence operator (on a vector field)                          |                         |
+| $\nabla^2\Im(x)=\nabla\cdot\nabla\Im=\Delta\Im$         | Laplace operator - the divergence of a gradient                       |                         |
+| $\begin{aligned}\pmb L&=\nabla\cdot(\Gamma\nabla-f) \\ \dot x&=\pmb L p(x)\end{aligned}$ | Fokker-Planck operator               |                         |
+| $\begin{aligned}\pmb H&=V(x)-\tfrac{\hbar^2}{2m}\nabla^2 \\ i\hbar\dot\Psi(x)&=\pmb H\Psi(x)\end{aligned}$ | Hamiltonian operator |                       |
+| $\pmb T = -\tfrac{\hbar^2}{2m}\nabla^2$                 | Kinetic operator                                                      |                         |
+| $\Im(x)=-\ln p(x)$                                      | Surprisal or self-information                                         | nats                    |
+| $H(X)=H[p(x)]=E[\Im(x)]$                                | Entropy or expected surprisal                                         | nats                    |
+| $H(X\vert Y) = E_{p(x,y)}[\Im(x\vert y)]$               | Conditional entropy                                                   | nats                    |
+| $D[q(x)\parallel p(x)]=E_q[\ln q(x)-\ln p(x)]$          | Relative entropy or Kullback-Leibler divergence                       | nats                    |
+| $\begin{aligned}I(X,Y)&=H(X)-H(X\vert Y)\\&=H(X)+H(Y)-H(X,Y)\\&=D[p(x,y)\parallel p(x)p(y)]\geq0\end{aligned}$ | Mutual information | nats or natural units 1 nat $\approx$ 1.44 bits |
+| $S\triangleq=k_B H(X)$                                  | Thermodynamic entropy                                                 | J/K or $m^2$kg $s^{-2}$ /K |
+|                                                         |**Constants and coefficients**                                         |                         |
+| $Z$                                                     | Partition function or normalisation constant                          | a.u                     |
+| $\hbar=\tfrac \hbar {2\pi}$                             | (Reduced) Planck constant (or Dirac constant) $1.05457\times 10^{-34}$| $m^2$ kg/s or J$\cdot$ s|
+| $k_B$                                                   | Boltzmann constant $1.39\times 10^{-23}$                              | $m^2$ kg $s^{-2}$/K or J/K |
+| c                                                       | Speed of light 299,792,458                                            | m/s                     |
 ## References
 
 Adams, R.A., Shipp, S., Friston, K.J., 2013. Predictions not commands: active inference in the motor system. Brain Struct Funct. 218, 611-643.
