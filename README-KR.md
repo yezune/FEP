@@ -2797,11 +2797,12 @@ $$
 
 다음으로 발생하는 표현들은 가장 가능성이 높은 내부 상태와, 함축적으로, 내부 매니폴드 상의 궤적에 의해 인코딩됩니다. 실제적으로 이것은 내부 상태의 평균 반응을 취해야 그들의 지각적 본성을 밝혀낼 수 있다는 것을 의미합니다. 우리는 이 문제를 다음에 다루며, 이는 이벤트 관련 평균화를 사용하는 경험적 연구의 맥락에서입니다. 여기서 중요한 점은, 생명 과학, 특히 신경 과학에서, 인식의 표현을 인코딩할 때 거의 항상 평균을 취하는 것이 관여한다는 것입니다. 흥미롭게도, 이 평균화는 현재의 처리를 통해, 조건부 모드(또는 평균)의 사용을 통해 요구됩니다. 다음 섹션에서, 우리는 바이러스나 박테리아와 같은 상대적으로 단순한 시스템에서도 추론과 표현이 어떻게 익숙한 방식으로 나타나는지 살펴보게 됩니다.
 
-### Simulating sentience - 시뮬레이션 지각 
+### Simulating sentience - 지각 시뮬레이션
 
-This section uses the microscopic denizen of our synthetic soup to illustrate the nature of Bayesian inference afforded by conditional synchronisation. In brief, we first consider how to identify the mapping between internal and external modes, conditioned upon 블랭킷 상태; which underwrites the conditional synchronisation manifold $\sigma:\pmb\mu\to\pmb\mu$ and ensuing inference. Numerically, this entails scrolling through the time-series, identifying when particular configurations of 마르코프블랭킷 states recur and taking the mode or average of concurrent internal and external states. The conditional synchronisation manifold can then be estimated by regressing the average external states on (some nonlinear function of) the average internal states. Having identified the synchronisation manifold, it is straightforward to evaluate the posterior 신념 associated with any (expected) internal state – about the external state – and any uncertainty, in terms of the curvature in (8.24). To illustrate this representational behaviour, we will take a subset of (electrochemical) states of internal particles and see to what extent they encode or represent 변동s in the (motion) states of external particles.
+이 섹션에서는 조건부 동기화에 의해 가능해진 베이지안 추론의 본질을 설명하기 위해 우리의 합성 수프의 미세한 거주자을 사용합니다. 간단히 말해서, 우리는 먼저 블랭킷 상태에 의해 조건이 붙은 내부와 외부 모드 사이의 매핑을 어떻게 확인하는지 고려합니다; 이것이 조건부 동기화 매니폴드 $\sigma:\pmb\mu\to\pmb\mu$ 및 이어지는 추론을 보증합니다. 수치적으로 이것은 시계열을 훑어보며 특정 마르코프블랭킷 상태의 구성이 언제 반복되는지를 파악하고 동시의 내부와 외부 상태의 모드 또는 평균을 취하는 것을 포함합니다. 그런 다음 조건부 동기화 매니폴드는 평균 외부 상태를 평균 내부 상태의 (일부 비선형 함수에 대한) 회귀를 통해 추정할 수 있습니다. 동기화 매니폴드를 확인한 후, 어떤 (예상되는) 내부 상태에 대한 외부 상태에 대한 추론과 불확실성을 (8.24)의 곡률 관점에서 평가하는 것은 간단합니다. 이 표현적인 행동을 보여주기 위해, 우리는 내부 입자의 (전기화학적) 상태의 부분집합을 취하고 그들이 얼마나 외부 입자의 (운동) 상태의 변동을 인코딩하거나 표현하는지 확인하겠습니다.
 
-We then revisit this behaviour from the point of view of an electrophysiologist, who assembles ensemble averages of internal states – in the form of event-related potentials – and tries to identify whether any trajectories are time locked to 변동s of external states; for example, the presentation of a visual motion stimulus. We will see that the ensuing ensemble averages bear a remarkable similarity to the kind of results seen in empirical event-related potential (ERP) studies.
+그런 다음 우리는 신경생리학자의 관점에서 이 행동을 다시 살펴보는데, 그는 내부 상태의 앙상블 평균을 모아 - 이벤트 관련 잠재력의 형태로 - 외부 상태의 변동에 시간적으로 잠금된 어떤 궤적이 있는지를 확인하려고 합니다; 예를 들어, 시각적 움직임 자극의 표현입니다. 우리는 이어지는 앙상블 평균이 경험적 이벤트 관련 잠재력(ERP) 연구에서 본 결과와 놀랄만큼 유사하다는 것을 알게 될 것입니다.
+
 
 #### The representation of order - 질서의 표현
 
