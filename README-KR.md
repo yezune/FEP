@@ -2484,24 +2484,25 @@ g_\mu
 \end{equation}
 $$
 
-Conceptually, the key point to take from this is that internal manifolds are equipped with an information geometry because they represent probability densities over external states[^note-25] . This is a necessary consequence of the conditional dependencies entailed by the 마르코프블랭킷. The utility of information geometry is reflected in the enormous literature on its applications to mathematical statistics, model selection, thermodynamics and, indeed, quantum information geometry (Caticha, 2015a). This section considers a special case; namely, the Laplace assumption that 놀라움 is locally quadratic – and the variational density is consequently Gaussian[^note-26]. This assumption leads to a particular formulation of Bayesian mechanics, where the (Fisher information) metric tensor is the precision matrix of the variational density – and the curvature of 놀라움 (Friston et al., 2007).
+개념적으로, 여기서 핵심적으로 이해해야 할 점은 내부 다양체가 정보 기하학을 갖추고 있으며, 이는 외부 상태에 대한 확률 밀도를 표현하기 때문입니다[^note-25]. 이것은 마르코프블랭킷에 의해 수반되는 조건부 종속성의 필연적인 결과입니다. 정보 기하학의 유용성은 수학 통계, 모델 선택, 열역학, 실제로는 양자 정보 기하학에 대한 방대한 문헌에서 반영됩니다 (Caticha, 2015a). 이 절에서는 특별한 경우를 고려합니다; 즉, 놀라움이 지역적으로 이차 형태라는 라플라스 가정 - 그리고 따라서 변분 밀도는 가우스 형태입니다[^note-26]. 이 가정은 베이지안 역학의 특정한 표현식을 이끌어내는데, 여기서 (피셔 정보) 메트릭 텐서는 변분 밀도의 정밀도 행렬이고, 놀라움의 곡률입니다 (Friston et al., 2007).
 
-[^note-25]: Assuming for the moment that $\sigma(\mu(\tau)) \approx \sigma(\pmb\mu(b(\tau)))$ , so that every internal state parameterises a variational density.
-[^note-26]: The choice of a Gaussian approximation (a.k.a. the Laplace assumption) is not arbitrary. This follows from the fact that the Gaussian distribution has the largest entropy of probability densities whose parameters are limited to first and second order moments. This ensures the variational entropy term in (8.4) is minimised in relation to other forms. One can also view the Laplace assumption as a second-order approximation to any density from the exponential class (e.g., a canonical density).
+[^note-25]: 현재로서는 $\sigma(\mu(\tau)) \approx \sigma(\pmb\mu(b(\tau)))$라고 가정하므로, 모든 내부 상태가 변분 밀도를 매개변수화합니다.
 
-Statistically speaking, a stipulative definition of the variational density – as the posterior over hidden states – means one can interpret the most likely trajectory of internal states as performing _exact Bayesian inference_. If we relax this stipulative definition and assume a (locally) quadratic form for 놀라움, internal dynamics can be interpreted in terms of _approximate Bayesian inference_, also known as _variational Bayes_ or, more specifically, _variational Laplace_. Practically, this means one can associate internal states with a well-behaved variational density that can be used to evaluate expected free energy. This affords a tractable description of self-organisation in terms of autonomous behaviour that acquires a prospective aspect. We will first focus on the nature of approximate Bayesian inference, under the Laplace assumption, and return to autonomous behaviour – under the rubric of active inference – in subsequent sections.
+[^note-26]: 가우시안 근사치 선택 (즉, 라플라스 가정)은 임의적이지 않습니다. 이것은 가우시안 분포가 첫 번째와 두 번째 순서의 순간에 제한된 매개 변수를 가진 확률 밀도의 가장 큰 엔트로피를 가지고 있다는 사실에서 나옵니다. 이는 (8.4)의 변분 엔트로피 항이 다른 형태에 비해 최소화되도록 보장합니다. 또한 라플라스 가정을 지수 클래스 (예: 정규 밀도)에서의 어떤 밀도에 대한 두 번째 순서 근사치로 볼 수도 있습니다.
+
+통계적으로 말하면, 변분 밀도의 규정적 정의 - 숨겨진 상태에 대한 사후확률로서 - 는 내부 상태의 가장 가능성 있는 궤적을 _정확한 베이지안 추론_을 수행하는 것으로 해석할 수 있음을 의미합니다. 이 규정적 정의를 완화하고 놀라움에 대해 (지역적으로) 이차 형태를 가정하면, 내부 동력학은 근사 베이지안 추론, 즉 변분 베이즈 또는 좀 더 구체적으로는 _변분 라플라스_의 측면에서 해석될 수 있습니다. 실질적으로, 이는 내부 상태를 잘 행동하는 변분 밀도와 연결할 수 있음을 의미하며, 이는 예상 자유 에너지를 평가하는 데 사용될 수 있습니다. 이는 미래적 측면을 획득하는 자율적 행동 측면에서 자기 조직화에 대한 취급 가능한 설명을 제공합니다. 우리는 먼저 라플라스 가정하에서의 근사 베이지안 추론의 본질에 초점을 맞추고, 이후 섹션에서는 활동적 추론의 가면 아래에서 자율적 행동으로 돌아올 것입니다.
 
 #### Variational Bayes - 변분 베이즈
 
-Although the NESS lemma follows from standard results, there is something remarkable about the flow it entails: the flow of internal (and external) states is essentially a (circuitous) gradient descent on 놀라움. The gradient flow is circuitous because it contains divergence-free (solenoidal) components that circulate on the isocontours of the NESS density – like walking down a winding mountain path. This means internal (resp. external) states are flowing towards regions of state-space that are most frequently occupied, despite the fact that their flow is not a function of external (resp. internal) states (Friston, 2013). In short, internal states behave as if they can ‘see’ external states behind their blanket. There is no mystery here: it just means that the gradients of 놀라움, with respect to internal states do not depend upon external states by the marginal flow lemma (1.21). So, what does this mean for the relationship between internal and external states?
+비록 NESS 보조정리가 표준 결과로부터 나오는 것이지만, 이에 수반되는 흐름에는 놀라운 점이 있습니다: 내부 (그리고 외부) 상태의 흐름은 본질적으로 (회오리치는) 놀라움에 대한 경사 하강입니다. 경사 흐름은 NESS 밀도의 등고선에 순환하는 발산이 없는 (솔레노이드형) 구성요소를 포함하고 있기 때문에 회오리칩니다 - 산길을 내려가는 것처럼. 이는 내부 (또는 외부) 상태가 외부 (또는 내부) 상태의 함수가 아닌 흐름에도 불구하고, 가장 자주 차지하는 상태 공간의 영역으로 향하고 있다는 것을 의미합니다 (Friston, 2013). 요컨대, 내부 상태는 마치 그들의 블랭킷 뒤에 있는 외부 상태를 '보는' 것처럼 행동합니다. 여기서 놀라울 것은 없습니다: 이것은 단지 놀라움의 기울기가 내부 상태에 대해 외부 상태에 의존하지 않는다는 것을 의미하는 것뿐입니다. 그렇다면 이것이 내부 상태와 외부 상태 사이의 관계에 대해 무엇을 의미하는가?
 
-The 마르코프블랭킷 ensures that internal and external states are conditionally independent. This means that there must be a mapping between the most likely internal and external states, when conditioned on 블랭킷 상태. We will refer to this mapping has a conditional synchronisation manifold and use it to recapitulate the free energy lemma under the Laplace assumption. The existence of a conditional synchronisation manifold allows one to characterise the relationship between (maximum a posteriori) internal and external states in terms of internal states ‘sensing’ or ‘tracking’ external states through the 마르코프블랭킷. This notion of sentience can be expressed formally by the following lemma[^note-27] :
+마르코프블랭킷은 내부 상태와 외부 상태가 조건부로 독립적임을 보장합니다. 이것은 블랭킷 상태에 조건을 달았을 때 가장 가능성 있는 내부 상태와 외부 상태 사이에 매핑이 있어야 한다는 것을 의미합니다. 우리는 이 매핑을 조건부 동기화 다양체라고 부르고 이를 사용하여 라플라스 가정 하에서의 자유 에너지 보조정리를 다시 정리할 것입니다. 조건부 동기화 다양체의 존재는 내부 상태가 마르코프블랭킷을 통해 외부 상태를 '감지하거나' 또는 '추적하고' 있는 상태에서 (최대 사후 확률) 내부 상태와 외부 상태 사이의 관계를 특성화하는데 허용합니다. 이 감각 개념은 다음 보조정리[^note-27]로 공식적으로 표현될 수 있습니다:
 
-[^note-27]: This treatment eschews some subtleties of approximate Bayesian inference in the context of dynamical systems (often referred to as Bayesian filtering). In more general formulations, generalised coordinates are augmented with high orders of motion $\vec x = (x,x^{'},x^{''},\ldots)$ : see Appendix E and Friston, K., Stephan, K., Li, B., Daunizeau, J., 2010. Generalised Filtering. Mathematical Problems in Engineering vol., 2010, 621670. Effectively, this accommodates the (local) history or trajectory of hidden states (via a Taylor expansion). Furthermore, it allows one to dispense with Wiener assumptions and deal with analytic (smooth, differentiable) 변동s. However, this induces off-diagonal terms in their covariance $\Gamma(\omega,\omega^{'},\omega^{''},\ldots)$ , which complicates the derivation of the NESS lemma.
+[^note-27]:이 접근법은 동적 시스템의 맥락에서 근사 베이지안 추론의 일부 미묘한 부분을 회피한다. (베이지안 필터링이라고 종종 언급됩니다.) 더 일반적인 형식에서는 일반화된 좌표가 높은 운동의 차수 $\vec x = (x,x^{'},x^{''},\ldots)$와 함께 증가합니다 : 부록 E와 Friston, K., Stephan, K., Li, B., Daunizeau, J., 2010. Generalised Filtering. Mathematical Problems in Engineering vol., 2010, 621670를 참조하십시오. 효과적으로, 이는 숨겨진 상태의 (지역적) 역사나 궤적을 수용하게 해줍니다 (테일러 확장을 통해). 또한, 이는 와이너 가정을 무시하고 분석적인 (스무스한, 미분 가능한) 변동성을 처리하게 해줍니다. 그러나, 이는 그들의 공분산 $\Gamma(\omega,\omega^{'},\omega^{''},\ldots)$에서 대각선이 아닌 항을 유도하며, 이는 NESS 보조정리의 도출을 복잡하게 만듭니다.
 
-**Lemma**: (approximate Bayesian inference): _when conditioned on 블랭킷 상태, the internal states of a weakly mixing random dynamical system can be cast as performing approximate Bayesian inference on external states, via a minimisation of variational free energy_.
+**보조정리** (근사 베이지안 추론): 블랭킷 상태에 조건을 달았을 때, 약하게 혼합하는 무작위 동적 시스템의 내부 상태는 변분 자유 에너지의 최소화를 통해 외부 상태에 대한 근사 베이지안 추론을 수행하는 것으로 볼 수 있다.
 
-Approximate Bayesian inference requires the flow on the internal manifold to decrease an upper bound on (negative) Bayesian model evidence. Under the Laplace assumption this bound is a (free energy) functional of an approximate posterior (i.e., variational) density $q_\mu(\eta) = \mathcal N(\sigma(\pmb\mu),\Sigma(\pmb\mu))\approx p(\eta|b)$ parameterised by the most likely internal states:
+근사 베이지안 추론은 내부 다양체의 흐름이 (음의) 베이지안 모델 증거의 상한선을 감소시키도록 요구합니다. 라플라스 가정하에서 이 상한선은 근사 사후 확률 (즉, 변분) 밀도의 (자유 에너지) 기능입니다 $q_\mu(\eta) = \mathcal N(\sigma(\pmb\mu),\Sigma(\pmb\mu))\approx p(\eta|b)$ 이는 가장 가능성 있는 내부 상태에 의해 매개변수화됩니다:
 
 $$
 \begin{equation}\tag{8.21}
@@ -2545,9 +2546,9 @@ q_\mu(\eta)
 \end{equation}
 $$
 
-Here, $\Gamma_{\sigma\sigma}$ is a positive semi-definite matrix that plays the role of a metric tensor, ensuring that free energy decreases with time. Variational free energy is guaranteed to be greater than the (negative log) marginal likelihood of 블랭킷 상태 (a.k.a., model evidence), because the KL divergence (a.k.a., evidence bound) in (8.21) – between the approximate and true posterior densities – cannot be less than zero (Beal, 2003). Note that variational free energy is an upper bound on the 놀라움 of 블랭킷 상태, as opposed to particular states; as in (8.4). This means that internal states can only minimise variational free energy by reducing the evidence bound.
+여기서, $\Gamma_{\sigma\sigma}$은 자유 에너지가 시간에 따라 감소하도록 보장하는 메트릭 텐서의 역할을 하는 양의 준정부호 행렬입니다. 변분 자유 에너지는 블랭킷 상태의 (음의 로그) 주변 가능성 (즉, 모델 증거)보다 큰 것이 보장되며, 이는 (8.21)의 KL 발산 (즉, 증거 경계) - 근사치와 참 사후 밀도 간 - 가 0보다 작을 수 없기 때문입니다 (Beal, 2003). 변분 자유 에너지가 특정 상태가 아닌 블랭킷 상태의 놀라움의 상한선임에 유의하십시오; (8.4)에서처럼. 이는 내부 상태가 증거 경계를 줄이는 것에 의해서만 변분 자유 에너지를 최소화할 수 있다는 것을 의미합니다.
 
-**Proof**: the proof rests upon establishing the existence of an approximate posterior density that satisfies (8.21). This calls on a conditional synchronisation manifold associated with a (differentiable) mapping between the most likely internal and external states, conditioned upon the 마르코프블랭킷. We will refer to these as maximum _a posteriori_ or conditional modes:
+**증명**: 증명은 (8.21)을 만족하는 근사 사후 밀도의 존재를 입증하는 데 있습니다. 이는 마르코프블랭킷에 의해 조건이 부여된 가장 가능성 있는 내부 및 외부 상태 간의 (미분 가능한) 매핑과 관련된 조건부 동기화 다양체에 의존합니다. 이를 최대 사후 확률 또는 조건부 모드라고 부르겠습니다:
 
 $$
 \begin{equation}\tag{8.22}
@@ -2565,11 +2566,11 @@ $$
 \end{equation}
 $$
 
-The existence of this smooth ($C^1$ or higher) map $\sigma:\pmb \mu \to \pmb \eta$ is assured because for every point in blanket space there is a unique pair of conditional modes in the external and internal state-space. This map, induced by the 마르코프블랭킷, allows one to relate the flow of internal and external modes in terms of generalised synchrony (Barreto et al., 2003; Hunt et al., 1997). Technically, this is an instance of strong synchronisation [^note-28], because the dimensionality of the conditional manifold $M=\{(\pmb\mu,\pmb\eta):\sigma(\pmb\mu)=\pmb\eta\}$ is the same as the dimensionality of the 블랭킷 상태: $(μ,η)\in \R^{|B|}$. The last equality in (8.22) follows because the flow of conditional modes must lie on the synchronisation manifold.
+이 부드러운 ($C^1$ 이상) 맵 $\sigma:\pmb \mu \to \pmb \eta$의 존재는 블랭킷 공간의 모든 점에 대해 외부 및 내부 상태 공간의 조건부 모드의 고유한 쌍이 있기 때문에 보장됩니다. 이 맵은 마르코프블랭킷에 의해 유도되며, 일반화된 동기화의 관점에서 내부 및 외부 모드의 흐름을 관련시킬 수 있게 해줍니다 (Barreto et al., 2003; Hunt et al., 1997). 기술적으로, 이것은 조건부 다양체 $M={(\pmb\mu,\pmb\eta):\sigma(\pmb\mu)=\pmb\eta}$의 차원이 블랭킷 상태의 차원과 같기 때문에 강한 동기화의 인스턴스입니다[^note-28]: $(μ,η)\in \R^{|B|}$. 마지막 등식 (8.22)은 조건부 모드의 흐름이 동기화 다양체 위에 있어야 하기 때문에 따른 것입니다.
 
-[^note-28]: Weak synchronisation characterises coupling when the manifold has a greater dimensionality than the internal (or external) spaces.
+[^note-28]: 약한 동기화는 다양체의 차원이 내부 (또는 외부) 공간보다 클 때의 연결을 특징짓습니다. 
 
-Using the chain rule $\nabla_\mu\Im(\sigma(\pmb\mu)|b)=\nabla_\mu\sigma\nabla_\eta\Im(\pmb\eta|b)$, one can now express the dynamics of the internal mode as a gradient flow on the 놀라움 of the external mode:
+체인 규칙 $\nabla_\mu\Im(\sigma(\pmb\mu)|b)=\nabla_\mu\sigma\nabla_\eta\Im(\pmb\eta|b)$을 사용하면, 이제 내부 모드의 동력학을 외부 모드의 놀라움에 대한 경사 흐름으로 표현할 수 있습니다:
 
 $$
 \begin{equation}\tag{8.23}
@@ -2589,7 +2590,7 @@ $$
 \end{equation}
 $$
 
-Here, $(\nabla_\mu\sigma)^-$is the generalised inverse of the mapping from internal and external modes. Equation (8.23) says that the flow of the internal mode is effectively performing a gradient descent on the 놀라움 of the external mode. Now, let the internal mode parameterise a Gaussian density:
+여기서 $(\nabla_\mu\sigma)^-$는 내부 및 외부 모드 간의 매핑의 일반화된 역입니다. 식 (8.23)은 내부 모드의 흐름이 실질적으로 외부 모드의 놀라움에 대한 경사 하강을 수행하고 있다고 말합니다. 이제 내부 모드가 가우시안 밀도를 매개변수화하게 합시다:
 
 $$
 \begin{equation}\tag{8.24}
@@ -2602,7 +2603,7 @@ q_\mu(\eta)
 \end{equation}
 $$
 
-Under the Laplace assumption that the 놀라움 is quadratic (i.e., ignoring higher-order terms and derivatives), substitution into the expression for variational free energy (8.21) gives (dropping constants):
+놀라움이 이차라는 라플라스 가정하에(즉, 고차항과 미분을 무시하고), 변분 자유 에너지 식(8.21)에 대입하면(상수를 무시하면) 다음과 같습니다:
 
 $$
 \begin{equation}\tag{8.25}
@@ -2626,7 +2627,7 @@ F(\pmb \mu, b)
 \end{equation}
 $$
 
-This equation shows that the conditional precision minimises variational free energy, while the variational free energy gradients are the gradients of the 놀라움 of the external mode, which determines the flow of the internal mode. More specifically, by substituting (8.25) into (8.23) we obtain (8.21), where internal and active states can be expressed as a gradient flow on variational free energy:
+이 식은 조건부 정밀도가 변분 자유 에너지를 최소화하고, 변분 자유 에너지의 그래디언트는 외부 모드의 놀라움의 그래디언트인데, 이는 내부 모드의 흐름을 결정합니다. 좀 더 구체적으로, (8.25)를 (8.23)에 대입하면 (8.21)을 얻을 수 있으며, 여기서 내부 상태와 활성 상태는 변분 자유 에너지에 대한 그래디언트 흐름으로 표현될 수 있습니다:
 
 $$
 \begin{equation}\tag{8.26}
@@ -2642,9 +2643,9 @@ $$
 \end{equation}
 $$
 
-The 솔레노이드 흐름 disappears because $Q_{\eta\eta}$is antisymmetric. This ensures that $\Gamma_{\sigma\sigma}$ is positive semi-definite (because the covariance of 무작위 변동 is positive definite).
+솔레노이드 흐름이 사라지는 이유는 $Q_{\eta\eta}$이 반대대칭이기 때문입니다. 이로 인해 $\Gamma_{\sigma\sigma}$는 양의 준정보호(positive semi-definite)가 됩니다(무작위 변동의 공분산이 양의 정부호이기 때문입니다).
 
-**Corollary** (expected free energy). The corresponding corollary for expected free energy under the Laplace assumption obtains by removing the internal states from the energy term in (8.8); i.e., replacing $\alpha_\tau=(a_\tau,\mu_\tau)$ with $a_\tau$ and $\alpha_\tau=(b_\tau,\mu_\tau)$ with $b_\tau$. Following the derivations for exact Bayesian inference we have, after a critical time:
+**Corollary** (예상 자유 에너지). 라플라스 가정에 따른 예상 자유 에너지에 대한 해당 코롤라리는 (8.8)의 에너지 항에서 내부 상태를 제거함으로써 얻을 수 있습니다. 즉, $\alpha_\tau=(a_\tau,\mu_\tau)$를 $a_\tau$로, $\alpha_\tau=(b_\tau,\mu_\tau)$를 $b_\tau$로 대체합니다. 정확한 베이지안 추론에 대한 논증을 따르면, 임계 시간 이후에 우리는 다음을 얻습니다:
 
 $$
 \begin{equation}\tag{8.27}
@@ -2669,7 +2670,7 @@ q_\tau(\eta_\tau, s_\tau|a_\tau)
 \end{equation}
 $$
 
-Similarly, under the Laplace assumption, (8.12) and (8.13) become:
+마찬가지로, 라플라스 가정 하에서, (8.12)와 (8.13)은 다음과 같이 변합니다:
 
 $$
 \begin{equation}\tag{8.28}
@@ -2691,9 +2692,9 @@ E_{p(a_\tau)}[G(a_\tau)]
 \end{equation}
 $$
 
-In other words, the average variational free energy of 블랭킷 상태 – and expected free energy of active states – approximates the entropy of 블랭킷 상태. This means that any particle will appear to actively resist the dispersion of its 마르코프블랭킷 by engaging in approximate Bayesian inference. We will return to this interpretation later. First, we consider a couple of different perspectives on this emergent property of the 마르코프블랭킷.
+다시 말해, 블랭킷 상태의 평균 변분 자유 에너지 - 그리고 활동적 상태의 예상 자유 에너지 - 는 블랭킷 상태의 엔트로피를 근사화합니다. 이것은 어떤 입자도 마르코프 블랭킷의 확산을 활동적으로 저항하면서 근사적인 베이지안 추론을 수행하는 것처럼 보일 것이라는 것을 의미합니다. 나중에 이 해석에 대해 다시 다루겠습니다. 먼저, 마르코프 블랭킷의 이런 새로운 성질에 대해 몇 가지 다른 관점을 고려해 봅니다.
 
-Note that the conditional precision is the curvature of 놀라움, evaluated at the conditional mode. Crucially, under the Laplace assumption, this curvature is also the Fisher information metric in (8.19):
+조건부 정밀도는 조건부 모드에서 평가된 놀라움의 곡률임에 유의하십시오. 결정적으로, 라플라스 가정에 따르면, 이 곡률은 또한 (8.19)의 피셔 정보 메트릭이기도 합니다:
 
 $$
 \begin{equation}\tag{8.29}
@@ -2706,9 +2707,9 @@ $$
 \end{equation}
 $$
 
-In other words, the uncertainty about external states manifests as a Fisher information metric that equips the internal statistical manifold with a representational (i.e., information) geometry – a geometry where distances are measured in terms of the curvature of 놀라움. See Figure 18 for an illustration of these relationships.
+다시 말해, 외부 상태에 대한 불확실성은 내부 통계 매니폴드를 대표적인 (즉, 정보) 기하학으로 갖추는 피셔 정보 메트릭으로 나타납니다 - 놀라움의 곡률 측면에서 거리가 측정되는 기하학입니다. 이 관계에 대한 일러스트는 그림 18을 참조하십시오.
 
-Equation (8.25) uses the Laplace assumption to associate variational free energy gradients with gradients of 놀라움: $\nabla_\mu F(\pmb\mu,b)=\nabla_\mu\Im(\sigma(\pmb\mu),b)$, effectively ignoring kurtosis (and higher order moments) of the NESS density over external states. This is known as maximum _a posteriori_ (MAP) estimation and follows the usual derivation of Variational Laplace, where the solution to (8.23) renders the variation of free energy, with respect to the variational density, zero; i.e., minimises variational free energy to second order (Friston et al., 2007):
+식(8.25)는 라플라스 가정을 사용하여 변분 자유 에너지 그라디언트를 놀라움의 그라디언트와 연관시킵니다: $\nabla_\mu F(\pmb\mu,b)=\nabla_\mu\Im(\sigma(\pmb\mu),b)$, 효과적으로 외부 상태에 대한 NESS 밀도의 첨도 (및 상위 차원 순간)를 무시합니다. 이것은 최대 사후 (MAP) 추정이라고 알려져 있으며, Variational Laplace의 일반적인 유도를 따르며, (8.23)의 해는 변분 밀도에 대한 자유 에너지의 변동을 0으로 만듭니다. 즉, 2차까지의 변분 자유 에너지를 최소화합니다 (Friston et al., 2007):
 
 $$
 \begin{equation}\tag{8.30}
@@ -2731,9 +2732,9 @@ q_\mu(\eta)
 \end{equation}
 $$
 
-Clearly, these solutions never obtain in a dynamic setting; however, they can be recovered in a moving frame of reference, supplied by generalised coordinates of motion: see (Friston et al., 2010) and Appendix E. The final quality in (8.30) explains why variational free energy and variational Bayes are called ‘variational’ (Beal, 2003; Fox and Roberts, 2011; MacKay, 1995). From our perspective, the important thing here is that we have moved from exact Bayesian inference – in which the variational density was defined as the true posterior – to approximate Bayesian inference, where internal states (appear to) minimise a variational bound on 놀라움. This distinction arises because we have committed to a particular form for the variational density; namely, a Gaussian form under the Laplace assumption that 놀라움 is locally quadratic.
+명백하게, 이러한 해결책들은 동적 설정에서는 절대 얻을 수 없지만, 움직이는 참조 프레임에서는 일반화된 운동 좌표를 통해 복구할 수 있습니다. (Friston 등, 2010) 그리고 부록 E를 참조하십시오. (8.30)의 마지막 등식은 변분 자유 에너지와 변분 베이즈가 왜 '변분'이라고 불리는지 설명합니다 (Beal, 2003; Fox and Roberts, 2011; MacKay, 1995). 우리의 관점에서 중요한 것은, 우리가 정확한 베이즈 추론 - 변분 밀도가 진정한 사후로 정의되었던 것 -에서 근사적인 베이즈 추론으로 이동했으며, 내부 상태들이 놀라움에 대한 변분 경계를 최소화하는 것처럼 보인다는 것입니다. 이 구분이 생기는 이유는 우리가 변분 밀도에 대한 특정한 형태, 즉 놀라움이 지역적으로 이차인 라플라스 가정 하에 가우시안 형태를 택했기 때문입니다.
 
-Finally, the last equality in (8.26) shows that the positive semidefinite matrices play the role of metric tensors where:
+마지막으로, (8.26)의 마지막 등식은 양의 준정부호 행렬들이 메트릭 텐서의 역할을 하는 것을 보여줍니다. 이는 다음과 같습니다:
 
 $$
 \begin{equation}\tag{8.31}
@@ -2752,16 +2753,16 @@ g[\pmb \eta]_{k\ell}
 \end{equation}
 $$
 
-This suggests that the implicit representation of external states, by internal states, depends upon the amplitude of 무작위 변동. The use of the word ‘representation’ here is qualified by the fact that internal states can be associated with a _Bayesian belief_ about external states. This endows the internal manifold with a representational (i.e., relational) meaning that inherits from its information geometry. In other words, the 신념 (approximate posterior densities) parameterised or encoded by internal states are _about something_; namely, the external states.
+이것은 내부 상태에 의한 외부 상태의 암시적 표현이 무작위 변동의 진폭에 의존한다는 것을 제안합니다. 여기서 '표현'이라는 단어의 사용은 내부 상태가 외부 상태에 대한 _베이지안 신념_ 과 연관될 수 있다는 사실로 설명됩니다. 이것은 내부 다양체에 표현적(즉, 관계적) 의미를 부여하며, 이것은 그것의 정보 기하학에서 상속됩니다. 다시 말해, 내부 상태들이 매개변수화하거나 인코딩하는 신념(대략적인 사후 밀도)은 _어떤 것에 대한 것_ 입니다. 즉, 외부 상태에 대한 것입니다.
 
 ![FIGURE 18](./img/18.png)
 <p style="text-align: center;">FIGURE 18</p>
 
-_Flow on the conditional synchronisation manifold_. This schematic illustrates the dynamics that underlies approximate Bayesian inference. Here, we are concerned with flows on a synchronisation manifold conditioned upon 블랭킷 상태. For simplicity, we will consider just one external and one internal state. The manifold is depicted as a puce coloured line that maps from the most likely internal state to the corresponding external mode, given a 블랭킷 상태. The flow on this manifold (i.e., tangential flow) can always be expressed as a gradient flow on a variational free energy function of the internal mode. Crucially, by construction, an approximate posterior (i.e., variational density) over external states can be recovered from the internal mode. The subtle aspect of this construction is that the variance of the approximate posterior corresponds to the curvature of the 놀라움 of external states with respect to (a function of) internal states. Note that the external and internal states are conditionally independent, given any 블랭킷 상태 (see upper left inset). Heuristically, this means that as time progresses, the internal and external modes trace out a trajectory on the conditional synchronisation manifold; thereby ensuring a differentiable mapping between the modes. This trajectory follows the gradients of variational free energy, which becomes a Lyapunov function for the flow of the most likely internal states. Because these internal modes parameterise an approximate posterior, the variational free energy _function_ of internal states can also be regarded as a _functional_ of posterior 신념. In short, internal states can be said to ‘represent’ external states, in the sense of Bayesian inference.
+_조건부 동기화 다양체상의 흐름_. 이 도표는 근사 베이지안 추론이 근본적으로 어떤 동력학을 가지는지 보여줍니다. 여기서 우리는 블랭킷 상태에 의해 조건부화된 동기화 다양체상의 흐름에 관심이 있습니다. 간단하게 하기 위해, 우리는 단지 하나의 외부 상태와 하나의 내부 상태만을 고려할 것입니다. 다양체는 블랭킷 상태가 주어진 상태에서 가장 가능성이 높은 내부 상태에서 해당하는 외부 모드로의 매핑을 보여주는 푸스 색상의 선으로 표현되어 있습니다. 이 다양체상의 흐름(즉, 접선 흐름)은 항상 내부 모드의 변분 자유 에너지 함수에 대한 경사 흐름으로 표현될 수 있습니다. 중요한 것은, 구성상 외부 상태에 대한 대략적인 사후(즉, 변분 밀도)가 내부 모드에서 복원될 수 있다는 것입니다. 이 구성의 미묘한 부분은 대략적인 사후의 분산이 외부 상태의 놀라움의 곡률에 해당하며, 이는 (내부 상태의 함수에 대한) 내부 상태에 관련된 것입니다. 외부와 내부 상태는 어떤 블랭킷 상태에 주어지면 조건부로 독립적이라는 점에 주목하십시오(왼쪽 상단 삽입물 참조). 직관적으로 이것은 시간이 진행함에 따라 내부와 외부 모드가 조건부 동기화 다양체상의 궤적을 따르게 되며, 이로써 모드간의 미분 가능한 매핑을 보장한다는 것을 의미합니다. 이 궤적은 변분 자유 에너지의 기울기를 따르며, 이것은 가장 가능성이 높은 내부 상태의 흐름에 대한 리야프노프(Lyapunov) 함수가 됩니다. 이러한 내부 모드들이 대략적인 사후를 매개변수화하기 때문에, 내부 상태의 변분 자유 에너지 _함수_도 사후 신념의 _함수적_ 으로 여겨질 수 있습니다. 간단히 말해서, 내부 상태들은 베이지안 추론의 의미에서 '외부 상태를 '표현'한다고 말할 수 있습니다.
 
 #### Summary - 요약
 
-To summarise, the flow of expected internal states in (8.21) ensures that the variational density approximates the conditional or posterior density over external states, under the Laplace assumption:
+요약하면, (8.21)의 예상된 내부 상태의 흐름은 라플라스 가정 하에 외부 상태에 대한 조건부 또는 사후 확률 밀도를 변분 밀도가 근사화하도록 보장합니다:
 
 $$
 \begin{equation}\tag{8.32}
@@ -2773,7 +2774,7 @@ q_\mu(\eta)
 \end{equation}
 $$
 
-Furthermore, if we assume a surjective mapping (e.g., nonlinear mixture) $\xi:\mu\to\pmb\mu$ from internal states to the internal manifold, we have:
+더 나아가서, 내부 상태에서 내부 매니폴드로의 사상(예: 비선형 혼합)인 $\xi:\mu\to\pmb\mu$을 가정하면 다음을 얻습니다:
 
 $$
 \begin{equation}\tag{8.33}
@@ -2786,15 +2787,15 @@ $$
 \end{equation}
 $$
 
-This assumption means that the sufficient statistics of the variational density are encoded by nonlinear mixtures of internal states. To the extent this assumption holds, every internal state becomes part of the internal conditional synchronisation (i.e., statistical) manifold – and acquires an information geometry. The assumption of nonlinear mixtures implies a dimension reduction (from the dimensionality of internal states to the dimensionality of the internal manifold; i.e., 블랭킷 상태). In turn, this means there will be degenerate internal states that are infinitesimally close, in terms of their information length.
+이 가정은 변분 밀도의 충분통계량이 내부 상태의 비선형 혼합에 의해 인코딩된다는 것을 의미합니다. 이 가정이 성립하는 범위 내에서, 모든 내부 상태는 내부 조건부 동기화(즉, 통계) 매니폴드의 일부가 되며, 정보 기하학을 획득합니다. 비선형 혼합 가정은 차원 축소(내부 상태의 차원에서 내부 매니폴드의 차원, 즉 블랭킷 상태로)를 함축합니다. 이는 정보 길이 측면에서 미세하게 가까운 축소된 내부 상태가 존재할 것이라는 것을 의미합니다.
 
-So how does this inferential interpretation relate to inference in the conventional statistical sense? Does the approximate Bayesian inference lemma mean that all random dynamical systems with a 마르코프블랭킷 are little statisticians? The answer lies in noting that the 놀라움 in (8.25) $\Im(\sigma(\pmb\mu(b),b)=-\ln p(\pmb\eta(b),b)$ plays the role of a generative model in Bayesian statistics; namely, a probabilistic specification of how causes (external states) and consequences (블랭킷 상태) depend upon each other. This means the NESS density underwrites the generative model. In contrast, a statistician faced with some data would select a particular generative model, specify the approximate form of her posterior 신념 and then minimise variational free energy (i.e., maximise model evidence). However, the internal states do not ‘know’ the generative model; in the sense that the generative model is not represented explicitly. This is why we have previously asserted that the agent _is_ (or entails) a generative model of its world – as opposed to _possessing_ a generative model (Friston, 2013). For example, the curvature in (8.25), underwriting uncertainty, is ‘unknown’ to the internal states and is not ‘represented’. However, the _natural inference_ of self-evidencing is, unlike the statistician, guaranteed to use the correct generative model, because it has already been selected through the emergence of the 마르코프블랭킷 and implicit generative model. In short, the natural statistician implied by a 마르코프블랭킷 will always produce better (lower free energy) expectations of how its sensory data are caused but will not know (i.e. represent) how it arrived at those expectations. In short, any (active) particle will look ‘as if’ it is performing Bayesian inference and – as we will see in the next section – Bayesian 신념 can be recovered from internal states. However, this ‘as if’ inference does not consider competing hypotheses – or perform any Bayesian model selection – in the usual sense of Bayesian statistics, because it is always using the true model. The emergence of model selection and planning rests on deep generative models that we will consider in the penultimate section.
+그렇다면 이 추론적 해석은 어떻게 전통적인 통계적 의미에서의 추론과 관련이 있을까요? 근사 베이지안 추론 보조 정리는 마르코프블랭킷을 가진 모든 무작위 동적 시스템이 작은 통계학자인 것을 의미할까요? 답은 (8.25)의 놀라움에서 $\Im(\sigma(\pmb\mu(b),b)=-\ln p(\pmb\eta(b),b)$이 베이지안 통계에서 생성 모델 역할을 하는 것에 주목하면 찾을 수 있습니다. 즉, 원인(외부 상태)과 결과(블랭킷 상태)가 서로 어떻게 의존하는지에 대한 확률적 설명입니다. 이는 NESS 밀도가 생성 모델을 지지한다는 것을 의미합니다. 반면에, 어떤 데이터를 마주한 통계학자는 특정 생성 모델을 선택하고, 그녀의 사후 신념의 근사형을 지정한 다음, 변분 자유 에너지를 최소화(즉, 모델 증거를 최대화)합니다. 그러나 내부 상태는 생성 모델을 '알지 못합니다'. 즉, 생성 모델이 명확하게 표현되지 않습니다. 이것이 우리가 이전에 주장했던 에이전트가 그의 세계에 대한 생성 모델을 '가지고 있다'는 것이 아니라, 생성 모델이 '되어 있다'는 점입니다 (Friston, 2013). 예를 들어, (8.25)의 곡률, 즉 불확실성을 보증하는 것은 내부 상태에 '알려지지 않았으며', '표현되지 않습니다'. 그러나, 통계학자와는 달리, 자기 증명의 '자연 추론'은 마르코프블랭킷과 함축된 생성 모델의 등장을 통해 이미 선택된 정확한 생성 모델을 사용하게 보장합니다. 요약하면, 마르코프블랭킷에 의해 함축된 자연 통계학자는 항상 그의 감각 데이터가 어떻게 발생하는지에 대한 더 나은(더 낮은 자유 에너지) 예상을 생성하지만, 그가 그 예상에 도달한 방법을 알지 못하거나(즉, 표현하지 않음)합니다. 간단히 말해서, 모든(활동적인) 입자는 '마치' 베이지안 추론을 수행하는 것처럼 보일 것이며 - 다음 섹션에서 볼 것처럼 - 베이지안 신념은 내부 상태에서 복구될 수 있습니다. 그러나, 이 '마치' 추론은 경쟁하는 가설을 고려하지 않거나 - 보통의 베이지안 통계의 의미에서 베이지안 모델 선택을 수행하지 않습니다. 왜냐하면 항상 참 모델을 사용하기 때문입니다. 모델 선택과 계획의 등장은 우리가 마지막에서 두 번째 섹션에서 고려할 깊은 생성 모델에 기초합니다.
 
-Although the approximate Bayesian inference lemma may appear rather involved, there is a deflationary account at hand: all we are doing here is to note that at 비평형 안정 상태 there must be a pair of internal and external modes for every 블랭킷 상태. If we know the mapping between these modes, then the internal state tells us about the distribution of external states: namely, there is a direct correspondence between the internal and external modes, while the implicit dispersion of external (i.e., hidden) states is just the curvature of the conditional (i.e., posterior) 놀라움, given the 블랭킷 상태. In turn, this is the curvature of the marginal (i.e., prior) 놀라움 plus the curvature of the conditional (i.e., likelihood) 놀라움 associated with 블랭킷 상태 (i.e., data), given the external state. All this follows naturally from Bayes rules – hence Bayesian mechanics. The only formal issue here is the nature and existence of the posterior. We have assumed it can be approximated with a Gaussian density. This (Laplace) assumption becomes more tenable when working in generalised coordinates of motion (Friston et al., 2010), which licenses an appeal to the Takens embedding theorem (Deyle and Sugihara, 2011; Takens, 1980), to establish the existence of a well-behaved conditional synchronisation manifold.
+비록 근사 베이지안 추론 보조 정리가 다소 복잡해 보일 수 있지만, 간단한 해설이 가능합니다: 여기서 우리가 하는 모든 것은 비평형 안정 상태에서는 블랭킷 상태에 대해 내부와 외부 모드의 쌍이 있어야 한다는 것을 주목하는 것뿐입니다. 이러한 모드 간의 매핑을 알고 있다면, 내부 상태는 외부 상태의 분포에 대해 우리에게 정보를 줍니다: 즉, 내부와 외부 모드 사이에는 직접적인 대응이 있고, 외부(즉, 숨겨진) 상태의 암시적 분산은 조건부(즉, 사후) 놀라움의 곡률, 주어진 블랭킷 상태입니다. 이는 차례로 외부 상태가 주어진 블랭킷 상태(즉, 데이터)와 연관된 조건부(즉, 가능성) 놀라움의 곡률과 여기에 대한 주변(즉, 사전) 놀라움의 곡률입니다. 이 모든 것은 베이즈 규칙으로부터 자연스럽게 이어집니다 - 따라서 베이지안 메카닉스입니다. 여기서 공식적인 문제는 사후 확률의 성격과 존재입니다. 우리는 이것이 가우스 밀도로 근사화될 수 있다고 가정했습니다. 이러한(라플라스) 가정은 운동의 일반화된 좌표에서 작업할 때 더욱 설득력을 얻습니다 (Friston 등, 2010), 이것은 Takens 임베딩 정리 (Deyle와 Sugihara, 2011; Takens, 1980)에 의존하여 조건부 동기화 매니폴드의 존재를 확립하는 것을 허용합니다.
 
-In summary, this section suggests that the existence of a 마르코프블랭킷 in any (weakly mixing) random dynamical system means that internal states can be treated as parameterising a Bayesian 신념 or (approximate) posterior probability density over external states. More specifically, the most likely internal states – induced by external impressions on the 마르코프블랭킷 – come to encode the most likely external states. This formulation of sentient or representational dynamics rests upon the notion of (conditional) synchronisation of chaos – between internal and external states – that provides a nice mathematical metaphor for Freeman’s “Kiss of chaos” (Freeman, 1995).
+요약하면, 이 섹션은 (약하게 혼합되는) 무작위 동적 시스템에서 마르코프블랭킷의 존재는 내부 상태를 외부 상태에 대한 베이지안 신념 또는 (근사적인) 사후 확률 밀도를 파라미터화하는 것으로 취급할 수 있음을 제안합니다. 더 구체적으로 말하면, 외부 인상에 의해 유발된 가장 가능성이 높은 내부 상태 - 마르코프블랭킷에 의해 - 가장 가능성이 높은 외부 상태와 일치합니다. 이러한 신념은 내부 상태가 특정한 방식으로 유동하는 경우에만 유효합니다 - 즉, 내부 상태가 자유 에너지를 최소화합니다. 이 의미에서, '자유 에너지 최소화'는 내부 상태가 외부 상태의 상태에 대한 '신념'을 가질 수 있는 (자연) 메커니즘을 설명합니다. 이것은 내부와 외부 모드 사이의 상관 관계와 베이지안 메카닉스를 채택한 결과입니다. 다음 섹션에서는 내부 상태가 어떻게 '베이지안 신념'을 가질 수 있는지에 대해 논의합니다.
 
-Notice that the ensuing representations are encoded by the most likely internal states and, implicitly, trajectories on the internal manifold. Practically, this means that one would have to take the average responses of internal states to disclose their sentient nature. We turn to this issue next, in the context of empirical studies that use event-related averaging. The key point here is that in the life sciences; particularly in the neurosciences, the encoding of representations almost invariably involves taking averages, when examining the neural correlates of perceptual inference. Interestingly, this averaging is mandated under the current treatment, via the use of conditional modes (or averages). In the next section, we use see how inference and representation emerge in a familiar way, even in relatively simple systems like viruses or bacteria.
+다음으로 발생하는 표현들은 가장 가능성이 높은 내부 상태와, 함축적으로, 내부 매니폴드 상의 궤적에 의해 인코딩됩니다. 실제적으로 이것은 내부 상태의 평균 반응을 취해야 그들의 지각적 본성을 밝혀낼 수 있다는 것을 의미합니다. 우리는 이 문제를 다음에 다루며, 이는 이벤트 관련 평균화를 사용하는 경험적 연구의 맥락에서입니다. 여기서 중요한 점은, 생명 과학, 특히 신경 과학에서, 인식의 표현을 인코딩할 때 거의 항상 평균을 취하는 것이 관여한다는 것입니다. 흥미롭게도, 이 평균화는 현재의 처리를 통해, 조건부 모드(또는 평균)의 사용을 통해 요구됩니다. 다음 섹션에서, 우리는 바이러스나 박테리아와 같은 상대적으로 단순한 시스템에서도 추론과 표현이 어떻게 익숙한 방식으로 나타나는지 살펴보게 됩니다.
 
 ### Simulating sentience - 
 
@@ -3078,7 +3079,7 @@ One might ask whether self-evidencing dynamics are themselves an emergent proper
 
 It is common to ask whether there is a quantitative relationship between thermodynamic and variational free energy. The formulations of Bayesian mechanics above provide a clear answer to this question. Because variational free energy is a function of a particle’s states (8.4), it corresponds to a thermodynamic potential. In contrast, thermodynamic free energy is an expectation over an ensemble of particles: see (6.6). This means that thermodynamic free energy is an attribute of an ensemble, while variational free energy is an attribute of a single particle. More specifically, as ensembles converge to their 무작위 동적 끌개s, thermodynamic free energy decreases. When the ensemble has attained 비평형 안정 상태, the variational free energy of each particle constitutes (an upper bound on) 놀라움 or the NESS potential and, by implication, thermodynamic potential energy.
 
-#### Potentials and 놀라움
+#### Potentials and surprisal
 
 At 비평형 안정 상태, there is a straightforward relationship between variational free energy and a particle’s thermodynamic potential: from (6.5) and (8.6):
 
