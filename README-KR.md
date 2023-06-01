@@ -80,7 +80,7 @@ $$
 $$
 \begin{equation}\tag{1.2}
 \begin{aligned}
-\mathfrak{I}(x[\tau]) & \triangleq - \ln \space p(x[\tau]) = \mathcal{A}(x[\tau]) \\
+\Im(x[\tau]) & \triangleq - \ln \space p(x[\tau]) = \mathcal{A}(x[\tau]) \\
 \mathcal{A}(x[\tau]) & = \int_0^t \mathcal{L}(x,\dot{x}) d\tau \\
 \mathcal{L}(x,\dot{x}) & = \cfrac{1}{2}[(\dot{x}-f) \cdot \cfrac{1}{2\Gamma}() + \nabla \cdot f] \\
 &= \cfrac{1}{4\Gamma}\dot{x}\cdot\dot{x} - \cfrac{1}{2\Gamma}f\cdot\dot{x} + \cfrac{1}{h}V(x) \\
@@ -184,9 +184,9 @@ $$
 $$
 \begin{equation}\tag{1.10}
 \begin{aligned}
-\mathcal{A}(x[\tau]) & =\underbrace{\frac{1}{2} \int_0^t \frac{1}{2 \Gamma} \dot{x}^2 d \tau}_{\text {kinetic }}+\underbrace{\frac{1}{2} \int_0^t \dot{\mathfrak{I}} d \tau}_{\text {path-independent }}+\underbrace{\frac{1}{h} \int_0^t V(x) d \tau}_{\text {path-dependent }} \\
-\int_0^t \dot{\mathfrak{I}} d \tau & =\mathfrak{I}\left(x_t\right)-\mathfrak{I}\left(x_0\right) \\
-V(x) & =\frac{h}{2} \Gamma\left(\frac{1}{2} \nabla \mathfrak{I} \cdot \nabla \mathfrak{I}-\nabla^2 \mathfrak{I}\right)
+\mathcal{A}(x[\tau]) & =\underbrace{\frac{1}{2} \int_0^t \frac{1}{2 \Gamma} \dot{x}^2 d \tau}_{\text {kinetic }}+\underbrace{\frac{1}{2} \int_0^t \dot{\Im} d \tau}_{\text {path-independent }}+\underbrace{\frac{1}{h} \int_0^t V(x) d \tau}_{\text {path-dependent }} \\
+\int_0^t \dot{\Im} d \tau & =\Im\left(x_t\right)-\Im\left(x_0\right) \\
+V(x) & =\frac{h}{2} \Gamma\left(\frac{1}{2} \nabla \Im \cdot \nabla \Im-\nabla^2 \Im\right)
 \end{aligned}
 \end{equation}
 $$
@@ -249,7 +249,7 @@ $$
 $$
 \begin{equation}\tag{1.14}
 \begin{aligned}
-\mathfrak{I}(x,\tau) = \lambda^i (\tau)\zeta_i (x) + \ln Z
+\Im(x,\tau) = \lambda^i (\tau)\zeta_i (x) + \ln Z
 \end{aligned}
 \end{equation}
 $$
