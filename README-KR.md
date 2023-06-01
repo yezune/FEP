@@ -81,8 +81,8 @@ $$
 \begin{aligned}
 \mathfrak{I}(x[\tau]) & \triangleq - \ln \space p(x[\tau]) = \mathcal{A}(x[\tau]) \\
 \mathcal{A}(x[\tau]) & = \int_0^t \mathcal{L}(x,\dot{x}) d\tau \\
-\mathcal{L}(x,\.{x}) & = \cfrac{1}{2}[(\.{x}-f) \cdot \cfrac{1}{2\Gamma}() + \nabla \cdot f] \\
-&= \cfrac{1}{4\Gamma}\.{x}\cdot\.{x} - \cfrac{1}{2\Gamma}f\cdot\.{x} + \cfrac{1}{h}V(x) \\
+\mathcal{L}(x,\dot{x}) & = \cfrac{1}{2}[(\dot{x}-f) \cdot \cfrac{1}{2\Gamma}() + \nabla \cdot f] \\
+&= \cfrac{1}{4\Gamma}\dot{x}\cdot\dot{x} - \cfrac{1}{2\Gamma}f\cdot\dot{x} + \cfrac{1}{h}V(x) \\
 V(x) & = \cfrac{h}{4\Gamma}f\cdot f + \cfrac{h}{2} \nabla \cdot f
 \end{aligned}
 \end{equation}
@@ -95,10 +95,10 @@ $$
 $$
 \begin{equation}\tag{1.3}
 \begin{aligned}
-\mathcal{H}(x,\.{x}) & =\.{x}\cfrac{\partial \mathcal{L}}{\partial \.{x}}-\mathcal{L}(x.\.{x})=\.{x}\cdot p - \mathcal{L}(x,\.{x}) \\
-&= \cfrac{1}{4\Gamma}\.{x}\cdot\.{x} + \cfrac{1}{h}V(x) \\
+\mathcal{H}(x,\dot{x}) & =\dot{x}\cfrac{\partial \mathcal{L}}{\partial \dot{x}}-\mathcal{L}(x.\dot{x})=\dot{x}\cdot p - \mathcal{L}(x,\dot{x}) \\
+&= \cfrac{1}{4\Gamma}\dot{x}\cdot\dot{x} + \cfrac{1}{h}V(x) \\
 \\
-p & \triangleq \cfrac{\partial \mathcal{L}}{\partial \.{x}} = \cfrac{1}{2 \Gamma}(\.{x}-f)
+p & \triangleq \cfrac{\partial \mathcal{L}}{\partial \dot{x}} = \cfrac{1}{2 \Gamma}(\dot{x}-f)
 \end{aligned}
 \end{equation}
 $$
@@ -107,7 +107,7 @@ $$
 
 $$
 \begin{equation}\tag{1.4}
-\.{x} = f(x) \Rightarrow \mathcal{H}(x,\.{x}) = \mathcal{L}(x,\.{x}) = - \cfrac{1}{2} \nabla \cdot f(x)
+\dot{x} = f(x) \Rightarrow \mathcal{H}(x,\dot{x}) = \mathcal{L}(x,\dot{x}) = - \cfrac{1}{2} \nabla \cdot f(x)
 \end{equation}
 $$
 
@@ -126,7 +126,7 @@ $$
 $$
 \begin{equation}\tag{1.6}
 \begin{aligned}
-\.{p}(x,\tau) &= Lp(x,\tau) = - \nabla \cdot j(x,\tau) \\
+\dot{p}(x,\tau) &= Lp(x,\tau) = - \nabla \cdot j(x,\tau) \\
 L &= \nabla \cdot (\Gamma \nabla - f) \\
 j(x,\tau) &= f(x,\tau)p(x, \tau) - \Gamma \nabla p(x,\tau)
 \end{aligned}
@@ -153,7 +153,7 @@ $$
 \begin{equation}\tag{1.8}
 \begin{aligned}
 f & = (\Gamma - Q)\nabla\ln p(x) \\
- & \Rightarrow \cfrac{p(x)}{j(x)} = -Q\nabla \ln p(x) \Rightarrow \.{p}(x) = 0 \\
+ & \Rightarrow \cfrac{p(x)}{j(x)} = -Q\nabla \ln p(x) \Rightarrow \dot{p}(x) = 0 \\
  \space \\
 \Im(x) & = - \ln \space p(x) \\
 f(x) & = (Q-\Gamma)\nabla\Im(x) \\
@@ -169,9 +169,9 @@ $$
 $$
 \begin{equation}\tag{1.9}
 \begin{aligned}
-\mathcal{A}(x[\tau]) & = \int_0^t \mathcal{L}(x,\.{x})d\tau \\
-\mathcal{L}(x,\.{x}) & = \cfrac{1}{2} [ \cfrac{1}{2\Gamma}( \.{x} - Q \nabla \Im ) \cdot ( \.{x} - Q \nabla \Im) + \.{x} \cdot \nabla \Im + \Gamma(\cfrac{1}{2}\nabla \Im \cdot \nabla \Im - \nabla^{2}\Im)] \\
-\mathcal{H}(x,\.{x}) & = \cfrac{1}{2} [ \cfrac{1}{2\Gamma}( \.{x} - Q \nabla \Im ) \cdot ( \.{x} - Q \nabla \Im) - \Gamma(\cfrac{1}{2}\nabla \Im \cdot \nabla \Im - \nabla^{2}\Im)] \\
+\mathcal{A}(x[\tau]) & = \int_0^t \mathcal{L}(x,\dot{x})d\tau \\
+\mathcal{L}(x,\dot{x}) & = \cfrac{1}{2} [ \cfrac{1}{2\Gamma}( \dot{x} - Q \nabla \Im ) \cdot ( \dot{x} - Q \nabla \Im) + \dot{x} \cdot \nabla \Im + \Gamma(\cfrac{1}{2}\nabla \Im \cdot \nabla \Im - \nabla^{2}\Im)] \\
+\mathcal{H}(x,\dot{x}) & = \cfrac{1}{2} [ \cfrac{1}{2\Gamma}( \dot{x} - Q \nabla \Im ) \cdot ( \dot{x} - Q \nabla \Im) - \Gamma(\cfrac{1}{2}\nabla \Im \cdot \nabla \Im - \nabla^{2}\Im)] \\
 \end{aligned}
 \end{equation}
 $$
@@ -200,7 +200,7 @@ $$
 \begin{equation}\tag{1.11}
 \begin{aligned}
 \delta_x\mathcal{A}(Xx[\tau]) &= 0 \\ 
-&\Rightarrow \.{x}(\tau) = f(x(\tau)) \\
+&\Rightarrow \dot{x}(\tau) = f(x(\tau)) \\
 &\Rightarrow x[\tau] = argmin_{x[\tau]} \mathcal{A}(x[\tau])
 \end{aligned}
 \end{equation}
@@ -221,7 +221,7 @@ _"시간은 현재를 주어진 상황에서 과거와 독립적인 미래를 �
 $$
 \begin{equation}\tag{1.12}
 \begin{aligned}
-\ell = \int_0^T \sqrt{ \dot{x}(\tau)^{i} g_{ij} \.{x}(\tau)^j } dt
+\ell = \int_0^T \sqrt{ \dot{x}(\tau)^{i} g_{ij} \dot{x}(\tau)^j } dt
 \end{aligned}
 \end{equation}
 $$
@@ -231,7 +231,7 @@ $$
 $$
 \begin{equation}\tag{1.13}
 \begin{aligned}
- \lim_{Q,\Gamma \rightarrow 0}\mathcal{A}(x[\tau]) &= \int_0^T \dot{x}(\tau)^{i} g_{ij} \.{x}(\tau)^j dt \geq \ell^2 \\
+ \lim_{Q,\Gamma \rightarrow 0}\mathcal{A}(x[\tau]) &= \int_0^T \dot{x}(\tau)^{i} g_{ij} \dot{x}(\tau)^j dt \geq \ell^2 \\
 g &= \cfrac{1}{4\Gamma}
 \end{aligned}
 \end{equation}
@@ -258,7 +258,7 @@ $$
 $$
 \begin{equation}\tag{1.15}
 \begin{aligned}
-\ell & = \int_0^t \sqrt{g_{ij}\.{\lambda}^{i}\.{\lambda}^{j}} d\tau \\
+\ell & = \int_0^t \sqrt{g_{ij}\dot{\lambda}^{i}\dot{\lambda}^{j}} d\tau \\
 g &= I(\lambda) \Leftrightarrow g_{ij} = cov(\zeta_i(x),\zeta_j(x)) = E\Bigg[\cfrac{\partial\Im}{\partial\lambda^{i}} \cfrac{\partial\Im}{\partial\lambda^{j}} \Bigg] = \cfrac{\partial D[p_{\lambda^{'}}(x)||p_{\lambda}(x)]}{\partial\lambda^{'i}\partial\lambda^{'j}}\Biggm\vert_{\lambda^{'} = \lambda}
 \end{aligned}
 \end{equation}
