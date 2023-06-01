@@ -3232,7 +3232,7 @@ $$
 
 ## Appendix B: lemmas and proofs - 첨부 B: 보조정리와 증명
 
-**Lemma** (NESS density): The 비평형 안정 상태 density of a random dynamical system with flow $f=(Q−\Gamma)\nabla\Im$ and associated Fokker Planck operator $\pmb L\triangleq\nabla\cdot(\Gamma\nabla-f)$ is given by
+**보조정리** (NESS 밀도): 비평형 안정 상태의 무작위 동적 시스템의 밀도는 흐름이 $f=(Q−\Gamma)\nabla\Im$ 이고 관련된 Fokker Planck 연산자가 $\pmb L\triangleq\nabla\cdot(\Gamma\nabla-f)$인 경우에는 다음과 같이 주어집니다:
 
 $$
 \begin{equation}\tag{12.1}
@@ -3246,7 +3246,7 @@ p(x)
 \end{equation}
 $$
 
-**Proof**: By substituting $\nabla p=-p\nabla\Im$ and $f=Q\nabla\Im-\Gamma\nabla\Im$ into the Fokker Planck operator we have:
+**증명**: 폴커-프랑크 연산자에 $\nabla p=-p\nabla\Im$와 $f=Q\nabla\Im-\Gamma\nabla\Im$를 대입하면 다음과 같이 됩니다:
 
 $$
 \begin{equation}\tag{12.2}
@@ -3260,8 +3260,7 @@ $$
 \end{equation}
 $$
 
-One can see that (12.1) is satisfied when the solenoidal component of flow $Q\nabla\Im$ is divergence free and orthogonal to $\nabla\Im$. It is easy to see both these conditions are met when,
-
+(12.1)은 솔레노이 흐름 성분 $Q\nabla\Im$이 발산이 없고 $\nabla\Im$에 직교할 때 만족됩니다. 두 조건이 만족되는 것을 쉽게 확인할 수 있습니다. 그러한 조건은 다음과 같습니다:
 $$
 \begin{equation}\tag{12.3}
 \begin{aligned}
@@ -3275,9 +3274,10 @@ Q &= -Q^t
 \end{equation}
 $$
 
-This means that $p=exp(-\Im)$ is the equilibrium density or eigensolution $\pmb L p=0$ of the Fokker-Planck operator describing density dynamics.
+이는 $p=exp(-\Im)$가 평형 밀도 또는 폴커-프랑크 연산자가 묘사하는 밀도 동역학의 고유해 $\pmb L p=0$임을 의미합니다.
 
-**따름정리** _(마르코프블랭킷): if one (external) subset of states $\eta\subset x$ is conditionally independent of another (internal) subset $\eta\subset x$, when conditioned on their 마르코프블랭킷 $b\subset x$ – and the subsets are not coupled via 솔레노이드 흐름 – then the flow of internal states does not depend on external states and vice versa_:
+
+**따름정리** *(마르코프블랭킷): 만약 한 (외부) 상태의 부분집합 $\eta\subset x$이 그들의 마르코프블랭킷 $b\subset x$에 조건부로 다른 (내부) 부분집합 $\eta\subset x$와 조건부로 독립적이며 – 그리고 부분집합이 솔레노이드 흐름을 통해 연결되지 않는다면 – 내부 상태의 흐름은 외부 상태에 의존하지 않고, 반대도 마찬가지입니다.*
 
 $$
 \begin{equation}\tag{12.4}
@@ -3303,7 +3303,7 @@ Q_{\mu b}
 \end{equation}
 $$
 
-**Proof**: expressing the flow in terms of the above partition, we have:
+**증명**: 상기 등식의 분할에 따라 흐름을 표현하면 다음과 같습니다:
 
 $$
 \begin{equation}\tag{12.5}
@@ -3334,7 +3334,7 @@ $$
 \end{equation}
 $$
 
-We assume here (and throughout) that 무작위 변동 are independently and identically distributed (i.e. their covariance has a leading diagonal form). By the conditional independence above
+여기서 (그리고 전체적으로) 무작위 변동이 독립적이며 동일하게 분포하고 있다고 가정합니다 (즉, 그들의 공분산이 주대각선 형태를 가집니다). 상기의 조건부 독립성에 따라서
 
 $$
 \begin{equation}\tag{12.6}
@@ -3346,7 +3346,7 @@ $$
 \end{equation}
 $$
 
-And
+그리고
 
 $$
 \begin{equation}\tag{12.7}
@@ -3359,9 +3359,9 @@ $$
 \end{equation}
 $$
 
-This means the flow of internal states does not depend on external states and vice versa.
+이것은 내부 상태의 흐름이 외부 상태에 의존하지 않음을, 그리고 그 반대도 마찬가지임을 의미합니다.
 
-**Remarks**: the 마르코프블랭킷 따름정리 expresses the uncoupling of external and internal states as a consequence of the conditional independencies implicit in a (generalised) Markovian blanket partition. An alternative formulation starts with flow constraints that lead to a 마르코프블랭킷 (and suppression of solenoidal coupling). For example, we can express uncoupled flow in terms of Jacobians as follows: from (12.5)
+**참고**: 마르코프블랭킷 따름정리는 (일반화된) 마르코프블랭킷 분할에 내재된 조건부 독립성의 결과로 외부와 내부 상태의 분리를 표현합니다. 다른 구성은 흐름 제약 조건을 기반으로 마르코프블랭킷 (및 솔레노이드 결합의 억제)를 이끌어내는 것을 시작합니다. 예를 들어, 우리는 다음과 같이 야코비안을 이용하여 결합되지 않은 흐름을 표현할 수 있습니다: (12.5)에서
 
 $$
 \begin{equation}\tag{12.8}
@@ -3380,7 +3380,7 @@ $$
 \end{equation}
 $$
 
-Because $\Gamma_{\eta\eta},\Gamma_{\mu\mu}$ are positive definite, the associated derivatives of 놀라움 must be zero and we recover the 마르코프블랭킷 factorisation:
+$\Gamma_{\eta\eta},\Gamma_{\mu\mu}$이 양의 정부호이므로, 놀라움의 연관된 미분은 반드시 0이어야 하며, 우리는 마르코프블랭킷 분해를 다시 얻게 됩니다:
 
 $$
 \begin{equation}\tag{12.9}
@@ -3406,7 +3406,7 @@ $$
 \end{equation}
 $$
 
-Furthermore, because $\nabla_{\mu\mu}\Im,\nabla_{\eta\eta}\Im$ are positive semidefinite, we can eliminate solenoidal coupling between external and internal states: $Q_{\eta\mu}=0$. The solenoidal coupling with 블랭킷 상태 must then satisfy:
+또한, $\nabla_{\mu\mu}\Im,\nabla_{\eta\eta}\Im$이 양의 반정부호이므로, 외부와 내부 상태 사이의 솔레노이드 결합을 제거할 수 있습니다: $Q_{\eta\mu}=0$. 그래서, 블랭킷 상태와의 솔레노이드 결합은 다음을 만족해야 합니다:
 
 $$
 \begin{equation}\tag{12.10}
@@ -3426,7 +3426,7 @@ $$
 \end{equation}
 $$
 
-Notice that an absence of solenoidal coupling to 블랭킷 상태 is sufficient but not necessary to satisfy the flow constraints. For example, if we repeat the above analysis but dividing 블랭킷 상태 into active and sensory states, with the following (complete) flow constraints, we have:
+블랭킷 상태와의 솔레노이드 결합이 없는 것은 흐름 제약조건을 만족하는 데 충분하지만 필요하지는 않다는 점을 유의하십시오. 예를 들어, 블랭킷 상태를 활성화 상태와 감각 상태로 나누어 위의 분석을 반복하고, 따르는 (완전한) 흐름 제약조건을 가지면, 다음과 같이 표현할 수 있습니다:
 
 $$
 \begin{equation}\tag{12.11}
@@ -3488,14 +3488,14 @@ f(x)
 \end{equation}
 $$
 
-The particular uncoupling of flow implied by these constraints, precludes solenoidal coupling between internal and external states – and between autonomous and non-autonomous states. This induces a 마르코프블랭킷 over generalised states as depicted in Figure 23.
+이러한 제약조건에 의해 내포된 특정한 흐름의 분리는 내부 상태와 외부 상태 사이, 그리고 자율적 상태와 비자율적 상태 사이의 솔레노이드 결합을 배제합니다. 이것은 일반화된 상태에 대한 마르코프블랭킷을 유도하며, 그것은 그림 23에서 보여주는 것처럼 나타납니다.
 
 ![FIGURE 23](./img/23.png)
 <p style="text-align: center;">FIGURE 23</p>
 
-_Generalised 마르코프블랭킷s_. This dependency graph or Bayesian network is a nuanced version of Figure 1 that includes generalised states; namely, the states and their motion. The 마르코프블랭킷 of internal states comprises those generalised states highlighted in blue, while the generalised states that constitute the 마르코프블랭킷 of the corresponding motion are circled in pink. The key point to take from this figure is that the 마르코프블랭킷 of generalised internal states comprise the generalised 블랭킷 상태 (with the exception of sensory motion). This generalised blanket requires an absence of solenoidal coupling between internal and external states – and between autonomous and non-autonomous states.
+*일반화된 마르코프블랭킷*. 이 종속성 그래프 또는 베이지안 네트워크는 일반화된 상태, 즉 상태와 그들의 운동을 포함하는 그림 1의 세부적인 버전입니다. 내부 상태의 마르코프블랭킷은 파란색으로 강조된 일반화된 상태로 구성되며, 해당 운동의 마르코프블랭킷을 구성하는 일반화된 상태는 분홍색 원으로 그려져 있습니다. 이 그림에서 중요한 점은 일반화된 내부 상태의 마르코프블랭킷이 일반화된 블랭킷 상태(감각 운동 제외)를 포함한다는 것입니다. 이 일반화된 블랭킷은 내부 상태와 외부 상태 사이, 그리고 자율적 상태와 비자율적 상태 사이에 솔레노이드 결합이 없어야 합니다.
 
-**Lemma** (marginal flow): _for any weakly mixing random dynamical system, the marginal flow $f_\eta(\mu)$ of any subset of states $\eta\in X$ , averaged under the complement of another $\mu\in X$ can be expressed in terms of the gradients of the corresponding marginal 놀라움 $\Im(\mu)=−\ln p(\mu)$_:
+**보조정리** (marginal flow): _어떤 약한 혼합 랜덤 동적 시스템에 대해, 상태의 어떤 부분 집합 $\eta\in X$의 주변 흐름 $f\eta(\mu)$은 다른 $\mu\in X$의 보완하에 평균화 될 수 있으며, 해당하는 주변 놀라움 $\Im(\mu)=−\ln p(\mu)$의 기울기를 통해 표현될 수 있습니다_:
 
 $$
 \begin{equation}\tag{12.12}
@@ -3507,8 +3507,7 @@ f_\eta(\mu)
 \end{equation}
 $$
 
-**Proof**: Consider a partition of the states into a subset and its complement: $x=(\mu,\tilde\mu)$. The corresponding partition of (NESS) flow can be expressed as:
-
+**증명**: 상태의 부분 집합과 그 보완집합으로 상태를 분할한다고 합시다: $x=(\mu,\tilde\mu)$. 이에 상응하는 (NESS) 흐름의 분할은 다음과 같이 표현될 수 있습니다:
 $$
 \begin{equation}\tag{12.13}
 \begin{aligned}
@@ -3529,7 +3528,7 @@ $$
 \end{equation}
 $$
 
-From this, we can define a marginal flow as the flow expected under $\tilde\mu$ , where $x=(\mu,\tilde\mu)$ :
+이를 바탕으로, $x=(\mu,\tilde\mu)$에서 $\tilde\mu$에 대한 기대값으로 흐름을 정의할 수 있습니다:
 
 $$
 \begin{equation}\tag{12.14}
@@ -3547,9 +3546,10 @@ f_\eta(\mu)
 \end{equation}
 $$
 
-The integrals of probability gradients disappear because the average change of a probability density is zero
 
-**따름정리** (conditional independence): _if the flow of one subset of states does not depend on another, then it becomes the marginal flow (expected) under the second subset. For example, in terms of the 마르코프블랭킷 partition, it follows that_:
+확률 기울기의 적분은 확률 밀도의 평균 변화가 0이기 때문에 사라집니다.
+
+**따름정리** (조건부 독립): _상태의 한 부분집합의 흐름이 다른 부분집합에 의존하지 않는다면, 그것은 두 번째 부분집합 아래에서의 마진 흐름 (예상)이 된다. 예를 들어, 마르코프블랭킷 파티션에 따르면, 다음과 같습니다_:
 
 $$
 \begin{equation}\tag{12.15}
@@ -3585,10 +3585,11 @@ $$
 \end{equation}
 $$
 
-Note that many solenoidal terms are eliminated by the 마르코프블랭킷 따름정리 (12.11). In short, the conditional independencies induced by the 마르코프블랭킷 mean that the flow of external states is the same for every value of the internal states, which is just its average over the internal states (similarly for other partitions).
+마르코프블랭킷 따름정리 (12.11)에 의해 많은 솔레노이드 항이 제거됩니다. 간단히 말해, 마르코프블랭킷에 의해 유도된 조건부 독립성은 외부 상태의 흐름이 내부 상태의 모든 값에 대해 동일하다는 것을 의미하며, 이것은 내부 상태에 대한 평균에 불과합니다 (다른 파티션에 대해서도 비슷합니다).
 
-**따름정리** (expected flow): _the marginal flow of any subset $\eta\subset x$ averaged over all other states depends only
-on the gradients of its marginal density, provided there is no solenoidal coupling with its complement:_
+**따름정리** _(예상 흐름): 모든 다른 상태들에 대한 평균을 가진 부분집합 $\eta\subset x$의 마진 흐름은 그 부분집합의 마진 밀도의 기울기에만 의존하며, 그 부분집합이 보완집합과 솔레노이드 결합이 없어야 합니다:_
+
+
 
 $$
 \begin{equation}\tag{12.16}
@@ -3600,11 +3601,11 @@ f_\eta(\eta)
 \end{equation}
 $$
 
-This is a special case of the marginal flow lemma, when $\eta=\mu$ and $Q_{\eta\tilde\eta}=0$ . It implies that the expected flow of any state or subset of states, averaged over all other states, will behave in exactly the same way as all states considered together. In other words, it will descend the gradients of its (marginal) 놀라움.
+이것은 $\eta=\mu$ 이고 $Q_{\eta\tilde\eta}=0$ 일 때, 마진 흐름 보조정리의 특수한 경우입니다. 이것은 모든 다른 상태들에 대한 평균을 가진 어떤 상태나 상태 부분집합의 예상 흐름이, 모든 상태를 함께 고려했을 때와 정확히 같은 방식으로 행동할 것임을 의미합니다. 즉, 그것은 그것의 (마진) 놀라움의 기울기를 따라 내려갈 것입니다.
 
 ## Appendix C: nonequilibrium steady-static energy functions - 첨부 C: 비평형 안정 상태 에너지 함수
 
-At 비평형 안정 상태, the expected curvature of 놀라움 is the expected sum of squared gradients:
+비평형 안정 상태에서, 놀라움의 예상 곡률은 기울기 제곱의 예상 합입니다:
 
 $$
 \begin{equation}\tag{13.1}
@@ -3618,7 +3619,7 @@ E_{p(x)}[\nabla^2\Im]
 \end{equation}
 $$
 
-Note that the integral of the curvature of the NESS density disappears because it is a proper density. This equality furnishes some intuitive expressions for the expected 슈뢰딩거 potential, Lagrangian and Hamiltonian: consider the dissipative stochastic entropy production along a single path (i.e., the change in self-information associated with the dissipation of heat), defined using the notation of (6.9). The corresponding expectation is dissipative entropy production, which – by (13.1) – is the average curvature of 놀라움:
+NESS 밀도의 곡률의 적분이 사라지는 이유는 이것이 적절한 밀도이기 때문입니다. 이 등식은 예상되는 슈뢰딩거 잠재력, 라그랑지안, 그리고 해밀토니안에 대한 몇 가지 직관적인 표현식을 제공합니다: 단일 경로를 따라 이산적인 엔트로피 생산 (즉, 열의 소산과 관련된 자기정보의 변화)을 생각해 보겠습니다. 이는 (6.9)의 표기법을 사용하여 정의됩니다. 그에 해당하는 기대값은 이산적인 엔트로피 생산이며, 이것은 - (13.1)에 의하면 - 놀라움의 평균 곡률입니다:
 
 $$
 \begin{equation}\tag{13.2}
@@ -3638,7 +3639,7 @@ $$
 \end{equation}
 $$
 
-In other words, dissipative entropy production increases with the amplitude of 무작위 변동 and the average curvature (or sum of squared gradients) of the 놀라움 or NESS potential. In turn, this leads to the following expectations, for a system with n degrees of freedom (i.e., $x\in\R^n$):
+즉, 이산적인 엔트로피 생산은 무작위 변동의 진폭과 놀라움 또는 NESS 잠재력의 평균 곡률(또는 제곱 그라디언트의 합)과 함께 증가합니다. 차례로 이것은 자유도가 $n$인 시스템(즉, $x\in\R^n$)에 대한 다음과 같은 기대값을 이끌어냅니다:
 
 $$
 \begin{equation}\tag{13.3}
@@ -3663,11 +3664,11 @@ V(x)
 \end{equation}
 $$
 
-These expressions disclose the role of the expected curvature as a key (global) characterisation of 비평형 안정 상태 dynamics.
+이러한 표현들은 기대 곡률의 역할을 비평형 안정 상태 동력학의 주요 (전역적) 특성화 요소로서 드러냅니다.
 
 ## Appendix D: the Fokker-Planck operator - 첨부 D: 폴커-프랑크 연산자
 
-The Fokker Planck operator operates on an infinite dimensional (Hilbert) space; namely, the support of the density dynamics. Clearly, this is not useful for numerical solutions in practical applications. However, one can easily convert density dynamics into a manageable form using a discrete basis; for example, an orthonormal basis $\ket{v_i(x)}$ , where (using the Dirac notation):
+포커-플랑크 연산자는 무한 차원 (힐베르트) 공간에서 작동합니다. 이는 즉, 밀도 동력학의 지지 공간입니다. 분명히, 이것은 실용적인 응용에서의 수치 해법에 유용하지 않습니다. 하지만, 이산적인 기저를 사용하여 밀도 동력학을 쉽게 관리할 수 있는 형태로 변환할 수 있습니다. 예를 들어, 정규직교 기저 $\ket{v_i(x)}$를 사용하면, (디랙 표기법을 사용하여):
 
 $$
 \begin{equation}\tag{14.1}
@@ -3680,7 +3681,7 @@ $$
 \end{equation}
 $$
 
-This enables one to express density dynamics in terms of the associated coefficients $\varphi_i\in \Complex$
+이를 통해 연관된 계수 $\varphi_i\in \Complex$의 용어로 밀도 동력학을 표현할 수 있게 됩니다.
 
 $$
 \begin{equation}\tag{14.2}
@@ -3695,15 +3696,15 @@ $$
 \end{equation}
 $$
 
-The coefficients are the amplitude of probability modes associated with the basis. A natural choice of the basis would be eigenfunctions of the Fokker Planck operator, that allows one to decompose density dynamics into a series of uncoupled modes and, crucially, discard fast modes that dissipate almost instantaneously (i.e., the coefficients of eigenmodes with eigenvalues $\lambda_{ii}\ll 0$).
+계수들은 기저와 관련된 확률 모드의 진폭입니다. 폴커-프랑크 연산자의 고유함수인 기저를 자연스럽게 선택하면 밀도 동력학을 일련의 무결접 모드로 분해하고, 중요하게는 거의 순간적으로 소산되는 빠른 모드(즉, 고유값이 $\lambda_{ii}\ll 0$인 고유모드의 계수)를 무시할 수 있습니다.
 
-The practical challenge here – say in weather forecasting – is to find the eigenmodes e.g., (Harlim and Yang, 2017; Palmer and Laure, 2013). An alternative would be to use a polynomial basis, rendering the coefficients the moments of the probability density. This leads to the low order approximations to density dynamics (c.f., the method of moments). For example, retaining the first two moments corresponds to the Laplace approximation. An example of this can be found in our own work on the dynamic causal modelling of population dynamics (Marreiros et al., 2009). Finally, one could use a Fourier basis set, which brings us to the quantum mechanical formulation with an important twist: by decomposing the wave function (as opposed to the probability density) the Plancherel theorem ensures that the (Fourier) coefficients can be interpreted as probability amplitudes.
+실제 도전과제는, 예를 들어 날씨 예보에서, 고유모드를 찾는 것입니다(예, Harlim and Yang, 2017; Palmer and Laure, 2013). 대안으로 다항식 기저를 사용하여, 계수를 확률 밀도의 순간으로 표현할 수 있습니다. 이로 인해 밀도 동력학에 대한 저차원 근사법이 생깁니다(예, 순간의 방법). 예를 들어, 첫 번째 두 순간을 유지하는 것은 라플라스 근사에 해당합니다. 이에 대한 예는 우리의 인구 동태에 대한 동적 원인 모델링 작업에서 찾을 수 있습니다(Marreiros et al., 2009). 마지막으로, 푸리에 기저 세트를 사용할 수 있습니다. 이는 확률 진폭으로 해석할 수 있는 (푸리에) 계수를 보장하는 Plancherel 정리에 따라 파동 함수(확률 밀도와 대조적으로)를 분해함으로써 중요한 변화를 가져오는 양자역학적 형식으로 이끌어줍니다.
 
 ## Appendix E: generalised motion - 첨부 E: 보편 운동
 
-_"[T]he results obtained by applying the techniques of Markov process theory are valuable only to the extent to which they characterise just these 'large-scale' 변동s"_ (Stratonovich, 1967); p123.
+_"마르코프 프로세스 이론의 기술을 적용하여 얻은 결과는 '대규모' 변동을 특징짓는 범위 내에서만 유용하다"_ (Stratonovich, 1967); p123.
 
-Generally, we have been assuming that 무작위 변동 are sufficiently fast that their serial or temporal correlations can be ignored. This means that the precision of their temporal derivatives is zero (or does not exist). The implication is that there is no statistical coupling between the generalised motion of states and the generalised states per se. However, the situation changes if we allow for 무작위 변동 that have a degree of temporal smoothness (i.e., that are analytic). In this instance, dependencies between generalised motion and states give rise to a generalised version of 랑주뱅 역학 in (1.1): by applying a succession of temporal derivatives, we have (to first-order):
+일반적으로, 우리는 무작위 변동이 충분히 빠르기 때문에 그들의 시리얼 혹은 시간적 상관관계를 무시할 수 있다고 가정해왔습니다. 이는 그들의 시간적 도함수의 정밀도가 0이라는 것(또는 존재하지 않는다는 것)을 의미합니다. 그 결과로서, 일반화된 상태의 움직임과 일반화된 상태 자체 사이에 통계적 연결이 없습니다. 그러나, 우리가 일정한 시간적 부드러움(즉, 분석적인)을 가진 무작위 변동을 허용하면, 상황이 바뀝니다. 이 경우, 일반화된 움직임과 상태 사이의 의존성은 (1.1)의 랑주뱅 역학의 일반화된 버전을 초래합니다: 일련의 시간 도함수를 적용하면(일차까지) 다음과 같습니다:
 
 $$
 \begin{equation}\tag{14.3}
@@ -3729,7 +3730,7 @@ $$
 \end{equation}
 $$
 
-Here, **D** is a block matrix operator that returns generalised motion from generalised states (see below for an example). The mixture of Lagrange and Newton notations for temporal derivatives reminds us that we are working in generalised coordinates of motion. The associated Lagrangian and 놀라움 have straightforward forms (to first order):
+여기서 **D**는 일반화된 상태로부터 일반화된 움직임을 반환하는 블록 행렬 연산자입니다(아래에서 예제를 참조하십시오). 라그랑주와 뉴턴 표기법의 시간 도함수 혼합은 우리가 일반화된 움직임 좌표에서 작업하고 있다는 것을 상기시켜줍니다. 관련된 라그랑지안과 놀라움은 (일차까지) 직관적인 형태를 가집니다:
 
 $$
 \begin{equation}\tag{14.4}
@@ -3746,7 +3747,7 @@ $$
 \end{equation}
 $$
 
-Note that the (generalised) Lagrangian can be absorbed into (generalised) 놀라움 in this setting. Because generalised motion effectively describes a trajectory, this means that 놀라움 becomes a local action; i.e., the 놀라움 of a local path over the correlation length of 무작위 변동. The Lagrangian in (14.4) has been expressed in terms of an _effective mass matrix_ **M** that incorporates flow gradients and the amplitude of generalised 변동s. The amplitude of these 변동s is a function of their autocorrelation function, evaluated at zero lag:
+(일반화된) 라그랑지안이 이 설정에서 (일반화된) 놀라움으로 흡수될 수 있다는 점을 주목하십시오. 일반화된 움직임이 실질적으로 궤적을 설명하기 때문에, 이는 놀라움이 지역 행동이 됨을 의미합니다. 즉, 무작위 변동의 상관 길이 동안의 지역 경로의 놀라움입니다. (14.4)의 라그랑지안은 흐름 기울기와 일반화된 변동의 진폭을 통합하는 *효과적인 질량 행렬* **M**에 대해 표현되었습니다. 이러한 변동의 진폭은 그들의 자기상관 함수의 함수로서, 0의 지연에서 평가됩니다:
 
 $$
 \begin{equation}\tag{14.5}
@@ -3764,9 +3765,9 @@ $$
 \end{equation}
 $$
 
-Equation (14.5) follows from standard results in the theory of stochastic processes (Cox and Miller, 1965) and allows one to quantify temporal autocorrelations in terms of the amplitude of 무작위 변동 in generalised coordinates of motion. Heuristically, if we assume 무작위 변동 are extremely fast, then the curvature of the autocorrelation function (resp. correlation length) tends to infinity (resp. zero). In the limit of fast 변동s, we can therefore ignore higher orders of generalised motion, such that (14.3) reduces to the usual 랑주뱅 form, under Wiener assumptions (1.1). However, should we want to accommodate autocorrelation functions that cannot be approximated by a Delta function – as in (1.1) – generalised coordinates of motion provide a useful augmentation of state-space that allows one to solve for dynamics in a computational and analytically straightforward fashion (Friston et al., 2010). The use of generalised coordinates of motion becomes especially useful in the context of Bayesian filtering, as illustrated by the following lemma:
+식(14.5)는 확률 과정 이론(Cox and Miller, 1965)의 표준결과에서 나오고 운동의 일반화된 좌표에서의 무작위 변동의 진폭에 따라 시간 상관관계를 정량화할 수 있게 해줍니다. 직관적으로, 무작위 변동이 매우 빠르다고 가정하면, 상관 함수의 곡률 (상관 길이)은 무한대 (0)로 향합니다. 변동이 빠른 한계에서, 우리는 따라서 일반화된 운동의 고차항을 무시할 수 있습니다. 그러므로 (14.3)는 Wiener 가정 (1.1) 하에서 랑주뱅 형식에 귀결됩니다. 그러나 (1.1)과 같이, Delta 함수로 근사화할 수 없는 상관 함수를 수용하고자 한다면, 운동의 일반화된 좌표는 상태 공간을 유용하게 확장하여 계산적으로 그리고 분석적으로 간단한 방식으로 역학을 해결할 수 있게 해줍니다(Friston et al., 2010). 베이지안 필터링의 맥락에서 일반화된 운동의 좌표의 사용은 다음의 보조정리에 의해 특히 유용합니다:
 
-**Lemma** (generalized gradient flows): _when the variation of free energy $F(\vec\mu,b)$ with respect to the variational density over the generalised motion of external states $q_{\vec\mu}(\vec\mu)=\mathcal N(\sigma(\vec\mu),\Sigma(\vec\mu))$ is minimised, the motion of generalized internal states becomes their generalised motion:_
+**보조정리** (일반화된 경사 흐름):_일반화된 경사 흐름은 자유 에너지 $F(\vec\mu,b)$의 변형이 외부 상태의 일반화된 운동에 대한 변형 밀도 $q_{\vec\mu}(\vec\mu)=\mathcal N(\sigma(\vec\mu),\Sigma(\vec\mu))$ 에 대해 최소화될 때, 일반화된 내부 상태의 운동이 그들의 일반화된 운동이 된다는 것을 의미합니다:_
 
 $$
 \begin{equation}\tag{14.6}
@@ -3779,7 +3780,9 @@ $$
 \end{equation}
 $$
 
-**Proof**: in generalised coordinates of motion, (8.21) can be expressed in terms of the Helmholtz decomposition:
+**증명**: 
+
+일반화된 운동 좌표에서, (8.21)은 Helmholtz 분해의 관점에서 표현될 수 있습니다:
 
 $$
 \begin{equation}\tag{14.7}
@@ -3797,7 +3800,7 @@ $$
 \end{equation}
 $$
 
-In generalised coordinates of motion, 솔레노이드 흐름 can be formulated in terms of a divergence-free operator **D** that plays the role of a generalised time derivative operator. In this setting, the most likely path of internal states minimises variational free energy and renders the motion of generalised internal states (divergence-free) generalised motion,
+일반화된 운동 좌표에서, 소용돌이 흐름은 **D** 라는 발산 없는 연산자(divergence-free operator)로 나타낼 수 있습니다. 이 연산자는 일반화된 시간 미분 연산자 역할을 합니다. 이 설정에서 가장 가능성이 높은 내부 상태 경로는 변분 자유 에너지를 최소화하고 일반화된 내부 상태의 운동을 (발산 없는) 일반화된 운동으로 만듭니다.
 
 $$
 \begin{equation}\tag{14.8}
@@ -3810,9 +3813,9 @@ $$
 \end{equation}
 $$
 
-giving (14.6).
+주어진 식(14.6).
 
-**Remarks**: In short, generalized motion $D_{\vec\mu}$corresponds to conservative, divergence-free flow in generalised coordinates of motion. Intuitively, this casts motion as a gradient flow a frame of reference that moves with the generalized motion:
+**참고**: 간단히 말해서, 일반화된 운동 $D_{\vec\mu}$는 일반화된 운동 좌표에서 보존적이고 발산 없는 흐름에 해당합니다. 직관적으로, 이것은 일반화된 운동과 함께 움직이는 기준 프레임에서 운동을 경사 흐름으로 보여줍니다.
 
 $$
 \begin{equation}\tag{14.9}
@@ -3823,7 +3826,7 @@ $$
 \end{equation}
 $$
 
-This is probably the most general and compact form of (generalised or variational) Bayesian filters. With an appropriate choice of (Gauge) transformation, one can recover standard filtering schemes such as the extended Kalman-Bucy filter (Friston et al., 2014), where:
+이것은 아마도 가장 일반적이고 간결한 형태의 (일반화된 또는 변분) 베이즈 필터일 것입니다. 적절한 (계측) 변환을 선택하면 확장된 칼만-부시 필터(Friston et al., 2014)와 같은 표준 필터링 방식을 복구할 수 있습니다:
 
 $$
 \begin{equation}\tag{14.10}
@@ -3844,10 +3847,10 @@ These classical schemes generally limit generalised motion to first order.
 
 ## Appendix F: discrete state-space models - 첨부 F: 이산 상태공간 모형
 
-In continuous state-space formulations, the expected free energy is a functional of the predictive density over final states, associated with autonomous states in the future. In discrete state-space formulations, the corresponding expected free energy becomes a vector with an element for each sequence of autonomous states (i.e., policy). Its derivation follows the same basic arguments; however, the expected free energy bound is derived directly from the non-negativity of an entropy of a probability distribution (as opposed to a density), instead of using Jensen’s inequality.
+계속된 상태 공간 형식에서, 기대 자유 에너지는 미래의 자율 상태와 관련된 최종 상태에 대한 예측 밀도의 함수입니다. 이산 상태 공간 형식에서, 대응하는 기대 자유 에너지는 정책의 각 시퀀스에 대한 요소가 있는 벡터가 됩니다. (즉, 정책). 그 파생은 동일한 기본 논증을 따릅니다. 그러나 기대 자유 에너지 한계는 밀도(분포)가 아닌 확률 분포의 엔트로피의 비음의(양의) 특성에서 직접 도출되며, Jensen의 불평등 대신에 도출됩니다.
 
-**Lemma** (expected free energy – discrete): _the prior 놀라움 $\Im(\alpha^i|\pi_0)$ of the i-th policy $\alpha^i=(\alpha_1^i,\ldots,\alpha_\tau^i)$ , given an initial state $\pi_0$, is upper bounded by an expected free energy comprising risk and ambiguity:_
-
+**보조정리** (기대 자유 에너지 – 이산):*초기 상태 $\pi_0$ 를 가지는 $i$번째 정책 $\alpha^i=(\alpha_1^i,\ldots,\alpha_\tau^i)$의 사전 놀라움 $\Im(\alpha^i|\pi_0)$은 위험과 모호함을 포함하는 기대 자유 에너지로 상한됩니다:*
+ 
 $$
 \begin{equation}\tag{15.1}
 \begin{aligned}
@@ -3866,7 +3869,7 @@ G(\alpha^i)
 \end{equation}
 $$
 
-_The predictive density, given the current (particular) state \pi_0 is defined in terms of the variational density:_
+*예측 밀도는 현재(특정) 상태 $\pi_0$를 기준으로 변분 밀도에 따라 정의됩니다:*
 
 $$
 \begin{equation}\tag{15.2}
@@ -3882,9 +3885,9 @@ Q_\mu(\eta_0)
 \end{equation}
 $$
 
-_where_ $\space Q_i(s_\tau|\eta_\tau)=P(s_\tau|\eta_\tau)=P(s_\tau|\eta_\tau,\alpha)$.
+*여기서,* $\space Q_i(s_\tau|\eta_\tau)=P(s_\tau|\eta_\tau)=P(s_\tau|\eta_\tau,\alpha)$.
 
-**Proof**: the divergence between the predictive distribution (over outcomes, states and policies) and the prior distribution corresponding to the generative model (i.e., 비평형 안정 상태 distribution) must be greater than zero.
+**증명**: 예측 분포(결과, 상태 및 정책에 대해)와 생성 모델에 해당하는 사전 분포(즉, 비평형 안정 상태 분포)의 거리는 0보다 커야 합니다.
 
 $$
 \begin{equation}\tag{15.3}
@@ -3904,7 +3907,7 @@ P_i
 \end{equation}
 $$
 
-When the predictive distribution converges to 비평형 안정 상태 (i.e., the prior distribution), the expected free energy of a particular policy must upper bound its 놀라움:
+예측 분포가 비평형 안정 상태(즉, 사전 분포)로 수렴하면, 특정 정책의 기대 자유 에너지는 그것의 놀라움의 상한이어야 합니다.
 
 $$
 \begin{equation}\tag{15.4}
@@ -3918,9 +3921,9 @@ D[Q||P]
 \end{equation}
 $$
 
-The final inequality follows because the conditional entropy of the distribution over discrete states cannot be less than zero. Therefore, at convergence, expected free energy provides an upper bound on the 놀라움 of a trajectory (15.1), with equality when there is no ambiguity
+마지막 부등식은 이산 상태에 대한 분포의 조건부 엔트로피가 0보다 작을 수 없기 때문입니다. 따라서 수렴 시에 기대 자유 에너지는 경로의 놀라움(15.1)에 대한 상한을 제공하며, 모호함이 없을 때는 동일합니다.
 
-**Remark**: Note that when risk is minimised – and the predictive distribution converges to the prior distribution $Q_i\approx P(\eta_\tau,s_\tau|\alpha^i)$ – expected free energy becomes a mixture of epistemic and instrumental value; i.e., information gain and expected log-evidence, respectively. From (15.1), in the absence of risk:
+**참고**: 위험이 최소화되면 – 예측 분포가 사전 분포 $Q_i\approx P(\eta_\tau,s_\tau|\alpha^i)$ – 에 수렴하면 – 기대 자유 에너지는 지적 가치와 도구적 가치의 혼합이 됩니다. 즉, 정보 획득과 기대 로그의 증거입니다. (15.1)에서 위험이 없을 때:
 
 $$
 \begin{equation}\tag{15.5}
@@ -3943,12 +3946,11 @@ G(\alpha^i)
 \end{equation}
 $$
 
-This can be regarded as an alternative formulation of ambiguity in terms of information gain or salience.
+이것은 정보 획득 또는 주의력 측면에서 모호함의 대안적인 공식으로 간주될 수 있습니다.
 
-Software note: The simulations described in this monograph can be reproduced using the academic software available from http://www.fil.ion.ucl.ac.uk/spm/software/. Typing DEM at the Matlab prompt will invoke a graphical user interface. The simulations above can be reproduced by selecting the **A physics of life** button. This allows users to examine the code and subroutines – and customise them at their discretion.
+소프트웨어 참고: 이 모노그래프에 설명된 시뮬레이션은 http://www.fil.ion.ucl.ac.uk/spm/software/ 에서 제공되는 학술 소프트웨어를 사용하여 재현할 수 있습니다. Matlab 프롬프트에서 DEM을 입력하면 그래픽 사용자 인터페이스가 호출됩니다. 위의 시뮬레이션은 A physics of life 버튼을 선택하여 재현할 수 있습니다. 이렇게 하면 사용자는 코드와 서브루틴을 검사하고 자신의 재량에 따라 사용자 지정할 수 있습니다.
 
-Acknowledgments: at the time of writing, KF is a Wellcome Principal Research Fellow (Ref: 088130/Z/09/Z). There are dozens of friends and colleagues who deserve acknowledgement for the ideas described in this monograph. I will pick out Thomas Parr for an explicit mention: Thomas was my Ph.D. student during its writing and contributed substantively to the active inference formulation. Furthermore, he prepared an invaluable series of weekly seminars, deconstructing the monograph’s formal arguments – and oversights – for our colleagues in London: see https://www.fil.ion.ucl.ac.uk/~tparr/Physics/Slides%20Stochastic%20dynamics.htm
-
+감사의 말: 이 모노그래프를 작성할 당시 KF는 Wellcome Principal Research Fellow (Ref: 088130/Z/09/Z)였습니다. 이 모노그래프에 설명된 아이디어에 기여한 수십 명의 친구와 동료들이 있습니다. Thomas Parr를 명시적으로 언급하겠습니다. Thomas는 이 책을 쓰는 동안 저의 박사 과정 학생이었고 active inference 공식에 실질적인 기여를 했습니다. 또한 그는 저희 런던 동료들을 위해 모노그래프의 공식적인 논쟁과 감독을 해부하는 귀중한 주간 세미나를 준비했습니다: https://www.fil.ion.ucl.ac.uk/~tparr/Physics/Slides%20Stochastic%20dynamics.htm
 ## Appendix G: Glossary of terms and expressions - 첨부 G: 용어 및 표현어 주석
 
 *(a.u.: arbitrary units; e.g., metres (m), radians (rad), etc)*
