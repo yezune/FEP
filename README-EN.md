@@ -3683,7 +3683,7 @@ $$
 \end{equation}
 $$
 
-In other words, dissipative entropy production increases with the amplitude of random fluctuations and the average curvature (or sum of squared gradients) of the surprisal or NESS potential. In turn, this leads to the following expectations, for a system with n degrees of freedom (i.e., $x\in\R^n$):
+In other words, dissipative entropy production increases with the amplitude of random fluctuations and the average curvature (or sum of squared gradients) of the surprisal or NESS potential. In turn, this leads to the following expectations, for a system with $n$ degrees of freedom (i.e., $x\in\R^n$):
 
 $$
 \begin{equation}\tag{13.3}
@@ -3911,7 +3911,7 @@ G(\alpha^i)
 \end{equation}
 $$
 
-_The predictive density, given the current (particular) state \pi_0 is defined in terms of the variational density:_
+*The predictive density, given the current (particular) state $\pi_0$ is defined in terms of the variational density:*
 
 $$
 \begin{equation}\tag{15.2}
