@@ -24,3 +24,24 @@ $$
 \end{aligned}
 \end{equation}
 $$
+
+$$
+\begin{equation}\tag{1.10}
+\begin{aligned}
+\mathcal{A}(x[\tau])
+  &= \underbrace{
+    \tfrac{1}{2}\int_0^t\tfrac{1}{2\Gamma}\dot{x}^2 d \tau
+    }_{\text{kinetic}}+
+    \underbrace{
+      \tfrac{1}{2} \int_0^t \dot{\Im} d \tau
+    }_{\text{path-independent}}+
+    \underbrace{
+      \tfrac{1}{h}\int_0^t V(x) d \tau
+    }_{\text{path-dependent}} \\
+\int_0^t \dot{\Im} d \tau
+  &= \Im\left(x_t\right)-\Im\left(x_0\right) \\
+V(x)
+  &=\tfrac{h}{2} \Gamma\left(\tfrac{1}{2} \nabla \Im \cdot \nabla \Im-\nabla^2 \Im\right)
+\end{aligned}
+\end{equation}
+$$
