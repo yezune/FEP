@@ -82,9 +82,9 @@ $$
 \begin{aligned}
 \Im(x[\tau]) & \triangleq - \ln \space p(x[\tau]) = \mathcal{A}(x[\tau]) \\
 \mathcal{A}(x[\tau]) & = \int_0^t \mathcal{L}(x,\dot{x}) d\tau \\
-\mathcal{L}(x,\dot{x}) & = \cfrac{1}{2}[(\dot{x}-f) \cdot \cfrac{1}{2\Gamma}() + \nabla \cdot f] \\
-&= \cfrac{1}{4\Gamma}\dot{x}\cdot\dot{x} - \cfrac{1}{2\Gamma}f\cdot\dot{x} + \cfrac{1}{h}V(x) \\
-V(x) & = \cfrac{h}{4\Gamma}f\cdot f + \cfrac{h}{2} \nabla \cdot f
+\mathcal{L}(x,\dot{x}) & = \tfrac{1}{2}[(\dot{x}-f) \cdot \tfrac{1}{2\Gamma}() + \nabla \cdot f] \\
+&= \tfrac{1}{4\Gamma}\dot{x}\cdot\dot{x} - \tfrac{1}{2\Gamma}f\cdot\dot{x} + \tfrac{1}{h}V(x) \\
+V(x) & = \tfrac{h}{4\Gamma}f\cdot f + \tfrac{h}{2} \nabla \cdot f
 \end{aligned}
 \end{equation}
 $$
@@ -96,10 +96,10 @@ $$
 $$
 \begin{equation}\tag{1.3}
 \begin{aligned}
-\mathcal{H}(x,\dot{x}) & =\dot{x}\cfrac{\partial \mathcal{L}}{\partial \dot{x}}-\mathcal{L}(x.\dot{x})=\dot{x}\cdot p - \mathcal{L}(x,\dot{x}) \\
-&= \cfrac{1}{4\Gamma}\dot{x}\cdot\dot{x} + \cfrac{1}{h}V(x) \\
+\mathcal{H}(x,\dot{x}) & =\dot{x}\tfrac{\partial \mathcal{L}}{\partial \dot{x}}-\mathcal{L}(x.\dot{x})=\dot{x}\cdot p - \mathcal{L}(x,\dot{x}) \\
+&= \tfrac{1}{4\Gamma}\dot{x}\cdot\dot{x} + \tfrac{1}{h}V(x) \\
 \\
-p & \triangleq \cfrac{\partial \mathcal{L}}{\partial \dot{x}} = \cfrac{1}{2 \Gamma}(\dot{x}-f)
+p & \triangleq \tfrac{\partial \mathcal{L}}{\partial \dot{x}} = \tfrac{1}{2 \Gamma}(\dot{x}-f)
 \end{aligned}
 \end{equation}
 $$
@@ -108,7 +108,7 @@ $$
 
 $$
 \begin{equation}\tag{1.4}
-\dot{x} = f(x) \Rightarrow \mathcal{H}(x,\dot{x}) = \mathcal{L}(x,\dot{x}) = - \cfrac{1}{2} \nabla \cdot f(x)
+\dot{x} = f(x) \Rightarrow \mathcal{H}(x,\dot{x}) = \mathcal{L}(x,\dot{x}) = - \tfrac{1}{2} \nabla \cdot f(x)
 \end{equation}
 $$
 
@@ -154,7 +154,7 @@ $$
 \begin{equation}\tag{1.8}
 \begin{aligned}
 f & = (\Gamma - Q)\nabla\ln p(x) \\
- & \Rightarrow \cfrac{p(x)}{j(x)} = -Q\nabla \ln p(x) \Rightarrow \dot{p}(x) = 0 \\
+ & \Rightarrow \tfrac{p(x)}{j(x)} = -Q\nabla \ln p(x) \Rightarrow \dot{p}(x) = 0 \\
  \space \\
 \Im(x) & = - \ln \space p(x) \\
 f(x) & = (Q-\Gamma)\nabla\Im(x) \\
@@ -171,8 +171,8 @@ $$
 \begin{equation}\tag{1.9}
 \begin{aligned}
 \mathcal{A}(x[\tau]) & = \int_0^t \mathcal{L}(x,\dot{x})d\tau \\
-\mathcal{L}(x,\dot{x}) & = \cfrac{1}{2} [ \cfrac{1}{2\Gamma}( \dot{x} - Q \nabla \Im ) \cdot ( \dot{x} - Q \nabla \Im) + \dot{x} \cdot \nabla \Im + \Gamma(\cfrac{1}{2}\nabla \Im \cdot \nabla \Im - \nabla^{2}\Im)] \\
-\mathcal{H}(x,\dot{x}) & = \cfrac{1}{2} [ \cfrac{1}{2\Gamma}( \dot{x} - Q \nabla \Im ) \cdot ( \dot{x} - Q \nabla \Im) - \Gamma(\cfrac{1}{2}\nabla \Im \cdot \nabla \Im - \nabla^{2}\Im)] \\
+\mathcal{L}(x,\dot{x}) & = \tfrac{1}{2} [ \tfrac{1}{2\Gamma}( \dot{x} - Q \nabla \Im ) \cdot ( \dot{x} - Q \nabla \Im) + \dot{x} \cdot \nabla \Im + \Gamma(\tfrac{1}{2}\nabla \Im \cdot \nabla \Im - \nabla^{2}\Im)] \\
+\mathcal{H}(x,\dot{x}) & = \tfrac{1}{2} [ \tfrac{1}{2\Gamma}( \dot{x} - Q \nabla \Im ) \cdot ( \dot{x} - Q \nabla \Im) - \Gamma(\tfrac{1}{2}\nabla \Im \cdot \nabla \Im - \nabla^{2}\Im)] \\
 \end{aligned}
 \end{equation}
 $$
@@ -184,9 +184,9 @@ $$
 $$
 \begin{equation}\tag{1.10}
 \begin{aligned}
-\mathcal{A}(x[\tau]) & =\underbrace{\frac{1}{2} \int_0^t \frac{1}{2 \Gamma} \dot{x}^2 d \tau}_{\text {kinetic }}+\underbrace{\frac{1}{2} \int_0^t \dot{\Im} d \tau}_{\text {path-independent }}+\underbrace{\frac{1}{h} \int_0^t V(x) d \tau}_{\text {path-dependent }} \\
+\mathcal{A}(x[\tau]) & =\underbrace{\tfrac{1}{2} \int_0^t \tfrac{1}{2 \Gamma} \dot{x}^2 d \tau}_{\text {kinetic }}+\underbrace{\tfrac{1}{2} \int_0^t \dot{\Im} d \tau}_{\text {path-independent }}+\underbrace{\tfrac{1}{h} \int_0^t V(x) d \tau}_{\text {path-dependent }} \\
 \int_0^t \dot{\Im} d \tau & =\Im\left(x_t\right)-\Im\left(x_0\right) \\
-V(x) & =\frac{h}{2} \Gamma\left(\frac{1}{2} \nabla \Im \cdot \nabla \Im-\nabla^2 \Im\right)
+V(x) & =\tfrac{h}{2} \Gamma\left(\tfrac{1}{2} \nabla \Im \cdot \nabla \Im-\nabla^2 \Im\right)
 \end{aligned}
 \end{equation}
 $$
@@ -233,7 +233,7 @@ $$
 \begin{equation}\tag{1.13}
 \begin{aligned}
  \lim_{Q,\Gamma \rightarrow 0}\mathcal{A}(x[\tau]) &= \int_0^T \dot{x}(\tau)^{i} g_{ij} \dot{x}(\tau)^j dt \geq \ell^2 \\
-g &= \cfrac{1}{4\Gamma}
+g &= \tfrac{1}{4\Gamma}
 \end{aligned}
 \end{equation}
 $$
@@ -259,8 +259,12 @@ $$
 $$
 \begin{equation}\tag{1.15}
 \begin{aligned}
-\ell & = \int_0^t \sqrt{g_{ij}\dot{\lambda}^{i}\dot{\lambda}^{j}} d\tau \\
-g &= I(\lambda) \Leftrightarrow g_{ij} = cov(\zeta_i(x),\zeta_j(x)) = E\Bigg[\cfrac{\partial\Im}{\partial\lambda^{i}} \cfrac{\partial\Im}{\partial\lambda^{j}} \Bigg] = \cfrac{\partial D[p_{\lambda^{'}}(x)||p_{\lambda}(x)]}{\partial\lambda^{'i}\partial\lambda^{'j}}\Biggm\vert_{\lambda^{'} = \lambda}
+\ell 
+  &= \int_0^t \sqrt{g_{ij}\dot{\lambda}^{i}\dot{\lambda}^{j}} d\tau \\
+g &= I(\lambda) \Leftrightarrow g_{ij} 
+   = cov(\zeta_i(x),\zeta_j(x)) 
+   = E\Bigg[\frac{\partial\Im}{\partial\lambda^{i}} \frac{\partial\Im}{\partial\lambda^{j}} \Bigg] 
+   = \frac{\partial D[p_{\lambda^{'}}(x)||p_{\lambda}(x)]}{\partial\lambda^{'i}\partial\lambda^{'j}}\Biggm\vert_{\lambda^{'} = \lambda}
 \end{aligned}
 \end{equation}
 $$
@@ -273,9 +277,13 @@ $$
 $$
 \begin{equation}\tag{1.16}
 \begin{aligned}
-\ell & = \int d \ell \\
-d\ell^2 & = g_{ij}d\lambda^j d\lambda^i \\
-\cfrac{1}{2}d\ell^2 &= D[p_{\lambda^{'}}(x)||p_{\lambda}(x)] = \cfrac{1}{2} \cfrac{\partial D[p_{\lambda^{'}}(x)||p_{\lambda}(x)]}{\partial\lambda^{'i} \partial\lambda^{'j}}\Biggm\vert_{\lambda^{'}=\lambda} d\lambda^j \lambda^i \\
+\ell 
+  &= \int d \ell \\
+d\ell^2 
+  &= g_{ij}d\lambda^j d\lambda^i \\
+\frac{1}{2}d\ell^2 
+  &= D[p_{\lambda^{'}}(x)||p_{\lambda}(x)] 
+   = \frac{1}{2} \frac{\partial D[p_{\lambda^{'}}(x)||p_{\lambda}(x)]}{\partial\lambda^{'i} \partial\lambda^{'j}}\Biggm\vert_{\lambda^{'}=\lambda} d\lambda^j \lambda^i \\
 \end{aligned}
 \end{equation}
 $$
@@ -287,12 +295,18 @@ $$
 $$
 \begin{equation}\tag{1.17}
 \begin{aligned}
-p(x,\tau) &= p_{0} + \tau\dot{p}_{0} +\dots \\
-&= p_{0} + \tau L p_{0} + \dots \\
+p(x,\tau) 
+  &= p_{0} + \tau\dot{p}_{0} +\dots \\
+  &= p_{0} + \tau L p_{0} + \dots \\
 \\
-\ell(t) &= \int_{0}^{t} \sqrt{g(\tau)}d\tau \\
-g(\tau) &= I(\tau) = E_{p_{0}}[(\partial_{\tau}\Im_{0})^{2}] = \int\cfrac{(L_0 P_0)^2}{p_0}dx \\
-L(\tau) &= \nabla\cdot\Gamma\nabla - \nabla\cdot f(\tau)
+\ell(t) 
+  &= \int_{0}^{t} \sqrt{g(\tau)}d\tau \\
+g(\tau) 
+  &= I(\tau) 
+   = E_{p_{0}}[(\partial_{\tau}\Im_{0})^{2}] 
+   = \int\frac{(L_0 P_0)^2}{p_0}dx \\
+L(\tau) 
+  &= \nabla\cdot\Gamma\nabla - \nabla\cdot f(\tau)
 \end{aligned}
 \end{equation}
 $$
@@ -304,7 +318,7 @@ $$
 \begin{equation}\tag{1.18}
 \begin{aligned}
 d\ell(\tau)^2 &= g(\tau)d\tau^2 \\
-\cfrac{1}{2}d\ell(\tau)^2 &= D[p(x,\tau + d\tau)||p(x,\tau)] \\
+\tfrac{1}{2}d\ell(\tau)^2 &= D[p(x,\tau + d\tau)||p(x,\tau)] \\
 \end{aligned}
 \end{equation}
 $$
@@ -532,18 +546,26 @@ $$
 
 지금까지, 우리는 특정 엔트로피 측면에서 자기 조직화를 고려했으며, 여기서 낮은 엔트로피는 대칭 파괴와 자기조직화 임계성의 현상학과 함께 가는 것처럼 보입니다. 이는 질문을 불러일으킵니다: 이런 종류의 이동성을 어떻게 정량화할 수 있을까요? 한 가지 접근법은 정보 길이라는 개념을 빌려오는 것입니다. 즉, 시스템이 불균형한 정상 상태로 가는 도중 통과하는 식별 가능한 확률적 구성의 수입니다. 다시 말해, 이동하는 대칭 파괴 (생물학적 시스템에서 볼 수 있는 종류)를 특정 상태에서 불균형한 정상 상태까지의 긴 정보 길이와 연관시킬 수 있습니다. 정보 길이의 사용은 높은 자기 엔트로피와 낮은 자기 엔트로피의 의미에 대한 어려운 질문을 피하며, 이는 오직 더해지는 상수 내에서만 정의됩니다 (Jones, 1979). 반면에, 정보 길이는 우리가 정량화하려는 방황하는, 이동하는 동역학을 점수 매기기 위해 어떤 밀도 동역학에도 적용될 수 있는 척도입니다.
 
-정보 길이에 대한 직관을 구축하기 위해, 그림 4는 흐름과 무작위 변동이 이동하지만 구조화된 동역학을 생성하는 역할을 보여주는 세 가지 예시를 보여줍니다. 이 그림에서, 우리는 그림 3의 로렌츠 시스템을 사용하여 초기 밀도 - 주어진 특정 상태 - 가 불균형한 정상 상태 밀도로 어떻게 수렴하는지 다른 방법을 보여줍니다. 상단 패널은 낮은 진폭의 무작위 변동을 사용하는 로렌츠 끌개에 의해 유발된 익숙한 자기 조직화를 보여줍니다. 이 영역에서, 시스템은 레일리 파라미터 28을 사용하여 보장된 홉프 이분법을 겪었습니다. 초기 밀도의 진화는 다음을 통해 평가되었습니다: (i) 비평형 정상상태밀도 $ D(\tau\) $ 에 대한 KL 발산 - 그리고(ii)시간에 따른 밀도와 최종 (정상 상태) 밀도 사이의 정보 길이 차이  $\Delta(\tau\)$ .
+정보 길이에 대한 직관을 구축하기 위해, 그림 4는 흐름과 무작위 변동이 이동하지만 구조화된 동역학을 생성하는 역할을 보여주는 세 가지 예시를 보여줍니다. 이 그림에서, 우리는 그림 3의 로렌츠 시스템을 사용하여 초기 밀도 - 주어진 특정 상태 - 가 불균형한 정상 상태 밀도로 어떻게 수렴하는지 다른 방법을 보여줍니다. 상단 패널은 낮은 진폭의 무작위 변동을 사용하는 로렌츠 끌개에 의해 유발된 익숙한 자기 조직화를 보여줍니다. 이 영역에서, 시스템은 레일리 파라미터 28을 사용하여 보장된 홉프 이분법을 겪었습니다. 초기 밀도의 진화는 다음을 통해 평가되었습니다: (i) 비평형 정상상태밀도 $D(\tau)$ 에 대한 KL 발산 - 그리고(ii)시간에 따른 밀도와 최종 (정상 상태) 밀도 사이의 정보 길이 차이  $\Delta(\tau)$ .
 
 $$
 \begin{equation} \tag{2.9}
 \begin{aligned}
-D(\tau) &= D[p(x,\tau|\pi_0) \parallel p(x,\infty|\pi_0)] \\
-\delta(\tau)^2 &\leq \frac{1}{2}D(\tau) \\
+D(\tau) 
+  &= D[p(x,\tau|\pi_0) \parallel p(x,\infty|\pi_0)] \\
+\delta(\tau)^2 
+  &\leq \frac{1}{2}D(\tau) \\
 \\
-\Delta\ell(\tau) &= \ell(\tau) - \ell(\infty) \\
-\frac{1}{2}d\ell(\tau)^2 &= D[p(x,\tau+d\tau|\pi_0) \parallel p(x,\tau|\pi_0)] \\
+\Delta\ell(\tau) 
+  &= \ell(\tau) - \ell(\infty) \\
+\tfrac{1}{2}d\ell(\tau)^2 
+  &= D[p(x,\tau+d\tau|\pi_0) \parallel p(x,\tau|\pi_0)] \\
 \\
-D(\tau) &= 0 \Leftrightarrow \Delta\ell(\tau) = 0 \Leftrightarrow \delta(\tau)=0 \Leftrightarrow d\ell(\tau)  = 0 \\
+D(\tau) 
+  &= 0 \Leftrightarrow \Delta\ell(\tau) 
+   = 0 \Leftrightarrow \delta(\tau)
+   = 0 \Leftrightarrow d\ell(\tau)  
+   = 0 \\
 \end{aligned}
 \end{equation}
 $$
@@ -559,9 +581,12 @@ $$
 $$
 \begin{equation} \tag{2.10}
 \begin{aligned}
-f(\pi) &= -\gamma\pi + \omega \\
-&\Rightarrow \ln{\ell(\infty)}=\ln{|\pi_0|} + \tfrac{1}{2}\ln{\gamma} - \tfrac{1}{2}\ln{\Gamma} \\
-&\Rightarrow \frac{\partial\ln\ell(\infty)}{\partial\ln{|\pi_0|}} = v = 1
+f(\pi) 
+  &= -\gamma\pi + \omega \\
+  &\Rightarrow \ln{\ell(\infty)}=\ln{|\pi_0|} + \tfrac{1}{2}\ln{\gamma} - \tfrac{1}{2}\ln{\Gamma} \\
+  &\Rightarrow \frac{\partial\ln\ell(\infty)}{\partial\ln{|\pi_0|}}
+   = v
+   = 1
 \end{aligned}
 \end{equation}
 $$
@@ -635,10 +660,13 @@ $$
 $$
 \begin{equation}\tag{3.2}
 \begin{aligned}
-  \dot{a}_n^{(i)} &= (1+\tfrac{1}{64})\mu^{(i)}s_n^{(i)}+\omega_n \\
-  \dot{s}_n^{(i)} &=  2F^{(i)} - 8s_n^{(i)} - a_n^{(i)}+\omega_n \\
+\dot{a}_n^{(i)} 
+  &= (1+\tfrac{1}{64})\mu^{(i)}s_n^{(i)}+\omega_n \\
+\dot{s}_n^{(i)} 
+  &=  2F^{(i)} - 8s_n^{(i)} - a_n^{(i)}+\omega_n \\
   \\
-  F^{(i)} &= \textstyle\sum_{j=\{j:\Delta_{ij}<1\}}\Delta_{ij}\left( \cfrac{8exp(-|a_e^{(j)}-a_e^{(i)}|)-4}{\Delta_{ij}^2}-\frac{1}{\Delta_{ij}^3} \right) \\
+F^{(i)} 
+  &= \textstyle{\sum_{j=\{j:\Delta_{ij}<1\}}\Delta_{ij}}\left( \frac{8exp(-|a_e^{(j)}-a_e^{(i)}|)-4}{\Delta_{ij}^2}-\frac{1}{\Delta_{ij}^3} \right) \\
 \end{aligned}
 \end{equation}
 $$
