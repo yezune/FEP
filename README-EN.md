@@ -4004,7 +4004,7 @@ Acknowledgments: at the time of writing, KF is a Wellcome Principal Research Fel
 | $\tau$                                                  | Time                                                                  | s(seconds)              |
 | $x[\tau]=\{x(t):t\in(0,\tau)\}$                         | Trajectory or path through state-space                                | a.u. (m)                |
 | $\omega(\tau)$                                          | Random fluctuations                                                   | a.u. (m)                |
-| $\begin{aligned}x^{(i)}&=\{x_1^{(i)},x_2^{(i)},\ldots,x_N^{(i)}\} \\x_n^{(i)}&=\{x_{n_1}^{(i)},x_{n_2}^{(i)},\ldots,x_{n_M}^{(i)}\} \end{aligned}$| Vector states at the $j$-th level of description| a.u. (m) |
+| $\begin{aligned}x^{(i)}&=\{x_1^{(i)},x_2^{(i)},\ldots,x_N^{(i)}\} \\x_n^{(i)}&=\{x_{n_1}^{(i)},x_{n_2}^{(i)},\ldots,x_{n_M}^{(i)}\} \end{aligned}$| Vector states at the $i$-th level of description| a.u. (m) |
 | $x=\{\eta,s,a,\mu\}\in X$                               | Markovian partition into external, sensory, active and internal states| a.u. (m)                |
 | $\tilde\eta\in X\backslash E:x=\{\eta,\tilde\eta\}\in X$| Complement of a subset of states                                      | a.u. (m)                |
 | $\dot x=\frac{dx}{dt}$                                  | Time derivative(Newton notation)                                      | m/s                     |
