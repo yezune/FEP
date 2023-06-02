@@ -1,4 +1,4 @@
-# 특정 물리학을 위한 자유 에너지 원리 - 
+# 특정 물리학을 위한 자유 에너지 원리
 
 원문: [A Free Energy Principle for A Particular Physics](./README-EN.md)
 
@@ -73,6 +73,6 @@
   * 첨부 E: 보편 운동
   * 첨부 F: 이산 상태공간 모형
 
-[수학적 용어와 번역 용어](./0402_Glossary_of_terms_and_translation.md)
+[용어 의미와 번역 테이블](./0402_Glossary_of_terms_and_translation.md)
 
 [참고자료](./0403_References.md)
