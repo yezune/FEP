@@ -34,6 +34,7 @@
 제3부: 무생성 입자의 밀도 동역학을 양자, 통계, 고전 역학의 극한 케이스로 설명한 후, 내부 상태를 무시할 수 없는 자율적 행동을 보이는 큰 것들(예: 우리와 같은 큰 활성 입자)의 존재론에 대해 살펴봅니다. 섹션 8은 생물학적 자기조직에 대표적이거나 추론적 능력을 부여할 수 있는 이유를 논합니다. 다시 말해, 좋은 조절자 이론(Conant and Ashby, 1970)과 베이지안 뇌 가설(Helmholtz, 1878 (1971); Knill and Pouget, 2004)과 같은 개념이 감각 물리학 측면에서 어떻게 실체화될 수 있는지에 대해 설명합니다. 여기서 주장은 상당히 간단한데, 바로 시스템의 내부 상태가 마르코프 담요에 감각적 인상을 남기는 외부 상태에 대한 확률적 신념을 인코딩하며, 활성 상태의 외부 상태에 대한 영향에 의해 발생한다는 것입니다. 이 섹션에서는 자율적인 것들(예: 세포 또는 뇌)이 활동적으로 샘플링된 감각의 원인을 추론하는 것을 설명하는 정보 기하학과 참석하는 자유 에너지 원리에 대한 형식적 기초를 제공합니다. 여기서 우리는 변분 베이즈(Beal, 2003)가 특정 종류의 입자의 출현적 성질임을 보여주어 베이지안 역학의 형태를 구현하는 변분 주제를 추구합니다. 섹션 9는 제1부의 합성 수프(그리고 바이러스와 같은 거주자)에서 수치 분석을 사용하여 특정 추론을 설명합니다. 섹션 10에서는 적분 요동 정리와 예상 자유 에너지를 기반으로한 자유 에너지 원리의 따르는 것들을 통해 활성 상태와 대리를 고려합니다. 마지막 2개 섹션에서는 이전(열역학적) 처리를 고려한 능동 추론을 검토합니다. 양자, 확률, 고전 및 베이지안 역학 간의 관계에 대한 간단한 논의로 마무리합니다.
 
 ## Part One: the setup - 1부: 설정
+
 ### Something or nothing - 무엇 또는 아닌 것
 
 *"시포냅테라(Siphonaptera)"라는 동요는 때로는 벼룩이라고 불리며, 아래와 같이 알려져 있습니다:
@@ -54,8 +55,8 @@
 
 > [^note-4]:이 수치 분석들은 두 가지 목적을 가지고 있습니다. 첫째, 서로 보완적인 관점에서 동일한 시스템을 어떻게 특성화할 수 있는지 보여줍니다. 예를 들어, 우리는 시스템을 작은 입자(예: 전자)로, 양자역학의 관점에서 다룰 수 있습니다; 또는 입자의 집합체(예: 가스)로서 시스템을 다루어 통계 역학을 검토할 수 있습니다; 또는 어떤 활성 매질에서의 덩어리 질량(예: 공)으로 시스템을 다루고, 고전역학의 관점에서 그 반응을 묘사할 수 있습니다. 세 번째 부분에서는 이를 더 발전시켜 자율적인 행동, 즉 시스템의 한 부분이 다른 부분을 어떻게 적극적으로 추론하거나 '측정'하는지를 살펴볼 것입니다. 두 번째 목적은 보다 교육적인 측면(생물학 독자를 위한)을 가지고 있습니다; 즉, 이 시뮬레이션들은 고급 물리학 주변의 모든 신비주의를 해소합니다. 요컨대, 이 모노그래프에서 고려된 모든 역학은 직관적이고 간단한 수치 분석에 적합하며, 한 종류의 역학이 다른 역학과 어떤 관계에서 이해될 수 있게 합니다.
 
-수학적 표기법은 대체로 표준적입니다: 양자역학에 관한 절에서는 가끔 디랙 표기법을 사용하고, 통계역학에 관한 절은 (Seifert, 2012)를 따릅니다. 가끔, 텐서를 다룰 때 (아인슈타인) 합산 규약을 사용할 것입니다. 표준 표기법에 대한 예외는 굵은 변수의 사용입니다; 여기서 $x \in X$는 위상 또는 상태 공간에서의 (일반화된) 좌표를 나타내며, $x \in X$는 기대값 또는 가장 가능성이 높은 값을 나타냅니다. $x(a)$는 변수 a에 조건을 달아 기대값을 나타냅니다. 굵은 대문자 $X$는 연산자를 나타냅니다. 명확성을 위해, 함수 미분과 시간을 포함하는 적분은 궤적, 경로 또는 경로 $x[\tau]={x(\tau):\tau\in[0,t]}$의 형태로 표현되며, 여기서 시간 $\tau$에서의 값은 $x(\tau)\equiv x_\tau$로 표시됩니다. 또한 시간에 따라 변하는 확률 밀도 $p(x,\tau)\equiv p_\tau(x_\tau)$를 다룰 것이며, 이것은 $\tau \to \infty$ 한계에서의 정적 또는 안정적 - 상태 해결책 $p(x,\infty) \equiv p(x)$를 갖습니다 ; 마찬가지로, 그들의 음의 로그 밀도 또는 놀라움 $\Im (x,\tau) \equiv \Im _\tau (x _\tau) = −\ln \space p(x,\tau)$에 대해서도 마찬가지입니다. 참조의 편의성을 위해, 용어와 표현의 용어집이 본문의 끝에 제공됩니다. 이어지는 대부분의 내용은 확률 동역학의 세 가지 동등하고 상호 보완적인 설명, 즉 랑주뱅 방정식, 경로 적분 형식, 폴커-플랑크 방정식에 의존합니다.
-랑주뱅 동역학: 이 형식은 시스템 상태 $x(\tau)$ (즉, 어떤 시스템의 상태)의 동역학을 상태 종속적인 흐름과 일부 무작위 요동 $\omega (\tau)$로 표현합니다 :
+수학적 표기법은 대체로 표준적입니다: 양자역학에 관한 절에서는 가끔 디랙 표기법을 사용하고, 통계역학에 관한 절은 (Seifert, 2012)를 따릅니다. 가끔, 텐서를 다룰 때 (아인슈타인) 합산 규약을 사용할 것입니다. 표준 표기법에 대한 예외는 굵은 변수의 사용입니다; 여기서 $x \in X$ 는 위상 또는 상태 공간에서의 (일반화된) 좌표를 나타내며, $x \in X$ 는 기대값 또는 가장 가능성이 높은 값을 나타냅니다. $x(a)$ 는 변수 a에 조건을 달아 기대값을 나타냅니다. 굵은 대문자 $X$ 는 연산자를 나타냅니다. 명확성을 위해, 함수 미분과 시간을 포함하는 적분은 궤적, 경로 또는 경로 $x[\tau]={x(\tau):\tau\in[0,t]}$ 의 형태로 표현되며, 여기서 시간 $\tau$에서의 값은 $x(\tau)\equiv x_\tau$로 표시됩니다. 또한 시간에 따라 변하는 확률 밀도 $p(x,\tau)\equiv p_\tau(x_\tau)$를 다룰 것이며, 이것은 $\tau \to \infty$ 한계에서의 정적 또는 안정적 - 상태 해결책 $p(x,\infty) \equiv p(x)$를 갖습니다; 마찬가지로, 그들의 음의 로그 밀도 또는 놀라움 $\Im (x,\tau) \equiv \Im _\tau (x _\tau) = −\ln \space p(x,\tau)$ 에 대해서도 마찬가지입니다. 참조의 편의성을 위해, 용어와 표현의 용어집이 본문의 끝에 제공됩니다. 이어지는 대부분의 내용은 확률 동역학의 세 가지 동등하고 상호 보완적인 설명, 즉 랑주뱅 방정식, 경로 적분 형식, 포커-플랑크 방정식에 의존합니다.
+랑주뱅 동역학: 이 형식은 시스템 상태 $x(\tau)$ (즉, 어떤 시스템의 상태)의 동역학을 상태 종속적인 흐름과 일부 무작위 요동 $\omega (\tau)$ 로 표현합니다 :
 
 
 __랑주뱅 동역학__: 이 방정식은 상태에 따라 달라지는 흐름과 일부 무작위 변동 $\omega (\tau)$ 를 사용하여 시스템 상태 $x(\tau)$ (즉, 시스템의 상태)의 동역학을 표현합니다:
@@ -79,11 +80,11 @@ $$
 $$
 \begin{equation}\tag{1.2}
 \begin{aligned}
-\mathfrak{I}(x[\tau]) & \triangleq - \ln \space p(x[\tau]) = \mathcal{A}(x[\tau]) \\
+\Im(x[\tau]) & \triangleq - \ln \space p(x[\tau]) = \mathcal{A}(x[\tau]) \\
 \mathcal{A}(x[\tau]) & = \int_0^t \mathcal{L}(x,\dot{x}) d\tau \\
-\mathcal{L}(x,\.{x}) & = \cfrac{1}{2}[(\.{x}-f) \cdot \cfrac{1}{2\Gamma}() + \nabla \cdot f] \\
-&= \cfrac{1}{4\Gamma}\.{x}\cdot\.{x} - \cfrac{1}{2\Gamma}f\cdot\.{x} + \cfrac{1}{h}V(x) \\
-V(x) & = \cfrac{h}{4\Gamma}f\cdot f + \cfrac{h}{2} \nabla \cdot f
+\mathcal{L}(x,\dot{x}) & = \tfrac{1}{2}[(\dot{x}-f) \cdot \tfrac{1}{2\Gamma}() + \nabla \cdot f] \\
+&= \tfrac{1}{4\Gamma}\dot{x}\cdot\dot{x} - \tfrac{1}{2\Gamma}f\cdot\dot{x} + \tfrac{1}{h}V(x) \\
+V(x) & = \tfrac{h}{4\Gamma}f\cdot f + \tfrac{h}{2} \nabla \cdot f
 \end{aligned}
 \end{equation}
 $$
@@ -95,10 +96,10 @@ $$
 $$
 \begin{equation}\tag{1.3}
 \begin{aligned}
-\mathcal{H}(x,\.{x}) & =\.{x}\cfrac{\partial \mathcal{L}}{\partial \.{x}}-\mathcal{L}(x.\.{x})=\.{x}\cdot p - \mathcal{L}(x,\.{x}) \\
-&= \cfrac{1}{4\Gamma}\.{x}\cdot\.{x} + \cfrac{1}{h}V(x) \\
+\mathcal{H}(x,\dot{x}) & =\dot{x}\tfrac{\partial \mathcal{L}}{\partial \dot{x}}-\mathcal{L}(x.\dot{x})=\dot{x}\cdot p - \mathcal{L}(x,\dot{x}) \\
+&= \tfrac{1}{4\Gamma}\dot{x}\cdot\dot{x} + \tfrac{1}{h}V(x) \\
 \\
-p & \triangleq \cfrac{\partial \mathcal{L}}{\partial \.{x}} = \cfrac{1}{2 \Gamma}(\.{x}-f)
+p & \triangleq \tfrac{\partial \mathcal{L}}{\partial \dot{x}} = \tfrac{1}{2 \Gamma}(\dot{x}-f)
 \end{aligned}
 \end{equation}
 $$
@@ -107,7 +108,7 @@ $$
 
 $$
 \begin{equation}\tag{1.4}
-\.{x} = f(x) \Rightarrow \mathcal{H}(x,\.{x}) = \mathcal{L}(x,\.{x}) = - \cfrac{1}{2} \nabla \cdot f(x)
+\dot{x} = f(x) \Rightarrow \mathcal{H}(x,\dot{x}) = \mathcal{L}(x,\dot{x}) = - \tfrac{1}{2} \nabla \cdot f(x)
 \end{equation}
 $$
 
@@ -126,20 +127,20 @@ $$
 $$
 \begin{equation}\tag{1.6}
 \begin{aligned}
-\.{p}(x,\tau) &= Lp(x,\tau) = - \nabla \cdot j(x,\tau) \\
+\dot{p}(x,\tau) &= Lp(x,\tau) = - \nabla \cdot j(x,\tau) \\
 L &= \nabla \cdot (\Gamma \nabla - f) \\
 j(x,\tau) &= f(x,\tau)p(x, \tau) - \Gamma \nabla p(x,\tau)
 \end{aligned}
 \end{equation}
 $$
 
-여기서 $L$은 포커-플랑크 연산자이며, $j(x,\tau)$는 확률질량의 흐름을 편리하게 요약하는 확률흐름입니다. 이는 흐름에 의존하는 항과 (보통 반대 방향의) 확률 기울기에 따른 무작위 변동에 의해 생성되는 부분을 포함합니다.
+여기서 $L$은 포커-플랑크 연산자이며, $j(x,\tau)$는 확률질량의 흐름을 편리하게 요약하는 확률 흐름입니다. 이는 흐름에 의존하는 항과 (보통 반대 방향의) 확률 기울기에 따른 무작위 변동에 의해 생성되는 부분을 포함합니다.
 #### Nonequilibrium steady states - 비평형 정상상태
 
 
 밀도 역학의 포커-플랑크 형식을 갖추고 나면 이제 어떤 무작위 동적 시스템의 비평형 장기 동작을 고려할 수 있습니다. 시스템이 약하게 혼합되어 있기 때문에 충분한 시간이 지난 후에는 풀백(pullback) 또는 무작위 전역 끌개라고 하는 불변 상태 집합으로 수렴할 것입니다. 끌개는 그 자체가 무작위 집합인 경우(random set) 때문에 무작위로 나타납니다(Crauel, 1999; Crauel and Flandoli, 1994). 관련된 비평형 정상상태 밀도 p(x)는 포커-플랑크 방정식의 해입니다(Frank, 2004). 식 (6)은 비평형 정상상태 밀도가 흐름에 의존하며, 이는 항상 회전과 발산이 없는 구성 요소로 표현될 수 있음을 보여줍니다. 이것이 헬름홀츠 분해(Helmholtz decomposition, 벡터 미적분학의 기본 정리라고도 함)이며, 이는 대칭이 아닌 행렬 $Q = -Q^T$와 스칼라 퍼텐셜 $\Im(x)$의 용어로 구성될 수 있습니다(Ao, 2004)[^note-5].
 
-> [\^note-5]:간단하게 하기 위해, 우리는 $Q = -QT$가 $x$에 따라 변하지 않는다고 가정하겠습니다, 적어도 지역적으로는 말이죠. 더불어, 무작위 진동의 진폭은 구형이라고 가정되므로, 우리는 $\Gamma$를 스케일링된 항등 행렬 또는 스칼라 양으로 취급할 수 있습니다.
+> [^note-5]:간단하게 하기 위해, 우리는 $Q = -QT$가 $x$에 따라 변하지 않는다고 가정하겠습니다, 적어도 지역적으로는 말이죠. 더불어, 요동의 진폭은 구형이라고 가정되므로, 우리는 $\Gamma$를 스케일링된 항등 행렬 또는 스칼라 양으로 취급할 수 있습니다.
 
 $$
 \begin{equation}\tag{1.7}
@@ -153,7 +154,7 @@ $$
 \begin{equation}\tag{1.8}
 \begin{aligned}
 f & = (\Gamma - Q)\nabla\ln p(x) \\
- & \Rightarrow \cfrac{p(x)}{j(x)} = -Q\nabla \ln p(x) \Rightarrow \.{p}(x) = 0 \\
+ & \Rightarrow \tfrac{p(x)}{j(x)} = -Q\nabla \ln p(x) \Rightarrow \dot{p}(x) = 0 \\
  \space \\
 \Im(x) & = - \ln \space p(x) \\
 f(x) & = (Q-\Gamma)\nabla\Im(x) \\
@@ -169,9 +170,12 @@ $$
 $$
 \begin{equation}\tag{1.9}
 \begin{aligned}
-\mathcal{A}(x[\tau]) & = \int_0^t \mathcal{L}(x,\.{x})d\tau \\
-\mathcal{L}(x,\.{x}) & = \cfrac{1}{2} [ \cfrac{1}{2\Gamma}( \.{x} - Q \nabla \Im ) \cdot ( \.{x} - Q \nabla \Im) + \.{x} \cdot \nabla \Im + \Gamma(\cfrac{1}{2}\nabla \Im \cdot \nabla \Im - \nabla^{2}\Im)] \\
-\mathcal{H}(x,\.{x}) & = \cfrac{1}{2} [ \cfrac{1}{2\Gamma}( \.{x} - Q \nabla \Im ) \cdot ( \.{x} - Q \nabla \Im) - \Gamma(\cfrac{1}{2}\nabla \Im \cdot \nabla \Im - \nabla^{2}\Im)] \\
+\mathcal{A}(x[\tau]) 
+  &= \int_0^t \mathcal{L}(x,\dot{x})d\tau \\
+\mathcal{L}(x,\dot{x})
+  &= \tfrac{1}{2}[\tfrac{1}{2\Gamma}(\dot{x} - Q\nabla\Im)\cdot(\dot{x}-Q\nabla\Im) + \dot{x}\cdot\nabla\Im + \Gamma(\tfrac{1}{2}\nabla\Im\cdot\nabla\Im - \nabla^{2}\Im)] \\
+\mathcal{H}(x,\dot{x})
+  &= \tfrac{1}{2}[\tfrac{1}{2\Gamma}(\dot{x} - Q\nabla\Im)\cdot(\dot{x}-Q\nabla\Im) - \Gamma(\tfrac{1}{2}\nabla\Im\cdot\nabla\Im - \nabla^{2}\Im)] \\
 \end{aligned}
 \end{equation}
 $$
@@ -183,16 +187,27 @@ $$
 $$
 \begin{equation}\tag{1.10}
 \begin{aligned}
-\mathcal{A}(x[\tau]) & =\underbrace{\frac{1}{2} \int_0^t \frac{1}{2 \Gamma} \dot{x}^2 d \tau}_{\text {kinetic }}+\underbrace{\frac{1}{2} \int_0^t \dot{\mathfrak{I}} d \tau}_{\text {path-independent }}+\underbrace{\frac{1}{h} \int_0^t V(x) d \tau}_{\text {path-dependent }} \\
-\int_0^t \dot{\mathfrak{I}} d \tau & =\mathfrak{I}\left(x_t\right)-\mathfrak{I}\left(x_0\right) \\
-V(x) & =\frac{h}{2} \Gamma\left(\frac{1}{2} \nabla \mathfrak{I} \cdot \nabla \mathfrak{I}-\nabla^2 \mathfrak{I}\right)
+\mathcal{A}(x[\tau])
+  &= \underbrace{
+    \tfrac{1}{2}\int_0^t\tfrac{1}{2\Gamma}\dot{x}^2 d \tau
+    }_{\text{kinetic}}+
+    \underbrace{
+      \tfrac{1}{2} \int_0^t \dot{\Im} d \tau
+    }_{\text{path-independent}}+
+    \underbrace{
+      \tfrac{1}{h}\int_0^t V(x) d \tau
+    }_{\text{path-dependent}} \\
+\int_0^t \dot{\Im} d \tau
+  &= \Im\left(x_t\right)-\Im\left(x_0\right) \\
+V(x)
+  &=\tfrac{h}{2} \Gamma\left(\tfrac{1}{2} \nabla \Im \cdot \nabla \Im-\nabla^2 \Im\right)
 \end{aligned}
 \end{equation}
 $$
 
-이것은 어떤 경로의 행동을 운동에 의존하는 (운동에너지) 항, 변화하는 놀라움에 의존하는 (경로에 독립적인) 항, 그리고 무작위 진동의 진폭에 비례하는 (경로에 종속적인) 항의 형태로 표현될 수 있다는 것을 의미합니다. 부록 C에서는 기대 라그랑지안과 관련된 해밀턴이 간단하게 다루어져 있습니다
+이것은 어떤 경로의 행동을 운동에 의존하는 (운동에너지) 항, 변화하는 놀라움에 의존하는 (경로에 독립적인) 항, 그리고 요동의 진폭에 비례하는 (경로에 종속적인) 항의 형태로 표현될 수 있다는 것을 의미합니다. 부록 C에서는 기대 라그랑지안과 관련된 해밀턴이 간단하게 다루어져 있습니다
 
-여기서 중요하게 주목해야 할 것은 식(10)의 첫 번째 항이 운동 에너지의 형태를 가지며, 여기서 무작위 진동의 진폭은 역질량의 역할을 합니다. 두 번째 항은 단순히 (비평형 정상상태) 퍼텐셜 차이이며, 세 번째 (슈뢰딩거 퍼텐셜) 항은 무작위 진동의 진폭에 비례하여 증가합니다. 이는 무작위 진동이 크면 상태가 무시할 만한 질량을 가진 것처럼 행동하고 슈뢰딩거 퍼텐셜이 지배적이라는 것을 의미합니다. 반대로,작위 진동의 진폭이 무시할 만큼 작으면 첫 번째와 두 번째 항이 우세하게 되어 행동을 운동에너지와 퍼텐셜 항으로 분해할 수 있습니다. 이 양대 주장은 나중에 양자와 고전 역학 사이의 구별로 나타날 것입니다. 식(10)은 $\hbar = 0$이면 슈뢰딩거 퍼텐셜의 기여가 사라진다는 것을 제안합니다 (파인먼, 1948). 그러나 이 논문에서는 플랑크 상수를 비례 상수로 취급합니다(이것은 무작위 진동의 진폭에 특정 단위를 부여합니다), 따라서 그들의 진폭이 0으로 수렴할 때 고전적인 한계가 도달됩니다; 즉, $\Gamma = 0$.
+여기서 중요하게 주목해야 할 것은 식(10)의 첫 번째 항이 운동 에너지의 형태를 가지며, 여기서 요동의 진폭은 역질량의 역할을 합니다. 두 번째 항은 단순히 (비평형 정상상태) 퍼텐셜 차이이며, 세 번째 (슈뢰딩거 퍼텐셜) 항은 요동의 진폭에 비례하여 증가합니다. 이는 요동이 크면 상태가 무시할 만한 질량을 가진 것처럼 행동하고 슈뢰딩거 퍼텐셜이 지배적이라는 것을 의미합니다. 반대로,작위 진동의 진폭이 무시할 만큼 작으면 첫 번째와 두 번째 항이 우세하게 되어 행동을 운동에너지와 퍼텐셜 항으로 분해할 수 있습니다. 이 양대 주장은 나중에 양자와 고전 역학 사이의 구별로 나타날 것입니다. 식(10)은 $\hbar = 0$이면 슈뢰딩거 퍼텐셜의 기여가 사라진다는 것을 제안합니다 (파인먼, 1948). 그러나 이 논문에서는 플랑크 상수를 비례 상수로 취급합니다(이것은 요동의 진폭에 특정 단위를 부여합니다), 따라서 그들의 진폭이 0으로 수렴할 때 고전적인 한계가 도달됩니다; 즉, $\Gamma = 0$.
 
 이 한계에서, 고전적인 경로는 최소 행동의 변분 원칙으로 설명할 수 있는 가장 가능성이 높은 경로입니다:
 
@@ -200,7 +215,7 @@ $$
 \begin{equation}\tag{1.11}
 \begin{aligned}
 \delta_x\mathcal{A}(Xx[\tau]) &= 0 \\ 
-&\Rightarrow \.{x}(\tau) = f(x(\tau)) \\
+&\Rightarrow \dot{x}(\tau) = f(x(\tau)) \\
 &\Rightarrow x[\tau] = argmin_{x[\tau]} \mathcal{A}(x[\tau])
 \end{aligned}
 \end{equation}
@@ -208,7 +223,7 @@ $$
 
 이것은 가장 가능성이 높은 경로가 행동을 최소화하여 경로에 대한 그것의 변화를 0으로 만든다는 것을 의미합니다. 중요한 것은, 비평형 정상상태에서, 행동에 대한 경로에 의존적이고 독립적인 기여는 놀라움(놀라움)과 그 기울기의 형태로 표현될 수 있다는 것입니다. 우리는 이 비평형 정상상태 동력학의 결과를 여러 다른 설정에서 활용할 것입니다. 시너제틱스와 패턴 형성의 처리에서, 이 최소 행동 원칙은 때때로 에너지 기울기의 파괴로 표현됩니다 (Tschacher와 Haken, 2007).
 
-#### Fluctuations and information length - 무작위 진동과 정보 길이
+#### Fluctuations and information length - 요동과 정보 길이
 
 _"시간은 현재를 주어진 상황에서 과거와 독립적인 미래를 설계하도록 구성되어 있다"_ (카티차, 2015b) p6116
 
@@ -221,7 +236,7 @@ _"시간은 현재를 주어진 상황에서 과거와 독립적인 미래를 �
 $$
 \begin{equation}\tag{1.12}
 \begin{aligned}
-\ell = \int_0^T \sqrt{ \dot{x}(\tau)^{i} g_{ij} \.{x}(\tau)^j } dt
+\ell = \int_0^T \sqrt{ \dot{x}(\tau)^{i} g_{ij} \dot{x}(\tau)^j } dt
 \end{aligned}
 \end{equation}
 $$
@@ -231,8 +246,8 @@ $$
 $$
 \begin{equation}\tag{1.13}
 \begin{aligned}
- \lim_{Q,\Gamma \rightarrow 0}\mathcal{A}(x[\tau]) &= \int_0^T \dot{x}(\tau)^{i} g_{ij} \.{x}(\tau)^j dt \geq \ell^2 \\
-g &= \cfrac{1}{4\Gamma}
+ \lim_{Q,\Gamma \rightarrow 0}\mathcal{A}(x[\tau]) &= \int_0^T \dot{x}(\tau)^{i} g_{ij} \dot{x}(\tau)^j dt \geq \ell^2 \\
+g &= \tfrac{1}{4\Gamma}
 \end{aligned}
 \end{equation}
 $$
@@ -243,12 +258,12 @@ $$
 
 현재의 상황에서는 (Crooks, 2007)에 따라, 피셔 정보를 메트릭으로 사용하는 정보 길이를 통해 체계적인 밀도 동역학을 특성화할 수 있습니다. 밀도를 시간에 독립적인 집합 변수 또는 모드 $\zeta_i(x)$와 시간에 종속적인 충분한 통계적 역할을 하는 공액 변수 $\lambda(\tau)$로 분해하는 것을 고려해보세요 [^note-6] :
 
-> [\^note-6]: 우리는 Z를 분할 함수 또는 정규화 상수를 나타내는 데 사용할 것입니다. 
+> [^note-6]: 우리는 Z를 분할 함수 또는 정규화 상수를 나타내는 데 사용할 것입니다. 
 
 $$
 \begin{equation}\tag{1.14}
 \begin{aligned}
-\mathfrak{I}(x,\tau) = \lambda^i (\tau)\zeta_i (x) + \ln Z
+\Im(x,\tau) = \lambda^i (\tau)\zeta_i (x) + \ln Z
 \end{aligned}
 \end{equation}
 $$
@@ -258,8 +273,12 @@ $$
 $$
 \begin{equation}\tag{1.15}
 \begin{aligned}
-\ell & = \int_0^t \sqrt{g_{ij}\.{\lambda}^{i}\.{\lambda}^{j}} d\tau \\
-g &= I(\lambda) \Leftrightarrow g_{ij} = cov(\zeta_i(x),\zeta_j(x)) = E\Bigg[\cfrac{\partial\Im}{\partial\lambda^{i}} \cfrac{\partial\Im}{\partial\lambda^{j}} \Bigg] = \cfrac{\partial D[p_{\lambda^{'}}(x)||p_{\lambda}(x)]}{\partial\lambda^{'i}\partial\lambda^{'j}}\Biggm\vert_{\lambda^{'} = \lambda}
+\ell 
+  &= \int_0^t \sqrt{g_{ij}\dot{\lambda}^{i}\dot{\lambda}^{j}} d\tau \\
+g &= I(\lambda) \Leftrightarrow g_{ij} 
+   = cov(\zeta_i(x),\zeta_j(x)) 
+   = E\Bigg[\frac{\partial\Im}{\partial\lambda^{i}} \frac{\partial\Im}{\partial\lambda^{j}} \Bigg] 
+   = \frac{\partial D[p_{\lambda^{'}}(x)||p_{\lambda}(x)]}{\partial\lambda^{'i}\partial\lambda^{'j}}\Biggm\vert_{\lambda^{'} = \lambda}
 \end{aligned}
 \end{equation}
 $$
@@ -267,31 +286,41 @@ $$
 
 주목할 점은 정보 기하학이 상태 공간 그 자체가 아니라 상태에 대한 밀도를 매개변수화하는 공액 변수 공간에 있다는 것입니다. 이 공간은 통계적 다양체이며, 그 기하학은 나중에 베이지안 역학의 중심적인 측면이 될 것입니다. 현재로서는 정보, 기하학, 통계 역학 간의 깊은 관계를 예고하고 있습니다 (Crooks, 2007; Kleeman, 2014).
 
-(1.15)의 마지막 방정식은 두 확률 분포 사이의 발산의 두 번째 도함수를 단순하게 계산함으로써 확인할 수 있습니다. 이 확률 분포들은 무한히 가까이 있으며, 여기서 $\lambda^{'} = \lambda + d\lambda$입니다. 이는 통계적 다양체 위에서 정보 길이가 매개변수화된 밀도가 빨리 변할 때 더 빨리 축적된다는 것을 의미합니다. 이 해석은 또한 통계적 다양체에서 작은 이동 $d\lambda \rightarrow 0$에 대한 연속적인 밀도 간의 발산(제곱근)의 축적으로 정보 길이를 설명하는 것을 허용합니다.
+(1.15)의 마지막 방정식은 두 확률 분포 사이의 발산의 두 번째 도함수를 단순하게 계산함으로써 확인할 수 있습니다. 이 확률 분포들은 무한히 가까이 있으며, 여기서 $\lambda^{'}=\lambda+d\lambda$ 입니다. 이는 통계적 다양체 위에서 정보 길이가 매개변수화된 밀도가 빨리 변할 때 더 빨리 축적된다는 것을 의미합니다. 이 해석은 또한 통계적 다양체에서 작은 이동 $d\lambda\rightarrow 0$ 에 대한 연속적인 밀도 간의 발산(제곱근)의 축적으로 정보 길이를 설명하는 것을 허용합니다.
 
 $$
 \begin{equation}\tag{1.16}
 \begin{aligned}
-\ell & = \int d \ell \\
-d\ell^2 & = g_{ij}d\lambda^j d\lambda^i \\
-\cfrac{1}{2}d\ell^2 &= D[p_{\lambda^{'}}(x)||p_{\lambda}(x)] = \cfrac{1}{2} \cfrac{\partial D[p_{\lambda^{'}}(x)||p_{\lambda}(x)]}{\partial\lambda^{'i} \partial\lambda^{'j}}\Biggm\vert_{\lambda^{'}=\lambda} d\lambda^j \lambda^i \\
+\ell 
+  &= \int d \ell \\
+d\ell^2 
+  &= g_{ij}d\lambda^j d\lambda^i \\
+\frac{1}{2}d\ell^2 
+  &= D[p_{\lambda^{'}}(x)||p_{\lambda}(x)] 
+   = \frac{1}{2} \frac{\partial D[p_{\lambda^{'}}(x)||p_{\lambda}(x)]}{\partial\lambda^{'i} \partial\lambda^{'j}}\Biggm\vert_{\lambda^{'}=\lambda} d\lambda^j \lambda^i \\
 \end{aligned}
 \end{equation}
 $$
 
-마지막 방정식은 발산의 테일러 전개로부터 따르며, 첫 번째로 사라지지 않는 항은 (1.15)의 두 번째 도함수입니다. 이는 $\lambda^{'}=\lambda$일 때 발산과 그 첫 번째 도함수가 0이기 때문입니다. 식 (1.16)은 정보 길이를 매개변수 공간을 통해 이동하는 밀도가 지나가는 고유한 구성의 수로 이해할 수 있다는 것을 의미합니다. 이 결과는 확률 분포의 매개변수로 시스템의 다양한 구성을 처리함으로써 열역학 변수를 시스템의 다양한 구성과 우아하게 연결하는 방법을 제공합니다 (Crooks, 2007; Kleeman, 2014). 그러나, 우리의 초점은 밀도 동역학에 정보 기하학을 부여하는 특별한 매개변수인 시간에 있을 것입니다.
+마지막 방정식은 발산의 테일러 전개로부터 따르며, 첫 번째로 사라지지 않는 항은 (1.15)의 두 번째 도함수입니다. 이는 $\lambda^{'}=\lambda$ 일 때 발산과 그 첫 번째 도함수가 0이기 때문입니다. 식 (1.16)은 정보 길이를 매개변수 공간을 통해 이동하는 밀도가 지나가는 고유한 구성의 수로 이해할 수 있다는 것을 의미합니다. 이 결과는 확률 분포의 매개변수로 시스템의 다양한 구성을 처리함으로써 열역학 변수를 시스템의 다양한 구성과 우아하게 연결하는 방법을 제공합니다 (Crooks, 2007; Kleeman, 2014). 그러나, 우리의 초점은 밀도 동역학에 정보 기하학을 부여하는 특별한 매개변수인 시간에 있을 것입니다.
 
-중요한 정보 길이는 시간 자체가 진화하는 밀도를 매개변수화하고, $\lambda(\tau) = \tau \Rightarrow .{\lambda} = 1$ 그리고 따라서 시간은 정보 기하학을 가지고 있다. 어떤 초기 상태에서 준비된 시스템을 고려하십시오. 밀도 $p_0 \equiv p(x,0)$는 다음과 같습니다.
+중요한 정보 길이는 시간 자체가 진화하는 밀도를 매개변수화하고, $\lambda(\tau) = \tau \Rightarrow \dot{\lambda} = 1$ 그리고 따라서 시간은 정보 기하학을 가지고 있다. 어떤 초기 상태에서 준비된 시스템을 고려하십시오. 밀도 $p_0\equiv p(x,0)$ 는 다음과 같습니다.
 
 $$
 \begin{equation}\tag{1.17}
 \begin{aligned}
-p(x,\tau) &= p_{0} + \tau\dot{p}_{0} +\dots \\
-&= p_{0} + \tau L p_{0} + \dots \\
+p(x,\tau) 
+  &= p_{0} + \tau\dot{p}_{0} +\dots \\
+  &= p_{0} + \tau L p_{0} + \dots \\
 \\
-\ell(t) &= \int_{0}^{t} \sqrt{g(\tau)}d\tau \\
-g(\tau) &= I(\tau) = E_{p_{0}}[(\partial_{\tau}\Im_{0})^{2}] = \int\cfrac{(L_0 P_0)^2}{p_0}dx \\
-L(\tau) &= \nabla\cdot\Gamma\nabla - \nabla\cdot f(\tau)
+\ell(t) 
+  &= \int_{0}^{t} \sqrt{g(\tau)}d\tau \\
+g(\tau) 
+  &= I(\tau) 
+   = E_{p_{0}}[(\partial_{\tau}\Im_{0})^{2}] 
+   = \int\frac{(L_0 P_0)^2}{p_0}dx \\
+L(\tau) 
+  &= \nabla\cdot\Gamma\nabla - \nabla\cdot f(\tau)
 \end{aligned}
 \end{equation}
 $$
@@ -303,7 +332,7 @@ $$
 \begin{equation}\tag{1.18}
 \begin{aligned}
 d\ell(\tau)^2 &= g(\tau)d\tau^2 \\
-\cfrac{1}{2}d\ell(\tau)^2 &= D[p(x,\tau + d\tau)||p(x,\tau)] \\
+\tfrac{1}{2}d\ell(\tau)^2 &= D[p(x,\tau + d\tau)||p(x,\tau)] \\
 \end{aligned}
 \end{equation}
 $$
@@ -335,7 +364,7 @@ $$
 
 비평형 정상상태 밀도의 층화에 대한 마르코프 담요의 일반화는 주변 흐름 개념에 기반을 두고 있습니다. 즉, 다른 상태들을 평균내(즉, 주변화) 상태의 흐름입니다. 우리는 ~ 기호를 사용하여 상태의 부분집합의 보완을 나타낼 것입니다. 예를 들어, $x = (\mu, \dot{\mu})$.
 
-**레마** (주변 흐름): 균형이 없는 정상 상태에서의 약 혼합 랜덤 동적 시스템에 대해, 상태 집합 $\eta \in X$의 주변 흐름 $f_{\eta}(\mu)$은 다른 상태 집합 $\mu \in X$의 보완에 대해 평균된 값으로서, 해당 주변 밀도의 로그 기울기를 통해 표현될 수 있다:
+**보조정리** (주변 흐름): 균형이 없는 정상 상태에서의 약 혼합 랜덤 동적 시스템에 대해, 상태 집합 $\eta \in X$의 주변 흐름 $f_{\eta}(\mu)$은 다른 상태 집합 $\mu \in X$의 보완에 대해 평균된 값으로서, 해당 주변 밀도의 로그 기울기를 통해 표현될 수 있다:
 
 $$
 \begin{equation}\tag{1.20}
@@ -345,7 +374,7 @@ f_{\eta(\mu)} \triangleq E_{p(\tilde{\mu}|\mu)}[f_{\eta}(\mu,\tilde{\mu})] = (Q_
 \end{equation}
 $$
 
-부정리 (조건부 독립성): 만약 한 상태 집합의 흐름이 다른 상태에 의존하지 않는다면, 그것은 두 번째 부분집합에 대한 기대 흐름이 된다. 예를 들어, 마르코프 담요에 대해:
+따름정리 (조건부 독립성): 만약 한 상태 집합의 흐름이 다른 상태에 의존하지 않는다면, 그것은 두 번째 부분집합에 대한 기대 흐름이 된다. 예를 들어, 마르코프 담요에 대해:
 
 $$
 \begin{equation}\tag{1.21}
@@ -374,17 +403,19 @@ $$
 
 간단히 말해서, 마르코프 담요에 의해 유발된 조건부 독립성은 외부 상태의 흐름이 모든 내부 상태에 대해 동일하다는 것을 의미하며, 이는 내부 상태에 대한 평균과 같습니다(다른 분할에 대해서도 마찬가지입니다).
 
-부정리 (기대 흐름): 모든 다른 상태에 대해 평균화된 어떤 부분 집합 $\eta \subset x$의 주변 흐름은 그 주변 밀도의 기울기에만 의존하며, 그 보완과의 회전형 결합이 없다고 가정합니다:
+부정리 (기대 흐름): 모든 다른 상태에 대해 평균화된 어떤 부분 집합 $\eta\subset x$의 주변 흐름은 그 주변 밀도의 기울기에만 의존하며, 그 보완과의 회전형 결합이 없다고 가정합니다:
 
 $$
 \begin{equation}\tag{1.22}
 \begin{aligned}
-f_{\eta}(\eta) = (\Gamma_{\eta\eta} - Q_{\eta\eta})\nabla_{\eta}\ln p(\eta) = (Q_{\eta\eta} - \Gamma_{\eta\eta})\nabla_{\eta}\Im(\eta) \\
+f_{\eta}(\eta) 
+   = (\Gamma_{\eta\eta} - Q_{\eta\eta})\nabla_{\eta}\ln p(\eta)
+   = (Q_{\eta\eta} - \Gamma_{\eta\eta})\nabla_{\eta}\Im(\eta) \\
 \end{aligned}
 \end{equation}
 $$
 
-이것은 $\eta = \mu$이고 $Q_{\eta\eta}=0$인 경우 주변 흐름 레마의 특별한 경우입니다. 이것은 모든 상태 또는 상태의 부분집합의 기대 흐름이, 모든 다른 상태에 대해 평균을 낼 때, 모든 상태가 함께 고려될 때와 정확히 동일한 방식으로 행동할 것임을 의미합니다. 다시 말해, 그것은 그것의 (주변) 밀도의 경사를 오를 것입니다.
+이것은 $\eta=\mu$ 이고 $Q_{\eta\eta}=0$ 인 경우 주변 흐름 레마의 특별한 경우입니다. 이것은 모든 상태 또는 상태의 부분집합의 기대 흐름이, 모든 다른 상태에 대해 평균을 낼 때, 모든 상태가 함께 고려될 때와 정확히 동일한 방식으로 행동할 것임을 의미합니다. 다시 말해, 그것은 그것의 (주변) 밀도의 경사를 오를 것입니다.
 
 주변 흐름 레마는 우리가 (21)의 흐름에 대한 용어로 그림 1의 구조적 또는 확률적 그래픽 모델에 내재된 조건부 독립성을 표현할 수 있게 해줍니다. 즉, 시스템이 균형이 없는 정상 상태에서 마르코프 담요를 유지하면, 그 시스템은 특정 상태에만 의존하는 흐름을 가져야 합니다. 이 구조화된 동력학은 그 후의 모든 것을 보증합니다.
 
@@ -410,9 +441,11 @@ _"물리학과 화학이 어떻게 생명체의 공간 경계 내에서 일어�
 $$
 \begin{equation} \tag{2.1}
 \begin{aligned}
-f_{\alpha}(\pi) &= (Q_{\alpha\alpha} -\Gamma_{\alpha\alpha})\nabla_{\alpha}\Im(\pi) \\
-E_{p(\pi)}[\Im(\pi)] &= lim_{\tau\to\infty}\frac{1}{\tau}\int_{0}^{\tau}\Im(\pi(t))dt \\
-&= H(P)
+f_{\alpha}(\pi) 
+  &= (Q_{\alpha\alpha} -\Gamma_{\alpha\alpha})\nabla_{\alpha}\Im(\pi) \\
+E_{p(\pi)}[\Im(\pi)]
+  &= lim_{\tau\to\infty}\frac{1}{\tau}\int_{0}^{\tau}\Im(\pi(t))dt \\
+  &= H(P)
 \end{aligned}
 \end{equation}
 $$
@@ -424,13 +457,24 @@ $$
 $$
 \begin{equation} \tag{2.3}
 \begin{aligned}
-\Im(\pi) &= E_{p(\eta|\pi)}[\Im(\pi)] \\
-&= E_{p(\eta|\pi)}[\ln p(\eta|\pi) - \ln p(\pi|\eta)] \\
-&= E_{p(\eta|\pi)}[\ln p(\eta|\pi) - \ln p(\eta) - \ln p(\pi|\eta)] \\
-&= \underbrace{E_{p(\eta|b)}[\Im(\pi|\eta)]}_{\text{inaccuracy}} + \underbrace{D[p(\eta|\pi)||p(\eta)]}_{\text{complexity}} \\
+\Im(\pi)
+  &= E_{p(\eta|\pi)}[\Im(\pi)] \\
+  &= E_{p(\eta|\pi)}[\ln p(\eta|\pi) - \ln p(\pi|\eta)] \\
+  &= E_{p(\eta|\pi)}[\ln p(\eta|\pi) - \ln p(\eta) - \ln p(\pi|\eta)] \\
+  &= \underbrace{
+      E_{p(\eta|b)}[\Im(\pi|\eta)]
+    }_{\text{inaccuracy}} + 
+    \underbrace{
+      D[p(\eta|\pi)||p(\eta)]
+    }_{\text{complexity}} \\
 \\
-E_{p(\pi)}[\Im(\pi)] &= \underbrace{H(P)}_{\text{entropy}} = \underbrace{H(P|E)}_{\text{ambiguity}} + \underbrace{I(E,P)}_{\text{risk}} \\
-\underbrace{H(P|E)}_{\text{ambiguity}} &= \underbrace{H(P)}_{\text{entropy}} - \underbrace{I(E,P)}_{\text{info gain}} \\
+E_{p(\pi)}[\Im(\pi)]
+  &= \underbrace{H(P)}_{\text{entropy}}
+   = \underbrace{H(P|E)}_{\text{ambiguity}} +
+     \underbrace{I(E,P)}_{\text{risk}} \\
+\underbrace{H(P|E)}_{\text{ambiguity}}
+  &= \underbrace{H(P)}_{\text{entropy}} -
+     \underbrace{I(E,P)}_{\text{info gain}} \\
 \end{aligned}
 \end{equation}
 $$
@@ -446,8 +490,9 @@ $$
 $$
 \begin{equation} \tag{2.4}
 \begin{aligned}
-\dot{H}^{\alpha} &= \int p(\pi) f_{\alpha}(\pi)\cdot\nabla_{\alpha}\Im(\pi)d\pi \\
-&= -\int p(\pi)\nabla_{\alpha} \Im(\pi)\cdot\Gamma_{\alpha\alpha}\nabla_{\alpha}\Im(\pi)d\pi \leq 0
+\dot{H}^{\alpha}
+  &= \int p(\pi) f_{\alpha}(\pi)\cdot\nabla_{\alpha}\Im(\pi)d\pi \\
+  &= -\int p(\pi)\nabla_{\alpha} \Im(\pi)\cdot\Gamma_{\alpha\alpha}\nabla_{\alpha}\Im(\pi)d\pi \leq 0
 \end{aligned}
 \end{equation}
 $$
@@ -457,7 +502,9 @@ $$
 $$
 \begin{equation} \tag{2.5}
 \begin{aligned}
-f_{\alpha}(\alpha) = (Q_{\alpha\alpha} - \Gamma_{\alpha\alpha})\nabla_{\alpha}\Im(\alpha) \Rightarrow p(\dot{\alpha}|\alpha) = \mathcal{N}(f_{\alpha}(\alpha), 2\Gamma_{\alpha}) \\
+f_{\alpha}(\alpha)
+   = (Q_{\alpha\alpha} - \Gamma_{\alpha\alpha})\nabla_{\alpha}\Im(\alpha) \Rightarrow p(\dot{\alpha}|\alpha)
+   = \mathcal{N}(f_{\alpha}(\alpha), 2\Gamma_{\alpha}) \\
 \end{aligned}
 \end{equation}
 $$
@@ -467,9 +514,13 @@ $$
 $$
 \begin{equation} \tag{2.6}
 \begin{aligned}
-\delta_{\alpha}\mathcal{A}(\alpha[\tau]) &= 0 \\
-&\Rightarrow \dot{\alpha} = f_{\alpha}(\alpha) = (Q_{\alpha\alpha}-\Gamma_{\alpha\alpha})\nabla_{\alpha}\Im (\alpha) \\
-&\Rightarrow \alpha[\tau] = argmin_{\alpha[\tau]}\mathcal{A}(\alpha[\tau]) \\
+\delta_{\alpha}\mathcal{A}(\alpha[\tau]) 
+  &= 0 \\
+  &\Rightarrow \dot{\alpha}
+   = f_{\alpha}(\alpha)
+   = (Q_{\alpha\alpha}-\Gamma_{\alpha\alpha})\nabla_{\alpha}\Im (\alpha) \\
+  &\Rightarrow \alpha[\tau]
+   = argmin_{\alpha[\tau]}\mathcal{A}(\alpha[\tau]) \\
 \end{aligned}
 \end{equation}
 $$
@@ -479,11 +530,16 @@ $$
 $$
 \begin{equation} \tag{2.7}
 \begin{aligned}
-\Im(\alpha) &= E_{p(\tilde{\alpha}|\alpha)}[\Im(\alpha)] \\
-&= E_{p(\tilde{\alpha}|\alpha)}[\ln{p(\eta|\pi)} - \ln{p(\eta)} - \ln{p(\eta|\pi)} + \ln{p(\eta|\alpha)} - \ln{p(\alpha|\eta)}] \\
-&= E_{p(\eta|\alpha)}[\Im(\alpha|\eta)] + E_{p(\tilde{\alpha}|\alpha)}[\underbrace{D[p(\eta|\pi)||p(\eta)]}_{\text{complexity}} - \underbrace{D[p(\eta|\pi)||p(\eta|\alpha)]}_{\text{information gain}}] \\
-E_{p(\tilde{\alpha}|\alpha)}[\Im(\alpha)] &= H(A) = I(A,E) + H(A|E) \\
-&= H(A|E) + \underbrace{I(E,P)}_{\text{risk}} - \underbrace{I(E,S|A)}_{\text{active information}} \\
+\Im(\alpha)
+  &= E_{p(\tilde{\alpha}|\alpha)}[\Im(\alpha)] \\
+  &= E_{p(\tilde{\alpha}|\alpha)}[\ln{p(\eta|\pi)} - \ln{p(\eta)} - \ln{p(\eta|\pi)} + \ln{p(\eta|\alpha)} - \ln{p(\alpha|\eta)}] \\
+  &= E_{p(\eta|\alpha)}[\Im(\alpha|\eta)] + E_{p(\tilde{\alpha}|\alpha)}[
+      \underbrace{D[p(\eta|\pi)||p(\eta)]}_{\text{complexity}} -
+      \underbrace{D[p(\eta|\pi)||p(\eta|\alpha)]}_{\text{information gain}}
+    ] \\
+E_{p(\tilde{\alpha}|\alpha)}[\Im(\alpha)]
+  &= H(A) = I(A,E) + H(A|E) \\
+  &= H(A|E) + \underbrace{I(E,P)}_{\text{risk}} - \underbrace{I(E,S|A)}_{\text{active information}} \\
 \end{aligned}
 \end{equation}
 $$
@@ -525,29 +581,37 @@ $$
 ![FIGURE 3](./img/03.png)
 <p style="text-align: center;">FIGURE 3 </p>
 
-대칭 파괴와 이분법. 이 그림은 특정 (즉, 자기) 엔트로피와 대칭 파괴의 기반이 되는 궤적의 지수적인 발산 사이의 관계를 (확률론적) 로렌츠 시스템에서 보여줍니다 (Agarwal and Wettlaufer, 2016; Lorenz, 1963). 이 예제는 이분법과 그것들과 관련된 (랜덤) 수렴 집합에 따라 엔트로피가 어떻게 변하는지를 보여줍니다. 여기서, 우리는 로렌츠 시스템을 통합했습니다 (시간 단위 1/64의 $2^{18}$ 시간 단계에 대해) 레일리 (제어) 파라미터의 증가 값으로, 결정론적 시스템에서는 피치포크 이분법을 유발합니다 (at $\rho$ = 1) 그리고 그 후의 (부분적으로) 홉프 이분법 (at $\rho$ = 24.74). 우리가 흐름에 작은 (표준 편차 1/128) 무작위 변동을 추가했기 때문에, 노이즈에 의해 유발된 위상 대칭 파괴는 $\rho$ = 14 주변에서 나타납니다 (일반적으로, 카오스 전이의 영역에서). 궤적의 지수적 발산은 최대 리아프노프 지수로 측정되었습니다 (궤도에 대한 평균). 결과적인 리아프노프 지수의 변화 (오른쪽 패널)는 수렴 집합이 공간을 채우게 만들며, 이와 관련된 자기 엔트로피와 상호 정보의 변화를 가져옵니다 (왼쪽 패널). 여기서, 우리는 로렌츠 시스템의 흐름이 세 번째에서 첫 번째 상태로의 링크가 누락되어 있다는 사실을 활용했습니다. 이는 우리가 첫 번째 상태를 활성 상태, 두 번째를 감각 상태, 마지막을 외부 또는 숨겨진 상태로 연결할 수 있음을 의미합니다 (여기에는 내부 상태가 없으며 특정 상태는 담요 상태로 축소됩니다). 이 시뮬레이션에서 놀라운 결과는 최대한의 자기조직화 - (활성 및 감각) 담요 상태의 엔트로피의 반영 - 이 확률적 카오스의 시작 직전에 깊은 하강을 보이며 - 결정론적 시스템에서의 임계 감속과 관련된 영역에서 이루어집니다. 삽입된 그림은 이분법과 수렴 집합을 궤적 (오른쪽) 및 관련 앙상블 밀도 (왼쪽)의 관점에서 보여주며, 궤적의 최소 및 최대 값으로 임의로 재조정됩니다. 주요 이분법은 수직선으로 표시되며, 수평선은 주요 리아프노프 지수가 처음으로 (확률적) 카오스의 시작에서 0을 교차하는 시점을 나타냅니다. 상호 정보 측정치(첫 번째와 나머지 상태 사이)는 상태 공간을 세 차원 각각에 32개의 빈으로 이산화하여 평가되었습니다. 이 예제는 단순한 자기 조직화의 정의 - 담요 (즉, 특정) 상태의 엔트로피 측면에서 - 가 확률적 카오스에서의 자기조직화 임계성과 어느 정도의 구성 유효성을 갖는지 보여주기 위한 수치 연구로 제공됩니다: 이것은 일반화 될 수도 있고, 그렇지 않을 수도 있습니다. 여기에서 보여지는 동역학은 각 상태가 무작위 변동으로 갖춰져 있기 때문에 결정론적이지 않습니다. 나중에 우리는 이것이 로렌츠 끌개의 각 상태가 내부 상태에서 빠른 변동을 상속하는 더 낮은 규모의 담요 상태의 혼합으로 모델링된다는 것을 볼 것입니다.
+*대칭 파괴와 이분법*. 이 그림은 특정 (즉, 자기) 엔트로피와 대칭 파괴의 기반이 되는 궤적의 지수적인 발산 사이의 관계를 (확률론적) 로렌츠 시스템에서 보여줍니다 (Agarwal and Wettlaufer, 2016; Lorenz, 1963). 이 예제는 이분법과 그것들과 관련된 (랜덤) 수렴 집합에 따라 엔트로피가 어떻게 변하는지를 보여줍니다. 여기서, 우리는 로렌츠 시스템을 통합했습니다 (시간 단위 1/64의 $ 2^{18} $ 시간 단계에 대해) 레일리 (제어) 파라미터의 증가 값으로, 결정론적 시스템에서는 피치포크 이분법을 유발합니다 (at $ \rho $ = 1) 그리고 그 후의 (부분적으로) 홉프 이분법 (at $ \rho $ = 24.74). 우리가 흐름에 작은 (표준 편차 1/128) 무작위 변동을 추가했기 때문에, 노이즈에 의해 유발된 위상 대칭 파괴는 $ \rho $ = 14 주변에서 나타납니다 (일반적으로, 카오스 전이의 영역에서). 궤적의 지수적 발산은 최대 리아프노프 지수로 측정되었습니다 (궤도에 대한 평균). 결과적인 리아프노프 지수의 변화 (오른쪽 패널)는 수렴 집합이 공간을 채우게 만들며, 이와 관련된 자기 엔트로피와 상호 정보의 변화를 가져옵니다 (왼쪽 패널). 여기서, 우리는 로렌츠 시스템의 흐름이 세 번째에서 첫 번째 상태로의 링크가 누락되어 있다는 사실을 활용했습니다. 이는 우리가 첫 번째 상태를 활성 상태, 두 번째를 감각 상태, 마지막을 외부 또는 숨겨진 상태로 연결할 수 있음을 의미합니다 (여기에는 내부 상태가 없으며 특정 상태는 담요 상태로 축소됩니다). 이 시뮬레이션에서 놀라운 결과는 최대한의 자기조직화 - (활성 및 감각) 담요 상태의 엔트로피의 반영 - 이 확률적 카오스의 시작 직전에 깊은 하강을 보이며 - 결정론적 시스템에서의 임계 감속과 관련된 영역에서 이루어집니다. 삽입된 그림은 이분법과 수렴 집합을 궤적 (오른쪽) 및 관련 앙상블 밀도 (왼쪽)의 관점에서 보여주며, 궤적의 최소 및 최대 값으로 임의로 재조정됩니다. 주요 이분법은 수직선으로 표시되며, 수평선은 주요 리아프노프 지수가 처음으로 (확률적) 카오스의 시작에서 0을 교차하는 시점을 나타냅니다. 상호 정보 측정치(첫 번째와 나머지 상태 사이)는 상태 공간을 세 차원 각각에 32개의 빈으로 이산화하여 평가되었습니다. 이 예제는 단순한 자기 조직화의 정의 - 담요 (즉, 특정) 상태의 엔트로피 측면에서 - 가 확률적 카오스에서의 자기조직화 임계성과 어느 정도의 구성 유효성을 갖는지 보여주기 위한 수치 연구로 제공됩니다: 이것은 일반화 될 수도 있고, 그렇지 않을 수도 있습니다. 여기에서 보여지는 동역학은 각 상태가 무작위 변동으로 갖춰져 있기 때문에 결정론적이지 않습니다. 나중에 우리는 이것이 로렌츠 끌개의 각 상태가 내부 상태에서 빠른 변동을 상속하는 더 낮은 규모의 담요 상태의 혼합으로 모델링된다는 것을 볼 것입니다.
 
 #### Self-organisation and information length - 자기 조직화와 정보 길이
 
 지금까지, 우리는 특정 엔트로피 측면에서 자기 조직화를 고려했으며, 여기서 낮은 엔트로피는 대칭 파괴와 자기조직화 임계성의 현상학과 함께 가는 것처럼 보입니다. 이는 질문을 불러일으킵니다: 이런 종류의 이동성을 어떻게 정량화할 수 있을까요? 한 가지 접근법은 정보 길이라는 개념을 빌려오는 것입니다. 즉, 시스템이 불균형한 정상 상태로 가는 도중 통과하는 식별 가능한 확률적 구성의 수입니다. 다시 말해, 이동하는 대칭 파괴 (생물학적 시스템에서 볼 수 있는 종류)를 특정 상태에서 불균형한 정상 상태까지의 긴 정보 길이와 연관시킬 수 있습니다. 정보 길이의 사용은 높은 자기 엔트로피와 낮은 자기 엔트로피의 의미에 대한 어려운 질문을 피하며, 이는 오직 더해지는 상수 내에서만 정의됩니다 (Jones, 1979). 반면에, 정보 길이는 우리가 정량화하려는 방황하는, 이동하는 동역학을 점수 매기기 위해 어떤 밀도 동역학에도 적용될 수 있는 척도입니다.
 
-정보 길이에 대한 직관을 구축하기 위해, 그림 4는 흐름과 무작위 변동이 이동하지만 구조화된 동역학을 생성하는 역할을 보여주는 세 가지 예시를 보여줍니다. 이 그림에서, 우리는 그림 3의 로렌츠 시스템을 사용하여 초기 밀도 - 주어진 특정 상태 - 가 불균형한 정상 상태 밀도로 어떻게 수렴하는지 다른 방법을 보여줍니다. 상단 패널은 낮은 진폭의 무작위 변동을 사용하는 로렌츠 끌개에 의해 유발된 익숙한 자기 조직화를 보여줍니다. 이 영역에서, 시스템은 레일리 파라미터 28을 사용하여 보장된 홉프 이분법을 겪었습니다. 초기 밀도의 진화는 다음을 통해 평가되었습니다: (i) 비평형 정상상태밀도 $D(\tau)$에 대한 KL 발산 - 그리고(ii)시간에 따른 밀도와 최종 (정상 상태) 밀도 사이의 정보 길이 차이 $\Delta(\tau)$.
+정보 길이에 대한 직관을 구축하기 위해, 그림 4는 흐름과 무작위 변동이 이동하지만 구조화된 동역학을 생성하는 역할을 보여주는 세 가지 예시를 보여줍니다. 이 그림에서, 우리는 그림 3의 로렌츠 시스템을 사용하여 초기 밀도 - 주어진 특정 상태 - 가 불균형한 정상 상태 밀도로 어떻게 수렴하는지 다른 방법을 보여줍니다. 상단 패널은 낮은 진폭의 무작위 변동을 사용하는 로렌츠 끌개에 의해 유발된 익숙한 자기 조직화를 보여줍니다. 이 영역에서, 시스템은 레일리 파라미터 28을 사용하여 보장된 홉프 이분법을 겪었습니다. 초기 밀도의 진화는 다음을 통해 평가되었습니다: (i) 비평형 정상상태밀도 $D(\tau)$ 에 대한 KL 발산 - 그리고(ii)시간에 따른 밀도와 최종 (정상 상태) 밀도 사이의 정보 길이 차이  $\Delta(\tau)$ .
 
 $$
 \begin{equation} \tag{2.9}
 \begin{aligned}
-D(\tau) &= D[p(x,\tau|\pi_0) \parallel p(x,\infty|\pi_0)] \\
-\delta(\tau)^2 &\leq \frac{1}{2}D(\tau) \\
+D(\tau) 
+  &= D[p(x,\tau|\pi_0) \parallel p(x,\infty|\pi_0)] \\
+\delta(\tau)^2 
+  &\leq \frac{1}{2}D(\tau) \\
 \\
-\Delta\ell(\tau) &= \ell(\tau) - \ell(\infty) \\
-\frac{1}{2}d\ell(\tau)^2 &= D[p(x,\tau+d\tau|\pi_0) \parallel p(x,\tau|\pi_0)] \\
+\Delta\ell(\tau) 
+  &= \ell(\tau) - \ell(\infty) \\
+\tfrac{1}{2}d\ell(\tau)^2 
+  &= D[p(x,\tau+d\tau|\pi_0) \parallel p(x,\tau|\pi_0)] \\
 \\
-D(\tau) &= 0 \Leftrightarrow \Delta\ell(\tau) = 0 \Leftrightarrow \delta(\tau)=0 \Leftrightarrow d\ell(\tau)  = 0 \\
+D(\tau) 
+  &= 0 \Leftrightarrow \Delta\ell(\tau) 
+   = 0 \Leftrightarrow \delta(\tau)
+   = 0 \Leftrightarrow d\ell(\tau)  
+   = 0 \\
 \end{aligned}
 \end{equation}
 $$
 
-위의 부방정식은 핀스커의 부방정식으로 알려져 있으며, 여기서 $\delta(\tau)$는 총 변동 거리 (Rényi, 2007)라고 부르며, 이는 우리가 발산 길이라고 부를 $D(\tau)$에 의해 상한선이 정해집니다. (1.18)에서 기억하십시오, 통계적 거리 $D(\tau)$와 $\Delta(\tau)$의 특성화는 KL 발산을 사용하는 방식에서 관련되어 있지만 다릅니다. 경로 길이는 정보 길이가 거리의 (리만) 척도인 것을 보장하기 위해 시간에 걸친 작은 증가에 대한 발산의 누적입니다. 반면에, 초기 밀도와 최종 밀도 사이의 발산 길이는 그렇지 않습니다. (2.9)의 최종 표현은 충분한 시간이 지난 후 밀도가 출발한 특정 상태에 대해 '잊어버린다'는 것을 말합니다. 즉, 발산과 정보 길이의 증가는 0이 됩니다. 반면에, 초기 상태를 '기억하는' 입자는 이동하는 밀도 동역학과 함께 긴 정보 길이를 가집니다.
+위의 부방정식은 핀스커의 부방정식으로 알려져 있으며, 여기서 $ \delta(\tau) $ 는 총 변동 거리 (Rényi, 2007)라고 부르며, 이는 우리가 발산 길이라고 부를 $ D(\tau)$ 에 의해 상한선이 정해집니다. (1.18)에서 기억하십시오, 통계적 거리 $ D(\tau) $ 와 $ \Delta(\tau) $ 의 특성화는 KL 발산을 사용하는 방식에서 관련되어 있지만 다릅니다. 경로 길이는 정보 길이가 거리의 (리만) 척도인 것을 보장하기 위해 시간에 걸친 작은 증가에 대한 발산의 누적입니다. 반면에, 초기 밀도와 최종 밀도 사이의 발산 길이는 그렇지 않습니다. (2.9)의 최종 표현은 충분한 시간이 지난 후 밀도가 출발한 특정 상태에 대해 '잊어버린다'는 것을 말합니다. 즉, 발산과 정보 길이의 증가는 0이 됩니다. 반면에, 초기 상태를 '기억하는' 입자는 이동하는 밀도 동역학과 함께 긴 정보 길이를 가집니다.
 
 긴 정보 길이는 실질적으로 초기 밀도가 최종 밀도에서 멀리 떨어져 있으며, 따라서 수렴하는 데 더 오래 걸린다는 것을 의미합니다(그림 4의 작은 파란색 화살표로 표시). 이 예에서는 정상 상태로의 수렴이 약 8초 걸립니다. 이는 초기 밀도가 짧은 정보 길이를 가진 빠른 수렴의 예를 보여주는 하단 패널과 대조됩니다.
 
@@ -558,16 +622,19 @@ $$
 $$
 \begin{equation} \tag{2.10}
 \begin{aligned}
-f(\pi) &= -\gamma\pi + \omega \\
-&\Rightarrow \ln{\ell(\infty)}=\ln{|\pi_0|} + \tfrac{1}{2}\ln{\gamma} - \tfrac{1}{2}\ln{\Gamma} \\
-&\Rightarrow \frac{\partial\ln\ell(\infty)}{\partial\ln{|\pi_0|}} = v = 1
+f(\pi) 
+  &= -\gamma\pi + \omega \\
+  &\Rightarrow \ln{\ell(\infty)}=\ln{|\pi_0|} + \tfrac{1}{2}\ln{\gamma} - \tfrac{1}{2}\ln{\Gamma} \\
+  &\Rightarrow \frac{\partial\ln\ell(\infty)}{\partial\ln{|\pi_0|}}
+   = v
+   = 1
 \end{aligned}
 \end{equation}
 $$
 
 반대로, 비선형 흐름은 기하학적 구조의 선형적 비율을 변화시켜 대칭성 파괴, 이동성 및 자기조직화된 임계성의 특성인 승수 법칙 $v \ne 1$을 생성합니다[^note-7]. (Kim, 2018)의 혼돈 시스템의 수치 분석에서 흥미로운 점은 정보 길이가 초기 상태에 따라 달라진다는 것으로, 불안정한 혹은 임계점이 가장 짧은 정보 길이를 갖습니다. 그림 3의 수치 분석에서, 노이즈가 유발하는 터널링이 불안정한 점들에서 불균형 정상 상태로의 '단축 경로'를 중재한다고 상상할 수 있습니다. 선형 경우는 무작위 변동이 큰 진폭을 달성함에 따라 모든 초기 조건이 정상 상태에 가까워지며, 함축적으로, 자기조직화가 불균형 정상 상태로 (거의) 순간적이라는 것을 제안합니다 (그림 4의 패널 B 참조). 나중에 우리는 이런 종류의 행동을 작은 (양자) 입자와 연관시킬 것입니다.
 
-> [\^note-7]: Kim, E.-j., 2018. Investigating Information Geometry in Classical and Quantum Systems through Information Length. Entropy 20, 574.를 참조하여 정보 길이를 음악에 적용하는 추가적인 논의 및 (재미있는) 응용에 대해 확인해 보세요.
+> [^note-7]: Kim, E.-j., 2018. Investigating Information Geometry in Classical and Quantum Systems through Information Length. Entropy 20, 574.를 참조하여 정보 길이를 음악에 적용하는 추가적인 논의 및 (재미있는) 응용에 대해 확인해 보세요.
 
 세 번째 부분에서, 우리는 긴 정보 길이를 가진 시스템에서의 자기조직화를 더 자세히 살펴보고 - 이들 입자를 짧은 정보 길이 시스템, 예를 들어 양자와 다른 작은 입자 (예: 바이러스)와 비교할 것입니다. 이 관점에서, 정보 길이는 작은 (양자) 입자의 단순하고 빠르며 '뜨거운' 자기조직화와 큰 (고전) 입자의 이동성 있는, 느리고 '차가운' 행동을 구분합니다.
 
@@ -634,10 +701,13 @@ $$
 $$
 \begin{equation}\tag{3.2}
 \begin{aligned}
-  \dot{a}_n^{(i)} &= (1+\tfrac{1}{64})\mu^{(i)}s_n^{(i)}+\omega_n \\
-  \dot{s}_n^{(i)} &=  2F^{(i)} - 8s_n^{(i)} - a_n^{(i)}+\omega_n \\
+\dot{a}_n^{(i)} 
+  &= (1+\tfrac{1}{64})\mu^{(i)}s_n^{(i)}+\omega_n \\
+\dot{s}_n^{(i)} 
+  &=  2F^{(i)} - 8s_n^{(i)} - a_n^{(i)}+\omega_n \\
   \\
-  F^{(i)} &= \textstyle\sum_{j=\{j:\Delta_{ij}<1\}}\Delta_{ij}\left( \cfrac{8exp(-|a_e^{(j)}-a_e^{(i)}|)-4}{\Delta_{ij}^2}-\frac{1}{\Delta_{ij}^3} \right) \\
+F^{(i)} 
+  &= \textstyle{\sum_{j=\{j:\Delta_{ij}<1\}}\Delta_{ij}}\left( \frac{8exp(-|a_e^{(j)}-a_e^{(i)}|)-4}{\Delta_{ij}^2}-\frac{1}{\Delta_{ij}^3} \right) \\
 \end{aligned}
 \end{equation}
 $$
@@ -683,7 +753,7 @@ _자기조직화 스프_. 이 시연은 본질적인 (로런츠 끌개) 동역�
 
 ### States, particles and fluctuations - 상태, 입자, 그리고 변동
 
-우리가 시작한 곳, 즉 랑주뱅 방정식 (1.1)으로 돌아가서 간단한 질문을 하자: 상태와 변동의 차이점은 무엇인가? 이 섹션에서 제공하는 답변은 변동은 그렇게 빨리 변하기 때문에 우리가 그들의 시간 상관 관계를 무시하고 일반적인 위너 가정을 채택할 수 있는 빠른 상태라는 것입니다. 이 구분은 앞으로 따를 핵심 원칙을 강조합니다. 즉, 아디아바틱 가정을 허용하는 시간 척도의 분리로, 느리게 변하는 상태와 빠른 변동을 분리할 수 있습니다. 이제 더 근본적인 질문을 던져 봅시다: 상태란 무엇인가? 이 질문은 다음과 같은 무한 회귀에 호소함으로써 해결할 수 있습니다:
+우리가 시작한 곳, 즉 랑주뱅 방정식 (1.1)으로 돌아가서 간단한 질문을 하자: 상태와 변동의 차이점은 무엇인가? 이 섹션에서 제공하는 답변은 변동은 그렇게 빨리 변하기 때문에 우리가 그들의 시간 상관 관계를 무시하고 일반적인 위너 가정을 채택할 수 있는 빠른 상태라는 것입니다. 이 구분은 앞으로 따를 핵심 원칙을 강조합니다. 즉, 단열 가정을 허용하는 시간 척도의 분리로, 느리게 변하는 상태와 빠른 변동을 분리할 수 있습니다. 이제 더 근본적인 질문을 던져 봅시다: 상태란 무엇인가? 이 질문은 다음과 같은 무한 회귀에 호소함으로써 해결할 수 있습니다:
 
 >상태란 무엇인가? 상태는 입자의 마르코프 담요의 고유 상태입니다.
 
@@ -695,7 +765,7 @@ _자기조직화 스프_. 이 시연은 본질적인 (로런츠 끌개) 동역�
 
 간단히 말해서, 입자의 마르코프 담요는 고유 상태가 상위 척도에서 담요 혹은 내부 상태를 포괄하는 벡터 상태의 집합을 구성합니다. 주의할 점은, 고유 상태는 항상 하위 척도에서 담요 상태의 혼합이며, 고유 상태는 상위 척도에서 마르코프 담요 상태나 내부 상태가 될 수 있다는 것입니다. 이는 다른 (마르코프 담요) 상태에 영향을 미치는 상태만이 '중요한' 상태라는 사실로부터 나옵니다. 다시 말해, 유일하게 관련 있는 연결은 담요 상태 간의 연결입니다[^note-8]. 본질적으로, 우리가 여기서 하는 모든 것은 노예 원칙을 적용하거나, 센터 매니폴드 정리 (Haken, 1983)를 마르코프 담요의 마르코프 담요에 재귀적으로 적용하는 것입니다. 보완적인 시각은 리노말리제이션 그룹 접근법 (Cardy, 2015; Schwabl, 2002)에서 제공되며, 다음은 상태 (및 변동)의 보편성을 설정하는 시도로 볼 수 있습니다, 즉 보편성 클래스를 구성하는 의미에서. 파트 1의 마지막 섹션은 이 구조를 분석적으로 (그리고 수치 시뮬레이션을 통해) 풀어 냅니다.
 
-> [\^note-8]: 리노말리제이션 그룹 이론의 의미에서 관련성이 있다: Schwabl, F., 2002. Phase Transitions, Scale Invariance, Renormalization Group Theory, and Percolation, Statistical Mechanics. Springer Berlin Heidelberg, Berlin, Heidelberg, pp.327-404.
+> [^note-8]: 리노말리제이션 그룹 이론의 의미에서 관련성이 있다: Schwabl, F., 2002. Phase Transitions, Scale Invariance, Renormalization Group Theory, and Percolation, Statistical Mechanics. Springer Berlin Heidelberg, Berlin, Heidelberg, pp.327-404.
 
 #### Starting at the end - 끝에서 시작하기 
 
@@ -806,7 +876,7 @@ $$
 
 내재적인 요동을 랜덤한 요동과 연관시킴으로써, 우리는 그들이 담요에서 독립적이며 빠르게 변동한다는 것을 요구합니다. 후자의 요구사항은, 마르코프 담요 상태에 조건이 된 예상 내부 상태가, 매니폴드 위의 흐름보다 훨씬 빠른 속도로 내부 상태 궤적을 끌어당기는 불안정한 또는 중심 매니폴드를 제공하는 한 보장됩니다[^note-9].
 
-> [\^note-9]더 세밀한 중심 매니폴드의 구성은, Takens' (지연 임베딩) 정리를 통해, 마르코프 담요 상태의 일반화된 움직임에 대해 예상 내부 상태를 조건화할 수 있지만, 간단히 하기 위해, 우리는 단지 일반화된 상태 자체를 다룰 것입니다. 움직임의 일반화된 좌표에 대한 논의는 부록 E와 Friston, K., Stephan, K., Li, B., Daunizeau, J., 2010. Generalised Filtering. Mathematical Problems in Engineering vol., 2010, 621670, Kerr, W.C., Graham, A.J., 2000. Generalized phase space version of Langevin equations and associated Fokker-Planck equations. European Physical Journal B 15, 305-311을 참조하십시오.
+> [^note-9]더 세밀한 중심 매니폴드의 구성은, Takens' (지연 임베딩) 정리를 통해, 마르코프 담요 상태의 일반화된 움직임에 대해 예상 내부 상태를 조건화할 수 있지만, 간단히 하기 위해, 우리는 단지 일반화된 상태 자체를 다룰 것입니다. 움직임의 일반화된 좌표에 대한 논의는 부록 E와 Friston, K., Stephan, K., Li, B., Daunizeau, J., 2010. Generalised Filtering. Mathematical Problems in Engineering vol., 2010, 621670, Kerr, W.C., Graham, A.J., 2000. Generalized phase space version of Langevin equations and associated Fokker-Planck equations. European Physical Journal B 15, 305-311을 참조하십시오.
 
 위의 동역학을 중재하는 야코비안들 (즉, 상태에 대한 흐름의 변화율)은 마르코프 담요에 의해 시사된 조건적 독립성을 존중합니다. 즉, 활성 상태는 직접적으로 외부 상태 (즉, 다른 마르코프 담요)에 의해 영향을 받을 수 없으며 - 그리고 감각 상태는 직접적으로 내부 상태에 의해 영향을 받을 수 없습니다. (1.21)에서:
 
@@ -847,9 +917,9 @@ $$
 _특정 파티션_. 이 개요도는 벡터 상태(작은 색깔 공)를 입자(9개의 벡터로 구성)로 분할하고, 각 입자는 6개의 담요 상태(활성 상태와 감각 상태 각각을 빨강과 보라색으로 표현)와 3개의 내부 상태(청색)를 가지는 것을 보여줍니다. 상단 패널은 특정 파티션을 생성하는 데 사용되는 연산자들을 요약하고 있습니다. 서로 다른 벡터 상태 간의 결합을 특성화하는 인접 행렬을 형성하여 시작합니다. 이는 야코비안에 기반하며, 암시적으로 벡터 상태의 흐름에 기반합니다. 결과적으로 생성되는 인접 행렬은 자식, 부모, 그리고 자식의 부모를 식별하는 마코프 담요 형성 행렬(**B**)을 정의합니다. 동일한 인접 행렬은 그래프 라플라시안(**G**)을 형성하는 데 사용되며, 이것은 이웃하는(즉, 결합된) 내부 상태를 정의하는 데 사용됩니다. 먼저 그래프 라플라시안을 사용하여 내부 상태 집합을 식별합니다. 여기서 $i$ 단계의 $j$-번째 내부 상태 하위 집합은 가장 큰 그래프 라플라시안을 가진 벡터 상태와 밀접한 결합에 기반하여 선택됩니다. 그래프 라플라시안의 열에서 일정한 임계값을 초과하는 내부 상태를 선택하여 결합합니다. 실제로, 나중에 사용되는 예시에서는 계층적 분해의 각 단계에서 원하는 내부 상태의 수를 지정합니다. 새로운 내부 상태 집합을 식별하면(이미 식별된 어떤 입자의 구성원이 아닌 경우), 그 마코프 담요은 마코프 담요 형성 행렬을 사용하여 복구됩니다. 내부 및 담요 상태는 새로운 입자를 구성하며, 식별된 입자 목록에 추가됩니다. 이 절차는 모든 벡터 상태가 고려될 때까지 반복됩니다. 일반적으로, 이 절차의 마지막 부분에서 후보 내부 상태는 소진되고, 남은 미할당 벡터 상태는 모두 이전에 식별된 입자의 마코프담요에 속합니다. 이 경우, 다음 입자는 활성 상태 또는 감각 상태가 될 수 있으며, 이는 다른 것에 의해 영향을 받지 않는 활성 상태의 하위 집합이 있는지에 따라 달라집니다. 여기서는 이미 4개의 입자를 식별하였고, 절차는 5번째(맨 위) 입자를 입자 목록에 추가함으로써, 남은 벡터 상태 9개를 고려하게 됩니다.
 
 
-#### The adiabatic reduction - 아디아바틱 감소
+#### The adiabatic reduction - 단열 감소
 
-내부 상태를 효과적으로 제거하여 마코프담요에 대한 자율적인 운동 방정식을 형성한 후, 이제 우리는 아디아바틱(adiabatic) 근사를 적용하여 빠른 동력학과 느린 동력학을 분리합니다. 이 분리는 각 마르코프 담요에 대한 야코비안의 고유벡터에 기초하며, 여기서 우리는 작은(느린) 및 큰 음수(빠른) 고유값을 가진 고유벡터를 분리할 수 있습니다(–로 왼쪽 고유벡터나 오른쪽 고유벡터의 일반화된 역을 표시합니다):
+내부 상태를 효과적으로 제거하여 마코프담요에 대한 자율적인 운동 방정식을 형성한 후, 이제 우리는 단열(adiabatic) 근사를 적용하여 빠른 동력학과 느린 동력학을 분리합니다. 이 분리는 각 마르코프 담요에 대한 야코비안의 고유벡터에 기초하며, 여기서 우리는 작은(느린) 및 큰 음수(빠른) 고유값을 가진 고유벡터를 분리할 수 있습니다(–로 왼쪽 고유벡터나 오른쪽 고유벡터의 일반화된 역을 표시합니다):
 
 $$
 \begin{equation}\tag{4.7}
@@ -917,7 +987,7 @@ $$
 \end{equation}
 $$
 
-상단의 방정식은 다른 마르코프 담요에서의 느린 외부 동력에 의해 주도되는 느린 동력을 가진 흐름 (즉, $j$-번째 마르코프 담요의 흐름)을 설명합니다. 이 방식에서, 내부적인 및 무작위 변동이 다른 마르코프 담요의 빠른 변동에 의한 영향으로 보충됩니다. 이 아디아바틱(adiabatic) 전개에 내재된 시간 척도의 분리는 느린 모드의 동력에 비해 내부적인 (및 외부적인) 변동이 빠르다고 가정할 수 있음을 의미합니다. 이 가정은 초기 ansatz (4.1)와 같은 형태로 느린 모드의 동력을 표현할 수 있게 해줍니다:
+상단의 방정식은 다른 마르코프 담요에서의 느린 외부 동력에 의해 주도되는 느린 동력을 가진 흐름 (즉, $j$-번째 마르코프 담요의 흐름)을 설명합니다. 이 방식에서, 내부적인 및 무작위 변동이 다른 마르코프 담요의 빠른 변동에 의한 영향으로 보충됩니다. 이 단열(adiabatic) 전개에 내재된 시간 척도의 분리는 느린 모드의 동력에 비해 내부적인 (및 외부적인) 변동이 빠르다고 가정할 수 있음을 의미합니다. 이 가정은 초기 ansatz (4.1)와 같은 형태로 느린 모드의 동력을 표현할 수 있게 해줍니다:
 
 $$
 \begin{equation}\tag{4.9}
@@ -936,19 +1006,19 @@ $$
 
 우리의 분석의 끝점은 한 수준에서의 동력 형태를 위한 ansatz가 하위 수준에서의 조건적 독립성의 결과로서 나타납니다. 이는 흐름이 재귀적 방식으로 분해될 수 있음을 의미하며, 이는 점차 더 높은 공간 및 시간 척도에서의 동력을 설명합니다 (예: Cholesky 분해에 내재된 재귀적 가우스 소거법 참조). (4.9)의 마지막 방정식은 중심 극한 정리를 통해, 낮은 수준에서의 변동의 혼합물이기 때문에 변동이 가우스인 것을 보장합니다.
 
-이 구조에서, 입자들 (즉, 물체들)은 설명의 인접한 수준들 사이의 매핑에 대해서만 정의됩니다. 즉, 입자의 (매크로스코픽) 상태 $x_n^{(i+1)}$는 입자의 (마이크로스코픽) 상태들의 비선형 혼합물 [^note-10] 입니다: $b_n^{(i)} \subset \pi_n^{(i)}$, 여기서 $J^{(i)} = N^{(i+1)}$ 입자들의 담요들은 더 높은 수준에서의 [고유]상태들을 아우릅니다. 다시 말해, 입자 - 또는 특정 파티션 - 은 입자의 _매크로스코픽 상태_와 마이크로스코픽 상태의 입자 사이의 매핑을 보증합니다. 그림 10은 특정 파티션에 의해 제공된 아디아바틱 감소를 보여줍니다.
+이 구조에서, 입자들 (즉, 물체들)은 설명의 인접한 수준들 사이의 매핑에 대해서만 정의됩니다. 즉, 입자의 (매크로스코픽) 상태 $x_n^{(i+1)}$는 입자의 (마이크로스코픽) 상태들의 비선형 혼합물 [^note-10] 입니다: $b_n^{(i)} \subset \pi_n^{(i)}$, 여기서 $J^{(i)} = N^{(i+1)}$ 입자들의 담요들은 더 높은 수준에서의 [고유]상태들을 아우릅니다. 다시 말해, 입자 - 또는 특정 파티션 - 은 입자의 _매크로스코픽 상태_와 마이크로스코픽 상태의 입자 사이의 매핑을 보증합니다. 그림 10은 특정 파티션에 의해 제공된 단열 감소를 보여줍니다.
 
-> [\^note-10]:혼합물들은 고유 벡터들이 현재 상태의 함수이기 때문에 비선형입니다. 이는 야코비안들이 상태 의존적이기 때문에 발생합니다.
+> [^note-10]:혼합물들은 고유 벡터들이 현재 상태의 함수이기 때문에 비선형입니다. 이는 야코비안들이 상태 의존적이기 때문에 발생합니다.
 
 ![FIGURE 10](./img/10.png)
 <p style="text-align: center;">FIGURE 10</p>
 
 
-_아디아바틱 감소(Adiabatic reduction)_. 이 그림은 내부 상태의 제거와 느린 담요 모드의 보존을 포함하는 계층적 분해의 두 번째 부분, 즉 아디아바틱 차원 축소를 보여줍니다. 이 개략도는 세 개의 열로 제시되었습니다. 처음 두 열은 상태들의 파티션 (왼쪽 행)과 관련된 랜덤 변동 (중간 행)을 표시합니다. 오른쪽 행은 이전 그림들과 동일한 형식의 개략도를 사용합니다. 여기에서, 우리는 수준 $i$서 상태들의 파티션으로 시작합니다. 입자들의 담요와 내부 상태로의 특정 분해를 따라, 아디아바틱 감소는 각 입자의 담요 상태를 빠른 모드와 느린 모드로 분해합니다. 느린 모드들은 이제 다음 수준의 벡터 상태 (즉, 고유 상태)를 구성합니다. 반대로, 빠른 변동 모드는 내재적 변동에 추가되어 다음 수준을 위한 랜덤 변동을 생성합니다. 이 과정이 완료되면, 우리는 시작점으로 돌아옵니다. 즉, 벡터 (즉, 하위 수준의 입자들의 담요 상태의 느린 모드)와 랜덤 변동으로 상태들을 파티션화 합니다. 이것은 오른쪽에서 수준 $i$의 많은 벡터 상태를 특정 파티션 및 (아디아바틱) 축소를 통해 다음 수준의 더 적은 수의 벡터 상태로 변환하여 나타냅니다. 이것이 아디아바틱 감소라고 불리는 이유는, 담요 상태의 모드 또는 혼합물을 다음 수준의 벡터 상태에 배정하는데 사용되는 고유값이 기본 야코비안의 라이아프누프 지수에 해당하기 때문입니다. 이 고유값의 실수 부분은 시간에 따른 모드의 감소 속도를 반영합니다. 이 그림에서 사용된 변수들의 설명은 본문을 참조하십시오.
+_단열 감소(Adiabatic reduction)_. 이 그림은 내부 상태의 제거와 느린 담요 모드의 보존을 포함하는 계층적 분해의 두 번째 부분, 즉 단열 차원 축소를 보여줍니다. 이 개략도는 세 개의 열로 제시되었습니다. 처음 두 열은 상태들의 파티션 (왼쪽 행)과 관련된 랜덤 변동 (중간 행)을 표시합니다. 오른쪽 행은 이전 그림들과 동일한 형식의 개략도를 사용합니다. 여기에서, 우리는 수준 $i$서 상태들의 파티션으로 시작합니다. 입자들의 담요와 내부 상태로의 특정 분해를 따라, 단열 감소는 각 입자의 담요 상태를 빠른 모드와 느린 모드로 분해합니다. 느린 모드들은 이제 다음 수준의 벡터 상태 (즉, 고유 상태)를 구성합니다. 반대로, 빠른 변동 모드는 내재적 변동에 추가되어 다음 수준을 위한 랜덤 변동을 생성합니다. 이 과정이 완료되면, 우리는 시작점으로 돌아옵니다. 즉, 벡터 (즉, 하위 수준의 입자들의 담요 상태의 느린 모드)와 랜덤 변동으로 상태들을 파티션화 합니다. 이것은 오른쪽에서 수준 $i$의 많은 벡터 상태를 특정 파티션 및 (단열) 축소를 통해 다음 수준의 더 적은 수의 벡터 상태로 변환하여 나타냅니다. 이것이 단열 감소라고 불리는 이유는, 담요 상태의 모드 또는 혼합물을 다음 수준의 벡터 상태에 배정하는데 사용되는 고유값이 기본 야코비안의 라이아프누프 지수에 해당하기 때문입니다. 이 고유값의 실수 부분은 시간에 따른 모드의 감소 속도를 반영합니다. 이 그림에서 사용된 변수들의 설명은 본문을 참조하십시오.
 
 #### Elimination and renormalisation - 제거와 재정규화
 
-요약하자면, 계층적 규모 간의 재귀적 연결은 두 단계에 의존합니다. 첫째, 특정 파티션은 마르코프 담요에 대한 조건부로 내부 상태를 제거하고, 다음 수준에서의 랜덤한 변동성으로 내재적인 변동성을 흡수함으로써 가능하게 됩니다(그림 8에서의 변환 **G**로 표시됨). 둘째, 남아있는 (마르코프 담요) 상태의 고유 벡터들은 느리고 빠른 동력학으로의 아디아바틱 분해를 가능하게 합니다. 이로 인해, 다음 수준에서의 랜덤 변동성으로 빠른 동력학을 흡수함으로써 빠른 동력학을 제거하는 것이 가능하게 됩니다(그림 8에서의 변환 **R**로 표시됨). 이것은 다음과 같이 요약할 수 있습니다:
+요약하자면, 계층적 규모 간의 재귀적 연결은 두 단계에 의존합니다. 첫째, 특정 파티션은 마르코프 담요에 대한 조건부로 내부 상태를 제거하고, 다음 수준에서의 랜덤한 변동성으로 내재적인 변동성을 흡수함으로써 가능하게 됩니다(그림 8에서의 변환 **G**로 표시됨). 둘째, 남아있는 (마르코프 담요) 상태의 고유 벡터들은 느리고 빠른 동력학으로의 단열 분해를 가능하게 합니다. 이로 인해, 다음 수준에서의 랜덤 변동성으로 빠른 동력학을 흡수함으로써 빠른 동력학을 제거하는 것이 가능하게 됩니다(그림 8에서의 변환 **R**로 표시됨). 이것은 다음과 같이 요약할 수 있습니다:
 
 $$
 \begin{equation}\tag{4.10}
@@ -981,10 +1051,10 @@ $$
 
 우리는 이를 앙상블 가정이라고 부를 것이며, 이것은 빠른 모드와 느린 모드 사이의 약한 결합을 의미합니다. (4.11)에서 암시되는 재귀적 치환은 무작위 변동이 어떻게 내재적 변동에서 그들의 동적을 상속하는지를 보여줍니다; 즉, 내재적 변동의 연속적인 축적과 혼합을 통해서입니다[^note-11] (그림 10 참조). 다시 말해, 담요의 변동은 하위 규모에서의 내재적 변동의 혼합입니다. 이어지는 그림은 빠른 미세 상태와 느린 거시 상태를 구분하는 공식화와 일치합니다: 예를 들어, 시너제틱스에서의 느린 (불안정한) 순서 매개변수와 빠른 (안정한) 모드 사이의 차이 (Frank, 2004; Haken, 1983); 통계 역학에서의 미세 상태와 거시 상태 사이의 차이 (Seifert, 2012) 그리고 이분과 중심 매니폴드 이론에서의 불안정한 매니폴드와 안정한 매니폴드 사이의 차이 (Carr, 1981). 이 처리의 중요한 측면은 빠르고, 안정적이며, 미세하며, 그들을 둘러싸고 격리하는 마코프 담요의 관점에서 동적을 공식화할 때 내부 상태의 제거를 통해 생기는 소산적인 동적입니다. 이런 변동은 그 다음에 성공적으로 높은 수준에서 감독하는 느린 모드와 분리됩니다.
 
-> [\^note-11]: 간단하게 하기 위해, 우리는 더 높은 수준에서의 무작위 변동 사이의 상관 관계를 무시하였는데, 이는 내재적 변동 사이의 상관 관계에 의해 유발됩니다. 원칙적으로, 이들은 빠른 고유벡터의 아핀 변환에 의해 처리됩니다, 이것은 $\xi_{n}^{(i)} \rightarrow \xi_{n}^{(i)} \Rightarrow \xi_{n}^{(i)-}(K_{n}^{(i)}\Sigma_{n}^{(i)} K_{n}^{(i)T} + 2\Gamma_{b_n}^{(i)})\xi_{n}^{(i)} = 2\Gamma_{n}^{(i+1)}$ 이 원하는 형태를 갖도록 합니다.
+> [^note-11]: 간단하게 하기 위해, 우리는 더 높은 수준에서의 무작위 변동 사이의 상관 관계를 무시하였는데, 이는 내재적 변동 사이의 상관 관계에 의해 유발됩니다. 원칙적으로, 이들은 빠른 고유벡터의 아핀 변환에 의해 처리됩니다, 이것은 $\xi_{n}^{(i)} \rightarrow \xi_{n}^{(i)} \Rightarrow \xi_{n}^{(i)-}(K_{n}^{(i)}\Sigma_{n}^{(i)} K_{n}^{(i)T} + 2\Gamma_{b_n}^{(i)})\xi_{n}^{(i)} = 2\Gamma_{n}^{(i+1)}$ 이 원하는 형태를 갖도록 합니다.
 
 
-이 아디아바틱 감소에 대한 다른 관점은 재정규화의 개념에 의해 제공됩니다. 이론물리학에서, 재정규화 그룹(RG)은 다른 규모에서 측정될 때 시스템을 특징짓는 변환을 말합니다 (Cardy, 2015; Schwabl, 2002). 재정규화의 작업 정의는 세 가지 요소를 포함합니다 (Lin 등, 2017): 무작위 변수의 벡터, 대략적인 연산, 그리고 연산이 라그랑지안(또는 동적의 등가 설명)의 기능적 형태를 변경하지 않는 요구사항입니다. 우리의 경우, 무작위 변수는 상태입니다; 대략적인 연산은 특정 분할과 아디아바틱 감소(**R**)로 그룹화(**G**)에 해당합니다 - 이는 동적의 기능적 형태(및 관련 라그랑지안)를 변경하지 않습니다. 예를 들어, (1.2)와 (4.9)에서 우리는 재정규화 그룹의 스타일로 어떤 규모에서든 입자의 라그랑지안을 작성할 수 있습니다:
+이 단열 감소에 대한 다른 관점은 재정규화의 개념에 의해 제공됩니다. 이론물리학에서, 재정규화 그룹(RG)은 다른 규모에서 측정될 때 시스템을 특징짓는 변환을 말합니다 (Cardy, 2015; Schwabl, 2002). 재정규화의 작업 정의는 세 가지 요소를 포함합니다 (Lin 등, 2017): 무작위 변수의 벡터, 대략적인 연산, 그리고 연산이 라그랑지안(또는 동적의 등가 설명)의 기능적 형태를 변경하지 않는 요구사항입니다. 우리의 경우, 무작위 변수는 상태입니다; 대략적인 연산은 특정 분할과 단열 감소(**R**)로 그룹화(**G**)에 해당합니다 - 이는 동적의 기능적 형태(및 관련 라그랑지안)를 변경하지 않습니다. 예를 들어, (1.2)와 (4.9)에서 우리는 재정규화 그룹의 스타일로 어떤 규모에서든 입자의 라그랑지안을 작성할 수 있습니다:
 
 $$
 \begin{equation}\tag{4.12}
@@ -1013,7 +1083,7 @@ $$
 \end{equation}
 $$
 
-여기서, 라그랑지안의 매개변수들은 흐름, 결합 매개변수들, 그리고 요동의 진폭으로 받아들여집니다. 이들의 변화들은 매개변수 공간에서의 재정규화 그룹 플로우 (또는 RG 플로우)를 유발한다고 말하는 베타 함수에 의해 구현됩니다. 이 플로우의 핵심 측면은 아디아바틱(adiabatic) 감소에 근거하는데, 이것은 - 구조상 - 오직 느린 모드들만이 대략적인 그룹화에 의해 유지되기 때문에, 연속적인 거시적 규모에서의 동력학을 점차적으로 느리게 만듭니다. 예를 들어,
+여기서, 라그랑지안의 매개변수들은 흐름, 결합 매개변수들, 그리고 요동의 진폭으로 받아들여집니다. 이들의 변화들은 매개변수 공간에서의 재정규화 그룹 플로우 (또는 RG 플로우)를 유발한다고 말하는 베타 함수에 의해 구현됩니다. 이 플로우의 핵심 측면은 단열(adiabatic) 감소에 근거하는데, 이것은 - 구조상 - 오직 느린 모드들만이 대략적인 그룹화에 의해 유지되기 때문에, 연속적인 거시적 규모에서의 동력학을 점차적으로 느리게 만듭니다. 예를 들어,
 
 $$
 \begin{equation}\tag{4.14}
@@ -1025,7 +1095,7 @@ $$
 
 이에 대응하는 RG 플로우는 요동의 진폭 $\Gamma_n^{(i)} \geq \Gamma_n^{(i+1)} \ldots \geq 0$에 대해, 고진폭의 빠른 요동을 갖는 동력학(예: 양자역학)에서 느린 동력학이 지배하는 결정론적 시스템(예: 고전역학)으로의 점진적인 이동을 보여줍니다. 결정론적 시스템에서, $E[Re(\lambda_{nn}^{(i)}(x_n^{(i)}))]$는 Lyapunov 지수(즉, 임계 지수)의 역할을 하며, 이는 무한히 가까운 궤도들의 분리 속도를 정량화합니다(Lyapunov and Fuller, 1992; Pyragas, 1997). 이것은 우리가 한 규모에서 다음 규모로 넘어갈 때, 무작위 요동의 진폭 감소와 동적 이동성 경향이 동시에 있는 것을 제안합니다(Cessac et al., 2001; Pavlos et al., 2012).
 
-이 (RG) 설정에서, 관련 변수는 시스템의 거시적 행동을 설명하고, 관련없는 변수는 그렇지 않다고 말합니다. 우리의 관점에서, 문제가 되는 관련 변수들은 (4.13)에서 유지되는 느린 모드에 대응하고, 관련없는 변수들은 빠른 모드와 내재적 요동과 관련있을 수 있습니다(그림 10 참조). 그림 11과 그림 12는 이전 섹션의 합성 스프의 (특정) 파티션들의 계층적 연속에 대해 아디아바틱 adiabatic 감소를 적용하는 예시를 제공합니다.
+이 (RG) 설정에서, 관련 변수는 시스템의 거시적 행동을 설명하고, 관련없는 변수는 그렇지 않다고 말합니다. 우리의 관점에서, 문제가 되는 관련 변수들은 (4.13)에서 유지되는 느린 모드에 대응하고, 관련없는 변수들은 빠른 모드와 내재적 요동과 관련있을 수 있습니다(그림 10 참조). 그림 11과 그림 12는 이전 섹션의 합성 스프의 (특정) 파티션들의 계층적 연속에 대해 단열 adiabatic 감소를 적용하는 예시를 제공합니다.
 
 #### markov blankets as dissipative structures - 소멸하는 구조로서 마르코프 담요 
 
@@ -1046,7 +1116,7 @@ $$
 ![FIGURE 11](./img/11.png)
 <p style="text-align: center;">FIGURE 11</p>
 
-_활성 물질의 계층적 재정규화_. 이 그림은 그림 5의 합성 스프에 대한 계층적 재정규화(즉, 재귀적 특정 분할 및 아디아바틱 감소)의 적용을 보여줍니다. 이 그림은 느리고 더 큰 규모에서의 동력학을 구성하기 위해 두 번의 연속적인 재정규화를 보여줍니다. 하단의 이미지들은 세 단계에서의 [고유] 상태의 야코비안(즉, 상태에 대한 흐름의 변화율)을 보여줍니다. 야코비안들은 한 쌍으로 제시되며: 왼쪽 야코비안은 상태가 속한 입자에 따라 정렬되며, 오른쪽 야코비안은 상태의 유형 – 활성(빨강) 감각(자홍색) 및 내부(파랑) – 에 따라 정렬됩니다. 이 지정은 각 야코비안의 하단 마진을 따라 점들의 색으로 인코딩됩니다. 가장 낮은 수준(왼쪽에서)부터 시작하면, 특정 분할을 따르면 896개의 벡터 또는 고유 상태를 128개의 입자에 배정할 수 있습니다. 입자들 간의 종속성 또는 연결은 그림 9의 그래프 라플라시안의 고유 모드에 해당하는 스펙트럼 또는 임베딩 공간을 생성하는 데 사용될 수 있습니다. 직관적으로, 이는 각 입자가 위치할 수 있는 좌표 체계를 제공합니다. 결과적으로 생기는 스케일링 공간은 이웃 입자들 간의 연결이 그들의 근접성에 따라 스케일링된다는 것을 의미합니다. 이 스펙트럼 임베딩은 두 번 보여지며, 먼저 입자에 따라 색상이 부여된(각 쌍의 왼쪽 이미지) 그리고 활성(빨강) 감각(자홍색) 또는 내부(파랑) 고유 상태인지에 따라 색상이 부여된(각 쌍의 오른쪽 이미지) 것입니다. 야코비안에 의해 암시된 종속성 구조가 스케일링 공간에서 복잡한 기하학을 유발하는 것을 볼 수 있습니다. 다음 단계로 넘어가서, 내부 상태(파랑)는 제거되고, 나머지 담요 상태의 고유 상태는 다음 수준의 벡터 상태를 구성합니다. 이 예시에서는, 우리는 입자의 896개의 미세한 상태를 128개의 벡터 또는 입자의 고유 상태로 특정 분할하여 시작합니다. 이들은 우리의 스프를 구성하는 매크로 분자에 해당합니다. 특정 분해를 따라, 이 스프는 18개의 입자로 분해되며, 이 중 5개는 내부 상태를 가지고 있습니다. 이것은 18개의 세포 모음으로 간주될 수 있습니다. 더 깊은 분해 후에, 우리는 두 개의 입자를 얻게 되는데, 이 중 하나(녹색 입자)만 내부 상태를 가지고 있습니다. 이 조직 단계는 세포 모음(예: 소기관) 또는 박테리아 앙상블, 또는 커뮤니티로 간주될 수 있습니다. 상단의 이미지들은 내부 상태의 선별을 임베딩 또는 하위 수준의 스케일링 공간에서의 고유 상태의 위치를 그려 표시하지만, 그들이 속하는 후속 수준의 입자에 따라 색상을 부여하여 보여줍니다. 스펙트럼 임베딩은 그림 6의 매크로 분자의 공간 위치를 연상시키는 훨씬 단순한 위상을 보여줍니다. 이는 시뮬레이션의 유클리드 위치가 입자 또는 매크로 분자들 간의 조건부 종속성을 결정하기 때문입니다. 야코비안들은 다음 그림에서 더 자세히 설명되는 중요한 특성적 특징들을 보여줍니다. 이 예에서, 야코비안들은 그림 5에 표시된 미분 방정식의 512번의 반복 후 64개의 시간 단계에 걸쳐 흐름의 평균 변화율에 기반하여 생성되었습니다. 이 야코비안들의 더 상세한 분석은 다음 그림에서 가능합니다. 여기서, 우리는 각각의 세 단계에 대해 입자당 하나, 네 개, 그리고 하나의 내부 상태를 명시했습니다.
+_활성 물질의 계층적 재정규화_. 이 그림은 그림 5의 합성 스프에 대한 계층적 재정규화(즉, 재귀적 특정 분할 및 단열 감소)의 적용을 보여줍니다. 이 그림은 느리고 더 큰 규모에서의 동력학을 구성하기 위해 두 번의 연속적인 재정규화를 보여줍니다. 하단의 이미지들은 세 단계에서의 [고유] 상태의 야코비안(즉, 상태에 대한 흐름의 변화율)을 보여줍니다. 야코비안들은 한 쌍으로 제시되며: 왼쪽 야코비안은 상태가 속한 입자에 따라 정렬되며, 오른쪽 야코비안은 상태의 유형 – 활성(빨강) 감각(자홍색) 및 내부(파랑) – 에 따라 정렬됩니다. 이 지정은 각 야코비안의 하단 마진을 따라 점들의 색으로 인코딩됩니다. 가장 낮은 수준(왼쪽에서)부터 시작하면, 특정 분할을 따르면 896개의 벡터 또는 고유 상태를 128개의 입자에 배정할 수 있습니다. 입자들 간의 종속성 또는 연결은 그림 9의 그래프 라플라시안의 고유 모드에 해당하는 스펙트럼 또는 임베딩 공간을 생성하는 데 사용될 수 있습니다. 직관적으로, 이는 각 입자가 위치할 수 있는 좌표 체계를 제공합니다. 결과적으로 생기는 스케일링 공간은 이웃 입자들 간의 연결이 그들의 근접성에 따라 스케일링된다는 것을 의미합니다. 이 스펙트럼 임베딩은 두 번 보여지며, 먼저 입자에 따라 색상이 부여된(각 쌍의 왼쪽 이미지) 그리고 활성(빨강) 감각(자홍색) 또는 내부(파랑) 고유 상태인지에 따라 색상이 부여된(각 쌍의 오른쪽 이미지) 것입니다. 야코비안에 의해 암시된 종속성 구조가 스케일링 공간에서 복잡한 기하학을 유발하는 것을 볼 수 있습니다. 다음 단계로 넘어가서, 내부 상태(파랑)는 제거되고, 나머지 담요 상태의 고유 상태는 다음 수준의 벡터 상태를 구성합니다. 이 예시에서는, 우리는 입자의 896개의 미세한 상태를 128개의 벡터 또는 입자의 고유 상태로 특정 분할하여 시작합니다. 이들은 우리의 스프를 구성하는 매크로 분자에 해당합니다. 특정 분해를 따라, 이 스프는 18개의 입자로 분해되며, 이 중 5개는 내부 상태를 가지고 있습니다. 이것은 18개의 세포 모음으로 간주될 수 있습니다. 더 깊은 분해 후에, 우리는 두 개의 입자를 얻게 되는데, 이 중 하나(녹색 입자)만 내부 상태를 가지고 있습니다. 이 조직 단계는 세포 모음(예: 소기관) 또는 박테리아 앙상블, 또는 커뮤니티로 간주될 수 있습니다. 상단의 이미지들은 내부 상태의 선별을 임베딩 또는 하위 수준의 스케일링 공간에서의 고유 상태의 위치를 그려 표시하지만, 그들이 속하는 후속 수준의 입자에 따라 색상을 부여하여 보여줍니다. 스펙트럼 임베딩은 그림 6의 매크로 분자의 공간 위치를 연상시키는 훨씬 단순한 위상을 보여줍니다. 이는 시뮬레이션의 유클리드 위치가 입자 또는 매크로 분자들 간의 조건부 종속성을 결정하기 때문입니다. 야코비안들은 다음 그림에서 더 자세히 설명되는 중요한 특성적 특징들을 보여줍니다. 이 예에서, 야코비안들은 그림 5에 표시된 미분 방정식의 512번의 반복 후 64개의 시간 단계에 걸쳐 흐름의 평균 변화율에 기반하여 생성되었습니다. 이 야코비안들의 더 상세한 분석은 다음 그림에서 가능합니다. 여기서, 우리는 각각의 세 단계에 대해 입자당 하나, 네 개, 그리고 하나의 내부 상태를 명시했습니다.
 
 ![FIGURE 12](./img/12.png)
 <p style="text-align: center;">FIGURE 12</p>
@@ -1063,7 +1133,7 @@ _동력학과 종속성_. 이 그림은 우리가 매크로 분자로부터 세�
 
 이 동적 앙상블을 파동 함수로서의 설명으로 전환함으로써 얻게 되는 핵심적인 통찰력은 상태에 대한 밀도의 푸리에 변환이 (비평형 정상상태 보조정리의 효과에 의해) 흐름에 대한 밀도가 된다는 것입니다[^note-16]. 이것은 유사한 고전 역학에 따라 흐름의 분산이나 분산을 계산하여 에너지의 척도를 만들 수 있음을 의미합니다. 이러한 유사성은 무작위 요동의 진폭을 역질량과 연관시키고, 비례상수는 플랑크 상수임으로써 확립할 수 있습니다. 간단한 차원 분석은 흐름의 단위 (초당 nats)와 비평형 정상상태 퍼텐셜의 기울기 (미터당)가 주어진 질량의 개념을 동기부여합니다. 일단 질량이 그림에 포함되면, 우리는 흐름을 운동량과 연결시키고 그 분산을 운동에너지와 연결시켜 양자 형식에 고전적인 유사체를 해석하는 데 필요한 것들을 갖추게 됩니다.
 
-> [\^note-16]: 직관적으로, 특정 상태의 확률 질량이 위상 공간에서 한 점 주변에 집중되어 있다면, 흐름은 무작위 요동에 대항해야 합니다. 이는 흐름이 요동만큼 퍼져 있다는 것을 의미합니다. 반대로, 흐름이 제한된 범위 내에 있다면, 무작위 요동은 특정 상태를 상태 공간 전체에 퍼뜨릴 것입니다. 간단히 말해, 상태와 그 흐름의 분산은 균형상태에서 서로를 보완해야 합니다.
+> [^note-16]: 직관적으로, 특정 상태의 확률 질량이 위상 공간에서 한 점 주변에 집중되어 있다면, 흐름은 무작위 요동에 대항해야 합니다. 이는 흐름이 요동만큼 퍼져 있다는 것을 의미합니다. 반대로, 흐름이 제한된 범위 내에 있다면, 무작위 요동은 특정 상태를 상태 공간 전체에 퍼뜨릴 것입니다. 간단히 말해, 상태와 그 흐름의 분산은 균형상태에서 서로를 보완해야 합니다.
 
 밀도 동력학을 파동 함수의 용어로서 형식화하면 밀도 그 자체의 용어로서의 처리와 몇 가지 흥미로운 차이점이 나타납니다. 특히, 이를 통해 슈뢰딩거 퍼텐셜의 용어로서 밀도 동력학을 요약하고, 파동 함수가 슈뢰딩거 방정식의 해가 될 수 있도록 합니다(슈뢰딩거 퍼텐셜이 제공된 후). 다음에서는 슈뢰딩거 퍼텐셜이 비평형 정상상태 퍼텐셜에서 어떻게 파생되는지, 그리고 암시적으로 파동 함수가 비평형 정상상태 밀도와 어떻게 관련되는지 보게 될 것입니다. 우리는 푸리에 변환의 사용이 공개하는 파동 입자 이중성과 흐름과 운동량 사이의 암시적 관계에 초점을 맞출 것입니다. 이 섹션의 방증적 메시지는 비평형 정상상태 레마(Appendix B)가 기본적으로 파동-입자 이중성을 해소하는 것입니다. 이는 모든 확률 밀도(즉, 파동) 함수가 특정(즉, 입자와 유사한) 특성을 가지고 있다는 관점에서 보게 됩니다. 더 엄밀한 처리에 대해서는 (Koide, 2017)와 (Wang, 2009)를 참조하십시오.
 
@@ -1096,7 +1166,7 @@ $$
 
 #### The Schrödinger equation from first principles - 제일원리에서 슈뢰딩거 방정식
 
-우리의 시작점은 흐름을 비평형 정상상태 밀도와 무작위 진동의 진폭의 관점에서 표현하는 것이며, 여기서 진폭은 (줄어든) 질량과 플랑크 상수의 관점에서 표현됩니다. 이를 통해 우리는 흐름의 관점에서 파동 함수의 그래디언트를 표현할 수 있습니다.[^note-17]:
+우리의 시작점은 흐름을 비평형 정상상태 밀도와 요동의 진폭의 관점에서 표현하는 것이며, 여기서 진폭은 (줄어든) 질량과 플랑크 상수의 관점에서 표현됩니다. 이를 통해 우리는 흐름의 관점에서 파동 함수의 그래디언트를 표현할 수 있습니다.[^note-17]:
 
 > [^note-17]: 이 최종 방정식은 $\Psi^\dagger\Psi\in\R\Rightarrow\Psi^\dagger\nabla\Psi=\Psi\nabla\Psi^\dagger$ 라는 사실을 활용한다.
 
@@ -1280,7 +1350,7 @@ $$
 
 #### Inference, measurement and wave function collapse? - 추론, 측정 및 파동 함수 붕괴?
 
-폴커 프랑크 방정식에서 슈뢰딩거 방정식을 도출하거나, 경로 적분 공식에서 도출하는 것 자체는 별로 놀라운 일이 아닙니다. 위 도출에서 흥미로운 측면들은 비평형 정상상태 흐름을 슈뢰딩거 방정식에 대입하는 것에서 나옵니다. 이 대입은 양자 처리에서의 운동량이 질량 곱하기 흐름에 해당한다는 것을 제안함으로써, 흐름에 대한 밀도가 운동량에 대한 밀도가 되는 파동 입자 이중성에 대한 관점을 제공합니다. 또한, 흐름의 이차 통계는 고전 역학에 비유하여 운동 에너지와 연관될 수 있습니다(아래 참조). 유의할 점은 운동 에너지와 슈뢰딩거 퍼텐셜 모두 파동 함수의 곡률을 반영한다는 것입니다. 직관적으로, 이는 높은 에너지 밀도가 높은 음의 곡률을 가지며, 잠재적이고 운동적인 부분으로 분해될 수 있는 뚜렷한 피크를 가진다는 것을 의미합니다 - 그리고 적절한 연산자를 파동 함수에 적용하여 양화할 수 있습니다.
+포커-프랑크 방정식에서 슈뢰딩거 방정식을 도출하거나, 경로 적분 공식에서 도출하는 것 자체는 별로 놀라운 일이 아닙니다. 위 도출에서 흥미로운 측면들은 비평형 정상상태 흐름을 슈뢰딩거 방정식에 대입하는 것에서 나옵니다. 이 대입은 양자 처리에서의 운동량이 질량 곱하기 흐름에 해당한다는 것을 제안함으로써, 흐름에 대한 밀도가 운동량에 대한 밀도가 되는 파동 입자 이중성에 대한 관점을 제공합니다. 또한, 흐름의 이차 통계는 고전 역학에 비유하여 운동 에너지와 연관될 수 있습니다(아래 참조). 유의할 점은 운동 에너지와 슈뢰딩거 퍼텐셜 모두 파동 함수의 곡률을 반영한다는 것입니다. 직관적으로, 이는 높은 에너지 밀도가 높은 음의 곡률을 가지며, 잠재적이고 운동적인 부분으로 분해될 수 있는 뚜렷한 피크를 가진다는 것을 의미합니다 - 그리고 적절한 연산자를 파동 함수에 적용하여 양화할 수 있습니다.
 
 어디에서 양자 행동이 나오는지 물어볼 수 있습니다. 일차원 상태 공간에서 주기적인 경계 조건을 갖는 파동 함수와 관련된 이산 에너지를 직관적으로 이해할 수 있습니다. 암묵적인 연속성 제약조건은 공간 파장(역파수)이 제한되어 있음을 의미하며, 상태 공간의 주기적인 지지에 유한한 수의 파장이 '맞춰져야' 합니다. 직관적으로, 무작위 흩날림의 효과는 확률 밀도 동역학에 대한 부드러운 해를 요구하며, 만약 방사선 대칭성으로 장착되어 있다면, 유한한 수의 해만을 채택할 수 있습니다. 실제적인 예로, 구면 극 좌표 $x = (r,\theta,\phi)$에 있는 수소 원자의 (해석적) 해는 무작위 흩날림의 진폭과 슈뢰딩거 퍼텐셜에서 얻을 수 있습니다. 다음과 같이:
 
@@ -1304,11 +1374,11 @@ $$
 
 파동 붕괴 또는 양자 디코히어런스의 다른 해석과 비평형 정상상태 보조정리에 의해 제시된 관점 사이의 상응 관계는 이러한 해석들이 얼마나 위의 관점에 가깝게 떨어지는지에 따라 결정됩니다. 기본적인(불균형 안정 상태) 해결책은 매우 빠르게 진화하는 시스템의 상태에 대한 확률 분포 또는 파동 함수입니다. 시스템이 불균형 안정 상태에 있는 한, 측정 가능한 양의 상태 공간 평균(즉, 고유 상태)은 시간 평균에 해당할 것입니다. 이는 상태의 앙상블이나 많은 세계를 통계적으로 구분할 수 없는 빠른 진화의 단일 궤적에서 해석될 수 있습니다. 흥미롭게도, 이 빠른 측면은 양자 형식화의 기본적인 전제에 의해 보장됩니다. 이는 질량이 플랑크 상수보다 작아야 한다는 사실로부터 따르는데, $\Gamma > 1 \Rightarrow m < \tfrac{\hbar}{2}$는 거의 순간적이 될 것입니다. 간단히 말해서, 어떤 사람은 양자 기계적 행동을 확률적 의미에서만 측정(측정) 될 수 있는 매력적인 다양체에서의 굉장히 빠른 흐름의 측면에서 해석할 수 있으며, 결과적으로 나타나는 앙상블 밀도(또는 파동 함수)의 푸리에 변환은 입자의 상태에 파동 같은 성질을 부여합니다.
 
-위의 운동량과 운동 에너지 개념은 고전 역학에서 상속되었으며, 여기서 운동량은 질량과 예상 흐름의 곱으로 연관되어 있었으며, 질량은 무작위 진동의 정밀도를 대표합니다. 이 단계에서, 운동량은 속도의 속성이 아닙니다. 다시 말해, 상태의 흐름 또는 _상태의 움직임_은 _움직임의 상태_가 아닙니다. 나중에(고전 역학에 대한 섹션에서), 우리는 움직임의 좌표를 도입할 것이며, 어떤 상태(즉, 감각 상태)는 다른 상태(즉, 활동 상태)의 고차 움직임이 될 것입니다(움직임의 방정식을 통해). 이는 우리가 단일 양자 상태의 설정에서 운동량에 대해 얘기할 수 있는 이유를 설명하는 미묘한 점입니다 - 고전 역학과 대조적으로, 일반적으로 위치와 운동량을 포함하는 일반화된 상태를 주장합니다. 위안스럽게도, 우리는 나중에 작은 무작위 진동의 고전적 한계에서 상태의 움직임이 움직임의 상태가 됨을 보게 될 것입니다.
+위의 운동량과 운동 에너지 개념은 고전 역학에서 상속되었으며, 여기서 운동량은 질량과 예상 흐름의 곱으로 연관되어 있었으며, 질량은 요동의 정밀도를 대표합니다. 이 단계에서, 운동량은 속도의 속성이 아닙니다. 다시 말해, 상태의 흐름 또는 _상태의 움직임_은 _움직임의 상태_가 아닙니다. 나중에(고전 역학에 대한 섹션에서), 우리는 움직임의 좌표를 도입할 것이며, 어떤 상태(즉, 감각 상태)는 다른 상태(즉, 활동 상태)의 고차 움직임이 될 것입니다(움직임의 방정식을 통해). 이는 우리가 단일 양자 상태의 설정에서 운동량에 대해 얘기할 수 있는 이유를 설명하는 미묘한 점입니다 - 고전 역학과 대조적으로, 일반적으로 위치와 운동량을 포함하는 일반화된 상태를 주장합니다. 위안스럽게도, 우리는 나중에 작은 요동의 고전적 한계에서 상태의 움직임이 움직임의 상태가 됨을 보게 될 것입니다.
 
 #### Summary - 요약
 
-양자역학에 익숙한 독자들은 위의 처리가 다소 가볍다는 것을 인지할 것입니다. 현재 분석의 범위를 벗어난 양자역학의 많은 문제들이 있습니다. 이 분석은 생물체의 거시적 규모에서의 자기조직화를 이해하는 것을 목표로 하고 있습니다. 따라서, 무작위 진동이 지배적인 미세한 규모나 큰 (천문학적인) 규모에는 덜 관심이 있습니다. 이 절은 단지 나중에 고려되는 작은 규모와 큰 규모 사이의 다리 역할을 합니다. 얽힘, 양자 정보 이론 및 열역학 사이에는 이 다리에 관한 많은 예견적인 연결점이 있습니다 (D'Alessio et al., 2016; Esposito et al., 2009; Parrondo et al., 2015); 특히 양자 진동 정리들(Alhambra et al., 2016a; Alhambra et al., 2016b; Holmes et al., 2019)[^note-19]. 다음 절에서는 입자의 앙상블에 대한 확률 열역학을 통해 진동 정리들을 소개합니다. 그 다음 파트 3에서는 마르코프 담요에 의해 유도된 정보 기하학의 측면에서 '측정'에 대한 적분 진동 정리를 소개합니다; c.f., (Sengupta and Friston, 2017). 그 시점에 우리는 측정 문제와 파동 함수 붕괴 개념을 간단히 다시 살펴볼 것입니다.
+양자역학에 익숙한 독자들은 위의 처리가 다소 가볍다는 것을 인지할 것입니다. 현재 분석의 범위를 벗어난 양자역학의 많은 문제들이 있습니다. 이 분석은 생물체의 거시적 규모에서의 자기조직화를 이해하는 것을 목표로 하고 있습니다. 따라서, 요동이 지배적인 미세한 규모나 큰 (천문학적인) 규모에는 덜 관심이 있습니다. 이 절은 단지 나중에 고려되는 작은 규모와 큰 규모 사이의 다리 역할을 합니다. 얽힘, 양자 정보 이론 및 열역학 사이에는 이 다리에 관한 많은 예견적인 연결점이 있습니다 (D'Alessio et al., 2016; Esposito et al., 2009; Parrondo et al., 2015); 특히 양자 진동 정리들(Alhambra et al., 2016a; Alhambra et al., 2016b; Holmes et al., 2019)[^note-19]. 다음 절에서는 입자의 앙상블에 대한 확률 열역학을 통해 진동 정리들을 소개합니다. 그 다음 파트 3에서는 마르코프 담요에 의해 유도된 정보 기하학의 측면에서 '측정'에 대한 적분 진동 정리를 소개합니다; c.f., (Sengupta and Friston, 2017). 그 시점에 우리는 측정 문제와 파동 함수 붕괴 개념을 간단히 다시 살펴볼 것입니다.
 
 > [^note-19]: 이 문제에 대한 응답 해 주신을 Peter Morgan과 Biswa Sengupta에게 감사드립니다..
 
@@ -1389,7 +1459,7 @@ H(\tau)
 \end{equation}
 $$
 
-흐름 $f=(\mu_m−Q_m)f_m$가 힘 $f_m=-\nabla U$로 표현되어 있다는 점에 유의하세요. 또한, 열역학적인 퍼텐셜은 그래디언트를 최소제곱의 확률흐름으로 예측해서 첨가상수에 대해 정의되기 때문에 새로운 의미를 가져옵니다. 따라서 열역학적 퍼텐셜은 앙상블 밀도 $p(\pi,\tau)$와 해당하는 (시간에 따라 변하는) 놀라움 $\Im(\pi,\tau)$와 연관시킬 수 있습니다. 이는 앙상블의 분배 함수 (즉, 정규화 상수) $Z$를 정의하여 열역학적 퍼텐셜을 확률 밀도로 표현할 수 있게 합니다.
+흐름 $f=(\mu_m−Q_m)f_m$가 힘 $f_m=-\nabla U$로 표현되어 있다는 점에 유의하세요. 또한, 열역학적인 퍼텐셜은 그래디언트를 최소제곱의 확률 흐름으로 예측해서 첨가상수에 대해 정의되기 때문에 새로운 의미를 가져옵니다. 따라서 열역학적 퍼텐셜은 앙상블 밀도 $p(\pi,\tau)$와 해당하는 (시간에 따라 변하는) 놀라움 $\Im(\pi,\tau)$와 연관시킬 수 있습니다. 이는 앙상블의 분배 함수 (즉, 정규화 상수) $Z$를 정의하여 열역학적 퍼텐셜을 확률 밀도로 표현할 수 있게 합니다.
 
 $$
 \begin{equation}\tag{6.4}
@@ -1562,16 +1632,16 @@ H(\tau)
 \end{equation}
 $$
 
-마지막 두 식은 각각 확률 그래디언트와 전류에 대한 엔트로피 생산을 나타내는데, 마지막 식은 $j_\tau = f_\tau p_\tau - \Gamma\nabla p_\tau$를 사용하여 그래디언트를 제거합니다. 끝에서 두 번째 식은 무작위한 요동 $\dot S^\omega = k_b \dot H^\omega \geq 0$와 플로우 $\dot S^f = k_B \dot H^f$의 상대적인 기여를 강조합니다. 직관적으로 말하면, 무작위한 요동은 항상 앙상블 밀도를 분산시켜 엔트로피를 증가시키는 반면, 플로우는 확률 그래디언트를 '재구성'함으로써 엔트로피를 감소시킵니다 (즉, 확률 전류가 더 높은 밀도 영역으로 흐르는 곳). 다시 말해, 무작위한 요동은 상태를 놀라움(그리고 암시적인 열역학적 퍼텐셜)이 높은 영역으로 분산시키는 반면, 힘에 의한 경사 플로우는 암시적인 분산에 대항합니다. 이 관점에서 무작위한 요동은 힘에 의해 유발되는 퍼텐셜 에너지 그래디언트(예: 장벽)에 대해 '무감각'하며, 따라서 [열] 역학을 뒷받침합니다.
+마지막 두 식은 각각 확률 그래디언트와 전류에 대한 엔트로피 생산을 나타내는데, 마지막 식은 $j_\tau = f_\tau p_\tau - \Gamma\nabla p_\tau$를 사용하여 그래디언트를 제거합니다. 끝에서 두 번째 식은 무작위한 요동 $\dot S^\omega = k_b \dot H^\omega \geq 0$와 플로우 $\dot S^f = k_B \dot H^f$의 상대적인 기여를 강조합니다. 직관적으로 말하면, 무작위한 요동은 항상 앙상블 밀도를 분산시켜 엔트로피를 증가시키는 반면, 플로우는 확률 그래디언트를 '재구성'함으로써 엔트로피를 감소시킵니다 (즉, 확률 흐름가 더 높은 밀도 영역으로 흐르는 곳). 다시 말해, 무작위한 요동은 상태를 놀라움(그리고 암시적인 열역학적 퍼텐셜)이 높은 영역으로 분산시키는 반면, 힘에 의한 경사 플로우는 암시적인 분산에 대항합니다. 이 관점에서 무작위한 요동은 힘에 의해 유발되는 퍼텐셜 에너지 그래디언트(예: 장벽)에 대해 '무감각'하며, 따라서 [열] 역학을 뒷받침합니다.
 
-비평형 정상상태에서 이러한 상반된 효과들은 균형을 이루며 엔트로피 생산은 제로입니다. 확률 전류를 이용한 두 번째 식은 통계역학과 관련이 있으며, 두 번째 항 $\dot S^q=k_B\dot H^q$는 힘에 의해 유도된 일을 통해 생성된 열역학적 엔트로피의 앙상블 평균입니다. 비평형 정상상태에서는 열역학적 엔트로피의 두 구성 요소가 확률 전류가 제로로 감소함에 따라 사라집니다. 즉, 보존적인 플로우와 소멸적인 요동은 균형을 이룹니다. 앙상블 엔트로피에 대한 이러한 균형 방정식은 열역학의 제2 법칙을 구성합니다. 그림 15는 주요한 마르코프 담요와 그 내부 상태를 구성하는 입자들의 온도, 자유 에너지 및 엔트로피의 진화를 추적하는 데에 위의 관계를 사용한 수치적인 예시를 제공합니다. 이 예시에서는 볼츠만 상수의 표준값을 사용하여 정량적인 특성을 제공했습니다.
+비평형 정상상태에서 이러한 상반된 효과들은 균형을 이루며 엔트로피 생산은 제로입니다. 확률 흐름를 이용한 두 번째 식은 통계역학과 관련이 있으며, 두 번째 항 $\dot S^q=k_B\dot H^q$는 힘에 의해 유도된 일을 통해 생성된 열역학적 엔트로피의 앙상블 평균입니다. 비평형 정상상태에서는 열역학적 엔트로피의 두 구성 요소가 확률 흐름가 제로로 감소함에 따라 사라집니다. 즉, 보존적인 플로우와 소멸적인 요동은 균형을 이룹니다. 앙상블 엔트로피에 대한 이러한 균형 방정식은 열역학의 제2 법칙을 구성합니다. 그림 15는 주요한 마르코프 담요와 그 내부 상태를 구성하는 입자들의 온도, 자유 에너지 및 엔트로피의 진화를 추적하는 데에 위의 관계를 사용한 수치적인 예시를 제공합니다. 이 예시에서는 볼츠만 상수의 표준값을 사용하여 정량적인 특성을 제공했습니다.
 
 요약하면, 특정한 상태에 대한 앙상블 가정을 통해 열역학의 법칙을 효과적으로 재구성하는 일련의 균형 방정식이 등장합니다. 이 균형 방정식은 단일 경로나 앙상블 평균 수준에서 적용할 수 있습니다. 이제 이 섹션을 요동(fluctuation)에 관한 제2 법칙의 일반화를 자세히 살펴보며 마무리하겠습니다.
 
 ![FIGURE 15](./img/15.png)
 <p style="text-align: center;">FIGURE 15</p>
 
-_확률적 열역학_. 이 그림은 우리의 합성 수프(또는 활성 물질)를 고전적(확률적) 열역학의 관점에서 특성화한 것을 보여줍니다. 분석은 다음과 같이 비교적 간단하게 진행됩니다. 먼저, 특정한 상태 집합(예: 합성 바이러스의 내부 고분자)을 앙상블로 처리할 수 있습니다. 다시 말해, 어떤 입자의 동작은 모든 나머지 입자가 동일한 열역학적 퍼텐셜에 반응하고 있다고 가정한 것과 마찬가지로 처리할 수 있습니다. 그런 다음 특정 상태의 흐름을 가장 잘 설명하는 열역학적 퍼텐셜을 평가할 수 있습니다(그림 14 참조). 예상되는 또는 예측된 흐름을 고려하여 무작위한 요동의 분산 또는 진폭을 평가하고, 이동성 계수와 함께 어떤 시점에서의 온도를 계산할 수 있습니다(우리는 이동성 계수를 0.2로 설정하고 위치는 나노미터 단위로 가정했습니다). 이것이 가능한 이유는 앙상블 상태의 분포를 시간에 관찰될 것으로 예측되는 동등한 통계와 연관시키고 있기 때문입니다. 온도와 열역학적 퍼텐셜을 고려하면 연관된 앙상블 밀도와 비평형 정상상태 밀도 간의 KL 다이버전스를 사용하여 자유 에너지를 평가할 수 있습니다. 앙상블 상태가 무작위 동적 끌개에 접근함에 따라 이러한 밀도 함수들은 수렴하고 앙상블 밀도는 변하지 않게됩니다. 이 시점에서 앙상블 밀도는 비평형 정상상태 밀도가 됩니다. 시간에 따른 앙상블 밀도의 내재적인 변화는 엔트로피 생성을 통해 특성화할 수 있으며, 다양한 방식으로 분할할 수 있습니다(본문 참조). 이 예시에서는 온도에 의해 곱해진 확률 전류에 의해 발산된 엔트로피에 초점을 맞추었습니다. 이는 열 이산화에 해당합니다. 이 다소 휴리스틱한 설명에서는 (단순화를 위해) 주된 마르코프 담요에 둘러싸인 내부 상태의 일차원 위치에 초점을 맞추었습니다(한 차원을 고려하므로 솔레노이드 요동은 무시할 수 있습니다). 이 담요은 그림 6의 작은 바이러스와 유사한 입자입니다. 앙상블 및 비평형 정상상태 퍼텐셜을 추정하기 위해 위치의 4차 다항식 확장과 적절한 최소 제곱 추정기를 사용했습니다. 열역학적 퍼텐셜은 특정 상태의 확률적 흐름을 가장 잘 예측하는 것이며, 앙상블 밀도는 샘플 밀도를 가장 잘 예측합니다. 더 효율적인 추정을 위해 시스템 진화 동안 256개의 시간 구간에서 28개의 연속적인 간격으로 평균을 계산했습니다. 주요 마르코프 담요이 형성되는 자기 조직화의 열역학적 상관을 설명하기 위해 32번째 시간 구간에서 시작했습니다. 흥미를 위해 담요와 외부 입자에 대한 분석을 반복했습니다. **상단 행**은 (뜨거운) 색상 척도를 사용하여 온도의 진화를 보여주며 입자의 위치에 점으로 나타냅니다(이차원에서). **두 번째 패널**은 시간에 따른 세 개의 앙상블에서 온도의 대응하는 진화를 보여줍니다. 흥미로운 점은 여기서 내부(파랑)와 담요(빨강) 입자가 동일한 온도에서 시작한다는 것입니다. 그러나 자기조직화 과정 중에 내부 입자는 점차적으로 온도가 상승하여 외부 입자(청록색)보다 높은 온도가 됩니다. 이 예에서 내부 입자의 온도는 담요 입자의 약 두 배가 되었습니다. **세 번째 패널**은 각 앙상블에 대한 해당하는 자유 에너지를 보여줍니다. 가장 주목할 만한 점은 앙상블과 비평형 정상상태 퍼텐셜이 수렴함에 따라 시간이 지남에 따라 자유 에너지가 감소한다는 것입니다. 이것은 외부와 덮개 입자에 가장 두드러진 형태로 나타납니다. 이 입자들은 내부 입자를 조직화하기 위해 자유 에너지를 소모한다고 생각할 수 있습니다. 약 다섯 초 후에는 시스템 내에 거의 자유 에너지가 남지 않습니다. 이는 대응하는 열 이산화를 보여주는 **하단 패널**에 반영됩니다. 이것은 외부 입자에 가장 두드러지게 나타납니다. 여기서 열 이산화가 낮은 수준까지 감소할 수 있지만, 합성 바이러스의 온도는 비교적 높습니다(여기서 온도는 약 300° 켈빈, 즉 대략 체온입니다). 이는 내재적인 불규칙한 내부 입자의 내부 상태의 내재적인 불규칙한 요동에서 기인하는 무작위한 요동이 아직 작용하기 때문입니다. 이러한 요동은 특정 상태를 열역학적 퍼텐셜 전체에 걸쳐 분산시키고, 퍼텐셜 경사를 따라 그라디언트 플로우는 앙상블 밀도를 재구성합니다. 효과적으로, 이 플로우(및 거리)는 내재적인 불규칙한 요동이 생성하는 열입니다. 비평형 정상상태에서는 이 두 가지 과정이 균형을 이루며 열 이산화가 사라집니다. 확률적인 현재는 상태 공간의 모든 지점에서 확률적인 전류가 제로이기 때문입니다. 하단 패널은 시간에 따른 해당 엔트로피를 보여줍니다. 외부 입자의 엔트로피는 초기에 증가하다가 시스템이 무작위 동적 끌개를 찾을 때 감소합니다. 향후 상호작용에 따라 밀접하게 결합될 내부 입자들의 엔트로피는 점진적으로 감소합니다. 따라서 이러한 멀리 떨어진 평형 상태 시나리오에서는 두 번째 법칙을 위반하는 것이 예상됩니다. 이는 실제로는 앙상블 가정 하에서 확률적 동력학의 이상화된 설명이지만, 실제로는 동역학이 더 복잡하며 여기서의 처리는 일반적인 평균장 근사로 해석될 수 있습니다. 이 근사를 통해 열역학의 제 1법칙과 제 2법칙을 기반으로 한 구조를 갖는 확률적 동역학을 직관적으로 특성화할 수 있습니다.
+_확률적 열역학_. 이 그림은 우리의 합성 수프(또는 활성 물질)를 고전적(확률적) 열역학의 관점에서 특성화한 것을 보여줍니다. 분석은 다음과 같이 비교적 간단하게 진행됩니다. 먼저, 특정한 상태 집합(예: 합성 바이러스의 내부 고분자)을 앙상블로 처리할 수 있습니다. 다시 말해, 어떤 입자의 동작은 모든 나머지 입자가 동일한 열역학적 퍼텐셜에 반응하고 있다고 가정한 것과 마찬가지로 처리할 수 있습니다. 그런 다음 특정 상태의 흐름을 가장 잘 설명하는 열역학적 퍼텐셜을 평가할 수 있습니다(그림 14 참조). 예상되는 또는 예측된 흐름을 고려하여 무작위한 요동의 분산 또는 진폭을 평가하고, 이동성 계수와 함께 어떤 시점에서의 온도를 계산할 수 있습니다(우리는 이동성 계수를 0.2로 설정하고 위치는 나노미터 단위로 가정했습니다). 이것이 가능한 이유는 앙상블 상태의 분포를 시간에 관찰될 것으로 예측되는 동등한 통계와 연관시키고 있기 때문입니다. 온도와 열역학적 퍼텐셜을 고려하면 연관된 앙상블 밀도와 비평형 정상상태 밀도 간의 KL 다이버전스를 사용하여 자유 에너지를 평가할 수 있습니다. 앙상블 상태가 무작위 동적 끌개에 접근함에 따라 이러한 밀도 함수들은 수렴하고 앙상블 밀도는 변하지 않게됩니다. 이 시점에서 앙상블 밀도는 비평형 정상상태 밀도가 됩니다. 시간에 따른 앙상블 밀도의 내재적인 변화는 엔트로피 생성을 통해 특성화할 수 있으며, 다양한 방식으로 분할할 수 있습니다(본문 참조). 이 예시에서는 온도에 의해 곱해진 확률 흐름에 의해 발산된 엔트로피에 초점을 맞추었습니다. 이는 열 이산화에 해당합니다. 이 다소 휴리스틱한 설명에서는 (단순화를 위해) 주된 마르코프 담요에 둘러싸인 내부 상태의 일차원 위치에 초점을 맞추었습니다(한 차원을 고려하므로 솔레노이드 요동은 무시할 수 있습니다). 이 담요은 그림 6의 작은 바이러스와 유사한 입자입니다. 앙상블 및 비평형 정상상태 퍼텐셜을 추정하기 위해 위치의 4차 다항식 확장과 적절한 최소 제곱 추정기를 사용했습니다. 열역학적 퍼텐셜은 특정 상태의 확률적 흐름을 가장 잘 예측하는 것이며, 앙상블 밀도는 샘플 밀도를 가장 잘 예측합니다. 더 효율적인 추정을 위해 시스템 진화 동안 256개의 시간 구간에서 28개의 연속적인 간격으로 평균을 계산했습니다. 주요 마르코프 담요이 형성되는 자기 조직화의 열역학적 상관을 설명하기 위해 32번째 시간 구간에서 시작했습니다. 흥미를 위해 담요와 외부 입자에 대한 분석을 반복했습니다. **상단 행**은 (뜨거운) 색상 척도를 사용하여 온도의 진화를 보여주며 입자의 위치에 점으로 나타냅니다(이차원에서). **두 번째 패널**은 시간에 따른 세 개의 앙상블에서 온도의 대응하는 진화를 보여줍니다. 흥미로운 점은 여기서 내부(파랑)와 담요(빨강) 입자가 동일한 온도에서 시작한다는 것입니다. 그러나 자기조직화 과정 중에 내부 입자는 점차적으로 온도가 상승하여 외부 입자(청록색)보다 높은 온도가 됩니다. 이 예에서 내부 입자의 온도는 담요 입자의 약 두 배가 되었습니다. **세 번째 패널**은 각 앙상블에 대한 해당하는 자유 에너지를 보여줍니다. 가장 주목할 만한 점은 앙상블과 비평형 정상상태 퍼텐셜이 수렴함에 따라 시간이 지남에 따라 자유 에너지가 감소한다는 것입니다. 이것은 외부와 덮개 입자에 가장 두드러진 형태로 나타납니다. 이 입자들은 내부 입자를 조직화하기 위해 자유 에너지를 소모한다고 생각할 수 있습니다. 약 다섯 초 후에는 시스템 내에 거의 자유 에너지가 남지 않습니다. 이는 대응하는 열 이산화를 보여주는 **하단 패널**에 반영됩니다. 이것은 외부 입자에 가장 두드러지게 나타납니다. 여기서 열 이산화가 낮은 수준까지 감소할 수 있지만, 합성 바이러스의 온도는 비교적 높습니다(여기서 온도는 약 300° 켈빈, 즉 대략 체온입니다). 이는 내재적인 불규칙한 내부 입자의 내부 상태의 내재적인 불규칙한 요동에서 기인하는 무작위한 요동이 아직 작용하기 때문입니다. 이러한 요동은 특정 상태를 열역학적 퍼텐셜 전체에 걸쳐 분산시키고, 퍼텐셜 경사를 따라 그라디언트 플로우는 앙상블 밀도를 재구성합니다. 효과적으로, 이 플로우(및 거리)는 내재적인 불규칙한 요동이 생성하는 열입니다. 비평형 정상상태에서는 이 두 가지 과정이 균형을 이루며 열 이산화가 사라집니다. 확률적인 현재는 상태 공간의 모든 지점에서 확률 흐름이 제로이기 때문입니다. 하단 패널은 시간에 따른 해당 엔트로피를 보여줍니다. 외부 입자의 엔트로피는 초기에 증가하다가 시스템이 무작위 동적 끌개를 찾을 때 감소합니다. 향후 상호작용에 따라 밀접하게 결합될 내부 입자들의 엔트로피는 점진적으로 감소합니다. 따라서 이러한 멀리 떨어진 평형 상태 시나리오에서는 두 번째 법칙을 위반하는 것이 예상됩니다. 이는 실제로는 앙상블 가정 하에서 확률적 동력학의 이상화된 설명이지만, 실제로는 동역학이 더 복잡하며 여기서의 처리는 일반적인 평균장 근사로 해석될 수 있습니다. 이 근사를 통해 열역학의 제 1법칙과 제 2법칙을 기반으로 한 구조를 갖는 확률적 동역학을 직관적으로 특성화할 수 있습니다.
 
 #### Fluctuation theorems - 요동 정리
 
@@ -3172,7 +3242,7 @@ Potentials and surprisal (conditional dependencies on external states are omitte
 
 ### Conclusion - 결론
 
-결론적으로, 우리는 측정 가능한 시스템에 대한 간단한 제약에서 물리학의 많은 부분이 어떻게 유래하는지 살펴보았습니다. 구체적으로는, 양자, 통계, 고전 메카닉스의 일부 친숙한 결과가 비평형 정상상태의 동력학의 자연스러운 결과로 설명되었습니다. 또한 '상태'의 성질이 앙상블 동력학의 상세한, 미시적인 설명을 점차적으로 거시적인 설명으로 줄이는 계층적 분해의 관점에서 고려되었습니다 - 마르코프 분할과 아디아바틱 감소의 재귀적 적용을 통해. 간단히 말해, 이는 앙상블의 결합된 시스템 내의 모든 설명 수준에서 무작위 요동이 마르코프 담요 뒤에 숨겨진 본질적이거나 내부 요동에서 상속된다는 것을 제안합니다.
+결론적으로, 우리는 측정 가능한 시스템에 대한 간단한 제약에서 물리학의 많은 부분이 어떻게 유래하는지 살펴보았습니다. 구체적으로는, 양자, 통계, 고전 메카닉스의 일부 친숙한 결과가 비평형 정상상태의 동력학의 자연스러운 결과로 설명되었습니다. 또한 '상태'의 성질이 앙상블 동력학의 상세한, 미시적인 설명을 점차적으로 거시적인 설명으로 줄이는 계층적 분해의 관점에서 고려되었습니다 - 마르코프 분할과 단열 감소의 재귀적 적용을 통해. 간단히 말해, 이는 앙상블의 결합된 시스템 내의 모든 설명 수준에서 무작위 요동이 마르코프 담요 뒤에 숨겨진 본질적이거나 내부 요동에서 상속된다는 것을 제안합니다.
 
 한 가지 관점에서 이는 약간의 디플레이션적인 물리학의 설명에 이르게 합니다. 즉, 해밀턴의 최소 행동 원칙, 요동 정리, 슈뢰딩거 방정식 같은 것들이 비평형 정상상태를 달성하는 것들에 반드시 참인 조건들의 본질적인 재표현이라는 의미입니다. 즉, 풀백 끌개를 가진다는 것입니다. 이 물리학의 계보를 더 거슬러 올라가 보면, 비평형 정상상태 자체는 시스템이 불변 측정치를 가지고 있다는 가정에서 상속됩니다. 이 불변성은 무작위 동적 끌개의 존재를 보증합니다. 간단히 말해, 우리가 고려한 모든 현상은 것들이 측정 가능한 특성을 가지는 경우에만 존재한다는 가정에서 유래합니다. 즉, 그들의 끌개 세트 내의 상태(이웃)로 돌아갑니다. 이 디플레이션적인 설명은 하지만 폐쇄와 내부 일관성을 제공합니다. 것들이 그들의 측정 가능성에 의해 존재한다면, 존재는 측정을 수행하거나 만드는 것을 전제로 합니다. 측정은 결국 도구(관찰자)의 담요 상태에 조건을 부여하는 추론이므로, 측정 또는 추론의 과정은 존재하는 것들의 속성이어야 합니다. 다행히도, 이는 바로 자유 에너지 원칙에서 이어집니다. 간단히 말해, 존재는 측정을 요구하고 측정(추론)은 존재의 필연적인 결과입니다. 이는 물리학의 근본적으로 측정론적인 측면을, 그리고 아마도 추론의 존재적인 본질을 말해줍니다 (Cook, 1994).
 
@@ -3249,7 +3319,7 @@ p(x)
 \end{equation}
 $$
 
-**증명**: 폴커-프랑크 연산자에 $\nabla p=-p\nabla\Im$와 $f=Q\nabla\Im-\Gamma\nabla\Im$를 대입하면 다음과 같이 됩니다:
+**증명**: 포커-프랑크 연산자에 $\nabla p=-p\nabla\Im$와 $f=Q\nabla\Im-\Gamma\nabla\Im$를 대입하면 다음과 같이 됩니다:
 
 $$
 \begin{equation}\tag{12.2}
@@ -3277,7 +3347,7 @@ Q &= -Q^t
 \end{equation}
 $$
 
-이는 $p=exp(-\Im)$가 평형 밀도 또는 폴커-프랑크 연산자가 묘사하는 밀도 동역학의 고유해 $\pmb L p=0$임을 의미합니다.
+이는 $p=exp(-\Im)$가 평형 밀도 또는 포커-프랑크 연산자가 묘사하는 밀도 동역학의 고유해 $\pmb L p=0$임을 의미합니다.
 
 
 **따름정리** *(마르코프 담요): 만약 한 (외부) 상태의 부분집합 $\eta\subset x$이 그들의 마르코프 담요 $b\subset x$에 조건부로 다른 (내부) 부분집합 $\eta\subset x$와 조건부로 독립적이며 – 그리고 부분집합이 솔레노이드 흐름을 통해 연결되지 않는다면 – 내부 상태의 흐름은 외부 상태에 의존하지 않고, 반대도 마찬가지입니다.*
@@ -3669,7 +3739,7 @@ $$
 
 이러한 표현들은 기대 곡률의 역할을 비평형 정상상태 동력학의 주요 (전역적) 특성화 요소로서 드러냅니다.
 
-## Appendix D: the Fokker-Planck operator - 첨부 D: 폴커-프랑크 연산자
+## Appendix D: the Fokker-Planck operator - 첨부 D: 포커-프랑크 연산자
 
 포커-플랑크 연산자는 무한 차원 (힐베르트) 공간에서 작동합니다. 이는 즉, 밀도 동력학의 지지 공간입니다. 분명히, 이것은 실용적인 응용에서의 수치 해법에 유용하지 않습니다. 하지만, 이산적인 기저를 사용하여 밀도 동력학을 쉽게 관리할 수 있는 형태로 변환할 수 있습니다. 예를 들어, 정규직교 기저 $\ket{v_i(x)}$를 사용하면, (디랙 표기법을 사용하여):
 
@@ -3699,7 +3769,7 @@ $$
 \end{equation}
 $$
 
-계수들은 기저와 관련된 확률 모드의 진폭입니다. 폴커-프랑크 연산자의 고유함수인 기저를 자연스럽게 선택하면 밀도 동력학을 일련의 무결접 모드로 분해하고, 중요하게는 거의 순간적으로 소산되는 빠른 모드(즉, 고유값이 $\lambda_{ii}\ll 0$인 고유모드의 계수)를 무시할 수 있습니다.
+계수들은 기저와 관련된 확률 모드의 진폭입니다. 포커-프랑크 연산자의 고유함수인 기저를 자연스럽게 선택하면 밀도 동력학을 일련의 무결접 모드로 분해하고, 중요하게는 거의 순간적으로 소산되는 빠른 모드(즉, 고유값이 $\lambda_{ii}\ll 0$인 고유모드의 계수)를 무시할 수 있습니다.
 
 실제 도전과제는, 예를 들어 날씨 예보에서, 고유모드를 찾는 것입니다(예, Harlim and Yang, 2017; Palmer and Laure, 2013). 대안으로 다항식 기저를 사용하여, 계수를 확률 밀도의 순간으로 표현할 수 있습니다. 이로 인해 밀도 동력학에 대한 저차원 근사법이 생깁니다(예, 순간의 방법). 예를 들어, 첫 번째 두 순간을 유지하는 것은 라플라스 근사에 해당합니다. 이에 대한 예는 우리의 인구 동태에 대한 동적 원인 모델링 작업에서 찾을 수 있습니다(Marreiros et al., 2009). 마지막으로, 푸리에 기저 세트를 사용할 수 있습니다. 이는 확률 진폭으로 해석할 수 있는 (푸리에) 계수를 보장하는 Plancherel 정리에 따라 파동 함수(확률 밀도와 대조적으로)를 분해함으로써 중요한 변화를 가져오는 양자역학적 형식으로 이끌어줍니다.
 
@@ -3958,38 +4028,38 @@ $$
 
 *(a.u.: arbitrary units; e.g., metres (m), radians (rad), etc)*
 
-| Expression                                              | Description                                                           | Units                   |
+| Expression(표현식)                                        | Description(설멸)                                                      | Units(단위)              |
 |---------------------------------------------------------|:----------------------------------------------------------------------|-------------------------|
-|                                                         | **Variables**                                                         |                         |
-| $\tau$                                                  | Time                                                                  | s(seconds)              |
-| $x[\tau]=\{x(t):t\in(0,\tau)\}$                         | Trajectory or path through state-space                                | a.u. (m)                |
-| $\omega(\tau)$                                          | Random fluctuations                                                   | a.u. (m)                |
-| $\begin{aligned}x^{(i)}&=\{x_1^{(i)},x_2^{(i)},\ldots,x_N^{(i)}\} \\x_n^{(i)}&=\{x_{n_1}^{(i)},x_{n_2}^{(i)},\ldots,x_{n_M}^{(i)}\} \end{aligned}$| Vector states at the $j$-th level of description| a.u. (m) |
-| $x=\{\eta,s,a,\mu\}\in X$                               | Markovian partition into external, sensory, active and internal states| a.u. (m)                |
-| $\tilde\eta\in X\backslash E:x=\{\eta,\tilde\eta\}\in X$| Complement of a subset of states                                      | a.u. (m)                |
-| $\dot x=\frac{dx}{dt}$                                  | Time derivative(Newton notation)                                      | m/s                     |
-| $\vec x=(x,x^{'},x^{''},\ldots)$                        | Generalised motion(Lagrange notation)                                 | (m,m/s,...)             |
-| $\alpha=\{a,\mu\}\in A$                                 | Autonomous states                                                     | a.u. (m)                |
-| $b=\{s,a\}\in B$                                        | Blanket states                                                        | a.u. (m)                |
-| $\pi=\{b,\mu\}\in P$                                    | Particular states                                                     | a.u. (m)                |
-| $\eta\in E$                                             | External states                                                       | a.u. (m)                |
-| $\Gamma=\tfrac h{2m}=\mu_m k_B T$                       | Amplitude(i.e., half the variance) of random fluctuations             | $m^2$/s or J$\cdot$s/kg |
-| $\mathcal Q$                                            | Rate of solenodal flow                                                | $m^2$/s or J$\cdot$s/kg |
-| $m=\tfrac{\hbar}{2\mu_m k_b T}=\tfrac{\hbar}{2\Gamma}$  | (Reduced) mass                                                        | kg(kilogram)            |
-| $\mu_m=\tfrac{\hbar}{2mk_B T}=\tfrac{1}{k_B T}\Gamma$   | Mobility coefficient                                                  | s/kg                    |
-| $T$                                                     | Temperature                                                           | K(Kelvin)               |
-| $\ell=\int d\ell :d\ell^2=g_{ij}d\lambda^j d\lambda^i$  | Informational length                                                  | nats                    |
-| $D(\tau)=D[p(x,\tau\vert\pi_0)\parallel p(x,\infty\vert pi_0)]$ | Divergence length                                             | nats                    |
-| $\pmb\tau=d\ell(\tau\geq\pmb\tau)\approx 0$             | Critical time                                                         | s                       |
-| $g_{ij}=E\lbrack\frac{\partial\Im}{\partial\lambda^i}\frac{\partial\Im}{\partial\lambda^i}\rbrack$| Fisher(information metric)tensor | a.u.               |
-|                                                         | **Functions, functionals and potentials**                             |                         |
-| $E[x]=[E_p[x]=\int xp_\lambda(x)dx$                     | Expectation or average                                                |                         |
-| $p_\lambda(x):Pr[X\in A]=\int_A p_\lambda(x)dx$         | Probability density function paramaterised by sufficient statics $\lambda$                      |
-| $p_\tau(x)\equiv p(x,\tau)$                             | Time-dependent probability density function parameterised by time     |                         |
-| $\begin{aligned}p(x)&\triangleq p_\infty(x)=\lim_{\tau\to\infty}(p(x,\tau)\\ &\Leftrightarrow \pmb L p(x)= 0\end{aligned}$ | 비평형 정상상태 밀도 - 폴커-프랑크 연산자의 고유해 |
-| $q_mu(\eta)$                                            | Variational density - an (approximate posterior) density over external states parameterised by internal states |
-| $f(x)=E[\dot x]$                                        | Flow - the expected motion through state-space                        |                         |
-| $j(x)=f(x)p(x)-\Gamma\nabla p(x)$                       | Probability current                                                   |                         |
+|                                                         | **Variables(변수)**                                                    |                         |
+| $\tau$                                                  | 시간                                                                   | s(seconds)              |
+| $x[\tau]=\{x(t):t\in(0,\tau)\}$                         | 상태공간에서 궤적이나 패스                                                   | a.u. (m)                |
+| $\omega(\tau)$                                          | 무작위 요동                                                              | a.u. (m)                |
+| $\begin{aligned}x^{(i)}&=\{x_1^{(i)},x_2^{(i)},\ldots,x_N^{(i)}\} \\x_n^{(i)}&=\{x_{n_1}^{(i)},x_{n_2}^{(i)},\ldots,x_{n_M}^{(i)}\} \end{aligned}$| $i$ 번째 설명 수준의 벡터 상태 | a.u. (m) |
+| $x=\{\eta,s,a,\mu\}\in X$                               | 마르코프 분할은 외부, 감각, 활동 및 내부 상태로 나눔                              | a.u. (m)                |
+| $\tilde\eta\in X\backslash E:x=\{\eta,\tilde\eta\}\in X$| 상태 부분 집합의 여집합                                                     | a.u. (m)                |
+| $\dot x=\frac{dx}{dt}$                                  | 시간 미분(뉴턴 표기법)                                                     | m/s                     |
+| $\vec x=(x,x^{'},x^{''},\ldots)$                        | 일반화된 운동(라그랑지안 표기법)                                              | (m,m/s,...)             |
+| $\alpha=\{a,\mu\}\in A$                                 | 자율 상태                                                               | a.u. (m)                |
+| $b=\{s,a\}\in B$                                        | 담요 상태                                                               | a.u. (m)                |
+| $\pi=\{b,\mu\}\in P$                                    | 특정 상태                                                               | a.u. (m)                |
+| $\eta\in E$                                             | 외부 상태                                                               | a.u. (m)                |
+| $\Gamma=\tfrac h{2m}=\mu_m k_B T$                       | 무작위 요동의 진폭 (즉, 분산의 절반)                                          | $m^2$/s or J$\cdot$s/kg |
+| $\mathcal Q$                                            | 솔레노이드 흐름의 정도                                                      | $m^2$/s or J$\cdot$s/kg |
+| $m=\tfrac{\hbar}{2\mu_m k_b T}=\tfrac{\hbar}{2\Gamma}$  | (감소된) 질량                                                            | kg(kilogram)            |
+| $\mu_m=\tfrac{\hbar}{2mk_B T}=\tfrac{1}{k_B T}\Gamma$   | 이동성 계수                                                              | s/kg                    |
+| $T$                                                     | 온도                                                                   | K(Kelvin)               |
+| $\ell=\int d\ell :d\ell^2=g_{ij}d\lambda^j d\lambda^i$  | 정보 길이                                                               | nats                    |
+| $D(\tau)=D[p(x,\tau\vert\pi_0)\parallel p(x,\infty\vert pi_0)]$ | 발산 길이                                                       | nats                    |
+| $\pmb\tau=d\ell(\tau\geq\pmb\tau)\approx 0$             | 임계 시간                                                               | s                       |
+| $g_{ij}=E\lbrack\frac{\partial\Im}{\partial\lambda^i}\frac{\partial\Im}{\partial\lambda^i}\rbrack$| 피셔(정보 메트릭)텐서            | a.u.                    |
+|                                                         | **Functions(함수), functionals(함수적) and potentials(퍼텐셜)**            |                         |
+| $E[x]=[E_p[x]=\int xp_\lambda(x)dx$                     | 기대치 또는 평균                                                          |                         |
+| $p_\lambda(x):Pr[X\in A]=\int_A p_\lambda(x)dx$         | 충분한 통계에 의해 매개변수화된 확율 밀도 함수 $\lambda$                         |                         |
+| $p_\tau(x)\equiv p(x,\tau)$                             | 시간에 의해 매개변수화된 시간의존 확율 밀도 함수                                  |                         |
+| $\begin{aligned}p(x)&\triangleq p_\infty(x)=\lim_{\tau\to\infty}(p(x,\tau)\\ &\Leftrightarrow \pmb L p(x)= 0\end{aligned}$ | 비평형 정상상태 밀도 - 포커-프랑크 연산자의 고유해 ||
+| $q_mu(\eta)$                                            | 변분 밀도 - 내부상태의 매개변수화된 외부 상태의 (거의 후반) 밀도                     |                         |
+| $f(x)=E[\dot x]$                                        | 흐름 - 상태공간에서 기대 운동                                                |                         |
+| $j(x)=f(x)p(x)-\Gamma\nabla p(x)$                       | 확율 흐름                                                               |                         |
 | $\begin{aligned}\Psi(x,t)&=\Psi(x)e^{-i\omega t}\\p(x)&=\Psi(x)\cdot\Psi(x)^\dagger\end{aligned}$ | Wave function - the complex root of the NESS density ||
 | $\mathcal L(x,\dot x)=\tfrac 1 2[(\dot x-f)\cdot\tfrac 1 {2\Gamma}(\dot x-f)+\nabla\cdot f]$ | Lagrangian (Legendre transform of the Hamiltonian)        ||
 | $\mathcal H(x,\dot x)=\dot x\cdot \tfrac{\partial\mathcal L}{\partial\dot x}-\mathcal L(x,\dot x)$ | Hamiltonian (Legendre transform of the Lagrangian)  ||
@@ -4025,25 +4095,29 @@ $$
 
 ## Apendix H: Translation Glossory - 첨부 H: 번역 용어
 
-| 영어                           | 한국어                  | 비고                       |
+| 영어                           | 한국어                  | 참고                       |
 |-------------------------------|------------------------|---------------------------|
 | autopoiesis                   | 자기생성                 | ChatGPT                   |
 | blanket state                 | 담요 상태                | Google Bard               |
-| ensenble                      | 앙상블                  | 한국물리학회 물리학용어집       |
+| corollary                     | 따름정리                 | 대한수학회 수학용어           |
+| ensenble                      | 앙상블                  | 한국물리학회 물리학용어집        |
 | entropy                       | 엔트로피                 | 한국물리학회 물리학용어집       |
-| equation                      | 방정식, 식 (문맥에 따라)   | 한국물리학회 물리학용어집       |
-| fluctuation                   | 요동                    | 한국물리학회 물리학용어집       |
+| equation                      | 방정식, 식(문맥에 따라)     | 한국물리학회 물리학용어집       |
+| fluctuation                   | 요동                    | 한국물리학회 물리학용어집      |
 | formulation                   |	수식화, 공식화            | 한국물리학회 물리학용어집       |
-| Markov blanket                | 마르코프 담요             | Google Bard               |
+| lemma                         | 보조정리                 | 대한수학회 수학용어           |
+| Markov blanket                | 마르코프 담요             | Google Bard              |
 | potential                     | 퍼텐셜                  | 한국물리학회 물리학용어집       |
 | nonequilibrium steady-state   | 비평형 정상상태           | 한국물리학회 물리학용어집       |
-| surprise, suprisal            | 놀라움                  | Google Bard               |
+| surprise, suprisal            | 놀라움                  | Google Bard              |
 | symetry breaking              | 대칭 깨짐                | 한국물리학회 물리학용어집      |
 | wave function                 | 파동 함수                | 한국물리학회 물리학용어집      |
+| adiabatic                     | 단열                    | 한국물리학회 물리학용어집      |
+| Probability current           | 확율 흐름                | 한국물리학회 물리학용어집      |
 
 >  [한국물리학회 물리학용어집](https://www.kps.or.kr/content/voca/search.php) \
->  [대한수학회수학용어](https://www.kms.or.kr/mathdict/list.html) \
->  [Google Bard](https://bard.google.com/?hl=kr)
+>  [대한수학회 수학용어](https://www.kms.or.kr/mathdict/list.html) \
+>  [Google Bard](https://bard.google.com/?hl=kr)\
 >  [ChatGPT](https://chat.openai.com/?model=gpt-4-browsing)
 
 
