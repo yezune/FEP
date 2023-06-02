@@ -1,16 +1,18 @@
-# 어떤 물리학을 위한 자유 에너지 원리 - A Free Energy Principle for A Particular Physics
+# 특정 물리학을 위한 자유 에너지 원리 - 
+
+원문: [A Free Energy Principle for A Particular Physics](./README-EN.md)
 
 **칼 프리스턴 - Karl Friston**[^note-0]
 
 [^note-0]: The Wellcome Centre for Human Neuroimaging, UCL Queen Square Institute of Neurology, London, UK WC1N 3AR. Email: k.friston@ucl.ac.uk (This work is under consideration for publication by The MIT Press)
 
-## Abstract - 개요
+## 개요
 
 이 원고는 통계적 의미에서 다른 '것'들과 구별할 수 있는 모든 '것'에 대한 이론을 시도합니다. 그 결과로 나타나는 통계적 독립성은 마르코프 담요를 통해 매개되며, 이는 공간적 및 시간적 규모가 점점 높아지는 앙상블(것들의 집합)의 재귀적 구성을 나타냅니다. 이 분해는 작은 것들의 설명을 제공합니다. 예를 들어, 슈뢰딩거 방정식을 통한 양자역학, 통계역학 및 관련 요동 정리를 통해 작은 것들의 앙상블이 고전역학을 통한 큰 것들까지 이어집니다. 이러한 설명은 자율적이거나 활성화된 것들에 대한 베이지안 역학을 보완합니다. 이 작업이 모든 '것'의 형식을 제공하지만, 주요 기여는 비평형 정상상태에서 자기-조직화를 위한 마르코프 담요의 의미를 검토하는 것입니다. 간단히 말해, 우리는 정보 기하학과 함께하는 자유 에너지 원리를 되찾아 어떤 것의 내부 상태를 외부 상태에 대한 추론 또는 표현으로 해석할 수 있게 합니다. 그 결과로 나타나는 베이지안 역학은 양자, 통계, 고전 역학과 호환되며, 생명체와 같은 입자의 정식화된 설명을 제공할 수 있습니다.
 
 **Key words**: *자기-조직화:self-organisation; 비평형 정상상태:nonequilibrium steady-state; 능동 추론:active inference; 능동 입자:active particles; 자유 에너지:free energy; 엔트로피:entropy; 무작위 동적 끌개:random dynamical attractor; 자기생성:autopoiesis; 마르코프 담요:markov blanket; 베이지안:Bayesian; 변분:variational.*
 
-## Introduction - 소개
+## 소개
 
 이 원고는 어떤 '것'이 다른 것과 구별되고, 아무 '것'도 아닌 것과 구별되는 전제에서 시작하여, 조금 농담스럽게 모든 '것'에 대한 이론을 시도합니다. 이 원고의 목표는 물리학(예: 양자, 통계 및 고전 역학)의 구조물에 호소하여 동적 시스템의 공식화을 검증하고, 그 결과로 나오는 수식을 사용하여 동일한 틀 안에서 자기 조직에 대한 설명을 도출하는 것입니다[^note-1]. 우리의 시작점은 불변측도를 가진 시스템의 것들에 대한 정의입니다. 즉, 유인 집합을 가진 약 혼합 시스템입니다. 이러한 시스템의 설명은 일반적으로 무작위 동적 시스템의 형식주의를 사용하여 시작합니다. 예를 들어, 무작위 미분 방정식(예: 랑주뱅 방정식)을 기반으로 한 시스템 상태의 흐름이나 동역학입니다. 여기서 현재의 처리가 시작되고, 그 후 멈춥니다. 그것은 몇 가지 분명한 질문을 하며 멈춥니다. 예를 들어, 상태란 무엇이며, 무작위 요동이 어디서 오는가? 이 질문들은 더 간단한 질문들로 이어집니다. 즉, 우리가 어떤 것의 상태를 다루고 있다면, 그 상태를 가진 것은 무엇이고, 어떻게 다른 것과 구별할 수 있는가? 이 질문들에 대한 답변은 글자 그대로 모든 것에 대한 이론으로 이어집니다.
 
@@ -30,29 +32,26 @@
 
 제3부: 무생성 입자의 밀도 동역학을 양자, 통계, 고전 역학의 극한 케이스로 설명한 후, 내부 상태를 무시할 수 없는 자율적 행동을 보이는 큰 것들(예: 우리와 같은 큰 활성 입자)의 존재론에 대해 살펴봅니다. 섹션 8은 생물학적 자기조직에 대표적이거나 추론적 능력을 부여할 수 있는 이유를 논합니다. 다시 말해, 좋은 조절자 이론(Conant and Ashby, 1970)과 베이지안 뇌 가설(Helmholtz, 1878 (1971); Knill and Pouget, 2004)과 같은 개념이 감각 물리학 측면에서 어떻게 실체화될 수 있는지에 대해 설명합니다. 여기서 주장은 상당히 간단한데, 바로 시스템의 내부 상태가 마르코프 담요에 감각적 인상을 남기는 외부 상태에 대한 확률적 신념을 인코딩하며, 활성 상태의 외부 상태에 대한 영향에 의해 발생한다는 것입니다. 이 섹션에서는 자율적인 것들(예: 세포 또는 뇌)이 활동적으로 샘플링된 감각의 원인을 추론하는 것을 설명하는 정보 기하학과 참석하는 자유 에너지 원리에 대한 형식적 기초를 제공합니다. 여기서 우리는 변분 베이즈(Beal, 2003)가 특정 종류의 입자의 출현적 성질임을 보여주어 베이지안 역학의 형태를 구현하는 변분 주제를 추구합니다. 섹션 9는 제1부의 합성 수프(그리고 바이러스와 같은 거주자)에서 수치 분석을 사용하여 특정 추론을 설명합니다. 섹션 10에서는 적분 요동 정리와 예상 자유 에너지를 기반으로한 자유 에너지 원리의 따르는 것들을 통해 활성 상태와 대리를 고려합니다. 마지막 2개 섹션에서는 이전(열역학적) 처리를 고려한 능동 추론을 검토합니다. 양자, 확률, 고전 및 베이지안 역학 간의 관계에 대한 간단한 논의로 마무리합니다.
 
-## Part One: the setup - 1부: 설정
-  + [Something or nothing - 무엇 또는 아닌 것](./0101_Something_or_nothing.md)
-  + [Symmetry breaking and self-organsation - 대칭 깨짐과 자기조직화](./0102_Symmetry_breaking_and_self-organisation.md)
-  + [Synthetic soups and active matter - 합성 수프와 능동 물질](./0103_Synthetic_soups_and_active_matter.md)
-  + [States, particles and fluctuations - 상태, 입자 그리고 요동](./0104_States_particles_and_fluctuations.md)
-## Part Two: some special cases - 2부: 특수한 경우들
-  + [A theory of small things: quantum mechanics - 작은 것들의 이론: 양자역학](./0205_A_theory_of_small_things_quantum_mechanics.md)
-  + [A theory of lots of little things: statistical mechanics - 대규모의 작은 것들의 이론: 통계역학](./0206_A_theory_of_lots_of_little_things_statistical_mechanics.md)
-  + [A theory of big things: classical mechanics - 큰 것들의 이론: 고전역학](./0207_A_theory_of_big_things_classical_mechanics.md)
-## Part Three: a particular case - 3부: 특정한 경우
-  + [A theory of autonomous things: Bayesian mechanics - 자율적인 것들의 이론: 베이지안 역학](./0308_A_theory_of_autonomous_things_Bayesian_mechanics.md)
-  + [Simulating sentience - 지각 시뮬레이션](./0309_Simulating_sentience.md)
-  + [Active inference and self-evidencing - 능동 추론과 자기 증명](./0310_Active_inference_and_self-evidencing.md)
-  + [The thermodynamics of inference - 추론의 열역학](./0311_The_thermodynamics_of_inference.md)
-##[Appendixes](./0401_Appendixes.md)
-##[Glossary of terms and 번역 용어](./0402_Glossary_of_terms_and_translation.md)
-##[References - 참고자료](./0403_References.md)
+## 1부: 설정
+  + [어떤-것 또는 아닌-것](./0101_Something_or_nothing.md)
+  + [대칭 깨짐과 자기 조직화](./0102_Symmetry_breaking_and_self-organisation.md)
+  + [합성 수프와 능동 물질](./0103_Synthetic_soups_and_active_matter.md)
+  + [상태, 입자 그리고 요동](./0104_States_particles_and_fluctuations.md)
+## 2부: 몇 가지 특수 사례
+  + [작은 것들의 이론: 양자역학](./0205_A_theory_of_small_things_quantum_mechanics.md)
+  + [대규모의 작은 것들의 이론: 통계역학](./0206_A_theory_of_lots_of_little_things_statistical_mechanics.md)
+  + [큰 것들의 이론: 고전역학](./0207_A_theory_of_big_things_classical_mechanics.md)
+## 3부: 특정한 경우
+  + [자율적인 것들의 이론: 베이지안 역학](./0308_A_theory_of_autonomous_things_Bayesian_mechanics.md)
+  + [지각 시뮬레이션](./0309_Simulating_sentience.md)
+  + [능동 추론과 자기 증명](./0310_Active_inference_and_self-evidencing.md)
+  + [추론의 열역학](./0311_The_thermodynamics_of_inference.md)
 
-## Discussion - 논의
+## 논의
 
 앞서 제시된 기술적 처리는 우리를 놀라운 결론으로 인도합니다. 즉, (무작위 동력학적) 세트를 가지고 그 형태를 유지하는 어떤 자기조직화 시스템이라도 그것의 감각의 원인을 추론하는 것으로 해석될 수 있다는 것입니다. 이런 의미에서, 감각적 행동과 암시적 대표론은 모든 자기조직화 시스템의 보편적 속성일 수 있습니다. 우리는 수치 분석을 사용하여 이런 동력학에 대한 접근 방식이 신경생리학에서의 이타성 동력학의 특성화와 놀랍게도 유사하게 보이는 기본적 행동을 확인했습니다. 이 베이지안 해석은 자기조직화(Ashby, 1947) 및 자기 증명(Hohwy, 2016) 동력학에 대한 관찰적 물리학의 기반(Cook, 1994)을 말하는데 흥미로운 함축을 가지고 있습니다. 또한 (Bridgman, 1954)를 참조하십시오. 즉, 감각능력이 없거나 측정하고 추론하는 능력이 없다면 물리학이 없을 것이라고 주장할 수 있습니다. 한 가지 (지식론적) 의미에서 베이지안 메카닉스는 양자, 고전 및 통계 메카닉스를 능가합니다. 왜냐하면 이 모든 것들은 관찰에 의존하기 때문입니다(Cook, 1994; Seifert, 2012; Theise와 Kafatos, 2013). 이 측정론적 관점은 양자물리학 같은 것들의 기본적인 전제부터 게이지 이론의 관찰적 또는 측정에 의해 제한되는 성질에 이르기까지 살펴보면 많은 의미를 가지게 됩니다(Capozziello와 De Laurentis, 2011). 이 모든 것들은 측정과 추론에 의존합니다. 베이지안 메카닉스의 특별한 성질은 마르코프 담요 아래의 명확한 동력학 계정에 의존하므로 열 욕조와 슈뢰딩거 퍼텐셜에 대한 암시적 처리와는 달리 두드러지지 않습니다.
 
-### Conclusion - 결론
+### 결론
 
 결론적으로, 우리는 측정 가능한 시스템에 대한 간단한 제약에서 물리학의 많은 부분이 어떻게 유래하는지 살펴보았습니다. 구체적으로는, 양자, 통계, 고전 메카닉스의 일부 친숙한 결과가 비평형 정상상태의 동력학의 자연스러운 결과로 설명되었습니다. 또한 '상태'의 성질이 앙상블 동력학의 상세한, 미시적인 설명을 점차적으로 거시적인 설명으로 줄이는 계층적 분해의 관점에서 고려되었습니다 - 마르코프 분할과 단열 감소의 재귀적 적용을 통해. 간단히 말해, 이는 앙상블의 결합된 시스템 내의 모든 설명 수준에서 무작위 요동이 마르코프 담요 뒤에 숨겨진 본질적이거나 내부 요동에서 상속된다는 것을 제안합니다.
 
@@ -65,3 +64,15 @@
 우리는 양자, 통계, 고전, 베이지안 메카닉스가 모두 같은 분석 수준에서, 즉, 우리의 합성 바이러스에서 적용될 수 있음을 보았습니다. 이것은 실재론적 출현의 개념을 약화시킵니다 - 모든 이런 역학는 그-것들이 행동하는 방식의 보완적인 특성입니다. 이것은 상위 수준의 설명이 인과적으로 무력한 동력학을 포착하고, 단지 같은 시스템을 다른 빛으로 묘사한다는 것을 의미합니다. 이것은 축소주의에 동의하게 만들 것입니다 (신기한 것이 아무 것도 나타날 필요가 없다는 의미에서) 또는 출현에 대한 인식론적인 견해에 동의하게 합니다. 다른 해석에서는, 이러한 역학의 무작위 요동의 진폭에 의존성 - 그리고 본질적으로 규모와 암묵적인 평균화의 정도에 의존성 - 이 계층적 측면을 도입하고, 양자와 확률 역학은 더 나은 기술을 제공합니다. 이는 (참으로 축소되지 않는) 출현을 일반화한 것으로 이해할 수 있습니다 - 구성부터 특정 측정에서 향상된 묘사를 제공하려는 노력이다. 여기에서는 출현이 단순히 측정에 의해 축소되는 것이 아니라, 단지 분리가 이루어진다는 사실에 기반합니다. 이러한 점에서, 우리의 입장은 (즉, 진폭은 요동성과 관련이 있습니다) 확률 및 양자 메카닉스와 축소 및 출현에 대한 더 강한 실재론적인 입장 사이의 중간 입장을 나타냅니다.
 
 이러한 옵션 중 하나를 선택하는 것은 중요할 수 있습니다. 왜냐하면 이들은 의식이 있는 시스템의 양자 레벨 설명 – 그리고 그들의 암시적인 무의식적 추론 (Helmholtz, 1866/1962) – 에 대해 다른 함의를 가지고 있기 때문입니다. 자유 에너지 원칙 하에서 어떤 입장(있다면)을 반드시 지지해야 하는지는 아직 미해결된 문제입니다. 메타물리적 회의주의가 가장 좋은 선택일지도 모릅니다. 마르코프 담요의 계층적 구조 – 즉, 출현하는 시스템에 대한 개념을 공식적으로 다룰 수 있는 구조 – 가 한 가지 또는 다른 관점을 받아들일 필요성을 제거할 수도 있습니다. 실제로, 계층적으로 구조화된 생물체가 어떻게 적응하고, 그들이 속한 생태계에 적응하는 방법에 대한 설명을 제공함으로써, 이 논문에서 설명한 다중 스케일 마르코프 동력학은 출현하는 시스템 동력학의 인과력을 설명하는 것 같습니다. 이는 그들의 구성 부분에 대한 효과 측면에서 – 즉, 하향 인과성에 대한 메타물리학적 필요성을 제거함으로써 – 그리고 그들의 시스템 레벨 효과가 외부 환경에 미치는 측면에서 입니다.
+
+[첨부](./0401_Appendixes.md)
+  * 첨부 A: 슈트라토노비치(Stratonovich) 경로 적분
+  * 첨부 B: 보조정리와 증명
+  * 첨부 C: 비평형 정상상태 에너지 함수
+  * 첨부 D: 포커-프랑크(Fokker-Planck) 연산자
+  * 첨부 E: 보편 운동
+  * 첨부 F: 이산 상태공간 모형
+
+[수학적 용어와 번역 용어](./0402_Glossary_of_terms_and_translation.md)
+
+[참고자료](./0403_References.md)
