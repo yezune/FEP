@@ -123,7 +123,7 @@ $$
 
 내재적인 요동을 랜덤한 요동과 연관시킴으로써, 우리는 그들이 담요에서 독립적이며 빠르게 변동한다는 것을 요구합니다. 후자의 요구사항은, 마르코프 담요 상태에 조건이 된 예상 내부 상태가, 매니폴드 위의 흐름보다 훨씬 빠른 속도로 내부 상태 궤적을 끌어당기는 불안정한 또는 중심 매니폴드를 제공하는 한 보장됩니다[^note-9].
 
-> [^note-9]더 세밀한 중심 매니폴드의 구성은, Takens' (지연 임베딩) 정리를 통해, 마르코프 담요 상태의 일반화된 움직임에 대해 예상 내부 상태를 조건화할 수 있지만, 간단히 하기 위해, 우리는 단지 일반화된 상태 자체를 다룰 것입니다. 움직임의 일반화된 좌표에 대한 논의는 부록 E와 Friston, K., Stephan, K., Li, B., Daunizeau, J., 2010. Generalised Filtering. Mathematical Problems in Engineering vol., 2010, 621670, Kerr, W.C., Graham, A.J., 2000. Generalized phase space version of Langevin equations and associated Fokker-Planck equations. European Physical Journal B 15, 305-311을 참조하십시오.
+> [^note-9]더 세밀한 중심 매니폴드의 구성은, Takens' (지연 임베딩) 정리를 통해, 마르코프 담요 상태의 일반화된 움직임에 대해 예상 내부 상태를 조건화할 수 있지만, 간단히 하기 위해, 우리는 단지 일반화된 상태 자체를 다룰 것입니다. 움직임의 일반화된 좌표에 대한 논의는 (부록 E)와 Friston, K., Stephan, K., Li, B., Daunizeau, J., 2010. Generalised Filtering. Mathematical Problems in Engineering vol., 2010, 621670, Kerr, W.C., Graham, A.J., 2000. Generalized phase space version of Langevin equations and associated Fokker-Planck equations. European Physical Journal B 15, 305-311을 참조하십시오.
 
 위의 동역학을 중재하는 야코비안들 (즉, 상태에 대한 흐름의 변화율)은 마르코프 담요에 의해 시사된 조건적 독립성을 존중합니다. 즉, 활성 상태는 직접적으로 외부 상태 (즉, 다른 마르코프 담요)에 의해 영향을 받을 수 없으며 - 그리고 감각 상태는 직접적으로 내부 상태에 의해 영향을 받을 수 없습니다. (1.21)에서:
 
