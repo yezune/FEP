@@ -4024,7 +4024,7 @@ $$
 소프트웨어 참고: 이 모노그래프에 설명된 시뮬레이션은 http://www.fil.ion.ucl.ac.uk/spm/software/ 에서 제공되는 학술 소프트웨어를 사용하여 재현할 수 있습니다. Matlab 프롬프트에서 DEM을 입력하면 그래픽 사용자 인터페이스가 호출됩니다. 위의 시뮬레이션은 A physics of life 버튼을 선택하여 재현할 수 있습니다. 이렇게 하면 사용자는 코드와 서브루틴을 검사하고 자신의 재량에 따라 사용자 지정할 수 있습니다.
 
 감사의 말: 이 모노그래프를 작성할 당시 KF는 Wellcome Principal Research Fellow (Ref: 088130/Z/09/Z)였습니다. 이 모노그래프에 설명된 아이디어에 기여한 수십 명의 친구와 동료들이 있습니다. 토마스 파(Thomas Parr)를 명시적으로 언급하겠습니다. 토마스는 이 책을 쓰는 동안 저의 박사 과정 학생이었고 능동 추론 공식화에 실질적인 기여를 했습니다. 또한 그는 저희 런던 동료들을 위해 모노그래프의 공식적인 논쟁과 감독을 해부하는 귀중한 주간 세미나를 준비했습니다: https://www.fil.ion.ucl.ac.uk/~tparr/Physics/Slides%20Stochastic%20dynamics.htm
-## Appendix G: Glossary of terms and expressions - 첨부 G: 용어 및 표현어 주석
+## Glossary of terms and expressions - 용어 및 표현어 주석
 
 *(a.u.: arbitrary units; e.g., metres (m), radians (rad), etc)*
 
@@ -4093,7 +4093,7 @@ $$
 | $k_B$                                                   | Boltzmann constant $1.39\times 10^{-23}$                              | $m^2$ kg $s^{-2}$/K or J/K |
 | c                                                       | Speed of light 299,792,458                                            | m/s                     |
 
-## Apendix H: Translation Glossory - 첨부 H: 번역 용어
+## Translation Glossory - 번역 용어
 
 | 영어                           | 한국어                  | 참고                       |
 |-------------------------------|------------------------|---------------------------|
