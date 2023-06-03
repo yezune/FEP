@@ -30,7 +30,7 @@
 | $E[x]=[E_p[x]=\int xp_\lambda(x)dx$                     | 기대치 또는 평균                                                          |                         |
 | $p_\lambda(x):Pr[X\in A]=\int_A p_\lambda(x)dx$         | 충분한 통계에 의해 매개변수화된 확율 밀도 함수 $\lambda$                         |                         |
 | $p_\tau(x)\equiv p(x,\tau)$                             | 시간에 의해 매개변수화된 시간의존 확율 밀도 함수                                  |                         |
-| $\begin{aligned}p(x)&\triangleq p_\infty(x)=\lim_{\tau\to\infty}(p(x,\tau)\\ &\Leftrightarrow \pmb L p(x)= 0\end{aligned}$ | 비평형 정상상태 밀도 - 포커-프랑크 연산자의 고유해 ||
+| $\begin{aligned}p(x)&\triangleq p_\infty(x)=\lim_{\tau\to\infty}(p(x,\tau)\\ &\Leftrightarrow \pmb L p(x)= 0\end{aligned}$ | 비평형 안정상태 밀도 - 포커-프랑크 연산자의 고유해 ||
 | $q_mu(\eta)$                                            | 변분 밀도 - 내부상태의 매개변수화된 외부 상태의 (거의 후반) 밀도                     |                         |
 | $f(x)=E[\dot x]$                                        | 흐름 - 상태공간에서 기대 운동                                                |                         |
 | $j(x)=f(x)p(x)-\Gamma\nabla p(x)$                       | 확율 흐름                                                               |                         |
@@ -78,11 +78,11 @@
 | entropy                       | 엔트로피                 | 한국물리학회 물리학용어집       |
 | equation                      | 방정식, 식(문맥에 따라)     | 한국물리학회 물리학용어집       |
 | fluctuation                   | 요동                    | 한국물리학회 물리학용어집      |
-| formulation                   |	수식화, 공식화            | 한국물리학회 물리학용어집       |
+| formulation                   | 수식화, 공식화            | 한국물리학회 물리학용어집       |
 | lemma                         | 보조정리                 | 대한수학회 수학용어           |
 | Markov blanket                | 마르코프 담요             | Google Bard              |
 | potential                     | 퍼텐셜                  | 한국물리학회 물리학용어집       |
-| nonequilibrium steady-state   | 비평형 정상상태           | 한국물리학회 물리학용어집       |
+| nonequilibrium steady-state   | 비평형 안정상태           | Google Bard              |
 | surprise, suprisal            | 놀라움                  | Google Bard              |
 | symetry breaking              | 대칭 깨짐                | 한국물리학회 물리학용어집      |
 | wave function                 | 파동 함수                | 한국물리학회 물리학용어집      |
