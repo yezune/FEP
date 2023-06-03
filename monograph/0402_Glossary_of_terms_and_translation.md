@@ -1,4 +1,4 @@
-## Glossary of terms and expressions - 용어 및 표현어 주석
+## 용어 및 표현어 주석
 
 *(a.u.: arbitrary units; e.g., metres (m), radians (rad), etc)*
 
@@ -67,7 +67,7 @@
 | $k_B$                                                   | Boltzmann constant $1.39\times 10^{-23}$                              | $m^2$ kg $s^{-2}$/K or J/K |
 | c                                                       | Speed of light 299,792,458                                            | m/s                     |
 
-## Translation Glossory - 번역 용어
+## 번역 용어
 
 | 영어                           | 한국어                  | 참고                       |
 |-------------------------------|------------------------|---------------------------|
