@@ -33,19 +33,19 @@
 제3부: 비활성 입자의 밀도 동역학을 양자, 통계, 고전 역학의 극한 케이스로 설명한 후, 내부 상태를 무시할 수 없는 자율적 행동을 보이는 큰 것들(예: 우리와 같은 큰 활성 입자)의 존재론에 대해 살펴봅니다. 섹션 8은 생물학적 자기조직에 대표적이거나 추론적 능력을 부여할 수 있는 이유를 논합니다. 다시 말해, 좋은 조절자 이론(Conant and Ashby, 1970)과 베이지안 뇌 가설(Helmholtz, 1878 (1971); Knill and Pouget, 2004)과 같은 개념이 감각 물리학 측면에서 어떻게 실체화될 수 있는지에 대해 설명합니다. 여기서 주장은 상당히 간단한데, 바로 시스템의 내부 상태가 마르코프 담요에 감각적 인상을 남기는 외부 상태에 대한 확률적 신념을 인코딩하며, 활성 상태의 외부 상태에 대한 영향에 의해 발생한다는 것입니다. 이 섹션에서는 자율적인 것들(예: 세포 또는 뇌)이 활동적으로 샘플링된 감각의 원인을 추론하는 것을 설명하는 정보 기하학과 참석하는 자유 에너지 원리에 대한 형식적 기초를 제공합니다. 여기서 우리는 변분 베이즈(Beal, 2003)가 특정 종류의 입자의 출현적 성질임을 보여주어 베이지안 역학의 형태를 구현하는 변분 주제를 추구합니다. 섹션 9는 제1부의 합성 수프(그리고 바이러스와 같은 거주자)에서 수치 분석을 사용하여 특정 추론을 설명합니다. 섹션 10에서는 적분 요동 정리와 예상 자유 에너지를 기반으로한 자유 에너지 원리의 따르는 것들을 통해 활성 상태와 대리를 고려합니다. 마지막 2개 섹션에서는 이전(열역학적) 처리를 고려한 능동 추론을 검토합니다. 양자, 확률, 고전 및 베이지안 역학 간의 관계에 대한 간단한 논의로 마무리합니다.
 
 ## 1부: 설정
-  + [어떤-것 또는 아닌-것](./0101_Something_or_nothing.md)
-  + [대칭 깨짐과 자기 조직화](./0102_Symmetry_breaking_and_self-organisation.md)
-  + [합성 수프와 능동 물질](./0103_Synthetic_soups_and_active_matter.md)
-  + [상태, 입자 그리고 요동](./0104_States_particles_and_fluctuations.md)
+  + [어떤-것 또는 아닌-것](./monograph/0101_Something_or_nothing.md)
+  + [대칭 깨짐과 자기 조직화](./monograph/0102_Symmetry_breaking_and_self-organisation.md)
+  + [합성 수프와 능동 물질](./monograph/0103_Synthetic_soups_and_active_matter.md)
+  + [상태, 입자 그리고 요동](./monograph/0104_States_particles_and_fluctuations.md)
 ## 2부: 몇 가지 특수 사례
-  + [작은 것들의 이론: 양자역학](./0205_A_theory_of_small_things_quantum_mechanics.md)
-  + [대규모의 작은 것들의 이론: 통계역학](./0206_A_theory_of_lots_of_little_things_statistical_mechanics.md)
-  + [큰 것들의 이론: 고전역학](./0207_A_theory_of_big_things_classical_mechanics.md)
+  + [작은 것들의 이론: 양자역학](./monograph/0205_A_theory_of_small_things_quantum_mechanics.md)
+  + [대규모의 작은 것들의 이론: 통계역학](./monograph/0206_A_theory_of_lots_of_little_things_statistical_mechanics.md)
+  + [큰 것들의 이론: 고전역학](./monograph/0207_A_theory_of_big_things_classical_mechanics.md)
 ## 3부: 특정한 경우
-  + [자율적인 것들의 이론: 베이지안 역학](./0308_A_theory_of_autonomous_things_Bayesian_mechanics.md)
-  + [지각 시뮬레이션](./0309_Simulating_sentience.md)
-  + [능동 추론과 자기 증명](./0310_Active_inference_and_self-evidencing.md)
-  + [추론의 열역학](./0311_The_thermodynamics_of_inference.md)
+  + [자율적인 것들의 이론: 베이지안 역학](./monograph/0308_A_theory_of_autonomous_things_Bayesian_mechanics.md)
+  + [지각 시뮬레이션](./monograph/0309_Simulating_sentience.md)
+  + [능동 추론과 자기 증명](./monograph/0310_Active_inference_and_self-evidencing.md)
+  + [추론의 열역학](./monograph/0311_The_thermodynamics_of_inference.md)
 
 ## 논의
 
@@ -65,7 +65,7 @@
 
 이러한 옵션 중 하나를 선택하는 것은 중요할 수 있습니다. 왜냐하면 이들은 의식이 있는 시스템의 양자 레벨 설명 – 그리고 그들의 암시적인 무의식적 추론 (Helmholtz, 1866/1962) – 에 대해 다른 함의를 가지고 있기 때문입니다. 자유 에너지 원칙 하에서 어떤 입장(있다면)을 반드시 지지해야 하는지는 아직 미해결된 문제입니다. 메타물리적 회의주의가 가장 좋은 선택일지도 모릅니다. 마르코프 담요의 계층적 구조 – 즉, 출현하는 시스템에 대한 개념을 공식적으로 다룰 수 있는 구조 – 가 한 가지 또는 다른 관점을 받아들일 필요성을 제거할 수도 있습니다. 실제로, 계층적으로 구조화된 생물체가 어떻게 적응하고, 그들이 속한 생태계에 적응하는 방법에 대한 설명을 제공함으로써, 이 논문에서 설명한 다중 스케일 마르코프 동력학은 출현하는 시스템 동력학의 인과력을 설명하는 것 같습니다. 이는 그들의 구성 부분에 대한 효과 측면에서 – 즉, 하향 인과성에 대한 메타물리학적 필요성을 제거함으로써 – 그리고 그들의 시스템 레벨 효과가 외부 환경에 미치는 측면에서 입니다.
 
-[부록](./0401_Appendixes.md)
+[부록](./monograph/0401_Appendixes.md)
   * 부록 A: 슈트라토노비치(Stratonovich) 경로 적분
   * 부록 B: 보조정리와 증명
   * 부록 C: 비평형 정상상태 에너지 함수
@@ -73,6 +73,6 @@
   * 부록 E: 보편 운동
   * 부록 F: 이산 상태공간 모형
 
-[용어 의미와 번역 테이블](./0402_Glossary_of_terms_and_translation.md)
+[용어 의미와 번역 테이블](./monograph/0402_Glossary_of_terms_and_translation.md)
 
-[참고자료](./0403_References.md)
+[참고자료](./monograph/0403_References.md)
