@@ -1,6 +1,6 @@
 # 특정 물리학을 위한 자유 에너지 원리
 
-원문: [A Free Energy Principle for A Particular Physics](./README-EN.md)
+원문: [A Free Energy Principle for A Particular Physics](./monograph/README-EN.md)
 
 **칼 프리스턴 - Karl Friston**[^note-0]
 
