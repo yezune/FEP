@@ -89,7 +89,7 @@
 | adiabatic                     | 단열                    | 한국물리학회 물리학용어집      |
 | Probability current           | 확율 흐름                | 한국물리학회 물리학용어집      |
 
->  [한국물리학회 물리학용어집](https://www.kps.or.kr/content/voca/search.php) \
+>  [한국물리학회 물리학용어집](./ref/20221216_english_korean_physics_glossary.csv) \
 >  [대한수학회 수학용어](https://www.kms.or.kr/mathdict/list.html) \
 >  [Google Bard](https://bard.google.com/?hl=kr)\
 >  [ChatGPT](https://chat.openai.com/?model=gpt-4-browsing)
