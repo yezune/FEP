@@ -171,8 +171,8 @@ Plenz, D., Thiagarajan, T.C., 2007. The organizing principles of neuronal avalan
 Poland, D., 1993. Cooperative catalysis and chemical chaos: a chemical model for the Lorenz equations. Physica D 65 86–99.\
 Prigogine, I., 1978. Time, Structure, and Fluctuations. Science 201, 777-785.\
 Proust, J., 2015. The philosophy of metacognition mental agency and self-awareness. Oxford University Press, Oxford.\
-Pyragas, K., 1997. Conditional Lyapunov exponents from time series. Physical Review E 56, 5183- 5187.\
-Ramaswamy, S., 2010. The Mechanics and Statistics of Active Matter, in: Langer, J.S. (Ed.), Annual Review of Condensed Matter Physics, Vol 1, vol. 1, pp. 323-345.\
+[Pyragas, K., 1997. Conditional Lyapunov exponents from time series. Physical Review E 56, 5183- 5187.](https://www.researchgate.net/publication/242227007_Conditional_Lyapunov_exponents_from_time_series)\
+[Ramaswamy, S., 2010. The Mechanics and Statistics of Active Matter, in: Langer, J.S. (Ed.), Annual Review of Condensed Matter Physics, Vol 1, vol. 1, pp. 323-345.](https://arxiv.org/pdf/1004.1933.pdf)\
 Ramsay, D.S., Woods, S.C., 2014. Clarifying the Roles of Homeostasis and Allostasis in Physiological Regulation. Psychological review 121, 225-247.\
 Ramstead, M.J.D., Badcock, P.B., Friston, K.J., 2017. Answering Schrodinger's question: A free-energy formulation. Phys Life Rev.\
 Rao, R.P., Ballard, D.H., 1999. Predictive coding in the visual cortex: a functional interpretation of some extra-classical receptive-field effects. Nat Neurosci. 2, 79-87.\
