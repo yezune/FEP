@@ -1,17 +1,17 @@
 ## 참고자료
 
-Adams, R.A., Shipp, S., Friston, K.J., 2013. Predictions not commands: active inference in the motor system. Brain Struct Funct. 218, 611-643.\
-Agarwal, S., Wettlaufer, J.S., 2016. Maximal stochastic transport in the Lorenz equations. Physics Letters A 380, 142-146.\
-Alhambra, A.M., Masanes, L., Oppenheim, J., Perry, C., 2016a. Fluctuating Work: From Quantum Thermodynamical Identities to a Second Law Equality. Physical Review X 6.\
-Alhambra, A.M., Oppenheim, J., Perry, C., 2016b. Fluctuating States: What is the Probability of a Thermodynamical Transition? Physical Review X 6.\
-Amari, S., 1998. Natural gradient works efficiently in learning. Neural Computation 10, 251-276.\
-Ao, P., 2004. Potential in stochastic differential equations: novel construction. J Phys. A: Math Gen. 37, L25–30.\
-Ao, P., 2008. Emerging of Stochastic Dynamical Equalities and Steady State Thermodynamics. Commun. Theor. Phys. (Beijing, China) 49, 1073-1090.\
-Arnold, L., 2003. Random Dynamical Systems (Springer Monographs in Mathematics). Springer- Verlag, Berlin.\
-Arsenović, D., Burić, N., Davidović, D.M., Prvanović, S., 2014. Lagrangian form of Schrödinger equation. Foundations of Physics 44, 725-735.\
-Ashby, W.R., 1947. Principles of the self-organizing dynamic system. J Gen Psychology. 37, 125-128.\
-Attias, H., 2003. Planning by Probabilistic Inference, Proc. of the 9th Int. Workshop on Artificial Intelligence and Statistics.\
-Ay, N., 2015. Information Geometry on Complexity and Stochastic Interaction. Entropy 17, 2432.\
+[Adams, R.A., Shipp, S., Friston, K.J., 2013. Predictions not commands: active inference in the motor system. Brain Struct Funct. 218, 611-643.](./ref/Adams%20et%20al.%2C%202013.pdf)\
+[Agarwal, S., Wettlaufer, J.S., 2016. Maximal stochastic transport in the Lorenz equations. Physics Letters A 380, 142-146](./ref/Agarwal%20and%20Wettlaufer%2C%202016.pdf).\
+[Alhambra, A.M., Masanes, L., Oppenheim, J., Perry, C., 2016a. Fluctuating Work: From Quantum Thermodynamical Identities to a Second Law Equality. Physical Review X 6.](./ref/Alhambra%20et%20al.%2C%202016a.pdf)\
+[Alhambra, A.M., Oppenheim, J., Perry, C., 2016b. Fluctuating States: What is the Probability of a Thermodynamical Transition? Physical Review X 6.](./ref/Alhambra%20et%20al.%2C%202016b.pdf)\
+[Amari, S., 1998. Natural gradient works efficiently in learning. Neural Computation 10, 251-276.](./ref/Amari%2C%201998.pdf)\
+[Ao, P., 2004. Potential in stochastic differential equations: novel construction. J Phys. A: Math Gen. 37, L25–30.](./ref/Ao%2C%202004.pdf)\
+[Ao, P., 2008. Emerging of Stochastic Dynamical Equalities and Steady State Thermodynamics. Commun. Theor. Phys. (Beijing, China) 49, 1073-1090.](./ref/Ao%2C%202008.pdf)\
+[Arnold, L., 2003. Random Dynamical Systems (Springer Monographs in Mathematics). Springer- Verlag, Berlin.](./ref/Arnold%2C%201998.pdf)\
+[Arsenović, D., Burić, N., Davidović, D.M., Prvanović, S., 2014. Lagrangian form of Schrödinger equation. Foundations of Physics 44, 725-735.](./ref/Arsenovi%C4%87%20et%20al.%2C%202014.pdf)\
+[Ashby, W.R., 1947. Principles of the self-organizing dynamic system. J Gen Psychology. 37, 125-128.](https://www.tandfonline.com/doi/abs/10.1080/00221309.1947.9918144)\
+[Attias, H., 2003. Planning by Probabilistic Inference, Proc. of the 9th Int. Workshop on Artificial Intelligence and Statistics.](./ref/Attias%2C%202003.pdf)\
+[Ay, N., 2015. Information Geometry on Complexity and Stochastic Interaction. Entropy 17, 2432.](./ref/Ay%2C%202015.pdf)\
 Ayala, F., Dobzhansky, T., 1974. Studies in the philosophy of biology: reduction and related problems. University of California Press, Berkeley and Los Angeles.\
 Bak, P., Tang, C., Wiesenfeld, K., 1987. Self-organized criticality: an explanation of 1/f noise. Phys Rev Lett. 59, 381–384.\
 Bak, P., Tang, C., Wiesenfeld, K., 1988. Self-organized criticality. Physical review. A, General physics 38, 364-374.\
