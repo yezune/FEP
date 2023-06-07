@@ -73,6 +73,8 @@
   * 부록 E: 보편 운동
   * 부록 F: 이산 상태공간 모형
 
-[용어 의미와 번역 테이블](./monograph/0402_Glossary_of_terms_and_translation.md)
+[용어정의](./monograph/0402_Glossary_of_terms.md)
 
 [참고자료](./monograph/0403_References.md)
+
+[번역용어](./monograph/0404_Translations.md)
