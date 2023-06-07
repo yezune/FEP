@@ -28,14 +28,14 @@
 [Bechtel, W., Richardson, R.C., 2010. Discovering complexity: Decomposition and localization as strategies in scientific research. MIT press.](./ref/Bechtel%20and%20Richardson%2C%202010.pdf)\
 [Bedau, M., 2002. Downward causation and the autonomy of weak emergence. Principia: an international journal of epistemology 6, 5-50.](./ref/Bedau%2C%202002.pdf)\
 [Bedau, M.A., Humphreys, P.E., 2008. Emergence: Contemporary readings in philosophy and science. MIT press.](./ref/Bedau%20and%20Humphreys%2C%202008.pdf)\
-Beggs, J.M., Plenz, D., 2003. Neuronal avalanches in neocortical circuits. J Neurosci. 23, 11167-11177.\
-Belousov, B.P., 1959. "Периодически действующая реакция и ее механизм [Periodically acting reaction and its mechanism]. Сборнрефератов по радиационной медицине [Collection of Abstracts on Radiation Medicine], 145-147.\
-Bennett, C.H., 2003. Notes on Landauer's principle, reversible computation, and Maxwell's Demon. Studies in History and Philosophy of Science Part B: Studies in History and Philosophy of Modern Physics 34, 501-510.\
-Berlyne, D.E., 1950. Novelty and curiosity as determinants of explanatory behaviour. British Journal of Psychology-General Section 41, 68-80.\
-Bernard, C., 1974. Lectures on the phenomena common to animals and plants. Charles C Thomas, Springfield, IL.\
-Bialek, W., Nemenman, I., Tishby, N., 2001. Predictability, complexity, and learning. Neural Computat. 13, 2409-2463.\
-Birkhoff, G.D., 1927. Dynamical systems. American Mathematical Society, New York.\
-Boccaletti, S., Kurths, J., Osipov, G., Valladares, D.L., Zhou, C.S., 2002. The synchronization of chaotic systems. Physics Reports-Review Section of Physics Letters 366, 1-101.\
+[Beggs, J.M., Plenz, D., 2003. Neuronal avalanches in neocortical circuits. J Neurosci. 23, 11167-11177.](./ref/Beggs%20and%20Plenz%2C%202003.pdf)\
+[Belousov, B.P., 1959. "Периодически действующая реакция и ее механизм (Periodically acting reaction and its mechanism). Сборнрефератов по радиационной медицине (Collection of Abstracts on Radiation Medicine), 145-147.](./ref/Belousov%2C%201959.pdf)\
+[Bennett, C.H., 2003. Notes on Landauer's principle, reversible computation, and Maxwell's Demon. Studies in History and Philosophy of Science Part B: Studies in History and Philosophy of Modern Physics 34, 501-510.](./ref/Bennet%2C%202003.pdf)\
+[Berlyne, D.E., 1950. Novelty and curiosity as determinants of explanatory behaviour. British Journal of Psychology-General Section 41, 68-80.](https://bpspsychub.onlinelibrary.wiley.com/doi/10.1111/j.2044-8295.1950.tb00262.x)\
+[Bernard, C., 1974. Lectures on the phenomena common to animals and plants. Charles C Thomas, Springfield, IL.](https://books.google.co.kr/books/about/Lectures_on_the_Phenomena_of_Life_Common.html?id=zMhqAAAAMAAJ&redir_esc=y)\
+[Bialek, W., Nemenman, I., Tishby, N., 2001. Predictability, complexity, and learning. Neural Computat. 13, 2409-2463.](./ref/Bialek%20et%20al.%2C%202001.pdf)\
+[Birkhoff, G.D., 1927. Dynamical systems. American Mathematical Society, New York.](./ref/Birkhoff%2C%201927.pdf)\
+[Boccaletti, S., Kurths, J., Osipov, G., Valladares, D.L., Zhou, C.S., 2002. The synchronization of chaotic systems. Physics Reports-Review Section of Physics Letters 366, 1-101.](./ref/Boccaletti%20et%20al.%2C%202002.pdf)\
 Bohm, D., 1952. A Suggested Interpretation of the Quantum Theory in Terms of "Hidden" Variables. I. Physical Review 85, 166-179.\
 Botvinick, M., Toussaint, M., 2012. Planning as inference. Trends Cogn Sci. 16, 485-488.\
 Breakspear, M., Heitmann, S., Daffertshofer, A., 2010. Generative Models of Cortical Oscillations: Neurobiological Implications of the Kuramoto Model. Frontiers in Human Neuroscience 4.\
